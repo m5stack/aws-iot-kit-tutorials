@@ -10,7 +10,7 @@ In this chapter we will build the ported ESP VA-SDK firmware, flash it on to the
 ## Flash the Firmware
 Use ESP-IDF to flash the firmware onto the device. Replace **<<DEVICE_PORT>>** with your device port. If you do not know your device port, follow the [Identifying the serial port on host machine](/en/blinky-hello-world/device-provisioning.html#identifying-the-serial-port-on-host-machine) instructions in the **Blinky Hello World** example.
 ```bash
-cd path/to/Core2-for-AWS-IoT-EduKit/Alexa_For_IoT-Intro/esp-va-sdk-core2foraws/examples/amazon_aia/
+cd path/to/Core2-for-AWS-IoT-EduKit/Alexa_For_IoT-Intro/
 idf.py build flash monitor -p <<DEVICE_PORT>>
 ```
 
