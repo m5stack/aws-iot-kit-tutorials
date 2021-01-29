@@ -43,7 +43,10 @@ languageName = "English"
 title = "AWS IoT EduKit"
 weight = 2
 languageName = "English UK"
-
+[Languages.de]
+title = "AWS IoT EduKit"
+weigth = 3
+languageName = "Deutsch"
 #
 
 [menu]
