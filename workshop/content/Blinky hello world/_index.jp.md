@@ -13,7 +13,7 @@ AWS IoT EduKit 用 M5Stack Core2 リファレンスハードウェアを使用�
 - ESP-IDF (FreeRTOS kernel with symmetric multiprocessing) を使用して、リファレンスハードウェアから AWS IoT Core に MQTT メッセージを接続して送信します
 - リファレンスで MQTT メッセージを受信し、LEDを点滅させます
 
-このチュートリアルのすべてのコンテンツは、ユーザーが、[M5Stack Core2 ESP32 IoT Development Kit for AWS](https://ssci.to/Core2_for_AWS)を所有し、本番環境で利用していない[AWS アカウント](https://signin.aws.amazon.com/signin)を持っていること、そして、コマンドプロンプト/ターミナルなどの基本的な技術概念やツールに慣れていることを前提としています。ユーザー自身のキットを購入するには、[スイッチサイエンス](https://ssci.to/Core2_for_AWS)のオンラインショップもしくは、[M5Stack ストア](https://m5stack.com/products/m5stack-core2-esp32-iot-development-kit-for-aws-iot-edukit) をチェックしてください。AWS アカウントにまだ登録していない場合は、[アカウントを作成](https://portal.aws.amazon.com/billing/signup)してください。
+このチュートリアルのすべてのコンテンツは、ユーザーが、[M5Stack Core2 ESP32 IoT Development Kit for AWS](https://ssci.to/Core2_for_AWS)を所有し、本番環境で利用していない[AWS アカウント](https://console.aws.amazon.com/console/home)を持っていること、そして、コマンドプロンプト/ターミナルなどの基本的な技術概念やツールに慣れていることを前提としています。ユーザー自身のキットを購入するには、[スイッチサイエンス](https://ssci.to/Core2_for_AWS)のオンラインショップもしくは、[M5Stack ストア](https://m5stack.com/products/m5stack-core2-esp32-iot-development-kit-for-aws-iot-edukit) をチェックしてください。AWS アカウントにまだ登録していない場合は、[アカウントを作成](https://portal.aws.amazon.com/billing/signup)してください。
 
 このチュートリアルを開始するには、最初の章[前提条件](/ja/blinky-hello-world/prerequisites.html)に進んでください。
 

@@ -4,7 +4,7 @@ weight = 10
 pre = "<b>a. </b>"
 +++
 
-In this chapter, you'll install required software for this and all subsequent tutorials. Starting with the SiLabs CP210x drivers to communicate with the Core 2 for AWS IoT EduKit over USB, then the ESP-IDF toolchain for the on-board ESP32-D0WD microcontroller unit (MCU). You will also install Miniconda to manage your Python versions and your dependencies in isolated virtual environments to avoid conflicts. Additionally, we will download, install, and configure the AWS command line interface (CLI). This tutorial assumes that you have an [AWS account](https://signin.aws.amazon.com/signin).
+In this chapter, you'll install required software for this and all subsequent tutorials. Starting with the SiLabs CP210x drivers to communicate with the Core 2 for AWS IoT EduKit over USB, then the ESP-IDF toolchain for the on-board ESP32-D0WD microcontroller unit (MCU). You will also install Miniconda to manage your Python versions and your dependencies in isolated virtual environments to avoid conflicts. Additionally, we will download, install, and configure the AWS command line interface (CLI). This tutorial assumes that you have an [AWS account](https://console.aws.amazon.com/console/home).
 
 ## Silicon Labs USB to UART bridge driver installation
 Download and install the SiLabs CP210x drivers to enable your computer to communicate with the Core2 for AWS IoT EduKit device. The on-board CP2104 is an USB-to-UART bridge to facilitate host communication with the ESP32-D0WD microcontroller:
@@ -113,7 +113,7 @@ cd $HOME/esp/esp-idf
 
 ## Installing and configuring the AWS CLI version 2
 ### AWS CLI Installation
-The AWS Command Line Interface (CLI) is a unified tool to manage your AWS services. With just one tool to download and configure, you can control multiple AWS services from the command line and automate them through scripts. To be able to configure the AWS CLI, you'll first need to have an AWS account. Please [signin](https://signin.aws.amazon.com/signin) or [create an account](https://portal.aws.amazon.com/billing/signup#/start) first before proceeding. After you've signed in follow the official [AWS CLI installation instructions for your OS](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html).
+The AWS Command Line Interface (CLI) is a unified tool to manage your AWS services. With just one tool to download and configure, you can control multiple AWS services from the command line and automate them through scripts. To be able to configure the AWS CLI, you'll first need to have an AWS account. Please [signin](https://console.aws.amazon.com/console/home) or [create an account](https://portal.aws.amazon.com/billing/signup#/start) first before proceeding. After you've signed in follow the official [AWS CLI installation instructions for your OS](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html).
 
 ### AWS CLI Configuration
 Once you have that installed, it is time to set it for your account and region. It's important to keep in mind that the region you're currently using stays consistent—for purposes of this tutorial, we are standardizing on **us-west-2**. Changing regions can cause other challenges in subsequent steps. To view regional service availability, reference the [AWS Regional Services List](https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/) for a list of services that are available.

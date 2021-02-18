@@ -4,7 +4,7 @@ weight = 10
 pre = "<b>a. </b>"
 +++
 
-この章では、他の章でも必要となる、必須のソフトウエアのインストールを行います。最初にCore 2 for AWS IoT EduKitをUSBで利用するために必要なSiLabs CP210xドライバをインストールし、Espressif ESP32-D0WD マイクロコントローラーユニット (MCU)の設定、ビルド、フラッシュを行うために、ESP-IDF (Espressif IoT Development Framework)のインストールを行います。また、Miniconda をインストールして、隔離された仮想環境の Python のバージョンと依存関係を管理し、競合を回避します。Jupyter をインストールして、AWS IoT のモノの登録に使用するノートブックを実行します。さらに、AWS コマンドラインインターフェイス (CLI) をダウンロードして、インストールおよび設定します。このチュートリアルは、[AWS アカウント](https://signin.aws.amazon.com/signin)を持っていることを前提とします。
+この章では、他の章でも必要となる、必須のソフトウエアのインストールを行います。最初にCore 2 for AWS IoT EduKitをUSBで利用するために必要なSiLabs CP210xドライバをインストールし、Espressif ESP32-D0WD マイクロコントローラーユニット (MCU)の設定、ビルド、フラッシュを行うために、ESP-IDF (Espressif IoT Development Framework)のインストールを行います。また、Miniconda をインストールして、隔離された仮想環境の Python のバージョンと依存関係を管理し、競合を回避します。Jupyter をインストールして、AWS IoT のモノの登録に使用するノートブックを実行します。さらに、AWS コマンドラインインターフェイス (CLI) をダウンロードして、インストールおよび設定します。このチュートリアルは、[AWS アカウント](https://console.aws.amazon.com/console/home)を持っていることを前提とします。
 
 ## Silicon Labs USB to UART ブリッジドライバーのインストール
 SiLabs CP210xドライバーをダウンロードしてインストールし、コンピューターがCore2 for AWS IoTEduKitデバイスと通信できるようにします。 オンボードのCP2104は、ESP32-D0WDマイクロコントローラーとのホスト通信するUSB-UARTブリッジです。
@@ -111,7 +111,7 @@ cd $HOME/esp/esp-idf
 
 ## AWS CLI バージョン 2 のインストールと設定
 ### AWS CLI インストール
-AWS コマンドラインインターフェイス (CLI) は、AWS のサービスを管理するための統合ツールです。ダウンロードおよび設定用の単一のツールのみを使用して、コマンドラインから複数の AWS サービスを制御し、スクリプトを使用してこれらを自動化することができます。AWS CLI を設定するには、最初に AWS アカウントが必要です。[サインイン](https://signin.aws.amazon.com/signin)するか、[アカウントを作成](https://portal.aws.amazon.com/billing/signup#/start)してから続行してください。サインインしたら、使用している OS 用の公式の [AWS CLI のインストール手順](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)に従います。
+AWS コマンドラインインターフェイス (CLI) は、AWS のサービスを管理するための統合ツールです。ダウンロードおよび設定用の単一のツールのみを使用して、コマンドラインから複数の AWS サービスを制御し、スクリプトを使用してこれらを自動化することができます。AWS CLI を設定するには、最初に AWS アカウントが必要です。[サインイン](https://console.aws.amazon.com/console/home)するか、[アカウントを作成](https://portal.aws.amazon.com/billing/signup#/start)してから続行してください。サインインしたら、使用している OS 用の公式の [AWS CLI のインストール手順](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)に従います。
 
 
 ### AWS CLI 設定
