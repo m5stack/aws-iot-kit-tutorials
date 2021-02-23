@@ -11,19 +11,21 @@ Download and install the SiLabs CP210x drivers to enable your computer to commun
 {{%expand "macOS 10.9+" %}}
 Since OS X Mavericks, Apple has included the necessary USB to serial drivers and no other steps are necessary. To verify that the drivers are installed, loaded, and the device is read for programming, connect the device via the provided USB-C cable and run:
 ```bash
-ls -l /dev/cu.S*
+ls -l /dev/cu.S* || ls -l /dev/cu.usbserial*
 ```
-If your host machine recognizes and is able to communicate with the device, you will see a return value of `/dev/cu.SLAB_USBtoUART` printed. If the results of the command above returns empty, check the physical connection first. If it doesn't resolve the issue, follow the instructions for macOS <= 10.8.
-{{% notice info %}}
-On macOS 10.13 and later, the installation of the SiLabs system extension may be blocked. To unblock, open your Mac's **System Preferences** <i class="fas fa-arrow-right"></i> **Security & Privacy** pane, unlock changes by clicking the <i class="fas fa-lock"></i>, **allow** the developer, and then relock by clicking the <i class="fas fa-lock-open"></i>. For more information, see [Apple Technical Note TN2459](https://developer.apple.com/library/archive/technotes/tn2459/_index.html).
-{{% /notice %}}
-{{% /expand%}}
+If your host machine recognizes and is able to communicate with the device, you will see a return value of `/dev/cu.SLAB_USBtoUART` or a value that *starts* with `/dev/cu.usbserial-`. Keep this value on hand, as we'll be using it later.
+
+If the results of the command above returns empty, check the physical connection first. If it doesn't resolve the issue, follow the instructions for macOS <= 10.8.
 {{%expand "macOS <= 10.8" %}}
 1) Disconnect the USB-C cable connecting your Core2 for AWS IoT EduKit device to your computer if it's already connected.
 2) Download and extract the [CP210x VCP macOS driver](https://www.silabs.com/documents/public/software/Mac_OSX_VCP_Driver.zip).
 3) Expand the **SiLabsUSBDriverDisk.dmg** file from within the extracted folder.
 4) Open the **Install CP210x VCP Driver** application and run through the installer.
 5) Reboot your computer and reconnect your Core2 for AWS IoT EduKit device to your computer via the provided USB-C cable.
+
+{{% notice info %}}
+On macOS 10.13 and later, the installation of the SiLabs system extension may be blocked. To unblock, open your Mac's **System Preferences** <i class="fas fa-arrow-right"></i> **Security & Privacy** pane, unlock changes by clicking the <i class="fas fa-lock"></i>, **allow** the developer, and then relock by clicking the <i class="fas fa-lock-open"></i>. For more information, see [Apple Technical Note TN2459](https://developer.apple.com/library/archive/technotes/tn2459/_index.html).
+{{% /notice %}}
 {{% /expand%}}
 {{%expand "Linux" %}}
 Linux kernel version 3.x.x and 4.x.x already include the drivers as part of the distribution. To verify they are installed and loaded, run the command in your terminal:
@@ -168,7 +170,7 @@ Go to https://docs.conda.io/en/latest/miniconda.html and download the correspond
 {{% /expand%}}
 
 {{% notice note %}}
-If you close your shell or open a new shell, you'll need to re-enter `conda activate edukit` to reactivate the virtual environment and run ESP-IDF's `export.sh` (macOS/Linux) or `export.bat` (Windows) to re-add the ESP-IDF tools to your path each time.
+If you close your shell or open a new shell, you'll need to re-enter `conda activate edukit` to reactivate the virtual environment and source ESP-IDF's `export.sh` (macOS/Linux) or `export.bat` (Windows) to re-add the ESP-IDF tools to your path each time.
 {{% /notice %}}
 
 ## Cloning the code repository
