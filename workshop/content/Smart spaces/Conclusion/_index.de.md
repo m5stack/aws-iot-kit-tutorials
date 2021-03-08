@@ -5,7 +5,7 @@ pre = "<b>e. </b>"
 +++
 
 ## Fazit
-Sie haben dieses Praxismodul abgeschlossen, um Ihre smarte Thermostat Anwendung zu aktualisieren und die Vorteile eines trainierten maschinellen Modells zu nutzen. Sie haben nun einen Einblick in die End-to-End-Erfahrung beim Erstellen einer IoT-Anwendung erhalten: Erfassen von physischen Daten von Sensoren, Synchronisieren des Zustands zwischen dem Edge und der Cloud, Erstellen einer serverlosen Anwendung zur Steuerung eines Edge-Geräts und Umwandeln von Daten in verwertbare Erkenntnisse mit maschinellem Lernen.
+Sie haben dieses Praxismodul abgeschlossen, um Ihre intelligente Thermostat Anwendung zu aktualisieren und die Vorteile eines trainierten maschinellen Modells zu nutzen. Sie haben nun einen Einblick in die End-to-End-Erfahrung beim Erstellen einer IoT-Anwendung erhalten: Erfassen von physischen Daten von Sensoren, Synchronisieren des Zustands zwischen dem Edge und der Cloud, Erstellen einer serverlosen Anwendung zur Steuerung eines Edge-Geräts und Umwandeln von Daten in verwertbare Erkenntnisse mit maschinellem Lernen.
 
 Wenn Sie nach Ideen suchen, wie Sie die Lösung weiter ausbauen können, finden Sie hier ein paar:
 
@@ -16,7 +16,7 @@ Wenn Sie nach Ideen suchen, wie Sie die Lösung weiter ausbauen können, finden 
 - Verwenden Sie die Bibliotheken der Core2 for AWS IoT EduKit-Referenzhardware, um die LED-Streifen bei jeder Änderung der Raumbelegung blinken zu lassen
 
 ## Aufräumen
-Zwischen dieser Lösung und der vorherigen  (**Smart thermostat**) haben Sie die folgenden Ressourcen in AWS erstellt:
+Zwischen dieser Lösung und der vorherigen (**Intelligentes Thermostat**) haben Sie die folgenden Ressourcen in AWS erstellt:
 
 - IoT-Core Regeln
 - IAM-Rollen
