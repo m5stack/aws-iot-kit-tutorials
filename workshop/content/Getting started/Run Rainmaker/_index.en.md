@@ -11,7 +11,7 @@ There are several folders at the root of the project you cloned or downloaded an
 {{< img "pio_home.png" "PlatformIO home screen" >}}
 
 ## Identifying and setting the serial port on host machine
-You need to know which port you'll use for communications with the device for uploading firmware or monitoring the serial output. For macOS, the device is typically on **/dev/cu.SLAB_USBtoUART** and the included configuration should not require any changes. Linux is typically **/dev/ttyUSB0** and requires the user be added to the dialout group. For Windows, you'll need to replace the value with **COM** and end with the corresponding port number (e.g. COM3). For more specific Windows instructions or Linux distros that require additional configuration, please reference [Espressif's offical doc for establishing serial connections with the ESP32](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/establish-serial-connection.html). 
+You need to know which port you'll use for communications with the device for uploading firmware or monitoring the serial output. For macOS, the device is typically on **/dev/cu.SLAB_USBtoUART** or starts with **/dev/cu.usbserial-** and the included configuration should not require any changes. Linux is typically **/dev/ttyUSB0** and requires the user be added to the dialout group. For Windows, you'll need to replace the value with **COM** and end with the corresponding port number (e.g. COM3). For more specific Windows instructions or Linux distros that require additional configuration, please reference [Espressif's offical doc for establishing serial connections with the ESP32](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/establish-serial-connection.html). 
 
 Choose the Visual Studio Code file explorer (<i class="far fa-copy"></i> on the left bar), open the **platformio.ini** file, and change your **upload_port** value to match the serial port the device is connected to.
 
@@ -52,4 +52,4 @@ You've just built a connected home application through the AWS IoT EduKit progra
 On to [**Blinky Hello World**](/en/blinky-hello-world.html).
 
 ---
-{{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}} {{% button href="https://community.m5stack.com/category/41/core2-for-aws" icon="far fa-question-circle" %}}Community support{{% /button %}}
+{{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}} {{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}}

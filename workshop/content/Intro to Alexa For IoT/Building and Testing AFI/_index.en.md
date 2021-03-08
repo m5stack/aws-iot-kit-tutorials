@@ -59,7 +59,7 @@ Try a variety of utterances to Alexa - the side LEDs should light blue up when *
 * _Alexa, tell me a joke?_
 * _Alexa, turn on all of the lights_ (Only works if you already have some Alexa smart home devices on your same account)
 
-{{< img "Alexa-Time.webp" "Alexa, what time is it?">}} 
+{{< img "Alexa-Time.webp" "Alexa, what time is it?">}}
 
 ## Testing Alexa Smart Home Capabilities (Beta)
 The AFI device has **Alexa Built-In**, which means you can speak to Alexa directly to the device and Alexa will respond with voice on the device. However, this version of AFI from Espressif also supports Alexa Smart Home commands as a beta feature, which allows you to control attributes on the device.
@@ -96,4 +96,4 @@ This is useful not only because we have voice assistant on our device with Alexa
 On to creating a [**Custom Smart Home Device**](/en/intro-to-alexa-for-iot/custom-smart-home-device.html).
 
 ---
-{{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}} {{% button href="https://community.m5stack.com/category/41/core2-for-aws" icon="far fa-question-circle" %}}Community support{{% /button %}}
+{{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}} {{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}}

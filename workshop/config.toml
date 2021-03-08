@@ -47,6 +47,11 @@ languageName = "English UK"
 title = "AWS IoT EduKit"
 weigth = 3
 languageName = "Deutsch"
+[Languages.jp]
+title = "AWS IoT EduKit"
+weight = 1
+languageName = "日本語"
+
 #
 
 [menu]
@@ -58,13 +63,13 @@ languageName = "Deutsch"
     weight = -110
 
 [[menu.shortcuts]]
-name = "<i class='fab fa-github'></i> GitHub Repository (<i class='fas fa-sync-alt fa-xs'></i> Jan 19, 2021)"
+name = "<i class='fab fa-github'></i> Code Repository (<i class='fas fa-sync-alt fa-xs'></i> Jan 19, 2021)"
 url = "https://github.com/m5stack/Core2-for-AWS-IoT-EduKit"
 weight = 1
 
 [[menu.shortcuts]]
 name = "<i class='fas fa-question-circle'></i> Community Support"
-url = "https://community.m5stack.com/category/41/core2-for-aws"
+url = "https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions"
 weight = 2
 
 [[menu.shortcuts]]

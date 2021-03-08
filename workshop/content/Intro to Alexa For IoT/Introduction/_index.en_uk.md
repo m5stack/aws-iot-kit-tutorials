@@ -13,9 +13,9 @@ Alexa Voice Service (AVS) Integration is a new feature of AWS IoT Core that enab
 [Learn more >>](https://docs.aws.amazon.com/iot/latest/developerguide/avs-integration-aws-iot.html)
 
 ## Let's go!
-All content in this tutorial assumes you presently have the [M5Stack Core2 ESP32 IoT Development Kit for AWS](https://www.amazon.com/dp/B08NP5LVFH) in your possession, a compatible iOS or Android smart phone to use the Amazon Alexa app and ESP Alexa Phone Application, and are comfortable with basic technical concepts and tools—such as the command prompt/terminal. To first purchase your own kit, visit [Amazon.com](https://www.amazon.com/dp/B08NP5LVFH) or [M5Stack.com](https://m5stack.com/products/m5stack-core2-esp32-iot-development-kit-for-aws-iot-edukit).
+All content in this tutorial assumes you presently have the [M5Stack Core2 ESP32 IoT Development Kit for AWS](https://www.amazon.com/dp/B08VGRZYJR/) in your possession, a compatible iOS or Android smart phone to use the Amazon Alexa app and ESP Alexa Phone Application, and are comfortable with basic technical concepts and tools—such as the command prompt/terminal. To first purchase your own kit, visit [Amazon.com](https://www.amazon.com/dp/B08VGRZYJR/) or [M5Stack.com](https://m5stack.com/products/m5stack-core2-esp32-iot-development-kit-for-aws-iot-edukit).
 
 If you're ready, let's begin by [**Flashing Espressif Certificates**](/en_uk/intro-to-alexa-for-iot/flashing-espressif-certificates.html).
 
 ---
-{{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}} {{% button href="https://community.m5stack.com/category/41/core2-for-aws" icon="far fa-question-circle" %}}Community support{{% /button %}}
+{{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}} {{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}}

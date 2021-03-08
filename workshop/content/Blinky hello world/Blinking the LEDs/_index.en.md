@@ -18,7 +18,7 @@ To start/stop the blinking of the LED bars on the sides of the M5Stack Core2 for
 
 {{% notice note %}}
 If you do not see **(edukit)** prefix at your shell prompt, ensure you activate your conda environment by running `conda activate edukit`.
-If the idf.py command is not found, add the ESP-IDF to your path with the command `. $HOME/esp/esp-idf/export.sh` (macOS/Linux) or `%userprofile%\Desktop\esp-idf\export.bat` (Windows).
+If the idf.py command is not found, add the ESP-IDF to your path with the script `. $HOME/esp/esp-idf/export.sh` (macOS/Linux) or `%userprofile%\Desktop\esp-idf\export.bat` (Windows).
 {{% /notice %}}
 
 In the Publish box, enter the command below, but replacing the **<<CLIENT_ID>>** text with your actual client Id that was just copied and then press the **Publish to topic** button:
@@ -46,4 +46,4 @@ Hopefully you enjoyed the journey of building your cloud connected blinky projec
 On to the next tutorial, [**Smart Thermostat**](/en/smart-thermostat.html).
 
 ---
-{{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}} {{% button href="https://community.m5stack.com/category/41/core2-for-aws" icon="far fa-question-circle" %}}Community support{{% /button %}}
+{{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}} {{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}}
