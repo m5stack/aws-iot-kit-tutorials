@@ -83,7 +83,7 @@ def lambda_handler(event, context):
 9. Wählen Sie im *Designer* Feld *+ Add trigger*.
 10. Wählen Sie für die *Trigger configuration* **AWS IoT** aus der Liste aus.
 11. Wählen Sie für *IoT type* die Option *Custom IoT rule*.
-12. Suchen Sie für *Rule* Ihre Regel in der Liste, die die Geräteschattenmeldungen von Ihrem Thermostat verarbeitet und eine neue Meldung mit dem Wert *roomOccupancy* veröffentlicht. Im vorherigen Modul, **Smartes Thermostat**, wurde diese Regel als `thermostatRule` angenommen.
+12. Suchen Sie für *Rule* Ihre Regel in der Liste, die die Geräteschattenmeldungen von Ihrem Thermostat verarbeitet und eine neue Meldung mit dem Wert *roomOccupancy* veröffentlicht. Im vorherigen Modul, **Intelligentes Thermostat**, wurde diese Regel als `thermostatRule` angenommen.
 13. Überprüfen Sie, ob das Kontrollkästchen *Enable trigger* (Auslöser aktivieren) aktiviert ist, und wählen Sie dann **Add** (Hinzufügen). Dies erteilt Ihrer IoT Core-Regel die Erlaubnis, diese Lambda-Funktion aufzurufen.
 14. Wählen Sie die Registerkarte *Permissions* und dann den Link unter *Role name* damit Sie die Berechtigungen für diese Lambda-Funktion zum Aufrufen Ihres SageMaker-Endpunkts hinzufügen können.
 15. Wählen Sie in der neu geöffneten Registerkarte der IAM-Konsole unter *Permissions policies* die Option **Add inline policy**.

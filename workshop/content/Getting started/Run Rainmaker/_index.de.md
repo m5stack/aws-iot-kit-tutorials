@@ -13,12 +13,12 @@ Im Stammverzeichnis des Projekts, das Sie geklont oder heruntergeladen und extra
 
 ## Identifizieren und Einstellen des seriellen Anschlusses auf dem Host-Rechner
 
-Sie müssen wissen, welchen Anschluss Sie für die Kommunikation mit dem Gerät zum Hochladen von Firmware oder zum Überwachen der seriellen Ausgabe verwenden werden. Unter macOS liegt das Gerät typischerweise auf **/dev/cu.SLAB_USBtoUART** und die mitgelieferte Konfiguration sollte keine Änderungen erfordern. Unter Linux liegt es typischerweise auf **/dev/ttyUSB0** und erfordert, dass der Benutzer zur Dialout-Gruppe hinzugefügt wird. Unter Windows müssen Sie den Wert durch **COM** ersetzen und mit der entsprechenden Portnummer enden (z. B. COM3). Für spezifischere Anweisungen für Windows oder Linux-Distributionen, die eine zusätzliche Konfiguration erfordern, lesen Sie bitte [die offizielle Dokumentation von Espressif zur Einrichtung serieller Verbindungen mit dem ESP32](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/establish-serial-connection.html).
+Sie müssen wissen, welchen Anschluss Sie für die Kommunikation mit dem Gerät zum Hochladen von Firmware oder zum Überwachen der seriellen Ausgabe verwenden werden. Unter macOS liegt das Gerät typischerweise auf **/dev/cu.SLAB_USBtoUART** und die mitgelieferte Konfiguration sollte keine Änderungen erfordern. Unter Linux liegt es typischerweise auf **/dev/ttyUSB0** und erfordert, dass der Benutzer zur Dialout-Gruppe hinzugefügt wird. Unter Windows müssen Sie den Wert durch **COM** ersetzen und mit der entsprechenden Portnummer enden (z. B. COM3). Für spezifischere Anweisungen für Windows oder Linux-Distributionen, die eine zusätzliche Konfiguration erfordern, lesen Sie bitte [die offizielle Dokumentation von Espressif](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/establish-serial-connection.html) zur Einrichtung serieller Verbindungen mit dem ESP32.
 
 Wählen Sie den Dateiexplorer von Visual Studio Code (<i class="far fa-copy"></i> in der linken Leiste), öffnen Sie die Datei **platformio.ini** und ändern Sie den Wert **upload_port** so, dass er dem seriellen Anschluss entspricht, an den das Gerät angeschlossen ist.
 
 {{% notice note %}}
-Sehen Sie sich die offiziellen PlatformIO-Dokumente über die Option [upload\_port](https://docs.platformio.org/en/latest/projectconf/section_env_upload.html#upload-port)an, um Formatierungs- und andere Beispiele zu sehen.
+Sehen Sie sich die offiziellen PlatformIO-Dokumente über die Option [upload\_port](https://docs.platformio.org/en/latest/projectconf/section_env_upload.html#upload-port) an, um Formatierungs- und andere Beispiele zu sehen.
 {{% /notice %}}
 
 ## Erstellen und Hochladen der RainMaker Agent-Firmware
@@ -37,7 +37,7 @@ Weitere Informationen zur Fehlerbehebung oder FAQs finden Sie in den offiziellen
 Mit dem virtuellen Gerät, das in der mobilen App aufgelistet und online ist, können Sie den On-Board-Motor oder die LEDs ein- oder ausschalten, die Geschwindigkeit des Motors anpassen, die Farbe und Helligkeit der LED-Balken einstellen und die interne Gerätetemperatur anzeigen.
 
 {{% notice info %}}
-Wenn Sie die falschen Wi-Fi-Anmeldeinformationen eingegeben haben, müssen Sie zunächst die [Firmware löschen](https://edukit.workshop.aws/de/getting-started/run-rainmaker.html#Löschen-der-firmware-mit-PlatformIO), die Espressif RainMaker Agent-Firmware erneut auf das Gerät laden und das Gerät erneut mit Ihrem Mobiltelefon hinzufügen.
+Wenn Sie die falschen Wi-Fi-Anmeldeinformationen eingegeben haben, müssen Sie zunächst die [Firmware löschen](/de/getting-started/run-rainmaker.html#löschen-der-firmware-mit-platformio), die Espressif RainMaker Agent-Firmware erneut auf das Gerät laden und das Gerät erneut mit Ihrem Mobiltelefon hinzufügen.
 {{% /notice %}}
 
 ## Löschen der Firmware mit PlatformIO

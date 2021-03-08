@@ -1,5 +1,5 @@
 +++
-title = "Intelligenter Thermostat"
+title = "Intelligentes Thermostat"
 chapter = true
 weight = 30
 pre = "<b>3. </b>"

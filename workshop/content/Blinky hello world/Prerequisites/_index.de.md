@@ -4,7 +4,7 @@ weight = 10
 pre = "<b>a. </b>"
 +++
 
-In diesem Kapitel installieren Sie die erforderliche Software für dieses und alle folgenden Tutorials. Beginnend mit den SiLabs CP210x-Treibern zur Kommunikation mit dem Core 2 for AWS IoT EduKit über USB, dann die ESP-IDF-Toolchain für die integrierte ESP32-D0WD-Mikrocontrollereinheit (MCU). Sie werden auch Miniconda installieren, um Ihre Python-Versionen und Ihre Abhängigkeiten in isolierten virtuellen Umgebungen zu verwalten, um Konflikte zu vermeiden. Außerdem werden wir die AWS-Befehlszeilenschnittstelle (CLI) herunterladen, installieren und konfigurieren. In diesem Lernprogramm wird davon ausgegangen, dass Sie ein [AWS-Konto](https://signin.aws.amazon.com/signin) haben.
+In diesem Kapitel installieren Sie die erforderliche Software für dieses und alle folgenden Tutorials. Beginnend mit den SiLabs CP210x-Treibern zur Kommunikation mit dem Core 2 for AWS IoT EduKit über USB, dann die ESP-IDF-Toolchain für die integrierte ESP32-D0WD-Mikrocontrollereinheit (MCU). Sie werden auch Miniconda installieren, um Ihre Python-Versionen und Ihre Abhängigkeiten in isolierten virtuellen Umgebungen zu verwalten, um Konflikte zu vermeiden. Außerdem werden wir die AWS-Befehlszeilenschnittstelle (CLI) herunterladen, installieren und konfigurieren. In diesem Lernprogramm wird davon ausgegangen, dass Sie ein [AWS-Konto](https://console.aws.amazon.com/) haben.
 
 ## Silicon Labs USB-zu-UART-Bridge-Treiberinstallation
 Laden Sie die SiLabs CP210x-Treiber herunter und installieren Sie sie, damit Ihr Computer mit dem Core2 for AWS IoT EduKit-Gerät kommunizieren kann. Der integrierte CP2104 ist eine USB-zu-UART-Brücke, die die Host-Kommunikation mit dem ESP32-D0WD-Mikrocontroller erleichtert:
@@ -116,7 +116,7 @@ cd $HOME/esp/esp-idf
 
 ### AWS CLI-Installation
 
-Die AWS-Befehlszeilenschnittstelle (CLI) ist ein einheitliches Tool zur Verwaltung Ihrer AWS-Services. Mit nur einem Tool, das Sie herunterladen und konfigurieren müssen, können Sie mehrere AWS-Services über die Befehlszeile steuern und durch Skripte automatisieren. Um die AWS CLI konfigurieren zu können, benötigen Sie zunächst ein AWS-Konto. Bitte [melden Sie sich an](https://signin.aws.amazon.com/signin) oder [erstellen Sie](https://portal.aws.amazon.com/billing/signup#/start) zunächst [ein Konto](https://portal.aws.amazon.com/billing/signup#/start), bevor Sie fortfahren. Nachdem Sie sich angemeldet haben, folgen Sie den offiziellen [AWS CLI-Installationsanweisungen für Ihr Betriebssystem](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html).
+Die AWS-Befehlszeilenschnittstelle (CLI) ist ein einheitliches Tool zur Verwaltung Ihrer AWS-Services. Mit nur einem Tool, das Sie herunterladen und konfigurieren müssen, können Sie mehrere AWS-Services über die Befehlszeile steuern und durch Skripte automatisieren. Um die AWS CLI konfigurieren zu können, benötigen Sie zunächst ein AWS-Konto. Bitte [melden Sie sich an](https://signin.aws.amazon.com/signin) oder [erstellen Sie](https://portal.aws.amazon.com/billing/signup#/start) zunächst ein Konto, bevor Sie fortfahren. Nachdem Sie sich angemeldet haben, folgen Sie den offiziellen [AWS CLI-Installationsanweisungen für Ihr Betriebssystem](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html).
 
 ### AWS CLI-Konfiguration
 

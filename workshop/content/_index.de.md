@@ -1,4 +1,4 @@
-ro+++
++++
 title = "AWS IoT EduKit"
 chapter = true
 weight = 1
@@ -16,10 +16,10 @@ AWS IoT EduKit ist eine einfache Möglichkeit zu lernen, wie man IoT-Anwendungen
 
 #### Einfacher Zugang zu Beispielcode
 - AWS IoT EduKit bietet aktuelle Inhalte und Beispielcode zu den gängigsten IoT-Lösungen.
-- Über die AWS [IoT-EduKit-Tutorials](https://edukit.workshop.aws/de/getting-started.html) können Entwickler auf eine Vielzahl kostenloser Inhalte zugreifen, um Fachwissen zum Erstellen und Verwalten von IoT-Anwendungen mit AWS-Services zu erwerben.
+- Über die AWS [IoT-EduKit-Tutorials](/de/getting-started.html) können Entwickler auf eine Vielzahl kostenloser Inhalte zugreifen, um Fachwissen zum Erstellen und Verwalten von IoT-Anwendungen mit AWS-Services zu erwerben.
 
 ### Wie es funktioniert
-Um loszulegen, kaufen Sie Ihr Referenz-Hardware-Kit von unserem Herstellerpartner M5Stack, entweder auf [Amazon.com](https://www.amazon.com/dp/B08NP5LVFH) oder direkt im [M5Stack-Shop](https://m5stack.com/products/m5stack-core2-esp32-iot-development-kit-for-aws-iot-edukit). Sobald Sie das Hardware-Kit erhalten haben, rufen Sie die [Anleitung &quot;Erste Schritte&quot;](https://edukit.workshop.aws/en/getting-started.html) auf und befolgen Sie die Schritte im Abschnitt &quot;Voraussetzungen&quot;, um die RainMaker Agent-Firmware auf dem Gerät und die Espressif Rainmaker Mobile App auf Ihrem Mobiltelefon zu installieren. Mit der Espressif Rainmaker Mobile App können Sie die AWS IoT EduKit-Referenzhardware steuern und eine Verbindung zu AWS IoT herstellen. Als Nächstes können Sie aus einer Liste kostenloser Projekte auswählen, die auf der Website von AWS IoT EduKit verfügbar sind. Beginnen Sie mit dem Aufbau einer grundlegenden Connected-Home-Anwendung und erweitern Sie es im Laufe der Zeit bis zur Ausführung eines maschinellen Lernmodells mit Amazon SageMaker Autopilot oder dem Aufbau einer sprachunterstützten Smart-Home-Anwendung mit Alexa Voice Service Integration for AWS IoT (AFI). Um mehr über die Hardware-Spezifikationen zu erfahren, besuchen Sie bitte die [M5Stack Docs](https://docs.m5stack.com/#/en/core/core2_for_aws)oder den [Partner Device Catalog](https://devices.amazonaws.com/detail/a3G0h000007djMLEAY).
+Um loszulegen, kaufen Sie Ihr Referenz-Hardware-Kit von unserem Herstellerpartner M5Stack, entweder auf [Amazon.com](https://www.amazon.com/dp/B08NP5LVFH) oder direkt im [M5Stack-Shop](https://m5stack.com/products/m5stack-core2-esp32-iot-development-kit-for-aws-iot-edukit). Sobald Sie das Hardware-Kit erhalten haben, rufen Sie die [Anleitung &quot;Erste Schritte&quot;](/de/getting-started.html) auf und befolgen Sie die Schritte im Abschnitt &quot;Voraussetzungen&quot;, um die RainMaker Agent-Firmware auf dem Gerät und die Espressif Rainmaker Mobile App auf Ihrem Mobiltelefon zu installieren. Mit der Espressif Rainmaker Mobile App können Sie die AWS IoT EduKit-Referenzhardware steuern und eine Verbindung zu AWS IoT herstellen. Als Nächstes können Sie aus einer Liste kostenloser Projekte auswählen, die auf der Website von AWS IoT EduKit verfügbar sind. Beginnen Sie mit dem Aufbau einer grundlegenden Connected-Home-Anwendung und erweitern Sie es im Laufe der Zeit bis zur Ausführung eines maschinellen Lernmodells mit Amazon SageMaker Autopilot oder dem Aufbau einer sprachunterstützten Smart-Home-Anwendung mit Alexa Voice Service Integration for AWS IoT (AFI). Um mehr über die Hardware-Spezifikationen zu erfahren, besuchen Sie bitte die [M5Stack Docs](https://docs.m5stack.com/#/en/core/core2_for_aws) oder den [Partner Device Catalog](https://devices.amazonaws.com/detail/a3G0h000007djMLEAY).
 
 
 ---

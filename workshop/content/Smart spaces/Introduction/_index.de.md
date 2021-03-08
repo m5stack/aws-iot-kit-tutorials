@@ -31,7 +31,7 @@ Der Arbeitsablauf, den Sie in diesem Modul aufbauen werden, hat die folgenden Ha
 
 Sind Sie bereit, mit dem Bau der Lösung zu beginnen? Lassen Sie uns überprüfen, ob Sie die folgenden Voraussetzungen erfüllt haben:
 
-1. Haben Sie das vorherige Modul in dieser Reihe von Tutorials mit dem Titel **Smart Thermostat** abgeschlossen?
+1. Haben Sie das vorherige Modul in dieser Reihe von Tutorials mit dem Titel **Intelligentes Thermostat** abgeschlossen?
 2. Wissen Sie, an welchem seriellen Port Ihr Core2 for AWS IoT EduKit-Gerät angeschlossen ist? Dies wird auch im **Blinky Hello World** Tutorial behandelt. Sie werden es in mehrere der Schritte dieses Tutorials für Platzhalterwerte wie `<<DEVICE_PORT>>` einfügen.
 3. Haben Sie bestätigt, dass Sie Nachrichten sehen können, die von Ihrem intelligenten Thermostat ankommen, indem Sie einen Test-Client wie den in der AWS IoT Core-Konsole verwenden? Sie sollten in der Lage sein, das Topic `$aws/things/<<CLIENT_ID>>/shadow/update/accepted` zu abonnieren (wobei Sie <<CLIENT_ID>> durch die Client-ID/Seriennummer Ihres Geräts ersetzen) und zu sehen, dass Nachrichten im Test-Client ankommen.
 

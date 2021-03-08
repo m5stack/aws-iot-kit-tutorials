@@ -9,7 +9,7 @@ Willkommen zum ersten AWS IoT-EduKit-Tutorial. Zur Durchführung dieser Übung b
 
 Die Lösung, die Sie durchgehen werden, verwendet die Espressif RainMaker-Plattform, die von AWS bereitgestellt wird, um eine anpassbare Smart Home-Anwendung ohne Verwaltung der Infrastruktur zu Verfügung zu stellen. Für die Nutzung der RainMaker-Plattform von Espressif fallen keine zusätzlichen Kosten an.
 
-Um mit diesem Tutorial zu beginnen, fahren Sie mit dem Abschnitt [&quot;Voraussetzungen&quot;](https://edukit.workshop.aws/de/getting-started/prerequisites.html) fort.
+Um mit diesem Tutorial zu beginnen, fahren Sie mit dem Abschnitt [&quot;Voraussetzungen&quot;](/de/getting-started/prerequisites.html) fort.
 
 ---
 {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}} {{% button href="https://community.m5stack.com/category/41/core2-for-aws" icon="far fa-question-circle" %}}Community support{{% /button %}}
