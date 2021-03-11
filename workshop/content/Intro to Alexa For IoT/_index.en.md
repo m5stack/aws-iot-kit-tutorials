@@ -1,7 +1,7 @@
 +++
 title = "Intro to Alexa for IoT"
 chapter = true
-weight = 50
+weight = 60
 pre = "<b>5. </b>"
 +++
 
