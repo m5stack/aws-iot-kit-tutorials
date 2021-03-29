@@ -39,7 +39,10 @@ home = [ "HTML", "RSS", "JSON"]
 title = "AWS IoT EduKit"
 weight = 1
 languageName = "English"
-
+[Languages.de]
+title = "AWS IoT EduKit"
+weigth = 3
+languageName = "Deutsch"
 [Languages.jp]
 title = "AWS IoT EduKit"
 weight = 1
