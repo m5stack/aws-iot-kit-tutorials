@@ -8,7 +8,7 @@ We're ready to compile and upload our application on to the device, provision th
 
 ## Opening the project in PlatformIO
 There are several folders at the root of the repository you cloned from GitHub in the last chapter. For this tutorial, you will use the Getting-Started project and perform the operations you need in PlatformIO. First open Visual Studio Code and after waiting a few seconds for the PlatformIO extension to load, click the **PlatformIO logo** VS Code activity bar (left most menu), select **Open** from the left PlatformIO menu, click **Open Project**, navigate to the `Core2-for-AWS-IoT-EduKit/Getting-Started` folder, and click **open**.
-{{< img "pio-home.png" "PlatformIO home screen" >}}
+{{< img "pio-home.png" "PlatformIO home screen" "1 - Open PIO menu, 2 - Open PIO home, 3 - Open Getting Started project" >}}
 
 ## Building and uploading the RainMaker Agent firmware
 You are now ready to build (compile) and upload the RainMaker Agent firmware. The compiling is done by the [GCC compiler](https://gcc.gnu.org/onlinedocs/gcc/), which converts the provided human readable code into [object code](https://en.wikipedia.org/wiki/Object_code) as [elf](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format) and binary files (the firmware). These files are then uploaded to the device's on-board flash for it to execute via the virtual serial port. The serial port (via UART) allows bi-directional communication, so you are able to recieve data from the device to the host machine. To build and then upload the firmware, and monitor the output from the device through the serial port using PlatformIO:
@@ -18,7 +18,7 @@ You are now ready to build (compile) and upload the RainMaker Agent firmware. Th
     ```bash
     pio run --environment core2foraws
     ```
-{{< img "pio-new_terminal-gsg.png" "PlatformIO CLI terminal in VS Code" >}}
+{{< img "pio-new_terminal-gs.en.png" "PlatformIO CLI terminal in VS Code" "1 - Open PIO menu, 2 - Open new PIO Terminal, 3 - Verify you're in the 'PlatformIO CLI' terminal session, 4 - Paste the command into terminal, 5 - If you encounter an error autodetecting the port, open the Platform.ini file and follow instructions to manually add the serial port.">}}
 
 4) Now it's time to upload the compiled firmware to the connected device over USB by running the command:
     ```bash

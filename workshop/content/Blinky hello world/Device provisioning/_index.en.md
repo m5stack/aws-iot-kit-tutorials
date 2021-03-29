@@ -9,35 +9,40 @@ In this chapter, you'll provision the device for connectivity to AWS IoT Core us
 ## Opening the Blink Hello World project
 If you have any other project already open in VS Code, first open a new window (**File** → **New Window**) to have a clean file Explorer and working environment.
 
-For this tutorial, you will use the Blinky-Hello-World project. In your new VS Code window, click the **PlatformIO logo** VS Code activity bar (left most menu), select **Open** from the left PlatformIO menu, click **Open Project**, navigate to the `Core2-for-AWS-IoT-EduKit/Blinky-Hello-World` folder, and click **open**.
-{{< img "pio-home.png" "PlatformIO home screen" >}}
+For this tutorial, you will use the Blinky-Hello-World project. In your new VS Code window, click the **PlatformIO logo** in the VS Code activity bar (left most menu), select **Open** from the left PlatformIO menu, click **Open Project**, navigate to the `Core2-for-AWS-IoT-EduKit/Blinky-Hello-World` folder, and click **open**.
+{{< img "pio-home.png" "PlatformIO home screen" "1 - Open PIO menu, 2 - Open PIO home, 3 - Open the project folder" >}}
 
 ## Retrieving the Device Certificate and Registering your AWS IoT thing
-To perform a secure TLS connection over [MQTT](https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html) to AWS IoT Core, you need to register a thing, [attach the device certificate](https://docs.aws.amazon.com/iot/latest/developerguide/register-device-cert.html) (public key) to the thing, and attach a [security policy](https://docs.aws.amazon.com/iot/latest/developerguide/iot-policies.html) to the certificate to ensure rogue devices or rogue operations are not performed within your AWS account. With the inclusion of a secure element on the Core2 for AWS IoT EduKit reference hardware, we can automate the entire device registration without ever exposing or handling sensitive private keys. Included in the project is a script that automates the process of retrieving the pre-provisioned device certificate from the reference hardware's secure element, generates a device manifest by signing the device certificate with an [X.509 certificate](https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-client-cert-basics), performs a [just-in-time registration](https://aws.amazon.com/blogs/iot/just-in-time-registration-of-device-certificates-on-aws-iot/) of the Microchip (secure element manufacturer) CA, registering the thing in AWS IoT with the device certificate, and attaches a secure policy to the AWS IoT thing.
+To perform a secure TLS connection over [MQTT](https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html) to AWS IoT Core, you need to register a thing, [attach the device certificate](https://docs.aws.amazon.com/iot/latest/developerguide/register-device-cert.html) (public key) to the thing, and attach a [security policy](https://docs.aws.amazon.com/iot/latest/developerguide/iot-policies.html) to the certificate to ensure rogue devices or rogue operations are not performed within your AWS account. With the inclusion of a secure element on the Core2 for AWS IoT EduKit reference hardware, we can automate the entire device registration without ever exposing or handling sensitive private keys. Included in the project is a script that automates the process of retrieving the pre-provisioned device certificate from the reference hardware's secure element, generates a device manifest by signing the device certificate with an [X.509 certificate](https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-client-cert-basics), performs a [just-in-time registration](https://aws.amazon.com/blogs/iot/just-in-time-registration-of-device-certificates-on-aws-iot/) of the Microchip (secure element manufacturer) CA, registers the thing in AWS IoT with the device certificate, and attaches a secure policy to the AWS IoT thing.
 
-To run the provided script, expand the instructions for your host machine's OS:
+To run the provided script using the PlatformIO CLI terminal window, expand the instructions for your host machine's OS:
 {{%expand "Ubuntu or macOS" %}}
-To run the registration helper script with the commands below, first replace **<<DEVICE_PORT>>** with the port your device is virtually mounted on. To look up the port again, see the instructions for [Ubuntu](../getting-started/prerequisites/linux.html#identifying-the-device-communication-port) or [macOS](../getting-started/prerequisites/macos.html#identifying-the-device-communication-port).
+To run the registration helper script with the commands below, first replace **<<PATH_TO>>** with the file path of the cloned repository and **<<DEVICE_PORT>>** with the port your device is virtually mounted on. To look up the port again, see the instructions for [Ubuntu](../getting-started/prerequisites/linux.html#identifying-the-device-communication-port) or [macOS](../getting-started/prerequisites/macos.html#identifying-the-device-communication-port).
 ```bash
-cd utilities/AWS_IoT_registration_helper/
+cd /<<PATH_TO>>/Core2-for-AWS-IoT-EduKit/Blinky-Hello-World/utilities/AWS_IoT_registration_helper
 python3 registration_helper.py -p <<DEVICE_PORT>>
 ```
-{{% /expand%}}
-{{%expand "Windows" %}}
-To run the registration helper script with the commands below, first replace **<<DEVICE_PORT>>** with the port your device is virtually mounted on. To look up the port again, see the instructions for [Windows](../getting-started/prerequisites/windows.html#identifying-the-device-communication-port).
-```bash
-cd utilities\AWS_IoT_registration_helper\
-python registration_helper.py -p <<DEVICE_PORT>>
-```
-{{% /expand%}}
 
 With the device successfully registered and provisioned in AWS IoT, go back to the **Blinky-Hello-World** directory by entering:
 ```bash
 cd ../..
 ```
+{{% /expand%}}
+{{%expand "Windows" %}}
+To run the registration helper script with the commands below, first replace **<<PATH_TO>>** with the file path of the cloned repository and  **<<DEVICE_PORT>>** with the communications port your device is virtually mounted on. To look up the port again, see the instructions for [Windows](../getting-started/prerequisites/windows.html#identifying-the-device-communication-port).
+```bash
+cd \<<PATH_TO>>\utilities\AWS_IoT_registration_helper\
+python registration_helper.py -p <<DEVICE_PORT>>
+```
+
+With the device successfully registered and provisioned in AWS IoT, go back to the **Blinky-Hello-World** directory by entering:
+```bash
+cd ..\..
+```
+{{% /expand%}}
 
 ## Chapter Conclusion
-In this chapter, you used the secure element to create an AWS IoT [thing](https://docs.aws.amazon.com/iot/latest/developerguide/thing-registry.html), set up a permissions [policy](https://docs.aws.amazon.com/iot/latest/developerguide/thing-policy-variables.html) for your thing, and attached the device certificate to the thing. All of this was done without ever exposing the secret private key and removing a potential avenue for it to be compromised.
+In this chapter, you used the secure element and registration script to create an AWS IoT [thing](https://docs.aws.amazon.com/iot/latest/developerguide/thing-registry.html), set up a permissions [policy](https://docs.aws.amazon.com/iot/latest/developerguide/thing-policy-variables.html) for your thing, and attached the device certificate to the thing. All of this was done without ever exposing the secret private key and removing a potential avenue for it to be compromised.
 
 On to [**Connecting to AWS IoT Core**](connecting-to-aws.html).
 

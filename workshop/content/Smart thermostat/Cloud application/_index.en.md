@@ -211,7 +211,7 @@ Below is a sample transition from the *heating* state labeled *stopHeating*. The
 If everything has been configured per this module's instructions, you should now be seeing status changes delivered to your smart thermostat in the form of updating LED strips, completing the end-to-end solution!
 
 ## Validation steps
-Before moving on to the next chapter, you can validate that the solution is configured as intended by...
+Before moving on to the next chapter, you can validate that the solution is configured as intended by:
 
 1. Apply a temperature change to your device that will take it outside the comfort bounds set in the IoT Events detector model to see the LED strips on the side change to red (heating), blue (cooling), or off (for standby). Use the warmth of your hands or a fan to raise or lower the detected temperature.
 1. Alternatively, choose new temperature thresholds for your event detector that exclude your room's true ambient temperature and redeploy your detector model to see it work. You can find the threshold values stored as variables in the model state labeled "standby" under the OnEnter action labeled "setThresholds." You can update those numbers to anything that makes sense for your room and publish the changes to test. 

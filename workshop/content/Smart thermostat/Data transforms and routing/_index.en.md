@@ -45,11 +45,11 @@ The FROM clause describes the topic filter on which this rule will receive new m
 
 The WHERE clause defines a conditional statement such that the rule's actions are only executed if this statement resolves true. We use it here to prevent an infinite loop. By including the conditional statement `state.reported.sound <> Null` we are configuring this rule to only act on shadow updates where the sound value is included (or rather, not null). The thermostat reports a `state.reported.sound` value in the shadow update, so this rule will act when the thermostat publishes messages. When the rule publishes its own shadow update, the rule will not fire again because the new shadow update payload only includes the `state.desired.roomOccupancy` key and no value for `state.reported.sound`.
 
-The action of this rule is "republish" or in other words, publish the output of the rule query as a new message on an indicated topic. The publish topic we use in this action is `$$aws/things/<<CLIENT_ID>>/shadow/update` to send a new message to the device shadow. This is the same topic that your thermostat is publishing on via the device shadow interface of the C SDK.
+The action of this rule is "republish" or in other words, publish the output of the rule query as a new message on an indicated topic. The publish topic we use in this action is `$$aws/things/<<CLIENT_ID>>/shadow/update` to send a new message to the device shadow. This is the same topic that your thermostat is publishing on via the device shadow interface of the C-SDK.
 
 (Optional depth) Why do we use two $ characters here but a single $ in other uses of the device shadow topics? The reason is the rules engine action optionally supports substitution templates. Substitution templates let you define an expression that gets evaluated at runtime. Substitution templates use the notation `${ YOUR_EXPRESSION_HERE }` and this conflicts with the `$aws` prefix of the device shadow topic. To use the correct device shadow topic in a republish action, you must escape the first $ character and this looks like `$$aws/things/<<CLIENT_ID>>/shadow/update`.
 
-Once you have deployed this rule in IoT Core, you should start to see the room occupancy status updated on your smart thermostat logger (`idf.py monitor -p <<DEVICE_PORT>>`).
+Once you have deployed this rule in IoT Core, you should start to see the room occupancy status updated in the serial monitor output (`pio run -e core2foraws -t monitor`).
 
 ### Preparing to determine commands for HVAC
 The next milestone in this chapter is to prepare the cloud infrastructure needed to dictate new HVAC states (e.g. heating/cooling/standby) based on current temperature and room occupancy. You will provision the IoT Events service to receive messages and then create a second IoT Core rule to integrate with IoT Events. This will create the data flow from IoT Core to IoT Events that is necessary before you move on to create the detector model that dictates the HVAC state.
@@ -97,9 +97,9 @@ SELECT current.state as current.state, current.version as current.version, times
 This rule is much simpler compared to the previous one! The rule is configured to receive the full JSON document whenever the smart thermostat device shadow is updated, then forward it to your new IoT Events Input. The Input is configured to parse only a few of the fields from the device shadow document and will discard the unneeded ones.
 
 ## Validation steps
-Before moving on to the next chapter, you can validate that your solution is configured as intended by...
+Before moving on to the next chapter, you can validate that your solution is configured as intended by:
 
-1. As your thermostat device detects varying noise levels, you should see the device receive updated status of roomOccupancy from your rule. Try alternating playing some music to make noise for ten seconds and being quiet for ten seconds to see the state change in the device logger (`idf.py monitor -p <<DEVICE_PORT>>`).
+1. As your thermostat device detects varying noise levels, you should see the device receive updated status of roomOccupancy from your rule. Try alternating playing some music to make noise for ten seconds and being quiet for ten seconds to see the state change in the serial monitor (`pio run -e core2foraws -t monitor`).
 
 If these are working as expected, let's move on to [**Cloud application**](/en/smart-thermostat/cloud-application.html).
 

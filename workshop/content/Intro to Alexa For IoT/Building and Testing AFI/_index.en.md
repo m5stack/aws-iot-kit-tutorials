@@ -8,11 +8,10 @@ pre = "<b>c. </b>"
 In this chapter we will build the ported ESP VA-SDK firmware, flash it on to the device, provision the Wi-Fi and authorize the device to your Alexa Account, and test some of the smart home capabilities using Alexa voice commands available in this beta version of AFI.
 
 ## Flash the Firmware
-Use ESP-IDF to flash the firmware onto the device. Replace **<<DEVICE_PORT>>** with your device port. If you do not know your device port, follow the [Identifying the serial port on host machine](/en/blinky-hello-world/device-provisioning.html#identifying-the-serial-port-on-host-machine) instructions in the **Blinky Hello World** example.
-```bash
-cd path/to/Core2-for-AWS-IoT-EduKit/Alexa_For_IoT-Intro/
-idf.py build flash monitor -p <<DEVICE_PORT>>
-```
+Use the PlatformIO CLI to compile your firmware, upload the firmware, and monitor the serial output of your device. It will take some time to build and flash the app, but after that's done you should see the stream of device logs in your terminal. If you receive an error for the port not being auto-detected, follow the [Identifying the serial port on host machine](../getting-started/prerequisites/windows.html#identifying-the-device-communication-port) instructions and try the command again. You can close the monitor session with the **Ctrl** + **C** keystroke combination:
+   ```bash
+   pio run -e core2foraws -t upload -t monitor 
+   ```
 
 ## Provision the Device
 For the provisioning process, you will need to configure your Wi-Fi network credentials and authorize the application with your Alexa account using ESP Alexa Phone Application.

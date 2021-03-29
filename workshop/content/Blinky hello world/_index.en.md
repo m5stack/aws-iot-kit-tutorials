@@ -1,11 +1,11 @@
 +++
-title = "Blinky Hello World"
+title = "Cloud Connected Blinky"
 chapter = true
 weight = 30
 pre = "<b>2. </b>"
 +++
 
-Learn how to create a "blinky" (the [hello world](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program) for microcontrollers) application with your M5Stack Core2 for AWS IoT EduKit reference hardware. Using your own AWS account, you'll walk-through how to connect to [AWS IoT Core](https://aws.amazon.com/iot-core/), send and receive [MQTT](https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html) messages, and view the messages on both the device and in AWS cloud. All of the steps and skills used here will provide the foundation to be successful in subsequent tutorials. Specifically, you will:
+Learn how to create a cloud connected "blinky" (the [hello world](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program) for microcontrollers) application with your M5Stack Core2 for AWS IoT EduKit reference hardware. Using your own AWS account, you'll walk-through how to connect your device to [AWS IoT Core](https://aws.amazon.com/iot-core/), send and receive [MQTT](https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html) messages, and view the messages on both the device and in AWS cloud. All of the steps and skills used here will provide the foundation to be successful in subsequent tutorials. Specifically, you will:
 - Install and configure the [AWS CLI](https://aws.amazon.com/cli/) on your host machine to remotely manage your AWS services and use provided helper scripts.
 - Register a "[thing](https://docs.aws.amazon.com/iot/latest/developerguide/iot-thing-management.html)" in AWS IoT Core using the security certificates pre-provisioned on the onboard secure element.
 - Configure your reference hardware to connect to Wi-Fi, connect to your account's [AWS IoT endpoint](https://docs.aws.amazon.com/general/latest/gr/iot-core.html), and send MQTT messages to AWS IoT Core.

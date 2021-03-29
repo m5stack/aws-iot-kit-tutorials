@@ -18,7 +18,7 @@ You can enter the configuration menu from the **Blink-Hello-World** directory of
 ```bash
 pio run -e core2foraws -t menuconfig
 ```
-{{< img "hello_world-menuconfig.webp" "Configuring Core2 for AWS IoT EduKit with idf.py menuconfig" >}}
+{{< img "hello_world-menuconfig.webp" "Configuring Core2 for AWS IoT EduKit with p.py menuconfig" >}}
 Here you will set the configuration. Use the direction keys on your keyboard to go to **Component config** --> **Amazon Web Services IoT Platform** and open **AWS IoT Endpoint Hostname** to set the string. You can paste the address you copied moments ago into the box and hit _enter_ to set that symbol. Next, go back to the configuration home screen by pressing the *ESC* key twice. Then select **AWS IoT EduKit Configuration** from the menu. Set your **WiFi SSID** and **WiFi Password** with your Wi-FI credentials. Once you are finished, press the *s* button on your keyboard to save, confirm the location of the file by pressing *enter*, followed by *q* to quit.
 
 {{% notice warning %}}
@@ -45,7 +45,7 @@ If during upload or monitoring the serial output you receive an error about an i
 {{% /notice %}}
 
 ## Chapter conclusion
-In this chapter, you have successfully compiled and flash your device and are actively monitoring it's serial outputs. Using the AWS IoT Device SDK for Embedded C, the reference hardware authenticated with the [MQTT message broker](https://docs.aws.amazon.com/iot/latest/developerguide/protocols.html) (AWS IoT Core) and is ready to receive messages.
+In this chapter, you have successfully compiled and flashed your device and are actively monitoring it's serial outputs. Using the AWS IoT Device SDK for Embedded C, the reference hardware authenticated with the [MQTT message broker](https://docs.aws.amazon.com/iot/latest/developerguide/protocols.html) (AWS IoT Core) and is ready to receive messages.
 
 You are now ready to head to the final chapter in this tutorial, [**Blinking the LED**](/en/blinky-hello-world/blinking-the-leds.html).
 

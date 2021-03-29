@@ -25,9 +25,9 @@ If you have concluded experimenting with this tutorial's solution and do not int
 1. Go to AWS IoT Core, choose Act, choose Rules, find your rule in the list and delete it.
 2. Go to AWS IoT Events, choose Detector models, find your model in the list and delete it. Choose Inputs, find your input in the list and delete it.
 3. Go to IAM, choose Roles, find the roles for your IoT Core rules and IoT Events detector model in the list and delete them.
-4. Power off your Core2 for AWS IoT EduKit reference hardware kit, or run the command in your shell from the **Smart-Thermostat** folder to prevent the device from being connected and sending messages to AWS IoT Core:
+4. Run the command in [PlatformIO CLI terminal window](../blinky-hello-world/prerequisites.html#open-the-platformio-cli-terminal-window) from the **Smart-Thermostat** folder to erase the device firmware and prevent the device from being connected and sending messages to AWS IoT Core. You can also power down the device by holding the power button for 6 seconds:
 ```bash
-idf.py erase_flash -p <<DEVICE_PORT>>
+pio run -e core2foraws -t erase
 ```
 
 The next tutorial to complete is [**Smart Spaces**](/en/smart-spaces.html).
