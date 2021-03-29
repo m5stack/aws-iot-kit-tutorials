@@ -2,7 +2,7 @@
 +++
 title = "Blinky Hello World(Lチカ)"
 chapter = true
-weight = 20
+weight = 30
 pre = "<b>2. </b>"
 +++
 

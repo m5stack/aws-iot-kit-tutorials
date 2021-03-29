@@ -78,7 +78,7 @@ This means when your device next connects to AWS IoT Core, or if it is already c
 Your smart thermostat will report the latest values of temperature and noise level as reviewed in the previous chapter. Your thermostat will also receive commands and track the state of two more values called "hvacStatus" and "roomOccupancy". These values will be determined by the cloud application in the coming chapters.
 
 ## How to program publishing messages to AWS IoT Core
-You will use the AWS IoT Device SDK for Embedded C ("C SDK") to communicate between your smart thermostat device and AWS IoT Core. This is a best practice for abstracting away security, network, and data layers so you can focus on the application logic of your device and solution. The C SDK bundles libraries for connecting to AWS IoT Core over the MQTT protocol, interfacing with the hardware secure element to sign requests, and for integrating with higher order features like the device shadow.
+You will use the AWS IoT Device SDK for Embedded C ("C-SDK") to communicate between your smart thermostat device and AWS IoT Core. This is a best practice for abstracting away security, network, and data layers so you can focus on the application logic of your device and solution. The C-SDK bundles libraries for connecting to AWS IoT Core over the MQTT protocol, interfacing with the hardware secure element to sign requests, and for integrating with higher order features like the device shadow.
 
 Let's look at a few critical lines of code and analyze what they do.
 
@@ -91,7 +91,7 @@ temperatureHandler.type = SHADOW_JSON_FLOAT;
 temperatureHandler.dataLength = sizeof(float);
 ```
 
-The code above defines a new `jsonStruct_t` that we use as a tool for packing individual key-value pairs, making them ready for use in IoT Core device shadow, and indicating the callback function to use (if any) should a new "desired" message arrive for the indicated **pKey**. This example defines a new device shadow key **temperature**, setting an initial **pData** to the value of the `temperature` variable, and indicating it is of type `SHADOW_JSON_FLOAT`. These structs are used later when registering shadow delta behavior and publishing the "reported" values up to IoT Core.
+The code above defines a new variable called temperatureHandler of type `jsonStruct_t` that we use as a tool for packing individual key-value pairs. This makes the key-value pairs available for use in IoT Core device shadow and indicating the callback function to use (if any) should a new "desired" message arrive for the indicated **pKey**. This example defines a new device shadow key **temperature**, setting an initial **pData** to the value of the `temperature` variable, and indicating it is of type `SHADOW_JSON_FLOAT`. These structs are used later when registering shadow delta behavior and publishing the "reported" values up to IoT Core.
 
 ```C
 rc = aws_iot_shadow_register_delta(&iotCoreClient, &roomOccupancyActuator);
@@ -166,18 +166,11 @@ The `IOTUNUSED()` function is used to suppress compiler warnings for unused para
 
 The if/else block is used to evaluate the text value of the new **hvacStatus** key-value and uses that to determine the color of the LED strips.
 
-## Code sample
-You can use the following code sample if you don't want to write the application yourself. This is recommended for students unfamiliar with embedded development, FreeRTOS, or programming an ESP32.
-
-1. From the **Core2-for-AWS-IoT-EduKit** directory, change directory in to the **Smart-Thermostat** folder:
-   ```bash
-   cd Smart-Thermostat
-   ```
-2. Build, flash, and start the serial monitor (replace **<<DEVICE_PORT>>** with the serial port identified in the [**Blinky Hello World**](/en/blinky-hello-world/device-provisioning.html#identifying-the-serial-port-on-host-machine) tutorial): 
-   ```bash
-   idf.py build flash monitor -p <<DEVICE_PORT>>
-   ```
-3. It will take some time to build and flash the app, but after that's done you should see the stream of device logs in your terminal. You can close the serial monitor session with the **CTRL** + **]** keystroke combination.
+## Monitoring the Device Serial Output
+If you closed the serial monitor from the last chapter by pressing the **CTRL** + **C** keystroke or disconnected the device, you will need to restart the serial monitor. With the device connected, run serial monitor by pasting the following command in the [PlatformIO CLI terminal window](../blinky-hello-world/prerequisites.html#open-the-platformio-cli-terminal-window):
+```bash
+pio run -e core2forAWS -t monitor
+```
 
 ## Validation steps
 Before moving on to the next chapter, you can validate that your device is configured as intended by:

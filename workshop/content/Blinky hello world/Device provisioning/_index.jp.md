@@ -16,7 +16,7 @@ ESP32 とのシリアル接続の確立については、Espressif の[公式ド
 `Espressif Crypto Auth Utility` ディレクトリに移動し、pipコマンドで必要な依存関係をインストールします。
 ```bash
 cd Core2-for-AWS-IoT-EduKit/Blinky-Hello-World/utilities/AWS_IoT_registration_helper/
-pip3 install -r requirements.txt
+CRYPTOAUTHLIB_NOUSB=1 python3 -m pip install --no-cache -r requirements.txt
 ```
 
 次に、必要なすべての手順を実行してくれるPythonスクリプトを実行します。引数の**<<DEVICE_PORT>>**には、Core2 for AWS IoT EduKitが接続されているポートを指定します。

@@ -25,7 +25,7 @@ Are you ready to start building? Let's review you have the following prerequisit
 1. Have you completed the **Blinky Hello World** tutorial? 
 2. Is your Core2 for AWS IoT EduKit already provisioned in AWS IoT Core? Meaning there is a registered AWS IoT thing with a certificate and policy attached that enables publish and subscribe operations? These steps are in the **Blinky Hello World** tutorial.
 3. Have you confirmed that you can see messages arriving from your device using a test MQTT client like the one in the AWS IoT Core console? You should be able to subscribe to a topic that your device is publishing on and see those messages arrive in the test client.
-4. Do you know which serial port your Core2 for AWS IoT EduKit device is connected to? This is also covered in the **Blinky Hello World** tutorial. You will paste it in to several of the steps of this tutorial for placeholder values like **<<DEVICE_PORT>>**.
+4. Do you know which serial port your Core2 for AWS IoT EduKit device is mounted to? This is also covered in the **Blinky Hello World** tutorial.
 
 If so, let's begin by moving on to the next chapter, [**Data acquisition**](/en/smart-thermostat/data-acquisition.html).
 

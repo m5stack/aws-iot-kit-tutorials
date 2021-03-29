@@ -13,9 +13,9 @@ If you would like to learn more about other interfaces available or to come up w
 This is the last tutorial currently available. We will be publishing more, but for now, you have the skills to build your own IoT solution with AWS services with the skills you have learned so far.
 
 ## Clean up
-In this solution you did not use any of your own resources in AWS. However, you can wipe your device software (and remove the certificates from flash) by entering the command (replace **<<DEVICE_PORT>>** with the serial port your device is connected to):
+In this solution you did not use any of your own resources in AWS. However, if you are done using the Alexa application, you can completely wipe your device flash memory (and remove the certificates from flash) by entering the command in the [PIO CLI terminal window](../blinky-hello-world/prerequisites.html#open-the-platformio-cli-terminal-window):
 ```bash
-idf.py erase_flash -p <<DEVICE_PORT>>
+pio run -e core2foraws -t erase
 ```
 
 ---

@@ -1,7 +1,7 @@
 +++
 title = "Smart Thermostat"
 chapter = true
-weight = 30
+weight = 40
 pre = "<b>3. </b>"
 +++
 

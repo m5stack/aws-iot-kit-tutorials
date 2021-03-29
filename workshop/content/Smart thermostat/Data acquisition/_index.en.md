@@ -79,48 +79,54 @@ void app_main()
 }
 ```
 
-## Code sample
-A sample application has already been prepared for you to build and deploy to your device. Follow these steps to complete this chapter.
+## Compiling and Uploading the Smart Thermostat Firmware
+A sample application has already been prepared for you to build and upload to your device using Visual Studio Code and the PlatformIO extension. If you have any other project already open in VS Code, first open a new window (File → New Window) to have a clean file Explorer and working environment.
 
-1. Clone the code repo for this tutorial if you haven't already from another tutorial: 
-   ```bash
-   git clone https://github.com/m5stack/Core2-for-AWS-IoT-EduKit.git
-   ```
-2. Change directory to the **Smart-Thermostat** project: 
-   ```bash
-   cd Core2ForAWS-AWS-IoT-EduKit/Smart-Thermostat
-   ```
-3. Copy your `sdkconfig` file from the **Blinky-Hello-World** demo to simplify setting your Wi-Fi and AWS endpoint:
-   {{%expand "macOS & Linux" %}}
+For this tutorial, you will use the Smart-Thermostat project. In your new VS Code window, 
+1. Click the **PlatformIO logo** in the VS Code activity bar (left most menu)
+2. Select **Open** from the left PlatformIO menu
+3. Click **Open Project**
+4. Navigate to the `Core2-for-AWS-IoT-EduKit/Smart-Thermostat` folder, and click **open**.
+{{< img "pio-home.png" "PlatformIO home screen" "1 - Open PIO menu, 2 - Open PIO home, 3 - Open the project folder" >}}
+
+Next, you'll need to open a new PlatformIO CLI terminal window in VS Code by:
+1) Click the **PlatformIO logo** on the VS Code activity bar (left most menu).
+2) From the **Quick Access** menu, under **Miscellaneous**, select **New Terminal**.
+
+{{< img "pio-new_terminal-smart_thermostat.en.png" "PlatformIO CLI terminal in VS Code" "1 - Open PIO menu, 2 - Open new PIO Terminal, 3 - Verify you're in the 'PlatformIO CLI' terminal session, 4 - Paste the commands into terminal, 5 - If you encounter an error autodetecting the port, open the Platform.ini file and follow instructions to manually add the serial port.">}}
+
+
+ To copy the configuration from the Blinky project, compile the device firmware, and upload it to your device, follow the steps for your host machine's OS to complete this chapter:
+
+{{%expand "Ubuntu or macOS" %}}
+1. Copy your `sdkconfig` file from the **Blinky-Hello-World** demo to simplify setting your Wi-Fi and AWS endpoint:
    ```bash
    cp ../Blinky-Hello-World/sdkconfig .
    ```
-   {{% /expand%}}
-   {{%expand "Windows (64-bit) Command Prompt" %}}
-   ```bash
-   copy ..\Blinky-Hello-World\sdkconfig .
-   ```
-   {{% /expand%}}
    {{% notice note %}}
    You can optionally manually set your Wi-Fi credentials and AWS endpoint for your firmware by following the **[Configuring the ESP32 Firmware](/en/blinky-hello-world/connecting-to-aws.html#configuring-the-esp32-firmware)** step from the **Blinky Hello World** example.
    {{% /notice %}}
-  
-4. Build, flash, and start the serial monitor, replacing **<<DEVICE_PORT>>** with the serial port your Core2 for AWS IoT EduKit device is connected. (To get the serial port the device is connected to, please see the [**Blinky Hello World — Identifying the serial port on host machine**](/en/blinky-hello-world/device-provisioning.html#identifying-the-serial-port-on-host-machine)): 
+2. Use the command below to compile your firmware, upload the firmware, and monitor the serial output of your device. It will take some time to build and flash the app, but after that's done you should see the stream of device logs in your terminal. You can close the monitor session with the **Ctrl** + **C** keystroke combination:
    ```bash
-   idf.py build flash monitor -p <<DEVICE_PORT>> 
+   pio run -e core2foraws -t upload -t monitor 
    ```
-   
-5. It will take some time to build and flash the app, but after that's done you should see the stream of device logs in your terminal. You can close the monitor session with the **Ctrl** + **]** keystroke combination.
+{{% /expand%}}
+{{%expand "Windows" %}}
+1. Copy your `sdkconfig` file from the **Blinky-Hello-World** demo to simplify setting your Wi-Fi and AWS endpoint:
+   ```bash
+   copy ..\Blinky-Hello-World\sdkconfig .
+   ```
+   {{% notice note %}}
+   You can optionally manually set your Wi-Fi credentials and AWS endpoint for your firmware by following the **[Configuring the ESP32 Firmware](/en/blinky-hello-world/connecting-to-aws.html#configuring-the-esp32-firmware)** steps from the **Blinky Hello World** example.
+   {{% /notice %}}
+2. Use the command below to compile your firmware, upload the firmware, and monitor the serial output of your device. It will take some time to build and flash the app, but after that's done you should see the stream of device logs in your terminal. You can close the monitor session with the **Ctrl** + **C** keystroke combination:
+   ```bash
+   pio run -e core2foraws -t upload -t monitor 
+   ```
+{{% /expand%}}
 
-{{% notice note %}}
-If you do not see **(edukit)** prefix at your shell prompt, ensure you activate your conda environment by running `conda activate edukit`.
-If the idf.py command is not found, add the ESP-IDF to your path with the script `. $HOME/esp/esp-idf/export.sh` (macOS/Linux) or `%userprofile%\Desktop\esp-idf\export.bat` (Windows).
-{{% /notice %}}
-
-## Validation steps
-Before moving on to the next chapter, you can validate that your device is configured as intended by...
-
-1. When your Core2 for AWS IoT EduKit is powered on and running the application, you should be able to see in your terminal window logs that look like the following: 
+## Validation
+Before moving on to the next chapter, you can validate that your device is configured as intended by viewing the serial output in the terminal window which look like the following: 
 
 ```
 I (16128) shadow: On Device: roomOccupancy false
