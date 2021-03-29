@@ -77,7 +77,7 @@ weight = 3
     weight = -110
 
 [[menu.shortcuts]]
-name = "<i class='fab fa-github'></i> Code Repository (<i class='fas fa-sync-alt fa-xs'></i> Jan 19, 2021)"
+name = "<i class='fab fa-github'></i> Code Repository (<i class='fas fa-sync-alt fa-xs'></i> Mar 29, 2021)"
 url = "https://github.com/m5stack/Core2-for-AWS-IoT-EduKit"
 weight = 1
 
