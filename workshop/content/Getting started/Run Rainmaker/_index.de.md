@@ -9,7 +9,7 @@ Wir sind bereit, unsere Anwendung zu kompilieren und auf das Gerät zu flashen, 
 ## Öffnen des Projekts in PlatformIO
 
 Im Stammverzeichnis des Projekts, das Sie geklont oder heruntergeladen und extrahiert haben, befinden sich mehrere Ordner. Für dieses Tutorial werden wir das Projekt &quot;Getting-Started&quot; in PlatformIO öffnen. Öffnen Sie zunächst Visual Studio Code und nachdem Sie ein paar Sekunden gewartet haben, bis die PlatformIO-Erweiterung geladen ist, klicken Sie auf das **PlatformIO logo** in der linken Leiste, wählen Sie im linken PlatformIO-Menü die Option Open, klicken Sie auf **Open Project**, navigieren Sie zum Ordner Core2-for-AWS-IoT-EduKit/Getting-Started und klicken Sie auf **open**.
-{{< img "pio_home.png" "PlatformIO home screen" >}}
+{{< img "pio-home.png" "PlatformIO home screen" >}}
 
 ## Identifizieren und Einstellen des seriellen Anschlusses auf dem Host-Rechner
 
@@ -24,7 +24,7 @@ Sehen Sie sich die offiziellen PlatformIO-Dokumente über die Option [upload\_po
 ## Erstellen und Hochladen der RainMaker Agent-Firmware
 
 Sie sind nun bereit, Ihre Firmware zu erstellen und zu flashen. Beginnen Sie mit einem Klick auf das PlatformIO-Logo in der linken Leiste. Klicken Sie dann auf das Symbol (fahren Sie mit der Maus neben **PROJECT TASKS**), um die verfügbaren Optionen zu aktualisieren. Klicken Sie auf die Schaltfläche **Build**, um mit der Erstellung der Gerätefirmware zu beginnen. Dies wird je nach Ihrem Computer einige Minuten dauern. Sobald dies abgeschlossen ist, klicken Sie auf die Option **Upload and Monitor** aus dem Menü PlatformIO project tasks. Sobald der Upload erfolgreich abgeschlossen ist, bootet das Gerät mit der Firmware, die gerade kompiliert und hochgeladen wurde. Außerdem wird die serielle Ausgabe des Geräts in diesem Terminal-Viewport (jetzt das serielle Monitorfenster) angezeigt. Das Gerät durchläuft nun den Prozess der Generierung von Sicherheitsschlüsseln und führt einen Selbstanspruch durch. Die Schlüsselgenerierung kann ein paar Sekunden bis zu ein paar Minuten dauern, aber sobald die Beanspruchung abgeschlossen ist, wird ein QR-Code im seriellen Monitorfenster angezeigt.
-{{< img "pio_menu.png" "PlatformIO Menu to build, flash, monitor" >}}
+{{< img "pio-menu.png" "PlatformIO Menu to build, flash, monitor" >}}
 
 {{% notice note %}}
 Weitere Informationen zur Fehlerbehebung oder FAQs finden Sie in den offiziellen [Espressif RainMaker FAQs](https://rainmaker.espressif.com/docs/faqs.html).
@@ -32,7 +32,7 @@ Weitere Informationen zur Fehlerbehebung oder FAQs finden Sie in den offiziellen
 
 ## Beanspruchen und Bereitstellen des Geräts
 Öffnen Sie auf Ihrem Mobiltelefon die ESP RainMaker Phone App, gewähren Sie die angeforderten Berechtigungen für die mobile App, drücken Sie auf &quot;Add Device&quot; (**Gerät hinzufügen**) und scannen Sie dann den QR-Code, der auf dem Serienmonitor Ihres Computers angezeigt wird (_nicht_ den QR-Code auf dem Gerät). Das Gerät durchläuft dann den Bereitstellungsprozess, der die Wi-Fi-Bereitstellung mit Ihren Wi-Fi-Anmeldeinformationen für Ihr 2,4-GHz-Wireless-Heimnetzwerk beinhaltet. Nach einer erfolgreichen Wi-Fi-Verbindung authentifiziert sich das Gerät und Ihre Telefon-App wird mit mehreren virtuellen Geräten aufgefüllt, die angezeigt und/oder gesteuert werden können. Wenn die virtuellen Geräte in der Telefon-App nach ein oder zwei Minuten als **offline** markiert sind, versuchen Sie, zum Aktualisieren nach unten zu scrollen.
-{{< img "qr_code_scan.png" "Scan the QR code in serial output" >}}
+{{< img "pio-qr_code_scan.png" "Scan the QR code in serial output" >}}
 
 Mit dem virtuellen Gerät, das in der mobilen App aufgelistet und online ist, können Sie den On-Board-Motor oder die LEDs ein- oder ausschalten, die Geschwindigkeit des Motors anpassen, die Farbe und Helligkeit der LED-Balken einstellen und die interne Gerätetemperatur anzeigen.
 
