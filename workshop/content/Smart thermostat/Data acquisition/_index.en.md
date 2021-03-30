@@ -108,7 +108,7 @@ Next, you'll need to open a new PlatformIO CLI terminal window in VS Code by:
    {{% /notice %}}
 2. Use the command below to compile your firmware, upload the firmware, and monitor the serial output of your device. It will take some time to build and flash the app, but after that's done you should see the stream of device logs in your terminal. You can close the monitor session with the **Ctrl** + **C** keystroke combination:
    ```bash
-   pio run -e core2foraws -t upload -t monitor 
+   pio run --environment core2foraws --target upload --target monitor 
    ```
 {{% /expand%}}
 {{%expand "Windows" %}}
@@ -121,7 +121,7 @@ Next, you'll need to open a new PlatformIO CLI terminal window in VS Code by:
    {{% /notice %}}
 2. Use the command below to compile your firmware, upload the firmware, and monitor the serial output of your device. It will take some time to build and flash the app, but after that's done you should see the stream of device logs in your terminal. You can close the monitor session with the **Ctrl** + **C** keystroke combination:
    ```bash
-   pio run -e core2foraws -t upload -t monitor 
+   pio run --environment core2foraws --target upload --target monitor 
    ```
 {{% /expand%}}
 

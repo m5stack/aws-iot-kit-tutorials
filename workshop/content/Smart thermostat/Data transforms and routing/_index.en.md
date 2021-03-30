@@ -49,7 +49,7 @@ The action of this rule is "republish" or in other words, publish the output of 
 
 (Optional depth) Why do we use two $ characters here but a single $ in other uses of the device shadow topics? The reason is the rules engine action optionally supports substitution templates. Substitution templates let you define an expression that gets evaluated at runtime. Substitution templates use the notation `${ YOUR_EXPRESSION_HERE }` and this conflicts with the `$aws` prefix of the device shadow topic. To use the correct device shadow topic in a republish action, you must escape the first $ character and this looks like `$$aws/things/<<CLIENT_ID>>/shadow/update`.
 
-Once you have deployed this rule in IoT Core, you should start to see the room occupancy status updated in the serial monitor output (`pio run -e core2foraws -t monitor`).
+Once you have deployed this rule in IoT Core, you should start to see the room occupancy status updated in the serial monitor output (`pio run --environment core2foraws --target monitor`).
 
 ### Preparing to determine commands for HVAC
 The next milestone in this chapter is to prepare the cloud infrastructure needed to dictate new HVAC states (e.g. heating/cooling/standby) based on current temperature and room occupancy. You will provision the IoT Events service to receive messages and then create a second IoT Core rule to integrate with IoT Events. This will create the data flow from IoT Core to IoT Events that is necessary before you move on to create the detector model that dictates the HVAC state.
@@ -99,7 +99,7 @@ This rule is much simpler compared to the previous one! The rule is configured t
 ## Validation steps
 Before moving on to the next chapter, you can validate that your solution is configured as intended by:
 
-1. As your thermostat device detects varying noise levels, you should see the device receive updated status of roomOccupancy from your rule. Try alternating playing some music to make noise for ten seconds and being quiet for ten seconds to see the state change in the serial monitor (`pio run -e core2foraws -t monitor`).
+1. As your thermostat device detects varying noise levels, you should see the device receive updated status of roomOccupancy from your rule. Try alternating playing some music to make noise for ten seconds and being quiet for ten seconds to see the state change in the serial monitor (`pio run --environment core2foraws --target monitor`).
 
 If these are working as expected, let's move on to [**Cloud application**](/en/smart-thermostat/cloud-application.html).
 

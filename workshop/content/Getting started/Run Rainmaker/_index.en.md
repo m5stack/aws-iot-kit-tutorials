@@ -22,7 +22,7 @@ You are now ready to build (compile) and upload the RainMaker Agent firmware. Th
 
 4) Now it's time to upload the compiled firmware to the connected device over USB by running the command:
     ```bash
-    pio run --environment core2foraws -target upload
+    pio run --environment core2foraws --target upload
     ```
 5) Lastly, monitor the serial output from the device on your host machine via:
    ```bash
@@ -32,7 +32,7 @@ You are now ready to build (compile) and upload the RainMaker Agent firmware. Th
 If during upload or monitoring the serial output you receive an error about an incorrect ports or timeout, open the `platformio.ini` file, and follow the instructions in that file for how to manually set the upload port.
 {{% /notice %}}
 ## Claiming and provisioning the device
-Once the upload has completed successfully, the device will boot with the firmware that was just compiled and uploaded. It will also begin display the serial output from the device in that terminal viewport. The device will be going through the process of generating security keys and performing an [assisted claim](https://rainmaker.espressif.com/docs/claiming.html#assisted-claiming-esp32). Key generation can take a few seconds, up to a few minutes to complete but once claiming completes a QR code will display on the terminal viewport.
+Once the upload has completed successfully, the device will boot with the firmware that was just compiled and uploaded. It will also display the serial output from the device in that terminal viewport. The device will be going through the process of generating security keys and performing an [assisted claim](https://rainmaker.espressif.com/docs/claiming.html#assisted-claiming-esp32). Key generation can take a few seconds, up to a few minutes to complete but once claiming completes a QR code will display on the terminal viewport.
 
 On your mobile phone, open the ESP RainMaker Phone App, grant the requested mobile app permissions, press **Add Device**, and then scan the QR code ouput via the serial monitor in the terminal viewport. It will then go through the provisioning process, which includes Wi-Fi provisioning with your Wi-Fi credentials for your 2.4GHz wireless home network. After a successful Wi-Fi connection, the device will authenticate itself and your phone app will populate with multiple virtual devices that can be viewed and/or controlled. If the virtual devices are marked **offline** on the phone app after a minute or two, try scrolling down to refresh.
 {{< img "pio-qr_code_scan.png" "Scan the QR code in serial output" >}}
@@ -46,7 +46,7 @@ If you entered the wrong Wi-Fi credentials, you'll need to [erase the firmware](
 ## Erasing the firmware with PlatformIO
 Once you are done with this application and ready to move on to other tutorials, you'll need to first erase the device firmware. However, you'll need to stop the active serial monitor first since it's blocking the virtual serial communications port. You can stop the serial monitor by pressing **CTRL** + **C**. To erase the firmware from the device's flash memory, you enter the command:
 ```bash
-pio run -e core2foraws -t erase
+pio run --environment core2foraws --target erase
 ```
 
 {{% notice note %}}

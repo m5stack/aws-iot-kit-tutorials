@@ -26,7 +26,7 @@ You need to restart your host machine *now* to have the permissions applied.
 Visual Studio Code (VS Code) is an open source integrated development environment (IDE) which allows you to view, edit, manage code and more. Download the latest [Visual Studio Code](https://code.visualstudio.com/) for your operating system. For troubleshooting issues with Visual Studio Code installation or usage, please refer to [their documentation](https://code.visualstudio.com/docs/setup/setup-overview).
 
 ## Installing PlatformIO
-[PlatformIO](https://marketplace.visualstudio.com/items?itemName=platformio.platformio-ide)(PIO) provides a professional embedded development platform which simplifies embedded software development. The Visual Studio Code extension provides the functionality of the Platform IO command line interface (CLI) in a graphical interface. You can download the extension and read more about PlatformIO [here](https://platformio.org/install/ide?install=vscode).
+[PlatformIO](https://marketplace.visualstudio.com/items?itemName=platformio.platformio-ide) (PIO) provides a professional embedded development platform which simplifies embedded software development. The Visual Studio Code extension provides the functionality of the Platform IO command line interface (CLI) in a graphical interface. You can download the extension and read more about PlatformIO [here](https://platformio.org/install/ide?install=vscode).
 
 You will need to restart VS Code after PlatformIO extension installation is complete.
 

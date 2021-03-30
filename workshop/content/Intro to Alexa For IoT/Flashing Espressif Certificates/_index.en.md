@@ -50,7 +50,7 @@ After you receive the e-mail containing the credentials zip file, you will need 
    
 2. Use the PIO command below to run a script which will 1) create a binary file with the credential files called `mfg.bin` in the esp_alexa_credentials folder, and then upload the binary to a partition of the on-board [non-volitile flash storage](https://docs.espressif.com/projects/esp-idf/en/v4.2/esp32/api-reference/storage/nvs_flash.html) (NVS) and later be accessed by the application as a key:value pair:
    ```bash
-   pio run -e core2foraws -t flash_certificates
+   pio run --environment core2foraws --target flash_certificates
    ```
 {{% /expand%}}
 {{%expand "Windows" %}}
@@ -61,7 +61,7 @@ After you receive the e-mail containing the credentials zip file, you will need 
    
 2. Use the PIO command below to run a script which will 1) create a binary file with the credential files called `mfg.bin` in the esp_alexa_credentials folder, and then upload the binary to a partition of the on-board [non-volitile flash storage](https://docs.espressif.com/projects/esp-idf/en/v4.2/esp32/api-reference/storage/nvs_flash.html) (NVS) and later be accessed by the application as a key:value pair:
    ```bash
-   pio run -e core2foraws -t flash_certificates
+   pio run --environment core2foraws --target flash_certificates
    ```
 {{% /expand%}}
 

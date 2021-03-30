@@ -30,7 +30,7 @@ The application sits within your **Downloads** folder. It is recommended to opti
 {{% /notice %}}
 
 ## Installing PlatformIO
-[PlatformIO](https://marketplace.visualstudio.com/items?itemName=platformio.platformio-ide)(PIO) provides a professional embedded development platform which simplifies embedded software development. The Visual Studio Code extension provides the functionality of the Platform IO command line interface (CLI) in a graphical interface. You can download the extension and read more about PlatformIO [here](https://platformio.org/install/ide?install=vscode).
+[PlatformIO](https://marketplace.visualstudio.com/items?itemName=platformio.platformio-ide) (PIO) provides a professional embedded development platform which simplifies embedded software development. The Visual Studio Code extension provides the functionality of the Platform IO command line interface (CLI) in a graphical interface. You can download the extension and read more about PlatformIO [here](https://platformio.org/install/ide?install=vscode).
 
 You will need to restart VS Code after PlatformIO extension installation is complete.
 

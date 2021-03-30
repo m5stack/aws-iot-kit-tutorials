@@ -169,7 +169,7 @@ The if/else block is used to evaluate the text value of the new **hvacStatus** k
 ## Monitoring the Device Serial Output
 If you closed the serial monitor from the last chapter by pressing the **CTRL** + **C** keystroke or disconnected the device, you will need to restart the serial monitor. With the device connected, run serial monitor by pasting the following command in the [PlatformIO CLI terminal window](../blinky-hello-world/prerequisites.html#open-the-platformio-cli-terminal-window):
 ```bash
-pio run -e core2forAWS -t monitor
+pio run --environment core2foraws --target monitor
 ```
 
 ## Validation steps

@@ -100,10 +100,10 @@ else if (val.type == SMART_HOME_VAL_TYPE_INTEGER) {
 ## Flashing and testing updated Alexa firmware
 With the project modified to have the necessary device attributes and the control logic to blink the onboard green LED at a specified rate, it is time to build the firmware, flash it on to the reference hardware, and test the capabilities. With the device plugged in and your [PlatformIO CLI terminal window](../blinky-hello-world/prerequisites.html#open-the-platformio-cli-terminal-window) open and selected, paste familiar the command below:
 ```bash
-pio run -e core2foraws -t upload -t monitor 
+pio run --environment core2foraws --target upload --target monitor 
 ```
 {{% notice info %}}
-You can exist the serial monitor with the key combination **CTRL** + **C**. You can restart the serial monitor by entering the command `pio run -e core2foraws -t monitor `.
+You can exist the serial monitor with the key combination **CTRL** + **C**. You can restart the serial monitor by entering the command `pio run --environment core2foraws --target monitor `.
 {{% /notice %}}
 
 If all goes well, you will see an update in your Alexa app that you have a new device called **Green Light**. Try controlling the Power:

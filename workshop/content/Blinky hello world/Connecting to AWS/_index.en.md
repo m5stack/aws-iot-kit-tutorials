@@ -16,7 +16,7 @@ Copy your AWS IoT endpoint without the quotes. It will look something like `3duk
 
 You can enter the configuration menu from the **Blink-Hello-World** directory of the repository:
 ```bash
-pio run -e core2foraws -t menuconfig
+pio run --environment core2foraws --target menuconfig
 ```
 {{< img "hello_world-menuconfig.webp" "Configuring Core2 for AWS IoT EduKit with p.py menuconfig" >}}
 Here you will set the configuration. Use the direction keys on your keyboard to go to **Component config** --> **Amazon Web Services IoT Platform** and open **AWS IoT Endpoint Hostname** to set the string. You can paste the address you copied moments ago into the box and hit _enter_ to set that symbol. Next, go back to the configuration home screen by pressing the *ESC* key twice. Then select **AWS IoT EduKit Configuration** from the menu. Set your **WiFi SSID** and **WiFi Password** with your Wi-FI credentials. Once you are finished, press the *s* button on your keyboard to save, confirm the location of the file by pressing *enter*, followed by *q* to quit.
@@ -34,7 +34,7 @@ You are now ready to build (compile) and upload the Blinky Hello World firmware.
     ```
 2) With the build successful, it's time to upload the compiled firmware to the connected device over USB by running the command:
     ```bash
-    pio run --environment core2foraws -target upload
+    pio run --environment core2foraws --target upload
     ```
 3) Lastly, monitor the serial output from the device on your host machine via:
     ```bash

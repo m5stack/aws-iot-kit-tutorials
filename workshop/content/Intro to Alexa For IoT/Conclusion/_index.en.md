@@ -15,7 +15,7 @@ This is the last tutorial currently available. We will be publishing more, but f
 ## Clean up
 In this solution you did not use any of your own resources in AWS. However, if you are done using the Alexa application, you can completely wipe your device flash memory (and remove the certificates from flash) by entering the command in the [PIO CLI terminal window](../blinky-hello-world/prerequisites.html#open-the-platformio-cli-terminal-window):
 ```bash
-pio run -e core2foraws -t erase
+pio run --environment core2foraws --target erase
 ```
 
 ---

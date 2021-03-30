@@ -31,7 +31,7 @@ To exit the serial monitor, press **CTRL** + **C**.
 To optimize resources used and avoid unwanted possible AWS Cloud service charges, you will be erasing the flash on your device to get it ready for the subsequent tutorials. To erase the flash, you'll need to be in a project that has already been built (such as the one you just completed), exit a running serial monitor that might block the port (press **CTRL** + **C**), and use the command:
 
 ```
-pio run -e core2foraws -t erase
+pio run --environment core2foraws --target erase
 ```
 
 

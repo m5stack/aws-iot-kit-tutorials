@@ -27,7 +27,7 @@ If you have concluded experimenting with this tutorial's solution and do not int
 3. Go to IAM, choose Roles, find the roles for your IoT Core rules and IoT Events detector model in the list and delete them.
 4. Run the command in [PlatformIO CLI terminal window](../blinky-hello-world/prerequisites.html#open-the-platformio-cli-terminal-window) from the **Smart-Thermostat** folder to erase the device firmware and prevent the device from being connected and sending messages to AWS IoT Core. You can also power down the device by holding the power button for 6 seconds:
 ```bash
-pio run -e core2foraws -t erase
+pio run --environment core2foraws --target erase
 ```
 
 The next tutorial to complete is [**Smart Spaces**](/en/smart-spaces.html).
