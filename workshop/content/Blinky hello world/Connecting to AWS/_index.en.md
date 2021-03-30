@@ -38,7 +38,7 @@ You are now ready to build (compile) and upload the Blinky Hello World firmware.
     ```
 3) Lastly, monitor the serial output from the device on your host machine via:
     ```bash
-    pio run --environment core2foraws -target monitor
+    pio run --environment core2foraws --target monitor
     ```
 {{% notice info %}}
 If during upload or monitoring the serial output you receive an error about an incorrect ports or timeout, open the `platformio.ini` file, and follow the instructions in that file for how to manually set the upload port.
