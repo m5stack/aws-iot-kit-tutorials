@@ -6,12 +6,6 @@ title = "MacOS 10.14+ Setup Instructions"
 
 Below are the instructions to set up your macOS computer (host machine) to be able to download the code from the GitHub repository, view and edit the code, compile the code to be usable by the hardware, and upload the code to the hardware's flash memory. These installation steps are sufficient for the **Getting Started** tutorial, which uses Espressif's AWS account and services for the RainMaker platform.
 
-## Install dependencies
-In order to download the code, [compile the code](https://en.wikipedia.org/wiki/Object_code), and run scripts to download future dependencies using the [Python programming language's package installer](https://pip.pypa.io/en/stable/), you'll need to install some dependency libraries or applications first. To download the code from the remote code repository on GitHub, you'll need to install [git](https://git-scm.com/). To compile the code, Espressif uses the [cmake](https://git-scm.com/) build system to parse the configuration of the device application and the [gcc compiler](https://gcc.gnu.org/onlinedocs/gcc/) to compile the firmware to object code that the Core2 for AWS IoT EduKit can understand and run. All the dependencies can be easily installed using apt via the following command in terminal:
-```bash
-sudo apt install build-essential python3-pip curl git cmake
-```
-
 ## Silicon Labs USB to UART bridge setup
 The Core2 for AWS IoT EduKit communicates with the host machine through a Silicon Labs CP210x USB to UART bridge. The on-board CP2104 is an USB-to-UART bridge to facilitate host communication with the ESP32-D0WD microcontroller. The microcontroller communicates bi-directionally over [UART](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/uart.html)0, which the CP210x translates through a virtual communications port on the host machine it establishes over USB-C. To enable the mounting of the virtual serial port and communications across it you will need to download and install the corresponding driver.
 
