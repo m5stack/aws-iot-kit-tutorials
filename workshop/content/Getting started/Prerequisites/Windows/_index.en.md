@@ -12,7 +12,7 @@ To download the code from the remote code repository on GitHub, you'll need to i
 2) It is recommended to use the default options, but ensure that OpenSSL installation is selected.
 
 ## Silicon Labs USB to UART bridge setup
-The Core2 for AWS IoT EduKit communicates with the host machine through a Silicon Labs CP210x USB to UART bridge. The on-board CP2104 is an USB-to-UART bridge to facilitate host communication with the ESP32-D0WD microcontroller. The microcontroller communicates bi-directionally over [UART](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/uart.html)0, which the CP210x translates through a virtual communications port on the host machine it establishes over USB-C. To enable the mounting of the virtual serial port and communications across it you will need to download and install the corresponding driver.
+The Core2 for AWS IoT EduKit communicates with the host machine through a Silicon Labs CP210x USB to UART bridge. The on-board CP2104 is an USB-to-UART bridge to facilitate host communication with the ESP32-D0WD microcontroller. The microcontroller communicates bi-directionally over [UART](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/uart.html)0, which the CP210x translates through a virtual communications port on the host machine it establishes over USB-C. To enable the mounting of the virtual serial port and communications across it, you will need to download and install the corresponding driver.
 1) Ensure the device is not connected to host machine.
 2) Download the macOS Silicon Labs CP210x driver [here](https://www.silabs.com/documents/public/software/CP210x_Universal_Windows_Driver.zip).
 3) Extract the contents of the download.
@@ -28,13 +28,14 @@ Visual Studio Code (VS Code) is an open source integrated development environmen
 ## Installing PlatformIO
 [PlatformIO](https://marketplace.visualstudio.com/items?itemName=platformio.platformio-ide) (PIO) provides a professional embedded development platform which simplifies embedded software development. The Visual Studio Code extension provides the functionality of the Platform IO command line interface (CLI) in a graphical interface. You can download the extension and read more about PlatformIO [here](https://platformio.org/install/ide?install=vscode).
 
-You will need to restart VS Code after PlatformIO extension installation is complete.
+You need to restart VS Code after PlatformIO extension installation finishes.
 
 ## Cloning the code repository
 All of the projects and files exist in a [GitHub repository](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/about-repositories), where you can also view the revision history of each file in the repository (repo). To clone the code you'll need for the tutorials, you'll be using the PIO interface by:
 1) Clicking the **PlatformIO logo** on the VS Code activity bar (left most menu).
 2) From PlatformIO's **Quick Access** menu, under **Miscellaneous**, select **Clone Git Project**.
 3) Paste `https://github.com/m5stack/Core2-for-AWS-IoT-EduKit.git` into the text field and then select the location you want to save the project in.
+{{< img "pio-clone_git_project.en.png" "PlatformIO Clone Git Project" "1 - Open PIO menu, 2 - Clone git project, 3 - Paste repository URL" >}}
 
 ## Downloading and installing the phone apps
 The ESP RainMaker Phone Apps are available for iOS and Android phones to provide Wi-Fi network configuration, user-creation, user-device association and device control. The apps can be found here:

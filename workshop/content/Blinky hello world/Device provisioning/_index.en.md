@@ -30,13 +30,13 @@ cd ../..
 {{% /expand%}}
 {{%expand "Windows" %}}
 To run the registration helper script (located in the **utilities\AWS_IoT_registration_helper** directory), copy and paste the command below into you the PlatformIO CLI terminal window. Before executing, replace  **<<DEVICE_PORT>>** with the communications port your device is virtually mounted on. To look up the port again, see the instructions for [Windows](../getting-started/prerequisites/windows.html#identifying-the-device-communication-port).
-```bash
+```PowerShell
 cd utilities\AWS_IoT_registration_helper\
 python registration_helper.py -p <<DEVICE_PORT>>
 ```
 
 With the device successfully registered and provisioned in AWS IoT, go back to the **Blinky-Hello-World** directory by entering:
-```bash
+```PowerShell
 cd ..\..
 ```
 {{% /expand%}}

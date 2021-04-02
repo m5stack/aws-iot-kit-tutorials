@@ -45,7 +45,7 @@ After you receive the e-mail containing the credentials zip file, you will need 
 {{%expand "Ubuntu or macOS" %}}
 1. Copy the contents of espcredentials to the `Core2-for-AWS-IoT-EduKit/Alexa_for_IoT-Intro/esp_alexa_credentials` folder *except* the **mfg_config.csv** file. Replace **<<PATH_TO>>** with the location of the **espcredentials** folder. The trailing **/** of the source tells [rsync](https://download.samba.org/pub/rsync/rsync.1) to copy the contents to the `./esp_alexa_credentials/` destination. Excluding it will copy the folder and cause file not found errors in the next step:
    ```bash
-   rsync -avr --exclude='mfg_config.csv' <<PATH_TO>>/ ./esp_alexa_credentials/
+   rsync -avr --exclude='mfg_config.csv' <<PATH_TO>>/espcredentials/ ./esp_alexa_credentials/
    ```
    
 2. Use the PIO command below to run a script which will 1) create a binary file with the credential files called `mfg.bin` in the esp_alexa_credentials folder, and then upload the binary to a partition of the on-board [non-volitile flash storage](https://docs.espressif.com/projects/esp-idf/en/v4.2/esp32/api-reference/storage/nvs_flash.html) (NVS) and later be accessed by the application as a key:value pair:
@@ -55,12 +55,12 @@ After you receive the e-mail containing the credentials zip file, you will need 
 {{% /expand%}}
 {{%expand "Windows" %}}
 1. Copy the contents of espcredentials to the `Core2-for-AWS-IoT-EduKit/Alexa_for_IoT-Intro/esp_alexa_credentials` folder *except* the **mfg_config.csv** file. Replace **<<PATH_TO>>** with the location of the **espcredentials** folder. The trailing **/** of the source tells [rsync](https://download.samba.org/pub/rsync/rsync.1) to copy the contents to the `./esp_alexa_credentials/` destination. Excluding it will copy the folder and cause file not found errors in the next step:
-   ```bash
-   robocopy "<<PATH_TO\espcredentials\" ".\esp_alexa_credentials\" /xf mfg_config.csv
+   ```PowerShell
+   robocopy "<<PATH_TO>>\espcredentials\" ".\esp_alexa_credentials\" /xf mfg_config.csv
    ```
    
 2. Use the PIO command below to run a script which will 1) create a binary file with the credential files called `mfg.bin` in the esp_alexa_credentials folder, and then upload the binary to a partition of the on-board [non-volitile flash storage](https://docs.espressif.com/projects/esp-idf/en/v4.2/esp32/api-reference/storage/nvs_flash.html) (NVS) and later be accessed by the application as a key:value pair:
-   ```bash
+   ```PowerShell
    pio run --environment core2foraws --target flash_certificates
    ```
 {{% /expand%}}
