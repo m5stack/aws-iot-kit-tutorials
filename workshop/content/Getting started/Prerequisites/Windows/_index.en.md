@@ -45,7 +45,7 @@ The ESP RainMaker Phone Apps are available for iOS and Android phones to provide
 If you do not posess a compatible Android or iOS device, you can use the [RainMaker CLI](https://rainmaker.espressif.com/docs/cli-setup.html) and substitute the provided instructions.
 
 ## Identifying the device communication port
-If you haven't already, it's time to unbox the Core2 for AWS IoT EduKit reference hardware and connect it to your host computer using the supplied USB-A to USB-C cable to facilitate communication between them. Additionally, included in the package is a hex key that can be used for the installation of additional modules (sold separately). The device should automatically turn on once you plug it in, but if you need to turn it on, press the power button.
+If you haven't already, it's time to unbox the Core2 for AWS IoT EduKit reference hardware and connect it to your host computer's USB 2.0 port using the supplied USB-A to USB-C cable to facilitate communication between them. Additionally, included in the package is a hex key that can be used for the installation of additional modules (sold separately). The device should automatically turn on once you plug it in, but if you need to turn it on, press the power button.
 ![How to turn M5Stack Core2 for AWS on or off](windows/core2foraws_power_on_off.jpg?width=500px&classes=shadow)
 
 With the device ready and the software you'll need for this tutorial installed, let's identify the port your device is virtually mounted to so that you can perform read & write operations to that specific port.
