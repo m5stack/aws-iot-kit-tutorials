@@ -3,7 +3,7 @@ title = "AWS IoT EduKit"
 chapter = true
 weight = 1
 +++
-
+![EduKit Logo](AWS_IoT_EduKIt_Logo-320px_193px.png)
 AWS IoT EduKit では、AWS サービスを利用してIoT アプリケーションを構築する方法を、ワークショップを通して簡単に学ぶことができます。AWS IoT EduKit では、リファレンスハードウェアキットとわかりやすい一連のガイドとサンプルコードで構成されており、学生から経験豊富なエンジニアやプロフェッショナルに至るデベロッパーが、エンドツーエンドの IoT アプリケーションを構築する実践的な経験を得るお手伝いをします。
 
 ### AWS IoT EduKit のメリット
