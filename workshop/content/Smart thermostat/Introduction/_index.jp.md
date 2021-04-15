@@ -23,12 +23,12 @@ AWS のサーバーレスソリューションは、雑音レベルをbooleanに
 
 構築の準備はできていますか? 次の前提条件を満たしているか確認しましょう。
 
-1. **Blinky Hello World(Lチカ)** チュートリアルを完了しましたか?
-2. Core2 for AWS IoT EduKit はすでに AWS IoT Core でプロビジョニングされていますか? つまり、登録された AWS IoT のモノが存在しており、パブリッシュとサブスクライブの操作を可能にする証明書とポリシーがモノにアタッチされていますか? これらのステップは **Blinky Hello World(Lチカ)** チュートリアルでも説明されます
+1. **Lチカ** チュートリアルを完了しましたか?
+2. Core2 for AWS IoT EduKit はすでに AWS IoT Core でプロビジョニングされていますか? つまり、登録された AWS IoT のモノが存在しており、パブリッシュとサブスクライブの操作を可能にする証明書とポリシーがモノにアタッチされていますか? これらのステップは **Lチカ** チュートリアルでも説明されます
 3. デバイスから届くメッセージを、AWS IoT Core コンソールにあるようなテスト MQTT クライアントを使って確認できることを確かめましたか? デバイスがパブリッシュしているトピックにサブスクライブし、テストクライアントでこれらのメッセージの受信を表示できるようになっているはずです
-4. デバイスが論理的にマウントされているシステムポートがありますか? これについては、**Blinky Hello World(Lチカ)** チュートリアルでも取り上げられています。このチュートリアルのいくつかのステップにおいて、**«DEVICE_PORT»** のようなプレースホルダー値にそれを貼り付けます
+4. デバイスが接続されているポートは確認できていますか？ 確認方法については、**Lチカ** チュートリアルで説明されます
 
-前提条件を満たしている場合、次の章「[データ取得](/ja/smart-thermostat/data-acquisition.html)」に移動しましょう。
+前提条件を満たしている場合、次の章「[データ取得](/jp/smart-thermostat/data-acquisition.html)」に移動しましょう。
 
 ---
 {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}} {{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}}

@@ -100,12 +100,12 @@ else if (val.type == SMART_HOME_VAL_TYPE_INTEGER) {
 ```
 
 ## アップデートされた Alexa ファームウェアのフラッシュとテスト
-必要なデバイス属性とオンボードの緑色 LED を指定された速度で点滅させる制御ロジックを持つようにプロジェクトを修正しました。次に、ファームウェアをビルドしてリファレンスハードウェアにフラッシュし、機能をテストします。他のチュートリアルで使用したものと同じコマンドを実行し、**<<DEVICE_PORT>>** を AWS IoT 用 M5Stack Core2 リファレンスハードウェアキットの論理的にマウントされたポートに置き換えます。
+必要なデバイス属性と制御ロジックを持つようにプロジェクトが変更され、オンボードの緑の LED が指定の速度で点滅します。ファームウェアを構築し、リファレンスハードウェアにフラッシュし、機能をテストします。デバイスを接続し、PlatformIO CLI[ターミナルウィンドウ](/jp/blinky-hello-world/prerequisites.html#platformio)を開いて選択し、以下のコマンドを貼り付けます。
 ```bash
-idf.py build flash monitor -p <<DEVICE_PORT>>
+pio run --environment core2foraws --target upload --target monitor
 ```
 {{% notice info %}}
-`CTRL` + `]` キーを押すと、シリアルモニターを置くことができます。コマンド `idf.py monitor -p <<DEVICE_PORT>>` を入力すると、シリアルモニターを再起動することができます。
+**CTRL** + **C** キーを押すと、シリアルモニターから抜けます。コマンド `pio run --environment core2foraws --target monitor` を入力すると、シリアルモニターを再起動することができます。
 {{% /notice %}}
 
 すべてがうまくいくと、**Green Light** という名前の新しいデバイスが追加されたことを示す更新情報が Alexa アプリに表示されます。電源を制御してみましょう。
@@ -125,7 +125,7 @@ Alexa アプリ経由 - Alexa アプリの **Green Light** デバイス (ESP Ale
 
 {{< img "AlexaApp-GreenLight-Blink.webp" "Blinking the green LED with power controller slider" >}}
 
-おめでとうございます。このチュートリアルが完了しました。 [まとめ](/ja/intro-to-alexa-for-iot/conclusion.html)をご覧ください。
+おめでとうございます。このチュートリアルが完了しました。 [まとめ](/jp/intro-to-alexa-for-iot/conclusion.html)をご覧ください。
 
 ---
 {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}} {{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}}

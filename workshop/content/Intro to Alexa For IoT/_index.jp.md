@@ -10,9 +10,8 @@ pre = "<b>5. </b>"
 前提このチュートリアルを始める前に、以下の前提条件を確認してください。
 
 1. [M5Stack Core2 ESP32 IoT Development Kit for AWS IoT EduKit](https://ssci.to/Core2_for_AWS)を持っている。
-1. AWS IoTEduKit リファレンスハードウェア用の M5Stack Core2 にファームウェアをビルドしてフラッシュするのに必要なツールチェーンと依存ソフトウェアをインストールしており、デバイスが論理的にマウントされているシステムポートを知っている。最初に[Blinky Hello World(Lチカ)](/ja/blinky-hello-world.html)のチュートリアルをすべて完了させておくことを強くお勧めします。
-1. 少なくとも、トピック、パブリッシュ、サブスクライブなどの AWS IoT メッセージングの基本的な技術概念について理解している。
-1. [開始方法チュートリアル](/ja/getting-started.html) で説明されている、Visual Studio Code のようなIDE をインストールしている。
+2. [**開始方法**](/jp/getting-started.html) と [**Lチカ**](/jp/blinky-hello-world.html) チュートリアルを完了し、開発環境を設定してファームウェアをコンパイルすることができ、デバイスにファームウェアをアップロードすることができる。
+3. 少なくとも、トピック、パブリッシュ、サブスクライブなどの AWS IoT メッセージングの基本的な技術概念について理解している。
 
 ---
 {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}} {{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}}

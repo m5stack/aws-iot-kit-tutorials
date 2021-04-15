@@ -50,7 +50,7 @@ WHERE 句はこのステートメントがtrueになった場合のみ、ルー�
 
 (補足情報) Device Shadow トピックのその他の使用では *$* 記号は 1 つであるにもかかわらず、この場合は 2 つ使用している理由 ルールエンジンアクションは、任意で置換テンプレートをサポートするためです。置換テンプレートによって、実行時に評価される式を定義できます。置換テンプレートは `${ YOUR_EXPRESSION_HERE }` 表記を使用するため、Device Shadow トピックの `$aws` プレフィックスと競合します。正しい Device Shadow トピックを再発行アクションで使用するには、最初の $ 記号を避ける必要があるため、`$$aws/things/<<CLIENT_ID>>/shadow/update` のようになります。
 
-このルールを IoT Core に保存した後、部屋の在室状況ステータスがスマートサーモスタットロガー (`idf.py monitor -p <<DEVICE_PORT>>`) で更新されているかの確認を開始する必要があります。
+このルールを IoT Core に保存した後、部屋の在室状況ステータスがスマートサーモスタットをシリアルモニター(`pio run --environment core2foraws --target monitor`)で参照することで、更新されているかの確認を行うことができます。
 
 ### HVAC のコマンドを決定する準備を行う
 この章の次のマイルストーンは、現在の室温と部屋の在室状況に基づき、新しい HVAC 状態 (暖房、冷房、維持など) を指示するために必要なクラウドインフラストラクチャを準備することです。メッセージを受信するよう IoT Events サービスをプロビジョニングします。その後、2 つ目の IoT Core ルールを作成し、IoT Events と連携します。これにより、IoT Core から IoT Events へのデータフローが作られます。これは HVAC の状態を指示する探知器モデルの作成に移る前に必要となります。
@@ -105,9 +105,9 @@ SELECT current.state as current.state, current.version as current.version, times
 ## 検証ステップ
 次の章に進む前に、ソリューションが想定どおりに設定されているかを検証できます
 
-1. サーモスタットデバイスはさまざまな雑音レベルを検知するため、デバイスがルールから roomOccupancy の最新ステータスを受信していることを確認する必要があります。音楽を流して 10 秒間音を立て、10 秒間静かにするということを交互に行い、デバイスロガー (`idf.py monitor -p <<DEVICE_PORT>>`) の状態変化を確認します。
+1. サーモスタットデバイスはさまざまな雑音レベルを検知するため、デバイスがルールから roomOccupancy の最新ステータスを受信していることを確認する必要があります。音楽を流して 10 秒間音を立て、10 秒間静かにするということを交互に行い、シリアルモニター(`pio run --environment core2foraws --target monitor`) で状態変化を確認します。
 
-想定どおりに機能している場合は、[クラウドアプリケーション](/ja/smart-thermostat/cloud-application.html)に進みましょう。
+想定どおりに機能している場合は、[クラウドアプリケーション](/jp/smart-thermostat/cloud-application.html)に進みましょう。
 
 ---
 {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}} {{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}}

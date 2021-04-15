@@ -12,9 +12,9 @@ Alexa Voice Service (AVS) を使用すると、デベロッパーはコネクテ
 Alexa Voice Service (AVS) の統合は AWS IoT Core の新機能であり、デバイスメーカーはコネクテッドデバイスを Alexa の組み込みデバイスにすることができます。AWS IoT 向け AVS は、コンピューティングとメモリを消費するタスクを物理デバイスからクラウドにオフロードすることで、Alexa の組み込みデバイスの製造コストと複雑さの両方を軽減します。エンジニアリング部品表 (eBoM) コストが削減できることにより、デバイスメーカーは、ライトスイッチ、サーモスタット、小型家電製品など、差別化された新しいカテゴリーの音声対応製品をコスト効率よく構築できるようになりました。[詳細はこちら >>](https://docs.aws.amazon.com/iot/latest/developerguide/avs-integration-aws-iot.html)
 
 ## それでは始めてみましょう
-このチュートリアルのすべてのコンテンツは、ユーザーが、[M5Stack Core2 ESP32 IoT Development Kit for AWS](https://ssci.to/Core2_for_AWS)を所有し、Amazon Alexa アプリと ESP Alexa スマートフォンアプリを使用するための互換性のある iOS または Android スマートフォンを持っていてること、そして、コマンドプロンプト/ターミナルなどの基本的な技術概念やツールに慣れていることを前提としています。自身のキットを初めて購入する場合は、国内で取り扱っている[スイッチサイエンス](https://ssci.to/Core2_for_AWS)のオンラインショップもしくは、直接 [M5Stack ストア](https://m5stack.com/products/m5stack-core2-esp32-iot-development-kit-for-aws-iot-edukit) で購入してください。
+このチュートリアルのすべてのコンテンツは、ユーザーが、[M5Stack Core2 ESP32 IoT Development Kit for AWS](https://ssci.to/Core2_for_AWS)を所有し、Amazon Alexa アプリと ESP Alexa スマートフォンアプリを使用するための互換性のある iOS または Android スマートフォンを持っていてること、そして、コマンドプロンプト/ターミナルなどの基本的な技術概念やツールに慣れていることを前提としています。自身のキットを初めて購入する場合は、国内で取り扱っている[スイッチサイエンス](https://ssci.to/Core2_for_AWS)のオンラインショップもしくは、[その他のサイト](https://aws.amazon.com/iot/edukit/#Get_started_with_AWS_IoT_EduKit) で購入してください。
 
-準備ができてたら、[Espressif 証明書のフラッシュ](/ja/intro-to-alexa-for-iot/flashing-espressif-certificates.html)を始めましょう。
+準備ができてたら、[Espressif 証明書のフラッシュ](/jp/intro-to-alexa-for-iot/flashing-espressif-certificates.html)を始めましょう。
 
 ---
 {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}} {{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}}

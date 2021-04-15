@@ -22,7 +22,7 @@ AWS IoT Analyticsのドキュメントでは、これについて詳細を網羅
 [AWS IoT Analytics](https://docs.aws.amazon.com/iotanalytics/latest/userguide/welcome.html)にはより多くの機能がありますが、このモジュールの目的からは、この方法が最も簡単にサーモスタットメッセージの履歴を保存し、機械学習モデルのトレーニングデータセットとして蓄積できる方法です。
 
 {{% notice warning %}}
-このアプリケーションを6時間以上実行したままにすると、AWSの料金が発生する可能性があります。不必要なコストが懸念される場合は、チュートリアルを終了したら、すぐに[削除](/ja/smart-spaces/conclusion.html#heading-1)することをおすすめします。
+このアプリケーションを6時間以上実行したままにすると、AWSの料金が発生する可能性があります。不必要なコストが懸念される場合は、チュートリアルを終了したら、すぐに[削除](/jp/smart-spaces/conclusion.html#heading-1)することをおすすめします。
 {{% /notice %}}
 
 ## サーバーレスインフラストラクチャのセットアップ方法
@@ -52,7 +52,7 @@ SELECT current.state.reported.sound, current.state.reported.temperature, current
 {{< img "dataset-run.png" "Running the data set" >}}
 {{< img "dataset-preview.png" "Preview of the data set" >}}
 
-想定どおりに機能している場合は、[機械学習](/ja/smart-spaces/machine-learning.html)に進みましょう。
+想定どおりに機能している場合は、[機械学習](/jp/smart-spaces/machine-learning.html)に進みましょう。
 
 ---
 {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}} {{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}}

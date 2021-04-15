@@ -84,7 +84,7 @@ SageMaker Studio のプロビジョニングが完了(完了まで少し時間�
 これで、機械学習モデルが API エンドポイントとしてデプロイされ、Amazon SageMaker で管理されるようになりました。次章の「機械学習モデルの使用」では、API エンドポイントをサーバーレス関数で使用し、IoT Core ルールの簡易しきい値ロジックを置き換えます。これにより、モデルが生成した推論で `roomOccupancy` 値を決定します。
 
 {{% notice warning %}}
-このアプリケーションを6時間以上実行したままにすると、AWSの料金(S3へのリクエスト)が発生する可能性があります。不必要なコストが懸念される場合は、チュートリアルを終了したら、すぐに[削除](/ja/smart-spaces/conclusion.html#heading-1)することをおすすめします。
+このアプリケーションを6時間以上実行したままにすると、AWSの料金(S3へのリクエスト)が発生する可能性があります。不必要なコストが懸念される場合は、チュートリアルを終了したら、すぐに[削除](/jp/smart-spaces/conclusion.html#heading-1)することをおすすめします。
 {{% /notice %}}
 
 ## 検証ステップ
@@ -94,7 +94,7 @@ SageMaker Studio のプロビジョニングが完了(完了まで少し時間�
 
 {{< img "sagemaker-endpoints.png" "SageMaker endpoints" >}}
 
-想定どおりに機能している場合は、[機械学習モデルの使用](/ja/smart-spaces/working-with-ml-models.html)に進みましょう。
+想定どおりに機能している場合は、[機械学習モデルの使用](/jp/smart-spaces/working-with-ml-models.html)に進みましょう。
 
 ---
 {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}} {{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}}

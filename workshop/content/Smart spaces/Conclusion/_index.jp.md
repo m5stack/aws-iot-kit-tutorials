@@ -39,19 +39,19 @@ SageMaker エンドポイントは時間単位の課金となるため、最も�
 
 IoT Analytics ストレージリソース破棄のステップ:
 
-3. AWS IoT Analytics に移動し、[チャネル] を選択します。リストからチャネルを見つけ、削除します。
-4. AWS IoT Analytics に移動し、[データストア] を選択します。リストからデータストアを見つけ、削除します。
-5. AWS IoT Analytics に移動し、[データセット] を選択します。リストからデータセットを見つけ、削除します。
+1. AWS IoT Analytics に移動し、[チャネル] を選択します。リストからチャネルを見つけ、削除します。
+2. AWS IoT Analytics に移動し、[データストア] を選択します。リストからデータストアを見つけ、削除します。
+3. AWS IoT Analytics に移動し、[データセット] を選択します。リストからデータセットを見つけ、削除します。
 
 IoT Core ルール、Lambda 関数、IoT Events 入力および検知、IoT Analytics パイプラインは、使用した場合に料金が発生します。今後それらが必要ない場合は、それぞれのマネジメントコンソールのリソース詳細ページから削除することによって破棄できます。
 
-6. AWS IoT Core に移動し、[Act]、[Rules (ルール)] の順に選択し、リストからルールを見つけ、削除します。
-7. AWS IoT Analytics に移動し、[パイプライン] を選択します。リストからパイプラインを見つけ、削除します。
-8. AWS Lambda に移動し、[関数] を選択します。リストから関数を見つけ、削除します。
-9. AWS IoT Events に移動し、[入力] を選択します。リストから入力を見つけ、削除します。
-10. AWS IoT Events に移動して、[Detector models (探知器モデル)] を選択し、リストからモデルを見つけて削除します。
+1. AWS IoT Core に移動し、[Act]、[Rules (ルール)] の順に選択し、リストからルールを見つけ、削除します。
+2. AWS IoT Analytics に移動し、[パイプライン] を選択します。リストからパイプラインを見つけ、削除します。
+3. AWS Lambda に移動し、[関数] を選択します。リストから関数を見つけ、削除します。
+4. AWS IoT Events に移動し、[入力] を選択します。リストから入力を見つけ、削除します。
+5. AWS IoT Events に移動して、[Detector models (探知器モデル)] を選択し、リストからモデルを見つけて削除します。
 
-次のチュートリアルである [Alexa for IoT 入門](/ja/intro-to-alexa-for-iot.html)に移動します。
+次のチュートリアルである [Alexa for IoT 入門](/jp/intro-to-alexa-for-iot.html)に移動します。
 
 ---
 {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}} {{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}}

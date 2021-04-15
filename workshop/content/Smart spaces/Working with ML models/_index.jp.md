@@ -142,7 +142,7 @@ SELECT cast(get(get(aws_lambda("arn:aws:lambda:REGION:ACCOUNT_ID:function:FUNCTI
 
 1. AWS IoT Core Test クライアントを使用して、トピック `$aws/things/<<CLIENT_ID>>/shadow/update` (**<<CLIENT_ID>>** は置換) にサブスクライブすると、こちらに 2 種類のメッセージが表示されます。1 つ目はスマートサーモスタットが発行した `state.reported` パスのペイロードです。もう 1 つは、サーモスタットルールにより発行されるようになった、機械学習モデルが決める `state.desired.roomOccupancy` 値のペイロードです。
 
-想定どおりに機能していれば、このモジュールは完了です。[まとめ](/ja/smart-spaces/conclusion.html)に進んでください。
+想定どおりに機能していれば、このモジュールは完了です。[まとめ](/jp/smart-spaces/conclusion.html)に進んでください。
 
 ---
 {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}} {{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}}
