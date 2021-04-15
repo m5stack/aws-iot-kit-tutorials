@@ -25,13 +25,13 @@ pre = "<b>f. </b>"
 1. AWS IoT Core に移動し、[Act] を選択してから [Rules (ルール)] を選択し、リストからルールを見つけて削除します。
 1. AWS IoT Events に移動して、[Detector models (探知器モデル)] を選択し、リストからモデルを見つけて削除します。[Inputs (入力)] を選択し、リストから入力を見つけて削除します。
 1. IAM に移動し、[Rules (ルール)] を選択して、リストからIoT Core ルール向けのロールと IoT Events 探知器モデルを見つけて削除します。
-1. Core2 for AWS IoT EduKit リファレンスハードウェアキットの電源を切るか、**Smart-Thermostat** フォルダからシェルのコマンドを実行して、デバイスが AWS IoT Core に接続されず、メッセージを送信しないようにします。
+1. [PlatformIO CLIターミナルウィンドウ](/jp/blinky-hello-world/prerequisites.html#platformio) の **Smart-Thermosat** フォルダで以下のコマンドを実行して、デバイスのファームウェアを消去することで、デバイスが AWS IoT Core に接続しメッセージを送信できないようにします。電源ボタンを6秒間押し続けてデバイスの電源を切ることもできます。
 
 ```bash
-idf.py erase_flash -p <<DEVICE_PORT>>
+pio run --environment core2foraws --target erase
 ```
 
-次のチュートリアルは、[スマートスペース](/ja/smart-spaces.html)です
+次のチュートリアルは、[スマートスペース](/jp/smart-spaces.html)です
 
 ---
 {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}} {{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}}

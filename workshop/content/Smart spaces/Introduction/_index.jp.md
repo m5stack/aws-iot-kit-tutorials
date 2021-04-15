@@ -31,10 +31,9 @@ pre = "<b>a. </b>"
 ビルドの準備はできていますか? 次の前提条件を満たしているか確認しましょう
 
 1. この一連のチュートリアルの中の前のモジュールである「スマートサーモスタット」は完了していますか?
-1. デバイスが論理的にマウントされているシステムポートがありますか? これについては、「Blinky Hello World(Lチカ)」チュートリアルでも取り上げられています。このチュートリアルのいくつかのステップにおいて、`<<DEVICE_PORT>>`のようなプレースホルダー値にそれを貼り付けます。
-1. AWS IoT Core コンソールにあるようなテストクライアントを使って、スマートサーモスタットから届くメッセージが表示できることを確認しましたか? トピック `$aws/things/<<CLIENT_ID>>/shadow/update/accepted` (`<<CLIENT_ID>>` はデバイスのクライアント ID/シリアルナンバーで置換) にサブスクライブでき、テストクライアントに届くメッセージを表示できる必要があります。
+2. AWS IoT Core コンソールにあるようなテストクライアントを使って、スマートサーモスタットから届くメッセージが表示できることを確認しましたか? トピック `$aws/things/<<CLIENT_ID>>/shadow/update/accepted` (`<<CLIENT_ID>>` はデバイスのクライアント ID/シリアルナンバーで置換) にサブスクライブでき、テストクライアントに届くメッセージを表示できる必要があります。
 
-すべての条件を満たしていれば、次章の[データのルーティングとストレージ](/ja/smart-spaces/data-routing-and-storage.html)に進みましょう。
+すべての条件を満たしていれば、次章の[データのルーティングとストレージ](/jp/smart-spaces/data-routing-and-storage.html)に進みましょう。
 
 ---
 {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}} {{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}}

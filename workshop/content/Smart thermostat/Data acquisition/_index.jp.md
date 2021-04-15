@@ -79,33 +79,50 @@ void app_main()
 }
 ```
 
-## コードサンプル
-サンプルアプリケーションはすでに用意され、ビルドしてデバイスにデブロイできるようになっています。これらのステップに沿って、この章を完了してください。
+## スマートサーモスタットファームウェアのコンパイルとアップロード
+VS Codeと PlatformIO 拡張機能を使用してデバイスにビルドおよびアップロードするためのサンプルアプリケーションが既に準備されています。VS Codeで既に開いている他のプロジェクトがある場合は、まず新しいウィンドウ（ファイル→新しいウィンドウ）を開き、ファイルエクスプローラと作業環境をクリーンにします。
 
-1. 別のチュートリアルで`cloneしていない場合`、このチュートリアル用のコードレポをcloneします
-   ```bash
-   git clone https://github.com/m5stack/Core2-for-AWS-IoT-EduKit.git
-   ```
-2. ディレクトリを**Smart-Thermostat**プロジェクトに変更します
-   ```bash
-   cd Core2ForAWS-AWS-IoT-EduKit/Smart-Thermostat
-   ```
-3. **Blinky-Hello-World** デモの `sdkconfig` ファイルをコピーし、Wi-Fi と AWS エンドポイントの設定をします
+このチュートリアルでは、Smart-Thermostat プロジェクトを使用します。新しいVS Codeウィンドウで、 
+1. VS Codeアクティビティバー(左側のメニュー)の **PlatformIOロゴ** をクリック
+2. 左の PlatformIO メニューから **Open** を選択
+3. **Open Project** をクリック
+4. `Core2-for-AWS-IoT-EduKit/Smart-Thermostat` フォルダに移動し、**open**をクリックします。
+{{< img "pio-home.png" "PlatformIO home screen" "1 - Open PIO menu, 2 - Open PIO home, 3 - Open the project folder" >}}
+
+次に、新しくPlatformIO CLIターミナルウィンドゥを開きます。
+1. VS Codeアクティビティバー(左側のメニュー)の **PlatformIOロゴ** をクリック
+2. **Quick Access** メニューの、**Miscellaneous** にある **New Terminal** をクリックしてターミナルを開きます。**PlatformIO CLI**というラベルが付いたターミナルが開くはずです
+
+{{< img "pio-new_terminal-smart_thermostat.en.png" "PlatformIO CLI terminal in VS Code" "1 - Open PIO menu, 2 - Open new PIO Terminal, 3 - Verify you're in the 'PlatformIO CLI' terminal session, 4 - Paste the commands into terminal, 5 - If you encounter an error autodetecting the port, open the Platform.ini file and follow instructions to manually add the serial port.">}}
+
+「Lチカ」 プロジェクトから設定をコピーし、デバイスファームウェアをコンパイルしてデバイスにアップロードするには、以下のホストマシンの OS のステップに従って、作業を進めます。
+
+{{%expand "Ubuntu または macOS" %}}
+1. Wi-FiとAWS エンドポイントの設定を **Blinky-Hello-World** にある`sdkconfig`をコピーします
    ```bash
    cp ../Blinky-Hello-World/sdkconfig .
    ```
-   * 任意で、ファームウェア向けに Wi-Fi 認証情報と AWS エンドポイントを手動で設定できます。「**Blinky Hello World(Lチカ)**」の例での「**[ESP32 ファームウェアの設定](/en/blinky-hello-world/connecting-to-aws.html#configuring-the-esp32-firmware)**」のステップに沿って設定します
-4. シリアルモニターをビルド、フラッシュ、開始します
+   {{% notice note %}}
+   手動で設定したい場合は、**Lチカ** の手順にある **[Configuring the ESP32 Firmware](/jp/blinky-hello-world/connecting-to-aws.html#esp32-)** を参照してください。
+   {{% /notice %}}
+2. 以下のコマんどを実行して、ファームウエアのコンパイルとフラッシュ、モニターを行います。ビルドとフラッシュには少し時間がかかります。正しくフラッシュされると、ターミナルにログが出力されるのが確認できます。モニターのセッションを終了させる場合は、**Ctrl** + **C** キーを入力することで終了させることが出来ます。
    ```bash
-   idf.py build flash monitor -p <<DEVICE_PORT>> 
+   pio run --environment core2foraws --target upload --target monitor 
    ```
-   **<<DEVICE_PORT>>** は、デバイスが接続されているポートに合わせてください。詳しくはBlinky Hello World(Lチカ)の[ホストマシンのシリアルポートの特定](/ja/blinky-hello-world/device-provisioning.html)を参照してください
-5. アプリをビルドしてフラッシュするのには時間がかかりますが、完了したらターミナルにデバイスログのストリームが表示されるようになります。**Ctrl** + **]** を入力すると、モニターセッションを閉じることができます
-
-{{% notice note %}}
-シェルプロンプトに **(edukit)** が表示されていない場合は、`conda activate edukit` を入力して、conda環境を起動します。
-`idf.py`コマンドが見つからない場合は、`. $HOME/esp/esp-idf/export.sh` (macOS/Linux) or `%userprofile%\Desktop\esp-idf\export.bat` (Windows) のコマンドを実行して、パスにESP-IDFを追加します
-{{% /notice %}}
+{{% /expand%}}
+{{%expand "Windows" %}}
+1. Wi-FiとAWS エンドポイントの設定を **Blinky-Hello-World** にある`sdkconfig`をコピーします
+   ```PowerShell
+   copy ../Blinky-Hello-World/sdkconfig .
+   ```
+   {{% notice note %}}
+   手動で設定したい場合は、**Lチカ** の手順にある **[Configuring the ESP32 Firmware](/jp/blinky-hello-world/connecting-to-aws.html#esp32-)** を参照してください。
+   {{% /notice %}}
+2. 以下のコマんどを実行して、ファームウエアのコンパイルとフラッシュ、モニターを行います。ビルドとフラッシュには少し時間がかかります。正しくフラッシュされると、ターミナルにログが出力されるのが確認できます。モニターのセッションを終了させる場合は、**Ctrl** + **C** キーを入力することで終了させることが出来ます。
+   ```PowerShell
+   pio run --environment core2foraws --target upload --target monitor 
+   ```
+{{% /expand%}}
 
 ## 検証ステップ
 次の章に進む前に、デバイスが想定どおりに設定されているかを検証できます。
@@ -119,7 +136,7 @@ I (16137) shadow: On Device: temperature 64.057533
 I (16143) shadow: On Device: sound 8
 ```
 
-想定どおりに機能している場合は、「[データ同期](/ja/smart-thermostat/data-sync.html)」に進みましょう
+想定どおりに機能している場合は、「[データ同期](/jp/smart-thermostat/data-sync.html)」に進みましょう
 
 ---
 {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}} {{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}}

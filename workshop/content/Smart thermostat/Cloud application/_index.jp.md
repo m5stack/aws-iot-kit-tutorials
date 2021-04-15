@@ -219,7 +219,7 @@ IoT Events での探知器モデル作成方法の詳細は、このワークシ
 
 注: 温度センサーはキットのハウジング内に存在し、コードにはハードコードのオフセットが含まれます。読み込みによって、温度には華氏 10 度 (摂氏 5 度) ほどの差が生じる可能性があります。
 
-ソリューションが予測どおりに動作している場合、[まとめ](/ja/smart-thermostat/conclusion.html)に移動します。
+ソリューションが予測どおりに動作している場合、[まとめ](/jp/smart-thermostat/conclusion.html)に移動します。
 
 ---
 {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}} {{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}}

@@ -8,12 +8,10 @@ pre = "<b>c. </b>"
 この章では、移植された ESP VA-SDK ファームウェアをビルドし、それをデバイスにフラッシュし、Wi-Fi をプロビジョニングしてデバイスを Alexa アカウントに認証させて、AFI のこのベータ版で利用可能な Alexa 音声コマンドを使用していくつかのスマートホーム機能をテストします。
 
 ## ファームウェアをフラッシュする
-ESP-IDF を使用してファームウェアをデバイスにフラッシュします。**<<DEVICE_PORT>>** をデバイスポートに置き換えます。デバイスポートがわからない場合は、「Blinky Hello World(Lチカ)」 の例にある[ホストマシンのシリアルポート識別](/ja/blinky-hello-world/device-provisioning.html#heading)のインストラクションに従ってください。初めて実行する場合はビルドにしばらく時間がかかります。
-
-```bash
-cd path/to/Core2-for-AWS-IoT-EduKit/Alexa_For_IoT-Intro
-idf.py build flash monitor -p <<DEVICE_PORT>>
-```
+PlatformIO CLI を使用して、ファームウェアをコンパイルし、ファームウェアをアップロードし、デバイスのシリアル出力を監視します。アプリのビルドとフラッシュには時間がかかりますが、それが完了すると、端末にデバイスログのストリームが表示されるはずです。ポートが自動検出されないというエラーが表示される場合は、[USBポートの確認](/jp/getting-started/prerequisites.html) の説明を参照して、コマンドを再試行してください。**Ctrl** + **C** キーストロークの組み合わせでモニターセッションを閉じることができます。
+   ```bash
+   pio run --environment core2foraws --target upload --target monitor 
+   ```
 
 ## デバイスをプロビジョニングする
 プロビジョニングを処理するために、Wi-Fi ネットワーク認証情報を構成し、ESP Alexa Phone Application を使用して Alexa アカウントでアプリケーションを認証する必要があります。
@@ -100,7 +98,7 @@ I (97445) [alexa_smart_home]: Namespace: Alexa.PowerController, Name: TurnOn
 
 これは、Alexa を搭載したデバイスには音声アシスタントがあるということのみならず、Alexa を使ってデバイス自体のプロパティを制御できるという点でも、便利です!
 
-次は [カスタムスマートホームデバイス](/ja/intro-to-alexa-for-iot/custom-smart-home-device.html)の作成です。
+次は [カスタムスマートホームデバイス](/jp/intro-to-alexa-for-iot/custom-smart-home-device.html)の作成です。
 
 ---
 {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}} {{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}}
