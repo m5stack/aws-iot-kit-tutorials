@@ -37,7 +37,7 @@ PlatformIOの拡張機能をインストールしたら、VS Codeを再起動す
 1. VS Codeアクティビティバー（左端のメニュー）でPlatformIOのロゴをクリックする。
 2. PlatformIO の **Quick Access**メニューから、**Miscellaneous** で、**Clone Git Project**を選択します。
 3. テキストフィールドに `https://github.com/m5stack/Core2-for-AWS-IoT-EduKit.git` を貼り付けて、プロジェクトを保存する場所を選択します。
-{{< img "pio-clone_git_project.en.png" "PlatformIO Clone Git Project" "1 - Open PIO menu, 2 - Clone git project, 3 - Paste repository URL" >}}
+{{< img "pio-clone_git_project.en.png" "PlatformIO Clone Git Project" "1 - PIOメニューを開く。 2 - Clone Git Projectを選択, 3 - リポジトリURLを貼り付け" >}}
 
 ## スマートフォン向けアプリのダウンロードとインストール
 ESP RainMaker Phone Apps は、iOS および Androidで Wi-Fi ネットワークの構成、ユーザー作成、ユーザーデバイスの関連付け、およびデバイス制御を提供するために利用できます。アプリはこちらにあります：

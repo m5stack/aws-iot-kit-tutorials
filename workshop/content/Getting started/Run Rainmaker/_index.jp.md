@@ -8,7 +8,7 @@ pre = "<b>b. </b>"
 
 ## PlatformIO でプロジェクトを開く
 cloneしたプロジェクトやダウンロードして抽出したプロジェクトのルートには、いくつかのフォルダがあります。このチュートリアルでは、PlatformIO で Getting-Started プロジェクトを開きます。まず Visual Studio Code を開き、PlatformIO 拡張機能がロードされるまで数秒待った後、左バーの **PlatformIO ロゴ** をクリックします。 **[Open Project (プロジェクトを開く)]** を選択し、`Core2-for-AWS-IoT-EduKit/Getting-Started` フォルダに移動し、**Open** をクリックします。
-{{< img "pio-home.png" "PlatformIO home screen" >}}
+{{< img "pio-home.png" "PlatformIO home screen" "1 - PIOメニューを開く。 2 - PIO Homeを開く。 3 - Getting Startedプロジェクトを開く" >}}
 
 ## RainMaker Agent ファームウェアのビルドとアップロード
 これで、RainMaker Agent ファームウェアをビルド（コンパイル）してアップロードする準備ができました。コンパイルは [GCC コンパイラ](https://gcc.gnu.org/onlinedocs/gcc/) によって行われ、人間が読めるコードを [オブジェクトコード](https://en.wikipedia.org/wiki/Object_code) ([elf](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format)) とバイナリファイル (ファームウェア) に変換します。これらのファイルは、デバイスのオンボードフラッシュにアップロードされ、仮想シリアルポートを介して実行されます。シリアルポート(UART 経由) は双方向通信が可能なため、デバイスからホストマシンにデータを受信できます。ファームウェアをビルドしてアップロードし、PlatformIO を使用してシリアルポートを介してデバイスからの出力を監視するには以下の手順を実行します。

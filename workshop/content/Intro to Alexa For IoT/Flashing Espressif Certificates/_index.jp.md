@@ -26,7 +26,7 @@ git clone https://github.com/m5stack/Core2-for-AWS-IoT-EduKit.git
 2. 左の PlatformIO メニューから **Open** を選択します。
 3. **Open Project** をクリックします
 4. `Core2-for-AWS-IOT-Edukit/Alexa_for_IOT-intro` フォルダに移動し、**Open** をクリックします。
-{{< img "pio-home.png" "PlatformIO home screen" "1 - PIOメニューを開く, 2 - PIOホームを開く, 3 - プロジェクトフォルダを開く" >}}
+{{< img "pio-home.png" "PlatformIO home screen" "1 - PIOメニューを開く。 2 - PIO Homeを開く。 3 - プロジェクトフォルダを開く" >}}
 
 次に、新しいPlatformIO CLIターミナルウィンドウをVS Codeで開く必要があります。
 1. VS Codeのアクティビティーバー(左のメニュー)で **PlatformIOのロゴ** をクリックします

@@ -87,13 +87,13 @@ VS Codeと PlatformIO 拡張機能を使用してデバイスにビルドおよ�
 2. 左の PlatformIO メニューから **Open** を選択
 3. **Open Project** をクリック
 4. `Core2-for-AWS-IoT-EduKit/Smart-Thermostat` フォルダに移動し、**open**をクリックします。
-{{< img "pio-home.png" "PlatformIO home screen" "1 - Open PIO menu, 2 - Open PIO home, 3 - Open the project folder" >}}
+{{< img "pio-home.png" "PlatformIO home screen" "1 - PIOメニューを開く。 2 - PIO Homeを開く。 3 - プロジェクトフォルダを開く" >}}
 
 次に、新しくPlatformIO CLIターミナルウィンドゥを開きます。
 1. VS Codeアクティビティバー(左側のメニュー)の **PlatformIOロゴ** をクリック
 2. **Quick Access** メニューの、**Miscellaneous** にある **New Terminal** をクリックしてターミナルを開きます。**PlatformIO CLI**というラベルが付いたターミナルが開くはずです
 
-{{< img "pio-new_terminal-smart_thermostat.en.png" "PlatformIO CLI terminal in VS Code" "1 - Open PIO menu, 2 - Open new PIO Terminal, 3 - Verify you're in the 'PlatformIO CLI' terminal session, 4 - Paste the commands into terminal, 5 - If you encounter an error autodetecting the port, open the Platform.ini file and follow instructions to manually add the serial port.">}}
+{{< img "pio-new_terminal-smart_thermostat.en.png" "PlatformIO CLI terminal in VS Code" "1 - PIOメニューを開く。 2 - 新しいPIOターミナルを開く。 3 - ターミナルが'PlatformIO CLI'セッションを開いていることを確認。 4 - ターミナルにコマンドを貼り付け。 5 - エラーが有った場合は Platform.ini を開き手動でポートを入力します">}}
 
 「Lチカ」 プロジェクトから設定をコピーし、デバイスファームウェアをコンパイルしてデバイスにアップロードするには、以下のホストマシンの OS のステップに従って、作業を進めます。
 
