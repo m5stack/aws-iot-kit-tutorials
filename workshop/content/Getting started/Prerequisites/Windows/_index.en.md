@@ -14,7 +14,7 @@ To download the code from the remote code repository on GitHub, you'll need to i
 ## Silicon Labs USB to UART bridge setup
 The Core2 for AWS IoT EduKit communicates with the host machine through a Silicon Labs CP210x USB to UART bridge. The on-board CP2104 is an USB-to-UART bridge to facilitate host communication with the ESP32-D0WD microcontroller. The microcontroller communicates bi-directionally over [UART](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/uart.html)0, which the CP210x translates through a virtual communications port on the host machine it establishes over USB-C. To enable the mounting of the virtual serial port and communications across it, you will need to download and install the corresponding driver.
 1) Ensure the device is not connected to host machine.
-2) Download the macOS Silicon Labs CP210x driver [here](https://www.silabs.com/documents/public/software/CP210x_Universal_Windows_Driver.zip).
+2) Download the Windows Silicon Labs CP210x driver [here](https://www.silabs.com/documents/public/software/CP210x_Universal_Windows_Driver.zip).
 3) Extract the contents of the download.
    {{% notice info %}}
    You must extract the contents of the folder, the driver will not install if the executable is run from within the archive.
