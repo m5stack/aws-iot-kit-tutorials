@@ -1,5 +1,5 @@
 # AWS IoT EduKit Tutorials
-This repository contains the tutorial content for the AWS IoT EduKit program. To view the AWS IoT EduKit content live and learn more about the program, visit (https://edukit.workshop.aws)[https://edukit.workshop.aws].
+This repository contains the tutorial content for the [AWS IoT EduKit](https://aws.amazon.com/iot/edukit) program. To view the AWS IoT EduKit content live, visit [https://edukit.workshop.aws](https://edukit.workshop.aws). The tutorials contained in this repository are MIT licensed and free to be modified as needed. To contribute to the code or community, read our [contribution guidelines](https://github.com/aws-samples/aws-iot-edukit-tutorials/blob/main/CONTRIBUTING.md). For support or to connect and have open discourse with the community, view our [GitHub discussions](https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions).
 
 ## Repo structure
 ```bash
