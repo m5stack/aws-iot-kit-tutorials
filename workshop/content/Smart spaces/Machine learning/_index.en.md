@@ -47,12 +47,12 @@ The next task is to return to AWS IoT Analytics so you can export the aggregated
 6. Under *Role* choose **Create new** and provide a name for the IAM role that will grant IoT Analytics access to write data to your S3 bucket. Choose **Create role**.
 7. Choose **Save** to finalize your new delivery rule.
 
-{{< img "iota-dataset-delivery.png" "Content delivery rule" >}}
+{{< img "iot_analytics-dataset_delivery.en.png" "Content delivery rule" >}}
 
 8. To generate your data set that gets saved to your new Amazon S3 bucket for training, choose **Actions** then **Run now**. You should see the *Result preview* update when the data set content is done generating.
 
-{{< img "dataset-run.png" "Running the data set" >}}
-{{< img "dataset-preview.png" "Preview of the data set" >}}
+{{< img "iot_analytics-dataset_run.en.png" "Running the data set""1 - Actions, 2 - Run now" >}}
+{{< img "iot_analytics-dataset_preview.en.png" "Preview of the data set" >}}
 
 You are now ready to start your ML experiment back in SageMaker Studio. An experiment will use the reported thermostat data that was just exported by your IoT Analytics data set as inputs. You will configure the experiment to look for ways to accurately predict the existing roomOccupancy column. The automatic training job will analyze your data for relevant algorithms to try, then run 250 training jobs with varying hyperparameters, selecting the one that gives the best fit to your input training data.
 
@@ -73,7 +73,7 @@ Running the experiment might take minutes to hours. You can follow along the exp
 Once the experiment has concluded, the resultant output is 250 trials that SageMaker used to find the best tuning job parameters. Sort the table of trials to find the one marked *Best*. The next milestone is to deploy this trial as a model endpoint so that you can invoke it as an API.
 
 1. Select the trial marked *Best* and choose **Deploy model**.
-   {{< img "sagemaker-trials.png" "SageMaker trials" >}}
+   {{< img "sagemaker-trials.png" "SageMaker trials" "1 - Best, 2 - Deploy model" >}}
 2. Give your endpoint a name. Further steps in this module assume the name `roomOccupancyEndpoint`.
 3. Under *Inference Response Content*, select both *predicted_label* and *probability*. *predicted_label* may already have been added to the list.
 4. Choose **Deploy model** to tell SageMaker to deploy your model as a new consumable API endpoint. This will take several minutes. 

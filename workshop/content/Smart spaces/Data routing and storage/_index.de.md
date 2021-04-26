@@ -50,8 +50,8 @@ Bevor Sie mit dem nächsten Kapitel fortfahren, können Sie überprüfen, ob Ihr
 1. Vergewissern Sie sich, dass Ihr intelligenter Thermostat eingeschaltet ist, Daten veröffentlicht und in dem Raum eingesetzt wird, für den Sie trainieren möchten.
 2. Überprüfen Sie mithilfe der AWS IoT Analytics-Konsole den neuesten Inhalt des Datensatzes und vergewissern Sie sich, dass historische Aufzeichnungen zu Umgebungsgeräuschpegel, Temperatur und Raumbelegung vorhanden sind. Um dies zu überprüfen, suchen Sie Ihren Datensatz in der [IoT Analytics-Konsole](https://us-west-2.console.aws.amazon.com/iotanalytics/home?region=us-west-2#/datasets), wählen Sie **Actions** und **Run now** und warten Sie dann, bis die *Ergebnisvorschau* mit dem neuesten Inhalt aktualisiert wurde. Sie sollten ähnliche Ergebnisse wie die folgenden sehen:
 
-{{< img "dataset-run.png" "Running the data set" >}}
-{{< img "dataset-preview.png" "Preview of the data set" >}}
+{{< img "iot_analytics-dataset_run.en.png" "Running the data set" >}}
+{{< img "iot_analytics-dataset_preview.en.png" "Preview of the data set" >}}
 
 Wenn diese wie erwartet funktionieren, lassen Sie uns mit dem [maschinellen Lernen fortfahren](/de/smart-spaces/machine-learning.html).
 

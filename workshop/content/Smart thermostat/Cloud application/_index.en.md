@@ -17,7 +17,7 @@ By the end of this chapter, your solution will do the following:
 In this chapter you will construct a serverless application without any code that analyzes the inputs from your smart thermostat and determines the behavior for the corresponding (fictitious) HVAC system. You will use IoT Events to deploy a resource called a detector model that processes the device shadow messages forwarded by your IoT Core rule, evaluate if any state changes should occur from heating to cooling to standby, then send a message back to your smart thermostat with the updated state change, if any.
 
 Here is a preview of the detector model to create:
-{{< img "detector-model.png" "Detector model" >}}
+{{< img "iot-events-detector_model.en.png" "Detector model" >}}
 
 As you can see, there are three states for the HVAC application: heating, cooling, and standby. The application will always be in one of those states and initializes to the *standby* state. As new messages arrive from the smart thermostat, the detector model evaluates the inputs against conditional logic to determine if the model should transition to a new state.
 

@@ -18,7 +18,7 @@ Sie können das Konfigurationsmenü aus dem **Blink-Hello-World** Verzeichniss d
 ```bash
 idf.py menuconfig
 ```
-{{< img "hello_world-menuconfig.webp" "Configuring Core2 for AWS IoT EduKit with idf.py menuconfig" >}}
+{{< img "idf_menuconfig-aws_endpoint.en.webp" "Configuring Core2 for AWS IoT EduKit with idf.py menuconfig" >}}
 Hier werden Sie die Konfiguration einstellen. Verwenden Sie die Richtungstasten auf Ihrer Tastatur, um zu **Component config** --> **Amazon Web Services IoT Platform** zu gehen und öffnen Sie **AWS IoT Endpoint Hostname**, um die Zeichenfolge einzustellen. Sie können die Adresse, die Sie soeben kopiert haben, in das Feld einfügen und die _Eingabetaste_ drücken, um das Symbol zu setzen. Gehen Sie anschließend zurück zum Startbildschirm der Konfiguration, indem Sie zweimal die ESC-Taste drücken. Wählen Sie dann **AWS IoT EduKit Configuration** aus dem Menü. Stellen Sie Ihre **WiFi SSID** und Ihr **WiFi Password** mit Ihren Wi-FI-Anmeldedaten ein. Wenn Sie fertig sind, drücken Sie die *s-Taste* auf Ihrer Tastatur, um zu speichern, bestätigen Sie den Speicherort der Datei mit der *Eingabetaste*, gefolgt von *q* zum Beenden.
 
 {{% notice warning %}}

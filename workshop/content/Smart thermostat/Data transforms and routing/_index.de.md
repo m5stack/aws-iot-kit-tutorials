@@ -61,7 +61,7 @@ IoT Events hat zwei Ressourcentypen: Eingänge (Inputs) und Detektormodelle. Ein
 Gehen Sie folgendermaßen vor, um die Eingangsressource in IoT Events zu erstellen:
 
 1. Gehen Sie zur [AWS Konsole für IoT Events](https://us-west-2.console.aws.amazon.com/iotevents/home?region=us-west-2). Erweitern Sie das linke Menü, wählen Sie **Inputs** und dann **Create input**.
-   {{< img "IoT_Events-Create-Input.webp" "Choose test in AWS IoT console" >}}
+   {{< img "iot_events-create_input.webp" "Choose test in AWS IoT console" >}}
 2. Benennen Sie Ihren Input `thermostat` und geben Sie ihm eine Beschreibung. Die weiteren Schritte in diesem Modul beziehen sich auf die Benennung `thermostat`.
 3. Sie müssen eine JSON-Datei hochladen, um das Schema zu definieren. Erstellen Sie eine neue Datei auf Ihrem Computer mit folgendem Inhalt und einem Dateinamen wie `input.json`:
 ```JSON

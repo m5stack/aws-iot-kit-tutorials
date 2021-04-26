@@ -11,7 +11,7 @@ pre = "<b>b. </b>"
 VS Codeで既に開いている他のプロジェクトがある場合は、まず新しいウィンドウ（**File**→**New Window**）を開き、ファイルエクスプローラと作業環境を作成します。
 
 このチュートリアルでは、Blinky-Hello-World プロジェクトを使用します。新しいVS Codeのウィンドウで、**PlatformIOロゴ** VS Codeアクティビティバー(左側のメニュー) をクリックし、左の PlatformIO メニューから**Open** を選択し、**Open Project** をクリックし、`Core2-for-AWS-IOT-edukit/Blinky-Hello-World`フォルダに移動し、**open**をクリックします。
-{{< img "pio-home.png" "PlatformIO home screen" "1 - PIOメニューを開く。 2 - PIO Homeを開く。 3 - プロジェクトフォルダを開く" >}}
+{{< img "pio-home.en.png" "PlatformIO home screen" "1 - PIOメニューを開く。 2 - PIO Homeを開く。 3 - プロジェクトフォルダを開く" >}}
 
 プロジェクトを開いたら、PlatformIO CLI ターミナルウィンドゥも開きます。
 

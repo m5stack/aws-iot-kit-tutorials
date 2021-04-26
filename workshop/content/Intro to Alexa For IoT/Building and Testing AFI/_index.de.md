@@ -49,7 +49,7 @@ E (22685) [app_va_cb]: Enabling Mic
 
 Um mit Alexa zu interagieren, müssen Sie *Alexa* zu dem Gerät sagen. Dadurch wird die **Espressif Wake Word Engine**, die auf dem Gerät läuft, in den Aufmerksamkeitszustand **LISTENING** versetzt. Alle Details zu den verschiedenen Aufmerksamkeitszuständen finden Sie in unserer [Dokumentation](https://developer.amazon.com/en-US/docs/alexa/alexa-voice-service/ux-design-attention.html#states). Weitere Informationen zur Audioerfassung finden Sie in der [SpeechRecognizer API Dokumentation](https://developer.amazon.com/en-US/docs/alexa/alexa-voice-service/avs-speechrecognizer-concepts.html).
 
-{{< img "speechrecognizer-state.png" "Audio Capture Speech Recognizer Attention States" >}} 
+{{< img "speechrecognizer-state.en.png" "Audio Capture Speech Recognizer Attention States" >}} 
 
 {{% notice info %}}
 Genau wie jedes Alexa-Gerät hört das Gerät im IDLE-Zustand NUR auf das Schlüsselwort "Alexa". Erst wenn das Schlüsselwort ausgelöst wird, beginnt das Gerät mit dem Audio-Streaming in die Cloud.
@@ -60,7 +60,7 @@ Probieren Sie verschiedene Äußerungen an Alexa aus - die seitlichen LEDs sollt
 * _Alexa, tell me a joke?_
 * _Alexa, turn on all of the lights_ (Funktioniert nur, wenn Sie bereits Smart-Home Geräte im selben Account haben.)
 
-{{< img "Alexa-Time.webp" "Alexa, what time is it?">}} 
+{{< img "alexa-time.en.webp" "Alexa, what time is it?">}} 
 
 ## Testen der Alexa Smart Home-Funktionen (Beta)
 Das AFI-Gerät hat **Alexa Built-In**, d.h. Sie können mit Alexa direkt zum Gerät sprechen und Alexa antwortet mit Sprache auf dem Gerät. Diese Version von AFI von Espressif unterstützt jedoch auch Alexa Smart Home-Befehle als Beta-Funktion, mit der Sie Attribute auf dem Gerät steuern können.
@@ -70,7 +70,7 @@ Die Alexa for AWS IoT-Beispielanwendung erstellt ein virtuelles Gerät namens **
 * [PowerController](https://developer.amazon.com/en-US/docs/alexa/alexa-voice-service/alexa-powercontroller.html) um das Licht ein- und auszuschalten.
 * [RangeController](https://developer.amazon.com/en-US/docs/alexa/alexa-voice-service/alexa-rangecontroller.html) um die Helligkeit des Geräts einzustellen.
 
-![The device named "Light" should show up in your Alexa App](building-and-testing-afi/AlexaApp-LightDevice.png?height=500px)
+![The device named "Light" should show up in your Alexa App](building-and-testing-afi/alexa_app-light_Device.en.png?height=500px)
 
 Da es sich um ein virtuelles Gerät handelt, gibt es den aktualisierten Status auf dem Bildschirm aus. Wir können dies per Sprache oder über die Alexa-App testen.
 

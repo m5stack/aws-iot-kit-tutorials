@@ -18,7 +18,7 @@ You can enter the configuration menu from the **Blink-Hello-World** directory of
 ```bash
 pio run --environment core2foraws --target menuconfig
 ```
-{{< img "hello_world-menuconfig.webp" "Configuring Core2 for AWS IoT EduKit with p.py menuconfig" >}}
+{{< img "idf_menuconfig-aws_endpoint.en.webp" "Configuring Core2 for AWS IoT EduKit with p.py menuconfig" >}}
 Here you will set the configuration. Use the direction keys on your keyboard to go to **Component config** --> **Amazon Web Services IoT Platform** and open **AWS IoT Endpoint Hostname** to set the string. You can paste the address you copied moments ago into the box and hit _enter_ to set that symbol. Next, go back to the configuration home screen by pressing the *ESC* key twice. Then select **AWS IoT EduKit Configuration** from the menu. Set your **WiFi SSID** and **WiFi Password** with your Wi-FI credentials. Once you are finished, press the *s* button on your keyboard to save, confirm the location of the file by pressing *enter*, followed by *q* to quit.
 
 {{% notice warning %}}

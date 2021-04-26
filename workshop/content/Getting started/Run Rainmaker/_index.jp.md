@@ -8,7 +8,7 @@ pre = "<b>b. </b>"
 
 ## PlatformIO でプロジェクトを開く
 cloneしたプロジェクトやダウンロードして抽出したプロジェクトのルートには、いくつかのフォルダがあります。このチュートリアルでは、PlatformIO で Getting-Started プロジェクトを開きます。まず Visual Studio Code を開き、PlatformIO 拡張機能がロードされるまで数秒待った後、左バーの **PlatformIO ロゴ** をクリックします。 **[Open Project (プロジェクトを開く)]** を選択し、`Core2-for-AWS-IoT-EduKit/Getting-Started` フォルダに移動し、**Open** をクリックします。
-{{< img "pio-home.png" "PlatformIO home screen" "1 - PIOメニューを開く。 2 - PIO Homeを開く。 3 - Getting Startedプロジェクトを開く" >}}
+{{< img "pio-home.en.png" "PlatformIO home screen" "1 - PIOメニューを開く。 2 - PIO Homeを開く。 3 - Getting Startedプロジェクトを開く" >}}
 
 ## RainMaker Agent ファームウェアのビルドとアップロード
 これで、RainMaker Agent ファームウェアをビルド（コンパイル）してアップロードする準備ができました。コンパイルは [GCC コンパイラ](https://gcc.gnu.org/onlinedocs/gcc/) によって行われ、人間が読めるコードを [オブジェクトコード](https://en.wikipedia.org/wiki/Object_code) ([elf](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format)) とバイナリファイル (ファームウェア) に変換します。これらのファイルは、デバイスのオンボードフラッシュにアップロードされ、仮想シリアルポートを介して実行されます。シリアルポート(UART 経由) は双方向通信が可能なため、デバイスからホストマシンにデータを受信できます。ファームウェアをビルドしてアップロードし、PlatformIO を使用してシリアルポートを介してデバイスからの出力を監視するには以下の手順を実行します。
@@ -36,7 +36,7 @@ cloneしたプロジェクトやダウンロードして抽出したプロジェ
 アップロードが正常に完了すると、コンパイルおよびアップロードされたばかりのファームウェアでデバイスが起動します。また、ターミナル上にデバイスからのシリアル出力の表示が開始されます。デバイスは、セキュリティキーを生成し、[Assisted Claiming (ESP32)](https://rainmaker.espressif.com/docs/claiming.html#assisted-claiming-esp32) を実行するプロセスを実行します。キーの生成には数秒から数分かかりますが、クレームが完了すると QR コードがターミナルビューポートに表示されます。(QRコードが表示されない場合はケーブルを繋いだまま、Core2 for AWS IoT EduKitを再起動してください)
 
 スマートフォンで ESP RainMaker スマートフォンアプリを開き、必要なモバイルアプリの許可を付与し、 **デバイスの追加** を押してから、パソコンのシリアルモニターに表示される QR コードをスキャンします。その後、2.4GHz ワイヤレスネットワークの Wi-Fi 認証情報を使用した Wi-Fi プロビジョニングなどのプロビジョニングプロセスが実行されます。Wi-Fi 接続が成功すると、デバイスが自身の認証を行い、閲覧または制御可能な複数の仮想デバイスがスマートフォンアプリに表示されます。1～2 分経ってもスマートフォンアプリで仮想デバイスが**オフライン**と表示されている場合は、下にスクロールしてリフレッシュしてみてください。
-{{< img "pio-qr_code_scan.png" "Scan the QR code in serial output" >}}
+{{< img "pio-qr_code_scan.en.png" "Scan the QR code in serial output" >}}
 
 仮想デバイスが一覧表示され、モバイルアプリでオンラインになったら、オンボードモーターや LED のオン/オフ、モーターの速度調整、LED バーの色や明るさの設定、デバイス内部の温度の確認などを行うことができます。
 

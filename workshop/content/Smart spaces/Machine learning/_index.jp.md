@@ -48,12 +48,12 @@ SageMaker Studio のプロビジョニングが完了(完了まで少し時間�
 6. [ロール] で [Create new (新規作成)] を選択し、S3 バケットにデータを書き込む IoT Analytics アクセスを付与する IAM ロールの名前を付けます。[ロールの作成] を選択します。
 7. [保存] を選択し、新規配信ルールを終了します。
 
-{{< img "iota-dataset-delivery.png" "Content delivery rule" >}}
+{{< img "iot_analytics-dataset_delivery.en.png" "Content delivery rule" >}}
 
 1. 新しい Amazon S3 バケットにトレーニング用として保存されるデータセットを生成するには、[アクション]、[Run now (今すぐ実行)] の順に選択します。データセットコンテンツの生成完了後、[Result preview (結果プレビュー)] の更新を確認する必要があります。
 
-{{< img "dataset-run.png" "Running the data set" >}}
-{{< img "dataset-preview.png" "Preview of the data set" >}}
+{{< img "iot_analytics-dataset_run.en.png" "Running the data set" >}}
+{{< img "iot_analytics-dataset_preview.en.png" "Preview of the data set" >}}
 
 これで、SageMaker Studio に戻り、機械学習実験を開始する準備ができました。実験では、通知されたサーモスタットデータを使用します。これは IoT Analytics データセットより入力として今エクスポートされたものです。実験を設定して、既存の roomOccupancy 列を正確に予測する方法を見つけ出します。自動トレーニングジョブは関連するアルゴリズムの試行のため、データを分析します。その後、250 のトレーニングジョブを異なるハイパーパラメータで実行し、入力トレーニングデータに最も適切なものを選択します。
 

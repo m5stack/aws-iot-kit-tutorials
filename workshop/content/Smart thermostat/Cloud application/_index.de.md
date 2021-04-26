@@ -19,7 +19,7 @@ Am Ende dieses Kapitels wird Ihre Lösung Folgendes können:
 In diesem Kapitel werden Sie eine serverlose Anwendung ohne jeglichen Code erstellen, die die Eingaben von Ihrem intelligenten Thermostat analysiert und das Verhalten für das entsprechende (fiktive) HLK-System bestimmt. Sie werden IoT-Events verwenden, um eine Ressource namens Detektormodell bereitzustellen, die die von Ihrer IoT-Core-Regel weitergeleiteten Geräteschattennachrichten verarbeitet, auswertet, ob eine Zustandsänderung von Heizen zu Kühlen zu Standby erfolgen sollte, und dann eine Nachricht mit der aktualisierten Zustandsänderung, falls vorhanden, an Ihren intelligenten Thermostat zurücksendet.
 
 Hier sehen Sie eine Vorschau auf das zu erstellende Detektormodell:
-{{< img "detector-model.png" "Detector model" >}}
+{{< img "iot-events-detector_model.en.png" "Detector model" >}}
 
 Wie Sie sehen können, gibt es drei Zustände für die HLK-Anwendung: Heizen, Kühlen und Standby. Die Anwendung befindet sich immer in einem dieser Zustände und wird mit dem Standby-Zustand initialisiert. Wenn neue Meldungen vom intelligenten Thermostat eintreffen, wertet das Detektormodell die Eingaben anhand der bedingten Logik aus, um zu bestimmen, ob das Modell in einen neuen Zustand übergehen soll.
 

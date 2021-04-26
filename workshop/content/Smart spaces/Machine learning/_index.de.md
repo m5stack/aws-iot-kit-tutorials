@@ -48,12 +48,12 @@ Die nächste Aufgabe besteht darin, zu AWS IoT Analytics zurückzukehren, damit 
 6. Wählen Sie unter *Role* die Option **Create new** (Neu erstellen) und geben Sie einen Namen für die IAM-Rolle an, die IoT Analytics Zugriff auf das Schreiben von Daten in Ihren S3-Bucket gewährt. Wählen Sie **Create role**.
 7. Wählen Sie **Save**, um Ihre neue Lieferregel zu bestätigen.
 
-{{< img "iota-dataset-delivery.png" "Content delivery rule" >}}
+{{< img "iot_analytics-dataset_delivery.en.png" "Content delivery rule" >}}
 
 8. Um Ihren Datensatz zu generieren, der für die Schulung in Ihrem neuen Amazon S3-Bucket gespeichert wird, wählen Sie **Actions** und dann **Run now**. Sie sollten sehen, dass die _Ergebnisvorschau_ aktualisiert wird, wenn der Inhalt des Datensatzes generiert wurde.
 
-{{< img "dataset-run.png" "Running the data set" >}}
-{{< img "dataset-preview.png" "Preview of the data set" >}}
+{{< img "iot_analytics-dataset_run.en.png" "Running the data set" >}}
+{{< img "iot_analytics-dataset_preview.en.png" "Preview of the data set" >}}
 
 Sie sind nun bereit, Ihr ML-Experiment zurück in SageMaker Studio zu starten. Ein Experiment wird die gemeldeten Thermostatdaten, die gerade von Ihrem IoT Analytics-Datensatz exportiert wurden, als Eingaben verwenden. Sie werden das Experiment so konfigurieren, dass es nach Möglichkeiten sucht, die vorhandene Spalte &quot;roomOccupancy&quot; genau vorherzusagen. Der automatische Trainingsauftrag analysiert Ihre Daten auf relevante Algorithmen, die ausprobiert werden sollen, und führt dann 250 Trainingsaufträge mit unterschiedlichen Hyperparametern aus, wobei derjenige ausgewählt wird, der die beste Anpassung an Ihre Eingabetrainingsdaten bietet.
 

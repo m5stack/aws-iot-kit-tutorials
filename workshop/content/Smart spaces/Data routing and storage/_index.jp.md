@@ -49,8 +49,8 @@ SELECT current.state.reported.sound, current.state.reported.temperature, current
 1. スマートサーモスタットの電源が入っていてデータを発行しており、トレーニングを行う部屋に設置されていることを確認します
 1. [AWS IoT Analytics コンソール](https://us-west-2.console.aws.amazon.com/iotanalytics/home?region=us-west-2#/datasets)を使用して、最新のデータセットの中身を確認し、周囲の雑音レベル、気温、部屋の在室状況の履歴データが入っているかを検証します。この確認を行うには、[IoT Analytics コンソール](https://us-west-2.console.aws.amazon.com/iotanalytics/home?region=us-west-2#/datasets) でプロジェクト名で指定したデータセットの詳細画面を開き、[アクション]、[Run now (すぐに実行)] の順に選択し、[Result preview (結果プレビュー)] が最新の内容に更新されるまで待ちます。次のような結果が表示されます
 
-{{< img "dataset-run.png" "Running the data set" >}}
-{{< img "dataset-preview.png" "Preview of the data set" >}}
+{{< img "iot_analytics-dataset_run.en.png" "Running the data set" >}}
+{{< img "iot_analytics-dataset_preview.en.png" "Preview of the data set" >}}
 
 想定どおりに機能している場合は、[機械学習](/jp/smart-spaces/machine-learning.html)に進みましょう。
 

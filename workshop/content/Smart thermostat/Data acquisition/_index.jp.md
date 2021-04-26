@@ -87,7 +87,7 @@ VS Codeと PlatformIO 拡張機能を使用してデバイスにビルドおよ�
 2. 左の PlatformIO メニューから **Open** を選択
 3. **Open Project** をクリック
 4. `Core2-for-AWS-IoT-EduKit/Smart-Thermostat` フォルダに移動し、**open**をクリックします。
-{{< img "pio-home.png" "PlatformIO home screen" "1 - PIOメニューを開く。 2 - PIO Homeを開く。 3 - プロジェクトフォルダを開く" >}}
+{{< img "pio-home.en.png" "PlatformIO home screen" "1 - PIOメニューを開く。 2 - PIO Homeを開く。 3 - プロジェクトフォルダを開く" >}}
 
 次に、新しくPlatformIO CLIターミナルウィンドゥを開きます。
 1. VS Codeアクティビティバー(左側のメニュー)の **PlatformIOロゴ** をクリック

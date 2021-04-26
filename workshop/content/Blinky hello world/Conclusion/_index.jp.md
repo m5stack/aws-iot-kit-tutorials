@@ -15,10 +15,10 @@ pre = "<b>e. </b>"
 デバイス上のアプリケーションは、[FreeRTOS カーネル](https://www.freertos.org/)を使用しています。リアルタイムオペレーティングシステム(RTOS)について詳しくは[こちら](https://www.freertos.org/about-RTOS.html)を参照してください。これは、コンパイルしたバイナリ (および他のライブラリやドライバー) にアプリケーションコードとともにバンドルされます。FreeRTOS カーネルは、シーケンシャルコードのブロック ([タスク](https://www.freertos.org/taskandcr.html)と呼ばれる) を、プロセッサで実行する時間を持つようにスケジュールします。この章のLチカではAWS に送信するメッセージの作成、受信したメッセージの処理、表示の更新、LED の点滅など、永続的にループするタスクがあります。 
 
 AWS IoT EduKit 用 Core2 は 240 MHz デュアルコアプロセッサをパックしていますが、一般的なPCのような 4 GHz以上や、 8コア以上と比較すると、非常に性能が限られています。このようなデバイスの貴重なプロセッサ時間を最大限に活用するために、FreeRTOS カーネルは [タスク状態](https://www.freertos.org/RTOS-task-states.html) を実行中や中断などの [状態] にします。FreeRTOSカーネルは、マイクロコントローラアプリケーションに、別のタスクが中断またはブロックされた状態になった後、実行する個々のタスクを迅速に切り替えることで、プロセッサを最適化する機能を提供します (下図参照)。これにより、同時実行性が向上し、単純な [Super Loop Architecture](https://en.wikibooks.org/wiki/Embedded_Systems/Super_Loop_Architecture) と比較して、組み込みアプリケーションのパフォーマンスが大幅に向上します。
-{{< img "RTOS_scheduling_execution.png" "Example of FreeRTOS application scheduling" "1 - MQTTの開始。 2 - MQTT タスクのブロック & 画面表示タスク開始, 3 - 画面表示タスクのブロック & MQTTタスクの実行、メッセージング。 4 - MQTTタスクのブロック & LED点滅タスクの実行(LED on)。 5 - 点滅タスクのブロック & 画面表示タスクの実行, 6 - 画面表示タスクのブロック & 点滅タスクの実行(LED off), 7 - 点滅タスクのブロック & 画面表示タスクの実行">}}
+{{< img "RTOS_scheduling_execution.en.png" "Example of FreeRTOS application scheduling" "1 - MQTTの開始。 2 - MQTT タスクのブロック & 画面表示タスク開始, 3 - 画面表示タスクのブロック & MQTTタスクの実行、メッセージング。 4 - MQTTタスクのブロック & LED点滅タスクの実行(LED on)。 5 - 点滅タスクのブロック & 画面表示タスクの実行, 6 - 画面表示タスクのブロック & 点滅タスクの実行(LED off), 7 - 点滅タスクのブロック & 画面表示タスクの実行">}}
 
 Super Loop Architectureのプログラミングは簡単ですが、コードの実行をブロック/遅延するコード領域は、MCUがアイドル状態であることを意味します。これにより、さまざまなレイテンシーと帯域幅によるクラウド接続、コードのブロックによるデータの損失やアクションの実行が重要であるアプリケーション、または単にスムーズなディスプレイ画面を動かすために、RTOS が不可欠になります。
-{{< img "super_loop_execution.png" "Example of super loop application execution" "1 - MQTTの処理を中断, 2 - MQTTメッセージの処理中断 & LEDの点灯、,500msスリープ、 LEDの消灯、 500msスリープ。 3 - 点滅処理の終了 & ディスプレイの再表示。 4 - ディスプレイの操作終了 & LEDの点灯、,500msスリープ、 LEDの消灯、 500msスリープ" >}}
+{{< img "super_loop_execution.en.png" "Example of super loop application execution" "1 - MQTTの処理を中断, 2 - MQTTメッセージの処理中断 & LEDの点灯、,500msスリープ、 LEDの消灯、 500msスリープ。 3 - 点滅処理の終了 & ディスプレイの再表示。 4 - ディスプレイの操作終了 & LEDの点灯、,500msスリープ、 LEDの消灯、 500msスリープ" >}}
 
 もっと詳しく、RTOSについて学びたい場合は、この[ビデオシリーズ](https://www.youtube.com/watch?v=F321087yYy4)を参照してください。FreeRTOSについて学びたい場合は、[公式のサイト](https://www.freertos.org/RTOS.html)や、[AWS Black Belt Online Seminar](https://aws.amazon.com/jp/blogs/news/webinar-bb-freertos-2020/)を御覧ください。
 

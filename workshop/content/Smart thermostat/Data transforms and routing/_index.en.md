@@ -58,7 +58,7 @@ IoT Events has two resource types: inputs and detector models. An input is a pre
 
 Follow these steps to create the input resource in IoT Events:
 1. Go to [IoT Events management console](https://us-west-2.console.aws.amazon.com/iotevents/home?region=us-west-2). Expand the left menu, choose **Inputs**, then choose **Create input**.
-   {{< img "IoT_Events-Create-Input.webp" "Choose test in AWS IoT console" >}}
+   {{< img "iot_events-create_input.webp" "Choose test in AWS IoT console" >}}
 2. Name your input `thermostat` and give it a description. Further steps in this module are dependent upon the name being `thermostat`.
 3. You must upload a JSON file to define the schema. Create a new file on your computer with the following contents and a file name like `input.json`:
 ```JSON

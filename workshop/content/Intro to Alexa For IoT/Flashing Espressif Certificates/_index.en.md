@@ -29,7 +29,7 @@ For this tutorial, you will use the Alexa_For_IoT-Intro project. In your new VS 
 2. Select **Open** from the left PlatformIO menu
 3. Click **Open Project**
 4. Navigate to the `Core2-for-AWS-IoT-EduKit/Alexa_For_IoT-Intro` folder, and click **open**.
-{{< img "pio-home.png" "PlatformIO home screen" "1 - Open PIO menu, 2 - Open PIO home, 3 - Open the project folder" >}}
+{{< img "pio-home.en.png" "PlatformIO home screen" "1 - Open PIO menu, 2 - Open PIO home, 3 - Open the project folder" >}}
 
 Next, you'll need to open a new PlatformIO CLI terminal window in VS Code by:
 1) Click the **PlatformIO logo** on the VS Code activity bar (left most menu).

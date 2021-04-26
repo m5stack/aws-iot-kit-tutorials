@@ -107,20 +107,20 @@ You can exist the serial monitor with the key combination **CTRL** + **C**. You 
 {{% /notice %}}
 
 If all goes well, you will see an update in your Alexa app that you have a new device called **Green Light**. Try controlling the Power:
-!["Green Light" device added notification](custom-smart-home-device/AlexaApp-GreenLightFound.jpg?height=500px&classes=shadow)
+!["Green Light" device added notification](custom-smart-home-device/alexa_app-green_light-found.en.jpg?height=500px&classes=shadow)
 
 ![Device named "Green Light" listed in your Alexa App](custom-smart-home-device/AlexaApp-GreenLight.png?height=500px&classes=shadow)
 
 * Voice: _Alexa, turn on/off green light light_ - the side green LED light should turn off and on
 * Via the Alexa app - open your Alexa app (not the Espressif app), go to Devices and then either "Lights" or "All Devices" and you should see the device named "Green Light" (see screenshots below). Tap the power icon and you should see the icon toggle between off and on. 
 
-{{< img "AlexaApp-GreenLight-Power480.webp" "Power Controller implemented with the green light" >}}
+{{< img "alexa_app-green_light-power_press.webp" "Power Controller implemented with the green light" >}}
 
 You can also test the Blink functionality:
 
 * Voice: _Alexa, set blink to 7_ - the side green LED light should blink 7 times
 * Via the Alexa app - From the **Green Light** device in your Alexa app (not the ESP Alexa mobile phone app), adjust the slider between 1 and 10 and the device should blink the specified number of times.
-{{< img "AlexaApp-GreenLight-Blink.webp" "Blinking the green LED with power controller slider" >}}
+{{< img "alexa_app-green_light-blink_slider.en.webp" "Blinking the green LED with power controller slider" >}}
 
 Congratulations, you've completed this tutorial! On to the [**Conclusion**](/en/intro-to-alexa-for-iot/conclusion.html).
 

@@ -8,7 +8,7 @@ We're ready to compile and upload our application on to the device, provision th
 
 ## Opening the project in PlatformIO
 There are several folders at the root of the repository you cloned from GitHub in the last chapter. For this tutorial, you will use the Getting-Started project and perform the operations you need in PlatformIO. First open Visual Studio Code and after waiting a few seconds for the PlatformIO extension to load, click the **PlatformIO logo** VS Code activity bar (left most menu), select **Open** from the left PlatformIO menu, click **Open Project**, navigate to the `Core2-for-AWS-IoT-EduKit/Getting-Started` folder, and click **open**.
-{{< img "pio-home.png" "PlatformIO home screen" "1 - Open PIO menu, 2 - Open PIO home, 3 - Open Getting Started project" >}}
+{{< img "pio-home.en.png" "PlatformIO home screen" "1 - Open PIO menu, 2 - Open PIO home, 3 - Open Getting Started project" >}}
 
 ## Building and uploading the RainMaker Agent firmware
 You are now ready to build (compile) and upload the RainMaker Agent firmware. The compiling is done by the [GCC compiler](https://gcc.gnu.org/onlinedocs/gcc/), which converts the provided human readable code into [object code](https://en.wikipedia.org/wiki/Object_code) as [elf](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format) and binary files (the firmware). These files are then uploaded to the device's on-board flash for it to execute via the virtual serial port. The serial port (via UART) allows bi-directional communication, so you are able to recieve data from the device to the host machine. To build and then upload the firmware, and monitor the output from the device through the serial port using PlatformIO:
@@ -35,7 +35,7 @@ If during upload or monitoring the serial output you receive an error about an i
 Once the upload has completed successfully, the device will boot with the firmware that was just compiled and uploaded. It will also display the serial output from the device in that terminal viewport. The device will be going through the process of generating security keys and performing an [assisted claim](https://rainmaker.espressif.com/docs/claiming.html#assisted-claiming-esp32). Key generation can take a few seconds, up to a few minutes to complete but once claiming completes a QR code will display on the terminal viewport.
 
 On your mobile phone, open the ESP RainMaker Phone App, grant the requested mobile app permissions, press **Add Device**, and then scan the QR code ouput via the serial monitor in the terminal viewport. It will then go through the provisioning process, which includes Wi-Fi provisioning with your Wi-Fi credentials for your 2.4GHz wireless home network. After a successful Wi-Fi connection, the device will authenticate itself and your phone app will populate with multiple virtual devices that can be viewed and/or controlled. If the virtual devices are marked **offline** on the phone app after a minute or two, try scrolling down to refresh.
-{{< img "pio-qr_code_scan.png" "Scan the QR code in serial output" >}}
+{{< img "pio-qr_code_scan.en.png" "Scan the QR code in serial output" >}}
 
 With the virtual device listed and online in your mobile app, you can turn the on-board motor or LEDs on or off, adjust the speed of the motor, set the color and brightness of the LED bars, and view the internal device temperature.
 

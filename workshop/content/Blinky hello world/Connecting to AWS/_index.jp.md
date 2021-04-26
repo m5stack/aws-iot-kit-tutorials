@@ -18,7 +18,7 @@ AWS IoT エンドポイントを引用符なしでコピーします。`3duk1t3x
 ```bash
 pio run --environment core2foraws --target menuconfig
 ```
-{{< img "hello_world-menuconfig.webp" "Configuring Core2 for AWS IoT EduKit with p.py menuconfig" >}}
+{{< img "idf_menuconfig-aws_endpoint.en.webp" "Configuring Core2 for AWS IoT EduKit with p.py menuconfig" >}}
 
 ここでは設定を行います。キーボードの方向キーを使って、[Component config] –> [Amazon Web Services IoT Platform] に移動し、[AWS IoT Endpoint Hostname] を開いて文字列を設定します。先ほどコピーしたアドレスをボックスに貼り付けて **enter** キーを押すと、その記号が設定されます。
 

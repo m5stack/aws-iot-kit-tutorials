@@ -49,8 +49,8 @@ Before moving on to the next chapter, you can validate that your serverless appl
 1. Ensure that your smart thermostat is powered on, publishing data, and deployed in the room you want to train on.
 2. Using the AWS IoT Analytics console, review the most recent data set contents and verify there are historical records of ambient noise levels, temperature, and room occupancy. To check this, find your data set in the [IoT Analytics console](https://us-west-2.console.aws.amazon.com/iotanalytics/home?region=us-west-2#/datasets), choose **Actions** and **Run now**, then wait for the *Result preview* to update with the latest content. You should see results similar to the following:
 
-{{< img "dataset-run.png" "Running the data set" >}}
-{{< img "dataset-preview.png" "Preview of the data set" >}}
+{{< img "iot_analytics-dataset_run.en.png" "Running the data set" "1 - Actions, 2 - Run now" >}}
+{{< img "iot_analytics-dataset_preview.en.png" "Preview of the data set" >}}
 
 If these are working as expected, let's move on to [**Machine learning**](/en/smart-spaces/machine-learning.html).
 

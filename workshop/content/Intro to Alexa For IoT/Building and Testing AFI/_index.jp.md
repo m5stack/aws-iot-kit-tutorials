@@ -46,7 +46,7 @@ E (22685) [app_va_cb]: Enabling Mic
 
 Alexa と対話するには、デバイスに Alexa と話しかける必要があります。それによって、デバイスで実行されている**Espressif Wake Word Engine** がトリガーされ、**LISTENING** アテンション状態に入ります。さまざまなアテンション状態の詳細については、[ドキュメンテーション](https://developer.amazon.com/en-US/docs/alexa/alexa-voice-service/ux-design-attention.html#states)を参照してください。オーディオキャプチャの詳細については、[SpeechRecognizer API](https://developer.amazon.com/en-US/docs/alexa/alexa-voice-service/avs-speechrecognizer-concepts.html) ドキュメンテーションを参照してください。
 
-{{< img "speechrecognizer-state.png" "Audio Capture Speech Recognizer Attention States" >}}
+{{< img "speechrecognizer-state.en.png" "Audio Capture Speech Recognizer Attention States" >}}
 
 {{% notice info %}}
 他の Alexa デバイスと同様に、デバイスが IDLE 状態のときは、キーワード「Alexa」だけをリッスンします。ひとたびキーワードがトリガーされると、デバイスはクラウドへのオーディオストリーミングを開始します。
@@ -64,7 +64,7 @@ Alexa にさまざまな言葉をかけてみてください。**Alexa** が聞�
 * _Alexa, turn on all of the lights_ 
   * 同じアカウントですでにいくつかの Alexa のスマートホームデバイスを使用している場合にのみ機能します
 
-{{< img "Alexa-Time.webp" "Alexa, what time is it?">}}
+{{< img "alexa-time.en.webp" "Alexa, what time is it?">}}
 
 ## Alexa スマートホーム機能 (ベータ版) のテスト
 AFI デバイスには **Alexa Built-In** が搭載されています。これは Alexa に話しかけるには直接デバイスに話しかければよく、Alexa はデバイスから音声で応答することを意味します。しかし、Espressif の AFI のこのバージョンはベータ機能として Alexa スマートホームコマンドもサポートしているため、デバイスの属性を制御することができます。
@@ -74,7 +74,7 @@ Alexa for AWS IoT サンプルアプリケーションは Alexa アプリ内に 
 * [PowerController](https://developer.amazon.com/en-US/docs/alexa/alexa-voice-service/alexa-powercontroller.html) はライトの点灯・消灯を行います。
 * [RangeController](https://developer.amazon.com/en-US/docs/alexa/alexa-voice-service/alexa-rangecontroller.html) はデバイスの明るさを調整します。
 
-![The device named "Light" should show up in your Alexa App](building-and-testing-afi/AlexaApp-LightDevice.png?height=500px)
+![The device named "Light" should show up in your Alexa App](building-and-testing-afi/alexa_app-light_Device.en.png?height=500px)
 
 仮想デバイスであるため、更新されたステータスを画面に出力します。これは、音声または Alexa アプリを介してテストできます。
 

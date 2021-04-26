@@ -60,6 +60,7 @@ IoT Events には、入力および探知器モデルという 2 つのリソー
 次のステップに従い、IoT Events に入力リソースを作成します。
 
 1. [IoT Events マネジメントコンソール](https://us-west-2.console.aws.amazon.com/iotevents/home?region=us-west-2) に移動します。左側のメニューを展開し、[入力]、[Create input (入力を作成)] の順に選択します。
+   {{< img "iot_events-create_input.webp" "Choose test in AWS IoT console" >}}
 2. 入力に `thermostat` という名前を付け、説明を記入します。このモジュールの今後のステップでは、`thermostat` という名前を使います。
 3. JSON ファイルをアップロードして、スキーマを定義する必要があります。次の内容で新しいファイルをコンピュータに作成し、`input.json`のようなファイル名を付けます。
 

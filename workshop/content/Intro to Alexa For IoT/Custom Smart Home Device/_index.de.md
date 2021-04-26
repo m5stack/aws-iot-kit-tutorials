@@ -114,20 +114,20 @@ Sie können den seriellen Monitor mit der Tastenkombination `STRG` + `]` beenden
 {{% /notice %}}
 
 Wenn alles gut geht, sehen Sie eine Aktualisierung in Ihrer Alexa-App, dass Sie ein neues Gerät namens **Green Light** haben. Versuchen Sie, den Strom zu steuern: 
-!["Green Light" Gerät added notification](custom-smart-home-device/AlexaApp-GreenLightFound.jpg?height=500px&classes=shadow)
+!["Green Light" Gerät added notification](custom-smart-home-device/alexa_app-green_light-found.en.jpg?height=500px&classes=shadow)
 
 ![Gerät namens "Green Light" in Ihrer Alexa App](custom-smart-home-device/AlexaApp-GreenLight.png?height=500px&classes=shadow)
 
 * Sprache: _Alexa, turn on/off green light light_ - das seitliche grüne LED-Licht sollte aus- und eingeschaltet werden.
 * Über die Alexa-App - öffnen Sie Ihre Alexa-App (nicht die Espressif-App), gehen Sie zu "Geräte" und dann entweder zu "Lichter" oder zu "Alle Geräte", und Sie sollten das Gerät mit dem Namen "Green Light" sehen (siehe Screenshots unten). Tippen Sie auf das Stromsymbol und Sie sollten sehen, dass das Symbol zwischen Aus und Ein wechselt.
 
-{{< img "AlexaApp-GreenLight-Power480.webp" "Power Controller implemented with the green light" >}}
+{{< img "alexa_app-green_light-power_press.webp" "Power Controller implemented with the green light" >}}
 
 Sie können auch die Blink-Funktionalität testen:
 
 * Sprache: _Alexa, set blink to 7_ - die seitliche grüne LED-Leuchte sollte 7 Mal blinken.
 * Über die Alexa-App - Stellen Sie auf dem **Green Light**-Gerät in Ihrer Alexa-App (nicht in der ESP Alexa-Handy-App) den Schieberegler zwischen 1 und 10 ein und das Gerät sollte die angegebene Anzahl von Malen blinken.
-{{< img "AlexaApp-GreenLight-Blink.webp" "Blinking the green LED with power controller slider" >}}
+{{< img "alexa_app-green_light-blink_slider.en.webp" "Blinking the green LED with power controller slider" >}}
 
 Herzlichen Glückwunsch, Sie haben dieses Tutorial abgeschlossen! Weiter geht es mit der [**Zusammenfassung**](/de/intro-to-alexa-for-iot/conclusion.html).
 

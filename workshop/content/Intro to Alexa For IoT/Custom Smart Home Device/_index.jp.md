@@ -109,21 +109,21 @@ pio run --environment core2foraws --target upload --target monitor
 {{% /notice %}}
 
 すべてがうまくいくと、**Green Light** という名前の新しいデバイスが追加されたことを示す更新情報が Alexa アプリに表示されます。電源を制御してみましょう。
-!["Green Light" device added notification](custom-smart-home-device/AlexaApp-GreenLightFound.jpg?height=500px&classes=shadow)
+!["Green Light" device added notification](custom-smart-home-device/alexa_app-green_light-found.en.jpg?height=500px&classes=shadow)
 
 ![Device named "Green Light" listed in your Alexa App](custom-smart-home-device/AlexaApp-GreenLight.png?height=500px&classes=shadow)
 
 * 音声: _Alexa, turn on/off green light light_  - 側面の緑色の LED ライトがオフまたはオンになります
 * Alexa アプリ経由の場合 - Alexa モバイル (Espressif アプリではありません) を開き、[デバイス] に進み、次に [Lights] または [All Devices] のどちらかに進むと、[Green Light] というデバイスが表示されます (下のスクリーンショットを参照してください)。電源アイコンをタップすると、アイコンのオフとオンが切り替わることがわかります。
 
-{{< img "AlexaApp-GreenLight-Power480.webp" "Power Controller implemented with the green light" >}}
+{{< img "alexa_app-green_light-power_press.webp" "Power Controller implemented with the green light" >}}
 
 点滅機能をテストすることもできます。
 
 音声: _Alexa, set blink to 7_ に設定して - 側面の緑色の LED ライトが 7 回点滅します
 Alexa アプリ経由 - Alexa アプリの **Green Light** デバイス (ESP Alexa スマートフォンアプリではありません) から、1～10 の間でスライダーを調整すると、指定した回数だけデバイスが点滅します。
 
-{{< img "AlexaApp-GreenLight-Blink.webp" "Blinking the green LED with power controller slider" >}}
+{{< img "alexa_app-green_light-blink_slider.en.webp" "Blinking the green LED with power controller slider" >}}
 
 おめでとうございます。このチュートリアルが完了しました。 [まとめ](/jp/intro-to-alexa-for-iot/conclusion.html)をご覧ください。
 

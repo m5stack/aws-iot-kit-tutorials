@@ -18,7 +18,7 @@ pre = "<b>e. </b>"
 
 以下は作成する探知器モデルです
 
-{{< img "detector-model.png" "Detector model" >}}
+{{< img "iot-events-detector_model.en.png" "Detector model" >}}
 
 ご覧のとおり、HVAC アプリケーションには「heating」、「cooling」、「standby」の 3 つの状態が存在します。アプリケーションは常にいずれかの状態にあり、「standby」状態に初期化されます。スマートサーモスタットから新しいメッセージが到着すると、探知器モデルは条件付きロジックに対して入力を評価し、モデルが新しい状態に移行すべきかどうかを決定します
 
