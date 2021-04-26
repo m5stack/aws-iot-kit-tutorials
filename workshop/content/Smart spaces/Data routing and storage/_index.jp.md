@@ -43,7 +43,6 @@ SELECT current.state.reported.sound, current.state.reported.temperature, current
 8. [Create rule (ルールの作成)] を選択し、新規ルールの作成を終了します。
 
 ## 検証ステップ
-
 次章に進む前に、サーバーレスアプリケーションが想定どおりに設定されているかを検証できます。
 
 1. スマートサーモスタットの電源が入っていてデータを発行しており、トレーニングを行う部屋に設置されていることを確認します

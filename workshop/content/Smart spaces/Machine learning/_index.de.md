@@ -11,7 +11,6 @@ Am Ende dieses Kapitels sollte Ihre serverlose Anwendung Folgendes tun:
 - Hostet ein Modell für maschinelles Lernen auf einem API-Endpunkt zur Verwendung
 
 ## **Konzepte für das Training eines maschinellen Lernmodells**
-
 Data Science und maschinelles Lernen sind riesige Gebiete für sich. Es würde den Rahmen dieses Moduls bei weitem sprengen, die Grundlagen des Trainings von Machine Learning-Modellen zu vermitteln. Glücklicherweise wurde die Werkzeugkette zum Erstellen neuer Modelle so weit vereinfacht, dass wir diese Werkzeugkette verwenden können, um mit ML zu experimentieren, wenn wir nur genug über unsere Daten wissen.
 
 In dieser Lösung versuchen Sie, einen einfachen Schwellenwert in der IoT Core Rules Engine zu ersetzen, der den vom Gerät gemeldeten Schallpegel auswertet und einen neuen booleschen Schlüsselwert namens *roomOccupancy* erzwingt. Sie wissen aus der Betrachtung der Schalldaten in den gemeldeten Nachrichten, dass die Werte niedrig sind, wenn es ruhig ist, und höher, wenn es Lärm gibt. Daher wissen Sie, dass ein einfacher Schwellenwert wie &quot;größer als 10&quot; ein guter Ausgangspunkt für die Erzeugung des *roomOccupancy* Werts war. (In Ihrem speziellen Fall wäre ein anderer Schwellenwert für Umgebungsgeräusche und registrierte Aktivitäten vielleicht besser geeignet gewesen).
@@ -88,7 +87,6 @@ Wenn Sie diese Anwendung länger als 6 Stunden laufen lassen, können AWS-Gebüh
 {{% /notice %}}
 
 ## Validierungsschritte
-
 Bevor Sie mit dem nächsten Kapitel fortfahren, können Sie überprüfen, ob Ihre serverlose Anwendung wie vorgesehen konfiguriert ist:
 
 1. In der [Amazon SageMaker-Konsole](https://us-west-2.console.aws.amazon.com/sagemaker/home?region=us-west-2#/endpoints) sollten Sie Ihren neuen Endpunkt mit dem Status _InService_ auf der Seite _Endpunkte_ sehen können.

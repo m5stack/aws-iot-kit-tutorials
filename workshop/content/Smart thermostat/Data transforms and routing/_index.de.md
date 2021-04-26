@@ -5,7 +5,6 @@ pre = "<b>d. </b>"
 +++
 
 ## Kapiteleinleitung
-
 Am Ende dieses Kapitels sollte Ihre Cloud-Lösung Folgendes können:
 
 * Umwandlung der vom Gerät empfangenen Schall-Rohdaten in verwertbare Informationen zur Raumbelegung mit in der Cloud gespeicherter Anwendungslogik
@@ -15,7 +14,6 @@ Am Ende dieses Kapitels sollte Ihre Cloud-Lösung Folgendes können:
 
 ## So richten Sie die Cloud-Lösung ein
 ### Raumbelegung aus Umgebungsgeräuschen ableiten
-
 Der erste Teil Ihrer Cloud-Lösung besteht darin, die Intelligenz hinzuzufügen, die ableitet, ob der Raum durch Personen belegt ist. Um die Belegung des Raums zu schätzen, verwenden Sie den vom intelligenten Thermostatgerät gemeldeten Schallpegel. Wenn der abgetastete Schallpegel über einem bestimmten Schwellenwert liegt, markieren Sie den Raum als belegt. Liegt er unter dem Schwellenwert, markieren Sie den Raum als unbelegt. Sie können diesen Status im Geräteschatten speichern und diesen verwenden, um Änderungen zurück zum Gerät zu synchronisieren.
 
 Warum Schallpegel und einfache Schwellenwerte zur Klassifizierung der Raumbelegung verwenden? Warum nicht einen Bewegungssensor verwenden? In diesem Fall ist ein Mikrofon der Sensor, der für den Einsatz zur Verfügung steht. Beim Entwurf von IoT-Lösungen werden Sie nicht immer das Budget für die bestmöglichen Eingangsdaten haben. Dieser Ansatz schafft eine Balance zwischen Sparsamkeit und dem Erreichen des Anwendungsfalls. Der Autor räumt ein, dass dies nicht für jeden Anwendungsfall funktionieren würde, z. B. für eine Teambesprechung für Menschen, die schwerhörig sind und Gebärdensprache verwenden, oder für Teambesprechungen, die mit einer stillen Dokumentenprüfung beginnen.

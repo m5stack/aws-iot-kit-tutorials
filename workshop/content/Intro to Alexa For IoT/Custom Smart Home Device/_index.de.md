@@ -5,11 +5,9 @@ pre = "<b>d. </b>"
 +++
 
 ## Smart Home Steuerung anpassen
-
 Jetzt, da wir wissen, welche Smart Home-Steuerungsfunktionen im Kit enthalten sind, werden Sie diese Funktionen modifizieren, um Attribute des Geräts selbst zu steuern, anstatt einfach auf den seriellen Monitor zu drucken. In diesem Workshop werden Sie eine einfache Implementierung erstellen, die das seitliche grüne LED-Licht über den **PowerController** einschaltet, und wir werden das Gerät so einstellen, dass es mit einer bestimmten Rate blinkt, indem wir den Range Controller verwenden.
 
 ## Anpassen der Attribute von Smart Home-Geräten
-
 Öffnen Sie mit Ihrer IDE den geklonten Ordner **Core2-for-AWS-IoT-EduKit** und öffnen Sie die `Alexa_for_IoT-Intro/components/app_smart_home/app_smart_home.c`, um einen Blick darauf zu werfen, wo die Smart Home-Geräteattribute definiert sind. Scrollen Sie bis zur Zeile 109 der Funktion **app_smart_home_init()**  und Sie werden die folgenden Codeblöcke sehen:
 
 ```c

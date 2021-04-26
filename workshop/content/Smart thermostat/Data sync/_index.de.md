@@ -78,7 +78,6 @@ Das bedeutet, dass Ihr Gerät, wenn es sich das nächste Mal mit AWS IoT Core ve
 Ihr intelligenter Thermostat meldet die aktuellen Werte von Temperatur und Geräuschpegel, wie im vorherigen Kapitel beschrieben. Ihr Thermostat empfängt außerdem Befehle und verfolgt den Zustand von zwei weiteren Werten namens "hvacStatus" und "roomOccupancy". Diese Werte werden in den kommenden Kapiteln von der Cloud-Anwendung ermittelt.
 
 ## So programmieren Sie die Veröffentlichung von Nachrichten in AWS IoT Core
-
 Sie verwenden das AWS IoT Device SDK for Embedded C ("C SDK") für die Kommunikation zwischen Ihrem intelligenten Thermostatgerät und AWS IoT Core. Dies ist eine bewährte Methode zur Abstraktion von Sicherheits-, Netzwerk- und Datenebenen, damit Sie sich auf die Anwendungslogik Ihres Geräts und Ihrer Lösung konzentrieren können. Das C-SDK bündelt Bibliotheken für die Verbindung mit AWS IoT Core über das MQTT-Protokoll, die Schnittstelle mit dem Hardware-Sicherheitselement zum Signieren von Anforderungen und für die Integration mit Funktionen höherer Ordnung wie dem Geräteschatten.
 
 Schauen wir uns ein paar kritische Codezeilen an und analysieren wir, was sie tun.

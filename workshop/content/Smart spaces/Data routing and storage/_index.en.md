@@ -43,7 +43,6 @@ SELECT current.state.reported.sound, current.state.reported.temperature, current
 8. Choose **Create rule** to finish creating your new rule.
 
 ## Validation steps
-
 Before moving on to the next chapter, you can validate that your serverless application is configured as intended by...
 
 1. Ensure that your smart thermostat is powered on, publishing data, and deployed in the room you want to train on.

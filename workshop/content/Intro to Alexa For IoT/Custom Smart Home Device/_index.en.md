@@ -5,7 +5,6 @@ pre = "<b>d. </b>"
 +++
 
 ## Customizing Smart Home Control
-
 Now that we have an understanding of what Smart Home control capabilities are included with the kit, you will modify those capabilities to control attributes of the device itself versus simply printing to the serial monitor. For this workshop, you will create a simple implementation that turns on the side green LED light via the **PowerController** and we will set the device to blink at a set rate using the Range Controller.
 
 ## Customizing smart home device attributes

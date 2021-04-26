@@ -5,7 +5,6 @@ pre = "<b>e. </b>"
 +++
 
 ## Kapiteleinleitung
-
 Am Ende dieses Kapitels wird Ihre Lösung Folgendes können:
 
 * Verarbeiten von Telemetrie-Nachrichten vom "Core2 for AWS IoT EduKit"-Gerät in einer verwalteten Cloud-Anwendung
@@ -15,7 +14,6 @@ Am Ende dieses Kapitels wird Ihre Lösung Folgendes können:
 * Aktualisieren des Gerätedisplays mit dem gewünschten HLK-Systemzustand
 
 ## Wie Sie die Cloud-Anwendung erstellen
-
 In diesem Kapitel werden Sie eine serverlose Anwendung ohne jeglichen Code erstellen, die die Eingaben von Ihrem intelligenten Thermostat analysiert und das Verhalten für das entsprechende (fiktive) HLK-System bestimmt. Sie werden IoT-Events verwenden, um eine Ressource namens Detektormodell bereitzustellen, die die von Ihrer IoT-Core-Regel weitergeleiteten Geräteschattennachrichten verarbeitet, auswertet, ob eine Zustandsänderung von Heizen zu Kühlen zu Standby erfolgen sollte, und dann eine Nachricht mit der aktualisierten Zustandsänderung, falls vorhanden, an Ihren intelligenten Thermostat zurücksendet.
 
 Hier sehen Sie eine Vorschau auf das zu erstellende Detektormodell:
