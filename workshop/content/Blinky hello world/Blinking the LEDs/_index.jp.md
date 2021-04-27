@@ -9,7 +9,7 @@ pre = "<b>d. </b>"
 ## AWS IoT MQTT クライアント経由でのサブスクライブ
 [AWS IoT Core コンソール](https://us-west-2.console.aws.amazon.com/iot/home?region=us-west-2#/)の AWS IoT MQTT クライアントを使用すると、MQTT メッセージを表示およびパブリッシュができます。開始するには、AWS IoT コンソールに移動し、[Test (テスト)] を選択してクライアントビューを開きます。
 
-{{< img "aws_iot-test_console.en.png" "Choose test in AWS IoT console" >}}
+{{< img "aws_iot-mqtt_test_client-subscribe.en.png" "Choose test in AWS IoT console" >}}
 
 **Subscription topic (トピックのサブスクリプション)** フィールドに`#`を入力して、**Subscribe to topic(トピックへのサブスクライブ)** のボタンを選択すると、すべての MQTT トピック名にサブスクライブします。マルチレベルのワイルドカード[トピックフィルター](https://docs.aws.amazon.com/iot/latest/developerguide/topics.html#topicfilters)は「#」で、トピックフィルターの最後の文字として 1 度のみ使用できます。**Subscribe to topic (トピックにサブスクライブ)** ボタンを押すと、デバイスから送信されるメッセージが表示されます。デバイスは `<<CLIENT_ID>>/` から始まるトピックにメッセージをパブリッシュすることのみ許可されています。これにより、他のサブスクライバー (クラウドアプリケーションなど) が特定のクライアントデバイスのトピックをフィルターできるようになり、範囲をより限定的なトピックに狭めることもできるようになります (特定デバイスでの温度読み上げなど)。
 
@@ -20,7 +20,7 @@ M5Stack Core2 for AWS IoT EduKit リファレンスハードウェアの側面�
 ```
 <<CLIENT_ID>>/blink
 ```
-{{< img "aws_iot-console_mqtt_client.en.png" "Subscribing to messages and publishing with AWS IoT console MQTT client" >}}
+{{< img "aws_iot-mqtt_test_client-publish.en.png" "Subscribing to messages and publishing with AWS IoT console MQTT client" >}}
 デバイスのサイドバーの LED が点滅しているはずです。点滅を一時停止するには、同じトピックにメッセージを発行すれば停止できますので、**Publish to topic (トピックに発行)** ボタンを押すだけです。
 
 {{% notice info %}}

@@ -9,7 +9,7 @@ Zu diesem Zeitpunkt läuft Ihre Gerätesoftware und Sie sind mit AWS IoT Core ve
 ## Abonnieren über den AWS IoT MQTT-Client
 Mit dem AWS IoT MQTT-Client in der AWS IoT Core-Konsole können Sie MQTT-Nachrichten sowohl anzeigen als auch veröffentlichen. Um zu beginnen, gehen Sie zur AWS [IoT-Konsole](https://us-west-2.console.aws.amazon.com/iot/home?region=us-west-2#/) und wählen Sie **Test**, um die Client-Ansicht zu öffnen.
 
-{{< img "aws_iot-test_console.en.png" "Choose test in AWS IoT console" >}}
+{{< img "aws_iot-mqtt_test_client-subscribe.en.png" "AWS IoT MQTT test client" >}}
 
 Geben Sie im Feld **Subscription topic** `#` ein, um alle MQTT-Topic-Namen zu abonnieren. Der mehrstufige [Wildcard-Topic-Filter](https://docs.aws.amazon.com/iot/latest/developerguide/topics.html#topicfilters) ist **#** und kann nur einmal als letztes Zeichen eines Topic-Filters verwendet werden. Sobald Sie auf die Schaltfläche **Subscribe to topic** klicken, sehen Sie, dass Nachrichten von Ihrem Gerät gesendet werden. Das Gerät darf nur Nachrichten zu dem Thema veröffentlichen, das mit `<<CLIENT_ID>>/` beginnt. Dies gibt einem anderen Teilnehmer (z. B. einer Cloud-Anwendung) die Möglichkeit, Themen für bestimmte Client-Geräte zu filtern, und kann auch auf spezifischere Themen eingegrenzt werden (z. B. Temperaturmessung eines bestimmten Geräts).
 
@@ -24,7 +24,7 @@ Geben Sie im Feld "Veröffentlichen" den unten stehenden Befehl ein, ersetzen Si
 ```
 <<CLIENT_ID>>/blink
 ```
-{{< img "aws_iot-console_mqtt_client.en.png" "Subscribing to messages and publishing with AWS IoT console MQTT client" >}}
+{{< img "aws_iot-mqtt_test_client-publish.en.png" "Subscribing to messages and publishing with AWS IoT console MQTT client" >}}
 Auf Ihrem Gerät sollten nun die LEDs der Seitenleiste blinken. Um das Blinken zu unterbrechen, drücken Sie einfach erneut die Schaltfläche **Publish to topic** zum gleichen Thema und es wird die blinkende Aufgabe, die die LEDs in einer Schleife ein- und ausschaltete, unterbrochen. Diese Tasks sind Teil des FreeRTOS-Kernels (man kann sie sich auch als Threads vorstellen), die eine einzelne Aufgabe in einer Schleife ausführen sollen. Der FreeRTOS-Kernel gibt Mikrocontroller-Anwendungen die Möglichkeit, den Prozessor zu optimieren, indem einzelne Tasks zur Ausführung eingeplant werden, sobald sich eine andere Task in einen suspendierten oder blockierten Zustand versetzt hat (z.B. mit **vTaskSuspend** oder **vTaskDelay**). Erfahren Sie [hier](https://www.freertos.org/implementation/a00005.html) mehr über das Scheduling mit FreeRTOS.
 
 {{% notice info %}}
