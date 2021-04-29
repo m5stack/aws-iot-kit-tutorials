@@ -58,7 +58,7 @@ Try a variety of utterances to Alexa - the side LEDs should light blue up when *
 * _Alexa, tell me a joke?_
 * _Alexa, turn on all of the lights_ (Only works if you already have some Alexa smart home devices on your same account)
 
-{{< img "alexa-time.en.webp" "Alexa, what time is it?">}}
+{{< img "alexa-time.en.webp" "Alexa, what time is it?" "Person: Alexa, what time is?, Alexa: It's 1:52p.m.">}}
 
 ## Testing Alexa Smart Home Capabilities (Beta)
 The AFI device has **Alexa Built-In**, which means you can speak to Alexa directly to the device and Alexa will respond with voice on the device. However, this version of AFI from Espressif also supports Alexa Smart Home commands as a beta feature, which allows you to control attributes on the device.
@@ -68,7 +68,7 @@ The Alexa for AWS IoT sample application creates a virtual device called **Light
 * [PowerController](https://developer.amazon.com/en-US/docs/alexa/alexa-voice-service/alexa-powercontroller.html) to turn the light on and off.
 * [RangeController](https://developer.amazon.com/en-US/docs/alexa/alexa-voice-service/alexa-rangecontroller.html) to adjust the brightness of the device.
 
-![The device named "Light" should show up in your Alexa App](building-and-testing-afi/alexa_app-light_Device.en.png?height=500px)
+![The device named "Light" should show up in your Alexa App](building-and-testing-afi/alexa_app-light_device.en.png?height=500px)
 
 Since it's a virtual device, it is prints the updated status to the screen. We can test this out via voice or the Alexa app.
 

@@ -108,7 +108,7 @@ You can exist the serial monitor with the key combination **CTRL** + **C**. You 
 If all goes well, you will see an update in your Alexa app that you have a new device called **Green Light**. Try controlling the Power:
 !["Green Light" device added notification](custom-smart-home-device/alexa_app-green_light-found.en.jpg?height=500px&classes=shadow)
 
-![Device named "Green Light" listed in your Alexa App](custom-smart-home-device/AlexaApp-GreenLight.png?height=500px&classes=shadow)
+![Device named "Green Light" listed in your Alexa App](custom-smart-home-device/alexa_app-green_light-power_on.en.png?height=500px&classes=shadow)
 
 * Voice: _Alexa, turn on/off green light light_ - the side green LED light should turn off and on
 * Via the Alexa app - open your Alexa app (not the Espressif app), go to Devices and then either "Lights" or "All Devices" and you should see the device named "Green Light" (see screenshots below). Tap the power icon and you should see the icon toggle between off and on. 
