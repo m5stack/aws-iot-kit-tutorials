@@ -21,6 +21,10 @@ pio run --environment core2foraws --target menuconfig
 {{< img "idf_menuconfig-aws_endpoint.en.webp" "Configuring Core2 for AWS IoT EduKit with p.py menuconfig" >}}
 Here you will set the configuration. Use the direction keys on your keyboard to go to **Component config** --> **Amazon Web Services IoT Platform** and open **AWS IoT Endpoint Hostname** to set the string. You can paste the address you copied moments ago into the box and hit _enter_ to set that symbol. Next, go back to the configuration home screen by pressing the *ESC* key twice. Then select **AWS IoT EduKit Configuration** from the menu. Set your **WiFi SSID** and **WiFi Password** with your Wi-FI credentials. Once you are finished, press the *s* button on your keyboard to save, confirm the location of the file by pressing *enter*, followed by *q* to quit.
 
+{{% notice note %}}
+In case the *UP* and *DOWN* arrows don’t work in menuconfig try using the *J* key to move the cursor down and *K* to move the cursor up. Another option is to use *-* and *+* keys on the numeric keypad.
+{{% /notice %}}
+
 {{% notice warning %}}
 Be sure your SSID is for a 2.4GHz network. The ESP32-D0WD on the M5Stack Core2 for AWS hardware does not support 5GHz Wi-Fi bands.
 {{% /notice %}}
