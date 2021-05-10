@@ -127,4 +127,4 @@ Alexa アプリ経由 - Alexa アプリの **Green Light** デバイス (ESP Ale
 おめでとうございます。このチュートリアルが完了しました。 [まとめ](/jp/intro-to-alexa-for-iot/conclusion.html)をご覧ください。
 
 ---
-{{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}} {{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

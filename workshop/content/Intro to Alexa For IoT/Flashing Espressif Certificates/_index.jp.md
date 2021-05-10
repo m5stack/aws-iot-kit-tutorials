@@ -67,4 +67,4 @@ AWS IoT コアと通信するために、AWS IoT 証明書を作成する必要�
 設定がすべて完了し準備が整ったら、[AFI のビルドとテスト](/jp/intro-to-alexa-for-iot/building-and-testing-afi.html)に進みましょう。
 
 ---
-{{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}} {{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

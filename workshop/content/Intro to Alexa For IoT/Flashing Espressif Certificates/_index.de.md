@@ -35,4 +35,4 @@ python $IDF_PATH/components/esptool_py/esptool/esptool.py --chip esp32 --port <<
 Da nun alles eingerichtet und vorbereitet ist, können wir mit dem [**Build and Testen der AFI**](/de/intro-to-alexa-for-iot/building-and-testing-afi.html) fortfahren.
 
 ---
-{{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}} {{% button href="https://community.m5stack.com/category/41/core2-for-aws" icon="far fa-question-circle" %}}Community support{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

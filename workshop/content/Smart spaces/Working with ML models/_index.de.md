@@ -145,4 +145,4 @@ Bevor Sie mit dem nächsten Kapitel fortfahren, können Sie überprüfen, ob Ihr
 Wenn diese wie erwartet funktionieren, haben Sie dieses Modul abgeschlossen und können mit dem Abschnitt [**Abschluss**](http://localhost:1313/en/smart-spaces/conclusion.html) fortfahren.
 
 ---
-{{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}} {{% button href="https://community.m5stack.com/category/41/core2-for-aws" icon="far fa-question-circle" %}}Community support{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

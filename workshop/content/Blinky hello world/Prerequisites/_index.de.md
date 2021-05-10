@@ -189,4 +189,4 @@ Windows hat Beschränkungen der Dateipfadlänge, die je nach Speicherort des Pro
 Nachdem alles installiert und konfiguriert ist, gehen wir zum nächsten Kapitel über: [Gerätebereitstellung](/de/blinky-hello-world/device-provisioning.html).
 
 ---
-{{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}} {{% button href="https://community.m5stack.com/category/41/core2-for-aws" icon="far fa-question-circle" %}}Community support{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

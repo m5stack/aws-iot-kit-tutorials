@@ -38,4 +38,4 @@ Sind Sie bereit, mit dem Bau der Lösung zu beginnen? Lassen Sie uns überprüfe
 Wenn ja, lassen Sie uns mit dem nächsten Kapitel, [Datenrouting und -speicherung,](/de/smart-spaces/data-routing-and-storage.html) fortfahren.
 
 ---
-{{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}} {{% button href="https://community.m5stack.com/category/41/core2-for-aws" icon="far fa-question-circle" %}}Community support{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

@@ -17,4 +17,4 @@ Alexa Voice Service (AVS) の統合は AWS IoT Core の新機能であり、デ�
 準備ができてたら、[Espressif 証明書のフラッシュ](/jp/intro-to-alexa-for-iot/flashing-espressif-certificates.html)を始めましょう。
 
 ---
-{{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}} {{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

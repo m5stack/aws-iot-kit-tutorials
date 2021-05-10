@@ -17,4 +17,4 @@ Der gesamte Inhalt dieses Tutorials setzt voraus, dass Sie das [M5Stack Core2 ES
 Um mit diesem Teil zu beginnen, gehen Sie zum ersten Kapitel, [Voraussetzungen](/de/blinky-hello-world/prerequisites.html).
 
 ---
-{{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}} {{% button href="https://community.m5stack.com/category/41/core2-for-aws" icon="far fa-question-circle" %}}Community support{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

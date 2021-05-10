@@ -60,4 +60,4 @@ If your Core2 for AWS IoT EduKit does not show up in the list of devices, check 
 With everything set up and your host machine ready and able to communicate with the Core2 for AWS IoT EduKit reference hardware, let's continue to the next chapter — [**Running the ESP RainMaker Agent**](/en/getting-started/run-rainmaker.html).
 
 ---
-{{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}} {{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
