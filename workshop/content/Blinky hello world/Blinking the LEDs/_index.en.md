@@ -11,17 +11,17 @@ The AWS IoT MQTT client in the AWS IoT Core console allows you to both view and 
 
 {{< img "aws_iot-mqtt_test_client-subscribe.en.png" "Choose test in AWS IoT console" >}}
 
-In the **Subscription topic** field, enter `#` to subscribe to all MQTT topic names. The multi-level wild card [topic filter](https://docs.aws.amazon.com/iot/latest/developerguide/topics.html#topicfilters) is **#** and can only be used once as the last character of a topic filter. Once you press the **Subscribe to topic** button, you will see messages being sent from your device. The device is only allowed to publish messages to the topic beginning with `<<CLIENT_ID>>/`. This gives the ability for another subscriber (e.g. Cloud application) to filter topics for specific client devices, and can also be narrowed to be more specific topics (e.g. temperature reading of a specific device).
+In the **Subscription topic** field, enter `<<CLIENT_ID>>/#` to subscribe to all MQTT topic names. You can copy and paste the client Id from the serial output in PIO terminal window, or retrieve it from the device screen. The multi-level wild card [topic filter](https://docs.aws.amazon.com/iot/latest/developerguide/topics.html#topicfilters) is **#** and can only be used once as the last character of a topic filter to subscribe to all topics that matches the string before it. Once you press the **Subscribe** button, you will see messages being sent from your device. The device is only allowed to publish messages to the topic beginning with `<<CLIENT_ID>>/`. This gives the ability for another subscriber (e.g. cloud application) to filter topics for specific client devices, and can also be narrowed to be more specific topics by using **/**'s as hierarchy separators. For example, **01234EXAMPLE/sensor/temperature/f/** would provide a Fahrenheit temperature reading from a specific device with the client Id 01234EXAMPLE.
 
 ## Blinking the LED
-To start/stop the blinking of the LED bars on the sides of the M5Stack Core2 for AWS IoT EduKit reference hardware, we're going to publish from the console's AWS IoT MQTT client on a topic that the Core2 for AWS IoT EduKit is subscribed to. The subscription topic for the device will have the pattern `<<CLIENT_ID>>/#`. You can view the subscription topic on the device after it successfully subscribes to the topic. Additionally, you can view the client Id that's been output on the host machine's serial monitor.
+To start/stop the blinking of the LED bars on the sides of the M5Stack Core2 for AWS IoT EduKit reference hardware, we're going to publish from the console's AWS IoT MQTT client on a topic that the Core2 for AWS IoT EduKit is subscribed to. The subscription topic for the device must start with `<<CLIENT_ID>>/`.
 
-In the Publish box, enter the command below, but replacing the **<<CLIENT_ID>>** text with your actual client Id that was just copied and then press the **Publish to topic** button:
+In the **Publish to a topic** tab, enter the command below, first replacing the **<<CLIENT_ID>>** text with your device client Id and press the **Publish** button:
 ```
 <<CLIENT_ID>>/blink
 ```
 {{< img "aws_iot-mqtt_test_client-publish.en.png" "Subscribing to messages and publishing with AWS IoT console MQTT client" >}}
-Your device should now have the side bar LEDs blinking. To pause the blinking, simply press the **Publish to topic** button again to the same topic.
+Your device should now have the side bar LEDs blinking. To pause the blinking, simply press the **Publish** button again to the same topic.
 
 {{% notice info %}}
 To exit the serial monitor, press **CTRL** + **C**.
