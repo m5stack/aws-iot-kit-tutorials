@@ -59,14 +59,22 @@ url = "https://github.com/m5stack/Core2-for-AWS-IoT-EduKit"
 weight = 1
 
 [[Languages.en.menu.shortcuts]]
+name = "<i class='fas fa-book-open'></i> Device API Reference"
+url = "/api-reference/index.html"
+weight = 2
+
+[[Languages.en.menu.shortcuts]]
 name = "<i class='fas fa-question-circle'></i> Community Support"
 url = "https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions"
-weight = 2
+weight = 3
 
 [[Languages.en.menu.shortcuts]]
 name = "<i class='fas fa-bug'></i> Report Bugs"
 url = "https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues"
-weight = 3
+weight = 4
+
+[blackfriday]
+  hrefTargetBlank = true
 
 [menu]
   [[menu.main]]
@@ -77,16 +85,22 @@ weight = 3
     weight = -110
 
 [[menu.shortcuts]]
-name = "<i class='fab fa-github'></i> Code Repository (<i class='fas fa-sync-alt fa-xs'></i> Apr 6, 2021)"
+name = "<i class='fab fa-github'></i> Code Repository (<i class='fas fa-sync-alt fa-xs'></i> Apr 16, 2021)"
 url = "https://github.com/m5stack/Core2-for-AWS-IoT-EduKit"
 weight = 1
 
 [[menu.shortcuts]]
+name = "<i class='fas fa-book-open'></i> Device API Reference"
+url = "/api-reference/index.html"
+hrefTargetBlank = true
+weight = 2
+
+[[menu.shortcuts]]
 name = "<i class='fas fa-question-circle'></i> Community Support"
 url = "https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions"
-weight = 2
+weight = 3
 
 [[menu.shortcuts]]
 name = "<i class='fas fa-bug'></i> Report Bugs"
 url = "https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues"
-weight = 3
+weight = 4

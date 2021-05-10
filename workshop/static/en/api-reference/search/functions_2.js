@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['core2foraws_5fbutton_5finit_251',['Core2ForAWS_Button_Init',['../core2for_a_w_s_8h.html#af587d4081f64b442670a720d50a65e0e',1,'core2forAWS.c']]],
+  ['core2foraws_5fdisplay_5finit_252',['Core2ForAWS_Display_Init',['../core2for_a_w_s_8h.html#a978ccc64fee3c2c15bdc8862e04bdec7',1,'core2forAWS.c']]],
+  ['core2foraws_5fdisplay_5fsetbrightness_253',['Core2ForAWS_Display_SetBrightness',['../core2for_a_w_s_8h.html#a67a760b89e44e6bd0c96f90cc6aca47d',1,'core2forAWS.c']]],
+  ['core2foraws_5finit_254',['Core2ForAWS_Init',['../core2for_a_w_s_8h.html#a97289b2e8e9d22bcabba9ea38761c3f3',1,'core2forAWS.c']]],
+  ['core2foraws_5fled_5fenable_255',['Core2ForAWS_LED_Enable',['../core2for_a_w_s_8h.html#a6f638e20c3c332cd77a84df3e133f4e7',1,'core2forAWS.c']]],
+  ['core2foraws_5fmotor_5fsetstrength_256',['Core2ForAWS_Motor_SetStrength',['../core2for_a_w_s_8h.html#a1264761696fc1cddfa86421f41654aeb',1,'core2forAWS.c']]],
+  ['core2foraws_5fpmu_5fgetbatcurrent_257',['Core2ForAWS_PMU_GetBatCurrent',['../core2for_a_w_s_8h.html#a71a5ad23b355052dbe1b334e701a99bc',1,'core2forAWS.c']]],
+  ['core2foraws_5fpmu_5fgetbatvolt_258',['Core2ForAWS_PMU_GetBatVolt',['../core2for_a_w_s_8h.html#a68be46dd836f6af03e9b6cd88f2874b0',1,'core2forAWS.c']]],
+  ['core2foraws_5fpmu_5finit_259',['Core2ForAWS_PMU_Init',['../core2for_a_w_s_8h.html#adcdde4ebb075c61f0bfa937009de6c64',1,'core2forAWS.c']]],
+  ['core2foraws_5fsdcard_5finit_260',['Core2ForAWS_Sdcard_Init',['../core2for_a_w_s_8h.html#ae9760e6646aa10a5db904f0cd719b4e8',1,'core2forAWS.c']]],
+  ['core2foraws_5fsk6812_5fclear_261',['Core2ForAWS_Sk6812_Clear',['../core2for_a_w_s_8h.html#ad6f1363ce5753c9368c39bfcbc93ad77',1,'core2forAWS.c']]],
+  ['core2foraws_5fsk6812_5finit_262',['Core2ForAWS_Sk6812_Init',['../core2for_a_w_s_8h.html#aede8a344ecfa40cc6aefc03a3f142f0b',1,'core2forAWS.c']]],
+  ['core2foraws_5fsk6812_5fsetbrightness_263',['Core2ForAWS_Sk6812_SetBrightness',['../core2for_a_w_s_8h.html#a5c6c1bbeda65f03428a3fa780c1d3dc8',1,'core2forAWS.c']]],
+  ['core2foraws_5fsk6812_5fsetcolor_264',['Core2ForAWS_Sk6812_SetColor',['../core2for_a_w_s_8h.html#a15558a37529e89394598df0128d721c9',1,'core2forAWS.c']]],
+  ['core2foraws_5fsk6812_5fsetsidecolor_265',['Core2ForAWS_Sk6812_SetSideColor',['../core2for_a_w_s_8h.html#a5dde1ef368e54c5c39db6257b0a83e13',1,'core2forAWS.c']]],
+  ['core2foraws_5fsk6812_5fshow_266',['Core2ForAWS_Sk6812_Show',['../core2for_a_w_s_8h.html#afa9b642801c16af9fd8f6390a0671549',1,'core2forAWS.c']]],
+  ['core2foraws_5fspeaker_5fenable_267',['Core2ForAWS_Speaker_Enable',['../core2for_a_w_s_8h.html#a4906ae00069686be4fe675f0b1d2b950',1,'core2forAWS.c']]]
+];
