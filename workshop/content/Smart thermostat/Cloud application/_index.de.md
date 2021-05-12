@@ -7,11 +7,11 @@ pre = "<b>e. </b>"
 ## Kapiteleinleitung
 Am Ende dieses Kapitels wird Ihre Lösung Folgendes können:
 
-* Verarbeiten von Telemetrie-Nachrichten vom "Core2 for AWS IoT EduKit"-Gerät in einer verwalteten Cloud-Anwendung
-* Bestimmen in welchem Zustand sich das HLK-System befinden soll: HEIZEN, KÜHLEN, oder STANDBY
-* Senden einer gewünschten Zustandsmeldung an Ihren Geräteschatten basierend auf verarbeiteten Eingängen
-* Synchronisieren des gewünschten Schattenzustandes mit Ihrem Gerät
-* Aktualisieren des Gerätedisplays mit dem gewünschten HLK-Systemzustand
+* Verarbeiten von Telemetrie-Nachrichten vom "Core2 for AWS IoT EduKit"-Gerät in einer verwalteten Cloud-Anwendung.
+* Bestimmen in welchem Zustand sich das HLK-System befinden soll: HEIZEN, KÜHLEN, oder STANDBY.
+* Senden einer gewünschten Zustandsmeldung an Ihren Geräteschatten basierend auf verarbeiteten Eingängen.
+* Synchronisieren des gewünschten Schattenzustandes mit Ihrem Gerät.
+* Aktualisieren des Gerätedisplays mit dem gewünschten HLK-Systemzustand.
 
 ## Wie Sie die Cloud-Anwendung erstellen
 In diesem Kapitel werden Sie eine serverlose Anwendung ohne jeglichen Code erstellen, die die Eingaben von Ihrem intelligenten Thermostat analysiert und das Verhalten für das entsprechende (fiktive) HLK-System bestimmt. Sie werden IoT-Events verwenden, um eine Ressource namens Detektormodell bereitzustellen, die die von Ihrer IoT-Core-Regel weitergeleiteten Geräteschattennachrichten verarbeitet, auswertet, ob eine Zustandsänderung von Heizen zu Kühlen zu Standby erfolgen sollte, und dann eine Nachricht mit der aktualisierten Zustandsänderung, falls vorhanden, an Ihren intelligenten Thermostat zurücksendet.

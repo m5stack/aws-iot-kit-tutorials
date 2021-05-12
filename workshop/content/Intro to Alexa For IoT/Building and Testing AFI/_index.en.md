@@ -5,7 +5,7 @@ pre = "<b>c. </b>"
 +++
 
 ## Chapter introduction
-In this chapter we will build the ported ESP VA-SDK firmware, flash it on to the device, provision the Wi-Fi and authorize the device to your Alexa Account, and test some of the smart home capabilities using Alexa voice commands available in this beta version of AFI.
+In this chapter we will build the ported ESP VA-SDK firmware, flash it on to the device, provision the Wi-Fi and authorize the device to your Alexa Account, then test some of the smart home capabilities using Alexa voice commands available in this beta version of AFI.
 
 ## Flash the Firmware
 Use the PlatformIO CLI to compile your firmware, upload the firmware, and monitor the serial output of your device. It will take some time to build and flash the app, but after that's done you should see the stream of device logs in your terminal. If you receive an error for the port not being auto-detected, follow the [Identifying the serial port on host machine](../getting-started/prerequisites/windows.html#identifying-the-device-communication-port) instructions and try the command again. You can close the monitor session with the **Ctrl** + **C** keystroke combination:
@@ -14,7 +14,7 @@ Use the PlatformIO CLI to compile your firmware, upload the firmware, and monito
    ```
 
 ## Provision the Device
-For the provisioning process, you will need to configure your Wi-Fi network credentials and authorize the application with your Alexa account using ESP Alexa Phone Application.
+To provision the device, you must configure your Wi-Fi network credentials and authorize the application with your Alexa account using the ESP Alexa Phone Application.
 
 Download the application from your mobile app store.
 [iOS](https://apps.apple.com/in/app/esp-alexa/id1464127534) / [Android](https://play.google.com/store/apps/details?id=com.espressif.provbleavs)
@@ -61,7 +61,7 @@ Try a variety of utterances to Alexa - the side LEDs should light blue up when *
 {{< img "alexa-time.en.webp" "Alexa, what time is it?" "Person: Alexa, what time is?, Alexa: It's 1:52p.m.">}}
 
 ## Testing Alexa Smart Home Capabilities (Beta)
-The AFI device has **Alexa Built-In**, which means you can speak to Alexa directly to the device and Alexa will respond with voice on the device. However, this version of AFI from Espressif also supports Alexa Smart Home commands as a beta feature, which allows you to control attributes on the device.
+The AFI device has **Alexa Built-In**, which means you can speak to Alexa directly on the device and Alexa will respond with voice on the device. However, this version of AFI from Espressif also supports Alexa Smart Home commands as a beta feature, which allows you to control attributes on the device.
 
 The Alexa for AWS IoT sample application creates a virtual device called **Light** in your Alexa app, which supports two interfaces:
 
@@ -70,12 +70,12 @@ The Alexa for AWS IoT sample application creates a virtual device called **Light
 
 ![The device named "Light" should show up in your Alexa App](building-and-testing-afi/alexa_app-light_device.en.png?height=500px)
 
-Since it's a virtual device, it is prints the updated status to the screen. We can test this out via voice or the Alexa app.
+Since it's a virtual device, it prints the updated status to the screen. We can test this out via voice or the Alexa app.
 
 * By voice - say _Alexa, turn on the light_ - if successful, Alexa may respond with "OK" or some other confirmation sound
 * Via the Alexa app - open your Alexa mobile phone app (not the ESP Alexa mobile phone app), go to Devices and then either **Lights** or **All Devices** and you should see the device named **Light** (see screenshots below). Tap the power icon and you should see the icon toggle between off and on. 
 
-Through either option, you should see a message like the following in your terminal:
+With either option, you should see a message like the following in your terminal:
 ```bash
 I (97445) [alexa_smart_home]: Namespace: Alexa.PowerController, Name: TurnOn
 ```
@@ -83,9 +83,9 @@ I (97445) [alexa_smart_home]: Namespace: Alexa.PowerController, Name: TurnOn
 Similarly, you can try to control the range of the brightness by one of the following: 
 
 * By voice - say _Alexa, set brightness on the light to 80_ - if successful, Alexa may respond with "OK" or some other confirmation response.
-* Via the Alexa app - adjust the slider of brightness.
+* Via the Alexa app - adjust the brightness slider.
 
-Through either option, you should see a message like the following in the serial monitor:
+With either option, you should see a message like the following in the serial monitor:
 ```bash
 [app_smart_home]: *************** Light's Brightness changed to 60 ***************
 ```

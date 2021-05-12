@@ -7,13 +7,13 @@ pre = "<b>b. </b>"
 ## Chapter introduction
 By the end of this chapter, your device will do the following:
 
-* Power on and start the local smart thermostat application
-* Report to the logs with the current temperature sensed, ambient noise level measured, an HVAC status of heating/cooling/standby, and an indicator of room occupation
+* Power on and start the local smart thermostat application.
+* Report to the logs the current temperature sensed, ambient noise level measured, an HVAC status of heating/cooling/standby, and an indicator of room occupation.
 
 The Core2 for AWS IoT EduKit reference hardware kit has several sensors ready to use. For this solution, you will take readings from the temperature sensor and microphone using local application code. The application will keep track of sensor readings and status flags that are used to render a summary to the display.
 
 ## How to program the thermostat application
-Your smart thermostat will sample the integrated sensors using implementations already created and included in the bundled software components. In this first step, you will simply capture the values and print them out to the logger before we move on to publishing sensor values up to AWS IoT Core.
+Your smart thermostat will sample the integrated sensors using code already created and included in the bundled software components. In this first step, you will simply capture the values and print them out to the logger before we move on to publishing sensor values up to AWS IoT Core.
 
 Reading from the temperature sensor of the included MPU6886 module is easy. Here's a code snippet:
 
@@ -82,21 +82,21 @@ void app_main()
 ## Compiling and Uploading the Smart Thermostat Firmware
 A sample application has already been prepared for you to build and upload to your device using Visual Studio Code and the PlatformIO extension. If you have any other project already open in VS Code, first open a new window (File → New Window) to have a clean file Explorer and working environment.
 
-For this tutorial, you will use the Smart-Thermostat project. In your new VS Code window, 
-1. Click the **PlatformIO logo** in the VS Code activity bar (left most menu)
-2. Select **Open** from the left PlatformIO menu
-3. Click **Open Project**
+For this tutorial, you will use the Smart-Thermostat project. In your new VS Code window: 
+1. Click the **PlatformIO logo** in the VS Code activity bar (left most menu).
+2. Select **Open** from the left PlatformIO menu.
+3. Click **Open Project**.
 4. Navigate to the `Core2-for-AWS-IoT-EduKit/Smart-Thermostat` folder, and click **open**.
 {{< img "pio-home.en.png" "PlatformIO home screen" "1 - Open PIO menu, 2 - Open PIO home, 3 - Open the project folder" >}}
 
-Next, you'll need to open a new PlatformIO CLI terminal window in VS Code by:
+Next, you'll need to open a new PlatformIO CLI terminal window in VS Code:
 1) Click the **PlatformIO logo** on the VS Code activity bar (left most menu).
 2) From the **Quick Access** menu, under **Miscellaneous**, select **New Terminal**.
 
 {{< img "pio-new_terminal-smart_thermostat.en.png" "PlatformIO CLI terminal in VS Code" "1 - Open PIO menu, 2 - Open new PIO Terminal, 3 - Verify you're in the 'PlatformIO CLI' terminal session, 4 - Paste the commands into terminal, 5 - If you encounter an error autodetecting the port, open the Platform.ini file and follow instructions to manually add the serial port.">}}
 
 
- To copy the configuration from the Blinky project, compile the device firmware, and upload it to your device, follow the steps for your host machine's OS to complete this chapter:
+ To copy the configuration from the Blinky project, compile the device firmware, and upload it to your device, then follow the steps for your host machine's OS to complete this chapter:
 
 {{%expand "Ubuntu or macOS" %}}
 1. Copy your `sdkconfig` file from the **Blinky-Hello-World** demo to simplify setting your Wi-Fi and AWS endpoint:
@@ -104,9 +104,9 @@ Next, you'll need to open a new PlatformIO CLI terminal window in VS Code by:
    cp ../Blinky-Hello-World/sdkconfig .
    ```
    {{% notice note %}}
-   You can optionally manually set your Wi-Fi credentials and AWS endpoint for your firmware by following the **[Configuring the ESP32 Firmware](/en/blinky-hello-world/connecting-to-aws.html#configuring-the-esp32-firmware)** step from the **Blinky Hello World** example.
+   Optionally, you can manually set your Wi-Fi credentials and AWS endpoint for your firmware by following the **[Configuring the ESP32 Firmware](/en/blinky-hello-world/connecting-to-aws.html#configuring-the-esp32-firmware)** step from the **Blinky Hello World** example.
    {{% /notice %}}
-2. Use the command below to compile your firmware, upload the firmware, and monitor the serial output of your device. It will take some time to build and flash the app, but after that's done you should see the stream of device logs in your terminal. You can close the monitor session with the **Ctrl** + **C** keystroke combination:
+2. Use the command below to compile and upload the firmware, and monitor the serial output of your device. It will take some time to build and flash the app, but after that's done you should see the stream of device logs in your terminal. You can close the monitor session with the **Ctrl** + **C** keystroke combination:
    ```bash
    pio run --environment core2foraws --target upload --target monitor 
    ```
@@ -117,16 +117,16 @@ Next, you'll need to open a new PlatformIO CLI terminal window in VS Code by:
    copy ..\Blinky-Hello-World\sdkconfig .
    ```
    {{% notice note %}}
-   You can optionally manually set your Wi-Fi credentials and AWS endpoint for your firmware by following the **[Configuring the ESP32 Firmware](/en/blinky-hello-world/connecting-to-aws.html#configuring-the-esp32-firmware)** steps from the **Blinky Hello World** example.
+   Optionally, you can manually set your Wi-Fi credentials and AWS endpoint for your firmware by following the **[Configuring the ESP32 Firmware](/en/blinky-hello-world/connecting-to-aws.html#configuring-the-esp32-firmware)** steps from the **Blinky Hello World** example.
    {{% /notice %}}
-2. Use the command below to compile your firmware, upload the firmware, and monitor the serial output of your device. It will take some time to build and flash the app, but after that's done you should see the stream of device logs in your terminal. You can close the monitor session with the **Ctrl** + **C** keystroke combination:
+2. Use the command below to compile and upload the firmware, and monitor the serial output of your device. It will take some time to build and flash the app, but after that's done you should see the stream of device logs in your terminal. You can close the monitor session with the **Ctrl** + **C** keystroke combination:
    ```bash
    pio run --environment core2foraws --target upload --target monitor 
    ```
 {{% /expand%}}
 
 ## Validation
-Before moving on to the next chapter, you can validate that your device is configured as intended by viewing the serial output in the terminal window which look like the following: 
+Before you move on to the next chapter, you can validate that your device is configured as intended by viewing the serial output in the terminal window which should look like the following: 
 
 ```
 I (16128) shadow: On Device: roomOccupancy false

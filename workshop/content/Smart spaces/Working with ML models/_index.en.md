@@ -6,13 +6,13 @@ pre = "<b>d. </b>"
 
 ## Chapter introduction
 By the end of this chapter, your serverless application should do the following:
-* Consumes a machine learning model that translates new thermostat messages into inferences of roomOccupancy
+* Consume a machine learning model that translates new thermostat messages into inferences of roomOccupancy.
 
 ## How to set up the serverless infrastructure
-The following steps will walk you through creation of a serverless function in AWS Lambda. The function defines a small bit of code that expect device shadow messages from IoT Core, transform the message into the format used with your ML endpoint, then invoke your ML endpoint to return the classification of *roomOccupancy* and the confidence score of the inference.
+The following steps will walk you through creation of a serverless function in AWS Lambda. The function defines a small bit of code that expects device shadow messages from IoT Core, transforms the message into the format used with your ML endpoint, then invokes your ML endpoint to return the classification of *roomOccupancy* and the confidence score of the inference.
 
 1. From the AWS Lambda console, choose **Create function**.
-2. Provide a name for your function. Further steps assume the name `classifyRoomOccupancy`.
+2. Enter a name for your function. Further steps assume the name `classifyRoomOccupancy`.
 3. Under *Runtime*, select *Python 3.8*.
 4. Choose **Create function**.
 5. Under *Function code*, in the file *lambda_function.py*, copy and paste the following code to replace the placeholder code:
@@ -90,7 +90,7 @@ def lambda_handler(event, context):
 19. Choose **Review policy**.
 20. Give your policy a name like `invokeSageMakerEndpoint` and choose **Create policy**. You can now close this new browser tab.
 
-These steps conclude configuration of your AWS Lambda function. For example, when the Lambda function receives this device shadow update...
+These steps conclude configuration of your AWS Lambda function. When the Lambda function receives this device shadow update, for example:
 ```JSON
 {
     "state": {
@@ -105,7 +105,7 @@ These steps conclude configuration of your AWS Lambda function. For example, whe
 }
 ```
 
-...it will return this response after invoking the SageMaker endpoint...
+It will return this response after invoking the SageMaker endpoint:
 ```JSON
 {
   "statusCode": 200,
@@ -123,16 +123,16 @@ The next step is to update your IoT Core rule (assumed name of `thermostatRule`)
 ```SQL
 SELECT cast(get(get(aws_lambda("arn:aws:lambda:REGION:ACCOUNT_ID:function:FUNCTION_NAME", *), "body"), "predicted_label") AS Boolean) AS state.desired.roomOccupancy FROM '$aws/things/<<CLIENT_ID>>/shadow/update/accepted' WHERE state.reported.sound <> Null
 ```
-4. Be sure to replace the placeholders REGION (check your current region in the console header, it must be in the format like `us-west-2` and not `Oregon`), ACCOUNT_ID (also available as 12-digit number, no hyphens, in the console header menu where your username is printed), and FUNCTION_NAME (name of the AWS Lambda function you created, assumed name is `classifyRoomOccupancy`). Don't forget to update the <<CLIENT_ID>> placeholder as well in the FROM topic.
-5. Under Actions, find the action called *Send a message to a Lambda function* choose **Remove**. This was added by default when you created the trigger in the Lambda function configuration to allow this IoT Core rule to invoke it, but you don't need the action. Instead, you are using an inline invocation in the rule query, but you still needed the same permissions that the trigger added.
+4. Be sure to replace the placeholders: change REGION to your current region as shown in the console header (it must be in the format `us-west-2` and not `Oregon`); change ACCOUNT_ID to your 12-digit account id, without hyphens, which is also shown in the console header menu where your username is printed; and change FUNCTION_NAME to the name of the AWS Lambda function you created (assumed name is `classifyRoomOccupancy`). Don't forget to update the <<CLIENT_ID>> placeholder in the FROM topic as well.
+5. Under Actions, find the action called *Send a message to a Lambda function* choose **Remove**. This was added by default when you created the trigger in the Lambda function configuration to allow this IoT Core rule to invoke it, but you don't need the action. Instead, you are using an inline invocation in the rule query, but you still need the same permissions that the trigger added.
 6. Choose **Save**.
 
 At this point, your IoT workflow is now consuming your trained machine learning model from its deployed endpoint to classify messages published by your smart thermostat as new *roomOccupancy* values! 
 
 ## Validation steps
-Before moving on to the next chapter, you can validate that your serverless application is configured as intended by...
+Before moving on to the next chapter, you can validate that your serverless application is configured as intended:
 
-1. Using the AWS IoT Core Test client, you can subscribe to the topic `$aws/things/<<CLIENT_ID>>/shadow/update` (replacing your <<CLIENT_ID>>) and you should see two kinds of messages here. The first is the payload published by your smart thermostat with the `state.reported` path. The other is the payload now being published by your thermostat rule with the `state.desired.roomOccupancy` value determined by your ML model.
+1. Use the AWS IoT Core Test client to subscribe to the topic `$aws/things/<<CLIENT_ID>>/shadow/update` (replacing your <<CLIENT_ID>>) and you should see two kinds of messages here. The first is the payload published by your smart thermostat with the `state.reported` path. The other is the payload now being published by your thermostat rule with the `state.desired.roomOccupancy` value determined by your ML model.
 
 If these are working as expected, you have completed this module and can move on to [**Conclusion**](/en/smart-spaces/conclusion.html).
 

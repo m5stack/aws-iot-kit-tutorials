@@ -7,8 +7,8 @@ pre = "<b>c. </b>"
 ## Einleitung
 Am Ende dieses Kapitels sollte Ihre serverlose Anwendung Folgendes tun:
 
-- Trainiert ein maschinelles Lernmodell, das neue Thermostatmeldungen in Rückschlüsse auf die Raumbelegung umsetzt
-- Hostet ein Modell für maschinelles Lernen auf einem API-Endpunkt zur Verwendung
+- Trainiert ein maschinelles Lernmodell, das neue Thermostatmeldungen in Rückschlüsse auf die Raumbelegung umsetzt.
+- Hostet ein Modell für maschinelles Lernen auf einem API-Endpunkt zur Verwendung.
 
 ## **Konzepte für das Training eines maschinellen Lernmodells**
 Data Science und maschinelles Lernen sind riesige Gebiete für sich. Es würde den Rahmen dieses Moduls bei weitem sprengen, die Grundlagen des Trainings von Machine Learning-Modellen zu vermitteln. Glücklicherweise wurde die Werkzeugkette zum Erstellen neuer Modelle so weit vereinfacht, dass wir diese Werkzeugkette verwenden können, um mit ML zu experimentieren, wenn wir nur genug über unsere Daten wissen.

@@ -7,7 +7,7 @@ pre = "<b>d. </b>"
 ## Einleitung
 Am Ende dieses Kapitels sollte Ihre serverlose Anwendung Folgendes einsetzen:
 
-- Ein maschinelles Lernmodell, das aus Thermostatinformationen Rückschlüsse auf die Raumbelegung liefert
+- Ein maschinelles Lernmodell, das aus Thermostatinformationen Rückschlüsse auf die Raumbelegung liefert.
 
 ## So richten Sie die serverlose Infrastruktur ein
 The following steps will walk you through creation of a serverless function in AWS Lambda. The function defines a small bit of code that expect device shadow messages from IoT Core, transform the message into the format used with your ML endpoint, then invoke your ML endpoint to return the classification of *roomOccupancy* and the confidence score of the inference.

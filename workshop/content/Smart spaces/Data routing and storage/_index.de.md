@@ -7,8 +7,8 @@ pre = "<b>b. </b>"
 ## Einleitung
 Am Ende dieses Kapitels sollte Ihre serverlose Anwendung Folgendes tun:
 
-- Weiterleitung der vom intelligenten Thermostat empfangenen Meldungen an einen verwalteten Speicher- und Analysedienst
-- Abfragen zu Ihren verarbeiteten Daten auszuführen, um eine materialisierte Ansicht der Ergebnisse zu erzeugen
+- Weiterleitung der vom intelligenten Thermostat empfangenen Meldungen an einen verwalteten Speicher- und Analysedienst.
+- Abfragen zu Ihren verarbeiteten Daten auszuführen, um eine materialisierte Ansicht der Ergebnisse zu erzeugen.
 
 ## Konzepte zum Speichern und Analysieren von IoT-Daten
 Bis zu diesem Punkt war jeder Aspekt Ihrer IoT-Lösung flüchtig in dem Sinne, dass jede Nachricht empfangen, verarbeitet und dann verworfen wurde. Im Fall des IoT-Ereignis-Detektormodells gibt es zwar eine zustandsabhängige Entität, die auf neue Nachrichten reagiert, aber ansonsten gibt es keine gespeicherte Historie Ihrer Thermostatnachrichten. Dies ist der Schritt, der einen Datenspeicher für Ihre Thermostatmeldungen einrichtet.
