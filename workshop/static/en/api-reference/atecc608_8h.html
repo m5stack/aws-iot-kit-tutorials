@@ -117,7 +117,9 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initializes the ATECC608 Trust&amp;GO on the I2C bus. </p>
-<dl class="section note"><dt>Note</dt><dd>Must initialize the ATECC608 before performing any operations on the device.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Must initialize the ATECC608 before performing any operations on the secure element. </dd>
+<dd>
+The <a class="el" href="core2for_a_w_s_8h.html#a97289b2e8e9d22bcabba9ea38761c3f3" title="Initializes the power chip with default values, enables battery charging, and initializes all enabled...">Core2ForAWS_Init()</a> calls this function when the hardware feature is enabled.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>Status of initialization. 0 is success. View the list of possible return status codes <a href="https://github.com/espressif/esp-cryptoauthlib/blob/603225f3a4d0607d4e3c5483dc251639e956f9d3/cryptoauthlib/lib/atca_status.h">here</a>. </dd></dl>
 
 </div>

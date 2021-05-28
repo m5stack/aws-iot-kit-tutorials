@@ -74,9 +74,11 @@ $(function() {
 <div class="contents">
 <div class="textblock"><p>Initializes the display.</p>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> <a class="code" href="core2for_a_w_s_8h.html#a978ccc64fee3c2c15bdc8862e04bdec7">Core2ForAWS_Display_Init</a>();</div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a978ccc64fee3c2c15bdc8862e04bdec7"><div class="ttname"><a href="core2for_a_w_s_8h.html#a978ccc64fee3c2c15bdc8862e04bdec7">Core2ForAWS_Display_Init</a></div><div class="ttdeci">void Core2ForAWS_Display_Init()</div><div class="ttdoc">Initializes the display.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:223</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a978ccc64fee3c2c15bdc8862e04bdec7"><div class="ttname"><a href="core2for_a_w_s_8h.html#a978ccc64fee3c2c15bdc8862e04bdec7">Core2ForAWS_Display_Init</a></div><div class="ttdeci">void Core2ForAWS_Display_Init()</div><div class="ttdoc">Initializes the display.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:259</div></div>
 </div><!-- fragment --><p> You must use this to initialize the display before attempting to write to the display. It initializes the ILI9342C on the SPI bus and the LVGL driver.</p>
-<dl class="section note"><dt>Note</dt><dd>Creates a FreeRTOS task with the task name <code>gui</code>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Creates a FreeRTOS task with the task name <code>gui</code>. </dd>
+<dd>
+The <a class="el" href="core2for_a_w_s_8h.html#a97289b2e8e9d22bcabba9ea38761c3f3" title="Initializes the power chip with default values, enables battery charging, and initializes all enabled...">Core2ForAWS_Init()</a> calls this function when the hardware feature is enabled. </dd></dl>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->

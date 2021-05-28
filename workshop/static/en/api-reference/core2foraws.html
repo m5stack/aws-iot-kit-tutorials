@@ -72,21 +72,17 @@ $(function() {
 <p><a class="anchor" id="core2"></a></p>
 <h1><a class="anchor" id="core2foraws_example"></a>
 Example</h1>
-<p>The following example initializes the Core2 for AWS (which in-turn initializes PMU for the battery and SPI bus), the display, the touch buttons and the side LED bars. It then sets the screen brightness to 80. </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="core2for_a_w_s_8h.html">core2foraws.h</a>&quot;</span></div>
+<p>The following example initializes the Core2 for AWS, which initializes the PMU for the battery and other enabled features — such as the display (and SPI bus). It then sets the screen brightness to 80.</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="core2for_a_w_s_8h.html">core2foraws.h</a>&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> app_main(<span class="keywordtype">void</span>){</div>
 <div class="line">    <a class="code" href="core2for_a_w_s_8h.html#a97289b2e8e9d22bcabba9ea38761c3f3">Core2ForAWS_Init</a>();</div>
-<div class="line">    <a class="code" href="core2for_a_w_s_8h.html#a978ccc64fee3c2c15bdc8862e04bdec7">Core2ForAWS_Display_Init</a>();</div>
-<div class="line">    <a class="code" href="core2for_a_w_s_8h.html#af587d4081f64b442670a720d50a65e0e">Core2ForAWS_Button_Init</a>();</div>
-<div class="line">    <a class="code" href="core2for_a_w_s_8h.html#aede8a344ecfa40cc6aefc03a3f142f0b">Core2ForAWS_Sk6812_Init</a>();</div>
-<div class="line">    <a class="code" href="core2for_a_w_s_8h.html#a67a760b89e44e6bd0c96f90cc6aca47d">Core2ForAWS_Display_SetBrightness</a>(80); <span class="comment">/* Last since the display needs time to finish initializing. */</span></div>
+<div class="line"> </div>
+<div class="line">    <a class="code" href="core2for_a_w_s_8h.html#a67a760b89e44e6bd0c96f90cc6aca47d">Core2ForAWS_Display_SetBrightness</a>(80); <span class="comment">/* Should place this last to allow the display to finish initializing. */</span></div>
 <div class="line">}</div>
 <div class="ttc" id="acore2for_a_w_s_8h_html"><div class="ttname"><a href="core2for_a_w_s_8h.html">core2forAWS.h</a></div><div class="ttdoc">Functions to initialize and access Core2 for AWS IoT EduKit hardware features.</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a67a760b89e44e6bd0c96f90cc6aca47d"><div class="ttname"><a href="core2for_a_w_s_8h.html#a67a760b89e44e6bd0c96f90cc6aca47d">Core2ForAWS_Display_SetBrightness</a></div><div class="ttdeci">void Core2ForAWS_Display_SetBrightness(uint8_t brightness)</div><div class="ttdoc">Sets the brightness of the display.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:276</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a97289b2e8e9d22bcabba9ea38761c3f3"><div class="ttname"><a href="core2for_a_w_s_8h.html#a97289b2e8e9d22bcabba9ea38761c3f3">Core2ForAWS_Init</a></div><div class="ttdeci">void Core2ForAWS_Init()</div><div class="ttdoc">Initializes the power chip for battery charging and the SPI bus used for the screen and the SD card.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:19</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a978ccc64fee3c2c15bdc8862e04bdec7"><div class="ttname"><a href="core2for_a_w_s_8h.html#a978ccc64fee3c2c15bdc8862e04bdec7">Core2ForAWS_Display_Init</a></div><div class="ttdeci">void Core2ForAWS_Display_Init()</div><div class="ttdoc">Initializes the display.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:223</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_aede8a344ecfa40cc6aefc03a3f142f0b"><div class="ttname"><a href="core2for_a_w_s_8h.html#aede8a344ecfa40cc6aefc03a3f142f0b">Core2ForAWS_Sk6812_Init</a></div><div class="ttdeci">void Core2ForAWS_Sk6812_Init()</div><div class="ttdoc">Initializes the SK6812 LED bars.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:165</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_af587d4081f64b442670a720d50a65e0e"><div class="ttname"><a href="core2for_a_w_s_8h.html#af587d4081f64b442670a720d50a65e0e">Core2ForAWS_Button_Init</a></div><div class="ttdeci">void Core2ForAWS_Button_Init()</div><div class="ttdoc">Initializes the button_left, button_middle, button_right virtual buttons using the ft6336u touch cont...</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:39</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a67a760b89e44e6bd0c96f90cc6aca47d"><div class="ttname"><a href="core2for_a_w_s_8h.html#a67a760b89e44e6bd0c96f90cc6aca47d">Core2ForAWS_Display_SetBrightness</a></div><div class="ttdeci">void Core2ForAWS_Display_SetBrightness(uint8_t brightness)</div><div class="ttdoc">Sets the brightness of the display.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:312</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a97289b2e8e9d22bcabba9ea38761c3f3"><div class="ttname"><a href="core2for_a_w_s_8h.html#a97289b2e8e9d22bcabba9ea38761c3f3">Core2ForAWS_Init</a></div><div class="ttdeci">void Core2ForAWS_Init()</div><div class="ttdoc">Initializes the power chip with default values, enables battery charging, and initializes all enabled...</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:20</div></div>
 </div><!-- fragment --><h1><a class="anchor" id="core2foraws_functions"></a>
 Functions</h1>
 <ul>

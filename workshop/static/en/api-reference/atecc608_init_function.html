@@ -75,7 +75,9 @@ $(function() {
 <div class="textblock"><p>Initializes the ATECC608 Trust&amp;GO on the I2C bus.</p>
 <div class="fragment"><div class="line">ATCA_STATUS <a class="code" href="atecc608_8h.html#a1424ca035cb188b4c23450cb533525c0">Atecc608_Init</a>();</div>
 <div class="ttc" id="aatecc608_8h_html_a1424ca035cb188b4c23450cb533525c0"><div class="ttname"><a href="atecc608_8h.html#a1424ca035cb188b4c23450cb533525c0">Atecc608_Init</a></div><div class="ttdeci">ATCA_STATUS Atecc608_Init()</div><div class="ttdoc">Initializes the ATECC608 Trust&amp;GO on the I2C bus.</div><div class="ttdef"><b>Definition:</b> atecc608.c:74</div></div>
-</div><!-- fragment --> <dl class="section note"><dt>Note</dt><dd>Must initialize the ATECC608 before performing any operations on the device.</dd></dl>
+</div><!-- fragment --> <dl class="section note"><dt>Note</dt><dd>Must initialize the ATECC608 before performing any operations on the secure element. </dd>
+<dd>
+The <a class="el" href="core2for_a_w_s_8h.html#a97289b2e8e9d22bcabba9ea38761c3f3" title="Initializes the power chip with default values, enables battery charging, and initializes all enabled...">Core2ForAWS_Init()</a> calls this function when the hardware feature is enabled.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>Status of initialization. 0 is success. View the list of possible return status codes <a href="https://github.com/espressif/esp-cryptoauthlib/blob/603225f3a4d0607d4e3c5483dc251639e956f9d3/cryptoauthlib/lib/atca_status.h">here</a>. </dd></dl>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

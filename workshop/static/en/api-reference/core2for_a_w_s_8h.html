@@ -79,8 +79,7 @@ $(function() {
 
 <p>Functions to initialize and access Core2 for AWS IoT EduKit hardware features.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;esp_vfs_fat.h&quot;</code><br />
-<code>#include &quot;sdmmc_cmd.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="axp192_8h_source.html">axp192.h</a>&quot;</code><br />
 <code>#include &quot;freertos/semphr.h&quot;</code><br />
 <code>#include &quot;lvgl/lvgl.h&quot;</code><br />
 <code>#include &quot;disp_driver.h&quot;</code><br />
@@ -88,6 +87,9 @@ $(function() {
 <code>#include &quot;<a class="el" href="ft6336u_8h_source.html">ft6336u.h</a>&quot;</code><br />
 <code>#include &quot;sk6812.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="button_8h_source.html">button.h</a>&quot;</code><br />
+<code>#include &quot;esp_freertos_hooks.h&quot;</code><br />
+<code>#include &quot;esp_vfs_fat.h&quot;</code><br />
+<code>#include &quot;sdmmc_cmd.h&quot;</code><br />
 </div>
 <p><a href="core2for_a_w_s_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -110,13 +112,11 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a97289b2e8e9d22bcabba9ea38761c3f3"><td class="memItemLeft" align="right" valign="top"><a id="a97289b2e8e9d22bcabba9ea38761c3f3"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core2for_a_w_s_8h.html#a97289b2e8e9d22bcabba9ea38761c3f3">Core2ForAWS_Init</a> ()</td></tr>
-<tr class="memdesc:a97289b2e8e9d22bcabba9ea38761c3f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the power chip for battery charging and the SPI bus used for the screen and the SD card. <br /></td></tr>
+<tr class="memitem:a97289b2e8e9d22bcabba9ea38761c3f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core2for_a_w_s_8h.html#a97289b2e8e9d22bcabba9ea38761c3f3">Core2ForAWS_Init</a> ()</td></tr>
+<tr class="memdesc:a97289b2e8e9d22bcabba9ea38761c3f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the power chip with default values, enables battery charging, and initializes all enabled hardware features.  <a href="core2for_a_w_s_8h.html#a97289b2e8e9d22bcabba9ea38761c3f3">More...</a><br /></td></tr>
 <tr class="separator:a97289b2e8e9d22bcabba9ea38761c3f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af587d4081f64b442670a720d50a65e0e"><td class="memItemLeft" align="right" valign="top"><a id="af587d4081f64b442670a720d50a65e0e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core2for_a_w_s_8h.html#af587d4081f64b442670a720d50a65e0e">Core2ForAWS_Button_Init</a> ()</td></tr>
-<tr class="memdesc:af587d4081f64b442670a720d50a65e0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the <a class="el" href="core2for_a_w_s_8h.html#a2cd914992d1bec1babd0a7ffba0f554b">button_left</a>, <a class="el" href="core2for_a_w_s_8h.html#a49b277909900db7e85d6be2841301fe7">button_middle</a>, <a class="el" href="core2for_a_w_s_8h.html#ab6cde5989a3afec96cce115746efc606">button_right</a> virtual buttons using the ft6336u touch controller. <br /></td></tr>
+<tr class="memitem:af587d4081f64b442670a720d50a65e0e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core2for_a_w_s_8h.html#af587d4081f64b442670a720d50a65e0e">Core2ForAWS_Button_Init</a> ()</td></tr>
+<tr class="memdesc:af587d4081f64b442670a720d50a65e0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the <a class="el" href="core2for_a_w_s_8h.html#a2cd914992d1bec1babd0a7ffba0f554b">button_left</a>, <a class="el" href="core2for_a_w_s_8h.html#a49b277909900db7e85d6be2841301fe7">button_middle</a>, <a class="el" href="core2for_a_w_s_8h.html#ab6cde5989a3afec96cce115746efc606">button_right</a> virtual buttons using the ft6336u touch controller.  <a href="core2for_a_w_s_8h.html#af587d4081f64b442670a720d50a65e0e">More...</a><br /></td></tr>
 <tr class="separator:af587d4081f64b442670a720d50a65e0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4906ae00069686be4fe675f0b1d2b950"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core2for_a_w_s_8h.html#a4906ae00069686be4fe675f0b1d2b950">Core2ForAWS_Speaker_Enable</a> (uint8_t state)</td></tr>
 <tr class="memdesc:a4906ae00069686be4fe675f0b1d2b950"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or disables the NS4168 speaker amplifier.  <a href="core2for_a_w_s_8h.html#a4906ae00069686be4fe675f0b1d2b950">More...</a><br /></td></tr>
@@ -217,6 +217,53 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a97289b2e8e9d22bcabba9ea38761c3f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97289b2e8e9d22bcabba9ea38761c3f3">&#9670;&nbsp;</a></span>Core2ForAWS_Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Core2ForAWS_Init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes the power chip with default values, enables battery charging, and initializes all enabled hardware features. </p>
+<p>At minimum, this helper function initializes the AXP192 power management unit (PMU) with the green LED and vibration motor off, as well as initializing the following features (if enabled):</p><ol type="1">
+<li>Display — initializes the SPI bus, also powers the controller and backlight to ~50% brightness.</li>
+<li>The touch controller via the FT6336U.</li>
+<li>Virtual left, middle, right buttons using the touch controller.</li>
+<li>The SK6812 side LED bars.</li>
+<li>The 6-axis IMU via the MPU6886.</li>
+<li>The real-time clock via the BM8563 features. </li>
+</ol>
+
+</div>
+</div>
+<a id="af587d4081f64b442670a720d50a65e0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af587d4081f64b442670a720d50a65e0e">&#9670;&nbsp;</a></span>Core2ForAWS_Button_Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Core2ForAWS_Button_Init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes the <a class="el" href="core2for_a_w_s_8h.html#a2cd914992d1bec1babd0a7ffba0f554b">button_left</a>, <a class="el" href="core2for_a_w_s_8h.html#a49b277909900db7e85d6be2841301fe7">button_middle</a>, <a class="el" href="core2for_a_w_s_8h.html#ab6cde5989a3afec96cce115746efc606">button_right</a> virtual buttons using the ft6336u touch controller. </p>
+<dl class="section note"><dt>Note</dt><dd>The <a class="el" href="core2for_a_w_s_8h.html#a97289b2e8e9d22bcabba9ea38761c3f3" title="Initializes the power chip with default values, enables battery charging, and initializes all enabled...">Core2ForAWS_Init()</a> calls this function when the hardware feature is enabled. </dd></dl>
+
+</div>
+</div>
 <a id="a4906ae00069686be4fe675f0b1d2b950"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4906ae00069686be4fe675f0b1d2b950">&#9670;&nbsp;</a></span>Core2ForAWS_Speaker_Enable()</h2>
 
@@ -284,7 +331,7 @@ Variables</h2></td></tr>
 
 <p>Initializes the AXP192 Power Management Unit (PMU). </p>
 <p>Used to directly initialize the AXP192 LDO2, LDO3, DC2, and DC3 pins.</p>
-<dl class="section note"><dt>Note</dt><dd>The <a class="el" href="core2for_a_w_s_8h.html#a97289b2e8e9d22bcabba9ea38761c3f3" title="Initializes the power chip for battery charging and the SPI bus used for the screen and the SD card.">Core2ForAWS_Init()</a> calls this function with parameters to initialize the vibration motor (off) and display brightness (~55%) at the same time.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The <a class="el" href="core2for_a_w_s_8h.html#a97289b2e8e9d22bcabba9ea38761c3f3" title="Initializes the power chip with default values, enables battery charging, and initializes all enabled...">Core2ForAWS_Init()</a> calls this function with parameters to initialize the vibration motor and display backlight. If the ILI9342u display hardware feature is enabled, it sets the brightness to ~55% brightness. The vibration motor is always initialized in the off state.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">ldo2_volt</td><td>low-dropout voltage of the display. </td></tr>
@@ -316,7 +363,7 @@ Variables</h2></td></tr>
 <p><b>EXAMPLE</b> Get the current battery voltage in the variable named <em>battery_voltage</em> and print the voltage to the serial output.</p>
 <div class="fragment"><div class="line"><span class="keywordtype">float</span> battery_voltage = <a class="code" href="core2for_a_w_s_8h.html#a68be46dd836f6af03e9b6cd88f2874b0">Core2ForAWS_PMU_GetBatVolt</a>();</div>
 <div class="line">printf(<span class="stringliteral">&quot;Battery Voltage: %0.2f&quot;</span>, battery_voltage);</div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a68be46dd836f6af03e9b6cd88f2874b0"><div class="ttname"><a href="core2for_a_w_s_8h.html#a68be46dd836f6af03e9b6cd88f2874b0">Core2ForAWS_PMU_GetBatVolt</a></div><div class="ttdeci">float Core2ForAWS_PMU_GetBatVolt()</div><div class="ttdoc">Gets the battery voltage with the AXP192.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:108</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a68be46dd836f6af03e9b6cd88f2874b0"><div class="ttname"><a href="core2for_a_w_s_8h.html#a68be46dd836f6af03e9b6cd88f2874b0">Core2ForAWS_PMU_GetBatVolt</a></div><div class="ttdeci">float Core2ForAWS_PMU_GetBatVolt()</div><div class="ttdoc">Gets the battery voltage with the AXP192.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:144</div></div>
 </div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>The voltage of the battery. </dd></dl>
 
 </div>
@@ -340,7 +387,7 @@ Variables</h2></td></tr>
 <p><b>EXAMPLE</b> Get the current battery current in the variable named <em>battery_current</em> and print the current to the serial output.</p>
 <div class="fragment"><div class="line"><span class="keywordtype">float</span> battery_current = <a class="code" href="core2for_a_w_s_8h.html#a71a5ad23b355052dbe1b334e701a99bc">Core2ForAWS_PMU_GetBatCurrent</a>();</div>
 <div class="line">printf(<span class="stringliteral">&quot;Battery Current: %0.3f&quot;</span>, battery_current);</div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a71a5ad23b355052dbe1b334e701a99bc"><div class="ttname"><a href="core2for_a_w_s_8h.html#a71a5ad23b355052dbe1b334e701a99bc">Core2ForAWS_PMU_GetBatCurrent</a></div><div class="ttdeci">float Core2ForAWS_PMU_GetBatCurrent()</div><div class="ttdoc">Gets the battery current draw with the AXP192.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:112</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a71a5ad23b355052dbe1b334e701a99bc"><div class="ttname"><a href="core2for_a_w_s_8h.html#a71a5ad23b355052dbe1b334e701a99bc">Core2ForAWS_PMU_GetBatCurrent</a></div><div class="ttdeci">float Core2ForAWS_PMU_GetBatCurrent()</div><div class="ttdoc">Gets the battery current draw with the AXP192.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:148</div></div>
 </div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>The current draw of the battery. </dd></dl>
 
 </div>
@@ -362,7 +409,9 @@ Variables</h2></td></tr>
 
 <p>Initializes the display. </p>
 <p>You must use this to initialize the display before attempting to write to the display. It initializes the ILI9342C on the SPI bus and the LVGL driver.</p>
-<dl class="section note"><dt>Note</dt><dd>Creates a FreeRTOS task with the task name <code>gui</code>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Creates a FreeRTOS task with the task name <code>gui</code>. </dd>
+<dd>
+The <a class="el" href="core2for_a_w_s_8h.html#a97289b2e8e9d22bcabba9ea38761c3f3" title="Initializes the power chip with default values, enables battery charging, and initializes all enabled...">Core2ForAWS_Init()</a> calls this function when the hardware feature is enabled. </dd></dl>
 
 </div>
 </div>
@@ -386,7 +435,7 @@ Variables</h2></td></tr>
 <p>This function sets the brightness of the display using the AXP192 power management unit. It does not write to the display controller, so it does not require taking the xGuiSemaphore mutex prior to use.</p>
 <p><b>Example:</b></p>
 <p>Set the display brightness to maximum. </p><div class="fragment"><div class="line"><a class="code" href="core2for_a_w_s_8h.html#a67a760b89e44e6bd0c96f90cc6aca47d">Core2ForAWS_Display_SetBrightness</a>(100);</div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a67a760b89e44e6bd0c96f90cc6aca47d"><div class="ttname"><a href="core2for_a_w_s_8h.html#a67a760b89e44e6bd0c96f90cc6aca47d">Core2ForAWS_Display_SetBrightness</a></div><div class="ttdeci">void Core2ForAWS_Display_SetBrightness(uint8_t brightness)</div><div class="ttdoc">Sets the brightness of the display.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:276</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a67a760b89e44e6bd0c96f90cc6aca47d"><div class="ttname"><a href="core2for_a_w_s_8h.html#a67a760b89e44e6bd0c96f90cc6aca47d">Core2ForAWS_Display_SetBrightness</a></div><div class="ttdeci">void Core2ForAWS_Display_SetBrightness(uint8_t brightness)</div><div class="ttdoc">Sets the brightness of the display.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:312</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">brightness</td><td>the desired brightness of the display. Accepts a value from 0 to 100. </td></tr>
@@ -464,7 +513,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initializes the SK6812 LED bars. </p>
-<p>You must use this to initialize the LED bars before attempting to use either of the LED bars. </p>
+<p>You must use this to initialize the LED bars before attempting to use either of the LED bars.</p>
+<dl class="section note"><dt>Note</dt><dd>The <a class="el" href="core2for_a_w_s_8h.html#a97289b2e8e9d22bcabba9ea38761c3f3" title="Initializes the power chip with default values, enables battery charging, and initializes all enabled...">Core2ForAWS_Init()</a> calls this function when the hardware feature is enabled. </dd></dl>
 
 </div>
 </div>
@@ -502,8 +552,8 @@ Variables</h2></td></tr>
 <div class="line">    <a class="code" href="core2for_a_w_s_8h.html#afa9b642801c16af9fd8f6390a0671549">Core2ForAWS_Sk6812_Show</a>();</div>
 <div class="line">    vTaskDelay(pdMS_TO_TICKS(1000));</div>
 <div class="line">}</div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a15558a37529e89394598df0128d721c9"><div class="ttname"><a href="core2for_a_w_s_8h.html#a15558a37529e89394598df0128d721c9">Core2ForAWS_Sk6812_SetColor</a></div><div class="ttdeci">void Core2ForAWS_Sk6812_SetColor(uint16_t pos, uint32_t color)</div><div class="ttdoc">Sets the color of a single LED in the LED bars.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:180</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_afa9b642801c16af9fd8f6390a0671549"><div class="ttname"><a href="core2for_a_w_s_8h.html#afa9b642801c16af9fd8f6390a0671549">Core2ForAWS_Sk6812_Show</a></div><div class="ttdeci">void Core2ForAWS_Sk6812_Show()</div><div class="ttdoc">Updates the LEDs in the LED bars with any new values set using Core2ForAWS_Sk6812_SetColor,...</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:200</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a15558a37529e89394598df0128d721c9"><div class="ttname"><a href="core2for_a_w_s_8h.html#a15558a37529e89394598df0128d721c9">Core2ForAWS_Sk6812_SetColor</a></div><div class="ttdeci">void Core2ForAWS_Sk6812_SetColor(uint16_t pos, uint32_t color)</div><div class="ttdoc">Sets the color of a single LED in the LED bars.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:216</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_afa9b642801c16af9fd8f6390a0671549"><div class="ttname"><a href="core2for_a_w_s_8h.html#afa9b642801c16af9fd8f6390a0671549">Core2ForAWS_Sk6812_Show</a></div><div class="ttdeci">void Core2ForAWS_Sk6812_Show()</div><div class="ttdoc">Updates the LEDs in the LED bars with any new values set using Core2ForAWS_Sk6812_SetColor,...</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:236</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">pos</td><td>LED to set. Accepts a value from 0 to 9.</td></tr>
@@ -547,9 +597,9 @@ Variables</h2></td></tr>
 <p>Set the left LED bar to green and the right LED bar to red. </p><div class="fragment"><div class="line"><a class="code" href="core2for_a_w_s_8h.html#a5dde1ef368e54c5c39db6257b0a83e13">Core2ForAWS_Sk6812_SetSideColor</a>(<a class="code" href="core2for_a_w_s_8h.html#ad401f71468100c2d5d8b882577cf7884">SK6812_SIDE_LEFT</a>, 0x00ff00);</div>
 <div class="line"><a class="code" href="core2for_a_w_s_8h.html#a5dde1ef368e54c5c39db6257b0a83e13">Core2ForAWS_Sk6812_SetSideColor</a>(<a class="code" href="core2for_a_w_s_8h.html#ab984a626760459f01581809754a67756">SK6812_SIDE_RIGHT</a>, 0xff0000);</div>
 <div class="line"><a class="code" href="core2for_a_w_s_8h.html#afa9b642801c16af9fd8f6390a0671549">Core2ForAWS_Sk6812_Show</a>();</div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a5dde1ef368e54c5c39db6257b0a83e13"><div class="ttname"><a href="core2for_a_w_s_8h.html#a5dde1ef368e54c5c39db6257b0a83e13">Core2ForAWS_Sk6812_SetSideColor</a></div><div class="ttdeci">void Core2ForAWS_Sk6812_SetSideColor(uint8_t side, uint32_t color)</div><div class="ttdoc">Sets the color of all the LEDs on one side of the LED bars.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:184</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_ab984a626760459f01581809754a67756"><div class="ttname"><a href="core2for_a_w_s_8h.html#ab984a626760459f01581809754a67756">SK6812_SIDE_RIGHT</a></div><div class="ttdeci">#define SK6812_SIDE_RIGHT</div><div class="ttdoc">LEDs on right side of the LED bar. For use with Core2ForAWS_Sk6812_SetSideColor().</div><div class="ttdef"><b>Definition:</b> core2forAWS.h:67</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_ad401f71468100c2d5d8b882577cf7884"><div class="ttname"><a href="core2for_a_w_s_8h.html#ad401f71468100c2d5d8b882577cf7884">SK6812_SIDE_LEFT</a></div><div class="ttdeci">#define SK6812_SIDE_LEFT</div><div class="ttdoc">LEDs on left side of the LED bar. For use with Core2ForAWS_Sk6812_SetSideColor().</div><div class="ttdef"><b>Definition:</b> core2forAWS.h:60</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a5dde1ef368e54c5c39db6257b0a83e13"><div class="ttname"><a href="core2for_a_w_s_8h.html#a5dde1ef368e54c5c39db6257b0a83e13">Core2ForAWS_Sk6812_SetSideColor</a></div><div class="ttdeci">void Core2ForAWS_Sk6812_SetSideColor(uint8_t side, uint32_t color)</div><div class="ttdoc">Sets the color of all the LEDs on one side of the LED bars.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:220</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_ab984a626760459f01581809754a67756"><div class="ttname"><a href="core2for_a_w_s_8h.html#ab984a626760459f01581809754a67756">SK6812_SIDE_RIGHT</a></div><div class="ttdeci">#define SK6812_SIDE_RIGHT</div><div class="ttdoc">LEDs on right side of the LED bar. For use with Core2ForAWS_Sk6812_SetSideColor().</div><div class="ttdef"><b>Definition:</b> core2forAWS.h:63</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_ad401f71468100c2d5d8b882577cf7884"><div class="ttname"><a href="core2for_a_w_s_8h.html#ad401f71468100c2d5d8b882577cf7884">SK6812_SIDE_LEFT</a></div><div class="ttdeci">#define SK6812_SIDE_LEFT</div><div class="ttdoc">LEDs on left side of the LED bar. For use with Core2ForAWS_Sk6812_SetSideColor().</div><div class="ttdef"><b>Definition:</b> core2forAWS.h:56</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">side</td><td>Side of LEDs to set. Accepts <code>SK6812_SIDE_LEFT</code> or <code>SK6812_SIDE_RIGHT</code>.</td></tr>
@@ -582,7 +632,7 @@ Variables</h2></td></tr>
 <p><b>Example:</b></p>
 <p>Set the LEDs to full brightness. </p><div class="fragment"><div class="line"><a class="code" href="core2for_a_w_s_8h.html#a5c6c1bbeda65f03428a3fa780c1d3dc8">Core2ForAWS_Sk6812_SetBrightness</a>(100);</div>
 <div class="line"><a class="code" href="core2for_a_w_s_8h.html#afa9b642801c16af9fd8f6390a0671549">Core2ForAWS_Sk6812_Show</a>();</div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a5c6c1bbeda65f03428a3fa780c1d3dc8"><div class="ttname"><a href="core2for_a_w_s_8h.html#a5c6c1bbeda65f03428a3fa780c1d3dc8">Core2ForAWS_Sk6812_SetBrightness</a></div><div class="ttdeci">void Core2ForAWS_Sk6812_SetBrightness(uint8_t brightness)</div><div class="ttdoc">Sets the brightness of the LED bars.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:196</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a5c6c1bbeda65f03428a3fa780c1d3dc8"><div class="ttname"><a href="core2for_a_w_s_8h.html#a5c6c1bbeda65f03428a3fa780c1d3dc8">Core2ForAWS_Sk6812_SetBrightness</a></div><div class="ttdeci">void Core2ForAWS_Sk6812_SetBrightness(uint8_t brightness)</div><div class="ttdoc">Sets the brightness of the LED bars.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:232</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">brightness</td><td>Brightness of the LED bars. 0 is off, 100 is full brightness. </td></tr>
@@ -632,7 +682,7 @@ Variables</h2></td></tr>
 <p><b>Example:</b></p>
 <p>Set the LEDs to full brightness. </p><div class="fragment"><div class="line"><a class="code" href="core2for_a_w_s_8h.html#ad6f1363ce5753c9368c39bfcbc93ad77">Core2ForAWS_Sk6812_Clear</a>();</div>
 <div class="line"><a class="code" href="core2for_a_w_s_8h.html#afa9b642801c16af9fd8f6390a0671549">Core2ForAWS_Sk6812_Show</a>();</div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_ad6f1363ce5753c9368c39bfcbc93ad77"><div class="ttname"><a href="core2for_a_w_s_8h.html#ad6f1363ce5753c9368c39bfcbc93ad77">Core2ForAWS_Sk6812_Clear</a></div><div class="ttdeci">void Core2ForAWS_Sk6812_Clear()</div><div class="ttdoc">Turns off the LEDs in the LED bars and removes any set color.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:204</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_ad6f1363ce5753c9368c39bfcbc93ad77"><div class="ttname"><a href="core2for_a_w_s_8h.html#ad6f1363ce5753c9368c39bfcbc93ad77">Core2ForAWS_Sk6812_Clear</a></div><div class="ttdeci">void Core2ForAWS_Sk6812_Clear()</div><div class="ttdoc">Turns off the LEDs in the LED bars and removes any set color.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:240</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -679,7 +729,7 @@ PRODUCT NAME&gt;&gt;!":</p>
 <div class="line">fprintf(f, &quot;Hello %s!\n&quot;, card-&gt;cid.name);</div>
 <div class="line">fclose(f);</div>
 <div class="line">xSemaphoreGive(<a class="code" href="disp__spi_8h.html#a76c0525d646735793add25b18043e600">spi_mutex</a>);</div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_ae9760e6646aa10a5db904f0cd719b4e8"><div class="ttname"><a href="core2for_a_w_s_8h.html#ae9760e6646aa10a5db904f0cd719b4e8">Core2ForAWS_Sdcard_Init</a></div><div class="ttdeci">esp_err_t Core2ForAWS_Sdcard_Init(const char *mount, sdmmc_card_t **out_card)</div><div class="ttdoc">Initializes the SD-Card.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:52</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_ae9760e6646aa10a5db904f0cd719b4e8"><div class="ttname"><a href="core2for_a_w_s_8h.html#ae9760e6646aa10a5db904f0cd719b4e8">Core2ForAWS_Sdcard_Init</a></div><div class="ttdeci">esp_err_t Core2ForAWS_Sdcard_Init(const char *mount, sdmmc_card_t **out_card)</div><div class="ttdoc">Initializes the SD-Card.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:90</div></div>
 <div class="ttc" id="adisp__spi_8h_html_a3dc6a7525e5a0b34e37a3a64478ec9ee"><div class="ttname"><a href="disp__spi_8h.html#a3dc6a7525e5a0b34e37a3a64478ec9ee">spi_poll</a></div><div class="ttdeci">void spi_poll()</div><div class="ttdoc">Polls the SPI bus for a pending SPI transaction to complete.</div><div class="ttdef"><b>Definition:</b> disp_spi.c:34</div></div>
 <div class="ttc" id="adisp__spi_8h_html_a76c0525d646735793add25b18043e600"><div class="ttname"><a href="disp__spi_8h.html#a76c0525d646735793add25b18043e600">spi_mutex</a></div><div class="ttdeci">SemaphoreHandle_t spi_mutex</div><div class="ttdoc">Semaphore for the shared SPI bus.</div><div class="ttdef"><b>Definition:</b> disp_spi.c:21</div></div>
 </div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd><a href="https://docs.espressif.com/projects/esp-idf/en/release-v4.2/esp32/api-reference/system/esp_err.html#macros">esp_err_t</a>. 0 or <code>ESP_OK</code> if successful. </dd></dl>
@@ -708,7 +758,7 @@ PRODUCT NAME&gt;&gt;!":</p>
 </div><div class="memdoc">
 
 <p>FreeRTOS semaphore to be used when performing any operation on the display. </p>
-<p>To avoid conflicts with multiple threads attempting to write to the display, take this FreeRTOS semaphore first, use the <a href="https://docs.lvgl.io/v7/en/html/widgets/index.html">LVGL widget</a> API of choice, and then give the semaphore. The FreeRTOS task, guiTask(), will write to the ILI9342C display controller to update the display.</p>
+<p>To avoid conflicts with multiple threads attempting to write to the display, take this FreeRTOS semaphore first, use the <a href="https://docs.lvgl.io/7.11/widgets/index.html">LVGL widget</a> API of choice, and then give the semaphore. The FreeRTOS task, guiTask(), will write to the ILI9342C display controller to update the display.</p>
 <p><b>Example:</b></p>
 <p>Create a LVGL label widget, set the text of the label to "Hello World!", and align the label to the center of the screen. </p><div class="fragment"><div class="line">xSemaphoreTake(<a class="code" href="core2for_a_w_s_8h.html#a2a1ad60c25ec8207f8d723197855a1a1">xGuiSemaphore</a>, portMAX_DELAY);</div>
 <div class="line"> </div>
@@ -717,7 +767,7 @@ PRODUCT NAME&gt;&gt;!":</p>
 <div class="line">lv_obj_align(hello_label, NULL, LV_ALIGN_CENTER, 0, 0);</div>
 <div class="line"> </div>
 <div class="line">xSemaphoreGive(<a class="code" href="core2for_a_w_s_8h.html#a2a1ad60c25ec8207f8d723197855a1a1">xGuiSemaphore</a>);</div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a2a1ad60c25ec8207f8d723197855a1a1"><div class="ttname"><a href="core2for_a_w_s_8h.html#a2a1ad60c25ec8207f8d723197855a1a1">xGuiSemaphore</a></div><div class="ttdeci">SemaphoreHandle_t xGuiSemaphore</div><div class="ttdoc">FreeRTOS semaphore to be used when performing any operation on the display.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:214</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a2a1ad60c25ec8207f8d723197855a1a1"><div class="ttname"><a href="core2for_a_w_s_8h.html#a2a1ad60c25ec8207f8d723197855a1a1">xGuiSemaphore</a></div><div class="ttdeci">SemaphoreHandle_t xGuiSemaphore</div><div class="ttdoc">FreeRTOS semaphore to be used when performing any operation on the display.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:250</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -748,7 +798,7 @@ PRODUCT NAME&gt;&gt;!":</p>
 <div class="line">    printf(<span class="stringliteral">&quot;left button pressed&quot;</span>);</div>
 <div class="line">}</div>
 <div class="ttc" id="abutton_8h_html_acf2b76f9c6fe8e6f8ac65ff1eff8ccdd"><div class="ttname"><a href="button_8h.html#acf2b76f9c6fe8e6f8ac65ff1eff8ccdd">Button_WasPressed</a></div><div class="ttdeci">uint8_t Button_WasPressed(Button_t *button)</div><div class="ttdoc">See if the specified button was pressed.</div><div class="ttdef"><b>Definition:</b> button.c:43</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a2cd914992d1bec1babd0a7ffba0f554b"><div class="ttname"><a href="core2for_a_w_s_8h.html#a2cd914992d1bec1babd0a7ffba0f554b">button_left</a></div><div class="ttdeci">Button_t * button_left</div><div class="ttdoc">Left virtual touch button.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:35</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a2cd914992d1bec1babd0a7ffba0f554b"><div class="ttname"><a href="core2for_a_w_s_8h.html#a2cd914992d1bec1babd0a7ffba0f554b">button_left</a></div><div class="ttdeci">Button_t * button_left</div><div class="ttdoc">Left virtual touch button.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:73</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -778,7 +828,7 @@ PRODUCT NAME&gt;&gt;!":</p>
 <p>Print "middle button pressed" when the on-screen middle button is pressed. </p><div class="fragment"><div class="line"><span class="keywordflow">if</span> (<a class="code" href="button_8h.html#acf2b76f9c6fe8e6f8ac65ff1eff8ccdd">Button_WasPressed</a>(<a class="code" href="core2for_a_w_s_8h.html#a49b277909900db7e85d6be2841301fe7">button_middle</a>)) {</div>
 <div class="line">    printf(<span class="stringliteral">&quot;middle button pressed&quot;</span>);</div>
 <div class="line">}</div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a49b277909900db7e85d6be2841301fe7"><div class="ttname"><a href="core2for_a_w_s_8h.html#a49b277909900db7e85d6be2841301fe7">button_middle</a></div><div class="ttdeci">Button_t * button_middle</div><div class="ttdoc">Middle virtual touch button.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:36</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a49b277909900db7e85d6be2841301fe7"><div class="ttname"><a href="core2for_a_w_s_8h.html#a49b277909900db7e85d6be2841301fe7">button_middle</a></div><div class="ttdeci">Button_t * button_middle</div><div class="ttdoc">Middle virtual touch button.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:74</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -805,10 +855,11 @@ PRODUCT NAME&gt;&gt;!":</p>
 <p>Right virtual touch button. </p>
 <p>This is a virtual touch button which contains the definitions of a mapped region of the screen that corresponds to the button location and touch events from the FT6336U capacitive touch controller. When the screen is touched in the region that represents the right button, it will update the state of the button. You can use the APIs in the button library with this button as the input parameter to query the button's state.</p>
 <p><b>Example:</b></p>
-<p>Print "right button pressed" when the on-screen right button is pressed. </p><div class="fragment"><div class="line"><span class="keywordflow">if</span> (<a class="code" href="button_8h.html#acf2b76f9c6fe8e6f8ac65ff1eff8ccdd">Button_WasPressed</a>(<a class="code" href="core2for_a_w_s_8h.html#ab6cde5989a3afec96cce115746efc606">button_right</a>)) {</div>
+<p>Print "right button pressed" when the on-screen right button is pressed.</p>
+<div class="fragment"><div class="line"><span class="keywordflow">if</span> (<a class="code" href="button_8h.html#acf2b76f9c6fe8e6f8ac65ff1eff8ccdd">Button_WasPressed</a>(<a class="code" href="core2for_a_w_s_8h.html#ab6cde5989a3afec96cce115746efc606">button_right</a>)) {</div>
 <div class="line">    printf(<span class="stringliteral">&quot;right button pressed&quot;</span>);</div>
 <div class="line">}</div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_ab6cde5989a3afec96cce115746efc606"><div class="ttname"><a href="core2for_a_w_s_8h.html#ab6cde5989a3afec96cce115746efc606">button_right</a></div><div class="ttdeci">Button_t * button_right</div><div class="ttdoc">Right virtual touch button.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:37</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_ab6cde5989a3afec96cce115746efc606"><div class="ttname"><a href="core2for_a_w_s_8h.html#ab6cde5989a3afec96cce115746efc606">button_right</a></div><div class="ttdeci">Button_t * button_right</div><div class="ttdoc">Right virtual touch button.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:75</div></div>
 </div><!-- fragment --> 
 </div>
 </div>

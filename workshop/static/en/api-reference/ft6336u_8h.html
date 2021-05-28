@@ -117,7 +117,9 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initializes the FT6336U over I2C. </p>
-<dl class="section note"><dt>Note</dt><dd>It creates a FreeRTOS task with the task name <code>FT6336Task</code> and installs an ISR on the interrupt pin FT6336U_INTR_PIN.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The <a class="el" href="core2for_a_w_s_8h.html#a97289b2e8e9d22bcabba9ea38761c3f3" title="Initializes the power chip with default values, enables battery charging, and initializes all enabled...">Core2ForAWS_Init()</a> calls this function when the hardware feature is enabled. </dd>
+<dd>
+It creates a FreeRTOS task with the task name <code>FT6336Task</code> and installs an ISR on the interrupt pin FT6336U_INTR_PIN.</dd></dl>
 <p>The most recent button press state is stored within the library and can be queried using the functions provided by this library.</p>
 <p>The FreeRTOS task remains suspended and only resumes when the screen is pressed (which is informed by the FT6336U using the interrupt on the FT6336U_INTR_PIN). If multiple press events are stashed by the hardware, the FreeRTOS task keeps retrieving them one by one at an interval of 20 ticks. Once all the events are retrieved, the task suspends itself. </p>
 

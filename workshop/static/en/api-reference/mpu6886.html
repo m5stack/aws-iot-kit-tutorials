@@ -74,7 +74,7 @@ $(function() {
 <p>To enable this feature using KConfig, use the command <code>pio run --environment core2foraws --target menuconfig</code> from within the root of the project directory in your <a href="/en/blinky-hello-world/prerequisites.html#open-the-platformio-cli-terminal-window">PlatformIO terminal window</a> and go to the menu <code>Component Config --&gt; Core2 for AWS hardware enable</code> to set the features you want to enable.</p>
 <h1><a class="anchor" id="mpu6886_example"></a>
 Example</h1>
-<p>The following example initializes the Core2 for AWS (which in-turn initializes PMU for the battery and SPI bus), initializes the MPU6886, and retrieves the accelerometer data which is stored in accel_x, accel_y, accel_z, and then prints it using the ESP logger.</p>
+<p>The following example initializes the Core2 for AWS, which initializes the PMU for the battery and other user enabled hardware features — such as the MPU6886. It then retrieves the accelerometer data which is stored in accel_x, accel_y, and accel_z. Lastly, it prints the values using the ESP logger.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;esp_log.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="core2for_a_w_s_8h.html">core2foraws.h</a>&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="mpu6886_8h.html">mpu6886.h</a>&quot;</span></div>
@@ -83,7 +83,6 @@ Example</h1>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> app_main(<span class="keywordtype">void</span>){</div>
 <div class="line">    <a class="code" href="core2for_a_w_s_8h.html#a97289b2e8e9d22bcabba9ea38761c3f3">Core2ForAWS_Init</a>();</div>
-<div class="line">    <a class="code" href="mpu6886_8h.html#a402a6662575face25ec3ca336f654c98">MPU6886_Init</a>();</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">float</span> accel_x = 0.00;</div>
 <div class="line">    <span class="keywordtype">float</span> accel_y = 0.00;</div>
@@ -93,10 +92,9 @@ Example</h1>
 <div class="line">    ESP_LOGI(TAG, <span class="stringliteral">&quot;X: %.2f -- Y; %.2f -- Z: %.2f&quot;</span>, accel_x, accel_y, accel_z);</div>
 <div class="line">}</div>
 <div class="ttc" id="acore2for_a_w_s_8h_html"><div class="ttname"><a href="core2for_a_w_s_8h.html">core2forAWS.h</a></div><div class="ttdoc">Functions to initialize and access Core2 for AWS IoT EduKit hardware features.</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a97289b2e8e9d22bcabba9ea38761c3f3"><div class="ttname"><a href="core2for_a_w_s_8h.html#a97289b2e8e9d22bcabba9ea38761c3f3">Core2ForAWS_Init</a></div><div class="ttdeci">void Core2ForAWS_Init()</div><div class="ttdoc">Initializes the power chip for battery charging and the SPI bus used for the screen and the SD card.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:19</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a97289b2e8e9d22bcabba9ea38761c3f3"><div class="ttname"><a href="core2for_a_w_s_8h.html#a97289b2e8e9d22bcabba9ea38761c3f3">Core2ForAWS_Init</a></div><div class="ttdeci">void Core2ForAWS_Init()</div><div class="ttdoc">Initializes the power chip with default values, enables battery charging, and initializes all enabled...</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:20</div></div>
 <div class="ttc" id="ampu6886_8h_html"><div class="ttname"><a href="mpu6886_8h.html">mpu6886.h</a></div><div class="ttdoc">Functions for the MPU6886 inertial measurement unit (IMU).</div></div>
 <div class="ttc" id="ampu6886_8h_html_a014d3e6bc15e4dc5de3a573b9f901b37"><div class="ttname"><a href="mpu6886_8h.html#a014d3e6bc15e4dc5de3a573b9f901b37">MPU6886_GetAccelData</a></div><div class="ttdeci">void MPU6886_GetAccelData(float *ax, float *ay, float *az)</div><div class="ttdoc">Retrieves the accelerometer measurements from the MPU6886.</div><div class="ttdef"><b>Definition:</b> mpu6886.c:162</div></div>
-<div class="ttc" id="ampu6886_8h_html_a402a6662575face25ec3ca336f654c98"><div class="ttname"><a href="mpu6886_8h.html#a402a6662575face25ec3ca336f654c98">MPU6886_Init</a></div><div class="ttdeci">int MPU6886_Init(void)</div><div class="ttdoc">Initializes the MPU6886 over I2C.</div><div class="ttdef"><b>Definition:</b> mpu6886.c:22</div></div>
 </div><!-- fragment --><h1><a class="anchor" id="mpu6886_enumerated_type_definitions"></a>
 Enumerated Type Definitions</h1>
 <ul>
