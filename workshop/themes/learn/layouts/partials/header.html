@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en-US" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<html class="no-js" lang="en-US" prefix="og: https://ogp.me/ns# fb: https://ogp.me/ns/fb#">
 <html lang="{{ .Page.Language | default "en" }}" class="js csstransforms3d">
 <head>
   <meta charset="utf-8">
@@ -26,7 +26,7 @@
   <link href="{{(printf "css/theme-%s.css" .) | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet">
   {{end}}
 
-  <script src="{{"js/jquery-3.3.1.min.js"| relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}"></script>
+  <script src="{{"js/jquery-3.5.1.min.js"| relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}"></script>
 
   <style>
     :root #header + #content > #left > #rlblock_left{
@@ -63,7 +63,7 @@
           {{ end }}
           {{ end }}
           {{$toc := (and (not .Params.disableToc) (not .Params.chapter))}}
-          <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+          <div id="breadcrumbs" itemscope="" itemtype="https://data-vocabulary.org/Breadcrumb">
             <span id="sidebar-toggle-span">
               <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
                 <i class="fa fa-bars"></i>

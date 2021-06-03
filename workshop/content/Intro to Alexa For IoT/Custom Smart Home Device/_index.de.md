@@ -114,7 +114,7 @@ Sie können den seriellen Monitor mit der Tastenkombination `STRG` + `]` beenden
 Wenn alles gut geht, sehen Sie eine Aktualisierung in Ihrer Alexa-App, dass Sie ein neues Gerät namens **Green Light** haben. Versuchen Sie, den Strom zu steuern: 
 !["Green Light" Gerät added notification](custom-smart-home-device/alexa_app-green_light-found.en.jpg?height=500px&classes=shadow)
 
-![Gerät namens "Green Light" in Ihrer Alexa App](custom-smart-home-device/alexa_app-green_light-power_on.en.png?height=500px&classes=shadows=shadow)
+![Gerät namens "Green Light" in Ihrer Alexa App](custom-smart-home-device/alexa_app-green_light-power_on.en.png?height=500px&classes=shadow)
 
 * Sprache: _Alexa, turn on/off green light light_ - das seitliche grüne LED-Licht sollte aus- und eingeschaltet werden.
 * Über die Alexa-App - öffnen Sie Ihre Alexa-App (nicht die Espressif-App), gehen Sie zu "Geräte" und dann entweder zu "Lichter" oder zu "Alle Geräte", und Sie sollten das Gerät mit dem Namen "Green Light" sehen (siehe Screenshots unten). Tippen Sie auf das Stromsymbol und Sie sollten sehen, dass das Symbol zwischen Aus und Ein wechselt.

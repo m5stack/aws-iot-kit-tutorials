@@ -47,7 +47,7 @@ ESP RainMaker Phone Apps は、iOS および Androidで Wi-Fi ネットワーク
 
 ## USBポートの確認
 Core2 for AWS IoT EduKitリファレンスハードウェアを接続し、電源を入れます。ホストマシンに接続すると、デバイスの電源が自動的にオンになりますが、電源を入れる必要がある場合は、電源ボタンを押します。
-![AWS の M5Stack Core2 をオンまたはオフにする方法](linux/core2foraws_power_on_off.jpg?width=500px&classes=shadow)
+{{< img "core2foraws_power_on_off.jpg" "AWS の M5Stack Core2 をオンまたはオフにする方法" "AWS の M5Stack Core2 をオンまたはオフにする方法" >}}
 
 デバイスの準備ができて、このチュートリアルに必要なソフトウェアをインストールしたら、デバイスが仮想的にマウントされているポートを特定して、そのポートに対する読み取りおよび書き込み操作を実行できるようにします。
 

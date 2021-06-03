@@ -74,7 +74,7 @@ Alexa for AWS IoT サンプルアプリケーションは Alexa アプリ内に 
 * [PowerController](https://developer.amazon.com/en-US/docs/alexa/alexa-voice-service/alexa-powercontroller.html) はライトの点灯・消灯を行います。
 * [RangeController](https://developer.amazon.com/en-US/docs/alexa/alexa-voice-service/alexa-rangecontroller.html) はデバイスの明るさを調整します。
 
-![The device named "Light" should show up in your Alexa App](building-and-testing-afi/alexa_app-light_device.en.png?height=500px)
+![The device named "Light" should show up in your Alexa App](building-and-testing-afi/alexa_app-light_device.en.png?height=500px&classes=shadow)
 
 仮想デバイスであるため、更新されたステータスを画面に出力します。これは、音声または Alexa アプリを介してテストできます。
 

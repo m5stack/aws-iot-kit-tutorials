@@ -3,7 +3,7 @@ name: edukit
 #title - The title of your workshop
 title: AWS IoT EduKit 
 #description - A short description that will be displayed in search results
-description: AWS IoT EduKit is a prescriptive learning program for developers. With AWS IoT EduKit, students working on their first IoT project, professionals who want to learn more about IoT, and engineers who want to develop new IoT skills, can use a reference hardware kit and self-service tutorials for a hands-on introduction to building IoT applications.
+description: AWS IoT EduKit is a prescriptive learning program for developers. With AWS IoT EduKit, students working on their first IoT project, professionals who want to learn more about IoT, and engineers who want to develop new IoT skills can use a reference hardware kit and self-service tutorials for a hands-on introduction to building IoT applications.
 #categories - Refer to official AWS categories covered by the workshop content here
 categories: 
   - IoT
@@ -14,6 +14,8 @@ services:
    - IoT Analytics
    - Amazon Sagemaker Autopilot
    - Alexa
+   - AWS Lambda
+   - FreeRTOS
 #level - Approximate skill level needed for this workshop
 level: 100 
 #duration - Estimated duration in minutes

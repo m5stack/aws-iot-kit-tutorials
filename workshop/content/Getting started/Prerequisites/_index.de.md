@@ -79,7 +79,8 @@ Unter Windows gibt es Beschränkungen der Dateipfadlänge, die zu Fehlern führe
 
 ## Anschließen und Einschalten des Geräts
 Als Letztes stellen wir sicher, dass das Gerät an den Computer angeschlossen und eingeschaltet ist. Das Gerät sollte sich automatisch einschalten, sobald es eingesteckt und mit einer Stromquelle verbunden ist, aber wenn Sie es einschalten müssen, drücken Sie den Netzschalter.
-[So schalten Sie M5Stack Core2 für AWS ein oder aus](prerequisites/core2foraws_power_on_off.jpg?width=500px&classes=shadow).
+
+{{< img "core2foraws_power_on_off.jpg" "So schalten Sie M5Stack Core2 für AWS ein oder aus" "So schalten Sie M5Stack Core2 für AWS ein oder aus" >}}
 Wenn das Gerät bereit ist, gehen wir zum nächsten Kapitel - [**Ausführen des ESP RainMaker-Agenten**](/de/getting-started/run-rainmaker.html).
 
 ---

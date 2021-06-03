@@ -68,7 +68,7 @@ The Alexa for AWS IoT sample application creates a virtual device called **Light
 * [PowerController](https://developer.amazon.com/en-US/docs/alexa/alexa-voice-service/alexa-powercontroller.html) to turn the light on and off.
 * [RangeController](https://developer.amazon.com/en-US/docs/alexa/alexa-voice-service/alexa-rangecontroller.html) to adjust the brightness of the device.
 
-![The device named "Light" should show up in your Alexa App](building-and-testing-afi/alexa_app-light_device.en.png?height=500px)
+![The device named "Light" should show up in your Alexa App](building-and-testing-afi/alexa_app-light_device.en.png?height=500px&classes=shadow)
 
 Since it's a virtual device, it prints the updated status to the screen. We can test this out via voice or the Alexa app.
 

@@ -110,7 +110,7 @@ pio run --environment core2foraws --target upload --target monitor
 すべてがうまくいくと、**Green Light** という名前の新しいデバイスが追加されたことを示す更新情報が Alexa アプリに表示されます。電源を制御してみましょう。
 !["Green Light" device added notification](custom-smart-home-device/alexa_app-green_light-found.en.jpg?height=500px&classes=shadow)
 
-![Device named "Green Light" listed in your Alexa App](custom-smart-home-device/alexa_app-green_light-power_on.en.png?height=500px&classes=shadows=shadow)
+![Device named "Green Light" listed in your Alexa App](custom-smart-home-device/alexa_app-green_light-power_on.en.png?height=500px&classes=shadow)
 
 * 音声: _Alexa, turn on/off green light light_  - 側面の緑色の LED ライトがオフまたはオンになります
 * Alexa アプリ経由の場合 - Alexa モバイル (Espressif アプリではありません) を開き、[デバイス] に進み、次に [Lights] または [All Devices] のどちらかに進むと、[Green Light] というデバイスが表示されます (下のスクリーンショットを参照してください)。電源アイコンをタップすると、アイコンのオフとオンが切り替わることがわかります。
