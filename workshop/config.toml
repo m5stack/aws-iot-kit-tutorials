@@ -49,12 +49,16 @@ weight = 1
 languageName = "English"
 [Languages.de]
 title = "AWS IoT EduKit"
-weigth = 3
+weigth = 4
 languageName = "Deutsch"
 [Languages.jp]
 title = "AWS IoT EduKit"
-weight = 1
+weight = 3
 languageName = "日本語"
+[Languages.cn]
+title = "AWS IoT EduKit"
+weight = 2
+languageName = "简体中文"
 
 [[Languages.en.menu.shortcuts]]
 name = '<i class="fas fa-cogs"></i> Installation Instructions'
