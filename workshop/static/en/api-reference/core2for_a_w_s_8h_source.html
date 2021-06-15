@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="AWS_logo_RGB.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Core2 for AWS IoT EduKit BSP
-   &#160;<span id="projectnumber">1.3.0</span>
+   &#160;<span id="projectnumber">1.4.0</span>
    </div>
   </td>
  </tr>
@@ -77,191 +77,291 @@ $(function() {
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="axp192_8h.html">axp192.h</a>&quot;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#if CONFIG_SOFTWARE_ILI9342C_SUPPORT</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;freertos/semphr.h&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;lvgl/lvgl.h&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;disp_driver.h&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="disp__spi_8h.html">disp_spi.h</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">/* @[declare_xguisemaphore] */</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">extern</span> SemaphoreHandle_t <a class="code" href="core2for_a_w_s_8h.html#a2a1ad60c25ec8207f8d723197855a1a1">xGuiSemaphore</a>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">/* @[declare_xguisemaphore] */</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#if CONFIG_SOFTWARE_FT6336U_SUPPORT</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ft6336u_8h.html">ft6336u.h</a>&quot;</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#if CONFIG_SOFTWARE_SK6812_SUPPORT</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#include &quot;sk6812.h&quot;</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">/* @[declare_sk6812_side_left] */</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="core2for_a_w_s_8h.html#ad401f71468100c2d5d8b882577cf7884">   56</a></span>&#160;<span class="preprocessor">#define SK6812_SIDE_LEFT 0</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">/* @[declare_sk6812_side_left] */</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">/* @[declare_sk6812_side_right] */</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="core2for_a_w_s_8h.html#ab984a626760459f01581809754a67756">   63</a></span>&#160;<span class="preprocessor">#define SK6812_SIDE_RIGHT 1</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">/* @[declare_sk6812_side_right] */</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#if CONFIG_SOFTWARE_BUTTON_SUPPORT</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="button_8h.html">button.h</a>&quot;</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#if CONFIG_SOFTWARE_MPU6886_SUPPORT</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="mpu6886_8h.html">mpu6886.h</a>&quot;</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#if CONFIG_SOFTWARE_RTC_SUPPORT</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="bm8563_8h.html">bm8563.h</a>&quot;</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#if CONFIG_SOFTWARE_ATECC608_SUPPORT</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#include &quot;cryptoauthlib.h&quot;</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="atecc608_8h.html">atecc608.h</a>&quot;</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#if CONFIG_SOFTWARE_SPEAKER_SUPPORT || CONFIG_SOFTWARE_MIC_SUPPORT</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#include &quot;driver/i2s.h&quot;</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#if CONFIG_SOFTWARE_MIC_SUPPORT</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="microphone_8h.html">microphone.h</a>&quot;</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#if CONFIG_SOFTWARE_SPEAKER_SUPPORT</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="speaker_8h.html">speaker.h</a>&quot;</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">#if CONFIG_SOFTWARE_SDCARD_SUPPORT</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#include &quot;esp_freertos_hooks.h&quot;</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#include &quot;esp_vfs_fat.h&quot;</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#include &quot;sdmmc_cmd.h&quot;</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#if CONFIG_SOFTWARE_ILI9342C_SUPPORT || CONFIG_SOFTWARE_SDCARD_SUPPORT</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment">/* @[declare_spi_host_use] */</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="core2for_a_w_s_8h.html#a0366e6c4669214e65c84ac52a86b596b">  112</a></span>&#160;<span class="preprocessor">#define SPI_HOST_USE HSPI_HOST</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment">/* @[declare_spi_host_use] */</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment">/* @[declare_spi_dma_chan] */</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="core2for_a_w_s_8h.html#af019b9f6740ec443e68b31e2c4e11a18">  122</a></span>&#160;<span class="preprocessor">#define SPI_DMA_CHAN 2</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="comment">/* @[declare_spi_dma_chan] */</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="comment">/* @[declare_core2foraws_init] */</span></div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="keywordtype">void</span> <a class="code" href="core2for_a_w_s_8h.html#a97289b2e8e9d22bcabba9ea38761c3f3">Core2ForAWS_Init</a>();</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="comment">/* @[declare_core2foraws_init] */</span></div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="preprocessor">#if CONFIG_SOFTWARE_BUTTON_SUPPORT</span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="comment">/* @[declare_button_left] */</span></div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="keyword">extern</span> <a class="code" href="struct_button__t.html">Button_t</a>* <a class="code" href="core2for_a_w_s_8h.html#a2cd914992d1bec1babd0a7ffba0f554b">button_left</a>;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="comment">/* @[declare_button_left] */</span></div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="comment">/* @[declare_button_middle] */</span></div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="keyword">extern</span> <a class="code" href="struct_button__t.html">Button_t</a>* <a class="code" href="core2for_a_w_s_8h.html#a49b277909900db7e85d6be2841301fe7">button_middle</a>;</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="comment">/* @[declare_button_middle] */</span></div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="comment">/* @[declare_button_right] */</span></div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="keyword">extern</span> <a class="code" href="struct_button__t.html">Button_t</a>* <a class="code" href="core2for_a_w_s_8h.html#ab6cde5989a3afec96cce115746efc606">button_right</a>;</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="comment">/* @[declare_button_right] */</span></div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="comment">/* @[declare_core2foraws_button_init] */</span></div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="keywordtype">void</span> <a class="code" href="core2for_a_w_s_8h.html#af587d4081f64b442670a720d50a65e0e">Core2ForAWS_Button_Init</a>();</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="comment">/* @[declare_core2foraws_button_init] */</span></div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;<span class="comment">/* @[declare_core2foraws_speaker_enable] */</span></div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;<span class="keywordtype">void</span> <a class="code" href="core2for_a_w_s_8h.html#a4906ae00069686be4fe675f0b1d2b950">Core2ForAWS_Speaker_Enable</a>(uint8_t state);</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;<span class="comment">/* @[declare_core2foraws_speaker_enable] */</span></div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<span class="comment">/* @[declare_core2foraws_pmu_init] */</span></div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;<span class="keywordtype">void</span> <a class="code" href="core2for_a_w_s_8h.html#adcdde4ebb075c61f0bfa937009de6c64">Core2ForAWS_PMU_Init</a>(uint16_t ldo2_volt, uint16_t ldo3_volt, uint16_t dc2_volt, uint16_t dc3_volt);</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="comment">/* @[declare_core2foraws_pmu_init] */</span></div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;<span class="comment">/* @[declare_core2foraws_pmu_getbatvolt] */</span></div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;<span class="keywordtype">float</span> <a class="code" href="core2for_a_w_s_8h.html#a68be46dd836f6af03e9b6cd88f2874b0">Core2ForAWS_PMU_GetBatVolt</a>();</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;<span class="comment">/* @[declare_core2foraws_pmu_getbatvolt] */</span></div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160; </div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;<span class="comment">/* @[declare_core2foraws_pmu_getbatcurrent] */</span></div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;<span class="keywordtype">float</span> <a class="code" href="core2for_a_w_s_8h.html#a71a5ad23b355052dbe1b334e701a99bc">Core2ForAWS_PMU_GetBatCurrent</a>();</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;<span class="comment">/* @[declare_core2foraws_pmu_getbatcurrent] */</span></div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160; </div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;<span class="preprocessor">#if CONFIG_SOFTWARE_ILI9342C_SUPPORT</span></div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;<span class="comment">/* @[declare_core2foraws_display_init] */</span></div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;<span class="keywordtype">void</span> <a class="code" href="core2for_a_w_s_8h.html#a978ccc64fee3c2c15bdc8862e04bdec7">Core2ForAWS_Display_Init</a>();</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;<span class="comment">/* @[declare_core2foraws_display_init] */</span></div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160; </div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;<span class="comment">/* @[declare_core2foraws_display_setbrightness] */</span></div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;<span class="keywordtype">void</span> <a class="code" href="core2for_a_w_s_8h.html#a67a760b89e44e6bd0c96f90cc6aca47d">Core2ForAWS_Display_SetBrightness</a>(uint8_t brightness);</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;<span class="comment">/* @[declare_core2foraws_display_setbrightness] */</span></div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160; </div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;<span class="comment">/* @[declare_core2foraws_led_enable] */</span></div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;<span class="keywordtype">void</span> <a class="code" href="core2for_a_w_s_8h.html#a6f638e20c3c332cd77a84df3e133f4e7">Core2ForAWS_LED_Enable</a>(uint8_t enable);</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;<span class="comment">/* @[declare_core2foraws_led_enable] */</span></div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160; </div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;<span class="comment">/* @[declare_core2foraws_motor_setstrength] */</span></div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;<span class="keywordtype">void</span> <a class="code" href="core2for_a_w_s_8h.html#a1264761696fc1cddfa86421f41654aeb">Core2ForAWS_Motor_SetStrength</a>(uint8_t strength);</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;<span class="comment">/* @[declare_core2foraws_motor_setstrength] */</span></div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160; </div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;<span class="preprocessor">#if CONFIG_SOFTWARE_SK6812_SUPPORT</span></div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;<span class="comment">/* @[declare_core2foraws_sk6812_init] */</span></div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;<span class="keywordtype">void</span> <a class="code" href="core2for_a_w_s_8h.html#aede8a344ecfa40cc6aefc03a3f142f0b">Core2ForAWS_Sk6812_Init</a>();</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;<span class="comment">/* @[declare_core2foraws_sk6812_init] */</span></div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160; </div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;<span class="comment">/* @[declare_core2foraws_sk6812_setcolor] */</span></div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;<span class="keywordtype">void</span> <a class="code" href="core2for_a_w_s_8h.html#a15558a37529e89394598df0128d721c9">Core2ForAWS_Sk6812_SetColor</a>(uint16_t pos, uint32_t color);</div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;<span class="comment">/* @[declare_core2foraws_sk6812_setcolor] */</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;freertos/FreeRTOS.h&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;freertos/semphr.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;lvgl/lvgl.h&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;disp_driver.h&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="disp__spi_8h.html">disp_spi.h</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">/* @[declare_xguisemaphore] */</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">extern</span> SemaphoreHandle_t <a class="code" href="core2for_a_w_s_8h.html#a2a1ad60c25ec8207f8d723197855a1a1">xGuiSemaphore</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">/* @[declare_xguisemaphore] */</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#if CONFIG_SOFTWARE_FT6336U_SUPPORT</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ft6336u_8h.html">ft6336u.h</a>&quot;</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#if CONFIG_SOFTWARE_SK6812_SUPPORT</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#include &quot;sk6812.h&quot;</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">/* @[declare_sk6812_side_left] */</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="core2for_a_w_s_8h.html#ad401f71468100c2d5d8b882577cf7884">   57</a></span>&#160;<span class="preprocessor">#define SK6812_SIDE_LEFT 0</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">/* @[declare_sk6812_side_left] */</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">/* @[declare_sk6812_side_right] */</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="core2for_a_w_s_8h.html#ab984a626760459f01581809754a67756">   64</a></span>&#160;<span class="preprocessor">#define SK6812_SIDE_RIGHT 1</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">/* @[declare_sk6812_side_right] */</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#if CONFIG_SOFTWARE_BUTTON_SUPPORT</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="button_8h.html">button.h</a>&quot;</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#if CONFIG_SOFTWARE_MPU6886_SUPPORT</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="mpu6886_8h.html">mpu6886.h</a>&quot;</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#if CONFIG_SOFTWARE_RTC_SUPPORT</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="bm8563_8h.html">bm8563.h</a>&quot;</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#if CONFIG_SOFTWARE_ATECC608_SUPPORT</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#include &quot;cryptoauthlib.h&quot;</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="atecc608_8h.html">atecc608.h</a>&quot;</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#if CONFIG_SOFTWARE_SPEAKER_SUPPORT || CONFIG_SOFTWARE_MIC_SUPPORT</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#include &quot;driver/i2s.h&quot;</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#if CONFIG_SOFTWARE_MIC_SUPPORT</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="microphone_8h.html">microphone.h</a>&quot;</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#if CONFIG_SOFTWARE_SPEAKER_SUPPORT</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="speaker_8h.html">speaker.h</a>&quot;</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#if CONFIG_SOFTWARE_SDCARD_SUPPORT</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#include &quot;esp_freertos_hooks.h&quot;</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#include &quot;esp_vfs_fat.h&quot;</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor">#include &quot;sdmmc_cmd.h&quot;</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#if CONFIG_SOFTWARE_EXPPORTS_SUPPORT</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">#include &quot;driver/gpio.h&quot;</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">#include &quot;driver/uart.h&quot;</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment">/* @[declare_port_b_adc_pin] */</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="core2for_a_w_s_8h.html#acc191b4d5b52786c63d4692d6cb80d40">  115</a></span>&#160;<span class="preprocessor">#define PORT_B_ADC_PIN GPIO_NUM_36</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="comment">/* @[declare_port_b_adc_pin] */</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="comment">/* @[declare_port_b_dac_pin] */</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="core2for_a_w_s_8h.html#ac708091286fa469920c756366ca4e683">  126</a></span>&#160;<span class="preprocessor">#define PORT_B_DAC_PIN GPIO_NUM_26</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="comment">/* @[declare_port_b_dac_pin] */</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="comment">/* @[declare_port_c_uart_tx_pin] */</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="core2for_a_w_s_8h.html#a8764a8d2c486f2d66f86d995653cc833">  137</a></span>&#160;<span class="preprocessor">#define PORT_C_UART_TX_PIN GPIO_NUM_14</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="comment">/* @[declare_port_c_uart_tx_pin] */</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment">/* @[declare_port_c_uart_rx_pin] */</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="core2for_a_w_s_8h.html#a1d7f3c77703d9c2c8654700f05f04f81">  148</a></span>&#160;<span class="preprocessor">#define PORT_C_UART_RX_PIN GPIO_NUM_13</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="comment">/* @[declare_port_c_uart_rx_pin] */</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="comment">/* @[declare_port_c_uart_num] */</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="core2for_a_w_s_8h.html#a195b78547c193f3dadbbe023e7606e8b">  158</a></span>&#160;<span class="preprocessor">#define PORT_C_UART_NUM UART_NUM_2</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="comment">/* @[declare_port_c_uart_num] */</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="comment">/* @[declare_uart_rx_buf_size] */</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno"><a class="line" href="core2for_a_w_s_8h.html#a1f25fe45d891de244a8135ae02fc9265">  169</a></span>&#160;<span class="preprocessor">#define UART_RX_BUF_SIZE 2048</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="comment">/* @[declare_uart_rx_buf_size] */</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="comment">/* @[declare_pin_mode_t] */</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno"><a class="line" href="core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4db">  179</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a name="l00180"></a><span class="lineno"><a class="line" href="core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4dbac157bdf0b85a40d2619cbc8bc1ae5fe2">  180</a></span>&#160;    <a class="code" href="core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4dbac157bdf0b85a40d2619cbc8bc1ae5fe2">NONE</a>,   </div>
+<div class="line"><a name="l00181"></a><span class="lineno"><a class="line" href="core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4dba2ab08d3e103968f5f4f26b66a52e99d6">  181</a></span>&#160;    <a class="code" href="core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4dba2ab08d3e103968f5f4f26b66a52e99d6">OUTPUT</a>, </div>
+<div class="line"><a name="l00182"></a><span class="lineno"><a class="line" href="core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4dbae310c909d76b003d016bef8bdf16936a">  182</a></span>&#160;    <a class="code" href="core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4dbae310c909d76b003d016bef8bdf16936a">INPUT</a>,  </div>
+<div class="line"><a name="l00183"></a><span class="lineno"><a class="line" href="core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4dba5ec0e8ce4c96673614190a8852261f4f">  183</a></span>&#160;    <a class="code" href="core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4dba5ec0e8ce4c96673614190a8852261f4f">ADC</a>,    </div>
+<div class="line"><a name="l00184"></a><span class="lineno"><a class="line" href="core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4dba1bdc96b7f14d9f3d2551d0eee290ef43">  184</a></span>&#160;    <a class="code" href="core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4dba1bdc96b7f14d9f3d2551d0eee290ef43">DAC</a>,    </div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <a class="code" href="core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4dbab81270ba54ae4586a18415e5a579633d">UART</a>    </div>
+<div class="line"><a name="l00189"></a><span class="lineno"><a class="line" href="core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4dbab81270ba54ae4586a18415e5a579633d">  189</a></span>&#160;} <a class="code" href="core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4db">pin_mode_t</a>;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="comment">/* @[declare_pin_mode_t] */</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="preprocessor">#if CONFIG_SOFTWARE_ILI9342C_SUPPORT || CONFIG_SOFTWARE_SDCARD_SUPPORT</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="comment">/* @[declare_spi_host_use] */</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno"><a class="line" href="core2for_a_w_s_8h.html#a0366e6c4669214e65c84ac52a86b596b">  203</a></span>&#160;<span class="preprocessor">#define SPI_HOST_USE HSPI_HOST</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="comment">/* @[declare_spi_host_use] */</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="comment">/* @[declare_spi_dma_chan] */</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno"><a class="line" href="core2for_a_w_s_8h.html#af019b9f6740ec443e68b31e2c4e11a18">  213</a></span>&#160;<span class="preprocessor">#define SPI_DMA_CHAN 2</span></div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="comment">/* @[declare_spi_dma_chan] */</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="comment">/* @[declare_core2foraws_init] */</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="keywordtype">void</span> <a class="code" href="core2for_a_w_s_8h.html#a3d850a3f56bbe0685b60726d8b53bece">Core2ForAWS_Init</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="comment">/* @[declare_core2foraws_init] */</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160; </div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="preprocessor">#if CONFIG_SOFTWARE_BUTTON_SUPPORT</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;<span class="comment">/* @[declare_button_left] */</span></div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;<span class="keyword">extern</span> <a class="code" href="struct_button__t.html">Button_t</a>* <a class="code" href="core2for_a_w_s_8h.html#a2cd914992d1bec1babd0a7ffba0f554b">button_left</a>;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;<span class="comment">/* @[declare_button_left] */</span></div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160; </div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;<span class="comment">/* @[declare_button_middle] */</span></div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;<span class="keyword">extern</span> <a class="code" href="struct_button__t.html">Button_t</a>* <a class="code" href="core2for_a_w_s_8h.html#a49b277909900db7e85d6be2841301fe7">button_middle</a>;</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;<span class="comment">/* @[declare_button_middle] */</span></div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160; </div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span class="comment">/* @[declare_button_right] */</span></div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="keyword">extern</span> <a class="code" href="struct_button__t.html">Button_t</a>* <a class="code" href="core2for_a_w_s_8h.html#ab6cde5989a3afec96cce115746efc606">button_right</a>;</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="comment">/* @[declare_button_right] */</span></div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;<span class="comment">/* @[declare_core2foraws_button_init] */</span></div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;<span class="keywordtype">void</span> <a class="code" href="core2for_a_w_s_8h.html#a0f635870b3574190b1fbc84c6aa24675">Core2ForAWS_Button_Init</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;<span class="comment">/* @[declare_core2foraws_button_init] */</span></div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160; </div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;<span class="comment">/* @[declare_core2foraws_speaker_enable] */</span></div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;<span class="keywordtype">void</span> <a class="code" href="core2for_a_w_s_8h.html#a4906ae00069686be4fe675f0b1d2b950">Core2ForAWS_Speaker_Enable</a>(uint8_t state);</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;<span class="comment">/* @[declare_core2foraws_speaker_enable] */</span></div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160; </div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;<span class="comment">/* @[declare_core2foraws_pmu_init] */</span></div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;<span class="keywordtype">void</span> <a class="code" href="core2for_a_w_s_8h.html#adcdde4ebb075c61f0bfa937009de6c64">Core2ForAWS_PMU_Init</a>(uint16_t ldo2_volt, uint16_t ldo3_volt, uint16_t dc2_volt, uint16_t dc3_volt);</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;<span class="comment">/* @[declare_core2foraws_pmu_init] */</span></div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160; </div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;<span class="comment">/* @[declare_core2foraws_pmu_getbatvolt] */</span></div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;<span class="keywordtype">float</span> <a class="code" href="core2for_a_w_s_8h.html#a5b859226349decb4411d11f48595e8f4">Core2ForAWS_PMU_GetBatVolt</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;<span class="comment">/* @[declare_core2foraws_pmu_getbatvolt] */</span></div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160; </div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;<span class="comment">/* @[declare_core2foraws_pmu_getbatcurrent] */</span></div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;<span class="keywordtype">float</span> <a class="code" href="core2for_a_w_s_8h.html#a20baa893832fff035a0bdef5240fbfc7">Core2ForAWS_PMU_GetBatCurrent</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;<span class="comment">/* @[declare_core2foraws_pmu_getbatcurrent] */</span></div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160; </div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;<span class="preprocessor">#if CONFIG_SOFTWARE_ILI9342C_SUPPORT</span></div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160; </div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;<span class="comment">/* @[declare_core2foraws_display_init] */</span></div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;<span class="keywordtype">void</span> <a class="code" href="core2for_a_w_s_8h.html#a5a8fa1e5529ce59892d5176c7249eb2a">Core2ForAWS_Display_Init</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;<span class="comment">/* @[declare_core2foraws_display_init] */</span></div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160; </div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;<span class="comment">/* @[declare_core2foraws_sk6812_setsidecolor] */</span></div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;<span class="keywordtype">void</span> <a class="code" href="core2for_a_w_s_8h.html#a5dde1ef368e54c5c39db6257b0a83e13">Core2ForAWS_Sk6812_SetSideColor</a>(uint8_t side, uint32_t color);</div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;<span class="comment">/* @[declare_core2foraws_sk6812_setsidecolor] */</span></div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160; </div>
-<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;<span class="comment">/* @[declare_core2foraws_sk6812_setbrightness] */</span></div>
-<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;<span class="keywordtype">void</span> <a class="code" href="core2for_a_w_s_8h.html#a5c6c1bbeda65f03428a3fa780c1d3dc8">Core2ForAWS_Sk6812_SetBrightness</a>(uint8_t brightness);</div>
-<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;<span class="comment">/* @[declare_core2foraws_sk6812_setbrightness] */</span></div>
-<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160; </div>
-<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;<span class="comment">/* @[declare_core2foraws_sk6812_show] */</span></div>
-<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;<span class="keywordtype">void</span> <a class="code" href="core2for_a_w_s_8h.html#afa9b642801c16af9fd8f6390a0671549">Core2ForAWS_Sk6812_Show</a>();</div>
-<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;<span class="comment">/* @[declare_core2foraws_sk6812_show] */</span></div>
-<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160; </div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;<span class="comment">/* @[declare_core2foraws_sk6812_clear] */</span></div>
-<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;<span class="keywordtype">void</span> <a class="code" href="core2for_a_w_s_8h.html#ad6f1363ce5753c9368c39bfcbc93ad77">Core2ForAWS_Sk6812_Clear</a>();</div>
-<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;<span class="comment">/* @[declare_core2foraws_sk6812_clear] */</span></div>
-<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160; </div>
-<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;<span class="preprocessor">#if CONFIG_SOFTWARE_SDCARD_SUPPORT</span></div>
-<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160; </div>
-<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;<span class="comment">/* @[declare_core2foraws_sdcard_init] */</span></div>
-<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;esp_err_t <a class="code" href="core2for_a_w_s_8h.html#ae9760e6646aa10a5db904f0cd719b4e8">Core2ForAWS_Sdcard_Init</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* mount, sdmmc_card_t** out_card);</div>
-<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;<span class="comment">/* @[declare_core2foraws_sdcard_init] */</span></div>
-<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;<span class="comment">/* @[declare_core2foraws_display_setbrightness] */</span></div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;<span class="keywordtype">void</span> <a class="code" href="core2for_a_w_s_8h.html#a67a760b89e44e6bd0c96f90cc6aca47d">Core2ForAWS_Display_SetBrightness</a>(uint8_t brightness);</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;<span class="comment">/* @[declare_core2foraws_display_setbrightness] */</span></div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160; </div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;<span class="comment">/* @[declare_core2foraws_led_enable] */</span></div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;<span class="keywordtype">void</span> <a class="code" href="core2for_a_w_s_8h.html#a6f638e20c3c332cd77a84df3e133f4e7">Core2ForAWS_LED_Enable</a>(uint8_t enable);</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;<span class="comment">/* @[declare_core2foraws_led_enable] */</span></div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160; </div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;<span class="comment">/* @[declare_core2foraws_motor_setstrength] */</span></div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;<span class="keywordtype">void</span> <a class="code" href="core2for_a_w_s_8h.html#a1264761696fc1cddfa86421f41654aeb">Core2ForAWS_Motor_SetStrength</a>(uint8_t strength);</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;<span class="comment">/* @[declare_core2foraws_motor_setstrength] */</span></div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160; </div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;<span class="preprocessor">#if CONFIG_SOFTWARE_SK6812_SUPPORT</span></div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;<span class="comment">/* @[declare_core2foraws_sk6812_init] */</span></div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;<span class="keywordtype">void</span> <a class="code" href="core2for_a_w_s_8h.html#ab23f5196841f3572d2c7cc52d053f435">Core2ForAWS_Sk6812_Init</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;<span class="comment">/* @[declare_core2foraws_sk6812_init] */</span></div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160; </div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;<span class="comment">/* @[declare_core2foraws_sk6812_setcolor] */</span></div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;<span class="keywordtype">void</span> <a class="code" href="core2for_a_w_s_8h.html#a15558a37529e89394598df0128d721c9">Core2ForAWS_Sk6812_SetColor</a>(uint16_t pos, uint32_t color);</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;<span class="comment">/* @[declare_core2foraws_sk6812_setcolor] */</span></div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160; </div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;<span class="comment">/* @[declare_core2foraws_sk6812_setsidecolor] */</span></div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;<span class="keywordtype">void</span> <a class="code" href="core2for_a_w_s_8h.html#a5dde1ef368e54c5c39db6257b0a83e13">Core2ForAWS_Sk6812_SetSideColor</a>(uint8_t side, uint32_t color);</div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;<span class="comment">/* @[declare_core2foraws_sk6812_setsidecolor] */</span></div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160; </div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;<span class="comment">/* @[declare_core2foraws_sk6812_setbrightness] */</span></div>
+<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;<span class="keywordtype">void</span> <a class="code" href="core2for_a_w_s_8h.html#a5c6c1bbeda65f03428a3fa780c1d3dc8">Core2ForAWS_Sk6812_SetBrightness</a>(uint8_t brightness);</div>
+<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;<span class="comment">/* @[declare_core2foraws_sk6812_setbrightness] */</span></div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160; </div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;<span class="comment">/* @[declare_core2foraws_sk6812_show] */</span></div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;<span class="keywordtype">void</span> <a class="code" href="core2for_a_w_s_8h.html#a54bd0bce86a0ed5ea5ba2ca0c7e9ef32">Core2ForAWS_Sk6812_Show</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;<span class="comment">/* @[declare_core2foraws_sk6812_show] */</span></div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160; </div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;<span class="comment">/* @[declare_core2foraws_sk6812_clear] */</span></div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;<span class="keywordtype">void</span> <a class="code" href="core2for_a_w_s_8h.html#a179990c112d4839cabae1c9e86a7a6b9">Core2ForAWS_Sk6812_Clear</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;<span class="comment">/* @[declare_core2foraws_sk6812_clear] */</span></div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160; </div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;<span class="preprocessor">#if CONFIG_SOFTWARE_SDCARD_SUPPORT</span></div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160; </div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;<span class="comment">/* @[declare_core2foraws_sdcard_mount] */</span></div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;esp_err_t <a class="code" href="core2for_a_w_s_8h.html#a714fd9c7943bbec98c54dfa17d778853">Core2ForAWS_SDcard_Mount</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *mount_path, sdmmc_card_t **out_card);</div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;<span class="comment">/* @[declare_core2foraws_sdcard_mount] */</span></div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160; </div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;<span class="comment">/* @[declare_core2foraws_sdcard_unmount] */</span></div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;esp_err_t <a class="code" href="core2for_a_w_s_8h.html#a4c9c5029e08899a3b75a61e22cfa84a7">Core2ForAWS_SDcard_Unmount</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *mount_path, sdmmc_card_t *out_card);</div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;<span class="comment">/* @[declare_core2foraws_sdcard_unmount] */</span></div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160; </div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;<span class="preprocessor">#if CONFIG_SOFTWARE_EXPPORTS_SUPPORT</span></div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;<span class="comment">/* @[declare_core2foraws_port_pinmode] */</span></div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;esp_err_t <a class="code" href="core2for_a_w_s_8h.html#a20b1459685901f232474236d0fc6c23f">Core2ForAWS_Port_PinMode</a>(gpio_num_t pin, <a class="code" href="core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4db">pin_mode_t</a> mode);</div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;<span class="comment">/* @[declare_core2foraws_port_pinmode] */</span></div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160; </div>
+<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;<span class="comment">/* @[declare_core2foraws_port_read] */</span></div>
+<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="core2for_a_w_s_8h.html#ae40c69633879f4b82c939e2c63814e81">Core2ForAWS_Port_Read</a>(gpio_num_t pin);</div>
+<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;<span class="comment">/* @[declare_core2foraws_port_read] */</span></div>
+<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160; </div>
+<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;<span class="comment">/* @[declare_core2foraws_port_write] */</span></div>
+<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;esp_err_t <a class="code" href="core2for_a_w_s_8h.html#a7e481da2a60b6f0c46d6a4a5b2c8453e">Core2ForAWS_Port_Write</a>(gpio_num_t pin, <span class="keywordtype">bool</span> level);</div>
+<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;<span class="comment">/* @[declare_core2foraws_port_write] */</span></div>
+<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160; </div>
+<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;<span class="comment">/* @[declare_core2foraws_port_b_adc_readraw] */</span></div>
+<div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160;uint32_t <a class="code" href="core2for_a_w_s_8h.html#a08ed8dbebc74ab97512f434eeef4c77c">Core2ForAWS_Port_B_ADC_ReadRaw</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160;<span class="comment">/* @[declare_core2foraws_port_b_adc_readraw] */</span></div>
+<div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160; </div>
+<div class="line"><a name="l00942"></a><span class="lineno">  942</span>&#160;<span class="comment">/* @[declare_core2foraws_port_b_adc_readmillivolts] */</span></div>
+<div class="line"><a name="l00943"></a><span class="lineno">  943</span>&#160;uint32_t <a class="code" href="core2for_a_w_s_8h.html#a297b6764c8ca7a522a15d7384756c285">Core2ForAWS_Port_B_ADC_ReadMilliVolts</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00944"></a><span class="lineno">  944</span>&#160;<span class="comment">/* @[declare_core2foraws_port_b_adc_readmillivolts] */</span></div>
+<div class="line"><a name="l00945"></a><span class="lineno">  945</span>&#160; </div>
+<div class="line"><a name="l00977"></a><span class="lineno">  977</span>&#160;<span class="comment">/* @[declare_core2foraws_port_b_dac_writemillivolts] */</span></div>
+<div class="line"><a name="l00978"></a><span class="lineno">  978</span>&#160;esp_err_t <a class="code" href="core2for_a_w_s_8h.html#af441b13016b08aa5781a6096c758f8eb">Core2ForAWS_Port_B_DAC_WriteMilliVolts</a>(uint16_t mvolts);</div>
+<div class="line"><a name="l00979"></a><span class="lineno">  979</span>&#160;<span class="comment">/* @[declare_core2foraws_port_b_dac_writemillivolts] */</span></div>
+<div class="line"><a name="l00980"></a><span class="lineno">  980</span>&#160; </div>
+<div class="line"><a name="l01058"></a><span class="lineno"> 1058</span>&#160;<span class="comment">/* @[declare_core2foraws_port_c_uart_begin] */</span></div>
+<div class="line"><a name="l01059"></a><span class="lineno"> 1059</span>&#160;esp_err_t <a class="code" href="core2for_a_w_s_8h.html#a41a0d4cfbf16f792180d7ca55e664095">Core2ForAWS_Port_C_UART_Begin</a>(uint32_t baud);</div>
+<div class="line"><a name="l01060"></a><span class="lineno"> 1060</span>&#160;<span class="comment">/* @[declare_core2foraws_port_c_uart_begin] */</span></div>
+<div class="line"><a name="l01061"></a><span class="lineno"> 1061</span>&#160; </div>
+<div class="line"><a name="l01138"></a><span class="lineno"> 1138</span>&#160;<span class="comment">/* @[declare_core2foraws_port_c_uart_send] */</span></div>
+<div class="line"><a name="l01139"></a><span class="lineno"> 1139</span>&#160;<span class="keywordtype">int</span> <a class="code" href="core2for_a_w_s_8h.html#aa205e433ced4fdae489d8165883c2f76">Core2ForAWS_Port_C_UART_Send</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *message, <span class="keywordtype">size_t</span> len);</div>
+<div class="line"><a name="l01140"></a><span class="lineno"> 1140</span>&#160;<span class="comment">/* @[declare_core2foraws_port_c_uart_send] */</span></div>
+<div class="line"><a name="l01141"></a><span class="lineno"> 1141</span>&#160; </div>
+<div class="line"><a name="l01220"></a><span class="lineno"> 1220</span>&#160;<span class="comment">/* @[declare_core2foraws_port_c_uart_receive] */</span></div>
+<div class="line"><a name="l01221"></a><span class="lineno"> 1221</span>&#160;<span class="keywordtype">int</span> <a class="code" href="core2for_a_w_s_8h.html#a8b09041a7dedd7ae8cb776382478d191">Core2ForAWS_Port_C_UART_Receive</a>(uint8_t *message_buffer);</div>
+<div class="line"><a name="l01222"></a><span class="lineno"> 1222</span>&#160;<span class="comment">/* @[declare_core2foraws_port_c_uart_receive] */</span></div>
+<div class="line"><a name="l01223"></a><span class="lineno"> 1223</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aatecc608_8h_html"><div class="ttname"><a href="atecc608_8h.html">atecc608.h</a></div><div class="ttdoc">Functions for the ATECC608 Trust&amp;GO secure element.</div></div>
 <div class="ttc" id="aaxp192_8h_html"><div class="ttname"><a href="axp192_8h.html">axp192.h</a></div><div class="ttdoc">Functions for the AXP192 Power Management Unit (PMU)</div></div>
 <div class="ttc" id="abm8563_8h_html"><div class="ttname"><a href="bm8563_8h.html">bm8563.h</a></div><div class="ttdoc">Functions for the BM8563 Real-Time Clock (RTC).</div></div>
 <div class="ttc" id="abutton_8h_html"><div class="ttname"><a href="button_8h.html">button.h</a></div><div class="ttdoc">Functions for the virtual buttons using the FT633U touch controller.</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a1264761696fc1cddfa86421f41654aeb"><div class="ttname"><a href="core2for_a_w_s_8h.html#a1264761696fc1cddfa86421f41654aeb">Core2ForAWS_Motor_SetStrength</a></div><div class="ttdeci">void Core2ForAWS_Motor_SetStrength(uint8_t strength)</div><div class="ttdoc">Sets the speed of the vibration motor.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:123</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a15558a37529e89394598df0128d721c9"><div class="ttname"><a href="core2for_a_w_s_8h.html#a15558a37529e89394598df0128d721c9">Core2ForAWS_Sk6812_SetColor</a></div><div class="ttdeci">void Core2ForAWS_Sk6812_SetColor(uint16_t pos, uint32_t color)</div><div class="ttdoc">Sets the color of a single LED in the LED bars.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:216</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a2a1ad60c25ec8207f8d723197855a1a1"><div class="ttname"><a href="core2for_a_w_s_8h.html#a2a1ad60c25ec8207f8d723197855a1a1">xGuiSemaphore</a></div><div class="ttdeci">SemaphoreHandle_t xGuiSemaphore</div><div class="ttdoc">FreeRTOS semaphore to be used when performing any operation on the display.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:250</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a2cd914992d1bec1babd0a7ffba0f554b"><div class="ttname"><a href="core2for_a_w_s_8h.html#a2cd914992d1bec1babd0a7ffba0f554b">button_left</a></div><div class="ttdeci">Button_t * button_left</div><div class="ttdoc">Left virtual touch button.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:73</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a4906ae00069686be4fe675f0b1d2b950"><div class="ttname"><a href="core2for_a_w_s_8h.html#a4906ae00069686be4fe675f0b1d2b950">Core2ForAWS_Speaker_Enable</a></div><div class="ttdeci">void Core2ForAWS_Speaker_Enable(uint8_t state)</div><div class="ttdoc">Enables or disables the NS4168 speaker amplifier.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:137</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a49b277909900db7e85d6be2841301fe7"><div class="ttname"><a href="core2for_a_w_s_8h.html#a49b277909900db7e85d6be2841301fe7">button_middle</a></div><div class="ttdeci">Button_t * button_middle</div><div class="ttdoc">Middle virtual touch button.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:74</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a5c6c1bbeda65f03428a3fa780c1d3dc8"><div class="ttname"><a href="core2for_a_w_s_8h.html#a5c6c1bbeda65f03428a3fa780c1d3dc8">Core2ForAWS_Sk6812_SetBrightness</a></div><div class="ttdeci">void Core2ForAWS_Sk6812_SetBrightness(uint8_t brightness)</div><div class="ttdoc">Sets the brightness of the LED bars.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:232</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a5dde1ef368e54c5c39db6257b0a83e13"><div class="ttname"><a href="core2for_a_w_s_8h.html#a5dde1ef368e54c5c39db6257b0a83e13">Core2ForAWS_Sk6812_SetSideColor</a></div><div class="ttdeci">void Core2ForAWS_Sk6812_SetSideColor(uint8_t side, uint32_t color)</div><div class="ttdoc">Sets the color of all the LEDs on one side of the LED bars.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:220</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a67a760b89e44e6bd0c96f90cc6aca47d"><div class="ttname"><a href="core2for_a_w_s_8h.html#a67a760b89e44e6bd0c96f90cc6aca47d">Core2ForAWS_Display_SetBrightness</a></div><div class="ttdeci">void Core2ForAWS_Display_SetBrightness(uint8_t brightness)</div><div class="ttdoc">Sets the brightness of the display.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:312</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a68be46dd836f6af03e9b6cd88f2874b0"><div class="ttname"><a href="core2for_a_w_s_8h.html#a68be46dd836f6af03e9b6cd88f2874b0">Core2ForAWS_PMU_GetBatVolt</a></div><div class="ttdeci">float Core2ForAWS_PMU_GetBatVolt()</div><div class="ttdoc">Gets the battery voltage with the AXP192.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:144</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a6f638e20c3c332cd77a84df3e133f4e7"><div class="ttname"><a href="core2for_a_w_s_8h.html#a6f638e20c3c332cd77a84df3e133f4e7">Core2ForAWS_LED_Enable</a></div><div class="ttdeci">void Core2ForAWS_LED_Enable(uint8_t enable)</div><div class="ttdoc">Turns on or off green LED.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:320</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a71a5ad23b355052dbe1b334e701a99bc"><div class="ttname"><a href="core2for_a_w_s_8h.html#a71a5ad23b355052dbe1b334e701a99bc">Core2ForAWS_PMU_GetBatCurrent</a></div><div class="ttdeci">float Core2ForAWS_PMU_GetBatCurrent()</div><div class="ttdoc">Gets the battery current draw with the AXP192.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:148</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a97289b2e8e9d22bcabba9ea38761c3f3"><div class="ttname"><a href="core2for_a_w_s_8h.html#a97289b2e8e9d22bcabba9ea38761c3f3">Core2ForAWS_Init</a></div><div class="ttdeci">void Core2ForAWS_Init()</div><div class="ttdoc">Initializes the power chip with default values, enables battery charging, and initializes all enabled...</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:20</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a978ccc64fee3c2c15bdc8862e04bdec7"><div class="ttname"><a href="core2for_a_w_s_8h.html#a978ccc64fee3c2c15bdc8862e04bdec7">Core2ForAWS_Display_Init</a></div><div class="ttdeci">void Core2ForAWS_Display_Init()</div><div class="ttdoc">Initializes the display.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:259</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_ab6cde5989a3afec96cce115746efc606"><div class="ttname"><a href="core2for_a_w_s_8h.html#ab6cde5989a3afec96cce115746efc606">button_right</a></div><div class="ttdeci">Button_t * button_right</div><div class="ttdoc">Right virtual touch button.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:75</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_ad6f1363ce5753c9368c39bfcbc93ad77"><div class="ttname"><a href="core2for_a_w_s_8h.html#ad6f1363ce5753c9368c39bfcbc93ad77">Core2ForAWS_Sk6812_Clear</a></div><div class="ttdeci">void Core2ForAWS_Sk6812_Clear()</div><div class="ttdoc">Turns off the LEDs in the LED bars and removes any set color.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:240</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_adcdde4ebb075c61f0bfa937009de6c64"><div class="ttname"><a href="core2for_a_w_s_8h.html#adcdde4ebb075c61f0bfa937009de6c64">Core2ForAWS_PMU_Init</a></div><div class="ttdeci">void Core2ForAWS_PMU_Init(uint16_t ldo2_volt, uint16_t ldo3_volt, uint16_t dc2_volt, uint16_t dc3_volt)</div><div class="ttdoc">Initializes the AXP192 Power Management Unit (PMU).</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:162</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_ae9760e6646aa10a5db904f0cd719b4e8"><div class="ttname"><a href="core2for_a_w_s_8h.html#ae9760e6646aa10a5db904f0cd719b4e8">Core2ForAWS_Sdcard_Init</a></div><div class="ttdeci">esp_err_t Core2ForAWS_Sdcard_Init(const char *mount, sdmmc_card_t **out_card)</div><div class="ttdoc">Initializes the SD-Card.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:90</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_aede8a344ecfa40cc6aefc03a3f142f0b"><div class="ttname"><a href="core2for_a_w_s_8h.html#aede8a344ecfa40cc6aefc03a3f142f0b">Core2ForAWS_Sk6812_Init</a></div><div class="ttdeci">void Core2ForAWS_Sk6812_Init()</div><div class="ttdoc">Initializes the SK6812 LED bars.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:201</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_af587d4081f64b442670a720d50a65e0e"><div class="ttname"><a href="core2for_a_w_s_8h.html#af587d4081f64b442670a720d50a65e0e">Core2ForAWS_Button_Init</a></div><div class="ttdeci">void Core2ForAWS_Button_Init()</div><div class="ttdoc">Initializes the button_left, button_middle, button_right virtual buttons using the ft6336u touch cont...</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:77</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_afa9b642801c16af9fd8f6390a0671549"><div class="ttname"><a href="core2for_a_w_s_8h.html#afa9b642801c16af9fd8f6390a0671549">Core2ForAWS_Sk6812_Show</a></div><div class="ttdeci">void Core2ForAWS_Sk6812_Show()</div><div class="ttdoc">Updates the LEDs in the LED bars with any new values set using Core2ForAWS_Sk6812_SetColor,...</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:236</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a08ed8dbebc74ab97512f434eeef4c77c"><div class="ttname"><a href="core2for_a_w_s_8h.html#a08ed8dbebc74ab97512f434eeef4c77c">Core2ForAWS_Port_B_ADC_ReadRaw</a></div><div class="ttdeci">uint32_t Core2ForAWS_Port_B_ADC_ReadRaw(void)</div><div class="ttdoc">Read the raw ADC value from GPIO36.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:502</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a0f635870b3574190b1fbc84c6aa24675"><div class="ttname"><a href="core2for_a_w_s_8h.html#a0f635870b3574190b1fbc84c6aa24675">Core2ForAWS_Button_Init</a></div><div class="ttdeci">void Core2ForAWS_Button_Init(void)</div><div class="ttdoc">Initializes the button_left, button_middle, button_right virtual buttons using the ft6336u touch cont...</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:89</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a1264761696fc1cddfa86421f41654aeb"><div class="ttname"><a href="core2for_a_w_s_8h.html#a1264761696fc1cddfa86421f41654aeb">Core2ForAWS_Motor_SetStrength</a></div><div class="ttdeci">void Core2ForAWS_Motor_SetStrength(uint8_t strength)</div><div class="ttdoc">Sets the speed of the vibration motor.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:139</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a15558a37529e89394598df0128d721c9"><div class="ttname"><a href="core2for_a_w_s_8h.html#a15558a37529e89394598df0128d721c9">Core2ForAWS_Sk6812_SetColor</a></div><div class="ttdeci">void Core2ForAWS_Sk6812_SetColor(uint16_t pos, uint32_t color)</div><div class="ttdoc">Sets the color of a single LED in the LED bars.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:232</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a179990c112d4839cabae1c9e86a7a6b9"><div class="ttname"><a href="core2for_a_w_s_8h.html#a179990c112d4839cabae1c9e86a7a6b9">Core2ForAWS_Sk6812_Clear</a></div><div class="ttdeci">void Core2ForAWS_Sk6812_Clear(void)</div><div class="ttdoc">Turns off the LEDs in the LED bars and removes any set color.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:256</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a20b1459685901f232474236d0fc6c23f"><div class="ttname"><a href="core2for_a_w_s_8h.html#a20b1459685901f232474236d0fc6c23f">Core2ForAWS_Port_PinMode</a></div><div class="ttdeci">esp_err_t Core2ForAWS_Port_PinMode(gpio_num_t pin, pin_mode_t mode)</div><div class="ttdoc">Sets the pin mode of the specified pin.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:419</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a20baa893832fff035a0bdef5240fbfc7"><div class="ttname"><a href="core2for_a_w_s_8h.html#a20baa893832fff035a0bdef5240fbfc7">Core2ForAWS_PMU_GetBatCurrent</a></div><div class="ttdeci">float Core2ForAWS_PMU_GetBatCurrent(void)</div><div class="ttdoc">Gets the battery current draw with the AXP192.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:164</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a297b6764c8ca7a522a15d7384756c285"><div class="ttname"><a href="core2for_a_w_s_8h.html#a297b6764c8ca7a522a15d7384756c285">Core2ForAWS_Port_B_ADC_ReadMilliVolts</a></div><div class="ttdeci">uint32_t Core2ForAWS_Port_B_ADC_ReadMilliVolts(void)</div><div class="ttdoc">Read the calibrated ADC voltage from GPIO36.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:506</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a2a1ad60c25ec8207f8d723197855a1a1"><div class="ttname"><a href="core2for_a_w_s_8h.html#a2a1ad60c25ec8207f8d723197855a1a1">xGuiSemaphore</a></div><div class="ttdeci">SemaphoreHandle_t xGuiSemaphore</div><div class="ttdoc">FreeRTOS semaphore to be used when performing any operation on the display.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:271</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a2cd914992d1bec1babd0a7ffba0f554b"><div class="ttname"><a href="core2for_a_w_s_8h.html#a2cd914992d1bec1babd0a7ffba0f554b">button_left</a></div><div class="ttdeci">Button_t * button_left</div><div class="ttdoc">Left virtual touch button.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:85</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a3d850a3f56bbe0685b60726d8b53bece"><div class="ttname"><a href="core2for_a_w_s_8h.html#a3d850a3f56bbe0685b60726d8b53bece">Core2ForAWS_Init</a></div><div class="ttdeci">void Core2ForAWS_Init(void)</div><div class="ttdoc">Initializes the power chip with default values, enables battery charging, and initializes all enabled...</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:32</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a41a0d4cfbf16f792180d7ca55e664095"><div class="ttname"><a href="core2for_a_w_s_8h.html#a41a0d4cfbf16f792180d7ca55e664095">Core2ForAWS_Port_C_UART_Begin</a></div><div class="ttdeci">esp_err_t Core2ForAWS_Port_C_UART_Begin(uint32_t baud)</div><div class="ttdoc">Configures the UART interface at the specified baud rate.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:517</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a4906ae00069686be4fe675f0b1d2b950"><div class="ttname"><a href="core2for_a_w_s_8h.html#a4906ae00069686be4fe675f0b1d2b950">Core2ForAWS_Speaker_Enable</a></div><div class="ttdeci">void Core2ForAWS_Speaker_Enable(uint8_t state)</div><div class="ttdoc">Enables or disables the NS4168 speaker amplifier.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:153</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a49b277909900db7e85d6be2841301fe7"><div class="ttname"><a href="core2for_a_w_s_8h.html#a49b277909900db7e85d6be2841301fe7">button_middle</a></div><div class="ttdeci">Button_t * button_middle</div><div class="ttdoc">Middle virtual touch button.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:86</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a4c9c5029e08899a3b75a61e22cfa84a7"><div class="ttname"><a href="core2for_a_w_s_8h.html#a4c9c5029e08899a3b75a61e22cfa84a7">Core2ForAWS_SDcard_Unmount</a></div><div class="ttdeci">esp_err_t Core2ForAWS_SDcard_Unmount(const char *mount_path, sdmmc_card_t *out_card)</div><div class="ttdoc">Removes the FAT partition and unmounts the SD-Card.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:132</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a54bd0bce86a0ed5ea5ba2ca0c7e9ef32"><div class="ttname"><a href="core2for_a_w_s_8h.html#a54bd0bce86a0ed5ea5ba2ca0c7e9ef32">Core2ForAWS_Sk6812_Show</a></div><div class="ttdeci">void Core2ForAWS_Sk6812_Show(void)</div><div class="ttdoc">Updates the LEDs in the LED bars with any new values set using Core2ForAWS_Sk6812_SetColor,...</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:252</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a5a8fa1e5529ce59892d5176c7249eb2a"><div class="ttname"><a href="core2for_a_w_s_8h.html#a5a8fa1e5529ce59892d5176c7249eb2a">Core2ForAWS_Display_Init</a></div><div class="ttdeci">void Core2ForAWS_Display_Init(void)</div><div class="ttdoc">Initializes the display.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:280</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a5b859226349decb4411d11f48595e8f4"><div class="ttname"><a href="core2for_a_w_s_8h.html#a5b859226349decb4411d11f48595e8f4">Core2ForAWS_PMU_GetBatVolt</a></div><div class="ttdeci">float Core2ForAWS_PMU_GetBatVolt(void)</div><div class="ttdoc">Gets the battery voltage with the AXP192.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:160</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a5c6c1bbeda65f03428a3fa780c1d3dc8"><div class="ttname"><a href="core2for_a_w_s_8h.html#a5c6c1bbeda65f03428a3fa780c1d3dc8">Core2ForAWS_Sk6812_SetBrightness</a></div><div class="ttdeci">void Core2ForAWS_Sk6812_SetBrightness(uint8_t brightness)</div><div class="ttdoc">Sets the brightness of the LED bars.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:248</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a5dde1ef368e54c5c39db6257b0a83e13"><div class="ttname"><a href="core2for_a_w_s_8h.html#a5dde1ef368e54c5c39db6257b0a83e13">Core2ForAWS_Sk6812_SetSideColor</a></div><div class="ttdeci">void Core2ForAWS_Sk6812_SetSideColor(uint8_t side, uint32_t color)</div><div class="ttdoc">Sets the color of all the LEDs on one side of the LED bars.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:236</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a67a760b89e44e6bd0c96f90cc6aca47d"><div class="ttname"><a href="core2for_a_w_s_8h.html#a67a760b89e44e6bd0c96f90cc6aca47d">Core2ForAWS_Display_SetBrightness</a></div><div class="ttdeci">void Core2ForAWS_Display_SetBrightness(uint8_t brightness)</div><div class="ttdoc">Sets the brightness of the display.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:333</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a6f638e20c3c332cd77a84df3e133f4e7"><div class="ttname"><a href="core2for_a_w_s_8h.html#a6f638e20c3c332cd77a84df3e133f4e7">Core2ForAWS_LED_Enable</a></div><div class="ttdeci">void Core2ForAWS_LED_Enable(uint8_t enable)</div><div class="ttdoc">Turns on or off green LED.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:341</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a714fd9c7943bbec98c54dfa17d778853"><div class="ttname"><a href="core2for_a_w_s_8h.html#a714fd9c7943bbec98c54dfa17d778853">Core2ForAWS_SDcard_Mount</a></div><div class="ttdeci">esp_err_t Core2ForAWS_SDcard_Mount(const char *mount_path, sdmmc_card_t **out_card)</div><div class="ttdoc">Initializes and mounts the SD-Card.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:102</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a77fecc1883f27c095012fbe56345c4db"><div class="ttname"><a href="core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4db">pin_mode_t</a></div><div class="ttdeci">pin_mode_t</div><div class="ttdoc">Modes supported by the BSP for the GPIO pins.</div><div class="ttdef"><b>Definition:</b> core2forAWS.h:179</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a77fecc1883f27c095012fbe56345c4dba1bdc96b7f14d9f3d2551d0eee290ef43"><div class="ttname"><a href="core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4dba1bdc96b7f14d9f3d2551d0eee290ef43">DAC</a></div><div class="ttdeci">@ DAC</div><div class="ttdoc">Enable DAC mode. Only available on GPIO 26.</div><div class="ttdef"><b>Definition:</b> core2forAWS.h:184</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a77fecc1883f27c095012fbe56345c4dba2ab08d3e103968f5f4f26b66a52e99d6"><div class="ttname"><a href="core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4dba2ab08d3e103968f5f4f26b66a52e99d6">OUTPUT</a></div><div class="ttdeci">@ OUTPUT</div><div class="ttdoc">Set GPIO to output mode.</div><div class="ttdef"><b>Definition:</b> core2forAWS.h:181</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a77fecc1883f27c095012fbe56345c4dba5ec0e8ce4c96673614190a8852261f4f"><div class="ttname"><a href="core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4dba5ec0e8ce4c96673614190a8852261f4f">ADC</a></div><div class="ttdeci">@ ADC</div><div class="ttdoc">Enable ADC mode. Only available on GPIO 36.</div><div class="ttdef"><b>Definition:</b> core2forAWS.h:183</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a77fecc1883f27c095012fbe56345c4dbab81270ba54ae4586a18415e5a579633d"><div class="ttname"><a href="core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4dbab81270ba54ae4586a18415e5a579633d">UART</a></div><div class="ttdeci">@ UART</div><div class="ttdoc">Enable UART RX/TX mode. UART TX only available on GPIO 14 and UART RX is only available on GPIO 13....</div><div class="ttdef"><b>Definition:</b> core2forAWS.h:185</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a77fecc1883f27c095012fbe56345c4dbac157bdf0b85a40d2619cbc8bc1ae5fe2"><div class="ttname"><a href="core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4dbac157bdf0b85a40d2619cbc8bc1ae5fe2">NONE</a></div><div class="ttdeci">@ NONE</div><div class="ttdoc">Reset GPIO to default state.</div><div class="ttdef"><b>Definition:</b> core2forAWS.h:180</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a77fecc1883f27c095012fbe56345c4dbae310c909d76b003d016bef8bdf16936a"><div class="ttname"><a href="core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4dbae310c909d76b003d016bef8bdf16936a">INPUT</a></div><div class="ttdeci">@ INPUT</div><div class="ttdoc">Set GPIO to input mode.</div><div class="ttdef"><b>Definition:</b> core2forAWS.h:182</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a7e481da2a60b6f0c46d6a4a5b2c8453e"><div class="ttname"><a href="core2for_a_w_s_8h.html#a7e481da2a60b6f0c46d6a4a5b2c8453e">Core2ForAWS_Port_Write</a></div><div class="ttdeci">esp_err_t Core2ForAWS_Port_Write(gpio_num_t pin, bool level)</div><div class="ttdoc">Writes the specified level (0 or 1) to the specified digital pin.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:492</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a8b09041a7dedd7ae8cb776382478d191"><div class="ttname"><a href="core2for_a_w_s_8h.html#a8b09041a7dedd7ae8cb776382478d191">Core2ForAWS_Port_C_UART_Receive</a></div><div class="ttdeci">int Core2ForAWS_Port_C_UART_Receive(uint8_t *message_buffer)</div><div class="ttdoc">Reads messages in the UART2 receiver ring buffer.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:540</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_aa205e433ced4fdae489d8165883c2f76"><div class="ttname"><a href="core2for_a_w_s_8h.html#aa205e433ced4fdae489d8165883c2f76">Core2ForAWS_Port_C_UART_Send</a></div><div class="ttdeci">int Core2ForAWS_Port_C_UART_Send(const char *message, size_t len)</div><div class="ttdoc">Sends a specified length of a user defined message over UART2.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:536</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_ab23f5196841f3572d2c7cc52d053f435"><div class="ttname"><a href="core2for_a_w_s_8h.html#ab23f5196841f3572d2c7cc52d053f435">Core2ForAWS_Sk6812_Init</a></div><div class="ttdeci">void Core2ForAWS_Sk6812_Init(void)</div><div class="ttdoc">Initializes the SK6812 LED bars.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:217</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_ab6cde5989a3afec96cce115746efc606"><div class="ttname"><a href="core2for_a_w_s_8h.html#ab6cde5989a3afec96cce115746efc606">button_right</a></div><div class="ttdeci">Button_t * button_right</div><div class="ttdoc">Right virtual touch button.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:87</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_adcdde4ebb075c61f0bfa937009de6c64"><div class="ttname"><a href="core2for_a_w_s_8h.html#adcdde4ebb075c61f0bfa937009de6c64">Core2ForAWS_PMU_Init</a></div><div class="ttdeci">void Core2ForAWS_PMU_Init(uint16_t ldo2_volt, uint16_t ldo3_volt, uint16_t dc2_volt, uint16_t dc3_volt)</div><div class="ttdoc">Initializes the AXP192 Power Management Unit (PMU).</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:178</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_ae40c69633879f4b82c939e2c63814e81"><div class="ttname"><a href="core2for_a_w_s_8h.html#ae40c69633879f4b82c939e2c63814e81">Core2ForAWS_Port_Read</a></div><div class="ttdeci">bool Core2ForAWS_Port_Read(gpio_num_t pin)</div><div class="ttdoc">Reads the value from a specified digital pin that's set as an input — either 1 (high) or 0 (low).</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:486</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_af441b13016b08aa5781a6096c758f8eb"><div class="ttname"><a href="core2for_a_w_s_8h.html#af441b13016b08aa5781a6096c758f8eb">Core2ForAWS_Port_B_DAC_WriteMilliVolts</a></div><div class="ttdeci">esp_err_t Core2ForAWS_Port_B_DAC_WriteMilliVolts(uint16_t mvolts)</div><div class="ttdoc">Outputs the specified voltage (millivolts) to the DAC.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:512</div></div>
 <div class="ttc" id="adisp__spi_8h_html"><div class="ttname"><a href="disp__spi_8h.html">disp_spi.h</a></div></div>
 <div class="ttc" id="aft6336u_8h_html"><div class="ttname"><a href="ft6336u_8h.html">ft6336u.h</a></div><div class="ttdoc">Functions for the FT6336U capacitive touch panel controller.</div></div>
 <div class="ttc" id="amicrophone_8h_html"><div class="ttname"><a href="microphone_8h.html">microphone.h</a></div><div class="ttdoc">Functions for the SPM1423 microphone.</div></div>

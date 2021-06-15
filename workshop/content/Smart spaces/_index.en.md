@@ -4,6 +4,10 @@ chapter = true
 weight = 50
 pre = "<b>4. </b>"
 +++
+{{% notice info %}}
+**Reinventing Healthy Spaces Hackathon**: Get hands-on and build an open source healthy spaces solution with AWS IoT EduKit. Submit your project by August 15, 2021 for a chance to win prizes totaling $10,000.
+[Learn more and participate](https://www.hackster.io/contests/Healthy-Spaces-with-AWS).
+{{% /notice %}}
 
 In this tutorial, you will extend the smart thermostat solution from the previous module, **Smart Thermostat**, into a Smart Space solution. A smart space is the concept of using insights about a space to enhance the space or bring further capabilities to it. You will use analytics and machine learning capabilities to derive predictions from raw data about room occupancy where your smart thermostat is deployed. The Smart Space solution will guide you how to create a new machine learning model from your thermostat data and how to improve the classification of room occupancy to operate your smart thermostat even better.
 

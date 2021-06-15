@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="AWS_logo_RGB.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Core2 for AWS IoT EduKit BSP
-   &#160;<span id="projectnumber">1.3.0</span>
+   &#160;<span id="projectnumber">1.4.0</span>
    </div>
   </td>
  </tr>
@@ -74,7 +74,7 @@ $(function() {
 <div class="contents">
 <div class="textblock"><p>FreeRTOS semaphore to be used when performing any operation on the display.</p>
 <div class="fragment"><div class="line"><span class="keyword">extern</span> SemaphoreHandle_t <a class="code" href="core2for_a_w_s_8h.html#a2a1ad60c25ec8207f8d723197855a1a1">xGuiSemaphore</a>;</div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a2a1ad60c25ec8207f8d723197855a1a1"><div class="ttname"><a href="core2for_a_w_s_8h.html#a2a1ad60c25ec8207f8d723197855a1a1">xGuiSemaphore</a></div><div class="ttdeci">SemaphoreHandle_t xGuiSemaphore</div><div class="ttdoc">FreeRTOS semaphore to be used when performing any operation on the display.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:250</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a2a1ad60c25ec8207f8d723197855a1a1"><div class="ttname"><a href="core2for_a_w_s_8h.html#a2a1ad60c25ec8207f8d723197855a1a1">xGuiSemaphore</a></div><div class="ttdeci">SemaphoreHandle_t xGuiSemaphore</div><div class="ttdoc">FreeRTOS semaphore to be used when performing any operation on the display.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:271</div></div>
 </div><!-- fragment --><p> To avoid conflicts with multiple threads attempting to write to the display, take this FreeRTOS semaphore first, use the <a href="https://docs.lvgl.io/7.11/widgets/index.html">LVGL widget</a> API of choice, and then give the semaphore. The FreeRTOS task, guiTask(), will write to the ILI9342C display controller to update the display.</p>
 <p><b>Example:</b></p>
 <p>Create a LVGL label widget, set the text of the label to "Hello World!", and align the label to the center of the screen. </p><div class="fragment"><div class="line">xSemaphoreTake(<a class="code" href="core2for_a_w_s_8h.html#a2a1ad60c25ec8207f8d723197855a1a1">xGuiSemaphore</a>, portMAX_DELAY);</div>

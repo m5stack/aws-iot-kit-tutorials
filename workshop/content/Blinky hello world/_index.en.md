@@ -4,6 +4,10 @@ chapter = true
 weight = 30
 pre = "<b>2. </b>"
 +++
+{{% notice info %}}
+**Reinventing Healthy Spaces Hackathon**: Get hands-on and build an open source healthy spaces solution with AWS IoT EduKit. Submit your project by August 15, 2021 for a chance to win prizes totaling $10,000.
+[Learn more and participate](https://www.hackster.io/contests/Healthy-Spaces-with-AWS).
+{{% /notice %}}
 
 Learn how to create a cloud connected "blinky" application (the [hello world](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program) for microcontrollers) with your M5Stack Core2 for AWS IoT EduKit reference hardware. Using your own AWS account, you'll walk-through how to connect your device to [AWS IoT Core](https://aws.amazon.com/iot-core/), send and receive [MQTT](https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html) messages, and view the messages on both the device and in the AWS cloud. All of the steps and skills used here will provide the foundation to be successful in subsequent tutorials. Specifically, you will:
 - Install and configure the [AWS CLI](https://aws.amazon.com/cli/) on your host machine to remotely manage your AWS services and use provided helper scripts.

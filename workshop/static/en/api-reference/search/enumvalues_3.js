@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['release_344',['RELEASE',['../button_8h.html#afeb311a4a42fcf0fd31c24acc64621b1ad590443978dc58d64aed5001f56efcdf',1,'button.h']]]
+  ['input_375',['INPUT',['../core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4dbae310c909d76b003d016bef8bdf16936a',1,'core2forAWS.h']]]
 ];

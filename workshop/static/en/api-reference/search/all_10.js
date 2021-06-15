@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['x_180',['x',['../struct_button__t.html#a151223b431f38e7d3562117706e9ea55',1,'Button_t']]],
-  ['xguisemaphore_181',['xGuiSemaphore',['../core2for_a_w_s_8h.html#a2a1ad60c25ec8207f8d723197855a1a1',1,'xGuiSemaphore():&#160;core2forAWS.c'],['../xguisemaphore_variable.html',1,'ili9342c']]]
+  ['uart_200',['UART',['../core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4dbab81270ba54ae4586a18415e5a579633d',1,'core2forAWS.h']]],
+  ['uart_5frx_5fbuf_5fsize_201',['UART_RX_BUF_SIZE',['../core2for_a_w_s_8h.html#a1f25fe45d891de244a8135ae02fc9265',1,'UART_RX_BUF_SIZE():&#160;core2forAWS.h'],['../uart_rx_buf_size_macro.html',1,'expports']]]
 ];

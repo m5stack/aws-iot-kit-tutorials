@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="AWS_logo_RGB.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Core2 for AWS IoT EduKit BSP
-   &#160;<span id="projectnumber">1.3.0</span>
+   &#160;<span id="projectnumber">1.4.0</span>
    </div>
   </td>
  </tr>
@@ -73,10 +73,10 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>Gets the battery voltage with the AXP192.</p>
-<div class="fragment"><div class="line"><span class="keywordtype">float</span> <a class="code" href="core2for_a_w_s_8h.html#a68be46dd836f6af03e9b6cd88f2874b0">Core2ForAWS_PMU_GetBatVolt</a>();</div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a68be46dd836f6af03e9b6cd88f2874b0"><div class="ttname"><a href="core2for_a_w_s_8h.html#a68be46dd836f6af03e9b6cd88f2874b0">Core2ForAWS_PMU_GetBatVolt</a></div><div class="ttdeci">float Core2ForAWS_PMU_GetBatVolt()</div><div class="ttdoc">Gets the battery voltage with the AXP192.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:144</div></div>
+<div class="fragment"><div class="line"><span class="keywordtype">float</span> <a class="code" href="core2for_a_w_s_8h.html#a5b859226349decb4411d11f48595e8f4">Core2ForAWS_PMU_GetBatVolt</a>(<span class="keywordtype">void</span>);</div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a5b859226349decb4411d11f48595e8f4"><div class="ttname"><a href="core2for_a_w_s_8h.html#a5b859226349decb4411d11f48595e8f4">Core2ForAWS_PMU_GetBatVolt</a></div><div class="ttdeci">float Core2ForAWS_PMU_GetBatVolt(void)</div><div class="ttdoc">Gets the battery voltage with the AXP192.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:160</div></div>
 </div><!-- fragment --><p> <b>EXAMPLE</b> Get the current battery voltage in the variable named <em>battery_voltage</em> and print the voltage to the serial output.</p>
-<div class="fragment"><div class="line"><span class="keywordtype">float</span> battery_voltage = <a class="code" href="core2for_a_w_s_8h.html#a68be46dd836f6af03e9b6cd88f2874b0">Core2ForAWS_PMU_GetBatVolt</a>();</div>
+<div class="fragment"><div class="line"><span class="keywordtype">float</span> battery_voltage = <a class="code" href="core2for_a_w_s_8h.html#a5b859226349decb4411d11f48595e8f4">Core2ForAWS_PMU_GetBatVolt</a>();</div>
 <div class="line">printf(<span class="stringliteral">&quot;Battery Voltage: %0.2f&quot;</span>, battery_voltage);</div>
 </div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>The voltage of the battery. </dd></dl>
 </div></div><!-- contents -->

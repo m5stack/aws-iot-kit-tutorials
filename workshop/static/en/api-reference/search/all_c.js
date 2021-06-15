@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['release_157',['RELEASE',['../button_8h.html#afeb311a4a42fcf0fd31c24acc64621b1ad590443978dc58d64aed5001f56efcdf',1,'button.h']]],
-  ['rtc_5fdate_5ft_158',['rtc_date_t',['../bm8563_rtc_date_struct.html',1,'bm8563'],['../structrtc__date__t.html',1,'rtc_date_t']]]
+  ['output_165',['OUTPUT',['../core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4dba2ab08d3e103968f5f4f26b66a52e99d6',1,'core2forAWS.h']]],
+  ['overview_166',['Overview',['../index.html',1,'']]]
 ];

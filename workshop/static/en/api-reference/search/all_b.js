@@ -1,9 +1,5 @@
 var searchData=
 [
-  ['poweroff_5f10s_151',['POWEROFF_10S',['../axp192_8h.html#a7884ff0002a7426e37a7e0f84a74dbccaba3765ab8cd450626e88fec1e652c064',1,'axp192.h']]],
-  ['poweroff_5f4s_152',['POWEROFF_4S',['../axp192_8h.html#a7884ff0002a7426e37a7e0f84a74dbcca462406f5a6f332103d1427519df93696',1,'axp192.h']]],
-  ['poweroff_5f6s_153',['POWEROFF_6S',['../axp192_8h.html#a7884ff0002a7426e37a7e0f84a74dbccafc77511434679232c846f5d58081fc0c',1,'axp192.h']]],
-  ['poweroff_5f8s_154',['POWEROFF_8S',['../axp192_8h.html#a7884ff0002a7426e37a7e0f84a74dbcca064114273ecde620a0110a23b98ca4ca',1,'axp192.h']]],
-  ['press_155',['PRESS',['../button_8h.html#afeb311a4a42fcf0fd31c24acc64621b1a6e70a672c8edfbcdf18c8204913e285d',1,'button.h']]],
-  ['pressevent_156',['PressEvent',['../button_pressevent_enum.html',1,'button'],['../button_8h.html#afeb311a4a42fcf0fd31c24acc64621b1',1,'PressEvent():&#160;button.h']]]
+  ['next_163',['next',['../struct_button__t.html#a0038d16a4f70619ba994f209bcdda47e',1,'Button_t']]],
+  ['none_164',['NONE',['../core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4dbac157bdf0b85a40d2619cbc8bc1ae5fe2',1,'core2forAWS.h']]]
 ];

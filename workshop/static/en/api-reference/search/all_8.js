@@ -1,23 +1,4 @@
 var searchData=
 [
-  ['mic_5fi2s_5fnumber_129',['MIC_I2S_NUMBER',['../microphone_8h.html#aecdfe4cddeaa76c80383eef738018c83',1,'MIC_I2S_NUMBER():&#160;microphone.h'],['../microphone_mici2s_number_macro.html',1,'spm1423']]],
-  ['microphone_130',['Microphone',['../spm1423.html',1,'']]],
-  ['microphone_2eh_131',['microphone.h',['../microphone_8h.html',1,'']]],
-  ['microphone_5fdeinit_132',['Microphone_Deinit',['../microphone_8h.html#af6bf7289567e8e05c91ef19dde9cc051',1,'Microphone_Deinit():&#160;microphone.c'],['../microphone_deinit_function.html',1,'spm1423']]],
-  ['microphone_5finit_133',['Microphone_Init',['../microphone_8h.html#a09556522510b43730e1590cfa42f5b1a',1,'Microphone_Init():&#160;microphone.c'],['../microphone_init_function.html',1,'spm1423']]],
-  ['minute_134',['minute',['../structrtc__date__t.html#a5699ba6d2509bf7cdd0775f7d0d4f8dd',1,'rtc_date_t']]],
-  ['month_135',['month',['../structrtc__date__t.html#afd04996b250949b3d0a0b95500b91b81',1,'rtc_date_t']]],
-  ['mpu6886_136',['MPU6886',['../mpu6886.html',1,'']]],
-  ['mpu6886_2eh_137',['mpu6886.h',['../mpu6886_8h.html',1,'']]],
-  ['mpu6886_5fgetacceladc_138',['MPU6886_GetAccelAdc',['../mpu6886_8h.html#ae8d4b8775011d2dc1448f9144e462d21',1,'MPU6886_GetAccelAdc():&#160;mpu6886.c'],['../mpu6886_getacceladc_function.html',1,'mpu6886']]],
-  ['mpu6886_5fgetacceldata_139',['MPU6886_GetAccelData',['../mpu6886_8h.html#a014d3e6bc15e4dc5de3a573b9f901b37',1,'MPU6886_GetAccelData():&#160;mpu6886.c'],['../mpu6886_getacceldata_function.html',1,'mpu6886']]],
-  ['mpu6886_5fgetaccres_140',['MPU6886_GetAccRes',['../mpu6886_8h.html#a1906117cd4d84ea1774fe98fc96468b3',1,'MPU6886_GetAccRes():&#160;mpu6886.c'],['../mpu6886_getaccres_function.html',1,'mpu6886']]],
-  ['mpu6886_5fgetgyroadc_141',['MPU6886_GetGyroAdc',['../mpu6886_8h.html#a7f3fe4152a034c0ed019c5d418c7fcfe',1,'MPU6886_GetGyroAdc():&#160;mpu6886.c'],['../mpu6886_getgyroadc_function.html',1,'mpu6886']]],
-  ['mpu6886_5fgetgyrodata_142',['MPU6886_GetGyroData',['../mpu6886_8h.html#a8f9da6300b058362761a58b60e1d6c1c',1,'MPU6886_GetGyroData():&#160;mpu6886.c'],['../mpu6886_getgyrodata_function.html',1,'mpu6886']]],
-  ['mpu6886_5fgetgyrores_143',['MPU6886_GetGyroRes',['../mpu6886_8h.html#a8f2d5918f4c67a1cee29df338ea49f22',1,'MPU6886_GetGyroRes():&#160;mpu6886.c'],['../mpu6886_getgyrores_function.html',1,'mpu6886']]],
-  ['mpu6886_5fgettempadc_144',['MPU6886_GetTempAdc',['../mpu6886_8h.html#a61bc794ebe45526187dd5f9922cff393',1,'MPU6886_GetTempAdc():&#160;mpu6886.c'],['../mpu6886_gettempadc_function.html',1,'mpu6886']]],
-  ['mpu6886_5fgettempdata_145',['MPU6886_GetTempData',['../mpu6886_8h.html#ab2a7c90e4c1fdd57a78a33fd53084071',1,'MPU6886_GetTempData():&#160;mpu6886.c'],['../mpu6886_gettempdata_function.html',1,'mpu6886']]],
-  ['mpu6886_5finit_146',['MPU6886_Init',['../mpu6886_8h.html#a402a6662575face25ec3ca336f654c98',1,'MPU6886_Init():&#160;mpu6886.c'],['../mpu6886_init_function.html',1,'mpu6886']]],
-  ['mpu6886_5fsetaccelfsr_147',['MPU6886_SetAccelFSR',['../mpu6886_8h.html#a22f674cd32318e5b424c74937a2df414',1,'MPU6886_SetAccelFSR():&#160;mpu6886.c'],['../mpu6886_setaccelfsr_function.html',1,'mpu6886']]],
-  ['mpu6886_5fsetgyrofsr_148',['MPU6886_SetGyroFSR',['../mpu6886_8h.html#a9c6b73f2e7730c2849482cb1ee3d6e80',1,'MPU6886_SetGyroFSR():&#160;mpu6886.c'],['../mpu6886_setgyrofsr_function.html',1,'mpu6886']]]
+  ['input_138',['INPUT',['../core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4dbae310c909d76b003d016bef8bdf16936a',1,'core2forAWS.h']]]
 ];

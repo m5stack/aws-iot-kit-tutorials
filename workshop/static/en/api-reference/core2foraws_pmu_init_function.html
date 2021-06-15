@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="AWS_logo_RGB.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Core2 for AWS IoT EduKit BSP
-   &#160;<span id="projectnumber">1.3.0</span>
+   &#160;<span id="projectnumber">1.4.0</span>
    </div>
   </td>
  </tr>
@@ -74,9 +74,9 @@ $(function() {
 <div class="contents">
 <div class="textblock"><p>Initializes the AXP192 Power Management Unit (PMU).</p>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> <a class="code" href="core2for_a_w_s_8h.html#adcdde4ebb075c61f0bfa937009de6c64">Core2ForAWS_PMU_Init</a>(uint16_t ldo2_volt, uint16_t ldo3_volt, uint16_t dc2_volt, uint16_t dc3_volt);</div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_adcdde4ebb075c61f0bfa937009de6c64"><div class="ttname"><a href="core2for_a_w_s_8h.html#adcdde4ebb075c61f0bfa937009de6c64">Core2ForAWS_PMU_Init</a></div><div class="ttdeci">void Core2ForAWS_PMU_Init(uint16_t ldo2_volt, uint16_t ldo3_volt, uint16_t dc2_volt, uint16_t dc3_volt)</div><div class="ttdoc">Initializes the AXP192 Power Management Unit (PMU).</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:162</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_adcdde4ebb075c61f0bfa937009de6c64"><div class="ttname"><a href="core2for_a_w_s_8h.html#adcdde4ebb075c61f0bfa937009de6c64">Core2ForAWS_PMU_Init</a></div><div class="ttdeci">void Core2ForAWS_PMU_Init(uint16_t ldo2_volt, uint16_t ldo3_volt, uint16_t dc2_volt, uint16_t dc3_volt)</div><div class="ttdoc">Initializes the AXP192 Power Management Unit (PMU).</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:178</div></div>
 </div><!-- fragment --><p> Used to directly initialize the AXP192 LDO2, LDO3, DC2, and DC3 pins.</p>
-<dl class="section note"><dt>Note</dt><dd>The <a class="el" href="core2for_a_w_s_8h.html#a97289b2e8e9d22bcabba9ea38761c3f3" title="Initializes the power chip with default values, enables battery charging, and initializes all enabled...">Core2ForAWS_Init()</a> calls this function with parameters to initialize the vibration motor and display backlight. If the ILI9342u display hardware feature is enabled, it sets the brightness to ~55% brightness. The vibration motor is always initialized in the off state.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The <a class="el" href="core2for_a_w_s_8h.html#a3d850a3f56bbe0685b60726d8b53bece" title="Initializes the power chip with default values, enables battery charging, and initializes all enabled...">Core2ForAWS_Init()</a> calls this function with parameters to initialize the vibration motor and display backlight. If the ILI9342u display hardware feature is enabled, it sets the brightness to ~55% brightness. The vibration motor is always initialized in the off state.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">ldo2_volt</td><td>low-dropout voltage of the display. </td></tr>
