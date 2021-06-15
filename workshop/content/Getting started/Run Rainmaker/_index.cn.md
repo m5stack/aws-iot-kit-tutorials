@@ -7,7 +7,7 @@ pre = "<b>b. </b>"
 我们已经准备好了编译应用程序并将其烧录到设备，通过 ESP Rainmaker 手机应用程序预配置 Wi-Fi，注册用户以将设备分配给该用户，以及开始控制板载外围设备将其作为基于 AWS IoT 的虚拟智能家居设备。
 
 ## 在 PlatformIO 中打开项目
-在您之前从 GitHub 克隆或下载并提取的项目的根目录下有几个文件夹。在本教程中，您将使用入门项目并进行 PlatformIO 中所需的操作。首先打开 Visual Studio Code，等待几秒钟加载 PlatformIO extension，单击 VS Code 活动栏（左侧菜单）中的 **PlatformIO 图标**，从 PlatformIO 菜单中选择 **Open（打开）**，点击 **Open Project（打开项目）** 导航到 `Core2-for-AWS-IoT-EduKit/Getting-Started` 文件夹，最后点击 **Open（打开）**。
+在您之前从 GitHub 克隆的项目的根目录下有几个文件夹。在本教程中，您将使用入门项目并进行 PlatformIO 中所需的操作。首先打开 Visual Studio Code，等待几秒钟加载 PlatformIO extension，单击 VS Code 活动栏（左侧菜单）中的 **PlatformIO 图标**，从 PlatformIO 菜单中选择 **Open（打开）**，点击 **Open Project（打开项目）** 导航到 `Core2-for-AWS-IoT-EduKit/Getting-Started` 文件夹，最后点击 **Open（打开）**。
 {{< img "pio-home.en.png" "PlatformIO home screen" "1 - 打开 PIO 菜单，2 - 打开 PIO Home，3 - 打开 Getting Started 项目" >}}
 
 ## 编译和上传 RainMaker 代理固件
@@ -37,9 +37,9 @@ PIO 会为设备平台安装一些必要的依赖项。如果这些操作不完�
 如果在上传或监控串行输出过程中收到关于错误端口或超时的错误，请打开 `platformio.ini` 文件，并按照该文件中的说明手动设置上传端口。
 {{% /notice %}}
 ## 声明和预置设备
-一旦上传成功完成，设备将用刚刚编译和上传的固件启动。它还将在终端视口中显示该设备的串行输出。该设备将生成安全密钥和执行 [assisted claim](https://rainmaker.espressif.com/docs/claiming.html#assisted-claiming-esp32) 的过程。密钥生成可能需要几秒钟最多几分钟才能完成，但一旦申领完成，一个二维码将显示在终端视口。
+一旦上传成功完成，设备将用刚刚编译和上传的固件启动。它还将在终端视图中显示该设备的串行输出。该设备将生成安全密钥和执行 [assisted claim](https://rainmaker.espressif.com/docs/claiming.html#assisted-claiming-esp32) 的过程。密钥生成可能需要几秒钟最多几分钟才能完成，但一旦申领完成，一个二维码将显示在终端视图。
 
-打开手机上的 ESP RainMaker 手机 App，授予其请求的应用程序权限，按下 **Add Device（添加设备）**，然后扫描计算机串行监控器终端视口上显示的二维码。随后将开始预置过程，其中包括使用 Wi-Fi 凭证为 2.4GHz 无线家庭网络预置 Wi-Fi。成功连接 Wi-Fi 后，设备将对自身进行身份验证。手机 App 将装载多个可查看和/或控制的虚拟设备。如果一两分钟后手机 App 上的虚拟设备显示为 **offline(离线)**，则向下滚动进行刷新。
+打开手机上的 ESP RainMaker 手机 App，授予其请求的应用程序权限，按下 **Add Device（添加设备）**，然后扫描计算机串行监控器终端视图上显示的二维码。随后将开始预置过程，其中包括使用 Wi-Fi 凭证为 2.4GHz 无线家庭网络预置 Wi-Fi。成功连接 Wi-Fi 后，设备将对自身进行身份验证。手机 App 将装载多个可查看和/或控制的虚拟设备。如果一两分钟后手机 App 上的虚拟设备显示为 **offline(离线)**，则向下滚动进行刷新。
 {{< img "pio-qr_code_scan.en.png" "在串行输出中扫码二维码" >}}
 
 在虚拟设备显示在移动应用程序中并处于在线状态后，您可以打开或关闭板载电机或 LED，调整电机的速度，设置 LED 灯条的颜色和亮度，以及查看设备内部温度。
