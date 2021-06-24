@@ -73,7 +73,14 @@ $(function() {
 <p>The BSP is located in each of the AWS IoT EduKit program's provided project's <a href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/tree/master/Blinky-Hello-World/components/core2forAWS">components/core2forAWS</a> directory. Do the following steps to create an empty project:</p><ol type="1">
 <li>Copy the Core2 for AWS IoT EduKit <a href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/tree/master/Blinky-Hello-World/components/core2forAWS">BSP</a> into your project's <em>components</em> directory.</li>
 <li>Copy the Core2 for AWS port of the <a href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/tree/master/Blinky-Hello-World/components/esp-cryptoauthlib">esp-cryptoauthlib</a> into your project's <em>components</em> directory.</li>
-<li>Copy <a href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/blob/master/Blinky-Hello-World/sdkconfig.defaults">sdkconfig.defaults</a>, <a href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/blob/master/Blinky-Hello-World/partitions_16MB.csv">partitions_16MB.csv</a>, and <a href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/blob/master/Blinky-Hello-World/platformio.ini">platformio.ini</a> files to the <em>root of your project</em>. You can customize the platformio.ini file to suite your needs.</li>
+<li>Copy <a href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/blob/master/Blinky-Hello-World/sdkconfig.defaults">sdkconfig.defaults</a>, <a href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/blob/master/Blinky-Hello-World/partitions_16MB.csv">partitions_16MB.csv</a>, <a href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/blob/master/Blinky-Hello-World/CMakeLists.txt">CMakeLists.txt</a>, and <a href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/blob/master/Blinky-Hello-World/platformio.ini">platformio.ini</a> files to the <em>root of your project</em>. You can customize the platformio.ini file and CMakeLists.txt to suite your needs.</li>
+<li>Create a <code>main.c</code> file in a new <em>main</em> folder that at the has the following code: <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="core2for_a_w_s_8h.html">core2forAWS.h</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> app_main(<span class="keywordtype">void</span>){</div>
+<div class="line"> </div>
+<div class="line">}</div>
+<div class="ttc" id="acore2for_a_w_s_8h_html"><div class="ttname"><a href="core2for_a_w_s_8h.html">core2forAWS.h</a></div><div class="ttdoc">Functions to initialize and access Core2 for AWS IoT EduKit hardware features.</div></div>
+</div><!-- fragment --></li>
 </ol>
 <p>For more information on setting up your PlatformIO configuration file and additonal configuration options, view their <a href="https://docs.platformio.org/en/latest/projectconf/index.html">official docs</a>. For information on the ESP-IDF v4.2 and APIs available, see Espressif's <a href="https://docs.espressif.com/projects/esp-idf/en/release-v4.2/esp32/index.html">official documentation</a>.</p>
 <h1><a class="anchor" id="driver_apis"></a>
