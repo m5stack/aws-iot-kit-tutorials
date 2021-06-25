@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="AWS_logo_RGB.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Core2 for AWS IoT EduKit BSP
-   &#160;<span id="projectnumber">1.4.0</span>
+   &#160;<span id="projectnumber">1.4.1</span>
    </div>
   </td>
  </tr>
@@ -78,19 +78,17 @@ Example</h1>
 <div class="line"><span class="preprocessor">#include &quot;freertos/task.h&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#include &quot;esp_log.h&quot;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="core2for_a_w_s_8h.html">core2foraws.h</a>&quot;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="ft6336u_8h.html">ft6336u.h</a>&quot;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="button_8h.html">button.h</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="core2for_a_w_s_8h.html">core2forAWS.h</a>&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *TAG = <span class="stringliteral">&quot;EXAMPLE&quot;</span>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> touch_task(<span class="keywordtype">void</span>* pvParameters){</div>
+<div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> button_task(<span class="keywordtype">void</span>* pvParameters){</div>
 <div class="line">    <span class="keywordflow">for</span>(;;){</div>
 <div class="line">        <span class="keywordflow">if</span> (<a class="code" href="button_8h.html#acf2b76f9c6fe8e6f8ac65ff1eff8ccdd">Button_WasPressed</a>(<a class="code" href="core2for_a_w_s_8h.html#a49b277909900db7e85d6be2841301fe7">button_middle</a>)) {</div>
 <div class="line">            ESP_LOGI(TAG, <span class="stringliteral">&quot;MIDDLE PRESSED!&quot;</span>);</div>
 <div class="line">        }</div>
 <div class="line">    </div>
-<div class="line">        vTaskDelay(pdMS_TO_TICKS(100));</div>
+<div class="line">        vTaskDelay(pdMS_TO_TICKS(80));</div>
 <div class="line">    }</div>
 <div class="line">    vTaskDelete(NULL); <span class="comment">// Should never get to here...</span></div>
 <div class="line">}</div>
@@ -100,12 +98,10 @@ Example</h1>
 <div class="line"> </div>
 <div class="line">    xTaskCreatePinnedToCore(button_task, <span class="stringliteral">&quot;buttonTask&quot;</span>, configMINIMAL_STACK_SIZE * 3, NULL, 1, NULL, 1);     </div>
 <div class="line">}</div>
-<div class="ttc" id="abutton_8h_html"><div class="ttname"><a href="button_8h.html">button.h</a></div><div class="ttdoc">Functions for the virtual buttons using the FT633U touch controller.</div></div>
 <div class="ttc" id="abutton_8h_html_acf2b76f9c6fe8e6f8ac65ff1eff8ccdd"><div class="ttname"><a href="button_8h.html#acf2b76f9c6fe8e6f8ac65ff1eff8ccdd">Button_WasPressed</a></div><div class="ttdeci">uint8_t Button_WasPressed(Button_t *button)</div><div class="ttdoc">See if the specified button was pressed.</div><div class="ttdef"><b>Definition:</b> button.c:43</div></div>
 <div class="ttc" id="acore2for_a_w_s_8h_html"><div class="ttname"><a href="core2for_a_w_s_8h.html">core2forAWS.h</a></div><div class="ttdoc">Functions to initialize and access Core2 for AWS IoT EduKit hardware features.</div></div>
 <div class="ttc" id="acore2for_a_w_s_8h_html_a3d850a3f56bbe0685b60726d8b53bece"><div class="ttname"><a href="core2for_a_w_s_8h.html#a3d850a3f56bbe0685b60726d8b53bece">Core2ForAWS_Init</a></div><div class="ttdeci">void Core2ForAWS_Init(void)</div><div class="ttdoc">Initializes the power chip with default values, enables battery charging, and initializes all enabled...</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:32</div></div>
 <div class="ttc" id="acore2for_a_w_s_8h_html_a49b277909900db7e85d6be2841301fe7"><div class="ttname"><a href="core2for_a_w_s_8h.html#a49b277909900db7e85d6be2841301fe7">button_middle</a></div><div class="ttdeci">Button_t * button_middle</div><div class="ttdoc">Middle virtual touch button.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:86</div></div>
-<div class="ttc" id="aft6336u_8h_html"><div class="ttname"><a href="ft6336u_8h.html">ft6336u.h</a></div><div class="ttdoc">Functions for the FT6336U capacitive touch panel controller.</div></div>
 </div><!-- fragment --><h1><a class="anchor" id="button_enumerated_type_definitions"></a>
 Enumerated Type Definitions</h1>
 <ul>

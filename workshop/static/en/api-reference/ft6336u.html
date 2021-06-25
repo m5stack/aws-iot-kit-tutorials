@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="AWS_logo_RGB.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Core2 for AWS IoT EduKit BSP
-   &#160;<span id="projectnumber">1.4.0</span>
+   &#160;<span id="projectnumber">1.4.1</span>
    </div>
   </td>
  </tr>
@@ -79,8 +79,7 @@ Example</h1>
 <div class="line"><span class="preprocessor">#include &quot;freertos/task.h&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#include &quot;esp_log.h&quot;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="core2for_a_w_s_8h.html">core2foraws.h</a>&quot;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="ft6336u_8h.html">ft6336u.h</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="core2for_a_w_s_8h.html">core2forAWS.h</a>&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *TAG = <span class="stringliteral">&quot;EXAMPLE&quot;</span>;</div>
 <div class="line"> </div>
@@ -90,7 +89,7 @@ Example</h1>
 <div class="line">            ESP_LOGI(TAG, <span class="stringliteral">&quot;PRESSED!&quot;</span>);</div>
 <div class="line">        }</div>
 <div class="line"> </div>
-<div class="line">        vTaskDelay(pdMS_TO_TICKS(100));</div>
+<div class="line">        vTaskDelay(pdMS_TO_TICKS(80));</div>
 <div class="line">    }</div>
 <div class="line">    vTaskDelete(NULL); <span class="comment">/* Should never get to here... */</span></div>
 <div class="line">}</div>
@@ -102,7 +101,6 @@ Example</h1>
 <div class="line">}</div>
 <div class="ttc" id="acore2for_a_w_s_8h_html"><div class="ttname"><a href="core2for_a_w_s_8h.html">core2forAWS.h</a></div><div class="ttdoc">Functions to initialize and access Core2 for AWS IoT EduKit hardware features.</div></div>
 <div class="ttc" id="acore2for_a_w_s_8h_html_a3d850a3f56bbe0685b60726d8b53bece"><div class="ttname"><a href="core2for_a_w_s_8h.html#a3d850a3f56bbe0685b60726d8b53bece">Core2ForAWS_Init</a></div><div class="ttdeci">void Core2ForAWS_Init(void)</div><div class="ttdoc">Initializes the power chip with default values, enables battery charging, and initializes all enabled...</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:32</div></div>
-<div class="ttc" id="aft6336u_8h_html"><div class="ttname"><a href="ft6336u_8h.html">ft6336u.h</a></div><div class="ttdoc">Functions for the FT6336U capacitive touch panel controller.</div></div>
 <div class="ttc" id="aft6336u_8h_html_a35a78ae3c2b1e6a1997d98d685612472"><div class="ttname"><a href="ft6336u_8h.html#a35a78ae3c2b1e6a1997d98d685612472">FT6336U_WasPressed</a></div><div class="ttdeci">bool FT6336U_WasPressed()</div><div class="ttdoc">Retrieves the pressed state of the touch screen.</div><div class="ttdef"><b>Definition:</b> ft6336u.c:74</div></div>
 </div><!-- fragment --><h1><a class="anchor" id="ft6336u_functions"></a>
 Functions</h1>

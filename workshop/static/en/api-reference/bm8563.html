@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="AWS_logo_RGB.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Core2 for AWS IoT EduKit BSP
-   &#160;<span id="projectnumber">1.4.0</span>
+   &#160;<span id="projectnumber">1.4.1</span>
    </div>
   </td>
  </tr>
@@ -76,8 +76,7 @@ $(function() {
 Example</h1>
 <p>The following example initializes the Core2 for AWS, which initializes the PMU for the battery and other user enabled hardware features — such as the BM8563. It then prints the current date time using the ESP logger.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;esp_log.h&quot;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="core2for_a_w_s_8h.html">core2foraws.h</a>&quot;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="bm8563_8h.html">bm8563.h</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="core2for_a_w_s_8h.html">core2forAWS.h</a>&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *TAG = <span class="stringliteral">&quot;EXAMPLE&quot;</span>;</div>
 <div class="line"> </div>
@@ -88,9 +87,8 @@ Example</h1>
 <div class="line"> </div>
 <div class="line">    <a class="code" href="bm8563_8h.html#a50be06a7af15505ce80bbb9b10c19f15">BM8563_GetTime</a>(&amp;date);</div>
 <div class="line">    ESP_LOGI(TAG, <span class="stringliteral">&quot;Date: %d-%02d-%02d Time: %02d:%02d:%02d&quot;</span>,</div>
-<div class="line">             date.<a class="code" href="structrtc__date__t.html#a320d5caea2fec2adc9fbd710b034f9e3">year</a>, date.<a class="code" href="structrtc__date__t.html#afd04996b250949b3d0a0b95500b91b81">month</a>, date.<a class="code" href="structrtc__date__t.html#aac2d1613473d4eb898c33c8243a90ef1">day</a>, date.<a class="code" href="structrtc__date__t.html#ad794c994fa0363ef9905f517919b8498">hour</a>, date.<a class="code" href="structrtc__date__t.html#a5699ba6d2509bf7cdd0775f7d0d4f8dd">minute</a>, date.<a class="code" href="structrtc__date__t.html#a5689ab763359e4776390ea1a1be2a4ee">second</a>)</div>
+<div class="line">            date.<a class="code" href="structrtc__date__t.html#a320d5caea2fec2adc9fbd710b034f9e3">year</a>, date.<a class="code" href="structrtc__date__t.html#afd04996b250949b3d0a0b95500b91b81">month</a>, date.<a class="code" href="structrtc__date__t.html#aac2d1613473d4eb898c33c8243a90ef1">day</a>, date.<a class="code" href="structrtc__date__t.html#ad794c994fa0363ef9905f517919b8498">hour</a>, date.<a class="code" href="structrtc__date__t.html#a5699ba6d2509bf7cdd0775f7d0d4f8dd">minute</a>, date.<a class="code" href="structrtc__date__t.html#a5689ab763359e4776390ea1a1be2a4ee">second</a>);</div>
 <div class="line">}</div>
-<div class="ttc" id="abm8563_8h_html"><div class="ttname"><a href="bm8563_8h.html">bm8563.h</a></div><div class="ttdoc">Functions for the BM8563 Real-Time Clock (RTC).</div></div>
 <div class="ttc" id="abm8563_8h_html_a50be06a7af15505ce80bbb9b10c19f15"><div class="ttname"><a href="bm8563_8h.html#a50be06a7af15505ce80bbb9b10c19f15">BM8563_GetTime</a></div><div class="ttdeci">void BM8563_GetTime(rtc_date_t *data)</div><div class="ttdoc">Retrieves the date and time on the BM8563.</div><div class="ttdef"><b>Definition:</b> bm8563.c:56</div></div>
 <div class="ttc" id="acore2for_a_w_s_8h_html"><div class="ttname"><a href="core2for_a_w_s_8h.html">core2forAWS.h</a></div><div class="ttdoc">Functions to initialize and access Core2 for AWS IoT EduKit hardware features.</div></div>
 <div class="ttc" id="acore2for_a_w_s_8h_html_a3d850a3f56bbe0685b60726d8b53bece"><div class="ttname"><a href="core2for_a_w_s_8h.html#a3d850a3f56bbe0685b60726d8b53bece">Core2ForAWS_Init</a></div><div class="ttdeci">void Core2ForAWS_Init(void)</div><div class="ttdoc">Initializes the power chip with default values, enables battery charging, and initializes all enabled...</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:32</div></div>

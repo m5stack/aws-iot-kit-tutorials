@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="AWS_logo_RGB.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Core2 for AWS IoT EduKit BSP
-   &#160;<span id="projectnumber">1.4.0</span>
+   &#160;<span id="projectnumber">1.4.1</span>
    </div>
   </td>
  </tr>
@@ -72,18 +72,15 @@ $(function() {
 <p><a class="anchor" id="sd"></a></p>
 <p><a href="./block_diagram-sdcard.png"><img src="./block_diagram-sdcard.png" alt="Circuit Block Diagram for the SD card slot" class="center" class="inline"/></a></p>
 <p>To enable this feature using KConfig, use the command <code>pio run --environment core2foraws --target menuconfig</code> from within the root of the project directoy in your <a href="/en/blinky-hello-world/prerequisites.html#open-the-platformio-cli-terminal-window">PlatformIO terminal window</a> and go to the menu <code>Component Config --&gt; Core2 for AWS hardware enable</code> to set the features you want to enable.</p>
+<dl class="section note"><dt>Note</dt><dd>This feature requires the ILI9342 display to be enabled.</dd></dl>
 <p>The SD card and the screen share the same SPI bus. In order to avoid conflicts with the screen, you must take the <a class="el" href="disp__spi_8c.html#a76c0525d646735793add25b18043e600">spi_mutex</a> semaphore, and then call <a class="el" href="disp__spi_8h.html#a3dc6a7525e5a0b34e37a3a64478ec9ee">spi_poll()</a> before accessing the SD card. Once done, give the semaphore so that the display can go back to using it.</p>
 <h1><a class="anchor" id="sdcard_example"></a>
 Example</h1>
 <p>The example code below, mounts the SD card, writes a file named <code>hello.txt</code> on the path <code>/sdcard</code> with the contents "Hello &lt;&lt;YOUR SD CARD'S PRODUCT NAME&gt;&gt;!", reads back the file and outputs the contents to the serial output, and then unmounts the card:</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="preprocessor">#include &quot;driver/gpio.h&quot;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;esp_log.h&quot;</span></div>
-<div class="line"> </div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;esp_log.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="core2for_a_w_s_8h.html">core2forAWS.h</a>&quot;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *TAG = <span class="stringliteral">&quot;SDCARD_EXAMPLE&quot;</span>;</div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *TAG = <span class="stringliteral">&quot;EXAMPLE&quot;</span>;</div>
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#define MOUNT_POINT &quot;/sdcard&quot;</span></div>
 <div class="line"> </div>
@@ -110,24 +107,24 @@ Example</h1>
 <div class="line"> </div>
 <div class="line">    FILE* f = fopen(file_path, <span class="stringliteral">&quot;w+&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">if</span> (f == NULL) {</div>
-<div class="line">        ESP_LOGE(<span class="stringliteral">&quot;SDCARD&quot;</span>, <span class="stringliteral">&quot;Failed to open file for writing&quot;</span>);</div>
+<div class="line">        ESP_LOGE(TAG, <span class="stringliteral">&quot;Failed to open file for writing&quot;</span>);</div>
 <div class="line">        xSemaphoreGive(<a class="code" href="disp__spi_8h.html#a76c0525d646735793add25b18043e600">spi_mutex</a>);</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
 <div class="line">    }</div>
 <div class="line">    fprintf(f, <span class="stringliteral">&quot;Hello %s!\n&quot;</span>, card-&gt;cid.name);</div>
 <div class="line">    fclose(f);</div>
 <div class="line"> </div>
-<div class="line">    ESP_LOGI(<span class="stringliteral">&quot;SDCARD&quot;</span>, <span class="stringliteral">&quot;Reading file %s&quot;</span>, file_path);</div>
+<div class="line">    ESP_LOGI(TAG, <span class="stringliteral">&quot;Reading file %s&quot;</span>, file_path);</div>
 <div class="line">    f = fopen(file_path, <span class="stringliteral">&quot;r&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">if</span> (f == NULL) {</div>
-<div class="line">        ESP_LOGE(<span class="stringliteral">&quot;SDCARD&quot;</span>, <span class="stringliteral">&quot;Failed to open file for reading&quot;</span>);</div>
+<div class="line">        ESP_LOGE(TAG, <span class="stringliteral">&quot;Failed to open file for reading&quot;</span>);</div>
 <div class="line">        xSemaphoreGive(<a class="code" href="disp__spi_8h.html#a76c0525d646735793add25b18043e600">spi_mutex</a>);</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordtype">char</span> line[64];</div>
 <div class="line">    fgets(line, <span class="keyword">sizeof</span>(line), f);</div>
 <div class="line">    fclose(f);</div>
-<div class="line">    ESP_LOGI(<span class="stringliteral">&quot;SDCARD&quot;</span>, <span class="stringliteral">&quot;Read &lt;- %s&quot;</span>, line);</div>
+<div class="line">    ESP_LOGI(TAG, <span class="stringliteral">&quot;Read &lt;- %s&quot;</span>, line);</div>
 <div class="line"> </div>
 <div class="line">    err = <a class="code" href="core2for_a_w_s_8h.html#a4c9c5029e08899a3b75a61e22cfa84a7">Core2ForAWS_SDcard_Unmount</a>(MOUNT_POINT, card);</div>
 <div class="line">    xSemaphoreGive(<a class="code" href="disp__spi_8h.html#a76c0525d646735793add25b18043e600">spi_mutex</a>);</div>

@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="AWS_logo_RGB.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Core2 for AWS IoT EduKit BSP
-   &#160;<span id="projectnumber">1.4.0</span>
+   &#160;<span id="projectnumber">1.4.1</span>
    </div>
   </td>
  </tr>
@@ -96,10 +96,10 @@ $(function() {
 <code>#include &quot;driver/i2s.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="microphone_8h_source.html">microphone.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="speaker_8h_source.html">speaker.h</a>&quot;</code><br />
+<code>#include &quot;driver/gpio.h&quot;</code><br />
 <code>#include &quot;esp_freertos_hooks.h&quot;</code><br />
 <code>#include &quot;esp_vfs_fat.h&quot;</code><br />
 <code>#include &quot;sdmmc_cmd.h&quot;</code><br />
-<code>#include &quot;driver/gpio.h&quot;</code><br />
 <code>#include &quot;driver/uart.h&quot;</code><br />
 </div>
 <p><a href="core2for_a_w_s_8h_source.html">Go to the source code of this file.</a></p>
@@ -1065,7 +1065,7 @@ The <a class="el" href="core2for_a_w_s_8h.html#a3d850a3f56bbe0685b60726d8b53bece
 <div class="ttc" id="acore2for_a_w_s_8h_html"><div class="ttname"><a href="core2for_a_w_s_8h.html">core2forAWS.h</a></div><div class="ttdoc">Functions to initialize and access Core2 for AWS IoT EduKit hardware features.</div></div>
 <div class="ttc" id="acore2for_a_w_s_8h_html_a20b1459685901f232474236d0fc6c23f"><div class="ttname"><a href="core2for_a_w_s_8h.html#a20b1459685901f232474236d0fc6c23f">Core2ForAWS_Port_PinMode</a></div><div class="ttdeci">esp_err_t Core2ForAWS_Port_PinMode(gpio_num_t pin, pin_mode_t mode)</div><div class="ttdoc">Sets the pin mode of the specified pin.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:419</div></div>
 <div class="ttc" id="acore2for_a_w_s_8h_html_a3d850a3f56bbe0685b60726d8b53bece"><div class="ttname"><a href="core2for_a_w_s_8h.html#a3d850a3f56bbe0685b60726d8b53bece">Core2ForAWS_Init</a></div><div class="ttdeci">void Core2ForAWS_Init(void)</div><div class="ttdoc">Initializes the power chip with default values, enables battery charging, and initializes all enabled...</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:32</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a77fecc1883f27c095012fbe56345c4dba5ec0e8ce4c96673614190a8852261f4f"><div class="ttname"><a href="core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4dba5ec0e8ce4c96673614190a8852261f4f">ADC</a></div><div class="ttdeci">@ ADC</div><div class="ttdoc">Enable ADC mode. Only available on GPIO 36.</div><div class="ttdef"><b>Definition:</b> core2forAWS.h:183</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a77fecc1883f27c095012fbe56345c4dba5ec0e8ce4c96673614190a8852261f4f"><div class="ttname"><a href="core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4dba5ec0e8ce4c96673614190a8852261f4f">ADC</a></div><div class="ttdeci">@ ADC</div><div class="ttdoc">Enable ADC mode. Only available on GPIO 36.</div><div class="ttdef"><b>Definition:</b> core2forAWS.h:184</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">pin</td><td>The GPIO pin to set the mode of. </td></tr>
@@ -1120,7 +1120,7 @@ Reads high when connected to Vcc.</dd></dl>
 <div class="line">    <a class="code" href="core2for_a_w_s_8h.html#a20b1459685901f232474236d0fc6c23f">Core2ForAWS_Port_PinMode</a>(GPIO_NUM_26, <a class="code" href="core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4dbae310c909d76b003d016bef8bdf16936a">INPUT</a>);</div>
 <div class="line">    xTaskCreatePinnedToCore(pin_read_task, <span class="stringliteral">&quot;read_pin&quot;</span>, 1024*4, NULL, 1, NULL, 1);</div>
 <div class="line">}</div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a77fecc1883f27c095012fbe56345c4dbae310c909d76b003d016bef8bdf16936a"><div class="ttname"><a href="core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4dbae310c909d76b003d016bef8bdf16936a">INPUT</a></div><div class="ttdeci">@ INPUT</div><div class="ttdoc">Set GPIO to input mode.</div><div class="ttdef"><b>Definition:</b> core2forAWS.h:182</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a77fecc1883f27c095012fbe56345c4dbae310c909d76b003d016bef8bdf16936a"><div class="ttname"><a href="core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4dbae310c909d76b003d016bef8bdf16936a">INPUT</a></div><div class="ttdeci">@ INPUT</div><div class="ttdoc">Set GPIO to input mode.</div><div class="ttdef"><b>Definition:</b> core2forAWS.h:183</div></div>
 <div class="ttc" id="acore2for_a_w_s_8h_html_ae40c69633879f4b82c939e2c63814e81"><div class="ttname"><a href="core2for_a_w_s_8h.html#ae40c69633879f4b82c939e2c63814e81">Core2ForAWS_Port_Read</a></div><div class="ttdeci">bool Core2ForAWS_Port_Read(gpio_num_t pin)</div><div class="ttdoc">Reads the value from a specified digital pin that's set as an input — either 1 (high) or 0 (low).</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:486</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1188,7 +1188,7 @@ Reads high when connected to Vcc.</dd></dl>
 <div class="line">    <a class="code" href="core2for_a_w_s_8h.html#a20b1459685901f232474236d0fc6c23f">Core2ForAWS_Port_PinMode</a>(GPIO_NUM_36, <a class="code" href="core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4dba2ab08d3e103968f5f4f26b66a52e99d6">OUTPUT</a>);</div>
 <div class="line">    xTaskCreatePinnedToCore(pin_write_task, <span class="stringliteral">&quot;write_pin&quot;</span>, 1024*4, NULL, 1, NULL, 1);</div>
 <div class="line">}</div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a77fecc1883f27c095012fbe56345c4dba2ab08d3e103968f5f4f26b66a52e99d6"><div class="ttname"><a href="core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4dba2ab08d3e103968f5f4f26b66a52e99d6">OUTPUT</a></div><div class="ttdeci">@ OUTPUT</div><div class="ttdoc">Set GPIO to output mode.</div><div class="ttdef"><b>Definition:</b> core2forAWS.h:181</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a77fecc1883f27c095012fbe56345c4dba2ab08d3e103968f5f4f26b66a52e99d6"><div class="ttname"><a href="core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4dba2ab08d3e103968f5f4f26b66a52e99d6">OUTPUT</a></div><div class="ttdeci">@ OUTPUT</div><div class="ttdoc">Set GPIO to output mode.</div><div class="ttdef"><b>Definition:</b> core2forAWS.h:182</div></div>
 <div class="ttc" id="acore2for_a_w_s_8h_html_a7e481da2a60b6f0c46d6a4a5b2c8453e"><div class="ttname"><a href="core2for_a_w_s_8h.html#a7e481da2a60b6f0c46d6a4a5b2c8453e">Core2ForAWS_Port_Write</a></div><div class="ttdeci">esp_err_t Core2ForAWS_Port_Write(gpio_num_t pin, bool level)</div><div class="ttdoc">Writes the specified level (0 or 1) to the specified digital pin.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:492</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1247,7 +1247,7 @@ pin_mode_t for PORT_B_ADC_PIN must be set to ADC before using Core2ForAWS_Port_B
 <div class="line"> </div>
 <div class="line">@<span class="keywordflow">return</span> the raw <a class="code" href="core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4dba5ec0e8ce4c96673614190a8852261f4f">ADC</a> reading.</div>
 <div class="ttc" id="acore2for_a_w_s_8h_html_a08ed8dbebc74ab97512f434eeef4c77c"><div class="ttname"><a href="core2for_a_w_s_8h.html#a08ed8dbebc74ab97512f434eeef4c77c">Core2ForAWS_Port_B_ADC_ReadRaw</a></div><div class="ttdeci">uint32_t Core2ForAWS_Port_B_ADC_ReadRaw(void)</div><div class="ttdoc">Read the raw ADC value from GPIO36.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:502</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_acc191b4d5b52786c63d4692d6cb80d40"><div class="ttname"><a href="core2for_a_w_s_8h.html#acc191b4d5b52786c63d4692d6cb80d40">PORT_B_ADC_PIN</a></div><div class="ttdeci">#define PORT_B_ADC_PIN</div><div class="ttdoc">The ADC pin on expansion port B.</div><div class="ttdef"><b>Definition:</b> core2forAWS.h:115</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_acc191b4d5b52786c63d4692d6cb80d40"><div class="ttname"><a href="core2for_a_w_s_8h.html#acc191b4d5b52786c63d4692d6cb80d40">PORT_B_ADC_PIN</a></div><div class="ttdeci">#define PORT_B_ADC_PIN</div><div class="ttdoc">The ADC pin on expansion port B.</div><div class="ttdef"><b>Definition:</b> core2forAWS.h:116</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -1331,8 +1331,8 @@ pin_mode_t for PORT_B_ADC_PIN must be set to ADC before using Core2ForAWS_Port_B
 <div class="line">    <a class="code" href="core2for_a_w_s_8h.html#a20b1459685901f232474236d0fc6c23f">Core2ForAWS_Port_PinMode</a>(<a class="code" href="core2for_a_w_s_8h.html#ac708091286fa469920c756366ca4e683">PORT_B_DAC_PIN</a>, <a class="code" href="core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4dba1bdc96b7f14d9f3d2551d0eee290ef43">DAC</a>);</div>
 <div class="line">    <a class="code" href="core2for_a_w_s_8h.html#af441b13016b08aa5781a6096c758f8eb">Core2ForAWS_Port_B_DAC_WriteMilliVolts</a>(1500);</div>
 <div class="line">}</div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a77fecc1883f27c095012fbe56345c4dba1bdc96b7f14d9f3d2551d0eee290ef43"><div class="ttname"><a href="core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4dba1bdc96b7f14d9f3d2551d0eee290ef43">DAC</a></div><div class="ttdeci">@ DAC</div><div class="ttdoc">Enable DAC mode. Only available on GPIO 26.</div><div class="ttdef"><b>Definition:</b> core2forAWS.h:184</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_ac708091286fa469920c756366ca4e683"><div class="ttname"><a href="core2for_a_w_s_8h.html#ac708091286fa469920c756366ca4e683">PORT_B_DAC_PIN</a></div><div class="ttdeci">#define PORT_B_DAC_PIN</div><div class="ttdoc">The DAC pin on expansion port B.</div><div class="ttdef"><b>Definition:</b> core2forAWS.h:126</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a77fecc1883f27c095012fbe56345c4dba1bdc96b7f14d9f3d2551d0eee290ef43"><div class="ttname"><a href="core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4dba1bdc96b7f14d9f3d2551d0eee290ef43">DAC</a></div><div class="ttdeci">@ DAC</div><div class="ttdoc">Enable DAC mode. Only available on GPIO 26.</div><div class="ttdef"><b>Definition:</b> core2forAWS.h:185</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_ac708091286fa469920c756366ca4e683"><div class="ttname"><a href="core2for_a_w_s_8h.html#ac708091286fa469920c756366ca4e683">PORT_B_DAC_PIN</a></div><div class="ttdeci">#define PORT_B_DAC_PIN</div><div class="ttdoc">The DAC pin on expansion port B.</div><div class="ttdef"><b>Definition:</b> core2forAWS.h:127</div></div>
 <div class="ttc" id="acore2for_a_w_s_8h_html_af441b13016b08aa5781a6096c758f8eb"><div class="ttname"><a href="core2for_a_w_s_8h.html#af441b13016b08aa5781a6096c758f8eb">Core2ForAWS_Port_B_DAC_WriteMilliVolts</a></div><div class="ttdeci">esp_err_t Core2ForAWS_Port_B_DAC_WriteMilliVolts(uint16_t mvolts)</div><div class="ttdoc">Outputs the specified voltage (millivolts) to the DAC.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:512</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1407,10 +1407,10 @@ EduKit" every two seconds and the other receives the message. The receiver task 
 <div class="line">        xTaskCreate(uart_tx_task, <span class="stringliteral">&quot;uart_tx&quot;</span>, 1024*2, NULL, configMAX_PRIORITIES-1, NULL);</div>
 <div class="line">    }</div>
 <div class="line">}</div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a1f25fe45d891de244a8135ae02fc9265"><div class="ttname"><a href="core2for_a_w_s_8h.html#a1f25fe45d891de244a8135ae02fc9265">UART_RX_BUF_SIZE</a></div><div class="ttdeci">#define UART_RX_BUF_SIZE</div><div class="ttdoc">The default UART RX ring buffer size.</div><div class="ttdef"><b>Definition:</b> core2forAWS.h:169</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a1f25fe45d891de244a8135ae02fc9265"><div class="ttname"><a href="core2for_a_w_s_8h.html#a1f25fe45d891de244a8135ae02fc9265">UART_RX_BUF_SIZE</a></div><div class="ttdeci">#define UART_RX_BUF_SIZE</div><div class="ttdoc">The default UART RX ring buffer size.</div><div class="ttdef"><b>Definition:</b> core2forAWS.h:170</div></div>
 <div class="ttc" id="acore2for_a_w_s_8h_html_a41a0d4cfbf16f792180d7ca55e664095"><div class="ttname"><a href="core2for_a_w_s_8h.html#a41a0d4cfbf16f792180d7ca55e664095">Core2ForAWS_Port_C_UART_Begin</a></div><div class="ttdeci">esp_err_t Core2ForAWS_Port_C_UART_Begin(uint32_t baud)</div><div class="ttdoc">Configures the UART interface at the specified baud rate.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:517</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a77fecc1883f27c095012fbe56345c4dbab81270ba54ae4586a18415e5a579633d"><div class="ttname"><a href="core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4dbab81270ba54ae4586a18415e5a579633d">UART</a></div><div class="ttdeci">@ UART</div><div class="ttdoc">Enable UART RX/TX mode. UART TX only available on GPIO 14 and UART RX is only available on GPIO 13....</div><div class="ttdef"><b>Definition:</b> core2forAWS.h:185</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a8764a8d2c486f2d66f86d995653cc833"><div class="ttname"><a href="core2for_a_w_s_8h.html#a8764a8d2c486f2d66f86d995653cc833">PORT_C_UART_TX_PIN</a></div><div class="ttdeci">#define PORT_C_UART_TX_PIN</div><div class="ttdoc">The UART transmission pin on expansion port C.</div><div class="ttdef"><b>Definition:</b> core2forAWS.h:137</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a77fecc1883f27c095012fbe56345c4dbab81270ba54ae4586a18415e5a579633d"><div class="ttname"><a href="core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4dbab81270ba54ae4586a18415e5a579633d">UART</a></div><div class="ttdeci">@ UART</div><div class="ttdoc">Enable UART RX/TX mode. UART TX only available on GPIO 14 and UART RX is only available on GPIO 13....</div><div class="ttdef"><b>Definition:</b> core2forAWS.h:186</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a8764a8d2c486f2d66f86d995653cc833"><div class="ttname"><a href="core2for_a_w_s_8h.html#a8764a8d2c486f2d66f86d995653cc833">PORT_C_UART_TX_PIN</a></div><div class="ttdeci">#define PORT_C_UART_TX_PIN</div><div class="ttdoc">The UART transmission pin on expansion port C.</div><div class="ttdef"><b>Definition:</b> core2forAWS.h:138</div></div>
 <div class="ttc" id="acore2for_a_w_s_8h_html_a8b09041a7dedd7ae8cb776382478d191"><div class="ttname"><a href="core2for_a_w_s_8h.html#a8b09041a7dedd7ae8cb776382478d191">Core2ForAWS_Port_C_UART_Receive</a></div><div class="ttdeci">int Core2ForAWS_Port_C_UART_Receive(uint8_t *message_buffer)</div><div class="ttdoc">Reads messages in the UART2 receiver ring buffer.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:540</div></div>
 <div class="ttc" id="acore2for_a_w_s_8h_html_aa205e433ced4fdae489d8165883c2f76"><div class="ttname"><a href="core2for_a_w_s_8h.html#aa205e433ced4fdae489d8165883c2f76">Core2ForAWS_Port_C_UART_Send</a></div><div class="ttdeci">int Core2ForAWS_Port_C_UART_Send(const char *message, size_t len)</div><div class="ttdoc">Sends a specified length of a user defined message over UART2.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:536</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
