@@ -68,32 +68,47 @@ $(function() {
 <div class="title">Microphone </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>The Microphone library provides convenience functions to initialize and de-initialize the SPM1423 microphone with preset parameters. The microphone cannot be accessed at the same time as the speaker since they both share a common pin (GPIO0).</p>
+<div class="textblock"><p>The Microphone library provides convenience functions to initialize and de-initialize the SPM1423 microphone over I2S with preset parameters. The I2S bus requires that the initialization and use of the peripheral on the bus is assigned to a dedicated core. The reason for this is that I2S and I2C attaches an interrupt to one of 32 interrupt vectors available per core. Attempting to initialize or access the peripheral without affinity to a specific core will most likely cause a hard fault almost immediately or at some point in time. The microphone cannot be accessed at the same time as the speaker since they both share a common pin (GPIO0).</p>
 <p><a class="anchor" id="mic"></a></p>
 <p><a href="./block_diagram-spm1423.png"><img src="./block_diagram-spm1423.png" alt="Circuit Block Diagram for the SPM1423 microphone" class="center" class="inline"/></a></p>
 <p>To enable this hardware feature using KConfig, use the command <code>pio run --environment core2foraws --target menuconfig</code> from within the root of the project directory in your <a href="/en/blinky-hello-world/prerequisites.html#open-the-platformio-cli-terminal-window">PlatformIO terminal window</a> and go to the menu <code>Component Config --&gt; Core2 for AWS hardware enable</code> to set the features you want to enable.</p>
 <h1><a class="anchor" id="spm1423_example"></a>
 Example</h1>
-<p>The following example initializes the SPM1423 microphone, and then reads 1Kb of sound with the microphone using the ESP-IDF <a href="https://docs.espressif.com/projects/esp-idf/en/release-v4.2/esp32/api-reference/peripherals/i2s.html#_CPPv48i2s_read10i2s_port_tPv6size_tP6size_t10TickType_t">i2s_read</a> function, and prints the number of bytes read using the ESP logger.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;esp_log.h&quot;</span></div>
+<p>TThe following example creates a FreeRTOS task that's pinned to Core 1, which intializes the SPM1423 microphone, and then reads 1Kb of sound with the microphone using the ESP-IDF <a href="https://docs.espressif.com/projects/esp-idf/en/release-v4.2/esp32/api-reference/peripherals/i2s.html#_CPPv48i2s_read10i2s_port_tPv6size_tP6size_t10TickType_t">i2s_read</a> function, deinitializes the microphone, and prints the number of bytes read using the ESP logger.</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;freertos/FreeRTOS.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;freertos/task.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;esp_log.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="core2for_a_w_s_8h.html">core2forAWS.h</a>&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *TAG = <span class="stringliteral">&quot;EXAMPLE&quot;</span>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> app_main(<span class="keywordtype">void</span>){</div>
-<div class="line">    <a class="code" href="core2for_a_w_s_8h.html#a3d850a3f56bbe0685b60726d8b53bece">Core2ForAWS_Init</a>();</div>
+<div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> microphone_task(<span class="keywordtype">void</span> *arg){</div>
+<div class="line">    <span class="comment">/* If the speaker was initialized, be sure to call Speaker_Deinit() and </span></div>
+<div class="line"><span class="comment">        disable first. */</span></div>
 <div class="line">    <a class="code" href="microphone_8h.html#a09556522510b43730e1590cfa42f5b1a">Microphone_Init</a>();</div>
-<div class="line">    </div>
+<div class="line"> </div>
 <div class="line">    <span class="keyword">static</span> int8_t i2s_readraw_buf[1024];</div>
 <div class="line">    <span class="keywordtype">size_t</span> bytes_read;</div>
-<div class="line">    </div>
+<div class="line"> </div>
 <div class="line">    i2s_read(<a class="code" href="microphone_8h.html#aecdfe4cddeaa76c80383eef738018c83">MIC_I2S_NUMBER</a>, (<span class="keywordtype">char</span>*)i2s_readraw_buf, 1024, &amp;bytes_read, pdMS_TO_TICKS(100));</div>
+<div class="line">    <a class="code" href="microphone_8h.html#af6bf7289567e8e05c91ef19dde9cc051">Microphone_Deinit</a>();</div>
+<div class="line"> </div>
 <div class="line">    ESP_LOGI(TAG, <span class="stringliteral">&quot;Read %u bytes from microphone&quot;</span>, bytes_read);</div>
+<div class="line">    vTaskDelete(NULL);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> app_main(<span class="keywordtype">void</span>){</div>
+<div class="line">    <a class="code" href="core2for_a_w_s_8h.html#a3d850a3f56bbe0685b60726d8b53bece">Core2ForAWS_Init</a>();</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">/* Usage of the microphone must be pinned to a specific core since I2S ISR </span></div>
+<div class="line"><span class="comment">        is assigned per core */</span></div>
+<div class="line">    xTaskCreatePinnedToCore(microphone_task, <span class="stringliteral">&quot;listen&quot;</span>, 4096*2, NULL, 4, NULL, 1);</div>
 <div class="line">}</div>
 <div class="ttc" id="acore2for_a_w_s_8h_html"><div class="ttname"><a href="core2for_a_w_s_8h.html">core2forAWS.h</a></div><div class="ttdoc">Functions to initialize and access Core2 for AWS IoT EduKit hardware features.</div></div>
 <div class="ttc" id="acore2for_a_w_s_8h_html_a3d850a3f56bbe0685b60726d8b53bece"><div class="ttname"><a href="core2for_a_w_s_8h.html#a3d850a3f56bbe0685b60726d8b53bece">Core2ForAWS_Init</a></div><div class="ttdeci">void Core2ForAWS_Init(void)</div><div class="ttdoc">Initializes the power chip with default values, enables battery charging, and initializes all enabled...</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:32</div></div>
 <div class="ttc" id="amicrophone_8h_html_a09556522510b43730e1590cfa42f5b1a"><div class="ttname"><a href="microphone_8h.html#a09556522510b43730e1590cfa42f5b1a">Microphone_Init</a></div><div class="ttdeci">void Microphone_Init()</div><div class="ttdoc">Initializes the microphone over I2S.</div><div class="ttdef"><b>Definition:</b> microphone.c:10</div></div>
 <div class="ttc" id="amicrophone_8h_html_aecdfe4cddeaa76c80383eef738018c83"><div class="ttname"><a href="microphone_8h.html#aecdfe4cddeaa76c80383eef738018c83">MIC_I2S_NUMBER</a></div><div class="ttdeci">#define MIC_I2S_NUMBER</div><div class="ttdoc">Microphone I2S port number.</div><div class="ttdef"><b>Definition:</b> microphone.h:12</div></div>
+<div class="ttc" id="amicrophone_8h_html_af6bf7289567e8e05c91ef19dde9cc051"><div class="ttname"><a href="microphone_8h.html#af6bf7289567e8e05c91ef19dde9cc051">Microphone_Deinit</a></div><div class="ttdeci">void Microphone_Deinit()</div><div class="ttdoc">De-initializes the microphone over I2S.</div><div class="ttdef"><b>Definition:</b> microphone.c:37</div></div>
 </div><!-- fragment --><h1><a class="anchor" id="spm1423_preprocessor_macros"></a>
 Preprocessor Macros</h1>
 <ul>
