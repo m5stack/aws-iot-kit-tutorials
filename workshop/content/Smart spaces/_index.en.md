@@ -5,7 +5,7 @@ weight = 50
 pre = "<b>4. </b>"
 +++
 {{% notice info %}}
-**Reinventing Healthy Spaces Hackathon**: Get hands-on and build an open source healthy spaces solution with AWS IoT EduKit. Submit your project by August 15, 2021 for a chance to win prizes totaling $10,000.
+**Reinventing Healthy Spaces Hackathon**: Get hands-on and build an open source healthy spaces solution with AWS IoT EduKit. Submit your project by September 19, 2021 for a chance to win prizes totaling $10,000.
 [Learn more and participate](https://www.hackster.io/contests/Healthy-Spaces-with-AWS).
 {{% /notice %}}
 

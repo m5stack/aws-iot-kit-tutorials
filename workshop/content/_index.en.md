@@ -4,7 +4,7 @@ chapter = true
 weight = 1
 +++
 {{% notice info %}}
-**Reinventing Healthy Spaces Hackathon**: Get hands-on and build an open source healthy spaces solution with AWS IoT EduKit. Submit your project by August 15, 2021 for a chance to win prizes totaling $10,000.
+**Reinventing Healthy Spaces Hackathon**: Get hands-on and build an open source healthy spaces solution with AWS IoT EduKit. Submit your project by September 19, 2021 for a chance to win prizes totaling $10,000.
 [Learn more and participate](https://www.hackster.io/contests/Healthy-Spaces-with-AWS).
 {{% /notice %}}
 ![EduKit Logo](AWS_IoT_EduKIt_Logo-320px_193px.png)
