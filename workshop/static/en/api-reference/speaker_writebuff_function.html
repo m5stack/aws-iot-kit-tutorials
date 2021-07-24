@@ -72,9 +72,9 @@ $(function() {
 <div class="title">Speaker_WriteBuff </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Plays buffer through the speaker.</p>
+<div class="textblock"><p>Plays buffer through the speaker. The sound must have a sample rate of 44100Hz with a 16-bit depth. Other configurations requires using the ESP-IDF I2S driver directly.</p>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> <a class="code" href="speaker_8h.html#add4e36cd14956aa19604e2a799a76123">Speaker_WriteBuff</a>(uint8_t* buff, uint32_t len, uint32_t timeout);</div>
-<div class="ttc" id="aspeaker_8h_html_add4e36cd14956aa19604e2a799a76123"><div class="ttname"><a href="speaker_8h.html#add4e36cd14956aa19604e2a799a76123">Speaker_WriteBuff</a></div><div class="ttdeci">void Speaker_WriteBuff(uint8_t *buff, uint32_t len, uint32_t timeout)</div><div class="ttdoc">Plays buffer through the speaker.</div><div class="ttdef"><b>Definition:</b> speaker.c:43</div></div>
+<div class="ttc" id="aspeaker_8h_html_add4e36cd14956aa19604e2a799a76123"><div class="ttname"><a href="speaker_8h.html#add4e36cd14956aa19604e2a799a76123">Speaker_WriteBuff</a></div><div class="ttdeci">void Speaker_WriteBuff(uint8_t *buff, uint32_t len, uint32_t timeout)</div><div class="ttdoc">Plays buffer through the speaker. The sound must have a sample rate of 44100Hz with a 16-bit depth....</div><div class="ttdef"><b>Definition:</b> speaker.c:43</div></div>
 </div><!-- fragment --> <dl class="section note"><dt>Note</dt><dd>The speaker cannot be used at the same time as the microphone since they both share a common pin (GPIO0). Attempting to enable or use both at the same time will cause the device to hard fault.</dd></dl>
 <p><b>Example:</b></p>
 <p>Play a sound buffer. The audio clip is too short to be recognized and is just to serve as an example. </p><div class="fragment"><div class="line"><a class="code" href="microphone_8h.html#af6bf7289567e8e05c91ef19dde9cc051">Microphone_Deinit</a>(); <span class="comment">// If the microphone was initialized, be sure to deinit it first.</span></div>

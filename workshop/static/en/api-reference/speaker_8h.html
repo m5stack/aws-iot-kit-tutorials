@@ -87,7 +87,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a0c4fbe70cff447814b58ecee70161a45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the speaker over I2S.  <a href="speaker_8h.html#a0c4fbe70cff447814b58ecee70161a45">More...</a><br /></td></tr>
 <tr class="separator:a0c4fbe70cff447814b58ecee70161a45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add4e36cd14956aa19604e2a799a76123"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="speaker_8h.html#add4e36cd14956aa19604e2a799a76123">Speaker_WriteBuff</a> (uint8_t *buff, uint32_t len, uint32_t timeout)</td></tr>
-<tr class="memdesc:add4e36cd14956aa19604e2a799a76123"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plays buffer through the speaker.  <a href="speaker_8h.html#add4e36cd14956aa19604e2a799a76123">More...</a><br /></td></tr>
+<tr class="memdesc:add4e36cd14956aa19604e2a799a76123"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plays buffer through the speaker. The sound must have a sample rate of 44100Hz with a 16-bit depth. Other configurations requires using the ESP-IDF I2S driver directly.  <a href="speaker_8h.html#add4e36cd14956aa19604e2a799a76123">More...</a><br /></td></tr>
 <tr class="separator:add4e36cd14956aa19604e2a799a76123"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53cf9b0e156f5f4358ea9584d7c85e90"><td class="memItemLeft" align="right" valign="top"><a id="a53cf9b0e156f5f4358ea9584d7c85e90"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="speaker_8h.html#a53cf9b0e156f5f4358ea9584d7c85e90">Speaker_Deinit</a> ()</td></tr>
@@ -149,7 +149,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spea
       </table>
 </div><div class="memdoc">
 
-<p>Plays buffer through the speaker. </p>
+<p>Plays buffer through the speaker. The sound must have a sample rate of 44100Hz with a 16-bit depth. Other configurations requires using the ESP-IDF I2S driver directly. </p>
 <dl class="section note"><dt>Note</dt><dd>The speaker cannot be used at the same time as the microphone since they both share a common pin (GPIO0). Attempting to enable or use both at the same time will cause the device to hard fault.</dd></dl>
 <p><b>Example:</b></p>
 <p>Play a sound buffer. The audio clip is too short to be recognized and is just to serve as an example. </p><div class="fragment"><div class="line"><a class="code" href="microphone_8h.html#af6bf7289567e8e05c91ef19dde9cc051">Microphone_Deinit</a>(); <span class="comment">// If the microphone was initialized, be sure to deinit it first.</span></div>
@@ -163,7 +163,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spea
 <div class="ttc" id="amicrophone_8h_html_af6bf7289567e8e05c91ef19dde9cc051"><div class="ttname"><a href="microphone_8h.html#af6bf7289567e8e05c91ef19dde9cc051">Microphone_Deinit</a></div><div class="ttdeci">void Microphone_Deinit()</div><div class="ttdoc">De-initializes the microphone over I2S.</div><div class="ttdef"><b>Definition:</b> microphone.c:37</div></div>
 <div class="ttc" id="aspeaker_8h_html_a0c4fbe70cff447814b58ecee70161a45"><div class="ttname"><a href="speaker_8h.html#a0c4fbe70cff447814b58ecee70161a45">Speaker_Init</a></div><div class="ttdeci">void Speaker_Init()</div><div class="ttdoc">Initializes the speaker over I2S.</div><div class="ttdef"><b>Definition:</b> speaker.c:12</div></div>
 <div class="ttc" id="aspeaker_8h_html_a53cf9b0e156f5f4358ea9584d7c85e90"><div class="ttname"><a href="speaker_8h.html#a53cf9b0e156f5f4358ea9584d7c85e90">Speaker_Deinit</a></div><div class="ttdeci">void Speaker_Deinit()</div><div class="ttdoc">De-initializes the speaker.</div><div class="ttdef"><b>Definition:</b> speaker.c:48</div></div>
-<div class="ttc" id="aspeaker_8h_html_add4e36cd14956aa19604e2a799a76123"><div class="ttname"><a href="speaker_8h.html#add4e36cd14956aa19604e2a799a76123">Speaker_WriteBuff</a></div><div class="ttdeci">void Speaker_WriteBuff(uint8_t *buff, uint32_t len, uint32_t timeout)</div><div class="ttdoc">Plays buffer through the speaker.</div><div class="ttdef"><b>Definition:</b> speaker.c:43</div></div>
+<div class="ttc" id="aspeaker_8h_html_add4e36cd14956aa19604e2a799a76123"><div class="ttname"><a href="speaker_8h.html#add4e36cd14956aa19604e2a799a76123">Speaker_WriteBuff</a></div><div class="ttdeci">void Speaker_WriteBuff(uint8_t *buff, uint32_t len, uint32_t timeout)</div><div class="ttdoc">Plays buffer through the speaker. The sound must have a sample rate of 44100Hz with a 16-bit depth....</div><div class="ttdef"><b>Definition:</b> speaker.c:43</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">buff</td><td>The sound buffer to play. </td></tr>

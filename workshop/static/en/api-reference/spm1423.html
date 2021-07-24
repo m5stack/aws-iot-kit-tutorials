@@ -74,7 +74,7 @@ $(function() {
 <p>To enable this hardware feature using KConfig, use the command <code>pio run --environment core2foraws --target menuconfig</code> from within the root of the project directory in your <a href="/en/blinky-hello-world/prerequisites.html#open-the-platformio-cli-terminal-window">PlatformIO terminal window</a> and go to the menu <code>Component Config --&gt; Core2 for AWS hardware enable</code> to set the features you want to enable.</p>
 <h1><a class="anchor" id="spm1423_example"></a>
 Example</h1>
-<p>TThe following example creates a FreeRTOS task that's pinned to Core 1, which intializes the SPM1423 microphone, and then reads 1Kb of sound with the microphone using the ESP-IDF <a href="https://docs.espressif.com/projects/esp-idf/en/release-v4.2/esp32/api-reference/peripherals/i2s.html#_CPPv48i2s_read10i2s_port_tPv6size_tP6size_t10TickType_t">i2s_read</a> function, deinitializes the microphone, and prints the number of bytes read using the ESP logger.</p>
+<p>TThe following example creates a FreeRTOS task that's pinned to Core 1, which intializes the SPM1423 microphone, and then reads 1Kb of sound with the microphone using the ESP-IDF <a href="https://docs.espressif.com/projects/esp-idf/en/release-v4.2/esp32/api-reference/peripherals/i2s.html#_CPPv48i2s_read10i2s_port_tPv6size_tP6size_t10TickType_t">i2s_read</a> function, deinitializes the microphone, uses a loop to print each value of the buffer, and prints the number of bytes read using the ESP logger.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;freertos/FreeRTOS.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;freertos/task.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;esp_log.h&quot;</span></div>
@@ -93,7 +93,10 @@ Example</h1>
 <div class="line">    i2s_read(<a class="code" href="microphone_8h.html#aecdfe4cddeaa76c80383eef738018c83">MIC_I2S_NUMBER</a>, (<span class="keywordtype">char</span>*)i2s_readraw_buf, 1024, &amp;bytes_read, pdMS_TO_TICKS(100));</div>
 <div class="line">    <a class="code" href="microphone_8h.html#af6bf7289567e8e05c91ef19dde9cc051">Microphone_Deinit</a>();</div>
 <div class="line"> </div>
-<div class="line">    ESP_LOGI(TAG, <span class="stringliteral">&quot;Read %u bytes from microphone&quot;</span>, bytes_read);</div>
+<div class="line">    <span class="keywordflow">for</span>(uint16_t i = 0; i &lt; 1024; i++){</div>
+<div class="line">        ESP_LOGI(TAG, <span class="stringliteral">&quot;At buffer index %d heard: %d&quot;</span>, i, i2s_readraw_buf[i]);</div>
+<div class="line">    }</div>
+<div class="line">    ESP_LOGI(TAG, <span class="stringliteral">&quot;Read total of %u bytes from microphone&quot;</span>, bytes_read);</div>
 <div class="line">    vTaskDelete(NULL);</div>
 <div class="line">}</div>
 <div class="line"> </div>
