@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['input_375',['INPUT',['../core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4dbae310c909d76b003d016bef8bdf16936a',1,'core2forAWS.h']]]
+  ['i2c_699',['I2C',['../core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4dba999bae3da733e2c2015a4585271b0187',1,'core2forAWS.h']]],
+  ['input_700',['INPUT',['../core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4dbae310c909d76b003d016bef8bdf16936a',1,'core2forAWS.h']]]
 ];

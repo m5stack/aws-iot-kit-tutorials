@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="AWS_logo_RGB.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Core2 for AWS IoT EduKit BSP
-   &#160;<span id="projectnumber">1.4.2</span>
+   &#160;<span id="projectnumber">1.5.0</span>
    </div>
   </td>
  </tr>
@@ -73,15 +73,15 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>Left virtual touch button.</p>
-<div class="fragment"><div class="line"><span class="keyword">extern</span> <a class="code" href="struct_button__t.html">Button_t</a>* <a class="code" href="core2for_a_w_s_8h.html#a2cd914992d1bec1babd0a7ffba0f554b">button_left</a>;</div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a2cd914992d1bec1babd0a7ffba0f554b"><div class="ttname"><a href="core2for_a_w_s_8h.html#a2cd914992d1bec1babd0a7ffba0f554b">button_left</a></div><div class="ttdeci">Button_t * button_left</div><div class="ttdoc">Left virtual touch button.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:85</div></div>
+<div class="fragment"><div class="line"><span class="keyword">extern</span> <a class="code" href="struct_button__t.html">Button_t</a>* <a class="code" href="core2for_a_w_s_8c.html#a2cd914992d1bec1babd0a7ffba0f554b">button_left</a>;</div>
+<div class="ttc" id="acore2for_a_w_s_8c_html_a2cd914992d1bec1babd0a7ffba0f554b"><div class="ttname"><a href="core2for_a_w_s_8c.html#a2cd914992d1bec1babd0a7ffba0f554b">button_left</a></div><div class="ttdeci">Button_t * button_left</div><div class="ttdoc">Left virtual touch button.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:85</div></div>
 <div class="ttc" id="astruct_button__t_html"><div class="ttname"><a href="struct_button__t.html">Button_t</a></div><div class="ttdoc">The member defintions of the virtual button data.</div><div class="ttdef"><b>Definition:</b> button.h:28</div></div>
 </div><!-- fragment --><p> This is a virtual touch button which contains the definitions of a mapped region of the screen that corresponds to the button location and touch events from the FT6336U capacitive touch controller. When the screen is touched in the region that represents the left button, it will update the state of the button. You can use the APIs in the button library with this button as the input parameter to query the button's state.</p>
 <p><b>Example:</b></p>
-<p>Print "left button pressed" when the on-screen left button is pressed. </p><div class="fragment"><div class="line"><span class="keywordflow">if</span> (<a class="code" href="button_8h.html#acf2b76f9c6fe8e6f8ac65ff1eff8ccdd">Button_WasPressed</a>(<a class="code" href="core2for_a_w_s_8h.html#a2cd914992d1bec1babd0a7ffba0f554b">button_left</a>)) {</div>
+<p>Print "left button pressed" when the on-screen left button is pressed. </p><div class="fragment"><div class="line"><span class="keywordflow">if</span> (<a class="code" href="button_8c.html#acf2b76f9c6fe8e6f8ac65ff1eff8ccdd">Button_WasPressed</a>(<a class="code" href="core2for_a_w_s_8c.html#a2cd914992d1bec1babd0a7ffba0f554b">button_left</a>)) {</div>
 <div class="line">    printf(<span class="stringliteral">&quot;left button pressed&quot;</span>);</div>
 <div class="line">}</div>
-<div class="ttc" id="abutton_8h_html_acf2b76f9c6fe8e6f8ac65ff1eff8ccdd"><div class="ttname"><a href="button_8h.html#acf2b76f9c6fe8e6f8ac65ff1eff8ccdd">Button_WasPressed</a></div><div class="ttdeci">uint8_t Button_WasPressed(Button_t *button)</div><div class="ttdoc">See if the specified button was pressed.</div><div class="ttdef"><b>Definition:</b> button.c:43</div></div>
+<div class="ttc" id="abutton_8c_html_acf2b76f9c6fe8e6f8ac65ff1eff8ccdd"><div class="ttname"><a href="button_8c.html#acf2b76f9c6fe8e6f8ac65ff1eff8ccdd">Button_WasPressed</a></div><div class="ttdeci">uint8_t Button_WasPressed(Button_t *button)</div><div class="ttdoc">See if the specified button was pressed.</div><div class="ttdef"><b>Definition:</b> button.c:43</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->

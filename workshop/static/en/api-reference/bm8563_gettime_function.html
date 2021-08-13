@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="AWS_logo_RGB.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Core2 for AWS IoT EduKit BSP
-   &#160;<span id="projectnumber">1.4.2</span>
+   &#160;<span id="projectnumber">1.5.0</span>
    </div>
   </td>
  </tr>
@@ -73,13 +73,13 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>Retrieves the date and time on the BM8563.</p>
-<div class="fragment"><div class="line"><span class="keywordtype">void</span> <a class="code" href="bm8563_8h.html#a50be06a7af15505ce80bbb9b10c19f15">BM8563_GetTime</a>(<a class="code" href="structrtc__date__t.html">rtc_date_t</a>* data);</div>
-<div class="ttc" id="abm8563_8h_html_a50be06a7af15505ce80bbb9b10c19f15"><div class="ttname"><a href="bm8563_8h.html#a50be06a7af15505ce80bbb9b10c19f15">BM8563_GetTime</a></div><div class="ttdeci">void BM8563_GetTime(rtc_date_t *data)</div><div class="ttdoc">Retrieves the date and time on the BM8563.</div><div class="ttdef"><b>Definition:</b> bm8563.c:56</div></div>
+<div class="fragment"><div class="line"><span class="keywordtype">void</span> <a class="code" href="bm8563_8c.html#a50be06a7af15505ce80bbb9b10c19f15">BM8563_GetTime</a>(<a class="code" href="structrtc__date__t.html">rtc_date_t</a>* data);</div>
+<div class="ttc" id="abm8563_8c_html_a50be06a7af15505ce80bbb9b10c19f15"><div class="ttname"><a href="bm8563_8c.html#a50be06a7af15505ce80bbb9b10c19f15">BM8563_GetTime</a></div><div class="ttdeci">void BM8563_GetTime(rtc_date_t *data)</div><div class="ttdoc">Retrieves the date and time on the BM8563.</div><div class="ttdef"><b>Definition:</b> bm8563.c:56</div></div>
 <div class="ttc" id="astructrtc__date__t_html"><div class="ttname"><a href="structrtc__date__t.html">rtc_date_t</a></div><div class="ttdoc">The member defintions of the BM8563 RTC date.</div><div class="ttdef"><b>Definition:</b> bm8563.h:13</div></div>
 </div><!-- fragment --><p> <b>Example:</b></p>
 <p>Get the current date and time and print it out. </p><div class="fragment"><div class="line"><a class="code" href="structrtc__date__t.html">rtc_date_t</a> date;</div>
 <div class="line"> </div>
-<div class="line"><a class="code" href="bm8563_8h.html#a50be06a7af15505ce80bbb9b10c19f15">BM8563_GetTime</a>(&amp;date);</div>
+<div class="line"><a class="code" href="bm8563_8c.html#a50be06a7af15505ce80bbb9b10c19f15">BM8563_GetTime</a>(&amp;date);</div>
 <div class="line">printf(<span class="stringliteral">&quot;Date: %d-%02d-%02d Time: %02d:%02d:%02d&quot;</span>,</div>
 <div class="line">        date.<a class="code" href="structrtc__date__t.html#a320d5caea2fec2adc9fbd710b034f9e3">year</a>, date.<a class="code" href="structrtc__date__t.html#afd04996b250949b3d0a0b95500b91b81">month</a>, date.<a class="code" href="structrtc__date__t.html#aac2d1613473d4eb898c33c8243a90ef1">day</a>, date.<a class="code" href="structrtc__date__t.html#ad794c994fa0363ef9905f517919b8498">hour</a>, date.<a class="code" href="structrtc__date__t.html#a5699ba6d2509bf7cdd0775f7d0d4f8dd">minute</a>, date.<a class="code" href="structrtc__date__t.html#a5689ab763359e4776390ea1a1be2a4ee">second</a>)</div>
 <div class="ttc" id="astructrtc__date__t_html_a320d5caea2fec2adc9fbd710b034f9e3"><div class="ttname"><a href="structrtc__date__t.html#a320d5caea2fec2adc9fbd710b034f9e3">rtc_date_t::year</a></div><div class="ttdeci">uint16_t year</div><div class="ttdoc">Date year.</div><div class="ttdef"><b>Definition:</b> bm8563.h:15</div></div>

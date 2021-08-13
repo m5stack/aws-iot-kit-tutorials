@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="AWS_logo_RGB.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Core2 for AWS IoT EduKit BSP
-   &#160;<span id="projectnumber">1.4.2</span>
+   &#160;<span id="projectnumber">1.5.0</span>
    </div>
   </td>
  </tr>
@@ -77,54 +77,54 @@ $(function() {
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;stdint.h&quot;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define MPU6886_ADDRESS           0x68 </span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define MPU6886_WHOAMI            0x75</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#define MPU6886_ACCEL_INTEL_CTRL  0x69</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define MPU6886_SMPLRT_DIV        0x19</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#define MPU6886_INT_PIN_CFG       0x37</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#define MPU6886_INT_ENABLE        0x38</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#define MPU6886_ACCEL_XOUT_H      0x3B</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#define MPU6886_ACCEL_XOUT_L      0x3C</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#define MPU6886_ACCEL_YOUT_H      0x3D</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#define MPU6886_ACCEL_YOUT_L      0x3E</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#define MPU6886_ACCEL_ZOUT_H      0x3F</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define MPU6886_ACCEL_ZOUT_L      0x40</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="mpu6886_8h.html#a75f5987cc560929e10d5c5202f777a95">   10</a></span>&#160;<span class="preprocessor">#define MPU6886_ADDRESS           0x68 </span></div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="mpu6886_8h.html#a455db6625bd142aebfd00c6ab9c4f041">   11</a></span>&#160;<span class="preprocessor">#define MPU6886_WHOAMI            0x75</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="mpu6886_8h.html#a0e541d15ff5ca32e7728868145866257">   12</a></span>&#160;<span class="preprocessor">#define MPU6886_ACCEL_INTEL_CTRL  0x69</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="mpu6886_8h.html#aed0fcfba020eb3910b963bbff4f42427">   13</a></span>&#160;<span class="preprocessor">#define MPU6886_SMPLRT_DIV        0x19</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="mpu6886_8h.html#a6eeaad003b7bae5e0b9ded1041f0f902">   14</a></span>&#160;<span class="preprocessor">#define MPU6886_INT_PIN_CFG       0x37</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="mpu6886_8h.html#acba197728bc7799e010da947982906ac">   15</a></span>&#160;<span class="preprocessor">#define MPU6886_INT_ENABLE        0x38</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="mpu6886_8h.html#a0ec1a1c934201eaea99d54a4ba1d6e70">   16</a></span>&#160;<span class="preprocessor">#define MPU6886_ACCEL_XOUT_H      0x3B</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="mpu6886_8h.html#ad15ce79d80c7cee2ae0aa3859b60da8f">   17</a></span>&#160;<span class="preprocessor">#define MPU6886_ACCEL_XOUT_L      0x3C</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="mpu6886_8h.html#aba01b5bf836ada1581018626bc510814">   18</a></span>&#160;<span class="preprocessor">#define MPU6886_ACCEL_YOUT_H      0x3D</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="mpu6886_8h.html#ad2a87d6c160787b7c554bb90c14ee716">   19</a></span>&#160;<span class="preprocessor">#define MPU6886_ACCEL_YOUT_L      0x3E</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="mpu6886_8h.html#a1d0a2ab6ec634d7cb837267cb310dd9c">   20</a></span>&#160;<span class="preprocessor">#define MPU6886_ACCEL_ZOUT_H      0x3F</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="mpu6886_8h.html#aa4873ef1a744e5247a246a0c35c4e5b4">   21</a></span>&#160;<span class="preprocessor">#define MPU6886_ACCEL_ZOUT_L      0x40</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#define MPU6886_TEMP_OUT_H        0x41</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#define MPU6886_TEMP_OUT_L        0x42</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="mpu6886_8h.html#ac6a61156800cecb3d9ced06a8696acca">   23</a></span>&#160;<span class="preprocessor">#define MPU6886_TEMP_OUT_H        0x41</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="mpu6886_8h.html#acd9a50e893bfadb62d403e87e8fef535">   24</a></span>&#160;<span class="preprocessor">#define MPU6886_TEMP_OUT_L        0x42</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#define MPU6886_GYRO_XOUT_H       0x43</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#define MPU6886_GYRO_XOUT_L       0x44</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#define MPU6886_GYRO_YOUT_H       0x45</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#define MPU6886_GYRO_YOUT_L       0x46</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#define MPU6886_GYRO_ZOUT_H       0x47</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#define MPU6886_GYRO_ZOUT_L       0x48</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="mpu6886_8h.html#a553f815070846ad43bb0daf6ef0eeafe">   26</a></span>&#160;<span class="preprocessor">#define MPU6886_GYRO_XOUT_H       0x43</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="mpu6886_8h.html#a4f5f69a5e95ca2acdd31b3e88007aecf">   27</a></span>&#160;<span class="preprocessor">#define MPU6886_GYRO_XOUT_L       0x44</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="mpu6886_8h.html#a6737513e302b717f272775475b057147">   28</a></span>&#160;<span class="preprocessor">#define MPU6886_GYRO_YOUT_H       0x45</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="mpu6886_8h.html#ad6425c7fb9d9b6a3763c0735dc487f70">   29</a></span>&#160;<span class="preprocessor">#define MPU6886_GYRO_YOUT_L       0x46</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="mpu6886_8h.html#ab0386053cb94a53b05d8b808b4042b6a">   30</a></span>&#160;<span class="preprocessor">#define MPU6886_GYRO_ZOUT_H       0x47</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="mpu6886_8h.html#acf2b9df26393ec3810560e9544d8bb1a">   31</a></span>&#160;<span class="preprocessor">#define MPU6886_GYRO_ZOUT_L       0x48</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#define MPU6886_USER_CTRL         0x6A</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#define MPU6886_PWR_MGMT_1        0x6B</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#define MPU6886_PWR_MGMT_2        0x6C</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#define MPU6886_CONFIG            0x1A</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#define MPU6886_GYRO_CONFIG       0x1B</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#define MPU6886_ACCEL_CONFIG      0x1C</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#define MPU6886_ACCEL_CONFIG2     0x1D</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#define MPU6886_FIFO_EN           0x23</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="mpu6886_8h.html#ace4d03298bbe71aa772b668f04098d72">   33</a></span>&#160;<span class="preprocessor">#define MPU6886_USER_CTRL         0x6A</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="mpu6886_8h.html#af08314f7ec70134778fcfc52149a92af">   34</a></span>&#160;<span class="preprocessor">#define MPU6886_PWR_MGMT_1        0x6B</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="mpu6886_8h.html#a6e532cef7bde1602812650dd375b50dd">   35</a></span>&#160;<span class="preprocessor">#define MPU6886_PWR_MGMT_2        0x6C</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="mpu6886_8h.html#af0b0b49a067e0e1198ee74d07b6e9790">   36</a></span>&#160;<span class="preprocessor">#define MPU6886_CONFIG            0x1A</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="mpu6886_8h.html#a7fa6b2b8d0cd9ffbc74c86944a163fd6">   37</a></span>&#160;<span class="preprocessor">#define MPU6886_GYRO_CONFIG       0x1B</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="mpu6886_8h.html#a3d829a51daefbc419198cafc56c8e4c0">   38</a></span>&#160;<span class="preprocessor">#define MPU6886_ACCEL_CONFIG      0x1C</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="mpu6886_8h.html#ab32ee373601a7f589c21341fdf9d0649">   39</a></span>&#160;<span class="preprocessor">#define MPU6886_ACCEL_CONFIG2     0x1D</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="mpu6886_8h.html#a15069182d7f07b95b5f99b67fa705547">   40</a></span>&#160;<span class="preprocessor">#define MPU6886_FIFO_EN           0x23</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">/* @[declare_mpu6886_acc_scale_t] */</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="mpu6886_8h.html#abb63f90f893143f9b30a26b5e1c78a14">   46</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    MPU6886_AFS_2G = 0,</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    MPU6886_AFS_4G,</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    MPU6886_AFS_8G,</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    MPU6886_AFS_16G</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;} <a class="code" href="mpu6886_8h.html#abb63f90f893143f9b30a26b5e1c78a14">acc_scale_t</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="mpu6886_8h.html#abb63f90f893143f9b30a26b5e1c78a14a7dc9c1d9ec874c07ac1be8f2e056aa50">   47</a></span>&#160;    <a class="code" href="mpu6886_8h.html#abb63f90f893143f9b30a26b5e1c78a14a7dc9c1d9ec874c07ac1be8f2e056aa50">MPU6886_AFS_2G</a> = 0,</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="mpu6886_8h.html#abb63f90f893143f9b30a26b5e1c78a14a45d6374ac6c9145f001f98d7247a4c97">   48</a></span>&#160;    <a class="code" href="mpu6886_8h.html#abb63f90f893143f9b30a26b5e1c78a14a45d6374ac6c9145f001f98d7247a4c97">MPU6886_AFS_4G</a>,</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="mpu6886_8h.html#abb63f90f893143f9b30a26b5e1c78a14a17d09101cbcccd1897bbda2be6dbba6b">   49</a></span>&#160;    <a class="code" href="mpu6886_8h.html#abb63f90f893143f9b30a26b5e1c78a14a17d09101cbcccd1897bbda2be6dbba6b">MPU6886_AFS_8G</a>,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="mpu6886_8h.html#abb63f90f893143f9b30a26b5e1c78a14a3589a4d5d3272926b887c6e0f50273eb">MPU6886_AFS_16G</a></div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="mpu6886_8h.html#abb63f90f893143f9b30a26b5e1c78a14a3589a4d5d3272926b887c6e0f50273eb">   51</a></span>&#160;} <a class="code" href="mpu6886_8h.html#abb63f90f893143f9b30a26b5e1c78a14">acc_scale_t</a>;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">/* @[declare_mpu6886_acc_scale_t] */</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">/* @[declare_mpu6886_gyro_scale_t] */</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="mpu6886_8h.html#af596b0def7358e600258c2a35e09759b">   58</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    MPU6886_GFS_250DPS = 0,</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    MPU6886_GFS_500DPS,</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    MPU6886_GFS_1000DPS,</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    MPU6886_GFS_2000DPS</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;} <a class="code" href="mpu6886_8h.html#af596b0def7358e600258c2a35e09759b">gyro_scale_t</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="mpu6886_8h.html#af596b0def7358e600258c2a35e09759ba7b6c802b4d2ae8efe19e53b9e834672d">   59</a></span>&#160;    <a class="code" href="mpu6886_8h.html#af596b0def7358e600258c2a35e09759ba7b6c802b4d2ae8efe19e53b9e834672d">MPU6886_GFS_250DPS</a> = 0,</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="mpu6886_8h.html#af596b0def7358e600258c2a35e09759ba36550aa5e3081628dc1b7a177fc171f6">   60</a></span>&#160;    <a class="code" href="mpu6886_8h.html#af596b0def7358e600258c2a35e09759ba36550aa5e3081628dc1b7a177fc171f6">MPU6886_GFS_500DPS</a>,</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="mpu6886_8h.html#af596b0def7358e600258c2a35e09759baab0675557c410c2e9f07cc12cd68496f">   61</a></span>&#160;    <a class="code" href="mpu6886_8h.html#af596b0def7358e600258c2a35e09759baab0675557c410c2e9f07cc12cd68496f">MPU6886_GFS_1000DPS</a>,</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="mpu6886_8h.html#af596b0def7358e600258c2a35e09759bad50c3eca2e6a6167583061c5347c516c">MPU6886_GFS_2000DPS</a></div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="mpu6886_8h.html#af596b0def7358e600258c2a35e09759bad50c3eca2e6a6167583061c5347c516c">   63</a></span>&#160;} <a class="code" href="mpu6886_8h.html#af596b0def7358e600258c2a35e09759b">gyro_scale_t</a>;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">/* @[declare_mpu6886_gyro_scale_t] */</span></div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">/* @[declare_mpu6886_init] */</span></div>
@@ -181,8 +181,16 @@ $(function() {
 <div class="ttc" id="ampu6886_8h_html_a9c6b73f2e7730c2849482cb1ee3d6e80"><div class="ttname"><a href="mpu6886_8h.html#a9c6b73f2e7730c2849482cb1ee3d6e80">MPU6886_SetGyroFSR</a></div><div class="ttdeci">void MPU6886_SetGyroFSR(gyro_scale_t scale)</div><div class="ttdoc">Sets the full-scale range of the gyroscope on the MPU6886.</div><div class="ttdef"><b>Definition:</b> mpu6886.c:145</div></div>
 <div class="ttc" id="ampu6886_8h_html_ab2a7c90e4c1fdd57a78a33fd53084071"><div class="ttname"><a href="mpu6886_8h.html#ab2a7c90e4c1fdd57a78a33fd53084071">MPU6886_GetTempData</a></div><div class="ttdeci">void MPU6886_GetTempData(float *t)</div><div class="ttdoc">Retrieves the internal temperature measurement from the MPU6886.</div><div class="ttdef"><b>Definition:</b> mpu6886.c:184</div></div>
 <div class="ttc" id="ampu6886_8h_html_abb63f90f893143f9b30a26b5e1c78a14"><div class="ttname"><a href="mpu6886_8h.html#abb63f90f893143f9b30a26b5e1c78a14">acc_scale_t</a></div><div class="ttdeci">acc_scale_t</div><div class="ttdoc">List of possible accelerometer scalars in Gs.</div><div class="ttdef"><b>Definition:</b> mpu6886.h:46</div></div>
+<div class="ttc" id="ampu6886_8h_html_abb63f90f893143f9b30a26b5e1c78a14a17d09101cbcccd1897bbda2be6dbba6b"><div class="ttname"><a href="mpu6886_8h.html#abb63f90f893143f9b30a26b5e1c78a14a17d09101cbcccd1897bbda2be6dbba6b">MPU6886_AFS_8G</a></div><div class="ttdeci">@ MPU6886_AFS_8G</div><div class="ttdef"><b>Definition:</b> mpu6886.h:49</div></div>
+<div class="ttc" id="ampu6886_8h_html_abb63f90f893143f9b30a26b5e1c78a14a3589a4d5d3272926b887c6e0f50273eb"><div class="ttname"><a href="mpu6886_8h.html#abb63f90f893143f9b30a26b5e1c78a14a3589a4d5d3272926b887c6e0f50273eb">MPU6886_AFS_16G</a></div><div class="ttdeci">@ MPU6886_AFS_16G</div><div class="ttdef"><b>Definition:</b> mpu6886.h:50</div></div>
+<div class="ttc" id="ampu6886_8h_html_abb63f90f893143f9b30a26b5e1c78a14a45d6374ac6c9145f001f98d7247a4c97"><div class="ttname"><a href="mpu6886_8h.html#abb63f90f893143f9b30a26b5e1c78a14a45d6374ac6c9145f001f98d7247a4c97">MPU6886_AFS_4G</a></div><div class="ttdeci">@ MPU6886_AFS_4G</div><div class="ttdef"><b>Definition:</b> mpu6886.h:48</div></div>
+<div class="ttc" id="ampu6886_8h_html_abb63f90f893143f9b30a26b5e1c78a14a7dc9c1d9ec874c07ac1be8f2e056aa50"><div class="ttname"><a href="mpu6886_8h.html#abb63f90f893143f9b30a26b5e1c78a14a7dc9c1d9ec874c07ac1be8f2e056aa50">MPU6886_AFS_2G</a></div><div class="ttdeci">@ MPU6886_AFS_2G</div><div class="ttdef"><b>Definition:</b> mpu6886.h:47</div></div>
 <div class="ttc" id="ampu6886_8h_html_ae8d4b8775011d2dc1448f9144e462d21"><div class="ttname"><a href="mpu6886_8h.html#ae8d4b8775011d2dc1448f9144e462d21">MPU6886_GetAccelAdc</a></div><div class="ttdeci">void MPU6886_GetAccelAdc(int16_t *ax, int16_t *ay, int16_t *az)</div><div class="ttdoc">Retrieves the accelerometer measurements from the 16-bit ADC on the MPU6886.</div><div class="ttdef"><b>Definition:</b> mpu6886.c:90</div></div>
 <div class="ttc" id="ampu6886_8h_html_af596b0def7358e600258c2a35e09759b"><div class="ttname"><a href="mpu6886_8h.html#af596b0def7358e600258c2a35e09759b">gyro_scale_t</a></div><div class="ttdeci">gyro_scale_t</div><div class="ttdoc">List of possible gyroscope scalars in degrees per second.</div><div class="ttdef"><b>Definition:</b> mpu6886.h:58</div></div>
+<div class="ttc" id="ampu6886_8h_html_af596b0def7358e600258c2a35e09759ba36550aa5e3081628dc1b7a177fc171f6"><div class="ttname"><a href="mpu6886_8h.html#af596b0def7358e600258c2a35e09759ba36550aa5e3081628dc1b7a177fc171f6">MPU6886_GFS_500DPS</a></div><div class="ttdeci">@ MPU6886_GFS_500DPS</div><div class="ttdef"><b>Definition:</b> mpu6886.h:60</div></div>
+<div class="ttc" id="ampu6886_8h_html_af596b0def7358e600258c2a35e09759ba7b6c802b4d2ae8efe19e53b9e834672d"><div class="ttname"><a href="mpu6886_8h.html#af596b0def7358e600258c2a35e09759ba7b6c802b4d2ae8efe19e53b9e834672d">MPU6886_GFS_250DPS</a></div><div class="ttdeci">@ MPU6886_GFS_250DPS</div><div class="ttdef"><b>Definition:</b> mpu6886.h:59</div></div>
+<div class="ttc" id="ampu6886_8h_html_af596b0def7358e600258c2a35e09759baab0675557c410c2e9f07cc12cd68496f"><div class="ttname"><a href="mpu6886_8h.html#af596b0def7358e600258c2a35e09759baab0675557c410c2e9f07cc12cd68496f">MPU6886_GFS_1000DPS</a></div><div class="ttdeci">@ MPU6886_GFS_1000DPS</div><div class="ttdef"><b>Definition:</b> mpu6886.h:61</div></div>
+<div class="ttc" id="ampu6886_8h_html_af596b0def7358e600258c2a35e09759bad50c3eca2e6a6167583061c5347c516c"><div class="ttname"><a href="mpu6886_8h.html#af596b0def7358e600258c2a35e09759bad50c3eca2e6a6167583061c5347c516c">MPU6886_GFS_2000DPS</a></div><div class="ttdeci">@ MPU6886_GFS_2000DPS</div><div class="ttdef"><b>Definition:</b> mpu6886.h:62</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

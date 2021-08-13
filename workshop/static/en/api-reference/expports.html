@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="AWS_logo_RGB.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Core2 for AWS IoT EduKit BSP
-   &#160;<span id="projectnumber">1.4.2</span>
+   &#160;<span id="projectnumber">1.5.0</span>
    </div>
   </td>
  </tr>
@@ -68,16 +68,15 @@ $(function() {
 <div class="title">External Grove Connector Expansion Ports </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>The APIs for the side expansion ports wrap Espressif's peripherals APIs to simplify configuration and usage of GPIO, ADC, DAC, and UART. All GPIOs support digital read &amp; write. The APIs provided are only for convenience and may not be sufficient for all peripherals that are plugged in. For accessing complete functionality of all the attached peripherals, visit Espressif's <a href="https://docs.espressif.com/projects/esp-idf/en/release-v4.2/esp32/api-reference/peripherals/index.html">official documentation</a> and view their <a href="https://github.com/espressif/esp-idf/tree/1cb31e50943bb757966ca91ed7f4852692a5b0ed/examples/peripherals">examples on GitHub</a>. Please note that using Espressif's examples would require changing the pin configurations to the match the available pins listed in the table below.</p>
+<div class="textblock"><p>The APIs for the side expansion ports wrap Espressif's peripherals APIs to simplify configuration and usage of GPIO, I2C, ADC, DAC, and UART. All GPIOs support digital read &amp; write. The APIs provided are only for convenience and may not be sufficient for all peripherals that are plugged in. For accessing complete functionality of all the attached peripherals, visit Espressif's <a href="https://docs.espressif.com/projects/esp-idf/en/release-v4.2/esp32/api-reference/peripherals/index.html">official documentation</a> and view their <a href="https://github.com/espressif/esp-idf/tree/1cb31e50943bb757966ca91ed7f4852692a5b0ed/examples/peripherals">examples on GitHub</a>. Please note that using Espressif's examples would require changing the pin configurations to the match the available pins listed in the table below.</p>
 <p><a class="anchor" id="expports_intro"></a></p>
-<dl class="section note"><dt>Note</dt><dd>At the moment there are no helpers for I2C peripherals.</dd></dl>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Port   </th><th class="markdownTableHeadNone">Pin   </th><th class="markdownTableHeadNone">Feature   </th><th class="markdownTableHeadNone">Helpful Macro Definition(s) to Access Pin    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">A   </td><td class="markdownTableBodyNone">32   </td><td class="markdownTableBodyNone">i2c SDA   </td><td class="markdownTableBodyNone">GPIO_NUM_32    </td></tr>
+<td class="markdownTableBodyNone">A   </td><td class="markdownTableBodyNone">32   </td><td class="markdownTableBodyNone">I2C SDA   </td><td class="markdownTableBodyNone"><a class="el" href="core2for_a_w_s_8h.html#ae784eb494430f328a674932e03ee1b26">PORT_A_SDA_PIN</a> or GPIO_NUM_32    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">A   </td><td class="markdownTableBodyNone">33   </td><td class="markdownTableBodyNone">i2c SCL   </td><td class="markdownTableBodyNone">GPIO_NUM_33    </td></tr>
+<td class="markdownTableBodyNone">A   </td><td class="markdownTableBodyNone">33   </td><td class="markdownTableBodyNone">I2C SCL   </td><td class="markdownTableBodyNone"><a class="el" href="core2for_a_w_s_8h.html#ae784eb494430f328a674932e03ee1b26">PORT_A_SDA_PIN</a> or GPIO_NUM_33    </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">B   </td><td class="markdownTableBodyNone">26   </td><td class="markdownTableBodyNone">DAC   </td><td class="markdownTableBodyNone"><a class="el" href="core2for_a_w_s_8h.html#ac708091286fa469920c756366ca4e683">PORT_B_DAC_PIN</a> or GPIO_NUM_26    </td></tr>
 <tr class="markdownTableRowEven">
@@ -88,7 +87,7 @@ $(function() {
 <td class="markdownTableBodyNone">C   </td><td class="markdownTableBodyNone">14   </td><td class="markdownTableBodyNone">UART TX   </td><td class="markdownTableBodyNone"><a class="el" href="core2for_a_w_s_8h.html#a8764a8d2c486f2d66f86d995653cc833">PORT_C_UART_TX_PIN</a> or GPIO_NUM_14   </td></tr>
 </table>
 <p><a href="./block_diagram-expports.png"><img src="./block_diagram-expports.png" alt="Circuit Block Diagram for the external Grove connector expansion ports" class="center" class="inline"/></a></p>
-<p>To enable this feature using KConfig, use the command <code>pio run --environment core2foraws --target menuconfig</code> from within the root of the project directoy in your <a href="/en/blinky-hello-world/prerequisites.html#open-the-platformio-cli-terminal-window">PlatformIO terminal window</a> and go to the menu <code>Component Config --&gt; Core2 for AWS hardware enable</code> to set the features you want to enable.</p>
+<p>To enable this feature using KConfig, use the command <code>pio run --environment core2foraws --target menuconfig</code> from within the root of the project directoy in your <a href="/en/blinky-hello-world/prerequisites.html#open-the-platformio-cli-terminal-window">PlatformIO terminal window</a> and go to the menu <code>Component Config --&gt; Core2 for AWS features</code> to set the features you want to enable.</p>
 <h1><a class="anchor" id="expports_example"></a>
 Example</h1>
 <p>The example code sets GPIO 26 (same as <a class="el" href="core2for_a_w_s_8h.html#ac708091286fa469920c756366ca4e683">PORT_B_DAC_PIN</a>) as an input, creates a FreeRTOS task which periodically (1s) reads from GPIO 26 to see if a peripheral that outputs high on that line is connected. The task prints the returned value to the serial monitor.</p>
@@ -99,34 +98,44 @@ Example</h1>
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="core2for_a_w_s_8h.html">core2forAWS.h</a>&quot;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *TAG = <span class="stringliteral">&quot;INPUT_READ_DEMO&quot;</span>;</div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="i2c__device_8c.html#afc3d101f633a076cc1ca84b85b6224b2">TAG</a> = <span class="stringliteral">&quot;INPUT_READ_DEMO&quot;</span>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> readInputTask(){</div>
 <div class="line">    <span class="keywordflow">for</span>(;;){</div>
-<div class="line">        ESP_LOGI(TAG, <span class="stringliteral">&quot;Sensor plugged in (0=no / 1=yes): %d&quot;</span>, <a class="code" href="core2for_a_w_s_8h.html#ae40c69633879f4b82c939e2c63814e81">Core2ForAWS_Port_Read</a>(GPIO_NUM_26));</div>
+<div class="line">        ESP_LOGI(<a class="code" href="i2c__device_8c.html#afc3d101f633a076cc1ca84b85b6224b2">TAG</a>, <span class="stringliteral">&quot;Sensor plugged in (0=no / 1=yes): %d&quot;</span>, <a class="code" href="core2for_a_w_s_8c.html#ae40c69633879f4b82c939e2c63814e81">Core2ForAWS_Port_Read</a>(GPIO_NUM_26));</div>
 <div class="line">        vTaskDelay(pdMS_TO_TICKS(1000));</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> app_main(<span class="keywordtype">void</span>){</div>
-<div class="line">    <a class="code" href="core2for_a_w_s_8h.html#a3d850a3f56bbe0685b60726d8b53bece">Core2ForAWS_Init</a>();</div>
-<div class="line">    <a class="code" href="core2for_a_w_s_8h.html#a20b1459685901f232474236d0fc6c23f">Core2ForAWS_Port_PinMode</a>(GPIO_NUM_26, <a class="code" href="core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4dbae310c909d76b003d016bef8bdf16936a">INPUT</a>);</div>
+<div class="line">    <a class="code" href="core2for_a_w_s_8c.html#a3d850a3f56bbe0685b60726d8b53bece">Core2ForAWS_Init</a>();</div>
+<div class="line">    <a class="code" href="core2for_a_w_s_8c.html#a20b1459685901f232474236d0fc6c23f">Core2ForAWS_Port_PinMode</a>(GPIO_NUM_26, <a class="code" href="core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4dbae310c909d76b003d016bef8bdf16936a">INPUT</a>);</div>
 <div class="line">    xTaskCreatePinnedToCore(readInputTask, <span class="stringliteral">&quot;read_pin&quot;</span>, 1024*4, NULL, 1, NULL, 1);</div>
 <div class="line">}</div>
+<div class="ttc" id="acore2for_a_w_s_8c_html_a20b1459685901f232474236d0fc6c23f"><div class="ttname"><a href="core2for_a_w_s_8c.html#a20b1459685901f232474236d0fc6c23f">Core2ForAWS_Port_PinMode</a></div><div class="ttdeci">esp_err_t Core2ForAWS_Port_PinMode(gpio_num_t pin, pin_mode_t mode)</div><div class="ttdoc">Sets the pin mode of the specified pin.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:429</div></div>
+<div class="ttc" id="acore2for_a_w_s_8c_html_a3d850a3f56bbe0685b60726d8b53bece"><div class="ttname"><a href="core2for_a_w_s_8c.html#a3d850a3f56bbe0685b60726d8b53bece">Core2ForAWS_Init</a></div><div class="ttdeci">void Core2ForAWS_Init(void)</div><div class="ttdoc">Initializes the power chip with default values, enables battery charging, and initializes all enabled...</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:32</div></div>
+<div class="ttc" id="acore2for_a_w_s_8c_html_ae40c69633879f4b82c939e2c63814e81"><div class="ttname"><a href="core2for_a_w_s_8c.html#ae40c69633879f4b82c939e2c63814e81">Core2ForAWS_Port_Read</a></div><div class="ttdeci">bool Core2ForAWS_Port_Read(gpio_num_t pin)</div><div class="ttdoc">Reads the value from a specified digital pin that's set as an input — either 1 (high) or 0 (low).</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:498</div></div>
 <div class="ttc" id="acore2for_a_w_s_8h_html"><div class="ttname"><a href="core2for_a_w_s_8h.html">core2forAWS.h</a></div><div class="ttdoc">Functions to initialize and access Core2 for AWS IoT EduKit hardware features.</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a20b1459685901f232474236d0fc6c23f"><div class="ttname"><a href="core2for_a_w_s_8h.html#a20b1459685901f232474236d0fc6c23f">Core2ForAWS_Port_PinMode</a></div><div class="ttdeci">esp_err_t Core2ForAWS_Port_PinMode(gpio_num_t pin, pin_mode_t mode)</div><div class="ttdoc">Sets the pin mode of the specified pin.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:419</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a3d850a3f56bbe0685b60726d8b53bece"><div class="ttname"><a href="core2for_a_w_s_8h.html#a3d850a3f56bbe0685b60726d8b53bece">Core2ForAWS_Init</a></div><div class="ttdeci">void Core2ForAWS_Init(void)</div><div class="ttdoc">Initializes the power chip with default values, enables battery charging, and initializes all enabled...</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:32</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a77fecc1883f27c095012fbe56345c4dbae310c909d76b003d016bef8bdf16936a"><div class="ttname"><a href="core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4dbae310c909d76b003d016bef8bdf16936a">INPUT</a></div><div class="ttdeci">@ INPUT</div><div class="ttdoc">Set GPIO to input mode.</div><div class="ttdef"><b>Definition:</b> core2forAWS.h:183</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_ae40c69633879f4b82c939e2c63814e81"><div class="ttname"><a href="core2for_a_w_s_8h.html#ae40c69633879f4b82c939e2c63814e81">Core2ForAWS_Port_Read</a></div><div class="ttdeci">bool Core2ForAWS_Port_Read(gpio_num_t pin)</div><div class="ttdoc">Reads the value from a specified digital pin that's set as an input — either 1 (high) or 0 (low).</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:486</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html_a77fecc1883f27c095012fbe56345c4dbae310c909d76b003d016bef8bdf16936a"><div class="ttname"><a href="core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4dbae310c909d76b003d016bef8bdf16936a">INPUT</a></div><div class="ttdeci">@ INPUT</div><div class="ttdoc">Set GPIO to input mode.</div><div class="ttdef"><b>Definition:</b> core2forAWS.h:215</div></div>
+<div class="ttc" id="ai2c__device_8c_html_afc3d101f633a076cc1ca84b85b6224b2"><div class="ttname"><a href="i2c__device_8c.html#afc3d101f633a076cc1ca84b85b6224b2">TAG</a></div><div class="ttdeci">#define TAG</div><div class="ttdef"><b>Definition:</b> i2c_device.c:10</div></div>
 </div><!-- fragment --><h1><a class="anchor" id="expports_preprocessor_macros"></a>
 Preprocessor Macros</h1>
 <ul>
+<li><a class="el" href="port_a_sda_pin_macro.html">PORT_A_SDA_PIN</a></li>
+<li><a class="el" href="port_a_scl_pin_macro.html">PORT_A_SCL_PIN</a></li>
+<li><a class="el" href="i2c_no_reg_macro.html">I2C_NO_REG</a></li>
+<li><a class="el" href="port_a_i2c_standard_baud_macro.html">PORT_A_I2C_STANDARD_BAUD</a></li>
 <li><a class="el" href="port_b_adc_pin_macro.html">PORT_B_ADC_PIN</a></li>
 <li><a class="el" href="port_b_dac_pin_macro.html">PORT_B_DAC_PIN</a></li>
 <li><a class="el" href="port_c_uart_rx_pin_macro.html">PORT_C_UART_RX_PIN</a></li>
 <li><a class="el" href="port_c_uart_tx_pin_macro.html">PORT_C_UART_TX_PIN</a></li>
 <li><a class="el" href="port_c_uart_num_macro.html">PORT_C_UART_NUM</a></li>
 <li><a class="el" href="uart_rx_buf_size_macro.html">UART_RX_BUF_SIZE</a></li>
+</ul>
+<h1><a class="anchor" id="expports_type_definitions"></a>
+Type Definitions</h1>
+<ul>
+<li><a class="el" href="i2cdevice_t_typedef.html">I2CDevice_t</a></li>
 </ul>
 <h1><a class="anchor" id="expports_enumerated_type_definitions"></a>
 Enumerated Type Definitions</h1>
@@ -139,6 +148,10 @@ Functions</h1>
 <li><a class="el" href="core2foraws_port_pinmode_function.html">Core2ForAWS_Port_PinMode</a></li>
 <li><a class="el" href="core2foraws_port_read_function.html">Core2ForAWS_Port_Read</a></li>
 <li><a class="el" href="core2foraws_port_write_function.html">Core2ForAWS_Port_Write</a></li>
+<li><a class="el" href="core2foraws_port_a_i2c_begin_function.html">Core2ForAWS_Port_A_I2C_Begin</a></li>
+<li><a class="el" href="core2foraws_port_a_i2c_read_function.html">Core2ForAWS_Port_A_I2C_Read</a></li>
+<li><a class="el" href="core2foraws_port_a_i2c_write_function.html">Core2ForAWS_Port_A_I2C_Write</a></li>
+<li><a class="el" href="core2foraws_port_a_i2c_close_function.html">Core2ForAWS_Port_A_I2C_Close</a></li>
 <li><a class="el" href="core2foraws_port_b_adc_readraw_function.html">Core2ForAWS_Port_B_ADC_ReadRaw</a></li>
 <li><a class="el" href="core2foraws_port_b_adc_readmillivolts_function.html">Core2ForAWS_Port_B_ADC_ReadMilliVolts</a></li>
 <li><a class="el" href="core2foraws_port_b_dac_writemillivolts_function.html">Core2ForAWS_Port_B_DAC_WriteMilliVolts</a></li>

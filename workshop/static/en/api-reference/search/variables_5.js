@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['next_335',['next',['../struct_button__t.html#a0038d16a4f70619ba994f209bcdda47e',1,'Button_t']]]
+  ['minute_637',['minute',['../structrtc__date__t.html#a5699ba6d2509bf7cdd0775f7d0d4f8dd',1,'rtc_date_t']]],
+  ['month_638',['month',['../structrtc__date__t.html#afd04996b250949b3d0a0b95500b91b81',1,'rtc_date_t']]]
 ];

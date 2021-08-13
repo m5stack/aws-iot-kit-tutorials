@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="AWS_logo_RGB.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Core2 for AWS IoT EduKit BSP
-   &#160;<span id="projectnumber">1.4.2</span>
+   &#160;<span id="projectnumber">1.5.0</span>
    </div>
   </td>
  </tr>
@@ -83,9 +83,8 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:aecdfe4cddeaa76c80383eef738018c83"><td class="memItemLeft" align="right" valign="top"><a id="aecdfe4cddeaa76c80383eef738018c83"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="microphone_8h.html#aecdfe4cddeaa76c80383eef738018c83">MIC_I2S_NUMBER</a>&#160;&#160;&#160;I2S_NUM_0</td></tr>
-<tr class="memdesc:aecdfe4cddeaa76c80383eef738018c83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Microphone I2S port number. <br /></td></tr>
+<tr class="memitem:aecdfe4cddeaa76c80383eef738018c83"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="microphone_8h.html#aecdfe4cddeaa76c80383eef738018c83">MIC_I2S_NUMBER</a>&#160;&#160;&#160;I2S_NUM_0</td></tr>
+<tr class="memdesc:aecdfe4cddeaa76c80383eef738018c83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Microphone I2S port number.  <a href="microphone_8h.html#aecdfe4cddeaa76c80383eef738018c83">More...</a><br /></td></tr>
 <tr class="separator:aecdfe4cddeaa76c80383eef738018c83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -93,14 +92,30 @@ Functions</h2></td></tr>
 <tr class="memitem:a09556522510b43730e1590cfa42f5b1a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="microphone_8h.html#a09556522510b43730e1590cfa42f5b1a">Microphone_Init</a> ()</td></tr>
 <tr class="memdesc:a09556522510b43730e1590cfa42f5b1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the microphone over I2S.  <a href="microphone_8h.html#a09556522510b43730e1590cfa42f5b1a">More...</a><br /></td></tr>
 <tr class="separator:a09556522510b43730e1590cfa42f5b1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6bf7289567e8e05c91ef19dde9cc051"><td class="memItemLeft" align="right" valign="top"><a id="af6bf7289567e8e05c91ef19dde9cc051"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="microphone_8h.html#af6bf7289567e8e05c91ef19dde9cc051">Microphone_Deinit</a> ()</td></tr>
-<tr class="memdesc:af6bf7289567e8e05c91ef19dde9cc051"><td class="mdescLeft">&#160;</td><td class="mdescRight">De-initializes the microphone over I2S. <br /></td></tr>
+<tr class="memitem:af6bf7289567e8e05c91ef19dde9cc051"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="microphone_8h.html#af6bf7289567e8e05c91ef19dde9cc051">Microphone_Deinit</a> ()</td></tr>
+<tr class="memdesc:af6bf7289567e8e05c91ef19dde9cc051"><td class="mdescLeft">&#160;</td><td class="mdescRight">De-initializes the microphone over I2S.  <a href="microphone_8h.html#af6bf7289567e8e05c91ef19dde9cc051">More...</a><br /></td></tr>
 <tr class="separator:af6bf7289567e8e05c91ef19dde9cc051"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Functions for the SPM1423 microphone. </p>
-</div><h2 class="groupheader">Function Documentation</h2>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="aecdfe4cddeaa76c80383eef738018c83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecdfe4cddeaa76c80383eef738018c83">&#9670;&nbsp;</a></span>MIC_I2S_NUMBER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MIC_I2S_NUMBER&#160;&#160;&#160;I2S_NUM_0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Microphone I2S port number. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="a09556522510b43730e1590cfa42f5b1a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a09556522510b43730e1590cfa42f5b1a">&#9670;&nbsp;</a></span>Microphone_Init()</h2>
 
@@ -118,6 +133,25 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="micr
 
 <p>Initializes the microphone over I2S. </p>
 <dl class="section note"><dt>Note</dt><dd>The microphone cannot be enabled at the same time as the speaker since they both share a common pin (GPIO0). Attempting to enable and use both at the same time will cause the device to hard fault. </dd></dl>
+
+</div>
+</div>
+<a id="af6bf7289567e8e05c91ef19dde9cc051"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6bf7289567e8e05c91ef19dde9cc051">&#9670;&nbsp;</a></span>Microphone_Deinit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Microphone_Deinit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>De-initializes the microphone over I2S. </p>
 
 </div>
 </div>

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['disp_5fspi_2ec_215',['disp_spi.c',['../disp__spi_8c.html',1,'']]],
-  ['disp_5fspi_2eh_216',['disp_spi.h',['../disp__spi_8h.html',1,'']]]
+  ['core2foraws_2ec_459',['core2forAWS.c',['../core2for_a_w_s_8c.html',1,'']]],
+  ['core2foraws_2eh_460',['core2forAWS.h',['../core2for_a_w_s_8h.html',1,'']]]
 ];

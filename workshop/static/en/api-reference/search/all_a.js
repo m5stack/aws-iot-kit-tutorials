@@ -1,23 +1,11 @@
 var searchData=
 [
-  ['mic_5fi2s_5fnumber_143',['MIC_I2S_NUMBER',['../microphone_8h.html#aecdfe4cddeaa76c80383eef738018c83',1,'MIC_I2S_NUMBER():&#160;microphone.h'],['../microphone_mici2s_number_macro.html',1,'spm1423']]],
-  ['microphone_144',['Microphone',['../spm1423.html',1,'']]],
-  ['microphone_2eh_145',['microphone.h',['../microphone_8h.html',1,'']]],
-  ['microphone_5fdeinit_146',['Microphone_Deinit',['../microphone_8h.html#af6bf7289567e8e05c91ef19dde9cc051',1,'Microphone_Deinit():&#160;microphone.c'],['../microphone_deinit_function.html',1,'spm1423']]],
-  ['microphone_5finit_147',['Microphone_Init',['../microphone_8h.html#a09556522510b43730e1590cfa42f5b1a',1,'Microphone_Init():&#160;microphone.c'],['../microphone_init_function.html',1,'spm1423']]],
-  ['minute_148',['minute',['../structrtc__date__t.html#a5699ba6d2509bf7cdd0775f7d0d4f8dd',1,'rtc_date_t']]],
-  ['month_149',['month',['../structrtc__date__t.html#afd04996b250949b3d0a0b95500b91b81',1,'rtc_date_t']]],
-  ['mpu6886_150',['MPU6886',['../mpu6886.html',1,'']]],
-  ['mpu6886_2eh_151',['mpu6886.h',['../mpu6886_8h.html',1,'']]],
-  ['mpu6886_5fgetacceladc_152',['MPU6886_GetAccelAdc',['../mpu6886_8h.html#ae8d4b8775011d2dc1448f9144e462d21',1,'MPU6886_GetAccelAdc():&#160;mpu6886.c'],['../mpu6886_getacceladc_function.html',1,'mpu6886']]],
-  ['mpu6886_5fgetacceldata_153',['MPU6886_GetAccelData',['../mpu6886_8h.html#a014d3e6bc15e4dc5de3a573b9f901b37',1,'MPU6886_GetAccelData():&#160;mpu6886.c'],['../mpu6886_getacceldata_function.html',1,'mpu6886']]],
-  ['mpu6886_5fgetaccres_154',['MPU6886_GetAccRes',['../mpu6886_8h.html#a1906117cd4d84ea1774fe98fc96468b3',1,'MPU6886_GetAccRes():&#160;mpu6886.c'],['../mpu6886_getaccres_function.html',1,'mpu6886']]],
-  ['mpu6886_5fgetgyroadc_155',['MPU6886_GetGyroAdc',['../mpu6886_8h.html#a7f3fe4152a034c0ed019c5d418c7fcfe',1,'MPU6886_GetGyroAdc():&#160;mpu6886.c'],['../mpu6886_getgyroadc_function.html',1,'mpu6886']]],
-  ['mpu6886_5fgetgyrodata_156',['MPU6886_GetGyroData',['../mpu6886_8h.html#a8f9da6300b058362761a58b60e1d6c1c',1,'MPU6886_GetGyroData():&#160;mpu6886.c'],['../mpu6886_getgyrodata_function.html',1,'mpu6886']]],
-  ['mpu6886_5fgetgyrores_157',['MPU6886_GetGyroRes',['../mpu6886_8h.html#a8f2d5918f4c67a1cee29df338ea49f22',1,'MPU6886_GetGyroRes():&#160;mpu6886.c'],['../mpu6886_getgyrores_function.html',1,'mpu6886']]],
-  ['mpu6886_5fgettempadc_158',['MPU6886_GetTempAdc',['../mpu6886_8h.html#a61bc794ebe45526187dd5f9922cff393',1,'MPU6886_GetTempAdc():&#160;mpu6886.c'],['../mpu6886_gettempadc_function.html',1,'mpu6886']]],
-  ['mpu6886_5fgettempdata_159',['MPU6886_GetTempData',['../mpu6886_8h.html#ab2a7c90e4c1fdd57a78a33fd53084071',1,'MPU6886_GetTempData():&#160;mpu6886.c'],['../mpu6886_gettempdata_function.html',1,'mpu6886']]],
-  ['mpu6886_5finit_160',['MPU6886_Init',['../mpu6886_8h.html#a402a6662575face25ec3ca336f654c98',1,'MPU6886_Init():&#160;mpu6886.c'],['../mpu6886_init_function.html',1,'mpu6886']]],
-  ['mpu6886_5fsetaccelfsr_161',['MPU6886_SetAccelFSR',['../mpu6886_8h.html#a22f674cd32318e5b424c74937a2df414',1,'MPU6886_SetAccelFSR():&#160;mpu6886.c'],['../mpu6886_setaccelfsr_function.html',1,'mpu6886']]],
-  ['mpu6886_5fsetgyrofsr_162',['MPU6886_SetGyroFSR',['../mpu6886_8h.html#a9c6b73f2e7730c2849482cb1ee3d6e80',1,'MPU6886_SetGyroFSR():&#160;mpu6886.c'],['../mpu6886_setgyrofsr_function.html',1,'mpu6886']]]
+  ['last_5fpress_5ftime_299',['last_press_time',['../struct_button__t.html#ae20f07ac243620b5e54238d3e8310620',1,'Button_t']]],
+  ['last_5fvalue_300',['last_value',['../struct_button__t.html#a74ecaa037e3ec6bcfc05f63984591afa',1,'Button_t']]],
+  ['log_5fe_301',['log_e',['../i2c__device_8c.html#acde1d2c9f48c6f05e0a168e8f488fab5',1,'i2c_device.c']]],
+  ['log_5fi_302',['log_i',['../i2c__device_8c.html#ab4ad1bc09cceb25a6b31233206233930',1,'i2c_device.c']]],
+  ['log_5freg_303',['log_reg',['../i2c__device_8c.html#a04a55bdf725783716e0c0867e8c53480',1,'i2c_device.c']]],
+  ['long_5fpress_5ftime_304',['long_press_time',['../struct_button__t.html#a98fad5f5eb1a1828604570c993098e1d',1,'Button_t']]],
+  ['longpress_305',['LONGPRESS',['../button_8h.html#afeb311a4a42fcf0fd31c24acc64621b1a9419b85bc5535a8df3ddf821c06b7d29',1,'button.h']]],
+  ['lv_5ftick_5fperiod_5fms_306',['LV_TICK_PERIOD_MS',['../core2for_a_w_s_8c.html#a31c507ab1a1074ac1ab0a4ce6bbba2f6',1,'core2forAWS.c']]]
 ];

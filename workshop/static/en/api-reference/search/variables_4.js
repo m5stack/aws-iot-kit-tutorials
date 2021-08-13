@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['minute_333',['minute',['../structrtc__date__t.html#a5699ba6d2509bf7cdd0775f7d0d4f8dd',1,'rtc_date_t']]],
-  ['month_334',['month',['../structrtc__date__t.html#afd04996b250949b3d0a0b95500b91b81',1,'rtc_date_t']]]
+  ['last_5fpress_5ftime_634',['last_press_time',['../struct_button__t.html#ae20f07ac243620b5e54238d3e8310620',1,'Button_t']]],
+  ['last_5fvalue_635',['last_value',['../struct_button__t.html#a74ecaa037e3ec6bcfc05f63984591afa',1,'Button_t']]],
+  ['long_5fpress_5ftime_636',['long_press_time',['../struct_button__t.html#a98fad5f5eb1a1828604570c993098e1d',1,'Button_t']]]
 ];

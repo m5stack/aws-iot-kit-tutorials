@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="AWS_logo_RGB.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Core2 for AWS IoT EduKit BSP
-   &#160;<span id="projectnumber">1.4.2</span>
+   &#160;<span id="projectnumber">1.5.0</span>
    </div>
   </td>
  </tr>
@@ -69,6 +69,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#define-members">Macros</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
@@ -82,13 +83,80 @@ $(function() {
 </div>
 <p><a href="mpu6886_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a75f5987cc560929e10d5c5202f777a95"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpu6886_8h.html#a75f5987cc560929e10d5c5202f777a95">MPU6886_ADDRESS</a>&#160;&#160;&#160;0x68</td></tr>
+<tr class="separator:a75f5987cc560929e10d5c5202f777a95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a455db6625bd142aebfd00c6ab9c4f041"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpu6886_8h.html#a455db6625bd142aebfd00c6ab9c4f041">MPU6886_WHOAMI</a>&#160;&#160;&#160;0x75</td></tr>
+<tr class="separator:a455db6625bd142aebfd00c6ab9c4f041"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e541d15ff5ca32e7728868145866257"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpu6886_8h.html#a0e541d15ff5ca32e7728868145866257">MPU6886_ACCEL_INTEL_CTRL</a>&#160;&#160;&#160;0x69</td></tr>
+<tr class="separator:a0e541d15ff5ca32e7728868145866257"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed0fcfba020eb3910b963bbff4f42427"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpu6886_8h.html#aed0fcfba020eb3910b963bbff4f42427">MPU6886_SMPLRT_DIV</a>&#160;&#160;&#160;0x19</td></tr>
+<tr class="separator:aed0fcfba020eb3910b963bbff4f42427"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6eeaad003b7bae5e0b9ded1041f0f902"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpu6886_8h.html#a6eeaad003b7bae5e0b9ded1041f0f902">MPU6886_INT_PIN_CFG</a>&#160;&#160;&#160;0x37</td></tr>
+<tr class="separator:a6eeaad003b7bae5e0b9ded1041f0f902"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acba197728bc7799e010da947982906ac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpu6886_8h.html#acba197728bc7799e010da947982906ac">MPU6886_INT_ENABLE</a>&#160;&#160;&#160;0x38</td></tr>
+<tr class="separator:acba197728bc7799e010da947982906ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ec1a1c934201eaea99d54a4ba1d6e70"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpu6886_8h.html#a0ec1a1c934201eaea99d54a4ba1d6e70">MPU6886_ACCEL_XOUT_H</a>&#160;&#160;&#160;0x3B</td></tr>
+<tr class="separator:a0ec1a1c934201eaea99d54a4ba1d6e70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad15ce79d80c7cee2ae0aa3859b60da8f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpu6886_8h.html#ad15ce79d80c7cee2ae0aa3859b60da8f">MPU6886_ACCEL_XOUT_L</a>&#160;&#160;&#160;0x3C</td></tr>
+<tr class="separator:ad15ce79d80c7cee2ae0aa3859b60da8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba01b5bf836ada1581018626bc510814"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpu6886_8h.html#aba01b5bf836ada1581018626bc510814">MPU6886_ACCEL_YOUT_H</a>&#160;&#160;&#160;0x3D</td></tr>
+<tr class="separator:aba01b5bf836ada1581018626bc510814"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2a87d6c160787b7c554bb90c14ee716"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpu6886_8h.html#ad2a87d6c160787b7c554bb90c14ee716">MPU6886_ACCEL_YOUT_L</a>&#160;&#160;&#160;0x3E</td></tr>
+<tr class="separator:ad2a87d6c160787b7c554bb90c14ee716"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d0a2ab6ec634d7cb837267cb310dd9c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpu6886_8h.html#a1d0a2ab6ec634d7cb837267cb310dd9c">MPU6886_ACCEL_ZOUT_H</a>&#160;&#160;&#160;0x3F</td></tr>
+<tr class="separator:a1d0a2ab6ec634d7cb837267cb310dd9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4873ef1a744e5247a246a0c35c4e5b4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpu6886_8h.html#aa4873ef1a744e5247a246a0c35c4e5b4">MPU6886_ACCEL_ZOUT_L</a>&#160;&#160;&#160;0x40</td></tr>
+<tr class="separator:aa4873ef1a744e5247a246a0c35c4e5b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6a61156800cecb3d9ced06a8696acca"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpu6886_8h.html#ac6a61156800cecb3d9ced06a8696acca">MPU6886_TEMP_OUT_H</a>&#160;&#160;&#160;0x41</td></tr>
+<tr class="separator:ac6a61156800cecb3d9ced06a8696acca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd9a50e893bfadb62d403e87e8fef535"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpu6886_8h.html#acd9a50e893bfadb62d403e87e8fef535">MPU6886_TEMP_OUT_L</a>&#160;&#160;&#160;0x42</td></tr>
+<tr class="separator:acd9a50e893bfadb62d403e87e8fef535"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a553f815070846ad43bb0daf6ef0eeafe"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpu6886_8h.html#a553f815070846ad43bb0daf6ef0eeafe">MPU6886_GYRO_XOUT_H</a>&#160;&#160;&#160;0x43</td></tr>
+<tr class="separator:a553f815070846ad43bb0daf6ef0eeafe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f5f69a5e95ca2acdd31b3e88007aecf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpu6886_8h.html#a4f5f69a5e95ca2acdd31b3e88007aecf">MPU6886_GYRO_XOUT_L</a>&#160;&#160;&#160;0x44</td></tr>
+<tr class="separator:a4f5f69a5e95ca2acdd31b3e88007aecf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6737513e302b717f272775475b057147"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpu6886_8h.html#a6737513e302b717f272775475b057147">MPU6886_GYRO_YOUT_H</a>&#160;&#160;&#160;0x45</td></tr>
+<tr class="separator:a6737513e302b717f272775475b057147"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6425c7fb9d9b6a3763c0735dc487f70"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpu6886_8h.html#ad6425c7fb9d9b6a3763c0735dc487f70">MPU6886_GYRO_YOUT_L</a>&#160;&#160;&#160;0x46</td></tr>
+<tr class="separator:ad6425c7fb9d9b6a3763c0735dc487f70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0386053cb94a53b05d8b808b4042b6a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpu6886_8h.html#ab0386053cb94a53b05d8b808b4042b6a">MPU6886_GYRO_ZOUT_H</a>&#160;&#160;&#160;0x47</td></tr>
+<tr class="separator:ab0386053cb94a53b05d8b808b4042b6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf2b9df26393ec3810560e9544d8bb1a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpu6886_8h.html#acf2b9df26393ec3810560e9544d8bb1a">MPU6886_GYRO_ZOUT_L</a>&#160;&#160;&#160;0x48</td></tr>
+<tr class="separator:acf2b9df26393ec3810560e9544d8bb1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace4d03298bbe71aa772b668f04098d72"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpu6886_8h.html#ace4d03298bbe71aa772b668f04098d72">MPU6886_USER_CTRL</a>&#160;&#160;&#160;0x6A</td></tr>
+<tr class="separator:ace4d03298bbe71aa772b668f04098d72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af08314f7ec70134778fcfc52149a92af"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpu6886_8h.html#af08314f7ec70134778fcfc52149a92af">MPU6886_PWR_MGMT_1</a>&#160;&#160;&#160;0x6B</td></tr>
+<tr class="separator:af08314f7ec70134778fcfc52149a92af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e532cef7bde1602812650dd375b50dd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpu6886_8h.html#a6e532cef7bde1602812650dd375b50dd">MPU6886_PWR_MGMT_2</a>&#160;&#160;&#160;0x6C</td></tr>
+<tr class="separator:a6e532cef7bde1602812650dd375b50dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0b0b49a067e0e1198ee74d07b6e9790"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpu6886_8h.html#af0b0b49a067e0e1198ee74d07b6e9790">MPU6886_CONFIG</a>&#160;&#160;&#160;0x1A</td></tr>
+<tr class="separator:af0b0b49a067e0e1198ee74d07b6e9790"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fa6b2b8d0cd9ffbc74c86944a163fd6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpu6886_8h.html#a7fa6b2b8d0cd9ffbc74c86944a163fd6">MPU6886_GYRO_CONFIG</a>&#160;&#160;&#160;0x1B</td></tr>
+<tr class="separator:a7fa6b2b8d0cd9ffbc74c86944a163fd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d829a51daefbc419198cafc56c8e4c0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpu6886_8h.html#a3d829a51daefbc419198cafc56c8e4c0">MPU6886_ACCEL_CONFIG</a>&#160;&#160;&#160;0x1C</td></tr>
+<tr class="separator:a3d829a51daefbc419198cafc56c8e4c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab32ee373601a7f589c21341fdf9d0649"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpu6886_8h.html#ab32ee373601a7f589c21341fdf9d0649">MPU6886_ACCEL_CONFIG2</a>&#160;&#160;&#160;0x1D</td></tr>
+<tr class="separator:ab32ee373601a7f589c21341fdf9d0649"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15069182d7f07b95b5f99b67fa705547"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpu6886_8h.html#a15069182d7f07b95b5f99b67fa705547">MPU6886_FIFO_EN</a>&#160;&#160;&#160;0x23</td></tr>
+<tr class="separator:a15069182d7f07b95b5f99b67fa705547"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:abb63f90f893143f9b30a26b5e1c78a14"><td class="memItemLeft" align="right" valign="top"><a id="abb63f90f893143f9b30a26b5e1c78a14"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpu6886_8h.html#abb63f90f893143f9b30a26b5e1c78a14">acc_scale_t</a> </td></tr>
-<tr class="memdesc:abb63f90f893143f9b30a26b5e1c78a14"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of possible accelerometer scalars in Gs. <br /></td></tr>
+<tr class="memitem:abb63f90f893143f9b30a26b5e1c78a14"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpu6886_8h.html#abb63f90f893143f9b30a26b5e1c78a14">acc_scale_t</a> { <a class="el" href="mpu6886_8h.html#abb63f90f893143f9b30a26b5e1c78a14a7dc9c1d9ec874c07ac1be8f2e056aa50">MPU6886_AFS_2G</a> = 0
+, <a class="el" href="mpu6886_8h.html#abb63f90f893143f9b30a26b5e1c78a14a45d6374ac6c9145f001f98d7247a4c97">MPU6886_AFS_4G</a>
+, <a class="el" href="mpu6886_8h.html#abb63f90f893143f9b30a26b5e1c78a14a17d09101cbcccd1897bbda2be6dbba6b">MPU6886_AFS_8G</a>
+, <a class="el" href="mpu6886_8h.html#abb63f90f893143f9b30a26b5e1c78a14a3589a4d5d3272926b887c6e0f50273eb">MPU6886_AFS_16G</a>
+ }</td></tr>
+<tr class="memdesc:abb63f90f893143f9b30a26b5e1c78a14"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of possible accelerometer scalars in Gs.  <a href="mpu6886_8h.html#abb63f90f893143f9b30a26b5e1c78a14">More...</a><br /></td></tr>
 <tr class="separator:abb63f90f893143f9b30a26b5e1c78a14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af596b0def7358e600258c2a35e09759b"><td class="memItemLeft" align="right" valign="top"><a id="af596b0def7358e600258c2a35e09759b"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpu6886_8h.html#af596b0def7358e600258c2a35e09759b">gyro_scale_t</a> </td></tr>
-<tr class="memdesc:af596b0def7358e600258c2a35e09759b"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of possible gyroscope scalars in degrees per second. <br /></td></tr>
+<tr class="memitem:af596b0def7358e600258c2a35e09759b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpu6886_8h.html#af596b0def7358e600258c2a35e09759b">gyro_scale_t</a> { <a class="el" href="mpu6886_8h.html#af596b0def7358e600258c2a35e09759ba7b6c802b4d2ae8efe19e53b9e834672d">MPU6886_GFS_250DPS</a> = 0
+, <a class="el" href="mpu6886_8h.html#af596b0def7358e600258c2a35e09759ba36550aa5e3081628dc1b7a177fc171f6">MPU6886_GFS_500DPS</a>
+, <a class="el" href="mpu6886_8h.html#af596b0def7358e600258c2a35e09759baab0675557c410c2e9f07cc12cd68496f">MPU6886_GFS_1000DPS</a>
+, <a class="el" href="mpu6886_8h.html#af596b0def7358e600258c2a35e09759bad50c3eca2e6a6167583061c5347c516c">MPU6886_GFS_2000DPS</a>
+ }</td></tr>
+<tr class="memdesc:af596b0def7358e600258c2a35e09759b"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of possible gyroscope scalars in degrees per second.  <a href="mpu6886_8h.html#af596b0def7358e600258c2a35e09759b">More...</a><br /></td></tr>
 <tr class="separator:af596b0def7358e600258c2a35e09759b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -129,7 +197,445 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Functions for the MPU6886 inertial measurement unit (IMU). </p>
-</div><h2 class="groupheader">Function Documentation</h2>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a75f5987cc560929e10d5c5202f777a95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75f5987cc560929e10d5c5202f777a95">&#9670;&nbsp;</a></span>MPU6886_ADDRESS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU6886_ADDRESS&#160;&#160;&#160;0x68</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a455db6625bd142aebfd00c6ab9c4f041"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a455db6625bd142aebfd00c6ab9c4f041">&#9670;&nbsp;</a></span>MPU6886_WHOAMI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU6886_WHOAMI&#160;&#160;&#160;0x75</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0e541d15ff5ca32e7728868145866257"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e541d15ff5ca32e7728868145866257">&#9670;&nbsp;</a></span>MPU6886_ACCEL_INTEL_CTRL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU6886_ACCEL_INTEL_CTRL&#160;&#160;&#160;0x69</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aed0fcfba020eb3910b963bbff4f42427"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed0fcfba020eb3910b963bbff4f42427">&#9670;&nbsp;</a></span>MPU6886_SMPLRT_DIV</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU6886_SMPLRT_DIV&#160;&#160;&#160;0x19</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6eeaad003b7bae5e0b9ded1041f0f902"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6eeaad003b7bae5e0b9ded1041f0f902">&#9670;&nbsp;</a></span>MPU6886_INT_PIN_CFG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU6886_INT_PIN_CFG&#160;&#160;&#160;0x37</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acba197728bc7799e010da947982906ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acba197728bc7799e010da947982906ac">&#9670;&nbsp;</a></span>MPU6886_INT_ENABLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU6886_INT_ENABLE&#160;&#160;&#160;0x38</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0ec1a1c934201eaea99d54a4ba1d6e70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ec1a1c934201eaea99d54a4ba1d6e70">&#9670;&nbsp;</a></span>MPU6886_ACCEL_XOUT_H</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU6886_ACCEL_XOUT_H&#160;&#160;&#160;0x3B</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad15ce79d80c7cee2ae0aa3859b60da8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad15ce79d80c7cee2ae0aa3859b60da8f">&#9670;&nbsp;</a></span>MPU6886_ACCEL_XOUT_L</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU6886_ACCEL_XOUT_L&#160;&#160;&#160;0x3C</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aba01b5bf836ada1581018626bc510814"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba01b5bf836ada1581018626bc510814">&#9670;&nbsp;</a></span>MPU6886_ACCEL_YOUT_H</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU6886_ACCEL_YOUT_H&#160;&#160;&#160;0x3D</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad2a87d6c160787b7c554bb90c14ee716"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2a87d6c160787b7c554bb90c14ee716">&#9670;&nbsp;</a></span>MPU6886_ACCEL_YOUT_L</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU6886_ACCEL_YOUT_L&#160;&#160;&#160;0x3E</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1d0a2ab6ec634d7cb837267cb310dd9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d0a2ab6ec634d7cb837267cb310dd9c">&#9670;&nbsp;</a></span>MPU6886_ACCEL_ZOUT_H</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU6886_ACCEL_ZOUT_H&#160;&#160;&#160;0x3F</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa4873ef1a744e5247a246a0c35c4e5b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4873ef1a744e5247a246a0c35c4e5b4">&#9670;&nbsp;</a></span>MPU6886_ACCEL_ZOUT_L</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU6886_ACCEL_ZOUT_L&#160;&#160;&#160;0x40</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac6a61156800cecb3d9ced06a8696acca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6a61156800cecb3d9ced06a8696acca">&#9670;&nbsp;</a></span>MPU6886_TEMP_OUT_H</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU6886_TEMP_OUT_H&#160;&#160;&#160;0x41</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acd9a50e893bfadb62d403e87e8fef535"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd9a50e893bfadb62d403e87e8fef535">&#9670;&nbsp;</a></span>MPU6886_TEMP_OUT_L</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU6886_TEMP_OUT_L&#160;&#160;&#160;0x42</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a553f815070846ad43bb0daf6ef0eeafe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a553f815070846ad43bb0daf6ef0eeafe">&#9670;&nbsp;</a></span>MPU6886_GYRO_XOUT_H</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU6886_GYRO_XOUT_H&#160;&#160;&#160;0x43</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4f5f69a5e95ca2acdd31b3e88007aecf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f5f69a5e95ca2acdd31b3e88007aecf">&#9670;&nbsp;</a></span>MPU6886_GYRO_XOUT_L</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU6886_GYRO_XOUT_L&#160;&#160;&#160;0x44</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6737513e302b717f272775475b057147"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6737513e302b717f272775475b057147">&#9670;&nbsp;</a></span>MPU6886_GYRO_YOUT_H</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU6886_GYRO_YOUT_H&#160;&#160;&#160;0x45</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad6425c7fb9d9b6a3763c0735dc487f70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6425c7fb9d9b6a3763c0735dc487f70">&#9670;&nbsp;</a></span>MPU6886_GYRO_YOUT_L</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU6886_GYRO_YOUT_L&#160;&#160;&#160;0x46</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab0386053cb94a53b05d8b808b4042b6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0386053cb94a53b05d8b808b4042b6a">&#9670;&nbsp;</a></span>MPU6886_GYRO_ZOUT_H</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU6886_GYRO_ZOUT_H&#160;&#160;&#160;0x47</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acf2b9df26393ec3810560e9544d8bb1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf2b9df26393ec3810560e9544d8bb1a">&#9670;&nbsp;</a></span>MPU6886_GYRO_ZOUT_L</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU6886_GYRO_ZOUT_L&#160;&#160;&#160;0x48</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ace4d03298bbe71aa772b668f04098d72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace4d03298bbe71aa772b668f04098d72">&#9670;&nbsp;</a></span>MPU6886_USER_CTRL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU6886_USER_CTRL&#160;&#160;&#160;0x6A</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af08314f7ec70134778fcfc52149a92af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af08314f7ec70134778fcfc52149a92af">&#9670;&nbsp;</a></span>MPU6886_PWR_MGMT_1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU6886_PWR_MGMT_1&#160;&#160;&#160;0x6B</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6e532cef7bde1602812650dd375b50dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e532cef7bde1602812650dd375b50dd">&#9670;&nbsp;</a></span>MPU6886_PWR_MGMT_2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU6886_PWR_MGMT_2&#160;&#160;&#160;0x6C</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af0b0b49a067e0e1198ee74d07b6e9790"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0b0b49a067e0e1198ee74d07b6e9790">&#9670;&nbsp;</a></span>MPU6886_CONFIG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU6886_CONFIG&#160;&#160;&#160;0x1A</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7fa6b2b8d0cd9ffbc74c86944a163fd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fa6b2b8d0cd9ffbc74c86944a163fd6">&#9670;&nbsp;</a></span>MPU6886_GYRO_CONFIG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU6886_GYRO_CONFIG&#160;&#160;&#160;0x1B</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3d829a51daefbc419198cafc56c8e4c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d829a51daefbc419198cafc56c8e4c0">&#9670;&nbsp;</a></span>MPU6886_ACCEL_CONFIG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU6886_ACCEL_CONFIG&#160;&#160;&#160;0x1C</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab32ee373601a7f589c21341fdf9d0649"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab32ee373601a7f589c21341fdf9d0649">&#9670;&nbsp;</a></span>MPU6886_ACCEL_CONFIG2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU6886_ACCEL_CONFIG2&#160;&#160;&#160;0x1D</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a15069182d7f07b95b5f99b67fa705547"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15069182d7f07b95b5f99b67fa705547">&#9670;&nbsp;</a></span>MPU6886_FIFO_EN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU6886_FIFO_EN&#160;&#160;&#160;0x23</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="abb63f90f893143f9b30a26b5e1c78a14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb63f90f893143f9b30a26b5e1c78a14">&#9670;&nbsp;</a></span>acc_scale_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="mpu6886_8h.html#abb63f90f893143f9b30a26b5e1c78a14">acc_scale_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>List of possible accelerometer scalars in Gs. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="abb63f90f893143f9b30a26b5e1c78a14a7dc9c1d9ec874c07ac1be8f2e056aa50"></a>MPU6886_AFS_2G&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abb63f90f893143f9b30a26b5e1c78a14a45d6374ac6c9145f001f98d7247a4c97"></a>MPU6886_AFS_4G&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abb63f90f893143f9b30a26b5e1c78a14a17d09101cbcccd1897bbda2be6dbba6b"></a>MPU6886_AFS_8G&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abb63f90f893143f9b30a26b5e1c78a14a3589a4d5d3272926b887c6e0f50273eb"></a>MPU6886_AFS_16G&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="af596b0def7358e600258c2a35e09759b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af596b0def7358e600258c2a35e09759b">&#9670;&nbsp;</a></span>gyro_scale_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="mpu6886_8h.html#af596b0def7358e600258c2a35e09759b">gyro_scale_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>List of possible gyroscope scalars in degrees per second. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="af596b0def7358e600258c2a35e09759ba7b6c802b4d2ae8efe19e53b9e834672d"></a>MPU6886_GFS_250DPS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af596b0def7358e600258c2a35e09759ba36550aa5e3081628dc1b7a177fc171f6"></a>MPU6886_GFS_500DPS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af596b0def7358e600258c2a35e09759baab0675557c410c2e9f07cc12cd68496f"></a>MPU6886_GFS_1000DPS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af596b0def7358e600258c2a35e09759bad50c3eca2e6a6167583061c5347c516c"></a>MPU6886_GFS_2000DPS&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="a402a6662575face25ec3ca336f654c98"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a402a6662575face25ec3ca336f654c98">&#9670;&nbsp;</a></span>MPU6886_Init()</h2>
 
@@ -147,7 +653,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initializes the MPU6886 over I2C. </p>
-<dl class="section note"><dt>Note</dt><dd>The <a class="el" href="core2for_a_w_s_8h.html#a3d850a3f56bbe0685b60726d8b53bece" title="Initializes the power chip with default values, enables battery charging, and initializes all enabled...">Core2ForAWS_Init()</a> calls this function when the hardware feature is enabled.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The <a class="el" href="core2for_a_w_s_8c.html#a3d850a3f56bbe0685b60726d8b53bece" title="Initializes the power chip with default values, enables battery charging, and initializes all enabled...">Core2ForAWS_Init()</a> calls this function when the hardware feature is enabled.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>0 if successful, -1 otherwise. </dd></dl>
 
 </div>
@@ -409,8 +915,8 @@ Functions</h2></td></tr>
 <p>Get the accelerometer values for the X, Y, and Z direction. </p><div class="fragment"><div class="line"><span class="keywordtype">float</span> accel_x = 0.00;</div>
 <div class="line"><span class="keywordtype">float</span> accel_y = 0.00;</div>
 <div class="line"><span class="keywordtype">float</span> accel_z = 0.00;</div>
-<div class="line"><a class="code" href="mpu6886_8h.html#a014d3e6bc15e4dc5de3a573b9f901b37">MPU6886_GetAccelData</a>(&amp;accel_x, &amp;accel_y, &amp;accel_z);</div>
-<div class="ttc" id="ampu6886_8h_html_a014d3e6bc15e4dc5de3a573b9f901b37"><div class="ttname"><a href="mpu6886_8h.html#a014d3e6bc15e4dc5de3a573b9f901b37">MPU6886_GetAccelData</a></div><div class="ttdeci">void MPU6886_GetAccelData(float *ax, float *ay, float *az)</div><div class="ttdoc">Retrieves the accelerometer measurements from the MPU6886.</div><div class="ttdef"><b>Definition:</b> mpu6886.c:162</div></div>
+<div class="line"><a class="code" href="mpu6886_8c.html#a014d3e6bc15e4dc5de3a573b9f901b37">MPU6886_GetAccelData</a>(&amp;accel_x, &amp;accel_y, &amp;accel_z);</div>
+<div class="ttc" id="ampu6886_8c_html_a014d3e6bc15e4dc5de3a573b9f901b37"><div class="ttname"><a href="mpu6886_8c.html#a014d3e6bc15e4dc5de3a573b9f901b37">MPU6886_GetAccelData</a></div><div class="ttdeci">void MPU6886_GetAccelData(float *ax, float *ay, float *az)</div><div class="ttdoc">Retrieves the accelerometer measurements from the MPU6886.</div><div class="ttdef"><b>Definition:</b> mpu6886.c:162</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">ax</td><td>The 16-bit accelerometer measurement in the X direction. </td></tr>
@@ -459,8 +965,8 @@ Functions</h2></td></tr>
 <p>Get the gyroscope values for the Roll, Yaw, and Pitch direction. </p><div class="fragment"><div class="line"><span class="keywordtype">float</span> g_roll = 0.00;</div>
 <div class="line"><span class="keywordtype">float</span> g_yaw = 0.00;</div>
 <div class="line"><span class="keywordtype">float</span> g_pitch = 0.00;</div>
-<div class="line"><a class="code" href="mpu6886_8h.html#a8f9da6300b058362761a58b60e1d6c1c">MPU6886_GetGyroData</a>(&amp;g_roll, &amp;g_yaw, &amp;g_pitch);</div>
-<div class="ttc" id="ampu6886_8h_html_a8f9da6300b058362761a58b60e1d6c1c"><div class="ttname"><a href="mpu6886_8h.html#a8f9da6300b058362761a58b60e1d6c1c">MPU6886_GetGyroData</a></div><div class="ttdeci">void MPU6886_GetGyroData(float *roll, float *yaw, float *pitch)</div><div class="ttdoc">Retrieves the gyroscope measurements from the MPU6886.</div><div class="ttdef"><b>Definition:</b> mpu6886.c:173</div></div>
+<div class="line"><a class="code" href="mpu6886_8c.html#aabebb8767fcf8ea124e38203ee6f8027">MPU6886_GetGyroData</a>(&amp;g_roll, &amp;g_yaw, &amp;g_pitch);</div>
+<div class="ttc" id="ampu6886_8c_html_aabebb8767fcf8ea124e38203ee6f8027"><div class="ttname"><a href="mpu6886_8c.html#aabebb8767fcf8ea124e38203ee6f8027">MPU6886_GetGyroData</a></div><div class="ttdeci">void MPU6886_GetGyroData(float *gx, float *gy, float *gz)</div><div class="ttdoc">Retrieves the gyroscope measurements from the MPU6886.</div><div class="ttdef"><b>Definition:</b> mpu6886.c:173</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">roll</td><td>The 16-bit gyroscope roll measurement. </td></tr>
@@ -491,8 +997,8 @@ Functions</h2></td></tr>
 <p>Retrieves the internal temperature measurement from the MPU6886. </p>
 <p><b>Example:</b></p>
 <p>Get the temperature reading of the MPU6886 temperature sensor. </p><div class="fragment"><div class="line"><span class="keywordtype">float</span> temperature;</div>
-<div class="line"><a class="code" href="mpu6886_8h.html#ab2a7c90e4c1fdd57a78a33fd53084071">MPU6886_GetTempData</a>(&amp;temperature);</div>
-<div class="ttc" id="ampu6886_8h_html_ab2a7c90e4c1fdd57a78a33fd53084071"><div class="ttname"><a href="mpu6886_8h.html#ab2a7c90e4c1fdd57a78a33fd53084071">MPU6886_GetTempData</a></div><div class="ttdeci">void MPU6886_GetTempData(float *t)</div><div class="ttdoc">Retrieves the internal temperature measurement from the MPU6886.</div><div class="ttdef"><b>Definition:</b> mpu6886.c:184</div></div>
+<div class="line"><a class="code" href="mpu6886_8c.html#ab2a7c90e4c1fdd57a78a33fd53084071">MPU6886_GetTempData</a>(&amp;temperature);</div>
+<div class="ttc" id="ampu6886_8c_html_ab2a7c90e4c1fdd57a78a33fd53084071"><div class="ttname"><a href="mpu6886_8c.html#ab2a7c90e4c1fdd57a78a33fd53084071">MPU6886_GetTempData</a></div><div class="ttdeci">void MPU6886_GetTempData(float *t)</div><div class="ttdoc">Retrieves the internal temperature measurement from the MPU6886.</div><div class="ttdef"><b>Definition:</b> mpu6886.c:184</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">t</td><td>Temperature of the MPU6886. </td></tr>

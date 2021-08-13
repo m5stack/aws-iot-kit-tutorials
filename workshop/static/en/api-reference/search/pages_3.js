@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['display_498',['Display',['../ili9342c.html',1,'']]]
+  ['display_954',['Display',['../ili9342c.html',1,'']]]
 ];

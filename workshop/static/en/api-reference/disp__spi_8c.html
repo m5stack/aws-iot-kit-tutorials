@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="AWS_logo_RGB.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Core2 for AWS IoT EduKit BSP
-   &#160;<span id="projectnumber">1.4.2</span>
+   &#160;<span id="projectnumber">1.5.0</span>
    </div>
   </td>
  </tr>
@@ -69,6 +69,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
@@ -86,11 +87,24 @@ $(function() {
 <code>#include &quot;<a class="el" href="disp__spi_8h_source.html">disp_spi.h</a>&quot;</code><br />
 <code>#include &quot;disp_driver.h&quot;</code><br />
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a097a792bba6a2f2da465d5cf62be91d4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="disp__spi_8c.html#a097a792bba6a2f2da465d5cf62be91d4">CONFIG_LV_DISP_SPI_CS</a>&#160;&#160;&#160;5</td></tr>
+<tr class="separator:a097a792bba6a2f2da465d5cf62be91d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a3dc6a7525e5a0b34e37a3a64478ec9ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="disp__spi_8c.html#a3dc6a7525e5a0b34e37a3a64478ec9ee">spi_poll</a> ()</td></tr>
 <tr class="memdesc:a3dc6a7525e5a0b34e37a3a64478ec9ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Polls the SPI bus for a pending SPI transaction to complete.  <a href="disp__spi_8c.html#a3dc6a7525e5a0b34e37a3a64478ec9ee">More...</a><br /></td></tr>
 <tr class="separator:a3dc6a7525e5a0b34e37a3a64478ec9ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf8e0a87d5f8e3e244355ad50aa5d103"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="disp__spi_8c.html#adf8e0a87d5f8e3e244355ad50aa5d103">disp_spi_add_device_config</a> (spi_host_device_t host, spi_device_interface_config_t *devcfg)</td></tr>
+<tr class="separator:adf8e0a87d5f8e3e244355ad50aa5d103"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac35bb93d9046f1199684284b1df28e22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="disp__spi_8c.html#ac35bb93d9046f1199684284b1df28e22">disp_spi_add_device</a> (spi_host_device_t host)</td></tr>
+<tr class="separator:ac35bb93d9046f1199684284b1df28e22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a273fa35cb03f5a927a51beca86ec66dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="disp__spi_8c.html#a273fa35cb03f5a927a51beca86ec66dd">disp_spi_transaction</a> (const uint8_t *data, size_t length, <a class="el" href="disp__spi_8h.html#aad53e14c30a61d8f72d917011d5e2628">disp_spi_send_flag_t</a> flags, disp_spi_read_data *out, uint64_t addr)</td></tr>
+<tr class="separator:a273fa35cb03f5a927a51beca86ec66dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd7737ae00886d12fb88476faae57314"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="disp__spi_8c.html#afd7737ae00886d12fb88476faae57314">disp_wait_for_pending_transactions</a> (void)</td></tr>
+<tr class="separator:afd7737ae00886d12fb88476faae57314"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -98,6 +112,21 @@ Variables</h2></td></tr>
 <tr class="memdesc:a76c0525d646735793add25b18043e600"><td class="mdescLeft">&#160;</td><td class="mdescRight">Semaphore for the shared SPI bus.  <a href="disp__spi_8c.html#a76c0525d646735793add25b18043e600">More...</a><br /></td></tr>
 <tr class="separator:a76c0525d646735793add25b18043e600"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a097a792bba6a2f2da465d5cf62be91d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a097a792bba6a2f2da465d5cf62be91d4">&#9670;&nbsp;</a></span>CONFIG_LV_DISP_SPI_CS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_LV_DISP_SPI_CS&#160;&#160;&#160;5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a3dc6a7525e5a0b34e37a3a64478ec9ee"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3dc6a7525e5a0b34e37a3a64478ec9ee">&#9670;&nbsp;</a></span>spi_poll()</h2>
@@ -117,6 +146,116 @@ Variables</h2></td></tr>
 <p>Polls the SPI bus for a pending SPI transaction to complete. </p>
 <p>This function blocks until a pending SPI transaction has finished. Once that transaction is complete, execution of code continues. Useful for using more than one peripheral on the same SPI bus without conflicts.</p>
 <dl class="section note"><dt>Note</dt><dd>This function is necessary when accessing the SD card on the shared SPI bus. Uses <a href="https://docs.espressif.com/projects/esp-idf/en/release-v4.2/esp32/api-reference/peripherals/spi_master.html#_CPPv427spi_device_polling_transmit19spi_device_handle_tP17spi_transaction_t">spi_device_polling_transmit</a>. to repeatedly poll the SPI bus until the transaction completes. </dd></dl>
+
+</div>
+</div>
+<a id="adf8e0a87d5f8e3e244355ad50aa5d103"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf8e0a87d5f8e3e244355ad50aa5d103">&#9670;&nbsp;</a></span>disp_spi_add_device_config()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void disp_spi_add_device_config </td>
+          <td>(</td>
+          <td class="paramtype">spi_host_device_t&#160;</td>
+          <td class="paramname"><em>host</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">spi_device_interface_config_t *&#160;</td>
+          <td class="paramname"><em>devcfg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac35bb93d9046f1199684284b1df28e22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac35bb93d9046f1199684284b1df28e22">&#9670;&nbsp;</a></span>disp_spi_add_device()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void disp_spi_add_device </td>
+          <td>(</td>
+          <td class="paramtype">spi_host_device_t&#160;</td>
+          <td class="paramname"><em>host</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a273fa35cb03f5a927a51beca86ec66dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a273fa35cb03f5a927a51beca86ec66dd">&#9670;&nbsp;</a></span>disp_spi_transaction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void disp_spi_transaction </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="disp__spi_8h.html#aad53e14c30a61d8f72d917011d5e2628">disp_spi_send_flag_t</a>&#160;</td>
+          <td class="paramname"><em>flags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">disp_spi_read_data *&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>addr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afd7737ae00886d12fb88476faae57314"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd7737ae00886d12fb88476faae57314">&#9670;&nbsp;</a></span>disp_wait_for_pending_transactions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void disp_wait_for_pending_transactions </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

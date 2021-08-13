@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="AWS_logo_RGB.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Core2 for AWS IoT EduKit BSP
-   &#160;<span id="projectnumber">1.4.2</span>
+   &#160;<span id="projectnumber">1.5.0</span>
    </div>
   </td>
  </tr>
@@ -73,14 +73,14 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>Retrieves the unique serial number from the ATECC608.</p>
-<div class="fragment"><div class="line">ATCA_STATUS <a class="code" href="atecc608_8h.html#a0a860ec8fe05773472c97627ae9ce455">Atecc608_GetSerialString</a>(<span class="keywordtype">char</span> * sn);</div>
-<div class="ttc" id="aatecc608_8h_html_a0a860ec8fe05773472c97627ae9ce455"><div class="ttname"><a href="atecc608_8h.html#a0a860ec8fe05773472c97627ae9ce455">Atecc608_GetSerialString</a></div><div class="ttdeci">ATCA_STATUS Atecc608_GetSerialString(char *sn)</div><div class="ttdoc">Retrieves the unique serial number from the ATECC608.</div><div class="ttdef"><b>Definition:</b> atecc608.c:56</div></div>
+<div class="fragment"><div class="line">ATCA_STATUS <a class="code" href="atecc608_8c.html#a0a860ec8fe05773472c97627ae9ce455">Atecc608_GetSerialString</a>(<span class="keywordtype">char</span> * sn);</div>
+<div class="ttc" id="aatecc608_8c_html_a0a860ec8fe05773472c97627ae9ce455"><div class="ttname"><a href="atecc608_8c.html#a0a860ec8fe05773472c97627ae9ce455">Atecc608_GetSerialString</a></div><div class="ttdeci">ATCA_STATUS Atecc608_GetSerialString(char *sn)</div><div class="ttdoc">Retrieves the unique serial number from the ATECC608.</div><div class="ttdef"><b>Definition:</b> atecc608.c:56</div></div>
 </div><!-- fragment --><p> The serial number of the ATECC608 is stored as a uint8 with the length defined in the macro ATCA_SERIAL_NUM_SIZE. It might take a little time to wake the secure element and retrieve the serial number.</p>
 <p><b>Example:</b></p>
 <p>Create a variable named clientId with enough dynamically allocated memory to store the ATECC608 serial number. </p><div class="fragment"><div class="line"><span class="keywordtype">char</span> * clientId = malloc(ATCA_SERIAL_NUM_SIZE * 2 + 1); <span class="comment">// ATCA_SERIAL_NUM_SIZE returns the 8-bit serial number size. </span></div>
 <div class="line">                                                        <span class="comment">// Need double for 16-bit and one more for the null terminator</span></div>
 <div class="line">                                                        <span class="comment">// for the end of the char.</span></div>
-<div class="line">ATCA_STATUS ret = <a class="code" href="atecc608_8h.html#a0a860ec8fe05773472c97627ae9ce455">Atecc608_GetSerialString</a>(clientId);</div>
+<div class="line">ATCA_STATUS ret = <a class="code" href="atecc608_8c.html#a0a860ec8fe05773472c97627ae9ce455">Atecc608_GetSerialString</a>(clientId);</div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">sn</td><td>The unique serial number of the chip.</td></tr>

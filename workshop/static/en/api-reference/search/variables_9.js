@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['x_341',['x',['../struct_button__t.html#a151223b431f38e7d3562117706e9ea55',1,'Button_t']]],
-  ['xguisemaphore_342',['xGuiSemaphore',['../core2for_a_w_s_8h.html#a2a1ad60c25ec8207f8d723197855a1a1',1,'core2forAWS.c']]]
+  ['value_644',['value',['../struct_button__t.html#a097897b6d7a65458e16625cb4ca8559f',1,'Button_t']]]
 ];

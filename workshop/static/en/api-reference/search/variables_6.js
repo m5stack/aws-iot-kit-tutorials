@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['second_336',['second',['../structrtc__date__t.html#a5689ab763359e4776390ea1a1be2a4ee',1,'rtc_date_t']]],
-  ['spi_5fmutex_337',['spi_mutex',['../disp__spi_8h.html#a76c0525d646735793add25b18043e600',1,'spi_mutex():&#160;disp_spi.c'],['../disp__spi_8c.html#a76c0525d646735793add25b18043e600',1,'spi_mutex():&#160;disp_spi.c']]],
-  ['state_338',['state',['../struct_button__t.html#a29ccca8587612448170731cc657731a4',1,'Button_t']]]
+  ['next_639',['next',['../struct_button__t.html#a0038d16a4f70619ba994f209bcdda47e',1,'Button_t']]]
 ];

@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="AWS_logo_RGB.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Core2 for AWS IoT EduKit BSP
-   &#160;<span id="projectnumber">1.4.2</span>
+   &#160;<span id="projectnumber">1.5.0</span>
    </div>
   </td>
  </tr>
@@ -71,7 +71,7 @@ $(function() {
 <div class="textblock"><p>The ATECC608 library provides convenience functions to interact with the ATECC608 Trust&amp;GO secure element. The initialization function configures the Espressif I2C driver and Microchip <a href="https://www.microchip.com/en-us/products/security-ics/trust-platform">CryptoAuthLib</a> driver for the secure element with preset parameters. The <a href="https://github.com/espressif/esp-cryptoauthlib">esp-cryptoauthlib</a> is a port of Microchip CryptoAuthLib library and therefore, the application can use the CryptoAuthLib APIs documented <a href="https://microchiptech.github.io/cryptoauthlib/">here</a>.</p>
 <p><a class="anchor" id="se"></a></p>
 <p><a href="./block_diagram-atecc608.png"><img src="./block_diagram-atecc608.png" alt="Circuit Block Diagram for the ATECC608 Secure Element" class="center" class="inline"/></a></p>
-<p>To enable this feature using KConfig, use the command <code>pio run --environment core2foraws --target menuconfig</code> from within the root of the project directory in your <a href="/en/blinky-hello-world/prerequisites.html#open-the-platformio-cli-terminal-window">PlatformIO terminal window</a> and go to the menu <code>Component Config --&gt; Core2 for AWS hardware enable</code> to set the features you want to enable.</p>
+<p>To enable this feature using KConfig, use the command <code>pio run --environment core2foraws --target menuconfig</code> from within the root of the project directory in your <a href="/en/blinky-hello-world/prerequisites.html#open-the-platformio-cli-terminal-window">PlatformIO terminal window</a> and go to the menu <code>Component Config --&gt; Core2 for AWS features</code> to set the features you want to enable.</p>
 <h1><a class="anchor" id="atecc608_example"></a>
 Example</h1>
 <p>The following example initializes the Core2 for AWS, which initializes the PMU for the battery and other enabled features — such as the ATECC608. It then prints the ATECC608 serial number using the ESP logger.</p>
@@ -79,26 +79,27 @@ Example</h1>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="core2for_a_w_s_8h.html">core2forAWS.h</a>&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="atecc608_8h.html">atecc608.h</a>&quot;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *TAG = <span class="stringliteral">&quot;EXAMPLE&quot;</span>;</div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="i2c__device_8c.html#afc3d101f633a076cc1ca84b85b6224b2">TAG</a> = <span class="stringliteral">&quot;EXAMPLE&quot;</span>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> app_main(<span class="keywordtype">void</span>){</div>
-<div class="line">    <a class="code" href="core2for_a_w_s_8h.html#a3d850a3f56bbe0685b60726d8b53bece">Core2ForAWS_Init</a>();</div>
+<div class="line">    <a class="code" href="core2for_a_w_s_8c.html#a3d850a3f56bbe0685b60726d8b53bece">Core2ForAWS_Init</a>();</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">char</span> * serial_num = malloc(ATCA_SERIAL_NUM_SIZE * 2 + 1);</div>
-<div class="line">    ATCA_STATUS ret = <a class="code" href="atecc608_8h.html#a0a860ec8fe05773472c97627ae9ce455">Atecc608_GetSerialString</a>(serial_num);</div>
+<div class="line">    ATCA_STATUS ret = <a class="code" href="atecc608_8c.html#a0a860ec8fe05773472c97627ae9ce455">Atecc608_GetSerialString</a>(serial_num);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">if</span>( ret != 0){</div>
-<div class="line">        ESP_LOGE(TAG, <span class="stringliteral">&quot;Error getting ATECC608 serial number: %d&quot;</span>, ret);</div>
+<div class="line">        ESP_LOGE(<a class="code" href="i2c__device_8c.html#afc3d101f633a076cc1ca84b85b6224b2">TAG</a>, <span class="stringliteral">&quot;Error getting ATECC608 serial number: %d&quot;</span>, ret);</div>
 <div class="line">        abort();</div>
 <div class="line">    }</div>
 <div class="line"> </div>
-<div class="line">    ESP_LOGI(TAG, <span class="stringliteral">&quot;Serial number: %s&quot;</span>, serial_num);</div>
+<div class="line">    ESP_LOGI(<a class="code" href="i2c__device_8c.html#afc3d101f633a076cc1ca84b85b6224b2">TAG</a>, <span class="stringliteral">&quot;Serial number: %s&quot;</span>, serial_num);</div>
 <div class="line"> </div>
 <div class="line">}</div>
+<div class="ttc" id="aatecc608_8c_html_a0a860ec8fe05773472c97627ae9ce455"><div class="ttname"><a href="atecc608_8c.html#a0a860ec8fe05773472c97627ae9ce455">Atecc608_GetSerialString</a></div><div class="ttdeci">ATCA_STATUS Atecc608_GetSerialString(char *sn)</div><div class="ttdoc">Retrieves the unique serial number from the ATECC608.</div><div class="ttdef"><b>Definition:</b> atecc608.c:56</div></div>
 <div class="ttc" id="aatecc608_8h_html"><div class="ttname"><a href="atecc608_8h.html">atecc608.h</a></div><div class="ttdoc">Functions for the ATECC608 Trust&amp;GO secure element.</div></div>
-<div class="ttc" id="aatecc608_8h_html_a0a860ec8fe05773472c97627ae9ce455"><div class="ttname"><a href="atecc608_8h.html#a0a860ec8fe05773472c97627ae9ce455">Atecc608_GetSerialString</a></div><div class="ttdeci">ATCA_STATUS Atecc608_GetSerialString(char *sn)</div><div class="ttdoc">Retrieves the unique serial number from the ATECC608.</div><div class="ttdef"><b>Definition:</b> atecc608.c:56</div></div>
+<div class="ttc" id="acore2for_a_w_s_8c_html_a3d850a3f56bbe0685b60726d8b53bece"><div class="ttname"><a href="core2for_a_w_s_8c.html#a3d850a3f56bbe0685b60726d8b53bece">Core2ForAWS_Init</a></div><div class="ttdeci">void Core2ForAWS_Init(void)</div><div class="ttdoc">Initializes the power chip with default values, enables battery charging, and initializes all enabled...</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:32</div></div>
 <div class="ttc" id="acore2for_a_w_s_8h_html"><div class="ttname"><a href="core2for_a_w_s_8h.html">core2forAWS.h</a></div><div class="ttdoc">Functions to initialize and access Core2 for AWS IoT EduKit hardware features.</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a3d850a3f56bbe0685b60726d8b53bece"><div class="ttname"><a href="core2for_a_w_s_8h.html#a3d850a3f56bbe0685b60726d8b53bece">Core2ForAWS_Init</a></div><div class="ttdeci">void Core2ForAWS_Init(void)</div><div class="ttdoc">Initializes the power chip with default values, enables battery charging, and initializes all enabled...</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:32</div></div>
+<div class="ttc" id="ai2c__device_8c_html_afc3d101f633a076cc1ca84b85b6224b2"><div class="ttname"><a href="i2c__device_8c.html#afc3d101f633a076cc1ca84b85b6224b2">TAG</a></div><div class="ttdeci">#define TAG</div><div class="ttdef"><b>Definition:</b> i2c_device.c:10</div></div>
 </div><!-- fragment --><h1><a class="anchor" id="atecc608_preprocessor_macros"></a>
 Preprocessor Macros</h1>
 <ul>

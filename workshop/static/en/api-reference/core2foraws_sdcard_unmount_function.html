@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="AWS_logo_RGB.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Core2 for AWS IoT EduKit BSP
-   &#160;<span id="projectnumber">1.4.2</span>
+   &#160;<span id="projectnumber">1.5.0</span>
    </div>
   </td>
  </tr>
@@ -73,8 +73,8 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>Removes the FAT partition and unmounts the SD-Card.</p>
-<div class="fragment"><div class="line">esp_err_t <a class="code" href="core2for_a_w_s_8h.html#a4c9c5029e08899a3b75a61e22cfa84a7">Core2ForAWS_SDcard_Unmount</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *mount_path, sdmmc_card_t *out_card);</div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a4c9c5029e08899a3b75a61e22cfa84a7"><div class="ttname"><a href="core2for_a_w_s_8h.html#a4c9c5029e08899a3b75a61e22cfa84a7">Core2ForAWS_SDcard_Unmount</a></div><div class="ttdeci">esp_err_t Core2ForAWS_SDcard_Unmount(const char *mount_path, sdmmc_card_t *out_card)</div><div class="ttdoc">Removes the FAT partition and unmounts the SD-Card.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:132</div></div>
+<div class="fragment"><div class="line">esp_err_t <a class="code" href="core2for_a_w_s_8c.html#a4c9c5029e08899a3b75a61e22cfa84a7">Core2ForAWS_SDcard_Unmount</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *mount_path, sdmmc_card_t *out_card);</div>
+<div class="ttc" id="acore2for_a_w_s_8c_html_a4c9c5029e08899a3b75a61e22cfa84a7"><div class="ttname"><a href="core2for_a_w_s_8c.html#a4c9c5029e08899a3b75a61e22cfa84a7">Core2ForAWS_SDcard_Unmount</a></div><div class="ttdeci">esp_err_t Core2ForAWS_SDcard_Unmount(const char *mount_path, sdmmc_card_t *out_card)</div><div class="ttdoc">Removes the FAT partition and unmounts the SD-Card.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:132</div></div>
 </div><!-- fragment --> <dl class="section note"><dt>Note</dt><dd>The SD Card must be mounted before use. The SD card and the screen uses the same SPI bus. In order to avoid conflicts with the screen, you must take the spi_mutex semaphore, then call <a class="el" href="disp__spi_8h.html#a3dc6a7525e5a0b34e37a3a64478ec9ee" title="Polls the SPI bus for a pending SPI transaction to complete.">spi_poll()</a> before accessing the SD card. Once done, give/free the semaphore so the display can take it. The display task will then continue to update the display controller on the SPI bus.</dd></dl>
 <p>To learn more about using the SD card, visit Espressif's virtual <a href="https://docs.espressif.com/projects/esp-idf/en/release-v4.2/esp32/api-reference/storage/vfs.html">file system component</a> docs for usage.</p>
 <p>The example code below, mounts the SD card, writes a file named <code>hello.txt</code> on the path <code>/sdcard</code> with the contents "Hello

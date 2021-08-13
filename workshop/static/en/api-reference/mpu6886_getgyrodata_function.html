@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="AWS_logo_RGB.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Core2 for AWS IoT EduKit BSP
-   &#160;<span id="projectnumber">1.4.2</span>
+   &#160;<span id="projectnumber">1.5.0</span>
    </div>
   </td>
  </tr>
@@ -73,13 +73,13 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>Retrieves the gyroscope measurements from the MPU6886.</p>
-<div class="fragment"><div class="line"><span class="keywordtype">void</span> <a class="code" href="mpu6886_8h.html#a8f9da6300b058362761a58b60e1d6c1c">MPU6886_GetGyroData</a>(<span class="keywordtype">float</span> *roll, <span class="keywordtype">float</span> *yaw, <span class="keywordtype">float</span> *pitch);</div>
-<div class="ttc" id="ampu6886_8h_html_a8f9da6300b058362761a58b60e1d6c1c"><div class="ttname"><a href="mpu6886_8h.html#a8f9da6300b058362761a58b60e1d6c1c">MPU6886_GetGyroData</a></div><div class="ttdeci">void MPU6886_GetGyroData(float *roll, float *yaw, float *pitch)</div><div class="ttdoc">Retrieves the gyroscope measurements from the MPU6886.</div><div class="ttdef"><b>Definition:</b> mpu6886.c:173</div></div>
+<div class="fragment"><div class="line"><span class="keywordtype">void</span> <a class="code" href="mpu6886_8c.html#aabebb8767fcf8ea124e38203ee6f8027">MPU6886_GetGyroData</a>(<span class="keywordtype">float</span> *roll, <span class="keywordtype">float</span> *yaw, <span class="keywordtype">float</span> *pitch);</div>
+<div class="ttc" id="ampu6886_8c_html_aabebb8767fcf8ea124e38203ee6f8027"><div class="ttname"><a href="mpu6886_8c.html#aabebb8767fcf8ea124e38203ee6f8027">MPU6886_GetGyroData</a></div><div class="ttdeci">void MPU6886_GetGyroData(float *gx, float *gy, float *gz)</div><div class="ttdoc">Retrieves the gyroscope measurements from the MPU6886.</div><div class="ttdef"><b>Definition:</b> mpu6886.c:173</div></div>
 </div><!-- fragment --><p> <b>Example:</b></p>
 <p>Get the gyroscope values for the Roll, Yaw, and Pitch direction. </p><div class="fragment"><div class="line"><span class="keywordtype">float</span> g_roll = 0.00;</div>
 <div class="line"><span class="keywordtype">float</span> g_yaw = 0.00;</div>
 <div class="line"><span class="keywordtype">float</span> g_pitch = 0.00;</div>
-<div class="line"><a class="code" href="mpu6886_8h.html#a8f9da6300b058362761a58b60e1d6c1c">MPU6886_GetGyroData</a>(&amp;g_roll, &amp;g_yaw, &amp;g_pitch);</div>
+<div class="line"><a class="code" href="mpu6886_8c.html#aabebb8767fcf8ea124e38203ee6f8027">MPU6886_GetGyroData</a>(&amp;g_roll, &amp;g_yaw, &amp;g_pitch);</div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">roll</td><td>The 16-bit gyroscope roll measurement. </td></tr>

@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="AWS_logo_RGB.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Core2 for AWS IoT EduKit BSP
-   &#160;<span id="projectnumber">1.4.2</span>
+   &#160;<span id="projectnumber">1.5.0</span>
    </div>
   </td>
  </tr>
@@ -68,7 +68,7 @@ $(function() {
 <div class="title">Core2forAWS </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>The Core2 for AWS main library provides convenient wrapper functions to enable various hardware features. These wrapper functions perform the required initialization and configure the hardware with preset parameters. To enable this feature using KConfig, use the command <code>pio run --environment core2foraws --target menuconfig</code> from within the root of the project directory in your <a href="/en/blinky-hello-world/prerequisites.html#open-the-platformio-cli-terminal-window">PlatformIO terminal window</a> and go to the menu <code>Component Config --&gt; Core2 for AWS hardware enable</code> to set the features you want to enable.</p>
+<div class="textblock"><p>The Core2 for AWS main library provides convenient wrapper functions to enable various hardware features. These wrapper functions perform the required initialization and configure the hardware with preset parameters. To enable this feature using KConfig, use the command <code>pio run --environment core2foraws --target menuconfig</code> from within the root of the project directory in your <a href="/en/blinky-hello-world/prerequisites.html#open-the-platformio-cli-terminal-window">PlatformIO terminal window</a> and go to the menu <code>Component Config --&gt; Core2 for AWS features</code> to set the features you want to enable.</p>
 <p><a class="anchor" id="core2"></a></p>
 <h1><a class="anchor" id="core2foraws_example"></a>
 Example</h1>
@@ -76,13 +76,13 @@ Example</h1>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="core2for_a_w_s_8h.html">core2forAWS.h</a>&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> app_main(<span class="keywordtype">void</span>){</div>
-<div class="line">    <a class="code" href="core2for_a_w_s_8h.html#a3d850a3f56bbe0685b60726d8b53bece">Core2ForAWS_Init</a>();</div>
+<div class="line">    <a class="code" href="core2for_a_w_s_8c.html#a3d850a3f56bbe0685b60726d8b53bece">Core2ForAWS_Init</a>();</div>
 <div class="line"> </div>
-<div class="line">    <a class="code" href="core2for_a_w_s_8h.html#a67a760b89e44e6bd0c96f90cc6aca47d">Core2ForAWS_Display_SetBrightness</a>(80); <span class="comment">/* Should place this last to allow the display to finish initializing. */</span></div>
+<div class="line">    <a class="code" href="core2for_a_w_s_8c.html#a67a760b89e44e6bd0c96f90cc6aca47d">Core2ForAWS_Display_SetBrightness</a>(80); <span class="comment">/* Should place this last to allow the display to finish initializing. */</span></div>
 <div class="line">}</div>
+<div class="ttc" id="acore2for_a_w_s_8c_html_a3d850a3f56bbe0685b60726d8b53bece"><div class="ttname"><a href="core2for_a_w_s_8c.html#a3d850a3f56bbe0685b60726d8b53bece">Core2ForAWS_Init</a></div><div class="ttdeci">void Core2ForAWS_Init(void)</div><div class="ttdoc">Initializes the power chip with default values, enables battery charging, and initializes all enabled...</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:32</div></div>
+<div class="ttc" id="acore2for_a_w_s_8c_html_a67a760b89e44e6bd0c96f90cc6aca47d"><div class="ttname"><a href="core2for_a_w_s_8c.html#a67a760b89e44e6bd0c96f90cc6aca47d">Core2ForAWS_Display_SetBrightness</a></div><div class="ttdeci">void Core2ForAWS_Display_SetBrightness(uint8_t brightness)</div><div class="ttdoc">Sets the brightness of the display.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:333</div></div>
 <div class="ttc" id="acore2for_a_w_s_8h_html"><div class="ttname"><a href="core2for_a_w_s_8h.html">core2forAWS.h</a></div><div class="ttdoc">Functions to initialize and access Core2 for AWS IoT EduKit hardware features.</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a3d850a3f56bbe0685b60726d8b53bece"><div class="ttname"><a href="core2for_a_w_s_8h.html#a3d850a3f56bbe0685b60726d8b53bece">Core2ForAWS_Init</a></div><div class="ttdeci">void Core2ForAWS_Init(void)</div><div class="ttdoc">Initializes the power chip with default values, enables battery charging, and initializes all enabled...</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:32</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a67a760b89e44e6bd0c96f90cc6aca47d"><div class="ttname"><a href="core2for_a_w_s_8h.html#a67a760b89e44e6bd0c96f90cc6aca47d">Core2ForAWS_Display_SetBrightness</a></div><div class="ttdeci">void Core2ForAWS_Display_SetBrightness(uint8_t brightness)</div><div class="ttdoc">Sets the brightness of the display.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:333</div></div>
 </div><!-- fragment --><h1><a class="anchor" id="core2foraws_functions"></a>
 Functions</h1>
 <ul>

@@ -1,4 +1,19 @@
 var searchData=
 [
-  ['overview_523',['Overview',['../index.html',1,'']]]
+  ['mic_5fi2s_5fnumber_965',['MIC_I2S_NUMBER',['../microphone_mici2s_number_macro.html',1,'spm1423']]],
+  ['microphone_966',['Microphone',['../spm1423.html',1,'']]],
+  ['microphone_5fdeinit_967',['Microphone_Deinit',['../microphone_deinit_function.html',1,'spm1423']]],
+  ['microphone_5finit_968',['Microphone_Init',['../microphone_init_function.html',1,'spm1423']]],
+  ['mpu6886_969',['MPU6886',['../mpu6886.html',1,'']]],
+  ['mpu6886_5fgetacceladc_970',['MPU6886_GetAccelAdc',['../mpu6886_getacceladc_function.html',1,'mpu6886']]],
+  ['mpu6886_5fgetacceldata_971',['MPU6886_GetAccelData',['../mpu6886_getacceldata_function.html',1,'mpu6886']]],
+  ['mpu6886_5fgetaccres_972',['MPU6886_GetAccRes',['../mpu6886_getaccres_function.html',1,'mpu6886']]],
+  ['mpu6886_5fgetgyroadc_973',['MPU6886_GetGyroAdc',['../mpu6886_getgyroadc_function.html',1,'mpu6886']]],
+  ['mpu6886_5fgetgyrodata_974',['MPU6886_GetGyroData',['../mpu6886_getgyrodata_function.html',1,'mpu6886']]],
+  ['mpu6886_5fgetgyrores_975',['MPU6886_GetGyroRes',['../mpu6886_getgyrores_function.html',1,'mpu6886']]],
+  ['mpu6886_5fgettempadc_976',['MPU6886_GetTempAdc',['../mpu6886_gettempadc_function.html',1,'mpu6886']]],
+  ['mpu6886_5fgettempdata_977',['MPU6886_GetTempData',['../mpu6886_gettempdata_function.html',1,'mpu6886']]],
+  ['mpu6886_5finit_978',['MPU6886_Init',['../mpu6886_init_function.html',1,'mpu6886']]],
+  ['mpu6886_5fsetaccelfsr_979',['MPU6886_SetAccelFSR',['../mpu6886_setaccelfsr_function.html',1,'mpu6886']]],
+  ['mpu6886_5fsetgyrofsr_980',['MPU6886_SetGyroFSR',['../mpu6886_setgyrofsr_function.html',1,'mpu6886']]]
 ];

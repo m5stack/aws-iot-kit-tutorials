@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="AWS_logo_RGB.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Core2 for AWS IoT EduKit BSP
-   &#160;<span id="projectnumber">1.4.2</span>
+   &#160;<span id="projectnumber">1.5.0</span>
    </div>
   </td>
  </tr>
@@ -69,6 +69,8 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
@@ -81,19 +83,345 @@ $(function() {
 </div>
 <p><a href="disp__spi_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:af89f4d2d8177557601d0ebd71d4500bf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="disp__spi_8h.html#af89f4d2d8177557601d0ebd71d4500bf">member_size</a>(type,  member)&#160;&#160;&#160;sizeof(((type *)0)-&gt;member)</td></tr>
+<tr class="separator:af89f4d2d8177557601d0ebd71d4500bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a509343a8e4f7f80b0dfd29cf5aebd224"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="disp__spi_8h.html#a509343a8e4f7f80b0dfd29cf5aebd224">SPI_READ_DUMMY_LEN</a>&#160;&#160;&#160;<a class="el" href="disp__spi_8h.html#af89f4d2d8177557601d0ebd71d4500bf">member_size</a>(disp_spi_read_data, <a class="el" href="disp__spi_8h.html#a7e4f7f715e9e565e4d3b98b1ab00f0ae">_dummy_byte</a>)</td></tr>
+<tr class="separator:a509343a8e4f7f80b0dfd29cf5aebd224"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d283102e28af8ebc9ecc49195cab149"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="disp__spi_8h.html#a2d283102e28af8ebc9ecc49195cab149">SPI_READ_BYTE_LEN</a>&#160;&#160;&#160;(<a class="el" href="disp__spi_8h.html#a509343a8e4f7f80b0dfd29cf5aebd224">SPI_READ_DUMMY_LEN</a> + <a class="el" href="disp__spi_8h.html#af89f4d2d8177557601d0ebd71d4500bf">member_size</a>(disp_spi_read_data, <a class="el" href="disp__spi_8h.html#a96f44d20f1dbf1c8785a7bc99a46164c">byte</a>))</td></tr>
+<tr class="separator:a2d283102e28af8ebc9ecc49195cab149"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add534488ca3ec4ddd877a731c5ffe44e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="disp__spi_8h.html#add534488ca3ec4ddd877a731c5ffe44e">SPI_READ_WORD_LEN</a>&#160;&#160;&#160;(<a class="el" href="disp__spi_8h.html#a509343a8e4f7f80b0dfd29cf5aebd224">SPI_READ_DUMMY_LEN</a> + <a class="el" href="disp__spi_8h.html#af89f4d2d8177557601d0ebd71d4500bf">member_size</a>(disp_spi_read_data, <a class="el" href="disp__spi_8h.html#af9036114e498c9fcb670232e4227341a">word</a>))</td></tr>
+<tr class="separator:add534488ca3ec4ddd877a731c5ffe44e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ce10fdc0da6f38c750b8e78f8c486b5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="disp__spi_8h.html#a3ce10fdc0da6f38c750b8e78f8c486b5">SPI_READ_DWORD_LEN</a>&#160;&#160;&#160;(<a class="el" href="disp__spi_8h.html#a509343a8e4f7f80b0dfd29cf5aebd224">SPI_READ_DUMMY_LEN</a> + <a class="el" href="disp__spi_8h.html#af89f4d2d8177557601d0ebd71d4500bf">member_size</a>(disp_spi_read_data, <a class="el" href="disp__spi_8h.html#a07145ae3e31b274cc44076fe1681391f">dword</a>))</td></tr>
+<tr class="separator:a3ce10fdc0da6f38c750b8e78f8c486b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:aad53e14c30a61d8f72d917011d5e2628"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="disp__spi_8h.html#aad53e14c30a61d8f72d917011d5e2628">disp_spi_send_flag_t</a> { <br />
+&#160;&#160;<a class="el" href="disp__spi_8h.html#aad53e14c30a61d8f72d917011d5e2628af42f6fce7e6e7ccd853acec1e37470ae">DISP_SPI_SEND_QUEUED</a> = 0x00000000
+, <a class="el" href="disp__spi_8h.html#aad53e14c30a61d8f72d917011d5e2628a634952142e817bf4230f05b8d753a4c8">DISP_SPI_SEND_POLLING</a> = 0x00000001
+, <a class="el" href="disp__spi_8h.html#aad53e14c30a61d8f72d917011d5e2628a5bafe2e70383bde9f98e6c97e4714b99">DISP_SPI_SEND_SYNCHRONOUS</a> = 0x00000002
+, <a class="el" href="disp__spi_8h.html#aad53e14c30a61d8f72d917011d5e2628a8d86fac43e5fbe4e41b74df08afdc872">DISP_SPI_SIGNAL_FLUSH</a> = 0x00000004
+, <br />
+&#160;&#160;<a class="el" href="disp__spi_8h.html#aad53e14c30a61d8f72d917011d5e2628ae6e8fa66b240e094e5cf9a0abd3cf8d1">DISP_SPI_RECEIVE</a> = 0x00000008
+, <a class="el" href="disp__spi_8h.html#aad53e14c30a61d8f72d917011d5e2628ad3a3cf7e383743a54cadc98c9f0fe405">DISP_SPI_CMD_8</a> = 0x00000010
+, <a class="el" href="disp__spi_8h.html#aad53e14c30a61d8f72d917011d5e2628afcb0692f1a58776e302bf1f21e30bc71">DISP_SPI_CMD_16</a> = 0x00000020
+, <a class="el" href="disp__spi_8h.html#aad53e14c30a61d8f72d917011d5e2628a72f0a2a24cdb4623f40a1aca8f17703f">DISP_SPI_ADDRESS_8</a> = 0x00000040
+, <br />
+&#160;&#160;<a class="el" href="disp__spi_8h.html#aad53e14c30a61d8f72d917011d5e2628a93c4ce47a8986c9c3b7f884e3f593d40">DISP_SPI_ADDRESS_16</a> = 0x00000080
+, <a class="el" href="disp__spi_8h.html#aad53e14c30a61d8f72d917011d5e2628a6897c261880bbc823575655c7c5d2276">DISP_SPI_ADDRESS_24</a> = 0x00000100
+, <a class="el" href="disp__spi_8h.html#aad53e14c30a61d8f72d917011d5e2628aa44ef67562d987f9a0fedbe20623ba1d">DISP_SPI_ADDRESS_32</a> = 0x00000200
+, <a class="el" href="disp__spi_8h.html#aad53e14c30a61d8f72d917011d5e2628a27758718eb0a2b54b584d34b96df1b4c">DISP_SPI_MODE_DIO</a> = 0x00000400
+, <br />
+&#160;&#160;<a class="el" href="disp__spi_8h.html#aad53e14c30a61d8f72d917011d5e2628a9efc994c9d01f0cc0e8b931e042d7f11">DISP_SPI_MODE_QIO</a> = 0x00000800
+, <a class="el" href="disp__spi_8h.html#aad53e14c30a61d8f72d917011d5e2628a396f94415b46f8543a39f946132b9c44">DISP_SPI_MODE_DIOQIO_ADDR</a> = 0x00001000
+<br />
+ }</td></tr>
+<tr class="separator:aad53e14c30a61d8f72d917011d5e2628"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a3a04463a04cd596a850327049a331f7a"><td class="memItemLeft" align="right" valign="top">struct _disp_spi_read_data&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="disp__spi_8h.html#a3a04463a04cd596a850327049a331f7a">__attribute__</a> ((aligned(4)))</td></tr>
+<tr class="separator:a3a04463a04cd596a850327049a331f7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aced75b2896f6008eb35b5b4757d82e63"><td class="memItemLeft" >union {</td></tr>
+<tr class="memitem:ad19b6f43f3cc6fafd274b703a69796e9"><td class="memItemLeft" >&#160;&#160;&#160;uint8_t&#160;&#160;&#160;<a class="el" href="disp__spi_8h.html#a96f44d20f1dbf1c8785a7bc99a46164c">byte</a></td></tr>
+<tr class="separator:ad19b6f43f3cc6fafd274b703a69796e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50786afd4a574238489322bd41131d81"><td class="memItemLeft" >&#160;&#160;&#160;uint16_t&#160;&#160;&#160;<a class="el" href="disp__spi_8h.html#af9036114e498c9fcb670232e4227341a">word</a></td></tr>
+<tr class="separator:a50786afd4a574238489322bd41131d81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb47c057a0a68f8733627bd0b22eddbd"><td class="memItemLeft" >&#160;&#160;&#160;uint32_t&#160;&#160;&#160;<a class="el" href="disp__spi_8h.html#a07145ae3e31b274cc44076fe1681391f">dword</a></td></tr>
+<tr class="separator:acb47c057a0a68f8733627bd0b22eddbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aced75b2896f6008eb35b5b4757d82e63"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="disp__spi_8h.html#aced75b2896f6008eb35b5b4757d82e63">__attribute__</a> ((packed))</td></tr>
+<tr class="separator:aced75b2896f6008eb35b5b4757d82e63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac35bb93d9046f1199684284b1df28e22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="disp__spi_8h.html#ac35bb93d9046f1199684284b1df28e22">disp_spi_add_device</a> (spi_host_device_t host)</td></tr>
+<tr class="separator:ac35bb93d9046f1199684284b1df28e22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf8e0a87d5f8e3e244355ad50aa5d103"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="disp__spi_8h.html#adf8e0a87d5f8e3e244355ad50aa5d103">disp_spi_add_device_config</a> (spi_host_device_t host, spi_device_interface_config_t *devcfg)</td></tr>
+<tr class="separator:adf8e0a87d5f8e3e244355ad50aa5d103"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a273fa35cb03f5a927a51beca86ec66dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="disp__spi_8h.html#a273fa35cb03f5a927a51beca86ec66dd">disp_spi_transaction</a> (const uint8_t *data, size_t length, <a class="el" href="disp__spi_8h.html#aad53e14c30a61d8f72d917011d5e2628">disp_spi_send_flag_t</a> flags, disp_spi_read_data *out, uint64_t addr)</td></tr>
+<tr class="separator:a273fa35cb03f5a927a51beca86ec66dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd7737ae00886d12fb88476faae57314"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="disp__spi_8h.html#afd7737ae00886d12fb88476faae57314">disp_wait_for_pending_transactions</a> (void)</td></tr>
+<tr class="separator:afd7737ae00886d12fb88476faae57314"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3dc6a7525e5a0b34e37a3a64478ec9ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="disp__spi_8h.html#a3dc6a7525e5a0b34e37a3a64478ec9ee">spi_poll</a> ()</td></tr>
 <tr class="memdesc:a3dc6a7525e5a0b34e37a3a64478ec9ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Polls the SPI bus for a pending SPI transaction to complete.  <a href="disp__spi_8h.html#a3dc6a7525e5a0b34e37a3a64478ec9ee">More...</a><br /></td></tr>
 <tr class="separator:a3dc6a7525e5a0b34e37a3a64478ec9ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:a96f44d20f1dbf1c8785a7bc99a46164c"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="disp__spi_8h.html#a96f44d20f1dbf1c8785a7bc99a46164c">byte</a></td></tr>
+<tr class="separator:a96f44d20f1dbf1c8785a7bc99a46164c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9036114e498c9fcb670232e4227341a"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="disp__spi_8h.html#af9036114e498c9fcb670232e4227341a">word</a></td></tr>
+<tr class="separator:af9036114e498c9fcb670232e4227341a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07145ae3e31b274cc44076fe1681391f"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="disp__spi_8h.html#a07145ae3e31b274cc44076fe1681391f">dword</a></td></tr>
+<tr class="separator:a07145ae3e31b274cc44076fe1681391f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e4f7f715e9e565e4d3b98b1ab00f0ae"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="disp__spi_8h.html#a7e4f7f715e9e565e4d3b98b1ab00f0ae">_dummy_byte</a></td></tr>
+<tr class="separator:a7e4f7f715e9e565e4d3b98b1ab00f0ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76c0525d646735793add25b18043e600"><td class="memItemLeft" align="right" valign="top">SemaphoreHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="disp__spi_8h.html#a76c0525d646735793add25b18043e600">spi_mutex</a></td></tr>
 <tr class="memdesc:a76c0525d646735793add25b18043e600"><td class="mdescLeft">&#160;</td><td class="mdescRight">Semaphore for the shared SPI bus.  <a href="disp__spi_8h.html#a76c0525d646735793add25b18043e600">More...</a><br /></td></tr>
 <tr class="separator:a76c0525d646735793add25b18043e600"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="af89f4d2d8177557601d0ebd71d4500bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af89f4d2d8177557601d0ebd71d4500bf">&#9670;&nbsp;</a></span>member_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define member_size</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">type, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">member&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;sizeof(((type *)0)-&gt;member)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a509343a8e4f7f80b0dfd29cf5aebd224"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a509343a8e4f7f80b0dfd29cf5aebd224">&#9670;&nbsp;</a></span>SPI_READ_DUMMY_LEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPI_READ_DUMMY_LEN&#160;&#160;&#160;<a class="el" href="disp__spi_8h.html#af89f4d2d8177557601d0ebd71d4500bf">member_size</a>(disp_spi_read_data, <a class="el" href="disp__spi_8h.html#a7e4f7f715e9e565e4d3b98b1ab00f0ae">_dummy_byte</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2d283102e28af8ebc9ecc49195cab149"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d283102e28af8ebc9ecc49195cab149">&#9670;&nbsp;</a></span>SPI_READ_BYTE_LEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPI_READ_BYTE_LEN&#160;&#160;&#160;(<a class="el" href="disp__spi_8h.html#a509343a8e4f7f80b0dfd29cf5aebd224">SPI_READ_DUMMY_LEN</a> + <a class="el" href="disp__spi_8h.html#af89f4d2d8177557601d0ebd71d4500bf">member_size</a>(disp_spi_read_data, <a class="el" href="disp__spi_8h.html#a96f44d20f1dbf1c8785a7bc99a46164c">byte</a>))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="add534488ca3ec4ddd877a731c5ffe44e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add534488ca3ec4ddd877a731c5ffe44e">&#9670;&nbsp;</a></span>SPI_READ_WORD_LEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPI_READ_WORD_LEN&#160;&#160;&#160;(<a class="el" href="disp__spi_8h.html#a509343a8e4f7f80b0dfd29cf5aebd224">SPI_READ_DUMMY_LEN</a> + <a class="el" href="disp__spi_8h.html#af89f4d2d8177557601d0ebd71d4500bf">member_size</a>(disp_spi_read_data, <a class="el" href="disp__spi_8h.html#af9036114e498c9fcb670232e4227341a">word</a>))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3ce10fdc0da6f38c750b8e78f8c486b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ce10fdc0da6f38c750b8e78f8c486b5">&#9670;&nbsp;</a></span>SPI_READ_DWORD_LEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPI_READ_DWORD_LEN&#160;&#160;&#160;(<a class="el" href="disp__spi_8h.html#a509343a8e4f7f80b0dfd29cf5aebd224">SPI_READ_DUMMY_LEN</a> + <a class="el" href="disp__spi_8h.html#af89f4d2d8177557601d0ebd71d4500bf">member_size</a>(disp_spi_read_data, <a class="el" href="disp__spi_8h.html#a07145ae3e31b274cc44076fe1681391f">dword</a>))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="aad53e14c30a61d8f72d917011d5e2628"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad53e14c30a61d8f72d917011d5e2628">&#9670;&nbsp;</a></span>disp_spi_send_flag_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="disp__spi_8h.html#aad53e14c30a61d8f72d917011d5e2628">disp_spi_send_flag_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aad53e14c30a61d8f72d917011d5e2628af42f6fce7e6e7ccd853acec1e37470ae"></a>DISP_SPI_SEND_QUEUED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aad53e14c30a61d8f72d917011d5e2628a634952142e817bf4230f05b8d753a4c8"></a>DISP_SPI_SEND_POLLING&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aad53e14c30a61d8f72d917011d5e2628a5bafe2e70383bde9f98e6c97e4714b99"></a>DISP_SPI_SEND_SYNCHRONOUS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aad53e14c30a61d8f72d917011d5e2628a8d86fac43e5fbe4e41b74df08afdc872"></a>DISP_SPI_SIGNAL_FLUSH&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aad53e14c30a61d8f72d917011d5e2628ae6e8fa66b240e094e5cf9a0abd3cf8d1"></a>DISP_SPI_RECEIVE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aad53e14c30a61d8f72d917011d5e2628ad3a3cf7e383743a54cadc98c9f0fe405"></a>DISP_SPI_CMD_8&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aad53e14c30a61d8f72d917011d5e2628afcb0692f1a58776e302bf1f21e30bc71"></a>DISP_SPI_CMD_16&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aad53e14c30a61d8f72d917011d5e2628a72f0a2a24cdb4623f40a1aca8f17703f"></a>DISP_SPI_ADDRESS_8&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aad53e14c30a61d8f72d917011d5e2628a93c4ce47a8986c9c3b7f884e3f593d40"></a>DISP_SPI_ADDRESS_16&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aad53e14c30a61d8f72d917011d5e2628a6897c261880bbc823575655c7c5d2276"></a>DISP_SPI_ADDRESS_24&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aad53e14c30a61d8f72d917011d5e2628aa44ef67562d987f9a0fedbe20623ba1d"></a>DISP_SPI_ADDRESS_32&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aad53e14c30a61d8f72d917011d5e2628a27758718eb0a2b54b584d34b96df1b4c"></a>DISP_SPI_MODE_DIO&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aad53e14c30a61d8f72d917011d5e2628a9efc994c9d01f0cc0e8b931e042d7f11"></a>DISP_SPI_MODE_QIO&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aad53e14c30a61d8f72d917011d5e2628a396f94415b46f8543a39f946132b9c44"></a>DISP_SPI_MODE_DIOQIO_ADDR&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a3a04463a04cd596a850327049a331f7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a04463a04cd596a850327049a331f7a">&#9670;&nbsp;</a></span>__attribute__() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct _disp_spi_read_data __attribute__ </td>
+          <td>(</td>
+          <td class="paramtype">(aligned(4))&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aced75b2896f6008eb35b5b4757d82e63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aced75b2896f6008eb35b5b4757d82e63">&#9670;&nbsp;</a></span>__attribute__() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">union @1 __attribute__::__attribute__ </td>
+          <td>(</td>
+          <td class="paramtype">(packed)&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac35bb93d9046f1199684284b1df28e22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac35bb93d9046f1199684284b1df28e22">&#9670;&nbsp;</a></span>disp_spi_add_device()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void disp_spi_add_device </td>
+          <td>(</td>
+          <td class="paramtype">spi_host_device_t&#160;</td>
+          <td class="paramname"><em>host</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adf8e0a87d5f8e3e244355ad50aa5d103"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf8e0a87d5f8e3e244355ad50aa5d103">&#9670;&nbsp;</a></span>disp_spi_add_device_config()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void disp_spi_add_device_config </td>
+          <td>(</td>
+          <td class="paramtype">spi_host_device_t&#160;</td>
+          <td class="paramname"><em>host</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">spi_device_interface_config_t *&#160;</td>
+          <td class="paramname"><em>devcfg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a273fa35cb03f5a927a51beca86ec66dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a273fa35cb03f5a927a51beca86ec66dd">&#9670;&nbsp;</a></span>disp_spi_transaction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void disp_spi_transaction </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="disp__spi_8h.html#aad53e14c30a61d8f72d917011d5e2628">disp_spi_send_flag_t</a>&#160;</td>
+          <td class="paramname"><em>flags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">disp_spi_read_data *&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>addr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afd7737ae00886d12fb88476faae57314"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd7737ae00886d12fb88476faae57314">&#9670;&nbsp;</a></span>disp_wait_for_pending_transactions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void disp_wait_for_pending_transactions </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a3dc6a7525e5a0b34e37a3a64478ec9ee"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3dc6a7525e5a0b34e37a3a64478ec9ee">&#9670;&nbsp;</a></span>spi_poll()</h2>
 
@@ -116,6 +444,62 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
+<a id="a96f44d20f1dbf1c8785a7bc99a46164c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96f44d20f1dbf1c8785a7bc99a46164c">&#9670;&nbsp;</a></span>byte</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t byte</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af9036114e498c9fcb670232e4227341a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9036114e498c9fcb670232e4227341a">&#9670;&nbsp;</a></span>word</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t word</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a07145ae3e31b274cc44076fe1681391f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07145ae3e31b274cc44076fe1681391f">&#9670;&nbsp;</a></span>dword</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t dword</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7e4f7f715e9e565e4d3b98b1ab00f0ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e4f7f715e9e565e4d3b98b1ab00f0ae">&#9670;&nbsp;</a></span>_dummy_byte</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t _dummy_byte</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a76c0525d646735793add25b18043e600"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a76c0525d646735793add25b18043e600">&#9670;&nbsp;</a></span>spi_mutex</h2>
 

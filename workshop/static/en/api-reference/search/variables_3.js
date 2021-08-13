@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['last_5fpress_5ftime_330',['last_press_time',['../struct_button__t.html#ae20f07ac243620b5e54238d3e8310620',1,'Button_t']]],
-  ['last_5fvalue_331',['last_value',['../struct_button__t.html#a74ecaa037e3ec6bcfc05f63984591afa',1,'Button_t']]],
-  ['long_5fpress_5ftime_332',['long_press_time',['../struct_button__t.html#a98fad5f5eb1a1828604570c993098e1d',1,'Button_t']]]
+  ['h_632',['h',['../struct_button__t.html#aa017fe043d2496bcca312dde350ab038',1,'Button_t']]],
+  ['hour_633',['hour',['../structrtc__date__t.html#ad794c994fa0363ef9905f517919b8498',1,'rtc_date_t']]]
 ];

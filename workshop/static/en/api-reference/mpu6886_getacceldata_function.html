@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="AWS_logo_RGB.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Core2 for AWS IoT EduKit BSP
-   &#160;<span id="projectnumber">1.4.2</span>
+   &#160;<span id="projectnumber">1.5.0</span>
    </div>
   </td>
  </tr>
@@ -73,13 +73,13 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>Retrieves the accelerometer measurements from the MPU6886.</p>
-<div class="fragment"><div class="line"><span class="keywordtype">void</span> <a class="code" href="mpu6886_8h.html#a014d3e6bc15e4dc5de3a573b9f901b37">MPU6886_GetAccelData</a>(<span class="keywordtype">float</span> *ax, <span class="keywordtype">float</span> *ay, <span class="keywordtype">float</span> *az);</div>
-<div class="ttc" id="ampu6886_8h_html_a014d3e6bc15e4dc5de3a573b9f901b37"><div class="ttname"><a href="mpu6886_8h.html#a014d3e6bc15e4dc5de3a573b9f901b37">MPU6886_GetAccelData</a></div><div class="ttdeci">void MPU6886_GetAccelData(float *ax, float *ay, float *az)</div><div class="ttdoc">Retrieves the accelerometer measurements from the MPU6886.</div><div class="ttdef"><b>Definition:</b> mpu6886.c:162</div></div>
+<div class="fragment"><div class="line"><span class="keywordtype">void</span> <a class="code" href="mpu6886_8c.html#a014d3e6bc15e4dc5de3a573b9f901b37">MPU6886_GetAccelData</a>(<span class="keywordtype">float</span> *ax, <span class="keywordtype">float</span> *ay, <span class="keywordtype">float</span> *az);</div>
+<div class="ttc" id="ampu6886_8c_html_a014d3e6bc15e4dc5de3a573b9f901b37"><div class="ttname"><a href="mpu6886_8c.html#a014d3e6bc15e4dc5de3a573b9f901b37">MPU6886_GetAccelData</a></div><div class="ttdeci">void MPU6886_GetAccelData(float *ax, float *ay, float *az)</div><div class="ttdoc">Retrieves the accelerometer measurements from the MPU6886.</div><div class="ttdef"><b>Definition:</b> mpu6886.c:162</div></div>
 </div><!-- fragment --><p> <b>Example:</b></p>
 <p>Get the accelerometer values for the X, Y, and Z direction. </p><div class="fragment"><div class="line"><span class="keywordtype">float</span> accel_x = 0.00;</div>
 <div class="line"><span class="keywordtype">float</span> accel_y = 0.00;</div>
 <div class="line"><span class="keywordtype">float</span> accel_z = 0.00;</div>
-<div class="line"><a class="code" href="mpu6886_8h.html#a014d3e6bc15e4dc5de3a573b9f901b37">MPU6886_GetAccelData</a>(&amp;accel_x, &amp;accel_y, &amp;accel_z);</div>
+<div class="line"><a class="code" href="mpu6886_8c.html#a014d3e6bc15e4dc5de3a573b9f901b37">MPU6886_GetAccelData</a>(&amp;accel_x, &amp;accel_y, &amp;accel_z);</div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">ax</td><td>The 16-bit accelerometer measurement in the X direction. </td></tr>

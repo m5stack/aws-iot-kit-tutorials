@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['h_328',['h',['../struct_button__t.html#aa017fe043d2496bcca312dde350ab038',1,'Button_t']]],
-  ['hour_329',['hour',['../structrtc__date__t.html#ad794c994fa0363ef9905f517919b8498',1,'rtc_date_t']]]
+  ['day_630',['day',['../structrtc__date__t.html#aac2d1613473d4eb898c33c8243a90ef1',1,'rtc_date_t']]],
+  ['dword_631',['dword',['../disp__spi_8h.html#a07145ae3e31b274cc44076fe1681391f',1,'disp_spi.h']]]
 ];

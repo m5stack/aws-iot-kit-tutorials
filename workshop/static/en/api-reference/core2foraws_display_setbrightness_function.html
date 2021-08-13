@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="AWS_logo_RGB.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Core2 for AWS IoT EduKit BSP
-   &#160;<span id="projectnumber">1.4.2</span>
+   &#160;<span id="projectnumber">1.5.0</span>
    </div>
   </td>
  </tr>
@@ -73,11 +73,11 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>Sets the brightness of the display.</p>
-<div class="fragment"><div class="line"><span class="keywordtype">void</span> <a class="code" href="core2for_a_w_s_8h.html#a67a760b89e44e6bd0c96f90cc6aca47d">Core2ForAWS_Display_SetBrightness</a>(uint8_t brightness);</div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a67a760b89e44e6bd0c96f90cc6aca47d"><div class="ttname"><a href="core2for_a_w_s_8h.html#a67a760b89e44e6bd0c96f90cc6aca47d">Core2ForAWS_Display_SetBrightness</a></div><div class="ttdeci">void Core2ForAWS_Display_SetBrightness(uint8_t brightness)</div><div class="ttdoc">Sets the brightness of the display.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:333</div></div>
+<div class="fragment"><div class="line"><span class="keywordtype">void</span> <a class="code" href="core2for_a_w_s_8c.html#a67a760b89e44e6bd0c96f90cc6aca47d">Core2ForAWS_Display_SetBrightness</a>(uint8_t brightness);</div>
+<div class="ttc" id="acore2for_a_w_s_8c_html_a67a760b89e44e6bd0c96f90cc6aca47d"><div class="ttname"><a href="core2for_a_w_s_8c.html#a67a760b89e44e6bd0c96f90cc6aca47d">Core2ForAWS_Display_SetBrightness</a></div><div class="ttdeci">void Core2ForAWS_Display_SetBrightness(uint8_t brightness)</div><div class="ttdoc">Sets the brightness of the display.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:333</div></div>
 </div><!-- fragment --><p> This function sets the brightness of the display using the AXP192 power management unit. It does not write to the display controller, so it does not require taking the xGuiSemaphore mutex prior to use.</p>
 <p><b>Example:</b></p>
-<p>Set the display brightness to maximum. </p><div class="fragment"><div class="line"><a class="code" href="core2for_a_w_s_8h.html#a67a760b89e44e6bd0c96f90cc6aca47d">Core2ForAWS_Display_SetBrightness</a>(100);</div>
+<p>Set the display brightness to maximum. </p><div class="fragment"><div class="line"><a class="code" href="core2for_a_w_s_8c.html#a67a760b89e44e6bd0c96f90cc6aca47d">Core2ForAWS_Display_SetBrightness</a>(100);</div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">brightness</td><td>the desired brightness of the display. Accepts a value from 0 to 100. </td></tr>

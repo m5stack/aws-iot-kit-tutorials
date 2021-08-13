@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['pin_5fmode_5ft_351',['pin_mode_t',['../core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4db',1,'core2forAWS.h']]],
-  ['pressevent_352',['PressEvent',['../button_8h.html#afeb311a4a42fcf0fd31c24acc64621b1',1,'button.h']]]
+  ['gyro_5fscale_5ft_660',['gyro_scale_t',['../mpu6886_8h.html#af596b0def7358e600258c2a35e09759b',1,'mpu6886.h']]]
 ];

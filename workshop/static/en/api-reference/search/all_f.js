@@ -1,22 +1,5 @@
 var searchData=
 [
-  ['sd_2dcard_181',['SD-Card',['../sdcard.html',1,'']]],
-  ['second_182',['second',['../structrtc__date__t.html#a5689ab763359e4776390ea1a1be2a4ee',1,'rtc_date_t']]],
-  ['sk6812_183',['SK6812',['../sk6812.html',1,'']]],
-  ['sk6812_5fside_5fleft_184',['SK6812_SIDE_LEFT',['../core2for_a_w_s_8h.html#ad401f71468100c2d5d8b882577cf7884',1,'SK6812_SIDE_LEFT():&#160;core2forAWS.h'],['../sk6812_side_left_macro.html',1,'sk6812']]],
-  ['sk6812_5fside_5fright_185',['SK6812_SIDE_RIGHT',['../core2for_a_w_s_8h.html#ab984a626760459f01581809754a67756',1,'SK6812_SIDE_RIGHT():&#160;core2forAWS.h'],['../sk6812_side_right_macro.html',1,'sk6812']]],
-  ['speaker_186',['Speaker',['../speaker.html',1,'']]],
-  ['speaker_2eh_187',['speaker.h',['../speaker_8h.html',1,'']]],
-  ['speaker_5fdeinit_188',['Speaker_Deinit',['../speaker_8h.html#a53cf9b0e156f5f4358ea9584d7c85e90',1,'Speaker_Deinit():&#160;speaker.c'],['../speaker_deinit_function.html',1,'speaker']]],
-  ['speaker_5finit_189',['Speaker_Init',['../speaker_8h.html#a0c4fbe70cff447814b58ecee70161a45',1,'Speaker_Init():&#160;speaker.c'],['../speaker_init_function.html',1,'speaker']]],
-  ['speaker_5fwritebuff_190',['Speaker_WriteBuff',['../speaker_8h.html#add4e36cd14956aa19604e2a799a76123',1,'Speaker_WriteBuff():&#160;speaker.c'],['../speaker_writebuff_function.html',1,'speaker']]],
-  ['spi_5fdma_5fchan_191',['SPI_DMA_CHAN',['../core2for_a_w_s_8h.html#af019b9f6740ec443e68b31e2c4e11a18',1,'core2forAWS.h']]],
-  ['spi_5fhost_5fuse_192',['SPI_HOST_USE',['../core2for_a_w_s_8h.html#a0366e6c4669214e65c84ac52a86b596b',1,'core2forAWS.h']]],
-  ['spi_5fmutex_193',['spi_mutex',['../disp__spi_8h.html#a76c0525d646735793add25b18043e600',1,'spi_mutex():&#160;disp_spi.c'],['../disp__spi_8c.html#a76c0525d646735793add25b18043e600',1,'spi_mutex():&#160;disp_spi.c'],['../spi_mutex_variable.html',1,'sdcard']]],
-  ['spi_5fpoll_194',['spi_poll',['../disp__spi_8h.html#a3dc6a7525e5a0b34e37a3a64478ec9ee',1,'spi_poll():&#160;disp_spi.c'],['../disp__spi_8c.html#a3dc6a7525e5a0b34e37a3a64478ec9ee',1,'spi_poll():&#160;disp_spi.c'],['../spi_poll_function.html',1,'sdcard']]],
-  ['startup_5f128ms_195',['STARTUP_128mS',['../axp192_8h.html#a61194ef7df222f425b2067a486845789a546fdc0fa4f2d5a513c4fc0deb6c7b5f',1,'axp192.h']]],
-  ['startup_5f1s_196',['STARTUP_1S',['../axp192_8h.html#a61194ef7df222f425b2067a486845789a4e782f62f2ae00af5d0d512121d80d54',1,'axp192.h']]],
-  ['startup_5f2s_197',['STARTUP_2S',['../axp192_8h.html#a61194ef7df222f425b2067a486845789a1df0ebb78b454c4d346e786eebe655da',1,'axp192.h']]],
-  ['startup_5f512ms_198',['STARTUP_512mS',['../axp192_8h.html#a61194ef7df222f425b2067a486845789aa6ac5cba231728915ade971a8dc09667',1,'axp192.h']]],
-  ['state_199',['state',['../struct_button__t.html#a29ccca8587612448170731cc657731a4',1,'Button_t']]]
+  ['release_386',['RELEASE',['../button_8h.html#afeb311a4a42fcf0fd31c24acc64621b1ad590443978dc58d64aed5001f56efcdf',1,'button.h']]],
+  ['rtc_5fdate_5ft_387',['rtc_date_t',['../bm8563_rtc_date_struct.html',1,'bm8563'],['../structrtc__date__t.html',1,'rtc_date_t']]]
 ];

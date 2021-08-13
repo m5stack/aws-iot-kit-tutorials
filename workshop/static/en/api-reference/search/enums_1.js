@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gyro_5fscale_5ft_350',['gyro_scale_t',['../mpu6886_8h.html#af596b0def7358e600258c2a35e09759b',1,'mpu6886.h']]]
+  ['disp_5fspi_5fsend_5fflag_5ft_659',['disp_spi_send_flag_t',['../disp__spi_8h.html#aad53e14c30a61d8f72d917011d5e2628',1,'disp_spi.h']]]
 ];

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['y_206',['y',['../struct_button__t.html#a65a2555636978c61eea1478da63a1488',1,'Button_t']]],
-  ['year_207',['year',['../structrtc__date__t.html#a320d5caea2fec2adc9fbd710b034f9e3',1,'rtc_date_t']]]
+  ['w_428',['w',['../struct_button__t.html#a8d58a2d05070e8a130a9d4edd42bd1eb',1,'Button_t']]],
+  ['word_429',['word',['../disp__spi_8h.html#af9036114e498c9fcb670232e4227341a',1,'disp_spi.h']]]
 ];

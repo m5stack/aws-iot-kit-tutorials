@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="AWS_logo_RGB.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Core2 for AWS IoT EduKit BSP
-   &#160;<span id="projectnumber">1.4.2</span>
+   &#160;<span id="projectnumber">1.5.0</span>
    </div>
   </td>
  </tr>
@@ -71,7 +71,7 @@ $(function() {
 <div class="textblock"><p>The FT6336U library provides convenience functions to interact with the capacitive touch panel. The initialization function configures the Espressif I2C driver and the FT6336U capacitive touch controller with preset parameters. It creates a FreeRTOS task and installs an ISR on the interrupt pin FT6336U_INTR_PIN.</p>
 <p><a class="anchor" id="touch"></a></p>
 <p><a href="./block_diagram-ft6336u.png"><img src="./block_diagram-ft6336u.png" alt="Circuit Block Diagram for the FT6336U capacitive touch sensor" class="center" class="inline"/></a></p>
-<p>To enable this feature using KConfig, use the command <code>pio run --environment core2foraws --target menuconfig</code> from within the root of the project directory in your <a href="/en/blinky-hello-world/prerequisites.html#open-the-platformio-cli-terminal-window">PlatformIO terminal window</a> and go to the menu <code>Component Config --&gt; Core2 for AWS hardware enable</code> to set the features you want to enable.</p>
+<p>To enable this feature using KConfig, use the command <code>pio run --environment core2foraws --target menuconfig</code> from within the root of the project directory in your <a href="/en/blinky-hello-world/prerequisites.html#open-the-platformio-cli-terminal-window">PlatformIO terminal window</a> and go to the menu <code>Component Config --&gt; Core2 for AWS features</code> to set the features you want to enable.</p>
 <h1><a class="anchor" id="ft6336u_example"></a>
 Example</h1>
 <p>The following example initializes the Core2 for AWS, which initializes the PMU for the battery and other user enabled hardware features — such as the FT6336U. It then creates a FreeRTOS task of priority 1 that prints "PRESSED!" using the ESP logger if the screen is pressed anywhere.</p>
@@ -81,12 +81,12 @@ Example</h1>
 <div class="line"><span class="preprocessor">#include &quot;esp_log.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="core2for_a_w_s_8h.html">core2forAWS.h</a>&quot;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *TAG = <span class="stringliteral">&quot;EXAMPLE&quot;</span>;</div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="i2c__device_8c.html#afc3d101f633a076cc1ca84b85b6224b2">TAG</a> = <span class="stringliteral">&quot;EXAMPLE&quot;</span>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> touch_task(<span class="keywordtype">void</span>* pvParameters){</div>
 <div class="line">    <span class="keywordflow">for</span>(;;){</div>
-<div class="line">        <span class="keywordflow">if</span>(<a class="code" href="ft6336u_8h.html#a35a78ae3c2b1e6a1997d98d685612472">FT6336U_WasPressed</a>() == 1){</div>
-<div class="line">            ESP_LOGI(TAG, <span class="stringliteral">&quot;PRESSED!&quot;</span>);</div>
+<div class="line">        <span class="keywordflow">if</span>(<a class="code" href="ft6336u_8c.html#a35a78ae3c2b1e6a1997d98d685612472">FT6336U_WasPressed</a>() == 1){</div>
+<div class="line">            ESP_LOGI(<a class="code" href="i2c__device_8c.html#afc3d101f633a076cc1ca84b85b6224b2">TAG</a>, <span class="stringliteral">&quot;PRESSED!&quot;</span>);</div>
 <div class="line">        }</div>
 <div class="line"> </div>
 <div class="line">        vTaskDelay(pdMS_TO_TICKS(80));</div>
@@ -95,13 +95,14 @@ Example</h1>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> app_main(<span class="keywordtype">void</span>){</div>
-<div class="line">    <a class="code" href="core2for_a_w_s_8h.html#a3d850a3f56bbe0685b60726d8b53bece">Core2ForAWS_Init</a>();</div>
+<div class="line">    <a class="code" href="core2for_a_w_s_8c.html#a3d850a3f56bbe0685b60726d8b53bece">Core2ForAWS_Init</a>();</div>
 <div class="line"> </div>
 <div class="line">    xTaskCreatePinnedToCore(touch_task, <span class="stringliteral">&quot;touchTask&quot;</span>, configMINIMAL_STACK_SIZE * 3, NULL, 1, NULL, 1);</div>
 <div class="line">}</div>
+<div class="ttc" id="acore2for_a_w_s_8c_html_a3d850a3f56bbe0685b60726d8b53bece"><div class="ttname"><a href="core2for_a_w_s_8c.html#a3d850a3f56bbe0685b60726d8b53bece">Core2ForAWS_Init</a></div><div class="ttdeci">void Core2ForAWS_Init(void)</div><div class="ttdoc">Initializes the power chip with default values, enables battery charging, and initializes all enabled...</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:32</div></div>
 <div class="ttc" id="acore2for_a_w_s_8h_html"><div class="ttname"><a href="core2for_a_w_s_8h.html">core2forAWS.h</a></div><div class="ttdoc">Functions to initialize and access Core2 for AWS IoT EduKit hardware features.</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html_a3d850a3f56bbe0685b60726d8b53bece"><div class="ttname"><a href="core2for_a_w_s_8h.html#a3d850a3f56bbe0685b60726d8b53bece">Core2ForAWS_Init</a></div><div class="ttdeci">void Core2ForAWS_Init(void)</div><div class="ttdoc">Initializes the power chip with default values, enables battery charging, and initializes all enabled...</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:32</div></div>
-<div class="ttc" id="aft6336u_8h_html_a35a78ae3c2b1e6a1997d98d685612472"><div class="ttname"><a href="ft6336u_8h.html#a35a78ae3c2b1e6a1997d98d685612472">FT6336U_WasPressed</a></div><div class="ttdeci">bool FT6336U_WasPressed()</div><div class="ttdoc">Retrieves the pressed state of the touch screen.</div><div class="ttdef"><b>Definition:</b> ft6336u.c:74</div></div>
+<div class="ttc" id="aft6336u_8c_html_a35a78ae3c2b1e6a1997d98d685612472"><div class="ttname"><a href="ft6336u_8c.html#a35a78ae3c2b1e6a1997d98d685612472">FT6336U_WasPressed</a></div><div class="ttdeci">bool FT6336U_WasPressed()</div><div class="ttdoc">Retrieves the pressed state of the touch screen.</div><div class="ttdef"><b>Definition:</b> ft6336u.c:74</div></div>
+<div class="ttc" id="ai2c__device_8c_html_afc3d101f633a076cc1ca84b85b6224b2"><div class="ttname"><a href="i2c__device_8c.html#afc3d101f633a076cc1ca84b85b6224b2">TAG</a></div><div class="ttdeci">#define TAG</div><div class="ttdef"><b>Definition:</b> i2c_device.c:10</div></div>
 </div><!-- fragment --><h1><a class="anchor" id="ft6336u_functions"></a>
 Functions</h1>
 <ul>

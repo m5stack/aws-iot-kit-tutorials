@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['x_204',['x',['../struct_button__t.html#a151223b431f38e7d3562117706e9ea55',1,'Button_t']]],
-  ['xguisemaphore_205',['xGuiSemaphore',['../core2for_a_w_s_8h.html#a2a1ad60c25ec8207f8d723197855a1a1',1,'xGuiSemaphore():&#160;core2forAWS.c'],['../xguisemaphore_variable.html',1,'ili9342c']]]
+  ['value_424',['value',['../struct_button__t.html#a097897b6d7a65458e16625cb4ca8559f',1,'Button_t']]],
+  ['value_5flimit_425',['VALUE_LIMIT',['../axp192_8c.html#ad0e041d48ff78ff86f65bc0e55c60090',1,'axp192.c']]],
+  ['vbus_5fcurrent_5fbit_426',['VBUS_CURRENT_BIT',['../axp192_8h.html#ac26036e1d9a5d37ac7e65b4390e0bf11',1,'axp192.h']]],
+  ['vbus_5fvolt_5fbit_427',['VBUS_VOLT_BIT',['../axp192_8h.html#aef051a2fba8b452ea9e26e410655e021',1,'axp192.h']]]
 ];
