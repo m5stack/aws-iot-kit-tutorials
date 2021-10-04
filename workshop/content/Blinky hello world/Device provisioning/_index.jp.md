@@ -20,7 +20,7 @@ VS Codeで既に開いている他のプロジェクトがある場合は、ま�
 
 ## デバイス証明書の取得とAWS IoTへthingの登録
 
-[MQTT](https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html) 経由で AWS IoT Core への安全な TLS 接続を実行するには、モノを登録し、[デバイス証明書](https://docs.aws.amazon.com/iot/latest/developerguide/register-device-cert.html)を Thing に登録し、[セキュリティポリシー](https://docs.aws.amazon.com/iot/latest/developerguide/iot-policies.html) を証明書に紐付けて、AWS アカウント内で不正なデバイスや不正な操作が実行されないようにします。Core2 for AWS IoT EduKitファレンスハードウェアにセキュアエレメント利用しているため、機密性の高い秘密鍵を公開したり処理したりすることなく、デバイス登録全体を自動化できます。
+[MQTT](https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html) 経由で AWS IoT Core への安全な TLS 接続を実行するには、モノを登録し、[デバイス証明書](https://docs.aws.amazon.com/iot/latest/developerguide/register-device-cert.html)を Thing に登録し、[セキュリティポリシー](https://docs.aws.amazon.com/iot/latest/developerguide/iot-policies.html) を証明書に紐付けて、AWS アカウント内で不正なデバイスや不正な操作が実行されないようにします。Core2 for AWS IoT EduKitリファレンスハードウェアにセキュアエレメント利用しているため、機密性の高い秘密鍵を公開したり処理したりすることなく、デバイス登録全体を自動化できます。
 
 プロジェクトには、ハードウェアのセキュアエレメントから事前にプロビジョニングされたデバイス証明書を取得する手順を自動化し、[X.509 証明書](https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-client-cert-basics)でデバイス証明書に署名してデバイスマニフェストを生成するスクリプトが含まれています。Microchip(セキュアエレメントのメーカー) の [ジャストインタイム登録](https://aws.amazon.com/blogs/iot/just-in-time-registration-of-device-certificates-on-aws-iot/) を行い、AWS IoT はデバイス証明書を使用して、AWS IoT Thing に安全なポリシーをアタッチします。
 
