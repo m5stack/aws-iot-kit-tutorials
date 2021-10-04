@@ -3,10 +3,7 @@ title = "AWS IoT EduKit"
 chapter = true
 weight = 1
 +++
-{{% notice info %}}
-**Reinventing Healthy Spaces Hackathon**: Get hands-on and build an open source healthy spaces solution with AWS IoT EduKit. Submit your project by September 19, 2021 for a chance to win prizes totaling $10,000.
-[Learn more and participate](https://www.hackster.io/contests/Healthy-Spaces-with-AWS).
-{{% /notice %}}
+
 ![EduKit Logo](AWS_IoT_EduKIt_Logo-320px_193px.png)
 AWS IoT EduKit is an easy way to learn how to build IoT applications using AWS services through a prescriptive learning program. AWS IoT EduKit helps developers – from students to experienced
 engineers and professionals – receive hands-on experience building end-to-end IoT applications by combining a reference hardware kit with a set of easy to follow guides and example code.

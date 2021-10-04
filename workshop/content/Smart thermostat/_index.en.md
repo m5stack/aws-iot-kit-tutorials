@@ -4,10 +4,6 @@ chapter = true
 weight = 40
 pre = "<b>3. </b>"
 +++
-{{% notice info %}}
-**Reinventing Healthy Spaces Hackathon**: Get hands-on and build an open source healthy spaces solution with AWS IoT EduKit. Submit your project by September 19, 2021 for a chance to win prizes totaling $10,000.
-[Learn more and participate](https://www.hackster.io/contests/Healthy-Spaces-with-AWS).
-{{% /notice %}}
 
 In this tutorial, you will configure your reference hardware into a smart thermostat that controls a fictional HVAC system. Your smart thermostat will report the measured room temperature and noise level to its device shadow in the cloud. You will also configure a serverless application that will listen for the reported measurements, determine the state to which the thermostat should be set, and send commands back to the device that tells it what to do do. 
 

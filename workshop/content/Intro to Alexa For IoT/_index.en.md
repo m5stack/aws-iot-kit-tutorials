@@ -4,10 +4,6 @@ chapter = true
 weight = 60
 pre = "<b>5. </b>"
 +++
-{{% notice info %}}
-**Reinventing Healthy Spaces Hackathon**: Get hands-on and build an open source healthy spaces solution with AWS IoT EduKit. Submit your project by September 19, 2021 for a chance to win prizes totaling $10,000.
-[Learn more and participate](https://www.hackster.io/contests/Healthy-Spaces-with-AWS).
-{{% /notice %}}
 
 In this tutorial, you will implement Alexa Voice Service Integration for AWS IoT (AFI) on the M5Stack Core2 for AWS IoT EduKit reference hardware kit. You will learn how to use the Espressif Voice Assistant SDK (VA-SDK) and Alexa to control the onboard LED using Alexa Smart Home commands. This tutorial currently uses an AWS account provided by Espressif. This is a *beta* port of the Espressif VA-SDK for the M5Stack Core2 for AWS IoT EduKit reference hardware.
 
