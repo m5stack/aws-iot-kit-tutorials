@@ -4,7 +4,6 @@ chapter = true
 weight = 20
 pre = "<b>1. </b>"
 +++
-{{% notice info %}}
 
 Welcome to the first AWS IoT EduKit tutorial. To complete this exercise, you will need the [M5Stack Core2 ESP32 IoT Development Kit for AWS](https://www.amazon.com/dp/B08VGRZYJR/) reference hardware. This getting started tutorial will walk you through a smart home solution to control some of the onboard peripherals via the iOS or Android RainMaker Phone Application or through the RainMaker CLI. This walkthrough does not require an AWS account and is meant to provide a quick demonstration of an embedded application that is enriched by connectivity to AWS IoT.
 
