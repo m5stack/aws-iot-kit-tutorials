@@ -4,11 +4,6 @@ weight = 10
 pre = "<b>a. </b>"
 +++
 
-{{% notice warning %}}
-There is a known issue with the Alexa Smart Device feature of this tutorial and we are working on a fix. Until that time, the Alexa wake and voice command features will work, but controlling the Core2 for AWS as a smart home device will fail. We apologize for the inconvenience.
-{{% /notice %}}
-
-
 ## What is Alexa Voice Service (AVS)?
 The Alexa Voice Service (AVS) enables developers to turn just about any connected device into an Alexa device! AVS software integrates directly into products and provides the ability to add the Alexa voice assistant. AVS provides developers with access to a suite of resources to build Alexa-enabled products, including APIs, hardware development kits, software development kits, and documentation. 
 [Learn more >>](https://developer.amazon.com/en-US/alexa/devices/alexa-built-in)

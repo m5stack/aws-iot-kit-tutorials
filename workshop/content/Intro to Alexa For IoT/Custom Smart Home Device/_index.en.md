@@ -15,9 +15,7 @@ smart_home_device_t *device = smart_home_device_create("Light", alexa_smart_home
 smart_home_device_add_cb(device, write_cb, NULL);
 smart_home_node_add_device(node, device);
 ```
-The above block defines the "friendly name" of the device, that is - the name of the device. Be more explicit with the name by changing **Light** to **Green Light**. The second line should look like the following:
-
-`smart_home_device_t *device = smart_home_device_create("Green Light", alexa_smart_home_get_device_type_str(LIGHT), NULL);`
+The above block defines the "friendly name" of the device (the name of the device), the callback function **write_cb** that will get called when there is a state update message for this device, and attached the device to the overall smart home node. There can be more than one smart home device on a node.
 
 Next, modify the Range Controller definition to change **Brightness** to **Blink**. Scrolling down a bit further to line 141, you can see where the different attributes of your device are defined:
 ```c
@@ -30,7 +28,7 @@ smart_home_param_add_bounds(brightness_param, smart_home_int(0), smart_home_int(
 smart_home_device_add_param(device, brightness_param);
 ```
 
-You must update the max blink count from 100 to 10. Change the **brightness_param** variable definition and the **smart_home_param_add_bounds** function call so that they look like:
+You must update the max blink count from `100` to `10`. Change the **brightness_param** variable definition and the **smart_home_param_add_bounds** function call so that they look like:
 ```c
 smart_home_param_t *brightness_param = smart_home_param_create("Blink", SMART_HOME_PARAM_RANGE, smart_home_int(10), SMART_HOME_PROP_FLAG_READ | SMART_HOME_PROP_FLAG_WRITE | SMART_HOME_PROP_FLAG_PERSIST);
 smart_home_param_add_bounds(brightness_param, smart_home_int(0), smart_home_int(10), smart_home_int(1));
@@ -39,9 +37,9 @@ smart_home_param_add_bounds(brightness_param, smart_home_int(0), smart_home_int(
 ## Adding smart home device logic
 You've modified the properties but need to implement the logic to control the green LED. First, we'll include a library to control the light and also define a few global variables:
 ```c
-#include "axp192.h"
-static uint8_t CURRENT_BLINK_DELAY = 20;
-static uint8_t GREEN_LIGHT_STATUS = 0;
+#include "core2forAWS.h"
+#define BLINK_DELAY 500
+static bool green_light_status = 0;
 ```
 
 Next, modify the power controller implementation to turn on/off the green LED. Look for the **write_cb** function (line 89 of the original file) and the following code snippet:
@@ -57,9 +55,9 @@ Now add toggle logic based on the values received by adding three lines of code 
 if (val.type == SMART_HOME_VAL_TYPE_BOOLEAN) {
     printf("%s: *************** %s's %s turned %s ***************\n", TAG, device_name, param_name, val.val.b ? "ON" : "OFF");
     
-    //Set the global GREEN_LIGHT_STATUS variable to the desired value and set the GPIO1 value the right setting (on/off)
-    GREEN_LIGHT_STATUS = val.val.b ? 0 : 1;
-    Axp192_SetGPIO1Mode(GREEN_LIGHT_STATUS);
+    //Set the global green_light_status variable to the desired value and set the GPIO1 value the right setting (on/off)
+    green_light_status = val.val.b ? 0 : 1;
+    Core2ForAWS_LED_Enable(green_light_status);
 
 }
 ```
@@ -70,10 +68,10 @@ Next, implement the "blink" functionality. First, you'll create a method to blin
 ```c
 static void startLightBlink(int count)
 {    
-    //we want to start toggling based on the opposite status of what the light currently is
-    for(int i = 1 + GREEN_LIGHT_STATUS; i <= count*2+GREEN_LIGHT_STATUS ; i++) {               
-        Axp192_SetGPIO1Mode( i % 2 );
-        vTaskDelay(CURRENT_BLINK_DELAY);
+    // Toggle the LED to the opposite of the LED state and get back to the original LED state at the end
+    for(int i = (1 + green_light_status); i <= (count * 2 + green_light_status); i++) {
+        Core2ForAWS_LED_Enable( i % 2 );
+        vTaskDelay(pdMS_TO_TICKS(BLINK_DELAY));
     }
 }
 ```
@@ -105,20 +103,20 @@ pio run --environment core2foraws --target upload --target monitor
 You can exit the serial monitor with the key combination **CTRL** + **C**. You can restart the serial monitor by entering the command `pio run --environment core2foraws --target monitor `.
 {{% /notice %}}
 
-If all goes well, you will see an update in your Alexa app that shows you have a new device called **Green Light**. Try controlling the Power:
-!["Green Light" device added notification](custom-smart-home-device/alexa_app-green_light-found.en.jpg?height=500px&classes=shadow)
+If all goes well, you will see an update in your Alexa app and you'll be able to control the LED power:
+!["Light" device added notification](custom-smart-home-device/alexa_app-green_light-found.en.jpg?height=500px&classes=shadow)
 
-![Device named "Green Light" listed in your Alexa App](custom-smart-home-device/alexa_app-green_light-power_on.en.png?height=500px&classes=shadow)
+![Device named "Light" listed in your Alexa App](custom-smart-home-device/alexa_app-green_light-power_on.en.png?height=500px&classes=shadow)
 
 * Voice: _Alexa, turn on/off green light light_ - the side green LED light should turn off and on
-* Via the Alexa app - open your Alexa app (not the Espressif app), go to Devices and then either "Lights" or "All Devices" and you should see the device named "Green Light" (see screenshots below). Tap the power icon and you should see the icon toggle between off and on. 
+* Via the Alexa app - open your Alexa app (not the Espressif app), go to Devices and then either "Lights" or "All Devices" and you should see the device named **Light** (see screenshots below). Tap the power icon and you should see the icon toggle between off and on. 
 
 {{< img "alexa_app-green_light-power_press.webp" "Power Controller implemented with the green light" >}}
 
 You can also test the Blink functionality:
 
 * Voice: _Alexa, set blink to 7_ - the side green LED light should blink 7 times
-* Via the Alexa app - From the **Green Light** device in your Alexa app (not the ESP Alexa mobile phone app), adjust the slider between 1 and 10 and the device should blink the specified number of times.
+* Via the Alexa app - From the **Light** device in your Alexa app (not the ESP Alexa mobile phone app), adjust the slider between 1 and 10 and the device should blink the specified number of times.
 {{< img "alexa_app-green_light-blink_slider.en.webp" "Blinking the green LED with power controller slider" >}}
 
 Congratulations, you've completed this tutorial! On to the [**Conclusion**](/en/intro-to-alexa-for-iot/conclusion.html).

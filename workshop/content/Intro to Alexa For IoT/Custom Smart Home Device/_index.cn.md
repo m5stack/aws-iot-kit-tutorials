@@ -30,7 +30,7 @@ smart_home_param_add_bounds(brightness_param, smart_home_int(0), smart_home_int(
 smart_home_device_add_param(device, brightness_param);
 ```
 
-您需要将最大闪烁次数从 100 更新到 10。因此您需要更改 **brightness_param** 变量定义和 **smart_home_param_add_bounds** 函数调用，应类似于以下内容：
+您需要将最大闪烁次数从 `100` 更新到 `10`。因此您需要更改 **brightness_param** 变量定义和 **smart_home_param_add_bounds** 函数调用，应类似于以下内容：
 ```c
 smart_home_param_t *brightness_param = smart_home_param_create("Blink", SMART_HOME_PARAM_RANGE, smart_home_int(10), SMART_HOME_PROP_FLAG_READ | SMART_HOME_PROP_FLAG_WRITE | SMART_HOME_PROP_FLAG_PERSIST);
 smart_home_param_add_bounds(brightness_param, smart_home_int(0), smart_home_int(10), smart_home_int(1));
@@ -39,9 +39,9 @@ smart_home_param_add_bounds(brightness_param, smart_home_int(0), smart_home_int(
 ## 添加智能家居设备逻辑
 您已经修改了属性，但还需要实施逻辑来控制绿色 LED。首先，我们需要添加一个用于控制灯的库，并定义几个全局变量：
 ```c
-#include "axp192.h"
-static uint8_t CURRENT_BLINK_DELAY = 20;
-static uint8_t GREEN_LIGHT_STATUS = 0;
+#include "core2forAWS.h"
+#define BLINK_DELAY 500
+static bool green_light_status = 0;
 ```
 
 接着，修改电源控制器来打开/关闭绿色 LED。查找 **write_cb** 函数（源文件的第 89 行）和以下代码段：
@@ -57,9 +57,9 @@ if (val.type == SMART_HOME_VAL_TYPE_BOOLEAN) {
 if (val.type == SMART_HOME_VAL_TYPE_BOOLEAN) {
     printf("%s: *************** %s's %s turned %s ***************\n", TAG, device_name, param_name, val.val.b ? "ON" : "OFF");
     
-    //Set the global GREEN_LIGHT_STATUS variable to the desired value and set the GPIO1 value the right setting (on/off)
-    GREEN_LIGHT_STATUS = val.val.b ? 0 : 1;
-    Axp192_SetGPIO1Mode(GREEN_LIGHT_STATUS);
+    //Set the global green_light_status variable to the desired value and set the GPIO1 value the right setting (on/off)
+    green_light_status = val.val.b ? 0 : 1;
+    Core2ForAWS_LED_Enable(green_light_status);
 
 }
 ```
@@ -70,10 +70,10 @@ if (val.type == SMART_HOME_VAL_TYPE_BOOLEAN) {
 ```c
 static void startLightBlink(int count)
 {    
-    //we want to start toggling based on the opposite status of what the light currently is
-    for(int i = 1 + GREEN_LIGHT_STATUS; i <= count*2+GREEN_LIGHT_STATUS ; i++) {               
-        Axp192_SetGPIO1Mode( i % 2 );
-        vTaskDelay(CURRENT_BLINK_DELAY);
+    // Toggle the LED to the opposite of the LED state and get back to the original LED state at the end
+    for(int i = (1 + green_light_status); i <= (count * 2 + green_light_status); i++) {
+        Core2ForAWS_LED_Enable( i % 2 );
+        vTaskDelay(pdMS_TO_TICKS(BLINK_DELAY));
     }
 }
 ```

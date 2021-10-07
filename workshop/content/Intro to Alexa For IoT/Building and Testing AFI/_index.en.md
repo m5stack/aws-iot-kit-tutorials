@@ -73,7 +73,7 @@ The Alexa for AWS IoT sample application creates a virtual device called **Light
 Since it's a virtual device, it prints the updated status to the screen. We can test this out via voice or the Alexa app.
 
 * By voice - say _Alexa, turn on the light_ - if successful, Alexa may respond with "OK" or some other confirmation sound
-* Via the Alexa app - open your Alexa mobile phone app (not the ESP Alexa mobile phone app), go to Devices and then either **Lights** or **All Devices** and you should see the device named **Light** (see screenshots below). Tap the power icon and you should see the icon toggle between off and on. 
+* Via the Alexa app - open your Alexa mobile phone app (not the ESP Alexa mobile phone app), go to Devices and then either **Lights** or **All Devices** and you should see the device named **Light** (see screenshot above) or **Demo Light**. Tap the power icon and you should see the icon toggle between off and on. 
 
 With either option, you should see a message like the following in your terminal:
 ```bash

@@ -33,7 +33,7 @@ smart_home_param_add_bounds(brightness_param, smart_home_int(0), smart_home_int(
 smart_home_device_add_param(device, brightness_param);
 ```
 
-Sie müssen die maximale Blinkanzahl von 100 auf 10 aktualisieren. Sie nehmen also eine Änderung an der Definition der Variablen **brightness_param** und am Funktionsaufruf **smart_home_param_add_bounds** vor, so dass es jetzt wie folgt aussehen sollte:
+Sie müssen die maximale Blinkanzahl von `100` auf `10` aktualisieren. Sie nehmen also eine Änderung an der Definition der Variablen **brightness_param** und am Funktionsaufruf **smart_home_param_add_bounds** vor, so dass es jetzt wie folgt aussehen sollte:
 
 ```c
 smart_home_param_t *brightness_param = smart_home_param_create("Blink", SMART_HOME_PARAM_RANGE, smart_home_int(10), SMART_HOME_PROP_FLAG_READ | SMART_HOME_PROP_FLAG_WRITE | SMART_HOME_PROP_FLAG_PERSIST);
@@ -43,9 +43,9 @@ smart_home_param_add_bounds(brightness_param, smart_home_int(0), smart_home_int(
 ## Hinzufügen der Logik für Smart Home-Geräte
 Inzwischen haben Sie die Eigenschaften geändert, müssen aber noch die Logik zur Steuerung der grünen LED implementieren. Zunächst müssen wir eine Bibliothek für die Steuerung des Lichts einbinden und auch ein paar globale Variablen definieren:
 ```c
-#include "axp192.h"
-static uint8_t CURRENT_BLINK_DELAY = 20;
-static uint8_t GREEN_LIGHT_STATUS = 0;
+#include "core2forAWS.h"
+#define BLINK_DELAY 500
+static bool green_light_status = 0;
 ```
 
 Ändern Sie als Nächstes die Implementierung des Leistungscontrollers, um die grüne LED ein-/auszuschalten. Suchen Sie nach der Funktion **write_cb**  (Zeile 89 der Originaldatei) und dem folgenden Code-Snippet:
@@ -61,9 +61,9 @@ Nun fügen Sie eine Umschaltlogik basierend auf den empfangenen Werten hinzu, in
 if (val.type == SMART_HOME_VAL_TYPE_BOOLEAN) {
     printf("%s: *************** %s's %s turned %s ***************\n", TAG, device_name, param_name, val.val.b ? "ON" : "OFF");
     
-    //Set the global GREEN_LIGHT_STATUS variable to the desired value and set the GPIO1 value the right setting (on/off)
-    GREEN_LIGHT_STATUS = val.val.b ? 0 : 1;
-    Axp192_SetGPIO1Mode(GREEN_LIGHT_STATUS);
+    //Set the global green_light_status variable to the desired value and set the GPIO1 value the right setting (on/off)
+    green_light_status = val.val.b ? 0 : 1;
+    Core2ForAWS_LED_Enable(green_light_status);
 
 }
 ```
@@ -74,10 +74,10 @@ Als nächstes implementieren Sie die "Blink"-Funktionalität. Zuerst müssen Sie
 ```c
 static void startLightBlink(int count)
 {    
-    //we want to start toggling based on the opposite status of what the light currently is
-    for(int i = 1 + GREEN_LIGHT_STATUS; i <= count*2+GREEN_LIGHT_STATUS ; i++) {               
-        Axp192_SetGPIO1Mode( i % 2 );
-        vTaskDelay(CURRENT_BLINK_DELAY);
+    // Toggle the LED to the opposite of the LED state and get back to the original LED state at the end
+    for(int i = (1 + green_light_status); i <= (count * 2 + green_light_status); i++) {
+        Core2ForAWS_LED_Enable( i % 2 );
+        vTaskDelay(pdMS_TO_TICKS(BLINK_DELAY));
     }
 }
 ```
