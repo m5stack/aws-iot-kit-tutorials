@@ -4,6 +4,10 @@ chapter = true
 weight = 1
 +++
 
+{{% notice info %}}
+Congratulations to the winners of the [Hackster.io Reinventing Healthy Spaces](https://www.hackster.io/contests/Healthy-Spaces-with-AWS) hackathon! We had over [76 submissions](https://www.hackster.io/contests/Healthy-Spaces-with-AWS/submissions#challengeNav) from over 674 participants, with top winning entries 1) [AWS IoT Vaccine Carrier Cold Box](https://www.hackster.io/mtrobregado/aws-iot-vaccine-carrier-cold-box-9c7fba), 2) [Automatic Ventilation System with CO2 Monitors](https://www.hackster.io/stevekasuya/automatic-ventilation-system-with-co2-monitors-b301f8), and 3) [Tyhac covid-19 audio diagnostic stack](https://www.hackster.io/mick20/tyhac-covid-19-audio-diagnostic-stack-9d5455).
+{{% /notice %}}
+
 ![EduKit Logo](AWS_IoT_EduKIt_Logo-320px_193px.png)
 AWS IoT EduKit is an easy way to learn how to build IoT applications using AWS services through a prescriptive learning program. AWS IoT EduKit helps developers – from students to experienced
 engineers and professionals – receive hands-on experience building end-to-end IoT applications by combining a reference hardware kit with a set of easy to follow guides and example code.
