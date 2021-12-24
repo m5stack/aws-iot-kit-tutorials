@@ -7,23 +7,16 @@ pre = "<b>c. </b>"
 In this chapter you'll configure, build, and flash your device firmware—which will allow your device to connect to your Wi-Fi network and to AWS IoT Core. In order to connect and communicate to AWS IoT Core, you need to configure your device with Wi-Fi credentials and the URL of your [AWS IoT endpoint](https://docs.aws.amazon.com/iot/latest/developerguide/connect-to-iot.html#iot-device-endpoint-intro). Establishing a secure MQTT connection is simplified with the [AWS IoT Device SDK for Embedded C](https://github.com/espressif/aws-iot-device-sdk-embedded-C/tree/61f25f34712b1513bf1cb94771620e9b2b001970) and the pre-provisioned secure hardware certificates in the on-board [Microchip ATECC608 Trust&GO](https://www.microchip.com/wwwproducts/en/ATECC608B-TNGTLS). With the secure element, you do not need to retrieve certificates from AWS IoT Core, or generate your own, to connect. The connectivity libraries in the AWS IoT Device SDK for Embedded C simplify connectivity and access to AWS IoT services and features.
 
 ## Configuring the ESP32 Firmware
-Configuration of your source code is handled through [Kconfig](https://www.kernel.org/doc/html/latest/kbuild/kconfig-language.html). Kconfig is the same configuration system used by the Linux kernel and helps simplify available configuration options (symbols) into a tree structure. Before you set the configuration, you will first need to retrieve your AWS IoT endpoint.
+Configuration of your source code is handled through [Kconfig](https://www.kernel.org/doc/html/latest/kbuild/kconfig-language.html). Kconfig is the same configuration system used by the Linux kernel and helps simplify available configuration options (symbols) into a tree structure. 
 
-```bash
-aws iot describe-endpoint --endpoint-type iot:Data-ATS
-```
-Copy your AWS IoT endpoint without the quotes. It will look something like `3duk1t3xampl3.iot.us-west-2.amazonaws.com`. We'll use this in a moment.
-
-Now, you'll go into the KConfig menu to configure the required [symbols](https://www.kernel.org/doc/html/latest/kbuild/kconfig-language.html), including Wi-Fi and AWS IoT endpoint address. Start by switching to the **Blink-Hello-World** directory of the repository in the PIO terminal window and enter:
+Now, you'll go into the KConfig menu to configure the required [symbols](https://www.kernel.org/doc/html/latest/kbuild/kconfig-language.html) for the device to connect to your 2.4GHz Wi-Fi network. Start by switching to the **Blink-Hello-World** directory of the repository in the PIO terminal window and enter:
 ```bash
 pio run --environment core2foraws --target menuconfig
 ```
-{{< img "idf_menuconfig-aws_endpoint.en.webp" "Configuring Core2 for AWS IoT EduKit with p.py menuconfig" >}}
-Use the direction keys on your keyboard to go to **Component config** --> **Amazon Web Services IoT Platform** and open **AWS IoT Endpoint Hostname** to set the string. You can paste the address you copied moments ago into the box and hit _enter_ to set that symbol. Next, go back to the configuration home screen by pressing the *ESC* key twice. Then select **AWS IoT EduKit Configuration** from the menu. Set your **WiFi SSID** and **WiFi Password** with your Wi-FI credentials. Once you are finished, press the *s* button on your keyboard to save, confirm the location of the file by pressing *enter*, followed by *q* to quit.
 
-{{% notice note %}}
-In case the *UP* and *DOWN* arrows do not work in menuconfig try using the *J* key to move the cursor down and *K* to move the cursor up. Another option is to use *-* and *+* keys on the numeric keypad.
-{{% /notice %}}
+{{< img "idf_menuconfig-wifi.en.webp" "Configuring Core2 for AWS IoT EduKit with p.py menuconfig" >}}
+
+Use the direction keys (or *K* and *J*, or *-* and *+*) on your keyboard to go to **AWS IoT EduKit Configuration** from the menu. Set your **WiFi SSID** and **WiFi Password** with your Wi-FI credentials. Once you are finished, press the *s* button on your keyboard to save, confirm the location of the file by pressing *enter*, followed by *q* to quit.
 
 {{% notice warning %}}
 Be sure your SSID is for a 2.4GHz network. The ESP32-D0WD on the M5Stack Core2 for AWS hardware does not support 5GHz Wi-Fi bands.

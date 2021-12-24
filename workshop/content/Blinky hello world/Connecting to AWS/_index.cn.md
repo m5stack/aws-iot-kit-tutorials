@@ -7,19 +7,16 @@ pre = "<b>c. </b>"
 在本章节中，您将配置、构建和烧录设备固件，以将设备连接 Wi-Fi 网络并连接到 AWS IoT Core。为了连接到 AWS IoT Core 并与之通信，您需要使用 Wi-Fi 凭证和 [AWS IoT终端节点](https://docs.aws.amazon.com/iot/latest/developerguide/connect-to-iot.html#iot-device-endpoint-intro) 的 URL 来配置设备。通过使用 [AWS IoT Device SDK for Embedded C](https://github.com/espressif/aws-iot-device-sdk-embedded-C/tree/61f25f34712b1513bf1cb94771620e9b2b001970) 和 [Microchip ATECC608 Trust&GO](https://www.microchip.com/wwwproducts/en/ATECC608B-TNGTLS) 中预置的证书可以简化安全 MQTT 连接的建立。通过使用安全元件，您无需从 AWS IoT Core 检索证书或生成自己的证书，AWS IoT Device SDK for Embedded C 包含的连接库简化了连接以及对 AWS 服务和功能的访问。
 
 ## 配置 ESP32 固件
-您将通过 [Kconfig](https://www.kernel.org/doc/html/latest/kbuild/kconfig-language.html) 配置源代码。Kconfig 是 Linux 内核使用的配置系统，有助于将可用的配置选项（symbols）简化为树形结构。在设置配置之前，您需要先检索您的 AWS IoT 终端节点。
-
-```bash
-aws iot describe-endpoint --endpoint-type iot:Data-ATS
-```
-复制您的 AWS IoT 终端节点，请勿加引号，例如 `3duk1t3xampl3.iot.us-west-2.amazonaws.com`。我们稍后将会使用它。
+您将通过 [Kconfig](https://www.kernel.org/doc/html/latest/kbuild/kconfig-language.html) 配置源代码。Kconfig 是 Linux 内核使用的配置系统，有助于将可用的配置选项（symbols）简化为树形结构。
 
 您可以从仓库的 **Blink-Hello-World** 目录进入配置菜单：
 ```bash
 pio run --environment core2foraws --target menuconfig
 ```
-{{< img "idf_menuconfig-aws_endpoint.en.webp" "Configuring Core2 for AWS IoT EduKit with p.py menuconfig" >}}
-下面，您将设定配置。使用键盘上的方向键转到 **Component config（组件配置）** -–> **Amazon Web Services IoT Platform（Amazon Web Services IoT 平台）**，然后打开 **AWS IoT Endpoint Hostname（AWS IoT 终端节点主机名）** 来设置字符串。您可以将刚才复制的地址粘贴到框中，然后按 _enter_ 键设置。接下来，按两次 *ESC* 键返回配置主屏幕。然后，从菜单中选择 **AWS IoT EduKit Configuration（AWS IoT EduKit 配置）**。使用 Wi-Fi 凭证设置 **Wi-Fi SSID** 和 **Wi-Fi Password**。完成后，按键盘上的 *S* 键进行保存，按 *enter* 键确认文件的位置，然后按 *q* 键退出。
+
+{{< img "idf_menuconfig-wifi.en.webp" "Configuring Core2 for AWS IoT EduKit with p.py menuconfig" >}}
+
+下面，您将设定配置。使用键盘上的方向键转到  然后，从菜单中选择 **AWS IoT EduKit Configuration（AWS IoT EduKit 配置）**。使用 Wi-Fi 凭证设置 **Wi-Fi SSID** 和 **Wi-Fi Password**。完成后，按键盘上的 *S* 键进行保存，按 *enter* 键确认文件的位置，然后按 *q* 键退出。
 
 {{% notice warning %}}
 确保您的 SSID 用于 2.4GHz 网络。M5Stack Core2 for AWS 硬件上的 ESP32-D0WD 不支持 5GHz Wi-Fi 频段。

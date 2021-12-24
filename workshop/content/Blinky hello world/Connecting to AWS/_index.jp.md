@@ -7,22 +7,16 @@ pre = "<b>c. </b>"
 この章では、デバイスファームウェアの設定、構築、およびフラッシュを行います。これにより、デバイスが Wi-Fi ネットワークと AWS IoT Core に接続できるようになります。AWS IoT Core に接続して通信するには、Wi-Fi の認証情報と [AWS IoT エンドポイント](https://docs.aws.amazon.com/iot/latest/developerguide/connect-to-iot.html#iot-device-endpoint-intro) の URL を使用してデバイスを設定する必要があります。安全な MQTT 接続の確立は、[AWS IoT Device SDK for Embedded C](https://github.com/espressif/aws-iot-device-sdk-embedded-C/tree/61f25f34712b1513bf1cb94771620e9b2b001970) とオンボードの事前プロビジョニングされた安全なハードウェア証明書 [Microchip ATECC608 Trust&Go](https://www.microchip.com/wwwproducts/en/ATECC608B-TNGTLS)を利用します。セキュアエレメントを使用すると、AWS IoT Core から証明書を取得したり、独自の証明書を生成して接続したりする必要はありません。AWS IoT Device SDK for Embedded C の接続ライブラリは、AWS IoT サービスおよび機能への接続とアクセスを簡単にします。
 
 ## ESP32 ファームウェアの設定
-ソースコードの設定は、[Kconfig](https://www.kernel.org/doc/html/latest/kbuild/kconfig-language.html)を通して行います。Kconfig は Linux カーネルで使用されているものと同じ設定システムであり、利用可能な設定オプション (記号) をツリー構造に単純化するのに便利です。設定を行う前に、まず AWS IoT エンドポイントを取得する必要があります。
-
-```bash
-aws iot describe-endpoint --endpoint-type iot:Data-ATS
-```
-AWS IoT エンドポイントを引用符なしでコピーします。`3duk1t3xampl3.iot.us-west-2.amazonaws.com` のようになります。これは、すぐ後に使用します。
+ソースコードの設定は、[Kconfig](https://www.kernel.org/doc/html/latest/kbuild/kconfig-language.html)を通して行います。Kconfig は Linux カーネルで使用されているものと同じ設定システムであり、利用可能な設定オプション (記号) をツリー構造に単純化するのに便利です。
 
 設定メニューは、プロジェクトのルートで以下のコマンドを入力して、開くことができます。
 ```bash
 pio run --environment core2foraws --target menuconfig
 ```
-{{< img "idf_menuconfig-aws_endpoint.en.webp" "Configuring Core2 for AWS IoT EduKit with p.py menuconfig" >}}
 
-ここでは設定を行います。キーボードの方向キーを使って、[Component config] –> [Amazon Web Services IoT Platform] に移動し、[AWS IoT Endpoint Hostname] を開いて文字列を設定します。先ほどコピーしたアドレスをボックスに貼り付けて **enter** キーを押すと、その記号が設定されます。
+{{< img "idf_menuconfig-wifi.en.webp" "Configuring Core2 for AWS IoT EduKit with p.py menuconfig" >}}
 
-次に、**ESC** キーを 2 回押して設定のホーム画面に戻ります。その後、メニューから [AWS IoT EduKit Configuration] を選択します。自分の Wi-Fi 認証情報で、[WiFi SSID] と [WiFi Password] を設定します。終了したら、キーボードの **s** ボタンを押して保存し、**enter** を押してファイルの場所を確認して、**enter** を押して **q** を押して終了します。
+ここでは設定を行います。キーボードの方向キーを使って、その後、メニューから [AWS IoT EduKit Configuration] を選択します。自分の Wi-Fi 認証情報で、[WiFi SSID] と [WiFi Password] を設定します。終了したら、キーボードの **s** ボタンを押して保存し、**enter** を押してファイルの場所を確認して、**enter** を押して **q** を押して終了します。
 
 
 {{% notice warning %}}
