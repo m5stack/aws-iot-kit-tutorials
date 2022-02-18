@@ -1,41 +1,31 @@
 +++
-title = "Device Provisioning"
+title = "Gerätebereitstellung"
 weight = 20
 pre = "<b>b. </b>"
 +++
 
-In diesem Kapitel stellen Sie das Gerät für die Konnektivität mit AWS IoT Core bereit, indem Sie das integrierte sichere Element ATTECC608 Trust&amp;GO von Microchip verwenden, um eine TLS-Verbindung herzustellen. Die eingebaute Hardware-Vertrauenswurzel ermöglicht Ihnen einen vereinfachten und beschleunigten Bereitstellungspfad, wobei der private Schlüssel nie offengelegt wird. Sie können das im Gerät eingebaute Gerätezertifikat abrufen und eine Manifestdatei erstellen, um ein AWS IoT-Thing (eine Darstellung und Aufzeichnung Ihres Geräts) zu erstellen. Die Client-ID dieses Geräts wird in AWS IoT Core anhand der Seriennummer des sicheren Elements registriert und identifiziert. Sie können ähnliche Prozesse verwenden, um die Flottenbereitstellung von Tausenden oder Millionen von Geräten auf einmal zu automatisieren.
+In diesem Kapitel stellen Sie Ihr Gerät für die Verbindung mit AWS IoT Core mithilfe des integrierten Microchip ATTECC608 Trust&GO secure element bereit, um eine [TLS-Verbindung](https://docs.aws.amazon.com/iot/latest/developerguide/transport-security.html) herzustellen. Die integrierte Hardware-"Root of Trust" ermöglicht Ihnen eine vereinfachte und beschleunigte Provision, ohne den privaten Schlüssel preiszugeben. Sie können das Gerätezertifikat ([öffentlicher Schlüssel](https://en.wikipedia.org/wiki/Public-key_cryptography)) abrufen, das in das Gerät integriert ist, um ein AWS IoT-Objekt (eine Darstellung Ihres Geräts) zu erstellen. Die eindeutige Seriennummer des sicheren Elements wird als Client-ID verwendet, um das Gerät in AWS IoT Core zu registrieren und zu identifizieren. Sie können ähnliche Prozesse verwenden, um die Bereitstellung einer Flotte mit Tausenden oder Millionen von Geräten gleichzeitig zu automatisieren.
 
-## Identifizieren des seriellen Anschlusses auf dem Host-Rechner
-Bitte beziehen Sie sich auf die [offizielle Dokumentation von Espressif](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/establish-serial-connection.html) zum Herstellen serieller Verbindungen mit dem ESP32. Der Port Ihres Geräts hängt von Ihrem Betriebssystem ab. Unter macOS befindet sich das Gerät typischerweise auf `/dev/cu.SLAB_USBtoUART`. Für Linux liegt das Gerät typischerweise auf `/dev/ttyUSB0` (der Benutzer muss zur Dialout-Gruppe hinzugefügt werden). Unter Windows beginnt es mit einem `COM` und endet mit einer Zahl.
+## Blink Hello World Projekt öffnen
+Wenn Sie bereits ein anderes Projekt in VS-Code geöffnet haben, öffnen Sie zuerst ein neues Fenster (**Datei** → **Neues Fenster**), um einen leeren Datei-Explorer und die Arbeitsumgebung zu erhalten.
 
-## Abrufen des Gerätezertifikats und Registrieren des AWS IoT-Thing
-Wir haben den Prozess des Abrufs des Gerätezertifikats aus dem sicheren Element der Core2 for AWS IoT EduKit-Referenzhardware, der Generierung eines Gerätemanifests durch Signieren des Gerätezertifikats mit einem x.509-Zertifikat (einschließlich Ihres AWS IoT-Registrierungscodes), der Registrierung des Geräts in AWS IoT mit dem Gerätezertifikat und des Anhängens einer sicheren Richtlinie an das AWS IoT-Thing vereinfacht.
+Für dieses Tutorial verwenden Sie das Projekt Blinky-Hello-World. Klicken Sie in Ihrem neuen VS-Code-Fenster auf das **PlatformIO-Logo** in der VS-Code-Aktivitätsleiste (ganz links im Menü), wählen Sie im linken PlatformIO-Menü **Öffnen** aus, klicken Sie auf **Projekt öffnen**, navigieren Sie zum Ordner `Core2-for-aws-IoT-Edukit/Blinky-Hello-World` und klicken Sie auf **Öffnen**.
+{{< img "pio-home.en.png" "PlatformIO home screen" "1 - PIO Menü öffnen, 2 - PIO Home öffnen, 3 - Projekt öffnen" >}}
 
-Gehen Sie in das Verzeichnis der AWS IoT-Registrierungshilfe des Projekts und installieren Sie die erforderlichen Abhängigkeiten mit pip:
+## Gerätezertifikat abrufen und AWS IoT-Ding registrieren
+Um eine sichere TLS-Verbindung über [MQTT](https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html) zu AWS IoT Core herzustellen, müssen Sie ein Objekt registrieren, [das Gerätezertifikat anhängen](https://docs.aws.amazon.com/iot/latest/developerguide/register-device-cert.html) (öffentlicher Schlüssel) und die [Richtlinie](https://docs.aws.amazon.com/iot/latest/developerguide/iot-policies.html) definieren und dem Zertifikat anhängen. So stellen Sie sicher, dass nicht autorisierte Geräte oder nicht autorisierte Vorgänge nicht in Ihrem AWS-Konto ausgeführt werden. Durch die Aufnahme eines sicheren Elements auf der Core2 des AWS IoT EduKit können wir den Registrierungsprozess automatisieren, ohne jemals sensible private Schlüssel offenzulegen oder zu verwalten. Im Projekt ist ein Script enthalten, das den Prozess automatisiert. Das Skript ruft das vorab bereitgestellte Gerätezertifikat vom sicheren Element der Referenzhardware ab, legt das Gerätezertifikat und zusätzliche Gerätemadaten in einer Manifestdatei ab und signiert die Manifestdatei mit einem lokal generierten [X.509-Zertifikat](https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-client-cert-basics). Das Skript verwendet dann die [Microchip TrustPlatform Tools](https://github.com/MicrochipTech/cryptoauth_trustplatform_designsuite), um die Manifestdatei von der Festplatte zu lesen, zu überprüfen, ob der Inhalt nicht manipuliert wurde. Dann führt sie eine [Just-in-Time-Registrierung](https://aws.amazon.com/blogs/iot/just-in-time-registration-of-device-certificates-on-aws-iot/) durch. Die Microchip (Secure Element Manufacturer) Certificate Authority (CA) registriert das Object in AWS IoT mit dem Gerätezertifikat, fügt dem AWS IoT-Objekt eine die entsprechende Richtlinie hinzu. Dann fügt sie die Endpunktadresse des AWS IoT MQTT-Broker zur Geräte-Firmware-Konfiguration hinzu. Dieser Prozess kann so skaliert werden, dass Zehntausende von Geräten gleichzeitig in AWS IoT integriert werden.
+
+So führen Sie das Registrierungs-Skript mit dem [PlatformIO CLI Terminal-Fenster](prerequisites.html#öffnen-sie-das-platformio-cli-terminal-fenster) aus:
+
 ```bash
-cd Core2-for-AWS-IoT-EduKit/Blinky-Hello-World/utilities/AWS_IoT_registration_helper/
-pip3 install -r requirements.txt
+cd Blinky-Hello-World
+pio run -e core2foraws-device_reg -t register_thing
 ```
 
-Als nächstes müssen Sie das Python-Skript ausführen, das alle Schritte zur Registrierung des Geräts in Ihrem AWS-Konto ausführt. Stellen Sie sicher, dass Sie zuerst **<<DEVICE_PORT>>** durch den seriellen Port ersetzen, an den Ihr Core2 for AWS IoT EduKit-Gerät angeschlossen ist:
-```bash
-python registration_helper.py -p <<DEVICE_PORT>>
-```
+## Abschluss des Kapitels
+In diesem Kapitel haben Sie das sichere Element und das Registrierungsskript verwendet, um ein AWS IoT [Objekt](https://docs.aws.amazon.com/iot/latest/developerguide/thing-registry.html) zu erstellen, eine [Richtlinie](https://docs.aws.amazon.com/iot/latest/developerguide/thing-policy-variables.html) für Ihr Objekt zu definieren und diese an das Gerätezertifikat anzuhängen. All dies geschah, ohne jemals den geheimen privaten Schlüssel preiszugeben, und auf diese Weise sind mir einer möglichen Gefährdung entgangen.
 
-{{% notice info %}}
-Wenn Sie Ihre Shell schließen oder eine neue Shell öffnen, müssen Sie erneut `conda activate edukit` eingeben, um die virtuelle Umgebung zu reaktivieren und die `export.sh` (macOS/Linux) bzw. `export.bat` (Windows) von ESP-IDF ausführen, um die ESP-IDF-Tools jedes Mal neu zu Ihrem Pfad hinzuzufügen.
-{{% /notice %}}
-
-Wenn das Gerät erfolgreich in AWS IoT registriert und bereitgestellt wurde, gehen Sie zurück zum **Blinky-Hello-World** Verzeichnis, indem Sie eingeben:
-```bash
-cd ../..
-```
-
-## Fazit
-In diesem Kapitel haben Sie das sichere Element verwendet, um ein AWS [IoT-Thing](https://docs.aws.amazon.com/iot/latest/developerguide/thing-registry.html) zu erstellen, eine [Berechtigungsrichtlinie](https://docs.aws.amazon.com/iot/latest/developerguide/thing-policy-variables.html) für Ihr Thing einzurichten und das Gerätezertifikat damit zu verbinden. All dies wurde getan, ohne den geheimen privaten Schlüssel jemals offenzulegen und eine potenzielle Möglichkeit für dessen Kompromittierung zu bieten.
-
-Weiter zu [Verbinden mit AWS IoT Core](/de/blinky-hello-world/connecting-to-aws.html).
+Weiter zu [**Mit AWS IoT Core verbinden**](connecting-to-aws.html).
 
 ---
 {{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

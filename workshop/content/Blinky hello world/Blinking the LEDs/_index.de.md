@@ -3,46 +3,38 @@ title = "Blinken der LEDs"
 weight = 40
 pre = "<b>d. </b>"
 +++
-
-Zu diesem Zeitpunkt läuft Ihre Gerätesoftware und Sie sind mit AWS IoT Core verbunden, senden Nachrichten und sind bereit, Nachrichten aus der Cloud zu empfangen und darauf zu reagieren. In diesem Kapitel werden Sie ein MQTT-Thema abonnieren, die in AWS IoT Core eingehenden Nachrichten anzeigen und eine Nachricht zum Blinken Ihrer Geräte-LEDs senden. Da MQTT ein Publish-Subscribe-Protokoll ist, können Sie bestimmte Themen abonnieren und/oder veröffentlichen. Die Richtlinie, die zuvor im Registrierungsskript festgelegt wurde, schränkt die Themen ein, die das Gerät abonnieren und veröffentlichen kann. Dies ist wichtig für die Filterung und möglicherweise für die Sicherheit. Ihr Gerät kann nur an Themen senden oder empfangen, die mit der Client-ID übereinstimmen, die in diesem Fall mit der eindeutigen Seriennummer des sicheren Elements des Geräts identisch ist.
+Zu diesem Zeitpunkt läuft Ihre Gerätesoftware und Sie sind mit AWS IoT Core verbunden, senden Nachrichten und sind bereit, Nachrichten aus der Cloud zu empfangen und darauf zu reagieren. In diesem Kapitel abonnieren Sie ein [MQTT-Topic](https://docs.aws.amazon.com/iot/latest/developerguide/topics.html), sehen die eingehenden Nachrichten in AWS IoT Core, und senden eine Nachricht, um die LEDs an Ihrem Gerät zu blinken. Da MQTT ein [Client-Server-Protokoll](https://mqtt.org/) ist, können Sie bestimmte Topics abonnieren und/oder Nachrichten an diese senden. Die zuvor im Registrierungsskript festgelegte Richtlinie schränkte die Themen ein, die das Gerät abonnieren und an die das Gerät senden kann. Dies ist wichtig für die Filterung und die Sicherheit. Ihr Gerät kann nur an Topics senden oder von den Topics empfangen, die mit der Client-ID übereinstimmen, was in diesem Fall die eindeutigen Seriennummer des sicheren Elements ist.
 
 ## Abonnieren über den AWS IoT MQTT-Client
-Mit dem AWS IoT MQTT-Client in der AWS IoT Core-Konsole können Sie MQTT-Nachrichten sowohl anzeigen als auch veröffentlichen. Um zu beginnen, gehen Sie zur AWS [IoT-Konsole](https://us-west-2.console.aws.amazon.com/iot/home?region=us-west-2#/) und wählen Sie **Test**, um die Client-Ansicht zu öffnen.
+Mit dem AWS IoT-MQTT-Client in der AWS IoT Core-Konsole können Sie MQTT-Nachrichten sowohl anzeigen als auch senden. Gehen Sie zunächst zu [AWS IoT-Konsole](https://us-west-2.console.aws.amazon.com/iot/home?region=us-west-2#/) und wählen Sie **Test**, um die Clientansicht zu öffnen.
 
-{{< img "aws_iot-mqtt_test_client-subscribe.en.png" "AWS IoT MQTT test client" >}}
+{{< img "aws_iot-mqtt_test_client-subscribe.en.png" "Choose test in AWS IoT console" >}}
 
-Geben Sie im Feld **Subscription topic** `#` ein, um alle MQTT-Topic-Namen zu abonnieren. Der mehrstufige [Wildcard-Topic-Filter](https://docs.aws.amazon.com/iot/latest/developerguide/topics.html#topicfilters) ist **#** und kann nur einmal als letztes Zeichen eines Topic-Filters verwendet werden. Sobald Sie auf die Schaltfläche **Subscribe to topic** klicken, sehen Sie, dass Nachrichten von Ihrem Gerät gesendet werden. Das Gerät darf nur Nachrichten zu dem Thema veröffentlichen, das mit `<<CLIENT_ID>>/` beginnt. Dies gibt einem anderen Teilnehmer (z. B. einer Cloud-Anwendung) die Möglichkeit, Themen für bestimmte Client-Geräte zu filtern, und kann auch auf spezifischere Themen eingegrenzt werden (z. B. Temperaturmessung eines bestimmten Geräts).
+Geben Sie im Feld **Themenfilter** `#` ein, um alle MQTT-Topics zu abonnieren. Der mehrstufige [Themenfilter Platzhalter](https://docs.aws.amazon.com/iot/latest/developerguide/topics.html#topicfilters) ist **#** und kann nur einmal als letztes Zeichen eines Themenfilters verwendet werden. Sobald Sie die Schaltfläche **Abonnieren** drücken, werden Nachrichten von Ihrem Gerät empfangen. Das Gerät darf nur Nachrichten zum Topic veröffentlichen, die mit `<<CLIENT_ID>>/` beginnen. Dies gibt einem anderen Abonnenten (z. B. Cloud-Anwendung) die Möglichkeit, Themen für bestimmte Clientgeräte zu filtern, und kann auch auf spezifischere Themen eingegrenzt werden (z. B. die Temperatur-Nachrichten eines spezifischen Geräts).
 
 ## Blinken der LED
-Um das Blinken der LED-Balken an den Seiten der M5Stack Core2 for AWS IoT EduKit-Referenzhardware zu starten/stoppen, werden wir vom AWS IoT MQTT-Client der Konsole aus ein Thema veröffentlichen, das der Core2 for AWS IoT EduKit abonniert hat. Dazu müssen wir zunächst die Client-ID des Geräts abrufen. Gehen Sie zurück zur Shell-Eingabeaufforderung, wo der serielle Monitor noch läuft, und kopieren Sie die **Client-ID**.
+Um das Blinken der LED-Leisten an den Seiten des M5Stack Core2 für AWS IoT EduKit zu starten/zu stoppen, werden wir vom AWS IoT MQTT-Client der Konsole eine Nachricht an ein Topic senden, das der Core2 abonniert hat. Das Topic für das Gerät hat das Muster `<<CLIENT_ID>>/#`. Sie können das Topic auf dem Gerät anzeigen, nachdem es das Topic erfolgreich abonniert hat. Darüber hinaus können Sie die Client-ID anzeigen, die auf dem seriellen Monitor des Host-Rechners ausgegeben wurde.
 
-{{% notice note %}}
-Wenn Sie an Ihrer Shell-Eingabeaufforderung kein **(edukit)** Präfix sehen, stellen Sie sicher, dass Sie Ihre conda-Umgebung aktivieren, indem Sie `conda activate edukit` ausführen. Wenn der Befehl idf.py nicht gefunden wird, fügen Sie das ESP-IDF mit dem Befehl `. $HOME/esp/esp-idf/export.sh` (macOS/Linux) oder `%userprofile%\Desktop\esp-idf\export.bat` (Windows) zu Ihrem Pfad hinzu.
-{{% /notice %}}
-
-Geben Sie im Feld "Veröffentlichen" den unten stehenden Befehl ein, ersetzen Sie jedoch den Text **<<CLIENT_ID>>** durch Ihre tatsächliche Client-ID, die gerade kopiert wurde, und drücken Sie dann die Schaltfläche **Publish to topic**:
+Geben Sie im Feld Veröffentlichen den folgenden Befehl ein, nachdem Sie den **<<CLIENT_ID>>** Text durch Ihre tatsächliche Client-ID ersetzt haben, die Sie gerade kopiert haben. Dann drücken Sie die Taste **Veröffentlichen**:
 ```
 <<CLIENT_ID>>/blink
 ```
 {{< img "aws_iot-mqtt_test_client-publish.en.png" "Subscribing to messages and publishing with AWS IoT console MQTT client" >}}
-Auf Ihrem Gerät sollten nun die LEDs der Seitenleiste blinken. Um das Blinken zu unterbrechen, drücken Sie einfach erneut die Schaltfläche **Publish to topic** zum gleichen Thema und es wird die blinkende Aufgabe, die die LEDs in einer Schleife ein- und ausschaltete, unterbrochen. Diese Tasks sind Teil des FreeRTOS-Kernels (man kann sie sich auch als Threads vorstellen), die eine einzelne Aufgabe in einer Schleife ausführen sollen. Der FreeRTOS-Kernel gibt Mikrocontroller-Anwendungen die Möglichkeit, den Prozessor zu optimieren, indem einzelne Tasks zur Ausführung eingeplant werden, sobald sich eine andere Task in einen suspendierten oder blockierten Zustand versetzt hat (z.B. mit **vTaskSuspend** oder **vTaskDelay**). Erfahren Sie [hier](https://www.freertos.org/implementation/a00005.html) mehr über das Scheduling mit FreeRTOS.
+Auf Ihrem Gerät sollten jetzt die LEDs der Seitenleiste blinken. Um das Blinken zu unterbrechen, drücken Sie einfach erneut die Schaltfläche **Veröffentlichen**, um zum selben Topic zu veröffentlichen.
 
 {{% notice info %}}
-Um den seriellen Monitor zu verlassen, drücken Sie **STRG** + **]**.
+Um den seriellen Monitor zu verlassen, drücken Sie **STRG** + **C**.
 {{% /notice %}}
 
 ## Aufräumen
-Um die genutzten Ressourcen zu optimieren und unerwünschte Gebühren für den AWS-Cloud-Service zu vermeiden, löschen Sie den Flash-Speicher auf Ihrem Gerät, um ihn für die nachfolgenden Tutorials vorzubereiten. Um das Flash zu löschen, müssen Sie sich in einem bereits erstellten Projekt befinden (z. B. in dem, das Sie gerade abgeschlossen haben), einen laufenden seriellen Monitor beenden, der den Anschluss blockieren könnte (drücken Sie **STRG** + **]**), und den Befehl verwenden:
+Um die Ressourcennutzung zu optimieren und unerwünschte AWS-Cloud-Servicegebühren zu vermeiden, löschen Sie den Flash auf Ihrem Gerät, um es für die nachfolgenden Tutorials vorzubereiten. Um den Flash zu löschen, müssen Sie sich in einem Projekt befinden, das bereits erstellt wurde (z. B. dem, das Sie gerade abgeschlossen haben), den laufenden seriellen Monitor beenden, der den Port möglicherweise blockiert (**STRG** + **C** drücken) und den Befehl verwenden:
 
 ```
-idf.py erase_flash -p <<DEVICE_PORT>>
+pio run --environment core2foraws --target erase
 ```
 
-## Fazit
-Hoffentlich hat Ihnen der Aufbau Ihres Cloud-verbundenen Blinky-Projekts gefallen. Mit der Toolchain von Espressif (ESP-IDF) konnten Sie die Firmware Ihres Core2 for AWS IoT EduKit erstellen, flashen und überwachen. Ihr Gerät ist jetzt als AWS IoT-Ding bei AWS für eine sichere Cloud-Konnektivität mit eingebetteten Gerätezertifikaten und privaten Schlüsseln, die das Gerät nie verlassen können, registriert. Sie haben eine Verbindung zu AWS IoT Core hergestellt, Nachrichten vom Gerät über MQTT gesendet und eine MQTT-Nachricht vom MQTT-Client der AWS IoT-Konsole empfangen, mit der Sie das Licht am Gerät umschalten können.
 
-
-Weiter zum nächsten Abschnitt, dem [Smart Thermostat](/de/smart-thermostat.html).
+Weiter zum letzten Kapitel, dem [**Abschluss**](conclusion.html).
 
 ---
 {{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
