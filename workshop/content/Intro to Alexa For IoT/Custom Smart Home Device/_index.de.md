@@ -5,10 +5,10 @@ pre = "<b>d. </b>"
 +++
 
 ## Smart Home-Steuerung anpassen
-Nachdem wir die im Kit enthaltenen Smart Home-Steuerungsfunktionen verstanden haben, ändern Sie diese Funktionen, um die Attribute des Geräts selbst zu steuern, anstatt einfach auf dem seriellen Monitor zu drucken. Für diesen Workshop erstellen Sie eine einfache Implementierung, die das seitliche grüne LED-Licht über den **PowerController** einschaltet und das Gerät mit dem Range Controller so einstellen, dass es mit einer festgelegten Geschwindigkeit blinkt.
+Nachdem wir die im Kit enthaltenen Smart Home-Steuerungsfunktionen verstanden haben, ändern Sie diese Funktionen, um die Attribute des Geräts selbst zu steuern, anstatt einfach auf dem seriellen Monitor zu drucken. Für diesen Workshop erstellen Sie eine einfache Implementierung, die das seitliche grüne LED-Licht über den **PowerController** einschaltet. Zudem nutzen wir den **RangeController**, um mit einer festgelegten Geschwindigkeit die LEDs blinken zu lassen.
 
 ## Anpassen von Smart Home-Geräteattributen
-Öffnen Sie mit Ihrer IDE den geklonten Ordner **Core2-for-AWS-IOT-Edukit** und öffnen Sie den `Alexa_for_IOT-Intro/Components/App_Smart_Home/App_Smart_Home.c`, um zu sehen, wo die Smart Home-Geräteattribute definiert sind. Wenn Sie nach unten zur Funktion **app_smart_home_init () ** der Zeile 109 scrollen, sehen Sie die folgenden Codeblöcke:
+Öffnen Sie mit Ihrer IDE den geklonten Ordner **Core2-for-AWS-IOT-Edukit** und öffnen Sie den `Alexa_for_IOT-Intro/Components/App_Smart_Home/App_Smart_Home.c`, um zu sehen, wo die Smart Home-Geräteattribute definiert sind. Wenn Sie nach unten zur Funktion **app_smart_home_init()** der Zeile 109 scrollen, sehen Sie die folgenden Codeblöcke:
 ```c
 /* Add device */
 smart_home_device_t *device = smart_home_device_create("Light", alexa_smart_home_get_device_type_str(LIGHT), NULL);
@@ -18,7 +18,7 @@ smart_home_node_add_device(node, device);
 
 Der obige Block definiert den „Anzeigenamen“ des Geräts (den Namen des Geräts), die Rückruffunktion **write_cb**, die aufgerufen wird, wenn eine Statusaktualisierungsnachricht für dieses Gerät vorliegt, und das Gerät an den gesamten Smart-Home-Knoten angeschlossen wird. Auf einem Knoten kann sich mehr als ein Smart-Home-Gerät befinden.
 
-Ändern Sie als Nächstes die Definition des Bereichsreglers, um **Helligkeit** in **Blink** zu ändern. Wenn Sie etwas weiter nach unten zur Zeile 141 scrollen, können Sie sehen, wo die verschiedenen Attribute Ihres Geräts definiert sind:
+Ändern Sie als Nächstes die Definition des Bereichsreglers, um **Brightness** in **Blink** zu ändern. Wenn Sie etwas weiter nach unten zur Zeile 141 scrollen, können Sie sehen, wo die verschiedenen Attribute Ihres Geräts definiert sind:
 ```c
 /* Add device parameters */
 smart_home_param_t *power_param = smart_home_param_create("Power", SMART_HOME_PARAM_POWER, smart_home_bool(true), SMART_HOME_PROP_FLAG_READ | SMART_HOME_PROP_FLAG_WRITE | SMART_HOME_PROP_FLAG_PERSIST);
@@ -43,7 +43,7 @@ Sie haben die Eigenschaften geändert, müssen aber die Logik implementieren, um
 static bool green_light_status = 0;
 ```
 
-Ändern Sie anschließend die Implementierung des Leistungsreglers, um die grüne LED ein- und auszuschalten Suchen Sie nach der Funktion **write_cb** (Zeile 89 der Originaldatei) und dem folgenden Code-Snippet:
+Ändern Sie anschließend die Implementierung des Leistungsreglers, um die grüne LED ein- und auszuschalten. Suchen Sie nach der Funktion **write_cb** (Zeile 89 der Originaldatei) und dem folgenden Code-Snippet:
 
 ```c
 if (val.type == SMART_HOME_VAL_TYPE_BOOLEAN) {
@@ -82,7 +82,7 @@ else if (val.type == SMART_HOME_VAL_TYPE_INTEGER) {
 
 }
 ```
-Wir müssen unserer neu erstellten *StartLinkBlink*-Funktion einen Aufruf hinzufügen, also fügen wir hier die folgenden Zeilen hinzu:
+Wir müssen unserer neu erstellten **startLightBlink**-Funktion einen Aufruf hinzufügen, also fügen wir hier die folgenden Zeilen hinzu:
 ```c
 else if (val.type == SMART_HOME_VAL_TYPE_INTEGER) {
     printf("%s: *************** %s's %s changed to %d ***************\n", TAG, device_name, param_name, val.val.i);
@@ -94,7 +94,7 @@ else if (val.type == SMART_HOME_VAL_TYPE_INTEGER) {
 ```
 
 ## Flashen und Testen der aktualisierten Alexa-Firmware
-Sie haben das Projekt so geändert, dass es die erforderlichen Geräteattribute und die Steuerlogik enthält, um die grüne LED an Bord mit einer bestimmten Geschwindigkeit zu blinken. Jetzt ist es an der Zeit, die Firmware zu erstellen, sie auf die Referenzhardware zu flashen und die Funktionen zu testen. Wenn das Gerät angeschlossen ist und Ihr [PlatformIO CLI Terminalfenster] (.. /blinky-hello-world/prerequisites.html #open -the-platformio-cli-terminal-window) geöffnet und ausgewählt, gib diesen Befehl ein:
+Sie haben das Projekt so geändert, dass es die erforderlichen Geräteattribute und die Steuerlogik enthält, um die grüne LED an Bord mit einer bestimmten Geschwindigkeit zu blinken. Jetzt ist es an der Zeit, die Firmware zu erstellen, sie auf die Referenzhardware zu flashen und die Funktionen zu testen. Wenn das Gerät angeschlossen und Ihr [PlatformIO CLI Terminalfenster](../blinky-hello-world/prerequisites.html#Öffnen-Sie-das-PlatformIO-CLI-Terminal-Fenster) geöffnet und ausgewählt ist, geben Sie diesen Befehl ein:
 ```bash
 pio run --environment core2foraws --target upload --target monitor 
 ```
@@ -108,16 +108,16 @@ Wenn alles gut geht, wird in Ihrer Alexa-App ein Update angezeigt und Sie könne
 ![Gerät mit dem Namen „Light“ in Ihrer Alexa-App aufgeführt](custom-smart-home-device/alexa_app-green_light-power_on.en.png?height=500px&classes=shadow)
 
 * Stimme: _Alexa, grünes Licht ein-/ausschalten_ - das seitliche grüne LED-Licht sollte aus- und eingeschaltet werden
-* Über die Alexa App - öffnen Sie Ihre Alexa-App (nicht die Espressif-App), gehen Sie zu Geräte und dann entweder „Lichter“ oder „Alle Geräte“ und Sie sollten das Gerät mit dem Namen **Licht** sehen (siehe Screenshots unten). Tippen Sie auf das Power-Symbol und das Symbol sollte zwischen Aus und Ein umschalten sehen.
+* Über die Alexa App - öffnen Sie Ihre Alexa-App (nicht die Espressif-App), gehen Sie zu Geräte und dann entweder `Lichter` oder `Alle Geräte` und Sie sollten das Gerät mit dem Namen **Light** sehen (siehe Screenshots unten). Tippen Sie auf das Power-Symbol und das Symbol sollte zwischen Aus und Ein umschalten werden.
   {{< img "alexa_app-green_light-power_press.webp" "Power Controller implemented with the green light" >}}
 
 Sie können auch die Blink-Funktionalität testen:
 
-* Stimme: _Alexa, Blink auf 7_ setzen - das seitliche grüne LED-Licht sollte 7 mal blinken
-* Über die Alexa-App - Stellen Sie vom **Licht**-Gerät in Ihrer Alexa-App (nicht in der ESP Alexa-Handy-App) den Schieberegler zwischen 1 und 10 ein und das Gerät sollte die angegebene Anzahl von Malen blinken.
+* Stimme: _Alexa, Blink auf 7 setzen_ - das seitliche grüne LED-Licht sollte 7 mal blinken
+* Über die Alexa-App - Stellen Sie vom **Light**-Gerät in Ihrer Alexa-App (nicht in der ESP Alexa-Handy-App) den Schieberegler zwischen 1 und 10 ein und das Gerät sollte die angegebene Anzahl von Malen blinken.
   {{< img "alexa_app-green_light-blink_slider.en.webp" "Blinking the green LED with power controller slider" >}}
 
-Herzlichen Glückwunsch, du hast dieses Tutorial abgeschlossen! Weiter zum [**Conclusion**] (/en/intro-to-alexa-for-iot/conclusion.html).
+Herzlichen Glückwunsch, Sie haben dieses Tutorial abgeschlossen! Weiter zur [**Zusammenfassung**](/de/intro-to-alexa-for-iot/conclusion.html).
 
 ---
 {{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
