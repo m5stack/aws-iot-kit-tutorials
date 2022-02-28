@@ -4,12 +4,11 @@ weight = 40
 pre = "<b>d. </b>"
 +++
 
-## Smart Home Steuerung anpassen
-Jetzt, da wir wissen, welche Smart Home-Steuerungsfunktionen im Kit enthalten sind, werden Sie diese Funktionen modifizieren, um Attribute des Geräts selbst zu steuern, anstatt einfach auf den seriellen Monitor zu drucken. In diesem Workshop werden Sie eine einfache Implementierung erstellen, die das seitliche grüne LED-Licht über den **PowerController** einschaltet, und wir werden das Gerät so einstellen, dass es mit einer bestimmten Rate blinkt, indem wir den Range Controller verwenden.
+## Smart Home-Steuerung anpassen
+Nachdem wir die im Kit enthaltenen Smart Home-Steuerungsfunktionen verstanden haben, ändern Sie diese Funktionen, um die Attribute des Geräts selbst zu steuern, anstatt einfach auf dem seriellen Monitor zu drucken. Für diesen Workshop erstellen Sie eine einfache Implementierung, die das seitliche grüne LED-Licht über den **PowerController** einschaltet und das Gerät mit dem Range Controller so einstellen, dass es mit einer festgelegten Geschwindigkeit blinkt.
 
-## Anpassen der Attribute von Smart Home-Geräten
-Öffnen Sie mit Ihrer IDE den geklonten Ordner **Core2-for-AWS-IoT-EduKit** und öffnen Sie die `Alexa_for_IoT-Intro/components/app_smart_home/app_smart_home.c`, um einen Blick darauf zu werfen, wo die Smart Home-Geräteattribute definiert sind. Scrollen Sie bis zur Zeile 109 der Funktion **app_smart_home_init()**  und Sie werden die folgenden Codeblöcke sehen:
-
+## Anpassen von Smart Home-Geräteattributen
+Öffnen Sie mit Ihrer IDE den geklonten Ordner **Core2-for-AWS-IOT-Edukit** und öffnen Sie den `Alexa_for_IOT-Intro/Components/App_Smart_Home/App_Smart_Home.c`, um zu sehen, wo die Smart Home-Geräteattribute definiert sind. Wenn Sie nach unten zur Funktion **app_smart_home_init () ** der Zeile 109 scrollen, sehen Sie die folgenden Codeblöcke:
 ```c
 /* Add device */
 smart_home_device_t *device = smart_home_device_create("Light", alexa_smart_home_get_device_type_str(LIGHT), NULL);
@@ -17,12 +16,9 @@ smart_home_device_add_cb(device, write_cb, NULL);
 smart_home_node_add_device(node, device);
 ```
 
-Der obige Block definiert den "Friendly Name" des Geräts, d. h. - den Namen des Geräts. Seien Sie deutlicher mit dem Namen, indem Sie **Light** in **Green Light** ändern. Die zweite Zeile sollte wie folgt aussehen:
+Der obige Block definiert den „Anzeigenamen“ des Geräts (den Namen des Geräts), die Rückruffunktion **write_cb**, die aufgerufen wird, wenn eine Statusaktualisierungsnachricht für dieses Gerät vorliegt, und das Gerät an den gesamten Smart-Home-Knoten angeschlossen wird. Auf einem Knoten kann sich mehr als ein Smart-Home-Gerät befinden.
 
-`smart_home_device_t *device = smart_home_device_create("Green Light", alexa_smart_home_get_device_type_str(LIGHT), NULL);`
-
-Ändern Sie als Nächstes die Definition des Range Controllers, um **Brightness** in **Blink** zu ändern. Wenn Sie etwas weiter nach unten zu Zeile 141 scrollen, können Sie sehen, wo die verschiedenen Attribute unseres Geräts definiert sind:
-
+Ändern Sie als Nächstes die Definition des Bereichsreglers, um **Helligkeit** in **Blink** zu ändern. Wenn Sie etwas weiter nach unten zur Zeile 141 scrollen, können Sie sehen, wo die verschiedenen Attribute Ihres Geräts definiert sind:
 ```c
 /* Add device parameters */
 smart_home_param_t *power_param = smart_home_param_create("Power", SMART_HOME_PARAM_POWER, smart_home_bool(true), SMART_HOME_PROP_FLAG_READ | SMART_HOME_PROP_FLAG_WRITE | SMART_HOME_PROP_FLAG_PERSIST);
@@ -33,30 +29,29 @@ smart_home_param_add_bounds(brightness_param, smart_home_int(0), smart_home_int(
 smart_home_device_add_param(device, brightness_param);
 ```
 
-Sie müssen die maximale Blinkanzahl von `100` auf `10` aktualisieren. Sie nehmen also eine Änderung an der Definition der Variablen **brightness_param** und am Funktionsaufruf **smart_home_param_add_bounds** vor, so dass es jetzt wie folgt aussehen sollte:
+Sie müssen die maximale Blinkzahl von `100` auf `10` aktualisieren. Ändern Sie die Variablendefinition **brightness_param** und den Funktionsaufruf **smart_home_param_add_bounds** so, dass sie wie folgt aussehen:
 
 ```c
 smart_home_param_t *brightness_param = smart_home_param_create("Blink", SMART_HOME_PARAM_RANGE, smart_home_int(10), SMART_HOME_PROP_FLAG_READ | SMART_HOME_PROP_FLAG_WRITE | SMART_HOME_PROP_FLAG_PERSIST);
 smart_home_param_add_bounds(brightness_param, smart_home_int(0), smart_home_int(10), smart_home_int(1));
 ```
-
-## Hinzufügen der Logik für Smart Home-Geräte
-Inzwischen haben Sie die Eigenschaften geändert, müssen aber noch die Logik zur Steuerung der grünen LED implementieren. Zunächst müssen wir eine Bibliothek für die Steuerung des Lichts einbinden und auch ein paar globale Variablen definieren:
+## Smart Home-Gerätelogik hinzufügen
+Sie haben die Eigenschaften geändert, müssen aber die Logik implementieren, um die grüne LED zu steuern. Zunächst fügen wir eine Bibliothek hinzu, um das Licht zu steuern und einige globale Variablen zu definieren:
 ```c
 #include "core2forAWS.h"
 #define BLINK_DELAY 500
 static bool green_light_status = 0;
 ```
 
-Ändern Sie als Nächstes die Implementierung des Leistungscontrollers, um die grüne LED ein-/auszuschalten. Suchen Sie nach der Funktion **write_cb**  (Zeile 89 der Originaldatei) und dem folgenden Code-Snippet:
+Ändern Sie anschließend die Implementierung des Leistungsreglers, um die grüne LED ein- und auszuschalten Suchen Sie nach der Funktion **write_cb** (Zeile 89 der Originaldatei) und dem folgenden Code-Snippet:
+
 ```c
 if (val.type == SMART_HOME_VAL_TYPE_BOOLEAN) {
     printf("%s: *************** %s's %s turned %s ***************\n", TAG, device_name, param_name, val.val.b ? "ON" : "OFF");
 
 }
 ```
-
-Nun fügen Sie eine Umschaltlogik basierend auf den empfangenen Werten hinzu, indem Sie drei Codezeilen hinzufügen, so dass die if-Anweisung wie folgt aussieht:
+Fügen Sie nun eine Umschaltlogik hinzu, die auf den Werten basiert, die Sie durch Hinzufügen von drei Codezeilen erhalten haben, sodass die if-Anweisung wie folgt aussieht:
 ```c
 if (val.type == SMART_HOME_VAL_TYPE_BOOLEAN) {
     printf("%s: *************** %s's %s turned %s ***************\n", TAG, device_name, param_name, val.val.b ? "ON" : "OFF");
@@ -67,10 +62,9 @@ if (val.type == SMART_HOME_VAL_TYPE_BOOLEAN) {
 
 }
 ```
+Dadurch wird der aktualisierte Wert des Leistungsreglers (1 oder 0) verwendet, um anzuzeigen, ob der Kunde das Gerät ein- oder ausschalten möchte, und schaltet das grüne Seitenlicht ein oder aus.
 
-Sie nehmen den aktualisierten Wert des Leistungsreglers (1 oder 0), um anzuzeigen, ob der Kunde das Gerät ein- oder ausschalten wollte, und schalten das seitliche grüne Licht ein oder aus.
-
-Als nächstes implementieren Sie die "Blink"-Funktionalität. Zuerst müssen Sie eine Methode erstellen, um das grüne Licht eine bestimmte Anzahl von Malen blinken zu lassen. Fügen Sie die folgende Funktion in die gleiche Datei **app_smart_home.c** ein:
+Implementieren Sie als Nächstes die „Blink“ -Funktionalität. Zunächst erstellen Sie eine Methode, um das grüne Licht eine bestimmte Anzahl von Malen zu blinken. Fügen Sie derselben **app_smart_home.c**-Datei die folgende Funktion hinzu:
 ```c
 static void startLightBlink(int count)
 {    
@@ -81,16 +75,14 @@ static void startLightBlink(int count)
     }
 }
 ```
-
-Aktualisieren Sie nun die RangeController-Logik, um diese Funktion aufzurufen. In diesem Fall ist es im folgenden Code-Block zurück in **write_cb**:
+Aktualisieren Sie nun die RangeController-Logik um diese Funktion aufzurufen. In diesem Fall ist es im folgenden Codeblock wieder in **write_cb**:
 ```c
 else if (val.type == SMART_HOME_VAL_TYPE_INTEGER) {
     printf("%s: *************** %s's %s changed to %d ***************\n", TAG, device_name, param_name, val.val.i);
 
 }
 ```
-
-Wir müssen nur einen Aufruf zu unserer neu erstellten *startLinkBlink*-Funktion hinzufügen, also können wir die folgenden Zeilen hier hinzufügen:
+Wir müssen unserer neu erstellten *StartLinkBlink*-Funktion einen Aufruf hinzufügen, also fügen wir hier die folgenden Zeilen hinzu:
 ```c
 else if (val.type == SMART_HOME_VAL_TYPE_INTEGER) {
     printf("%s: *************** %s's %s changed to %d ***************\n", TAG, device_name, param_name, val.val.i);
@@ -102,32 +94,30 @@ else if (val.type == SMART_HOME_VAL_TYPE_INTEGER) {
 ```
 
 ## Flashen und Testen der aktualisierten Alexa-Firmware
-Nachdem das Projekt so modifiziert wurde, dass es die erforderlichen Geräteattribute und die Steuerlogik für das Blinken der grünen Onboard-LED mit einer bestimmten Rate aufweist, ist es an der Zeit, die Firmware zu erstellen, sie auf die Referenzhardware zu flashen und die Fähigkeiten zu testen. Führen Sie den gleichen Befehl wie in den anderen Tutorials aus, wobei Sie **<<DEVICE_PORT>>** durch den seriellen Port ersetzen, an den Ihr "Core2 for AWS IoT EduKit"-Gerät angeschlossen ist.
-
+Sie haben das Projekt so geändert, dass es die erforderlichen Geräteattribute und die Steuerlogik enthält, um die grüne LED an Bord mit einer bestimmten Geschwindigkeit zu blinken. Jetzt ist es an der Zeit, die Firmware zu erstellen, sie auf die Referenzhardware zu flashen und die Funktionen zu testen. Wenn das Gerät angeschlossen ist und Ihr [PlatformIO CLI Terminalfenster] (.. /blinky-hello-world/prerequisites.html #open -the-platformio-cli-terminal-window) geöffnet und ausgewählt, gib diesen Befehl ein:
 ```bash
-idf.py build flash monitor -p <<DEVICE_PORT>>
+pio run --environment core2foraws --target upload --target monitor 
 ```
 {{% notice info %}}
-Sie können den seriellen Monitor mit der Tastenkombination `STRG` + `]` beenden. Sie können den seriellen Monitor neu starten, indem Sie den Befehl `idf.py monitor -p <<DEVICE_PORT>>` eingeben.
+Sie können den seriellen Monitor mit der Tastenkombination **STRG** + **C** verlassen. Sie können den seriellen Monitor neu starten, indem Sie den Befehl `pio run --environment core2foraws --target monitor ` eingeben.
 {{% /notice %}}
 
-Wenn alles gut geht, sehen Sie eine Aktualisierung in Ihrer Alexa-App, dass Sie ein neues Gerät namens **Green Light** haben. Versuchen Sie, den Strom zu steuern: 
-!["Green Light" Gerät added notification](custom-smart-home-device/alexa_app-green_light-found.en.jpg?height=500px&classes=shadow)
+Wenn alles gut geht, wird in Ihrer Alexa-App ein Update angezeigt und Sie können die LED-Leistung steuern:
+!["Light“ -Gerät hat Benachrichtigung hinzugefügt](custom-smart-home-device/alexa_app-green_light-found.en.jpg?height=500px&classes=shadow)
 
-![Gerät namens "Green Light" in Ihrer Alexa App](custom-smart-home-device/alexa_app-green_light-power_on.en.png?height=500px&classes=shadow)
+![Gerät mit dem Namen „Light“ in Ihrer Alexa-App aufgeführt](custom-smart-home-device/alexa_app-green_light-power_on.en.png?height=500px&classes=shadow)
 
-* Sprache: _Alexa, turn on/off green light light_ - das seitliche grüne LED-Licht sollte aus- und eingeschaltet werden.
-* Über die Alexa-App - öffnen Sie Ihre Alexa-App (nicht die Espressif-App), gehen Sie zu "Geräte" und dann entweder zu "Lichter" oder zu "Alle Geräte", und Sie sollten das Gerät mit dem Namen "Green Light" sehen (siehe Screenshots unten). Tippen Sie auf das Stromsymbol und Sie sollten sehen, dass das Symbol zwischen Aus und Ein wechselt.
-
-{{< img "alexa_app-green_light-power_press.webp" "Power Controller implemented with the green light" >}}
+* Stimme: _Alexa, grünes Licht ein-/ausschalten_ - das seitliche grüne LED-Licht sollte aus- und eingeschaltet werden
+* Über die Alexa App - öffnen Sie Ihre Alexa-App (nicht die Espressif-App), gehen Sie zu Geräte und dann entweder „Lichter“ oder „Alle Geräte“ und Sie sollten das Gerät mit dem Namen **Licht** sehen (siehe Screenshots unten). Tippen Sie auf das Power-Symbol und das Symbol sollte zwischen Aus und Ein umschalten sehen.
+  {{< img "alexa_app-green_light-power_press.webp" "Power Controller implemented with the green light" >}}
 
 Sie können auch die Blink-Funktionalität testen:
 
-* Sprache: _Alexa, set blink to 7_ - die seitliche grüne LED-Leuchte sollte 7 Mal blinken.
-* Über die Alexa-App - Stellen Sie auf dem **Green Light**-Gerät in Ihrer Alexa-App (nicht in der ESP Alexa-Handy-App) den Schieberegler zwischen 1 und 10 ein und das Gerät sollte die angegebene Anzahl von Malen blinken.
-{{< img "alexa_app-green_light-blink_slider.en.webp" "Blinking the green LED with power controller slider" >}}
+* Stimme: _Alexa, Blink auf 7_ setzen - das seitliche grüne LED-Licht sollte 7 mal blinken
+* Über die Alexa-App - Stellen Sie vom **Licht**-Gerät in Ihrer Alexa-App (nicht in der ESP Alexa-Handy-App) den Schieberegler zwischen 1 und 10 ein und das Gerät sollte die angegebene Anzahl von Malen blinken.
+  {{< img "alexa_app-green_light-blink_slider.en.webp" "Blinking the green LED with power controller slider" >}}
 
-Herzlichen Glückwunsch, Sie haben dieses Tutorial abgeschlossen! Weiter geht es mit der [**Zusammenfassung**](/de/intro-to-alexa-for-iot/conclusion.html).
+Herzlichen Glückwunsch, du hast dieses Tutorial abgeschlossen! Weiter zum [**Conclusion**] (/en/intro-to-alexa-for-iot/conclusion.html).
 
 ---
 {{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

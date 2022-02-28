@@ -43,7 +43,7 @@ The next task is to return to AWS IoT Analytics so you can export the aggregated
 2. Under *Data set content delivery rules* choose **Edit**.
 3. Choose **Add rule**, then choose **Deliver result to S3**.
 4. Under **S3 bucket** choose **Please select a resource** and find the S3 bucket created for your SageMaker Studio project. It will be named like `sagemaker-project-p-somehashhere`. If there are multiple buckets named like this, you'll need to check the SageMaker Studio project for the random hash ID of your project. You can see the hash in other resources of your project like the Repositories and Pipelines tabs.
-5. Under *Bucket key expression* use this expression: `data/smartspace/Version/!{iotanalytics:scheduleTime}_!{iotanalytics:versionId}.csv`
+5. Under *Bucket key expression* use this expression:` `data/smartspace/Version/!{iotanalytics:scheduleTime}_!{iotanalytics:versionId}.csv``
 6. Under *Role* choose **Create new** and provide a name for the IAM role that will grant IoT Analytics access to write data to your S3 bucket. Choose **Create role**.
 7. Choose **Save** to finalize your new delivery rule.
 

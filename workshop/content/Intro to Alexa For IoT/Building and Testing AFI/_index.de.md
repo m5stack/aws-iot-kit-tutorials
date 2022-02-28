@@ -4,36 +4,33 @@ weight = 30
 pre = "<b>c. </b>"
 +++
 
-## Kapiteleinleitung
-In diesem Kapitel werden wir die portierte ESP VA-SDK-Firmware erstellen, sie auf das Gerät flashen, das WLAN bereitstellen und das Gerät für Ihr Alexa-Konto autorisieren sowie einige der Smart-Home-Funktionen mit Alexa-Sprachbefehlen testen, die in dieser Beta-Version von AFI verfügbar sind.
+# Einführung in das Kapitel
+In diesem Kapitel erstellen wir die portierte ESP-VA-SDK-Firmware, flashen sie auf dem Gerät, stellen das WLAN bereit und autorisieren das Gerät für Ihr Alexa-Konto. Anschließend testen wir einige der Smart-Home-Funktionen mithilfe von Alexa-Sprachbefehlen, die in dieser Beta-Version von AFI verfügbar sind.
 
-## Flashen der Firmware
-Verwenden Sie ESP-IDF, um die Firmware auf das Gerät zu flashen. Ersetzen Sie **<<DEVICE_PORT>>**  durch Ihren Geräteport. Wenn Sie Ihren Geräteanschluss nicht kennen, befolgen Sie die Anweisungen zum [Identifizieren des seriellen Anschlusses auf dem Host-Rechner](/de/blinky-hello-world/device-provisioning.html#identifying-the-serial-port-on-host-machine) im Beispiel **Blinky Hello World** .
-```bash
-cd path/to/Core2-for-AWS-IoT-EduKit/Alexa_For_IoT-Intro/
-idf.py build flash monitor -p <<DEVICE_PORT>>
-```
+## Flashen Sie die Firmware
+Verwenden Sie die PlatformIO CLI, um Ihre Firmware zu kompilieren, die Firmware hochzuladen und die serielle Ausgabe Ihres Geräts zu überwachen. Das Erstellen und Flashen der App dauert einige Zeit, aber danach sollten Sie den Stream der Geräteprotokolle in Ihrem Terminal sehen. Wenn Sie einen Fehler erhalten, dass der Anschluss nicht automatisch erkannt wird, folgen Sie den [Identifizieren des seriellen Ports auf dem Host-Computer] (.. /getting-started/prerequisites/windows.html #identifying -the-device-communication-Port) und versuchen Sie den Befehl erneut. Sie können die Monitorsitzung mit der Tastenkombination **Strg** + **C** schließen:
+   ```bash
+   pio run --environment core2foraws --target upload --target monitor 
+   ```
 
-## Bereitstellen des Geräts
-Für den Bereitstellungsprozess müssen Sie Ihre Wi-Fi-Netzwerk-Anmeldedaten konfigurieren und die Anwendung mit Ihrem Alexa-Konto über die ESP Alexa Phone Application autorisieren.
+## Stellen Sie das Gerät bereit
+Um das Gerät bereitzustellen, müssen Sie Ihre Anmeldeinformationen für das Wi-Fi-Netzwerk konfigurieren und die Anwendung mit Ihrem Alexa-Konto mithilfe der ESP Alexa Telefonanwendung autorisieren.
 
-Laden Sie die Anwendung aus Ihrem mobilen App-Store herunter.
-[iOS](https://apps.apple.com/in/app/esp-alexa/id1464127534) / [Android](https://play.google.com/store/apps/details?id=com.espressif.provbleavs)
+Laden Sie die Anwendung aus Ihrem mobilen App Store herunter.
+[iOS] (https://apps.apple.com/in/app/esp-alexa/id1464127534)/[Android] (https://play.google.com/store/apps/details?id=com.espressif.provbleavs)
 
-Bereitstellungsschritte:
-
-1. Starten Sie die Companion-App.
-   - Vergewissern Sie sich, dass Sie Bluetooth aktiviert haben und die App über die richtigen Berechtigungen für den Zugriff auf Bluetooth verfügt.
-2. Wählen Sie die Option **Add New Device**.
+Schritte zur Bereitstellung:
+1. Starten Sie die Begleit-App.
+- Stellen Sie sicher, dass Sie Bluetooth aktiviert haben und dass die App über die entsprechenden Berechtigungen für den Zugriff auf Bluetooth verfügt.
+2. Wählen Sie die Option **Neues Gerät hinzufügen**.
 3. Ihr Gerät wird in der App angezeigt.
-   - Sie sehen ein **Proof of Possession**-Fenster mit einem Wert von `abcdf1234`  oder ähnlichem, das erscheint. Drücken Sie einfach **Done**, um fortzufahren.
-4. Nachdem Sie sich mit dem Gerät verbunden haben, melden Sie sich bei Ihrem Amazon-Konto an.
-5. Wählen Sie das WLAN-Netzwerk aus und geben Sie die Anmeldedaten ein.
-6. Nach einer erfolgreichen WLAN-Verbindung sehen Sie eine Liste mit Beispieläußerungen.
+- Sie sehen ein Modal **Proof of Possession** mit einem Wert von `abcdf1234` oder einem ähnlichen Popup. Drücken Sie einfach **Fertig**, um fortzufahren.
+4. Nachdem Sie eine Verbindung zum Gerät hergestellt haben, melden Sie sich bei Ihrem Amazon-Konto an.
+5. Wählen Sie das Wi-Fi-Netzwerk aus und geben Sie die Anmeldeinformationen ein.
+6. Nach einer erfolgreichen Wi-Fi-Verbindung sehen Sie eine Liste mit Beispieläußerungen.
 
 ## Alexa verwenden
-Wenn die vorherigen Schritte abgeschlossen sind, sehen Sie eine Reihe von Logs in Ihrem seriellen Monitor, darunter einige wie die folgenden:
-
+Nachdem die vorherigen Schritte abgeschlossen sind, werden auf Ihrem seriellen Monitor eine Reihe von Protokollen angezeigt, darunter einige wie die folgenden:
 ```bash
 I (17325) [http_transport]: Subscribing /capabilities/acknowledge...
 I (17535) [http_transport]: Subscribing /connection/fromservice...
@@ -47,55 +44,53 @@ I (22675) [directive_proc]: Name: SetAttentionState
 E (22685) [app_va_cb]: Enabling Mic
 ```
 
-Um mit Alexa zu interagieren, müssen Sie *Alexa* zu dem Gerät sagen. Dadurch wird die **Espressif Wake Word Engine**, die auf dem Gerät läuft, in den Aufmerksamkeitszustand **LISTENING** versetzt. Alle Details zu den verschiedenen Aufmerksamkeitszuständen finden Sie in unserer [Dokumentation](https://developer.amazon.com/en-US/docs/alexa/alexa-voice-service/ux-design-attention.html#states). Weitere Informationen zur Audioerfassung finden Sie in der [SpeechRecognizer API Dokumentation](https://developer.amazon.com/en-US/docs/alexa/alexa-voice-service/avs-speechrecognizer-concepts.html).
+Um mit Alexa zu interagieren, müssen Sie dem Gerät *Alexa* sagen. Dadurch wird die **Espressif Wake Word Engine**, die auf dem Gerät ausgeführt wird, in den Aufmerksamkeitszustand **LISTENING** versetzt. Ausführliche Informationen zu den verschiedenen Aufmerksamkeitszuständen finden Sie in unserer [Dokumentation] (https://developer.amazon.com/en-US/docs/alexa/alexa-voice-service/ux-design-attention.html#states). Weitere Informationen zur Audioaufnahme finden Sie in der [SpeechRecognizer-API-Dokumentation] (https://developer.amazon.com/en-US/docs/alexa/alexa-voice-service/avs-speechrecognizer-concepts.html)
 
-{{< img "speechrecognizer-state.en.png" "Audio Capture Speech Recognizer Attention States" >}} 
+{{< img "speechrecognizer-state.en.png" "Audio Capture Speech Recognizer Attention States" >}}
 
 {{% notice info %}}
-Genau wie jedes Alexa-Gerät hört das Gerät im IDLE-Zustand NUR auf das Schlüsselwort "Alexa". Erst wenn das Schlüsselwort ausgelöst wird, beginnt das Gerät mit dem Audio-Streaming in die Cloud.
+Genau wie bei jedem Alexa-Gerät wartet das Gerät NUR auf das Schlüsselwort „Alexa“, wenn es sich im Ruhezustand befindet. Erst wenn das Keyword ausgelöst wurde, streamt das Gerät Audio in die Cloud.
 {{% /notice %}}
 
-Probieren Sie verschiedene Äußerungen an Alexa aus - die seitlichen LEDs sollten blau leuchten, wenn **Alexa** verstanden wird (wenn Alexa nicht "aufwacht", versuchen Sie, näher am Gerät zu sprechen):
-* _Alexa, what time is it?_
-* _Alexa, tell me a joke?_
-* _Alexa, turn on all of the lights_ (Funktioniert nur, wenn Sie bereits Smart-Home Geräte im selben Account haben.)
+Probieren Sie verschiedene Äußerungen an Alexa aus - die seitlichen LEDs sollten blau leuchten, wenn **Alexa** zu hören ist (wenn Alexa nicht „aufwacht“, sprechen Sie näher zum Gerät):
+* _Alexa, wie viel Uhr ist es?_
+* _Alexa, erzähl mir einen Witz?_
+* _Alexa, schalte alle Lichter an_ (Funktioniert nur, wenn Sie bereits einige Alexa Smart Home-Geräte auf demselben Konto haben)
+  {{< img "alexa-time.en.webp" "Alexa, what time is it?" "Person: Alexa, what time is?, Alexa: It's 1:52p.m.">}}
 
-{{< img "alexa-time.en.webp" "Alexa, what time is it?">}} 
+## Alexa Smart Home-Funktionen testen (Beta)
+Das AFI-Gerät verfügt über **Alexa Built-In**, was bedeutet, dass Sie direkt auf dem Gerät mit Alexa sprechen können und Alexa mit Sprache auf dem Gerät reagiert. Diese Version von AFI von Espressif unterstützt jedoch auch Alexa Smart Home-Befehle als Beta-Funktion, mit der Sie Attribute auf dem Gerät steuern können.
 
-## Testen der Alexa Smart Home-Funktionen (Beta)
-Das AFI-Gerät hat **Alexa Built-In**, d.h. Sie können mit Alexa direkt zum Gerät sprechen und Alexa antwortet mit Sprache auf dem Gerät. Diese Version von AFI von Espressif unterstützt jedoch auch Alexa Smart Home-Befehle als Beta-Funktion, mit der Sie Attribute auf dem Gerät steuern können.
+Die Alexa for AWS IoT-Beispielanwendung erstellt in Ihrer Alexa-App ein virtuelles Gerät mit dem Namen **Light**, das zwei Schnittstellen unterstützt:
 
-Die Alexa for AWS IoT-Beispielanwendung erstellt ein virtuelles Gerät namens **Light** in Ihrer Alexa-App, das zwei Schnittstellen unterstützt:
+* [PowerController](https://developer.amazon.com/en-US/docs/alexa/alexa-voice-service/alexa-powercontroller.html) zum Ein- und Ausschalten des Lichts.
+* [RangeController](https://developer.amazon.com/en-US/docs/alexa/alexa-voice-service/alexa-rangecontroller.html) zum Einstellen der Helligkeit des Geräts.
 
-* [PowerController](https://developer.amazon.com/en-US/docs/alexa/alexa-voice-service/alexa-powercontroller.html) um das Licht ein- und auszuschalten.
-* [RangeController](https://developer.amazon.com/en-US/docs/alexa/alexa-voice-service/alexa-rangecontroller.html) um die Helligkeit des Geräts einzustellen.
+![Das Gerät mit dem Namen „Light“ sollte in Ihrer Alexa App auftauchen](afi/alexa_app-light_device.en.png?height=500px&classes=shadow)
 
-![The device named "Light" should show up in your Alexa App](building-and-testing-afi/alexa_app-light_device.en.png?height=500px&classes=shadow)
+Da es sich um ein virtuelles Gerät handelt, wird der aktualisierte Status auf dem Bildschirm gedruckt. Wir können das per Spracheingabe oder der Alexa-App testen.
 
-Da es sich um ein virtuelles Gerät handelt, gibt es den aktualisierten Status auf dem Bildschirm aus. Wir können dies per Sprache oder über die Alexa-App testen.
+* Per Spracheingabe - sagen Sie _Alexa, schalten Sie das Licht ein_ - wenn dies gelingt, antwortet Alexa möglicherweise mit „OK“ oder einem anderen Bestätigungston
+* Über die Alexa-App - öffnen Sie Ihre Alexa-Handy-App (nicht die ESP Alexa-Handy-App), gehen Sie zu Geräte und dann entweder **Leuchten** oder **Alle Geräte** und Sie sollten das Gerät mit dem Namen **Licht** (siehe Abbildung oben) oder **Demo Light** sehen. Tippen Sie auf das Power-Symbol und das Symbol sollte zwischen Aus und Ein umschalten sehen.
 
-* Per Sprache - sagen Sie _Alexa, turn on the light_ - bei Erfolg antwortet Alexa möglicherweise mit "OK" oder einem anderen Bestätigungston
-* Über die Alexa-App - öffnen Sie Ihre Alexa-Mobiltelefon-App (nicht die ESP Alexa-Mobiltelefon-App), gehen Sie zu Geräte und dann entweder **Lampen** oder **Alle Geräte** und Sie sollten das Gerät namens **Lampe** sehen (siehe Screenshots unten). Tippen Sie auf das Stromsymbol und Sie sollten sehen, dass das Symbol zwischen Aus und Ein wechselt.
-
-Durch eine der beiden Optionen sollten Sie eine Meldung wie die folgende in Ihrem Terminal sehen:
+Bei beiden Optionen sollte in Ihrem Terminal eine Meldung wie die folgende angezeigt werden:
 ```bash
 I (97445) [alexa_smart_home]: Namespace: Alexa.PowerController, Name: TurnOn
 ```
 
-In ähnlicher Weise können Sie versuchen, den Bereich der Helligkeit durch eine der folgenden Möglichkeiten zu steuern:
+In ähnlicher Weise können Sie versuchen, den Helligkeitsbereich mit einer der folgenden Optionen zu steuern:
 
-* Per Sprache - sagen Sie _Alexa, set brightness on the light to 80_ - bei Erfolg antwortet Alexa möglicherweise mit "OK" oder einer anderen Bestätigungsantwort.
-* Über die Alexa-App - passen Sie den Schieberegler der Helligkeit an.
+* Per Spracheingabe - sagen Sie _Alexa, stellen Sie die Helligkeit des Lichts auf 80_ ein - wenn dies gelingt, antwortet Alexa möglicherweise mit „OK“ oder einer anderen Bestätigungsantwort.
+* Passen Sie über die Alexa-App den Helligkeitsregler an.
 
-Bei beiden Optionen sollten Sie im seriellen Monitor eine Meldung wie die folgende sehen:
+Bei beiden Optionen sollte im seriellen Monitor eine Meldung wie die folgende angezeigt werden:
 ```bash
 [app_smart_home]: *************** Light's Brightness changed to 60 ***************
 ```
 
-Dies ist nicht nur nützlich, weil wir mit Alexa einen Sprachassistenten auf unserem Gerät haben, sondern wir können mit Alexa auch Eigenschaften auf dem Gerät selbst steuern!
+Dies ist nicht nur nützlich, weil wir mit Alexa einen Sprachassistenten auf unserem Gerät haben, sondern wir können Alexa verwenden, um die Eigenschaften des Geräts selbst zu steuern!
 
-Weiter zum Erstellen eines [**Benutzerdefinierten Smart Home-Gerätes**](/de/intro-to-alexa-for-iot/custom-smart-home-device.html).
-
+Weiter zum Erstellen eines [**Benutzerdefiniertes Smart Home-Gerät**](/de/intro-to-alexa-for-iot/custom-smart-home-device.html).
 
 ---
 {{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
