@@ -14,7 +14,7 @@ engineers and professionals – receive hands-on experience building end-to-end 
 
 ### Benefits of AWS IoT EduKit
 #### Simplified hardware selection
-- AWS IoT EduKit’s reference hardware kit – made and sold by our manufacturing partner, M5Stack – is packed with onboard features to enable a multitude of IoT applications out of the box Developers can broaden their capabilities to cover additional use-cases with plug & play expansion options. 
+- AWS IoT EduKit’s reference hardware kit – made and sold by our manufacturing partner, M5Stack – is packed with onboard features to enable a multitude of IoT applications out of the box Developers can broaden their capabilities to cover additional use-cases with plug & play expansion options.
 - The reference hardware kit provides powerful and secure hardware to build a range of IoT applications (entry level to advanced/professional) at an entry level price tag. It is powered by an Espressif ESP32 microcontroller unit (MCU), coupled with a Microchip ATECC608 Trust&GO secure element. It is Alexa capable, comes with multiple on-board peripherals, a wide range of separately available expansion modules for additional connectivity options (e.g. LoRaWAN, NB-IoT, LTE) and plug & play grove-connector peripherals (e.g. sensors, actuators) to cover a wider breadth of use-cases.
 
 #### Supports a wide range of software frameworks

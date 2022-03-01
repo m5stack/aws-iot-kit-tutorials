@@ -3,19 +3,18 @@ title = "Datenerfassung"
 weight = 20
 pre = "<b>b. </b>"
 +++
+## Einführung in das Kapitel
+Am Ende dieses Kapitels führt Ihr Gerät Folgendes aus:
 
-## Kapiteleinleitung
-Am Ende dieses Kapitels wird Ihr Gerät Folgendes tun:
+* Schalten Sie die lokale Smart-Thermostat-Anwendung ein und starten Sie sie.
+* Melden Sie den Protokollen die aktuelle gemessene Temperatur, den gemessenen Umgebungsgeräuschpegel, den HLK-Status für Heizung/Kühlung/Standby und eine Anzeige der Raumbelegung.
 
-* Einschalten und Starten der lokalen Smart-Thermostat-Anwendung
-* Bericht zu den Protokollen mit der aktuell erfassten Temperatur, dem gemessenen Umgebungsgeräuschpegel, einem HLK-Status von Heizung/Kühlung/Standby und einer Anzeige der Raumbelegung
+Das Core2 für AWS IoT EduKit-Referenz-Hardwarekit verfügt über mehrere einsatzbereite Sensoren. Bei dieser Lösung nehmen Sie Messwerte vom Temperatursensor und dem Mikrofon mithilfe des lokalen Anwendungscodes ab. Die Anwendung verfolgt Sensorwerte und Statusmarkierungen, die zum Rendern einer Zusammenfassung auf dem Display verwendet werden.
 
-Das Core2 for AWS IoT EduKit Referenz-Hardware-Kit verfügt über mehrere Sensoren, die Sie verwenden können. Bei dieser Lösung werden Sie mithilfe von lokalem Anwendungscode Messwerte vom Temperatursensor und Mikrofon erfassen. Die Anwendung verfolgt die Sensormesswerte und Statusflags, die zum Rendern einer Zusammenfassung auf dem Display verwendet werden.
+## Wie programmiere ich die Thermostatanwendung
+Ihr intelligenter Thermostat tastet die integrierten Sensoren mit Code ab, der bereits erstellt und in den mitgelieferten Softwarekomponenten enthalten ist. In diesem ersten Schritt erfassen Sie einfach die Werte und drucken sie in den Logger aus, bevor wir Sensorwerte bis zu AWS IoT Core veröffentlichen.
 
-## Programmieren der Thermostat Applikation
-Ihr intelligentes Thermostat wird die integrierten Sensoren mithilfe der bereits erstellten und in den gebündelten Softwarekomponenten enthaltenen Implementierungen abtasten. In diesem ersten Schritt erfassen Sie einfach die Werte und loggen sie in der Konsole, bevor wir mit der Veröffentlichung der Sensorwerte in AWS IoT Core fortfahren.
-
-Das Auslesen des Temperatursensors des mitgelieferten MPU6886-Moduls ist einfach. Hier ist ein Code-Snippet:
+Das Ablesen vom Temperatursensor des mitgelieferten MPU6886-Moduls ist einfach. Hier ist ein Code-Snippet:
 
 ```c
 // include libraries for interfacing with the kit's modules
@@ -45,7 +44,7 @@ void app_main()
 }
 ```
 
-Wenn Sie Ihre Geräteprotokolle mit diesem Code erstellen, flashen und monitoren würden, würde das Gerät einen Messwert vom Temperatursensor nehmen, ihn in den Logger schreiben und dann anhalten. Um kontinuierlich jede Sekunde abzutasten, ohne andere Prozesse zu blockieren, sollten Sie einen separaten **[FreeRTOS-Task](https://docs.espressif.com/projects/esp-idf/en/v4.2/esp32/api-reference/system/freertos.html#_CPPv423xTaskCreatePinnedToCore14TaskFunction_tPCKcK8uint32_tPCv11UBaseType_tPC12TaskHandle_tK10BaseType_t)** erstellen und ihn an einen MCU-Kern anheften, in etwa so:
+Wenn Sie Ihre Geräteprotokolle mit diesem Code erstellen, flashen und überwachen, nimmt das Gerät einen Messwert vom Temperatursensor, schreibt ihn in den Logger und stoppt. Um jede Sekunde kontinuierlich zu testen, ohne andere Prozesse zu blockieren, erstellen Sie eine separate ** [FreeRTOS-Aufgabe](https://docs.espressif.com/projects/esp-idf/en/v4.2/esp32/api-reference/system/freertos.html#_CPPv423xTaskCreatePinnedToCore14TaskFunction_tPCKcK8uint32_tPCv11UBaseType_tPC12TaskHandle_tK10BaseType_t) ** und stecken Sie es an einen MCU-Kern an, etwa so:
 
 ```c
 #include "freertos/FreeRTOS.h"
@@ -79,47 +78,53 @@ void app_main()
 }
 ```
 
-## Codebeispiel
-Es wurde bereits eine Beispielanwendung vorbereitet, die Sie erstellen und auf Ihrem Gerät einsetzen können. Folgen Sie diesen Schritten, um dieses Kapitel abzuschließen.
+## Kompilieren und Hochladen der Smart Thermostat-Firmware
+Es wurde bereits eine Beispielanwendung vorbereitet, mit der Sie mithilfe von Visual Studio Code und der PlatformIO-Erweiterung erstellen und auf Ihr Gerät hochladen können. Wenn Sie bereits ein anderes Projekt in VS-Code geöffnet haben, öffnen Sie zuerst ein neues Fenster (Datei → Neues Fenster), um einen sauberen Datei-Explorer und eine saubere Arbeitsumgebung zu erhalten.
 
-1. Klonen Sie das Code-Repository für dieses Tutorial, wenn Sie es nicht bereits von einem anderen Tutorial kopiert haben:
-   ```bash
-   git clone https://github.com/m5stack/Core2-for-AWS-IoT-EduKit.git
-   ```
-2. Wechseln Sie in das Verzeichnis des **Smart-Thermostat** Projektes:
-   ```bash
-   cd Core2ForAWS-AWS-IoT-EduKit/Smart-Thermostat
-   ```
-3. Kopieren Sie ihre `sdkconfig` Datei von der **Blinky-Hello-World** Demo um die Konfiguration Ihres Wi-Fi und AWS-Endpunkts zu vereinfachen:
-   {{%expand "macOS & Linux" %}}
+Für dieses Tutorial verwenden Sie das Smart-Thermostat-Projekt. In Ihrem neuen VS-Code-Fenster:
+1. Klicken Sie in der VS-Code-Aktivitätsleiste (Menü ganz links) auf das **PlatformIo-Logo**.
+2. Wählen Sie im linken PlatformIO-Menü **Öffnen** aus.
+3. Klicken Sie auf **Projekt öffnen**.
+4. Navigieren Sie zum Ordner `Core2-for-aws-iot-edukit/Smart-Thermostat` und klicken Sie auf **Öffnen**.
+   {{< img "pio-home.en.png" "PlatformIO home screen" "1 - Open PIO menu, 2 - Open PIO home, 3 - Open the project folder" >}}
+
+Als Nächstes müssen Sie ein neues PlatformIO CLI-Terminalfenster in VS-Code öffnen:
+1) Klicken Sie auf das **PlatformIo-Logo** in der VS-Code-Aktivitätsleiste (Menü ganz links).
+2) Wählen Sie im Menü **Schnellzugriff** unter **Verschiedenes** die Option **Neues Terminal**.
+
+{{< img "pio-new_terminal-smart_thermostat.en.png" "PlatformIO CLI terminal in VS Code" "1 - Open PIO menu, 2 - Open new PIO Terminal, 3 - Verify you're in the 'PlatformIO CLI' terminal session, 4 - Paste the commands into terminal, 5 - If you encounter an error autodetecting the port, open the Platform.ini file and follow instructions to manually add the serial port.">}}
+
+Um die Konfiguration aus dem Blinky-Projekt zu kopieren, kompilieren Sie die Gerätefirmware und laden Sie sie auf Ihr Gerät hoch. Befolgen Sie dann die Schritte für das Betriebssystem Ihres Host-Computers, um dieses Kapitel abzuschließen:
+
+{{%expand "Ubuntu or macOS" %}}
+1. Kopieren Sie Ihre `sdkconfig`-Datei aus der **Blinky-Hello-World**-Demo, um die Einrichtung Ihres Wi-Fi- und AWS-Endpunkts zu vereinfachen:
    ```bash
    cp ../Blinky-Hello-World/sdkconfig .
    ```
-   {{% /expand%}}
-   {{%expand "Windows (64-bit) Command Prompt" %}}
+   {{% notice note %}}
+   Optional können Sie Ihre Wi-Fi-Anmeldeinformationen und den AWS-Endpunkt für Ihre Firmware manuell festlegen, indem Sie dem Schritt ** [Konfiguration der ESP32-Firmware](/de/blinky-hello-world/connecting-to-aws.html#Konfiguration-der-ESP32-Firmware) ** aus dem Beispiel **Blinky Hello World** folgen.
+   {{% /notice %}}
+2. Verwenden Sie den folgenden Befehl, um die Firmware zu kompilieren und hochzuladen und die serielle Ausgabe Ihres Geräts zu überwachen. Das Erstellen und Flashen der App dauert einige Zeit, aber danach sollten Sie den Stream der Geräteprotokolle in Ihrem Terminal sehen. Sie können die Monitorsitzung mit der Tastenkombination **Strg** + **C** schließen:
+  ```bash
+   pio run --environment core2foraws --target upload --target monitor 
+   ```
+{{% /expand%}}
+{{%expand "Windows" %}}
+1. Kopieren Sie Ihre `sdkconfig`-Datei aus der **Blinky-Hello-World**-Demo, um die Einrichtung Ihres Wi-Fi- und AWS-Endpunkts zu vereinfachen:
    ```bash
    copy ..\Blinky-Hello-World\sdkconfig .
    ```
-   {{% /expand%}}
    {{% notice note %}}
-   Sie können optional Ihre Wi-Fi-Anmeldeinformationen und den AWS-Endpunkt für Ihre Firmware manuell einstellen, indem Sie dem Schritt **[Konfigurierung der ESP32 Firmware](/de/blinky-hello-world/connecting-to-aws.html#configuring-the-esp32-firmware)** aus dem **Blinky Hello World**-Beispiel folgen.
+   Optional können Sie Ihre Wi-Fi-Anmeldeinformationen und den AWS-Endpunkt für Ihre Firmware manuell festlegen, indem Sie dem Schritt ** [Konfiguration der ESP32-Firmware](/de/blinky-hello-world/connecting-to-aws.html#Konfiguration-der-ESP32-Firmware) ** aus dem Beispiel **Blinky Hello World** folgen.
    {{% /notice %}}
-  
-4. Kompilieren Sie, flashen Sie und starten Sie den seriellen Monitor. Ersetzen Sie dabei **<<DEVICE_PORT>>** durch den seriellen Port, an den Ihr Core2 for AWS IoT EduKit-Gerät angeschlossen ist. (Um den seriellen Port zu ermitteln, an den das Gerät angeschlossen ist, lesen Sie bitte [**Blinky Hello World — Identifizieren des seriellen Ports an der Host-Maschine**](/de/blinky-hello-world/device-provisioning.html#identifying-the-serial-port-on-host-machine)):
+2. Verwenden Sie den folgenden Befehl, um die Firmware zu kompilieren und hochzuladen und die serielle Ausgabe Ihres Geräts zu überwachen. Das Erstellen und Flashen der App dauert einige Zeit, aber danach sollten Sie den Stream der Geräteprotokolle in Ihrem Terminal sehen. Sie können die Monitorsitzung mit der Tastenkombination **Strg** + **C** schließen:
    ```bash
-   idf.py build flash monitor -p <<DEVICE_PORT>> 
+   pio run --environment core2foraws --target upload --target monitor 
    ```
-   
-5. Es wird einige Zeit dauern, die App zu erstellen und zu flashen, aber nachdem das erledigt ist, sollten Sie den Strom der Geräteprotokolle in Ihrem Terminal sehen. Sie können die Monitor-Sitzung mit der Tastenkombination **Strg** + **]** schließen.
+{{% /expand%}}
 
-{{% notice note %}}
-Wenn Sie an Ihrer Shell-Eingabeaufforderung kein **(edukit)** -Prefix sehen, stellen Sie sicher, dass Sie Ihre conda-Umgebung aktivieren, indem Sie `conda activate edukit` ausführen. Wenn der Befehl idf.py nicht gefunden wird, fügen Sie das ESP-IDF mit dem Befehl `. $HOME/esp/esp-idf/export.sh` (macOS/Linux) oder `%userprofile%\Desktop\esp-idf\export.bat` (Windows) zu Ihrem Pfad hinzu.
-{{% /notice %}}
-
-## Validierungsschritte
-Bevor Sie mit dem nächsten Kapitel fortfahren, können Sie überprüfen, ob Ihr Gerät wie vorgesehen konfiguriert ist:
-
-1. Wenn Ihr "Core2 for AWS IoT EduKit" eingeschaltet ist und die Anwendung läuft, sollten Sie in Ihrem Terminalfenster Logs sehen können, die folgendermaßen aussehen:
+## Validierung
+Bevor Sie mit dem nächsten Kapitel fortfahren, können Sie überprüfen, ob Ihr Gerät wie vorgesehen konfiguriert ist, indem Sie die serielle Ausgabe im Terminalfenster anzeigen, die wie folgt aussehen sollte:
 
 ```
 I (16128) shadow: On Device: roomOccupancy false
@@ -128,7 +133,7 @@ I (16137) shadow: On Device: temperature 64.057533
 I (16143) shadow: On Device: sound 8
 ```
 
-Wenn diese wie erwartet funktionieren, lassen Sie uns mit der [**Datensynchronisierung**](/de/smart-thermostat/data-sync.html) fortfahren.
+Wenn diese wie erwartet funktionieren, fahren wir mit [**Datensynchronisierung**](/de/smart-thermostat/data-sync.html) fort.
 
 ---
 {{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

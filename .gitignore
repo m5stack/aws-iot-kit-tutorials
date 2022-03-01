@@ -1,1 +1,3 @@
 **/.DS_Store
+.idea/
+workshop/.hugo_build.lock
