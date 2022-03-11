@@ -85,13 +85,13 @@ Example</h1>
 <div class="line"><span class="keywordtype">void</span> wifi_event_task( <span class="keywordtype">void</span> *pvParams )</div>
 <div class="line">{</div>
 <div class="line">    uxBits = xEventGroupWaitBits(</div>
-<div class="line">        xEventGroup,        <span class="comment">/* The event group being tested. */</span></div>
+<div class="line">        xEventGroup,            <span class="comment">/* The event group being tested. */</span></div>
 <div class="line">        <a class="code hl_define" href="core2foraws__wifi_8h.html#ad552e7688532cbbecd3967538ced06ac">WIFI_CONNECTED_BIT</a> | </div>
 <div class="line">        <a class="code hl_define" href="core2foraws__wifi_8h.html#a408ed4183e69703f55e29027706fe4c8">WIFI_DISCONNECTED_BIT</a> | </div>
-<div class="line">        <a class="code hl_define" href="core2foraws__wifi_8h.html#a06286e7242259b7f90bd1ae74aee4746">WIFI_CONNECTING_BIT</a>,     <span class="comment">/* The bits within the event group to wait for. */</span></div>
-<div class="line">        pdTRUE,             <span class="comment">/* The bits should be cleared before returning. */</span></div>
-<div class="line">        pdFALSE,            <span class="comment">/* Don&#39;t Wait for all bits. */</span></div>
-<div class="line">        portMAX_DELAY );    <span class="comment">/* Wait indefinitely. */</span></div>
+<div class="line">        <a class="code hl_define" href="core2foraws__wifi_8h.html#a06286e7242259b7f90bd1ae74aee4746">WIFI_CONNECTING_BIT</a>,    <span class="comment">/* The bits within the event group to wait for. */</span></div>
+<div class="line">        pdTRUE,                 <span class="comment">/* The bits should be cleared before returning. */</span></div>
+<div class="line">        pdFALSE,                <span class="comment">/* Don&#39;t Wait for all bits. */</span></div>
+<div class="line">        portMAX_DELAY );        <span class="comment">/* Wait indefinitely. */</span></div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">if</span>( ( ( uxBits &amp; <a class="code hl_define" href="core2foraws__wifi_8h.html#ad552e7688532cbbecd3967538ced06ac">WIFI_CONNECTED_BIT</a> ) != 0 )</div>
 <div class="line">    {</div>
@@ -113,8 +113,8 @@ Example</h1>
 <div class="line">{</div>
 <div class="line">    <a class="code hl_function" href="core2foraws_8h.html#a8589c127068e67d5474515365b558051">core2foraws_init</a>();</div>
 <div class="line"> </div>
-<div class="line">    xTaskCreatePinnedToCore(    &amp;wifi_event_task,               <span class="comment">// Pointer to the task entry function</span></div>
-<div class="line">                                <span class="stringliteral">&quot;wifiTest&quot;</span>,               <span class="comment">// Friendly name of the task</span></div>
+<div class="line">    xTaskCreatePinnedToCore(    &amp;wifi_event_task,           <span class="comment">// Pointer to the task entry function</span></div>
+<div class="line">                                <span class="stringliteral">&quot;wifiTest&quot;</span>,                 <span class="comment">// Friendly name of the task</span></div>
 <div class="line">                                1024 * 2,                   <span class="comment">// Size of the task stack specified in bytes</span></div>
 <div class="line">                                NULL,                       <span class="comment">// Pointer to parameters passed to task</span></div>
 <div class="line">                                0,                          <span class="comment">// Priority the task will run (0 is lowest)</span></div>
