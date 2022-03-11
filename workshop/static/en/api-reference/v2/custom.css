@@ -1,0 +1,225 @@
+#nav-path ul
+{
+	background-image: none;
+	border-bottom: none;
+	border-left: none;
+	border-right: none;
+	border-top: 1px solid #FF9900;
+}
+#powerTip div
+{
+	font-family: AmazonEmber-Light !important;
+}
+#projectbrief
+{
+	font-family: AmazonEmber-Light !important;
+}
+#projectlogo
+{
+	padding: 20px;
+}
+#projectname
+{
+	color: #fff;
+}
+#projectname
+{
+	font-family: AmazonEmber-Light !important;
+}
+#projectnumber
+{
+	font-family: AmazonEmber-Light !important;
+}
+#titlearea
+{
+	border-bottom: none;
+}
+#top
+{
+	background-color: #161E2D;
+}
+.arrow
+{
+	color: #FF9900;
+}
+.contents a:visited
+{
+	color: #527FFF;
+}
+.directory tr.even
+{
+	background-color: #f9f9f9;
+}
+.footer
+{
+	color: black;
+}
+.fragment
+{
+	background-color: white !important;
+	border-color: #FF9900 !important;
+}
+.header
+{
+	background-color: white !important;
+	background-image: none !important;
+	border-bottom-color: #232F3E !important;
+}
+.keywordtype
+{
+	color: #a6e22e !important;
+}
+.mdescLeft, .mdescRight, .memItemLeft, .memItemRight, .memTemplItemLeft, .memTemplItemRight, .memTemplParams
+{
+	background-color: #fff;
+}
+.memdoc
+{
+	border-color: #232F3E;
+}
+.memproto, dl.reflist dt
+{
+	background-color: #232F3E;
+	border-color: #232F3E;
+	color: white;
+	text-shadow: none;
+}
+.memtitle
+{
+	background-color: #232F3E;
+	background-image: none;
+	border-color: #232F3E;
+	color: #527FFF;
+}
+.navelem .el::after
+{
+	color: #FF9900;
+	content: "›";
+	font-size: 12pt;
+	margin-left: 16px;
+}
+.navpath li
+{
+	background-image: none;
+	color: white;
+}
+.navpath li.navelem a
+{
+	color: white;
+	text-shadow: none;
+}
+.paramname
+{
+	color: #FF9900;
+}
+.sm-dox
+{
+	background-image: none;
+}
+.sm-dox a.highlighted, .sm-dox a:hover, .sm-dox a:any-link
+{
+	background-image: none;
+	color: white;
+	text-shadow: none;
+}
+.title
+{
+	font-family: AmazonEmber-Light !important;
+}
+@font-face
+{
+	font-family: AmazonEmber-Bold;
+	src: url(https://fonts.workshops.aws/webfonts/AmazonEmber_W_Bd.woff2);
+    
+    font-family: AmazonEmber-Light;
+	src: url(https://fonts.workshops.aws/webfonts/AmazonEmber_W_Lt.woff2);
+    
+    font-family: AmazonEmber-Regular;
+	src: url(https://fonts.workshops.aws/webfonts/AmazonEmber_W_Rg.woff2);
+}
+a
+{
+	color: #00bdf3;
+}
+a.code
+{
+	color: #00bdf3;
+}
+a:hover
+{
+	color: #527FFF;
+}
+body, table, div, p, dl
+{
+	font: 300 16px/25px AmazonEmber-Light;
+}
+div.directory
+{
+	border-bottom-color: #232F3E;
+	border-top-color: #232F3E;
+	width: 100%;
+}
+div.line
+{
+	color: black;
+	padding-left: 60px;
+}
+div.toc h3
+{
+	font-family: AmazonEmber-Light !important;
+}
+div.toc li
+{
+	font-family: AmazonEmber-Light !important;
+}
+dl.note
+{
+	border-color: #fdc500;
+}
+h2.groupheader
+{
+	border-bottom-color: #161E2D;
+	color: black;
+}
+hr
+{
+	border-top: 1px solid #161E2D;
+}
+p.reference, p.definition
+{
+	font-family: AmazonEmber-Light !important;
+}
+span.preprocessor
+{
+	color: #a166ff;
+}
+table.directory
+{
+	font-family: AmazonEmber-Light !important;
+}
+
+table.markdownTable td, table.markdownTable th {
+    border: 1px solid #161E2D;
+}
+
+th.markdownTableHeadLeft, th.markdownTableHeadRight, th.markdownTableHeadCenter, th.markdownTableHeadNone
+{
+	background-color: #232F3E;
+}
+
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 540px;
+  }
+
+  .contents img {
+	max-width: 100%;
+	border: none;
+	display: block;
+	box-shadow: 2px 2px 3px #ccc;
+	-moz-box-shadow: 2px 2px 3px #ccc;
+	-webkit-box-shadow: 2px 2px 3px #ccc;
+	-khtml-box-shadow: 2px 2px 3px #ccc;
+  }

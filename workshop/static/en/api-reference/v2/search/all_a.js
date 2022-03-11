@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['port_5fa_5fscl_5fpin_0',['PORT_A_SCL_PIN',['../core2foraws__expports_8h.html#a8ed50e23fc6f3e2e2e5d3f58fd1e3d05',1,'PORT_A_SCL_PIN():&#160;core2foraws_expports.h'],['../port_a_scl_pin_macro.html',1,'expports']]],
+  ['port_5fa_5fsda_5fpin_1',['PORT_A_SDA_PIN',['../core2foraws__expports_8h.html#ae784eb494430f328a674932e03ee1b26',1,'PORT_A_SDA_PIN():&#160;core2foraws_expports.h'],['../port_a_sda_pin_macro.html',1,'expports']]],
+  ['port_5fb_5fadc_5fpin_2',['PORT_B_ADC_PIN',['../core2foraws__expports_8h.html#acc191b4d5b52786c63d4692d6cb80d40',1,'PORT_B_ADC_PIN():&#160;core2foraws_expports.h'],['../port_b_adc_pin_macro.html',1,'expports']]],
+  ['port_5fb_5fdac_5fpin_3',['PORT_B_DAC_PIN',['../core2foraws__expports_8h.html#ac708091286fa469920c756366ca4e683',1,'PORT_B_DAC_PIN():&#160;core2foraws_expports.h'],['../port_b_dac_pin_macro.html',1,'expports']]],
+  ['port_5fc_5fuart_5fnum_4',['PORT_C_UART_NUM',['../core2foraws__expports_8h.html#a195b78547c193f3dadbbe023e7606e8b',1,'PORT_C_UART_NUM():&#160;core2foraws_expports.h'],['../port_c_uart_num_macro.html',1,'expports']]],
+  ['port_5fc_5fuart_5frx_5fpin_5',['PORT_C_UART_RX_PIN',['../core2foraws__expports_8h.html#a1d7f3c77703d9c2c8654700f05f04f81',1,'PORT_C_UART_RX_PIN():&#160;core2foraws_expports.h'],['../port_c_uart_rx_pin_macro.html',1,'expports']]],
+  ['port_5fc_5fuart_5ftx_5fpin_6',['PORT_C_UART_TX_PIN',['../core2foraws__expports_8h.html#a8764a8d2c486f2d66f86d995653cc833',1,'PORT_C_UART_TX_PIN():&#160;core2foraws_expports.h'],['../port_c_uart_tx_pin_macro.html',1,'expports']]],
+  ['power_7',['Power',['../power.html',1,'']]],
+  ['power_5frail_5fcount_8',['POWER_RAIL_COUNT',['../core2foraws__power_8h.html#a73c39de4f420a491a24f9b39649a2455ae0b17f2fcc30acc51e0135d82487a5e4',1,'core2foraws_power.h']]],
+  ['power_5frail_5fdcdc1_9',['POWER_RAIL_DCDC1',['../core2foraws__power_8h.html#a73c39de4f420a491a24f9b39649a2455a2a230532a0737bda6e06611718c01174',1,'core2foraws_power.h']]],
+  ['power_5frail_5fdcdc2_10',['POWER_RAIL_DCDC2',['../core2foraws__power_8h.html#a73c39de4f420a491a24f9b39649a2455a35097e559ad70dfea781097e3caaeea8',1,'core2foraws_power.h']]],
+  ['power_5frail_5fdcdc3_11',['POWER_RAIL_DCDC3',['../core2foraws__power_8h.html#a73c39de4f420a491a24f9b39649a2455a4abf74e9cfc284eed73236a348666607',1,'core2foraws_power.h']]],
+  ['power_5frail_5fdisplay_5fbacklight_12',['POWER_RAIL_DISPLAY_BACKLIGHT',['../core2foraws__power_8h.html#af6edcffe5291063c7c60c5074ecffb9e',1,'POWER_RAIL_DISPLAY_BACKLIGHT():&#160;core2foraws_power.h'],['../power_rail_display_backlight_macro.html',1,'power']]],
+  ['power_5frail_5fesp32_13',['POWER_RAIL_ESP32',['../core2foraws__power_8h.html#a507eb165fd175b361b0883bca510f9bd',1,'POWER_RAIL_ESP32():&#160;core2foraws_power.h'],['../power_rail_esp32_macro.html',1,'power']]],
+  ['power_5frail_5fexten_14',['POWER_RAIL_EXTEN',['../core2foraws__power_8h.html#a73c39de4f420a491a24f9b39649a2455ae93e4446b5d4b8a4e228589ffe96d649',1,'core2foraws_power.h']]],
+  ['power_5frail_5fldo1_15',['POWER_RAIL_LDO1',['../core2foraws__power_8h.html#a73c39de4f420a491a24f9b39649a2455a1d93a576f1811df9900fe0b4ee5a6329',1,'core2foraws_power.h']]],
+  ['power_5frail_5fldo2_16',['POWER_RAIL_LDO2',['../core2foraws__power_8h.html#a73c39de4f420a491a24f9b39649a2455a08be725b74d8a9a12ec7f2c87b6182fe',1,'core2foraws_power.h']]],
+  ['power_5frail_5fldo3_17',['POWER_RAIL_LDO3',['../core2foraws__power_8h.html#a73c39de4f420a491a24f9b39649a2455aab1f176be69c39fc80990548445766d9',1,'core2foraws_power.h']]],
+  ['power_5frail_5flogic_5fand_5fsd_18',['POWER_RAIL_LOGIC_AND_SD',['../core2foraws__power_8h.html#ac7dbd8e9fde64c924accf2145e44f9ff',1,'POWER_RAIL_LOGIC_AND_SD():&#160;core2foraws_power.h'],['../power_rail_logic_and_sd_macro.html',1,'power']]],
+  ['power_5frail_5ft_19',['power_rail_t',['../core2foraws__power_8h.html#a73c39de4f420a491a24f9b39649a2455',1,'power_rail_t():&#160;core2foraws_power.h'],['../power_rail_t_enum.html',1,'power']]],
+  ['power_5frail_5fvibrator_20',['POWER_RAIL_VIBRATOR',['../core2foraws__power_8h.html#a03fd79e3b3d02b7bdf492ff47ba0a9ca',1,'POWER_RAIL_VIBRATOR():&#160;core2foraws_power.h'],['../power_rail_vibrator_macro.html',1,'power']]],
+  ['press_21',['PRESS',['../core2foraws__button_8h.html#a24bff64126ba6124db30d306cb2e82b2a6e70a672c8edfbcdf18c8204913e285d',1,'core2foraws_button.h']]],
+  ['press_5fevent_5ft_22',['press_event_t',['../core2foraws__button_8h.html#a24bff64126ba6124db30d306cb2e82b2',1,'press_event_t():&#160;core2foraws_button.h'],['../press_event_t_enum.html',1,'button']]]
+];
