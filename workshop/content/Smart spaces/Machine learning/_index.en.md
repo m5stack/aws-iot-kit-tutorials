@@ -4,13 +4,13 @@ weight = 30
 pre = "<b>c. </b>"
 +++
 
-## Chapter introduction
+## Introduction
 By the end of this chapter, your serverless application should do the following:
 
 * Train a machine learning model that translates new thermostat messages into inferences of roomOccupancy.
 * Host a machine learning model on an API endpoint for consumption.
 
-## Concepts for training a machine learning model
+## Train a machine learning model
 Data science and machine learning are enormous domains in their own right. It is far beyond the scope of this module to teach the basics of how machine learning model training works. Fortunately, the tool chain for creating new models has been simplified to the point that we can use that tool chain to experiment with ML just by knowing enough about our data.
 
 In this solution, you are trying to replace a simple threshold in the IoT Core rules engine that evalutes the sound level reported by the device and coerces a new Boolean key-value called *roomOccupancy*. You know from looking at the sound data in the reported messages that the values are low when it is quiet and higher when there is noise. That's how you know a simple threshold like "greater than 10" was an okay starting place to generate the *roomOccupancy* value. (In your specific case, a different threshold for ambient noise versus registered activity may have been more appropriate!) 
@@ -19,7 +19,7 @@ You will apply a similar approach by giving the machine learning tool chain a sa
 
 Once your first model is trained, in the following chapter you will_replace_ that simple static threshold on the sound level with the inferred classification of *roomOccupancy* as determined by your model!
 
-## How to set up the serverless infrastructure
+## Set up the serverless infrastructure
 First, you will set up Amazon SageMaker Studio in order to configure a new experiment for automatic model training.
 
 1. Go to the Amazon SageMaker console and choose **Amazon SageMaker Studio**.
@@ -59,14 +59,14 @@ You are now ready to start your ML experiment back in SageMaker Studio. An exper
 Before starting your ML experiment, you should have several hours of data reported from your thermostat in the room you want to analyze, and in that time the room should have had a mix of active and inactive periods. An automatic ML experiment needs at least 500 rows of data to work, but the more data you bring the better the result will be. If you still need to generate more data before proceeding, don't forget to re-run the data set in the IoT Analytics console (last step of the previous instruction list) so that those results are available to SageMaker in your project S3 bucket. When you're ready to start your experiment, read on.
 
 1. Return to your SageMaker Studio, open your project, select the *Experiments* tab and choose **Create autopilot experiment**.
-2. Give your experiment a name.
-3. Under *Project* select your project from the list.
-4. Under *Connect your data* and *S3 bucket name* find and select your project's S3 bucket in the list. This is the same one you selected for the IoT Analytics data set content delivery rule in the previous chapter.
-5. Under *Dataset file name* find and select your IoT Analytics dataset content like `data/smartspace/Version/1607276270943_3b4eb6bb-8533-4ac0-b8fd-1b62ac0020a2.csv`.
-6. Under *Target* choose `roomoccupancy`.
-7. Under *Output data location* and *S3 bucket name* find and choose the same project S3 bucket in this list that you picked in step 4.
-8. Under *Dataset directory name* type in `output/smartspace` and choose **Use input as S3 object key prefix "output/smartspace"**. This defines a new prefix in the S3 bucket that will be used for your output files.
-9. Choose **Create Experiment** to start the automated ML experiment. 
+1. Give your experiment a name.
+1. Under *Project* select your project from the list.
+1. Under *Connect your data* and *S3 bucket name* find and select your project's S3 bucket in the list. This is the same one you selected for the IoT Analytics data set content delivery rule in the previous chapter.
+1. Under *Dataset file name* find and select your IoT Analytics dataset content like `data/smartspace/Version/1607276270943_3b4eb6bb-8533-4ac0-b8fd-1b62ac0020a2.csv`.
+1. Under *Target* choose `roomoccupancy`.
+1. Under *Output data location* and *S3 bucket name* find and choose the same project S3 bucket in this list that you picked in step 4.
+1. Under *Dataset directory name* type in `output/smartspace` and choose **Use input as S3 object key prefix "output/smartspace"**. This defines a new prefix in the S3 bucket that will be used for your output files.
+1. Choose **Create Experiment** to start the automated ML experiment. 
 
 Running the experiment might take minutes to hours. You can follow along the experiment's progress in the SageMaker Studio browser tab, but it is also safe to close the tab and come back later to check progress.
 
@@ -74,9 +74,9 @@ Once the experiment has concluded, the resultant output is 250 trials that SageM
 
 1. Select the trial marked *Best* and choose **Deploy model**.
    {{< img "sagemaker-trials.png" "SageMaker trials" "1 - Best, 2 - Deploy model" >}}
-2. Give your endpoint a name. Further steps in this module assume the name `roomOccupancyEndpoint`.
-3. Under *Inference Response Content*, select both *predicted_label* and *probability*. *predicted_label* may already have been added to the list.
-4. Choose **Deploy model** to tell SageMaker to deploy your model as a new consumable API endpoint. This will take several minutes. 
+1. Give your endpoint a name. Further steps in this module assume the name `roomOccupancyEndpoint`.
+1. Under *Inference Response Content*, select both *predicted_label* and *probability*. *predicted_label* may already have been added to the list.
+1. Choose **Deploy model** to tell SageMaker to deploy your model as a new consumable API endpoint. This will take several minutes. 
 
 {{< img "sagemaker-deploy.png" "SageMaker deploy" >}}
 
@@ -86,7 +86,7 @@ Now your machine learning model is deployed as an API endpoint, managed by Amazo
 Leaving this application running beyond 6 hours can result in AWS charges due to the number of requests to the S3 bucket. We recommend you finish this tutorial in that time and perform the [cleanup steps](/en/smart-spaces/conclusion.html#clean-up) to avoid any unwanted costs.
 {{% /notice %}}
 
-## Validation steps
+## Validation
 Before moving on to the next chapter, you can validate that your serverless application is configured as intended...
 1. Use the [Amazon SageMaker console](https://us-west-2.console.aws.amazon.com/sagemaker/home?region=us-west-2#/endpoints) to see your new endpoint with status *InService*, on the *Endpoints* page. 
 

@@ -4,21 +4,29 @@ weight = 10
 pre = "<b>a. </b>"
 +++
 
-In this chapter, you'll download and install the [AWS CLI](https://aws.amazon.com/cli/) for your host machine's operating system, retrieve AWS [Identity and Access Management](https://aws.amazon.com/iam/) (IAM) user access credentials to manage services with the AWS CLI, configure the AWS CLI, and finally test that the AWS CLI is working properly. This tutorial assumes that you have an [AWS account](https://console.aws.amazon.com/console/home) and you have completed [setting up your environment](../getting-started/prerequisites.html). If you already have the AWS CLI (version 1 or version 2) installed and configured on your machine, skip to the [test section](#testing-the-aws-cli).
+In this section, you download and install the [AWS CLI](https://aws.amazon.com/cli/) for your host machine's operating system, retrieve AWS [Identity and Access Management](https://aws.amazon.com/iam/) (IAM) user access credentials to manage services with the AWS CLI, configure the AWS CLI, and finally test that the AWS CLI is working properly. 
 
-## Open the PlatformIO CLI Terminal Window
-In the [Getting Started](../getting-started.html) tutorial, you installed and used PIO and the PIO terminal window. It is important to continue to use the PIO terminal window for all subsequent steps. The PIO terminal window pre-loads additional applications and libraries that your standard terminal/command prompt might not have. 
+{{% notice info%}}
+If you already have the AWS CLI (version 1 or version 2) installed and configured on your machine, skip to [Test the AWS CLI](#testing-the-aws-cli).
+{{% /notice %}}
 
-If you've closed VS Code or don't have the terminal viewport with the PlatformIO CLI loaded in VS Code, follow the steps below after opening VS Code:
-1) Click the **PlatformIO logo** on the VS Code activity bar (left most menu).
-2) From the **Quick Access** menu, under **Miscellaneous**, select **New Terminal**. The terminal viewport should load with a new terminal labeled **PlatformIO CLI**.
-{{< img "pio-new_terminal-alexa_intro.en.png" "PlatformIO CLI terminal in VS Code" "1 - Open PIO menu, 2 - Open new PIO Terminal, 3 - Verify you're in the 'PlatformIO CLI' terminal session">}}
+## Open the PlatformIO CLI terminal window
+In the [Getting Started](../getting-started.html) tutorial, you installed and used Platform IO (PIO) and the PIO terminal window. The PIO terminal window pre-loads additional applications and libraries that your standard terminal/command prompt might not have. It is important to continue to use the PIO terminal window for all subsequent steps. 
 
-## Downloading and Installing the AWS CLI
-The AWS Command Line Interface (CLI) is a unified tool to manage your AWS services. With just one tool to download and configure, you can control multiple AWS services from the command line and automate them through scripts. To be able to configure the AWS CLI, you'll first need to have an AWS account. Please [sign in to AWS console](https://console.aws.amazon.com/console/home) or [create an AWS account](https://portal.aws.amazon.com/billing/signup#/start) before proceeding.
+If you closed Visual Studio Code (VS Code) or don't have the terminal viewport with the PlatformIO CLI displayed, complete the following the steps:
+1. Open **VS Code**, if necessary.
+1. Choose the **PlatformIO logo** on the VS Code activity bar.
+1. From the **Quick Access** menu, expand **Miscellaneous**, and select **New Terminal**. The terminal viewport should load with a new terminal labeled *PlatformIO CLI*.
+{{< img "pio-new_terminal-alexa_intro.en.png" "PlatformIO CLI terminal in VS Code" "1 - Open PIO menu, 2 - Open a new PIO Terminal, 3 - Verify that you have a 'PlatformIO CLI' terminal session">}}
+
+## Download and Install the AWS CLI
+The AWS Command Line Interface (CLI) is a unified tool to manage your AWS services. You can control multiple AWS services from the command line and automate them through scripts with just one tool . To configure the AWS CLI, you first need to have an AWS account. 
+
+* If you do not have a personal AWS account, please [sign in to AWS console](https://console.aws.amazon.com/console/home) or [create an AWS account](https://portal.aws.amazon.com/billing/signup#/start) before proceeding.
+* Once complete, expand the appropriate operating system from the following list and complete the instructions to install the AWS CLI:
 
 {{%expand "Ubuntu Linux v18.0+ (64-bit)" %}}
-Download and install the latest AWS CLI version 2 for 64-bit Linux:
+Issue the following commands to download and install the latest AWS CLI version 2 for 64-bit Linux:
    ```bash
    curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
    unzip awscliv2.zip
@@ -27,51 +35,57 @@ Download and install the latest AWS CLI version 2 for 64-bit Linux:
 {{% /expand%}}
 
 {{%expand "MacOS 10.14+" %}}
-1) Download the latest AWS CLI version 2 installer for macOS [here](https://awscli.amazonaws.com/AWSCLIV2.pkg).
-2) Double-click the downloaded installer file and follow the on-screen instructions to install it on the host machine. We recommend you install the AWS CLI for all users, but if you choose not to, follow [these instructions](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-mac.html#cliv2-mac-install-gui) to create a symlink and add the file to your path.
+1. Download the latest [ AWS CLI version 2 installer for macOS](https://awscli.amazonaws.com/AWSCLIV2.pkg).
+1. Launch the downloaded installer and follow the on-screen instructions to install the AWS CLI on the host machine. We recommend you install the AWS CLI for all users, but if you choose not to, follow [these instructions](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-mac.html#cliv2-mac-install-gui) to create a symlink and add the file to your path.
 {{% /expand%}}
 
 {{%expand "Windows 10 (64-bit)" %}}
-1) Download the latest AWS CLI version 2 installer for Windows [here](https://awscli.amazonaws.com/AWSCLIV2.msi).
-2) Double-click the downloaded installer file and follow the on-screen instructions to install on the host machine.
+1. Download the latest [AWS CLI version 2 installer for Windows](https://awscli.amazonaws.com/AWSCLIV2.msi).
+1. Launch the downloaded installer and follow the on-screen instructions to install the AWS CLI on your host machine.
 {{% /expand%}}
 
+For additional information and instructions, see [Installing or updating the latest version of the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
+
 ## Retrieve the IAM user access credentials
-[IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) is a web service that helps you securely control access to AWS resources. We recommend you [create an administrative user](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html) first instead of using your root user account.
+[AWS Identity and Access Management](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) (IAM) is a web service that helps you securely control access to AWS resources. It is considered a best practice to [create an administrative user](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html) instead of using your root user account.
 
-To retrieve your IAM user's access credentials, follow the [official docs](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html#cli-configure-quickstart-config).
+To retrieve your IAM user's access credentials, follow the instructions outlined in the [Quick configuration with aws configure](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html#cli-configure-quickstart-config) documentation.
 
-## Configuring the AWS CLI
-With the AWS CLI installed and the IAM user access credentials in hand, it's time to configure the AWS CLI. One of the settings you'll configure is the AWS [region](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html). It's important to keep in mind that the region you're currently using stays consistent—for purposes of this tutorial, we are standardizing on **us-west-2**. Using a different region or unknowingly changing regions can cause other challenges in subsequent steps, such as [regional service availability](https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/).
+## Configure the AWS CLI
+With the AWS CLI installed and the IAM user access credentials in hand, it's time to configure the AWS CLI. 
 
-To configure the AWS CLI on your host machine, enter the following command in the terminal viewport:
+One of the settings you'll configure is the [AWS Region](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html). It is important to keep in mind that the Region you're currently using stays consistent—for purposes of this tutorial, we use `us-west-2` as a standard Region. Using a different Region or unknowingly changing Regions can cause other challenges in subsequent steps; such as, [regional service availability](https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/).
+
+Issue the following command in the terminal viewport to configure the AWS CLI on your host machine:
 ```bash
 aws configure
 ```
 
-The CLI will prompt you to input four parameters. The fields should be filled out similar to below, with the corresponding access key Id and secret access key that was retrieved earlier for your IAM user:
-```bash
-AWS Access Key ID [None]: EXAMPLEKEYIDEXAMPLE
-AWS Secret Access Key [None]: EXAMPLEtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
-Default region name [None]: us-west-2
-Default output format [None]: json
-```
+The CLI will prompt you to input four parameters. Complete the information similar to the following example. 
+**Note:** the AWS Access Key ID and AWS Secret Access Key will need to match the information that you retrieved for your IAM user. 
 
-## Testing the AWS CLI
-With everything configured as described above, it is now time to test your AWS CLI to ensure it is working properly. First, you will verify the CLI is installed, and then validate the configuration.
+- AWS Access Key ID [None]: `EXAMPLEKEYIDEXAMPLE`
+- AWS Secret Access Key [None]: `EXAMPLEtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY`
+- Default region name [None]: `us-west-2`
+- Default output format [None]: `json`
 
-To check the CLI is installed correctly, we will use the version option. A successful installation will output the AWS CLI version (if you receive errors, visit the [troubleshooting guide](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-troubleshooting.html)):
+## Test the AWS CLI
+With the AWS CLI configured, it is time to test that everything is configured correctly. Let's begin with a simple test. Execute the following command to confirm the AWS CLI version that's installed:
+
 ```bash
 aws --version
 ```
+{{% notice note %}}
+ If you receive errors, see [Troubleshooting AWS CLI errors](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-troubleshooting.html).
+{{% /notice %}}
 
-Next, you will verify the AWS CLI is configured with your IAM credentials and US West (Oregon) region. The command you will run will check your [MQTT broker](https://docs.aws.amazon.com/iot/latest/developerguide/protocols.html) endpoint for AWS IoT. It should return an address with the pattern `xxxxxxxx-ats.iot.us-west-2.amazonaws.com`. If you receive errors, visit the [troubleshooting guide](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-troubleshooting.html).
+Next, verify that the AWS CLI is configured with your IAM credentials and is using the us-west-2 (US West (Oregon)) Region. Execute the following command to check your [MQTT broker](https://docs.aws.amazon.com/iot/latest/developerguide/protocols.html) endpoint for AWS IoT. 
 ```bash
 aws iot describe-endpoint --endpoint-type iot:Data-ATS
 ```
+It should return an address with the pattern `xxxxxxxx-ats.iot.us-west-2.amazonaws.com`. Take a moment to copy and paste the endpoint to a secure location. If you receive an error, see the troubleshooting guide noted above.
 
-
-With everything installed and configured, let's move to the next chapter, [**Device Provisioning**](device-provisioning.html).
+Now that everything is installed and configured, continue to the next chapter, [**Device Provisioning**](device-provisioning.html).
 
 ---
 {{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

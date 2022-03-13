@@ -4,16 +4,16 @@ weight = 30
 pre = "<b>c. </b>"
 +++
 
-## Chapter introduction
+## Introduction
 In this chapter we will build the ported ESP VA-SDK firmware, flash it on to the device, provision the Wi-Fi and authorize the device to your Alexa Account, then test some of the smart home capabilities using Alexa voice commands available in this beta version of AFI.
 
-## Flash the Firmware
+## Flash the firmware
 Use the PlatformIO CLI to compile your firmware, upload the firmware, and monitor the serial output of your device. It will take some time to build and flash the app, but after that's done you should see the stream of device logs in your terminal. If you receive an error for the port not being auto-detected, follow the [Identifying the serial port on host machine](../getting-started/prerequisites/windows.html#identifying-the-device-communication-port) instructions and try the command again. You can close the monitor session with the **Ctrl** + **C** keystroke combination:
    ```bash
    pio run --environment core2foraws --target upload --target monitor 
    ```
 
-## Provision the Device
+## Provision the device
 To provision the device, you must configure your Wi-Fi network credentials and authorize the application with your Alexa account using the ESP Alexa Phone Application.
 
 Download the application from your mobile app store.
@@ -60,7 +60,7 @@ Try a variety of utterances to Alexa - the side LEDs should light blue up when *
 
 {{< img "alexa-time.en.webp" "Alexa, what time is it?" "Person: Alexa, what time is?, Alexa: It's 1:52p.m.">}}
 
-## Testing Alexa Smart Home Capabilities (Beta)
+## Test Alexa Smart Home Capabilities (Beta)
 The AFI device has **Alexa Built-In**, which means you can speak to Alexa directly on the device and Alexa will respond with voice on the device. However, this version of AFI from Espressif also supports Alexa Smart Home commands as a beta feature, which allows you to control attributes on the device.
 
 The Alexa for AWS IoT sample application creates a virtual device called **Light** in your Alexa app, which supports two interfaces:

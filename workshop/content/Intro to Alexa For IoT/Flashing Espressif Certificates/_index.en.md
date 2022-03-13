@@ -1,13 +1,13 @@
 +++
-title = "Flashing Espressif Certificates"
+title = "Flash the Espressif Certificates"
 weight = 20
 pre = "<b>b. </b>"
 +++
 
-## Chapter introduction
+## Introduction
 By the end of this chapter, you will have installed the companion phone applications on your mobile device, cloned the necessary code repository, received certificates for connecting to AWS IoT using Espressif Alexa's AWS account, and flashed the certificates to separate flash partitions on the reference hardware.
 
-## Companion Mobile Applications
+## Companion mobile applications
 In order to complete the authentication with Alexa, you will use Espressif's companion app to provision the device's Wi-Fi and provision the reference hardware with your Alexa account.
 
 Download the ESP Alexa Phone App:
@@ -15,7 +15,7 @@ Download the ESP Alexa Phone App:
 
 We recommend (optional_ for this tutorial) that you have the Amazon Alexa app available for [iOS](https://apps.apple.com/us/app/amazon-alexa/id944011620) or [Android](https://play.google.com/store/apps/details?id=com.amazon.dee.app) - this is the same app used to provision most Alexa-enabled devices.
 
-## Accessing the code
+## Access the code
 All the code for this tutorial is located in the `Alexa_for_IoT-Intro` folder from the repo you cloned in the [**Blinky Hello World**](/en/blinky-hello-world.html) tutorial. If you have already cloned the repository locally, you can skip this section.
 
 To clone the repo again from the [PlatformIO CLI terminal window](../blinky-hello-world/prerequisites.html#open-the-platformio-cli-terminal-window):
@@ -23,21 +23,21 @@ To clone the repo again from the [PlatformIO CLI terminal window](../blinky-hell
 git clone https://github.com/m5stack/Core2-for-AWS-IoT-EduKit.git
 ```
 
-## Opening the Project Environment
+## Open the project environment
 For this tutorial, you will use the Alexa_For_IoT-Intro project. In your new VS Code window, 
 1. Click the **PlatformIO logo** in the VS Code activity bar (left most menu)
-2. Select **Open** from the left PlatformIO menu
-3. Click **Open Project**
-4. Navigate to the `Core2-for-AWS-IoT-EduKit/Alexa_For_IoT-Intro` folder, and click **open**.
+1. Select **Open** from the left PlatformIO menu
+1. Click **Open Project**
+1. Navigate to the `Core2-for-AWS-IoT-EduKit/Alexa_For_IoT-Intro` folder, and click **open**.
 {{< img "pio-home.en.png" "PlatformIO home screen" "1 - Open PIO menu, 2 - Open PIO home, 3 - Open the project folder" >}}
 
 Next, you must open a new PlatformIO CLI terminal window in VS Code:
-1) Click the **PlatformIO logo** on the VS Code activity bar (left most menu).
-2) From the **Quick Access** menu, under **Miscellaneous**, select **New Terminal**.
+1. Click the **PlatformIO logo** on the VS Code activity bar (left most menu).
+1. From the **Quick Access** menu, under **Miscellaneous**, select **New Terminal**.
 
 {{< img "pio-new_terminal-smart_thermostat.en.png" "PlatformIO CLI terminal in VS Code" "1 - Open PIO menu, 2 - Open new PIO Terminal, 3 - Verify you're in the 'PlatformIO CLI' terminal session, 4 - Paste the commands into terminal, 5 - If you encounter an error autodetecting the port, open the Platform.ini file and follow instructions to manually add the serial port.">}}
 
-## Set up AWS IoT Certificates 
+## Set up AWS IoT certificates 
 You must create the AWS IoT credentials to communicate with AWS IoT core. For this workshop and device, Espressif has provided AWS IoT credentials that can be used on their AWS account with the M5Stack Core2 for AWS IoT EduKit reference hardware. To obtain the credentials for your device to connect to their service, fill out the form [here](https://espressif.github.io/esp-va-sdk/).
 
 After you receive the e-mail containing the credentials zip file, save the file and unzip the contents. After extraction, you will have a folder called **espcredentials**. With the device plugged in, you can upload these certificates to your device by entering the following commands in your PlatformIO CLI terminal window:

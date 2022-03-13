@@ -4,7 +4,7 @@ linkTitle = "macOS"
 title = "MacOS 10.14+ Setup Instructions"
 +++
 
-This section shows you how to set up your macOS computer (host machine) to be able to download the code from the GitHub repository, view and edit the code, compile it to be usable by the hardware, and upload it to the hardware's flash memory. These installation steps are sufficient for the **Getting Started** tutorial, which uses Espressif's AWS account and services for the RainMaker platform.
+This section shows you how to set up your macOS computer (host machine) to be able to download the code from the GitHub repository, view and edit the code, compile it to be usable by the hardware, and upload it to the hardware's flash memory. These installation steps are sufficient for the **Getting Started** tutorial, which uses Espressif's AWS account and services for the ESP RainMaker platform.
 
 ## Silicon Labs USB to UART bridge setup
 The Core2 for AWS IoT EduKit communicates with the host machine through a Silicon Labs CP210x USB to UART bridge. The on-board CP2104 is an USB-to-UART bridge that facilitates host communication with the ESP32-D0WD microcontroller. The microcontroller communicates bi-directionally over [UART](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/uart.html)0, which the CP210x translates through a virtual communications port on the host machine it establishes over USB-C. To be able to mount the virtual serial port and communicate across it, you must download and install the corresponding driver.

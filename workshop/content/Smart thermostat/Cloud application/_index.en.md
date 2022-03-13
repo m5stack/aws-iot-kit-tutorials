@@ -27,7 +27,7 @@ It is beyond the scope of this learning module to fully explore how to create de
 
 To create the detector model previewed in the image above, complete the following steps:
 
-First, create a file on your local desktop with the following contents. Name the file something like `model.json`. You must edit the file and replace the three instances of the term **<<CLIENT_ID>>** with the client Id/serial number of your device (it is printed on your device screen).
+First, create a file on your local desktop with the following contents. Name the file something like `model.json`. You must edit the file and replace the three instances of the term **<<CLIENT_ID>>** with the client ID/serial number of your device (it is printed on your device screen).
 
 ```json
 {

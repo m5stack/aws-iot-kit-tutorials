@@ -37,16 +37,16 @@ The SageMaker endpoint is the most expensive resource as it it has an hourly cha
 To destroy IoT Analytics storage resources:
 
 1. Go to AWS IoT Analytics, choose Channels, find your channel in the list and delete it.
-2. Go to AWS IoT Analytics, choose Data stores, find your data store in the list and delete it.
-3. Go to AWS IoT Analytics, choose Data sets, find your data set in the list and delete it.
+1. Go to AWS IoT Analytics, choose Data stores, find your data store in the list and delete it.
+1. Go to AWS IoT Analytics, choose Data sets, find your data set in the list and delete it.
 
 The IoT Core rule, Lambda function, IoT Events input and detector, and IoT Analytics pipeline only incur further charges as you use them. If you no longer need them, you can destroy each by deleting them from their respective resource detail pages in their respective management consoles:
 
 1. Go to AWS IoT Core, choose Act, choose Rules, find your rules in the list and delete it.
-2. Go to AWS IoT Analytics, choose Pipelines, find your pipeline in the list and delete it.
-3. Go to AWS Lambda, choose Functions, find your function in the list and delete it.
-4. Go to AWS IoT Events, choose Inputs, find your input in the list and delete it.
-5. Go to AWS IoT Events, choose Detector models, find your model in the list and delete it.
+1. Go to AWS IoT Analytics, choose Pipelines, find your pipeline in the list and delete it.
+1. Go to AWS Lambda, choose Functions, find your function in the list and delete it.
+1. Go to AWS IoT Events, choose Inputs, find your input in the list and delete it.
+1. Go to AWS IoT Events, choose Detector models, find your model in the list and delete it.
 
 
 Go to the next tutorial, [**Intro to Alexa for IoT**](/en/intro-to-alexa-for-iot.html).

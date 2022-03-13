@@ -4,7 +4,7 @@ linkTitle = "Linux"
 title = "Ubuntu Linux v18.0+ Setup Instructions"
 +++
 
-This section shows you how to set up your linux computer (host machine) to be able to download the code from the GitHub repository, view and edit the code, compile it to be usable by the hardware, and upload it to the hardware's flash memory. These installation steps are sufficient for the **Getting Started** tutorial, which uses Espressif's AWS account and services for the RainMaker platform.
+This section shows you how to set up your linux computer (host machine) to be able to download the code from the GitHub repository, view and edit the code, compile it to be usable by the hardware, and upload it to the hardware's flash memory. These installation steps are sufficient for the **Getting Started** tutorial, which uses Espressif's AWS account and services for the ESP RainMaker platform.
 
 ## Install dependencies
 In order to download the code, [compile the code](https://en.wikipedia.org/wiki/Object_code), and run scripts to download future dependencies using the [Python programming language's package installer](https://pip.pypa.io/en/stable/), you'll need to install some dependency libraries or applications first. To download the code from the remote code repository on GitHub, you'll need to install [git](https://git-scm.com/). To compile the code, Espressif uses the [cmake](https://cmake.org/) build system to parse the configuration of the device application and the [gcc compiler](https://gcc.gnu.org/onlinedocs/gcc/) to compile the firmware to object code that the Core2 for AWS IoT EduKit can understand and run. All the dependencies can be easily installed using apt via the following command in terminal:

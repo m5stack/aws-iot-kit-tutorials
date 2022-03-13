@@ -4,10 +4,10 @@ weight = 40
 pre = "<b>d. </b>"
 +++
 
-## Customizing Smart Home Control
+## Customize smart home control
 Now that we have an understanding of the Smart Home control capabilities included with the kit, you will modify those capabilities to control attributes of the device itself rather than simply printing to the serial monitor. For this workshop, you will create a simple implementation that turns on the side green LED light via the **PowerController** and you will set the device to blink at a set rate using the Range Controller.
 
-## Customizing smart home device attributes
+## Customize smart home device attributes
 Using your IDE, open the cloned **Core2-for-AWS-IoT-EduKit** folder and open the `Alexa_for_IoT-Intro/components/app_smart_home/app_smart_home.c` to take a look at where the Smart Home device attributes are defined. Scrolling down to line 109 **app_smart_home_init()** function and you will see the following code blocks:
 ```c
 /* Add device */
@@ -34,7 +34,7 @@ smart_home_param_t *brightness_param = smart_home_param_create("Blink", SMART_HO
 smart_home_param_add_bounds(brightness_param, smart_home_int(0), smart_home_int(10), smart_home_int(1));
 ```
 
-## Adding smart home device logic
+## Add smart home device logic
 You've modified the properties but need to implement the logic to control the green LED. First, we'll include a library to control the light and also define a few global variables:
 ```c
 #include "core2forAWS.h"
@@ -94,7 +94,7 @@ else if (val.type == SMART_HOME_VAL_TYPE_INTEGER) {
 }
 ```
 
-## Flashing and testing updated Alexa firmware
+## Flash and test updated Alexa firmware
 You have modified the project to include the necessary device attributes and the control logic to blink the onboard green LED at a specified rate. Now it is time to build the firmware, flash it on to the reference hardware, and test the capabilities. With the device plugged in and your [PlatformIO CLI terminal window](../blinky-hello-world/prerequisites.html#open-the-platformio-cli-terminal-window) open and selected, enter this command:
 ```bash
 pio run --environment core2foraws --target upload --target monitor 

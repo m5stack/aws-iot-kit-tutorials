@@ -12,7 +12,7 @@ Training a machine learning model is relatively easy these days with the modern 
 
 Please note that completion of this module will span approximately two days' time. While you only have an hour of hands-on work to complete, there are two steps where you will be hands-off. In the first step you deploy your smart thermostat device in the room you want to study and gather telemetry to store for ML training. You will want to deploy your device and gather data for a few hours at least (preferably 24 hours), but the more data you gather, the more accurate the ML model can be. The second, hands-off step will be when the ML model is going through an automated training process after you have gathered sufficient data. This training process can take several hours and we recommend starting it in the morning and returning to it in the afternoon, or letting it run overnight.
 
-## Problem solving
+## Solution overview
 
 The solution produced in the last module used a static numeric threshold on the incoming sound level to coerce a new key-value called *roomOccupancy*. To train a simple machine learning model to perform a similar function, you will use existing data as a baseline for training. This means you will need to run the existing solution for several hours in a room that has alternating states of the room actively being occupied or not. You will use an aggregated data set of that device telemetry to power an automated ML training experiment that will then be used to classify new device reports with a new *roomOccupancy* value inferred from your trained ML model. Again, your first trained model may not be very accurate, but the purpose of this solution is to give you hands-on experience with storing IoT data and exercising the workflow of training and consuming a new ML model.
 
@@ -30,7 +30,7 @@ The workflow that you will deliver in this module has the following key componen
 ## Let's go!
 Are you ready to start building? Let's review you have the following prerequisites sorted:
 1. Have you completed the [**Smart Thermostat**](../smart-thermostat.html) module in this set of tutorials? 
-2. Have you confirmed that you can see messages arriving from your smart thermostat using a test client like the one in the AWS IoT Core console? You should be able to subscribe to the topic `$aws/things/<<CLIENT_ID>>/shadow/update/accepted` (replacing <<CLIENT_ID>> with your device's client Id/serial number) and see messages arrive in the test client.
+2. Have you confirmed that you can see messages arriving from your smart thermostat using a test client like the one in the AWS IoT Core console? You should be able to subscribe to the topic `$aws/things/<<CLIENT_ID>>/shadow/update/accepted` (replacing <<CLIENT_ID>> with your device's client ID/serial number) and see messages arrive in the test client.
 
 If so, let's begin by moving on to the next chapter, [**Data routing and storage**](/en/smart-spaces/data-routing-and-storage.html).
 
