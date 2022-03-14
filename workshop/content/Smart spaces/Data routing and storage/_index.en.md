@@ -29,8 +29,12 @@ Leaving this application running beyond 6 hours can result in AWS charges. It is
 The following steps detail how to create a new IoT Core rule, a new AWS IoT Analytics project, and use the rule to forward device shadow messages to your AWS IoT Analytics project. There's a handy interface in the IoT Core rule creation wizard for creating the entire AWS IoT Analytics project on your behalf!
 
 1. In the [AWS IoT Core console](https://us-west-2.console.aws.amazon.com/iot/home?region=us-west-2#/), choose **Act** then **Rules** then **Create**.
+1. ive your rule a name like *storeInIoTAnalytics* and a description.
+1. se the following query. Be sure to replace the **<<CLIENT_ID>>** with the client Id/serial number printed on the screen of your Core2 for {{<awsEdukitShort-en>}} reference hardware kit.
+
 1. Give your rule a name like *storeInIoTAnalytics* and a description.
 1. Use the following query. Be sure to replace the **<<CLIENT_ID>>** with the client ID/serial number printed on the screen of your Core2 for AWS IoT Edukit reference hardware kit.
+
 
 ```SQL
 SELECT current.state.reported.sound, current.state.reported.temperature, current.state.reported.hvacStatus, current.state.reported.roomOccupancy, timestamp FROM '$aws/things/<<CLIENT_ID>>/shadow/update/documents'

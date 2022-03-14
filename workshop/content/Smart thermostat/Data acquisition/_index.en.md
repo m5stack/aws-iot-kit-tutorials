@@ -6,6 +6,18 @@ pre = "<b>b. </b>"
 
 In this section, you power on and start the local smart thermostat application. The application reports collected data to the logs; including, current temperature, ambient noise level, HVAC status (heating, cooling, standby), and room occupation indicator. 
 
+
+* Power on and start the local smart thermostat application.
+* Report to the logs the current temperature sensed, ambient noise level measured, an HVAC status of heating/cooling/standby, and an indicator of room occupation.
+
+The {{<awsEdukitShort-en>}} reference hardware kit has several sensors ready to use. For this solution, you will take readings from the temperature sensor and microphone using local application code. The application will keep track of sensor readings and status flags that are used to render a summary to the display.
+
+## How to program the thermostat application
+Your smart thermostat will sample the integrated sensors using code already created and included in the bundled software components. In this first step, you will simply capture the values and print them out to the logger before we move on to publishing sensor values up to {{<awsIoTCore>}}.
+
+Reading from the temperature sensor of the included MPU6886 module is easy. Here's a code snippet:
+ 
+
 The AWS IoT EduKit reference hardware kit has several sensors that are ready to use. For this tutorial, you collect readings from the temperature sensor and microphone using local application code. The application keeps track of sensor readings and status flags and are used to render a summary to the display.
 
 ## How to program the thermostat application

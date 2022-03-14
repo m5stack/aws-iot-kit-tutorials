@@ -12,8 +12,8 @@ If you are looking for ideas on how to extend the solution, here are a few:
 * Add a timer to the IoT Analytics data set so that it builds an updated content file once per day.
 * Build a simple web UI or provision Amazon QuickSight to visualize the data set created in IoT Analytics.
 * Add a new pipeline actitivy in IoT Analytics to fetch the local weather via a Lambda function and add it to your thermostat data.
-* Use the Core2 for AWS IoT EduKit reference hardware's libraries to emit a sound whenever the hvacStatus changes.
-* Use the Core2 for AWS IoT EduKit reference hardware's libraries to flash the LED strips whenever the roomOccupancy changes.
+* Use the Core2 for {{<awsEdukitShort-en>}} reference hardware's libraries to emit a sound whenever the hvacStatus changes.
+* Use the Core2 for {{<awsEdukitShort-en>}} reference hardware's libraries to flash the LED strips whenever the roomOccupancy changes.
 
 ## Clean up
 Between this solution and the previous one (**Smart thermostat**), you created the following resources in AWS:

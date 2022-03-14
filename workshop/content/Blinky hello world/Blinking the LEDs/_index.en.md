@@ -24,7 +24,11 @@ Complete the following steps to subscribe to an MQTT message topic:
 
 The messages that your device sends to the cloud will begin to appear. (**Note:** this can take a minute or two before they appear) 
 
+## Blinking the LED
+To start/stop the blinking of the LED bars on the sides of the M5Stack Core2 for {{<awsEdukitShort-en>}} reference hardware, we're going to publish from the console's AWS IoT MQTT client on a topic that the Core2 for {{<awsEdukitShort-en>}} is subscribed to. The subscription topic for the device will have the pattern `<<CLIENT_ID>>/#`. You can view the subscription topic on the device after it successfully subscribes to the topic. Additionally, you can view the client Id that's been output on the host machine's serial monitor.
+ 
 Because of the policy constraints, the device can only publish messages to the topic beginning with its client ID. This provides flexibility so that another subscriber (such as, a cloud application) to filter topics for specific devices. Filters can also be applied to display more specific topics; such as, a specific device's temperature readings. 
+
 
 ## Blink the LED
 To start or stop blinking the LED bars on the side of the AWS IoT EduKit, publish a message to the device from the AWS IoT MQTT client in a topic that the device subscribes. The subscription topic for the device will have the pattern `<<CLIENT_ID>>/#`. You can view the subscription topic on the device after it successfully subscribes to the topic. Additionally, you can view the client ID that's been output on the host machine's serial monitor.

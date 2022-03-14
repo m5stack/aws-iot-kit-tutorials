@@ -4,6 +4,8 @@ weight = 30
 pre = "<b>c. </b>"
 +++
 
+## Chapter introduction
+By the end of this chapter, your Core2 for {{<awsEdukitShort-en>}} reference hardware kit should do the following:
 In this section, you publish the sampled ambient noise level and room temperature to AWS IoT Core every ten seconds, and your device's shadow in AWS IoT Core.
 
 ## Messaging
@@ -176,6 +178,9 @@ pio run --environment core2foraws --target monitor
 ## Validation
 Complete the following steps to validate that your device is configured as intended:
 
+1. Open the AWS IoT Core console test page, subscribe to the topic `$aws/things/<<CLIENT_ID>>/shadow/update/accepted` and you should see new messages arriving in time with your **vTaskDelay()**. (Replace <<CLIENT_ID>> with your device client Id/serial number printed on the screen.)
+2. Open the AWS IoT Core console test page, publish a new shadow message on the topic `$aws/things/<<CLIENT_ID>>/shadow/update`. You should see the Core for {{<awsEdukitShort-en>}}'s LED bars change from blue, to red, to off to represent the **COOLING**, **HEATING**, and **STANDBY** published values. See below for a sample shadow message. Test the effects by toggling the **hvacStatus** (set to **HEATING** or **COOLING**) and/or **roomOccupied** values (set to **true** or **false**) each time you publish the message.
+
 1. Log into your AWS account.
 1. Navigate to the **[AWS IoT console](https://us-west-2.console.aws.amazon.com/iot/home?region=us-west-2#/)**
 1. Select **Test** in the navigation pane to open the client view.
@@ -184,7 +189,6 @@ Complete the following steps to validate that your device is configured as inten
 ```bash
   $aws/things/<<CLIENT_ID>>/shadow/update/accepted
 ```
-
 6. After you see messages arriving in the client view, choose the **Publish to a topic** tab. 
 1. Replace *`<<CLIENT_ID>>`* in the following topic with your device ID, enter it into the **Topic name** field, and choose **Publish**. It may take a couple minutes for new messages to arrive. When they do, you should see new messages arriving periodically (as defined by **vTaskDelay()**).
 ```bash

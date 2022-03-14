@@ -20,6 +20,10 @@ pio run --environment core2foraws --target menuconfig
 ```
 Complete the following steps to configure your local Wi-Fi when the Espressif IoT Development Framework Configuration window appears:
 
+{{< img "idf_menuconfig-wifi.en.webp" "Configuring Core2 for {{<awsEdukitShort-en>}} with p.py menuconfig" >}}
+
+Use the direction keys (or *K* and *J*, or *-* and *+*) on your keyboard to go to **{{<awsEdukitShort-en>}} Configuration** from the menu. Set your **WiFi SSID** and **WiFi Password** with your Wi-FI credentials. Once you are finished, press the *s* button on your keyboard to save, confirm the location of the file by pressing *enter*, followed by *q* to quit.
+
 {{% notice info %}}
 Navigation in the Espressif configuration window may vary based on your computer. To navigate up and down the menu, use *k* and *j*, or *-* and *+*, or *up arrow* and *down arrow*.
 {{% /notice %}}
@@ -34,6 +38,7 @@ Navigation in the Espressif configuration window may vary based on your computer
 1. Enter **q** to quit configuration and return to the PIO terminal window.
 
 {{< img "idf_menuconfig-wifi.en.webp" "Configuring Core2 for AWS IoT EduKit with p.py menuconfig" >}}
+
 
 {{% notice warning %}}
 Be sure your SSID is for a 2.4GHz network. The ESP32-D0WD on the M5Stack Core2 for AWS hardware does not support 5GHz Wi-Fi bands.

@@ -5,7 +5,7 @@ pre = "<b>f. </b>"
 +++
 
 ## Conclusion
-You have completed this AWS IoT EduKit hands-on tutorial that connects your device to AWS as a smart thermostat and deploys a simple application to detect room occupancy and drive HVAC state changes. 
+You have completed this {{<awsEdukitShort-en>}} hands-on tutorial that connects your device to AWS as a smart thermostat and deploys a simple application to detect room occupancy and drive HVAC state changes. 
 
 As a next step, consider following along with the next hands-on tutorial in this series, **Smart spaces**:
 
