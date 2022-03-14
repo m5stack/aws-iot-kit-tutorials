@@ -5,29 +5,24 @@ pre = "<b>e. </b>"
 +++
 
 ## Chapter introduction
-By the end of this chapter, your solution will do the following:
-
-* Process telemetry messages from the Core2 for AWS IoT EduKit device in a managed cloud application.
-* Determine which state the HVAC system should be in: HEATING, COOLING, or STANDBY.
-* Send a desired state message to your device shadow based on processed inputs.
-* Sync the desired shadow state to your device.
-* Update the device display with the desired HVAC system state.
+In this section, you process telemetry messages from the {{<awsEdukit-short-en>}} in a managed cloud application, determine what state to set the HVAC system (`HEATING`, `COOLING`, or `STANDBY`.), and send a *desired state* message to your device shadow based on the processed inputs. You then sync the desired shadow state to your device to update the device display with the desired HVAC system state.
 
 ## How to build the cloud application
-In this chapter you will construct a serverless application without any code that analyzes the inputs from your smart thermostat and determines the behavior for the corresponding (fictitious) HVAC system. You will use IoT Events to deploy a resource called a detector model that processes the device shadow messages forwarded by your IoT Core rule, evaluate if any state changes should occur from heating to cooling to standby, then send a message back to your smart thermostat with the updated state change, if any.
+To accomplish these goals, construct a serverless application that analyzes the inputs from your smart thermostat, and determines the behavior for the corresponding, and fictitious, HVAC system. Use IoT Events to deploy a resource, called a detector model, to process the device shadow messages that are forwarded by your AWS IoT rule. The detector model evaluates if any state changes should occur from heating to cooling to standby, then sends a message back to your smart thermostat with the updated state change, as necessary.
 
 Here is a preview of the detector model you will create:
 {{< img "iot-events-detector_model.en.png" "Detector model" >}}
 
-As you can see, there are three states for the HVAC application: heating, cooling, and standby. The application will always be in one of those states and begins in the *standby* state. As new messages arrive from the smart thermostat, the detector model evaluates these inputs against conditional logic to determine if the model should transition to a new state.
+The mode has three states for the HVAC application: heating, cooling, and standby. The application is always in one of those states and begins in the `STANDBY` state. As new messages arrive from the smart thermostat, the detector model evaluates these inputs against conditional logic to determine if the model should transition to a new state.
 
-For example, from the *standby* state, if a new temperature reading comes in over 80 (in degrees Fahrenheit), the model will evaluate a transition to the *cooling* state. Then, when it enters the *cooling* state, the model will publish a new message back to IoT Core to update the device shadow of the smart thermostat with a message like: `{ "state": { "desired": { "hvacStatus": "COOLING" } } }`. Based on the work you initially did in the chapter **Data sync**, these new commands will be acknowledged, the state on the device updated to reflect the command, and the LED strips set to red, blue, or off.
+For example, from the `STANDBY` state, if a new temperature reading comes in over 80 (in degrees Fahrenheit), the model will evaluate a transition to the `COOLING` state. Then, when it enters the `COOLING` state, the model publishes a new message to IoT Core to update the smart thermostat's device shadow. It's message will be similar to: `{ "state": { "desired": { "hvacStatus": "COOLING" } } }`. 
 
-It is beyond the scope of this learning module to fully explore how to create detector models in IoT Events. Instead, the steps below get your detector model up and running, with a few notes on key pieces so you know how _this_ model works. For a primer on getting started with AWS IoT Events, please review the [developer guide](https://docs.aws.amazon.com/iotevents/latest/developerguide/what-is-iotevents.html).
+Based on the work you performed in the [Data sync](/en/smart-thermostat/data-sync.html) section, new commands are acknowledged, the state on the device is updated to reflect the command, and the LED strips are set to red, blue, or off.
 
-To create the detector model previewed in the image above, complete the following steps:
+It is beyond the scope of this section to fully explore how to create detector models in IoT Events. Instead, complete the following steps to create your detector model. For more information about detector models and AWS IoT Events, see [What is AWS IoT Events?](https://docs.aws.amazon.com/iotevents/latest/developerguide/what-is-iotevents.html).
 
-First, create a file on your local desktop with the following contents. Name the file something like `model.json`. You must edit the file and replace the three instances of the term **<<CLIENT_ID>>** with the client ID/serial number of your device (it is printed on your device screen).
+1. Create a file on your host machine named **`model.json`**.
+1. Copy and paste **the following code** into the document.
 
 ```json
 {
@@ -185,40 +180,57 @@ First, create a file on your local desktop with the following contents. Name the
     "evaluationMethod": "BATCH"
 }
 ```
+3. Edit the document to replace **<<CLIENT_ID>>** (**there are three instances**) with **your device's client ID** (the ID displays on the {{<awsEdukit-short-en>}}'s screen).
+1. Log into [AWS](https://aws.amazon.com/), if necessary. 
+1. Navigate to the [AWS IoT Events](https://us-west-2.console.aws.amazon.com/iotevents/home?region=us-west-2#/) console.
+1. Expand the **navigation panel**, if necessary, and choose **Detector models**.
+1. Expand the **Action** menu and select **Import detector model**.
+1. Choose **Import** in the confirmation window.
+1. Find the **file you created** in the previous step and choose **Open**.
+1. Choose **Publish**.
+1. Enter **`edukit-iotevents`** in the Role field to create a new IAM role grants IoT Events permission to operate your model.
+1. Choose **Save and publish**.
 
-Next, use this file to import a new detector model in the AWS IoT Events console:
-1. Go to the AWS IoT Events management console.
-2. Choose **Detector models**.
-3. Choose **Action** and then **Import detector model**.
-4. Choose **Import**.
-5. Find the file you created in the previous step and choose **Open** (button name may vary per browser).
-6. Choose **Publish**.
-7. Under *Role*, provide a new name that will be used to create a new IAM role, like `edukit-iotevents`. The console will create a new IAM role that gives IoT Events permission to operate your model.
-8. Choose **Save and publish**.
+    After a few minutes, you should see status changes delivered to your smart thermostat through the LED strips color changes.
 
-You have now deployed the detector model to IoT Events. As new messages are published from your smart thermostat, the IoT Core rule you created in the previous chapter forwards them to the IoT Events input resource, then IoT Events pushes copies of the messages from any inputs to any detector models that consume them, like this one, so it can evaluate any state changes.
+**Congratulations!** You deployed a  detector model to IoT Events. As new messages publish from your smart thermostat, the IoT Core rule you created in the previous chapter forwards them to the IoT Events input resource. IoT Events then pushes copies of the messages from the inputs to detector models that consume them, like this one, so it can evaluate any state changes.
 
-Now for an explanation of a few key pieces of the model. Each state of the model (heating/cooling/standby) is nearly the same. The *standby* state has one extra action to set the numeric thresholds that every state uses to determine whether it should change states. These could be set once in a one-time initialization state before moving to *standby* for the first time, but they are included in *standby* to simplify the demonstration.
+Before you continue with this section, let's pause to review a few key pieces of the detector model. 
+* Each state of the model (`HEATING`/`COOLING`/`STANDBY`) is nearly the same. The `STANDBY` state has an additional action that sets the numeric thresholds for the other state (`HEATING` and `COOLING`). Alternately, the detector could have been configured to set the thresholds during a one-time initialization state.
 
-The configuration of the rest of the states is similar. There is an OnEnter event to publish a message to the smart thermostat's device shadow, that indicates which state the HVAC should now be in. There is a conditional transition that gets evaluated after each message is processed that checks if the state should change. For example, if the model is in the *heating* state and the conditional expression for *stopHeating* evalutes true, the model will move to the *standby* state. Note that the *standby* state has two transitions, one each for moving to *heating* or *cooling*. This model is simplified in that the system will always go through the *standby* state instead of directly from *heating* to *cooling* or vice versa. The conditional transition logic takes into consideration the two temperature boundaries; one when the room is occupied and another when the room is unoccupied.
+* The configuration for the other states is similar:
+    * There is an `OnEnter` event to publish a message to the smart thermostat's device shadow that indicates which state the HVAC should be in. 
+    * There is a conditional transition that is evaluated after each message processes and checks if the state should change; for example, if the model is in the `HEATING` state and the conditional expression for `stopHeating` evaluates `true`, the model transitions to `STANDBY`. **Note:** `STANDBY` has two transitions, one to move to `HEATING` and another to move to `COOLING`. 
+    
+        This model is simplified since the system always transitions through `STANDBY`, instead of transitioning directly from `HEATING` to `COOLING` or vice versa. 
+        
+    * The conditional transition logic takes into consideration the two temperature boundaries; one when the room is occupied and another when the room is unoccupied.
 
-Below is a sample transition from the *heating* state labeled *stopHeating*. There are two boolean expressions joined with OR `||` logic. In plainer language, this expression means "stop heating if the room is unoccupied and the room temperature is warm enough while unoccupied, OR if the room is occupied and the room is warm enough for people."
+    * The following is an example where the model transitions from `HEATING`, which is labeled `stopHeating`. There are two Boolean expressions joined with a *OR* (`||`) logic. 
+
+        In other words, this expression means "stop heating if the room is unoccupied and the room temperature is within the *unoccupied* threshold, OR if the room is occupied and the room is within the *occupied* threshold."
 
 ```js
 (!$input.thermostat.current.state.reported.roomOccupancy && $input.thermostat.current.state.reported.temperature > $variable.heatingThresholdUnoccupied) || ($input.thermostat.current.state.reported.roomOccupancy && $input.thermostat.current.state.reported.temperature > $variable.heatingThresholdOccupied)
 ```
-
-If everything has been configured per this module's instructions, you should now be seeing status changes delivered to your smart thermostat in the form of updating LED strips. This completes the end-to-end solution!
-
 ## Validation steps
-Before you move on to the next chapter, you can validate that the solution is configured as intended:
+Before you complete this section, take a moment to validate that the solution works as intended:
 
-1. Apply a temperature change to your device that will take it outside the comfort bounds set in the IoT Events detector model to see the LED strips on the side change to red (heating), blue (cooling), or off (standby). Use the warmth of your hands or a fan to raise or lower the detected temperature.
-1. Alternatively, choose new temperature thresholds for your event detector that exclude your room's true ambient temperature and redeploy your detector model to see it work. You can find the threshold values stored as variables in the model state labeled "standby" under the OnEnter action labeled "setThresholds." You can update those numbers to anything that makes sense for your room and publish the changes to test. 
+1. Apply a temperature change to your device that will take it outside the comfort bounds.
 
-Note: the temperature sensor is inside the housing of the kit and the code includes a hardcoded offset. You may see variance in the temperature reading up to 10 degrees from reading to reading. 
+    Make adjustments in the IoT Events detector model to see the LED strips on the side change to red (`HEATING`), blue (`COOLING`), or off (`STANDBY`). Use the warmth of your hands or a fan to raise or lower the detected temperature.
+1. Alternatively, choose new event detector temperature thresholds that exclude your room's true ambient temperature. Afterward, redeploy the detector model to see it work. 
+    Find the threshold values stored as variables in the model state labeled `STANDBY` under the `OnEnter` action labeled `setThresholds`. Update the numbers to anything that makes sense for your room and publish the changes to test. 
 
-If the solution is working as expected, you can move on to the [**Conclusion**](/en/smart-thermostat/conclusion.html).
+{{% notice info %}}
+The temperature sensor is inside the housing of the kit and the code includes a hardcoded offset. You may notice a variance in the temperature reading up to 10 degrees between readings. 
+{{% /notice %}}
+
+
+**This completes the end-to-end solution!**
+
+
+If the solution is working as expected, continue to the [**Conclusion**](/en/smart-thermostat/conclusion.html).
 
 ---
 {{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
