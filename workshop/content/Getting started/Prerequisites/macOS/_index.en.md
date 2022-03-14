@@ -7,7 +7,7 @@ title = "MacOS 10.14+ Setup Instructions"
 This section shows you how to set up your macOS computer (host machine) to be able to download the code from the GitHub repository, view and edit the code, compile it to be usable by the hardware, and upload it to the hardware's flash memory. These installation steps are sufficient for the **Getting Started** tutorial, which uses Espressif's AWS account and services for the ESP RainMaker platform.
 
 ## Silicon Labs USB to UART bridge setup
-The Core2 for {{<awsEdukitShort-en>}} communicates with the host machine through a Silicon Labs CP210x USB to UART bridge. The on-board CP2104 is an USB-to-UART bridge that facilitates host communication with the ESP32-D0WD microcontroller. The microcontroller communicates bi-directionally over [UART](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/uart.html)0, which the CP210x translates through a virtual communications port on the host machine it establishes over USB-C. To be able to mount the virtual serial port and communicate across it, you must download and install the corresponding driver.
+The Core2 for AWS IoT EduKit communicates with the host machine through a Silicon Labs CP210x USB to UART bridge. The on-board CP2104 is an USB-to-UART bridge that facilitates host communication with the ESP32-D0WD microcontroller. The microcontroller communicates bi-directionally over [UART](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/uart.html)0, which the CP210x translates through a virtual communications port on the host machine it establishes over USB-C. To be able to mount the virtual serial port and communicate across it, you must download and install the corresponding driver.
 
 1) Ensure the device is not connected to host machine.
 2) Download the macOS Silicon Labs CP210x driver [here](https://www.silabs.com/documents/public/software/Mac_OSX_VCP_Driver.zip).
@@ -43,7 +43,7 @@ The ESP RainMaker Phone Apps are available for iOS and Android phones to provide
 If you do not posess a compatible Android or iOS device, you can use the [RainMaker CLI](https://rainmaker.espressif.com/docs/cli-setup.html) and substitute the provided instructions.
 
 ## Identifying the device communication port
-If you haven't already, it's time to unbox the Core2 for {{<awsEdukitShort-en>}} reference hardware and connect it to your host computer's USB 2.0 port using the supplied USB-A to USB-C cable that facilitates communication between them. Additionally, included in the package is a hex key that you can use to install additional modules (sold separately). The device should automatically turn on once you plug it in, but if it doesn't, press the power button.
+If you haven't already, it's time to unbox the Core2 for AWS IoT EduKit reference hardware and connect it to your host computer's USB 2.0 port using the supplied USB-A to USB-C cable that facilitates communication between them. Additionally, included in the package is a hex key that you can use to install additional modules (sold separately). The device should automatically turn on once you plug it in, but if it doesn't, press the power button.
 ![How to turn M5Stack Core2 for AWS on or off](macos/core2foraws_power_on_off.jpg?width=500px&classes=shadow)
 
 With the device ready and the software for this tutorial installed, let's identify the port your device is virtually mounted to so that you can perform read & write operations to that specific port.
@@ -51,11 +51,11 @@ With the device ready and the software for this tutorial installed, let's identi
 2) Click the icon next to the port with the description "CP2104 USB to UART Bridge Controller" (usually `/dev/cu.SLAB_USBtoUART`) to copy the device port.
 
 {{% notice note %}}
-If your Core2 for {{<awsEdukitShort-en>}} does not show up in the list of devices, check that it's powered on and you are using the supplied USB-A to USB-C cable. Some USB-C hubs have compatibility issues with establishing a serial port.
+If your Core2 for AWS IoT EduKit does not show up in the list of devices, check that it's powered on and you are using the supplied USB-A to USB-C cable. Some USB-C hubs have compatibility issues with establishing a serial port.
 {{% /notice %}}
 
 ## Next
-With everything set up and your host machine ready and able to communicate with the Core2 for {{<awsEdukitShort-en>}} reference hardware, let's continue to the next chapter — [**Running the ESP RainMaker Agent**](/en/getting-started/run-rainmaker.html).
+With everything set up and your host machine ready and able to communicate with the Core2 for AWS IoT EduKit reference hardware, let's continue to the next chapter — [**Running the ESP RainMaker Agent**](/en/getting-started/run-rainmaker.html).
 
 ---
 {{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

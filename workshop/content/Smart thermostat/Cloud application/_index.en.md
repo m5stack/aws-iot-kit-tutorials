@@ -7,7 +7,7 @@ pre = "<b>e. </b>"
 ## Chapter introduction
 By the end of this chapter, your solution will do the following:
 
-* Process telemetry messages from the Core2 for {{<awsEdukitShort-en>}} device in a managed cloud application.
+* Process telemetry messages from the Core2 for AWS IoT EduKit device in a managed cloud application.
 * Determine which state the HVAC system should be in: HEATING, COOLING, or STANDBY.
 * Send a desired state message to your device shadow based on processed inputs.
 * Sync the desired shadow state to your device.
@@ -202,7 +202,7 @@ Now for an explanation of a few key pieces of the model. Each state of the model
 
 The configuration of the rest of the states is similar. There is an OnEnter event to publish a message to the smart thermostat's device shadow, that indicates which state the HVAC should now be in. There is a conditional transition that gets evaluated after each message is processed that checks if the state should change. For example, if the model is in the *heating* state and the conditional expression for *stopHeating* evalutes true, the model will move to the *standby* state. Note that the *standby* state has two transitions, one each for moving to *heating* or *cooling*. This model is simplified in that the system will always go through the *standby* state instead of directly from *heating* to *cooling* or vice versa. The conditional transition logic takes into consideration the two temperature boundaries; one when the room is occupied and another when the room is unoccupied.
 
-Below is a sample transition from the *heating* state labeled *stopHeating*. There are two Boolean expressions joined with OR `||` logic. In plainer language, this expression means "stop heating if the room is unoccupied and the room temperature is warm enough while unoccupied, OR if the room is occupied and the room is warm enough for people."
+Below is a sample transition from the *heating* state labeled *stopHeating*. There are two boolean expressions joined with OR `||` logic. In plainer language, this expression means "stop heating if the room is unoccupied and the room temperature is warm enough while unoccupied, OR if the room is occupied and the room is warm enough for people."
 
 ```js
 (!$input.thermostat.current.state.reported.roomOccupancy && $input.thermostat.current.state.reported.temperature > $variable.heatingThresholdUnoccupied) || ($input.thermostat.current.state.reported.roomOccupancy && $input.thermostat.current.state.reported.temperature > $variable.heatingThresholdOccupied)

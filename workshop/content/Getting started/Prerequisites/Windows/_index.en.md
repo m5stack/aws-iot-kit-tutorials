@@ -9,14 +9,6 @@ This section provides information to configure your Windows computer (host machi
 ## Install Git and its dependencies
  Git is a widely adopted distributed version control system, and is commonly used for source code management and collaboration. Git also allows users to track file changes, and distribute code between a local machine and remote server (for more information, see [About Git](https://git-scm.com/about)).
 
-## Silicon Labs USB to UART bridge setup
-The Core2 for {{<awsEdukitShort-en>}} communicates with the host machine through a Silicon Labs CP210x USB to UART bridge. The on-board CP2104 is an USB-to-UART bridge that facilitates host communication with the ESP32-D0WD microcontroller. The microcontroller communicates bi-directionally over [UART](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/uart.html)0, which the CP210x translates through a virtual communications port on the host machine it establishes over USB-C. To be able to mount the virtual serial port and communicate across it, you must download and install the corresponding driver.
-1) Ensure the device is not connected to host machine.
-2) Download the Windows Silicon Labs CP210x driver [here](https://www.silabs.com/documents/public/software/CP210x_Universal_Windows_Driver.zip).
-3) Extract the contents of the download.
-   {{% notice info %}}
-   You must extract the contents of the folder, the driver will not install if the executable is run from within the archive.
-
 OpenSSL provides a toolkit for secure communication to the Git repository (for more information, see [OpenSSL](https://www.openssl.org/))
  
 Complete the following steps to install OpenSSL, Git, and Git's dependencies:
@@ -35,7 +27,6 @@ To be able to mount the virtual serial port and communicate across it, you must 
 3) Extract the downloaded file.
    {{% notice note %}}
    You must extract the contents of the folder because the driver will not install if the executable runs within the archive. Also, it is not important where you save the extracted folder. 
-
    {{% /notice %}} 
 4) **Open the folder**, right-click the **silabser.inf** file, and choose **Install**.
 5) Restart your host machine to make sure the driver is applied.
@@ -74,14 +65,10 @@ Install the ESP Rainmaker application through:
 
 If you don't have a compatible Android or iOS device, follow the [ESP RainMaker CLI Setup](https://rainmaker.espressif.com/docs/cli-setup.html) instructions.
 
-## Identifying the device communication port
-If you haven't already, it's time to unbox the Core2 for {{<awsEdukitShort-en>}} reference hardware and connect it to your host computer's USB 2.0 port using the supplied USB-A to USB-C cable that facilitates communication between them. Additionally, included in the package is a hex key that can be used to install additional modules (sold separately). The device should automatically turn on once you plug it in, but if doesn't, press the power button.
-  
 ## Identify the device communication port
 If you haven't already, unbox the AWS IoT EduKit and connect it to your host computer's USB 2.0 port using the supplied USB-A to USB-C cable. (You do not need to use the hex key that is included at this time. This key is used to install additional modules that are sold separately.) 
 
 The device should automatically turn on when you plug it in. If it doesn't, press the power button.
-
 ![How to turn M5Stack Core2 for AWS on or off](windows/core2foraws_power_on_off.jpg?width=500px&classes=shadow)
 
 Now that the device is ready and the prerequisite software is installed, let's identify the virtual port your device is using so that you can correctly route read and write operations.
@@ -90,18 +77,11 @@ Now that the device is ready and the prerequisite software is installed, let's i
 2) Choose the icon next to the port with the description **Silicon Labs CP210x USB to UART Bridge** (this is usually `COM3`). **Write down the device port number.** (**Note:** When you disconnect and reconnect the AWS IoT EduKit to your host machine, the port number can change. Be sure to confirm this port each  time.)
 
 {{% notice note %}}
-If your Core2 for {{<awsEdukitShort-en>}} does not show up in the list of devices, check that it's powered on and you are using the supplied USB-A to USB-C cable. Some USB-C hubs have compatibility issues with establishing a serial port.
-{{% /notice %}}
-
-## Next
-With everything set up and your host machine ready and able to communicate with the Core2 for {{<awsEdukitShort-en>}} reference hardware, let's continue to the next chapter — [**Running the ESP RainMaker Agent**](/en/getting-started/run-rainmaker.html).
-
 If your AWS IoT EduKit does not appear in the device list, confirm that it's powered on and you are using the supplied USB-A to USB-C cable. Some USB-C hubs have compatibility issues with establishing a serial port.
 {{% /notice %}}
 
 ## Next
 Now that your host machine can communicate with the AWS IoT EduKit reference hardware, continue to the next chapter — [**Run the ESP RainMaker Agent**](/en/getting-started/run-rainmaker.html).
 
-  
 ---
 {{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
