@@ -1,0 +1,25 @@
+{{- $product := "" -}}
+
+{{- if .IsNamedParams -}}
+	{{- $product = .Get "type" -}}
+{{- else -}}
+	{{- $product = .Get 0 -}}
+{{- end -}}
+
+{{- $products := dict
+	"edukit-long-en" "AWS IoT Edukit"
+	"edukit-short-en" "AWS IoT Edukit"
+	"iotrules-long-en" "AWS IoT Rules" 
+	"iotrules-short-en" "AWS IoT Rules" 
+	
+	
+	"NO_PRODUCT_MATCHES" "No product found for key \"%s\"!"
+-}}
+
+{{- $output := index $products $product -}}
+
+{{- if not $output -}}
+	{{- $output = printf (index $products "NO_PRODUCT_MATCHES") $product -}}
+{{- end -}}
+
+{{- $output -}}
