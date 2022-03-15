@@ -4,33 +4,36 @@ weight = 60
 pre = "<b>f. </b>"
 +++
 
-## Conclusion
-You have completed this AWS IoT EduKit hands-on tutorial that connects your device to AWS as a smart thermostat and deploys a simple application to detect room occupancy and drive HVAC state changes. 
+We hope that you enjoyed connecting your {{<awsEdukit-short-en>}} to AWS, and deploying a simple application that detected room occupancy and controlled a fictitious HVAC system. 
 
-As a next step, consider following along with the next hands-on tutorial in this series, **Smart spaces**:
+If you would like additional ideas for experimentation, think of ways to enhance the customer experience; for example, how could you update the solution so that the HVAC setting stay engaged for a minimum time instead of turning off 10 seconds when no ambient noise is detected? How can you achieve this without pushing new code to your  device? *(You can do it!)*
 
-If you are looking for additional ideas to experiment with your new solution, think of ways to enhance the customer experience. For example, how could you update the solution so that the HVAC setting stays engaged for a minimum time instead of turning off after no ambient noise is heard for just 10 seconds? Can you achieve this without pushing new code to your  device? (Hint: yes, you can.)
 
 ## Clean up
 In this solution you created the following resources in AWS:
 
-* IoT Core rule.
+* AWS IoT rule
 * IAM roles.
 * IoT Events input and detector model.
 
-None of these resources incur ongoing metered charges just by existing. You will only incur metered charges as the resources are used to process new messages from your device. If you proceed with the next hands-on tutorial **Smart spaces**, we recommend that you do not destroy any of the resources from this tutorial.
+None of these resources incur ongoing metered charges just by existing. You only incur charges when the resources are used to process new messages from your device. If you proceed with the next hands-on tutorial [**Smart Spaces**](/en/smart-spaces.html), do not remove any of the resources from this tutorial. If you will take a break between tutorials, simply turn off your {{<awsEdukit-short-en>}} (hold the power button for six seconds) to prevent it from continuing to publish messages to AWS.
 
-If you have finished experimenting with this tutorial's solution and do not intend to explore the **Smart spaces** tutorial, you can destroy these resources: 
+If you have finished experimenting with this tutorial's solution and do not intend to explore the [**Smart Spaces**](/en/smart-spaces.html) tutorial, you can remove these resources: 
 
-1. Go to the AWS IoT Core console, choose Act, choose Rules, find your rule in the list and delete it.
-2. Go to the AWS IoT Events console, choose Detector models, find your model in the list and delete it. Choose Inputs, find your input in the list and delete it.
-3. Go to the IAM console, choose Roles, find the roles you made for your IoT Core rules and IoT Events detector model in the list and delete them.
-4. Run the command in [PlatformIO CLI terminal window](../blinky-hello-world/prerequisites.html#open-the-platformio-cli-terminal-window) from the **Smart-Thermostat** folder to erase the device firmware and prevent the device from being connected and sending messages to AWS IoT Core. You can also power down the device by holding the power button for 6 seconds:
+1. Navigate to [AWS IoT Core](https://us-west-2.console.aws.amazon.com/iot/home?region=us-west-2#/home), expand Act, choose Rules, find your rule in the list and delete it.
+1. Navigate to [AWS IoT Events](https://us-west-2.console.aws.amazon.com/iotevents/home?region=us-west-2), choose Detector models, find your model in the list and delete it. 
+1. Continue in AWS IoT Events, choose Inputs, find your input in the list and delete it.
+1. Navigate to [AWS IAM](https://us-east-1.console.aws.amazon.com/iamv2/home?region=us-east-1#/home) console, choose Roles, find the roles you made for your IoT Core rules and IoT Events detector, and delete them.
+1. Connect your {{<awsEdukit-short-en>}} to your host machine and make sure that it's on. 
+1. Open the Smart-Thermostat folder in VS Code. 
+1. Open a [PlatformIO terminal window](../blinky-hello-world/prerequisites.html#open-the-platformio-cli-terminal-window) and issue the following command to erase the device's firmware.
 ```bash
 pio run --environment core2foraws --target erase
 ```
 
-The next tutorial to complete is [**Smart Spaces**](/en/smart-spaces.html).
+
+
+Please consider continuing on your journey with your {{<awsEdukit-short-en>}}. On to  [**Smart Spaces**](/en/smart-spaces.html)!
 
 ---
 {{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
