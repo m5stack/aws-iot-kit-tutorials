@@ -13,7 +13,7 @@ The following are the top three winning entries:
 {{% /notice %}}
 
 ![EduKit Logo](AWS_IoT_EduKIt_Logo-320px_193px.png)
-{{< awsService type="edukit-long-en" >}} is an easy way to learn how to build Internet of Things (IoT) applications using AWS services through a prescriptive learning program. Students, engineers, and professionals benefit from hands-on practice with the {{< awsService type="edukit-short-en" >}}. These educational resources combine a reference hardware kit with detailed guides and code examples to build IoT applications.
+{{< awsService type="edukit-long-en" >}} ({{< awsService type="edukit-short-en" >}}) is an easy way to learn how to build Internet of Things (IoT) applications using AWS services through a prescriptive learning program. Students, engineers, and professionals benefit from hands-on practice with the {{< awsService type="edukit-short-en" >}}. These educational resources combine a reference hardware kit with detailed guides and code examples to build IoT applications.
 
 ### Benefits of {{< awsService type="edukit-short-en" >}}
 #### Simplified hardware selection

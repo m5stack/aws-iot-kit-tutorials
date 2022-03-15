@@ -103,9 +103,9 @@ SELECT current.state as current.state, current.version as current.version, times
 4. Replace the contents of the *Rule query statement* field with your updated SQL statement. 
 1. Choose **Add action**.
 1. Select *Send a message to an IoT Events Input* and choose **Configure action** at the bottom of the window. 
-1. Choose **Select** to the right of the *Input name* and select the *thermostatRule* input resource you created in AWS IoT Events. 
+1. Choose **Select** to the right of the *Input name* and select the **thermostat** input resource you created in AWS IoT Events. 
 1. Choose **Create Role** in the *Role (requires IoT Events access)* section. 
-1. When the *Create a new role* window appears, enter **sendToEvents** in the Name field and choose **Create role**.
+1. When the *Create a new role* window appears, enter **EduKit-sendToEvents** in the Name field and choose **Create role**.
 1. Choose **Add action** to finish configuring your action and return to the rule creation form.
 1. Choose **Create Rule** to create this rule in AWS IoT rules engine.
 
