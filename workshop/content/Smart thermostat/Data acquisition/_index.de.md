@@ -127,10 +127,10 @@ Um die Konfiguration aus dem Blinky-Projekt zu kopieren, kompilieren Sie die Ger
 Bevor Sie mit dem nächsten Kapitel fortfahren, können Sie überprüfen, ob Ihr Gerät wie vorgesehen konfiguriert ist, indem Sie die serielle Ausgabe im Terminalfenster anzeigen, die wie folgt aussehen sollte:
 
 ```
-I (16128) shadow: On Device: roomOccupancy false
-I (16132) shadow: On Device: hvacStatus STANDBY
-I (16137) shadow: On Device: temperature 64.057533
-I (16143) shadow: On Device: sound 8
+I (16128) MAIN: On Device: roomOccupancy false
+I (16132) MAIN: On Device: hvacStatus STANDBY
+I (16137) MAIN: On Device: temperature 64.057533
+I (16143) MAIN: On Device: sound 8
 ```
 
 Wenn diese wie erwartet funktionieren, fahren wir mit [**Datensynchronisierung**](/de/smart-thermostat/data-sync.html) fort.

@@ -129,10 +129,10 @@ void app_main()
 在进入下一章节之前，您可以通过查看终端窗口中的串行输出来验证你的设备是否按照预期进行了配置：
 
 ```
-I (16128) shadow: On Device: roomOccupancy false
-I (16132) shadow: On Device: hvacStatus STANDBY
-I (16137) shadow: On Device: temperature 64.057533
-I (16143) shadow: On Device: sound 8
+I (16128) MAIN: On Device: roomOccupancy false
+I (16132) MAIN: On Device: hvacStatus STANDBY
+I (16137) MAIN: On Device: temperature 64.057533
+I (16143) MAIN: On Device: sound 8
 ```
 
 如果符合预期，我们就进入到 [**数据同步**](/cn/smart-thermostat/data-sync.html) 部分。

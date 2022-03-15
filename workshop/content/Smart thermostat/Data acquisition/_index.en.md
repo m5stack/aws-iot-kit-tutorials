@@ -125,10 +125,10 @@ Complete the following steps to compile copy the configuration from the Blinky p
 Validate that your device is configured as intended by reviewing the serial output in the terminal window. Your output should look similar to the following: 
 
 ```
-I (16128) shadow: On Device: roomOccupancy false
-I (16132) shadow: On Device: hvacStatus STANDBY
-I (16137) shadow: On Device: temperature 64.057533
-I (16143) shadow: On Device: sound 8
+I (16128) MAIN: On Device: roomOccupancy false
+I (16132) MAIN: On Device: hvacStatus STANDBY
+I (16137) MAIN: On Device: temperature 64.057533
+I (16143) MAIN: On Device: sound 8
 ```
 
 Now that the serial output is configured, continue to [**Data sync**](/en/smart-thermostat/data-sync.html).

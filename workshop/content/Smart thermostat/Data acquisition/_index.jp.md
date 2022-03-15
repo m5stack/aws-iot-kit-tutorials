@@ -130,10 +130,10 @@ VS Codeと PlatformIO 拡張機能を使用してデバイスにビルドおよ�
 1. Core2 for AWS IoT EduKit の電源がオンになっていてアプリケーションが実行されている場合、ターミナルウィンドウのログに次のような表示が確認できます
 
 ```
-I (16128) shadow: On Device: roomOccupancy false
-I (16132) shadow: On Device: hvacStatus STANDBY
-I (16137) shadow: On Device: temperature 64.057533
-I (16143) shadow: On Device: sound 8
+I (16128) MAIN: On Device: roomOccupancy false
+I (16132) MAIN: On Device: hvacStatus STANDBY
+I (16137) MAIN: On Device: temperature 64.057533
+I (16143) MAIN: On Device: sound 8
 ```
 
 想定どおりに機能している場合は、「[データ同期](/jp/smart-thermostat/data-sync.html)」に進みましょう
