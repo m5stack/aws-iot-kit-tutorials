@@ -129,10 +129,10 @@ Next, you'll need to open a new PlatformIO CLI terminal window in VS Code:
 Before you move on to the next chapter, you can validate that your device is configured as intended by viewing the serial output in the terminal window which should look like the following: 
 
 ```
-I (16128) shadow: On Device: roomOccupancy false
-I (16132) shadow: On Device: hvacStatus STANDBY
-I (16137) shadow: On Device: temperature 64.057533
-I (16143) shadow: On Device: sound 8
+I (16128) MAIN: On Device: roomOccupancy false
+I (16132) MAIN: On Device: hvacStatus STANDBY
+I (16137) MAIN: On Device: temperature 64.057533
+I (16143) MAIN: On Device: sound 8
 ```
 
 If these are working as expected, let's move on to [**Data sync**](/en/smart-thermostat/data-sync.html).
