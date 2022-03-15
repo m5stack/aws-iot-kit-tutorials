@@ -5,7 +5,7 @@ pre = "<b>e. </b>"
 +++
 
 ## Chapter introduction
-In this section, you process telemetry messages from the {{<awsEdukit-short-en>}} in a managed cloud application, determine what state to set the HVAC system (`HEATING`, `COOLING`, or `STANDBY`.), and send a *desired state* message to your device shadow based on the processed inputs. You then sync the desired shadow state to your device to update the device display with the desired HVAC system state.
+In this lesson, you process telemetry messages from the {{<awsEdukit-short-en>}} in a managed cloud application, determine what state to set the HVAC system (`HEATING`, `COOLING`, or `STANDBY`.), and send a *desired state* message to your device shadow based on the processed inputs. You then sync the desired shadow state to your device to update the device display with the desired HVAC system state.
 
 ## How to build the cloud application
 To accomplish these goals, construct a serverless application that analyzes the inputs from your smart thermostat, and determines the behavior for the corresponding, and fictitious, HVAC system. Use IoT Events to deploy a resource, called a detector model, to process the device shadow messages that are forwarded by your AWS IoT rule. The detector model evaluates if any state changes should occur from heating to cooling to standby, then sends a message back to your smart thermostat with the updated state change, as necessary.
@@ -17,9 +17,9 @@ The mode has three states for the HVAC application: heating, cooling, and standb
 
 For example, from the `STANDBY` state, if a new temperature reading comes in over 80 (in degrees Fahrenheit), the model will evaluate a transition to the `COOLING` state. Then, when it enters the `COOLING` state, the model publishes a new message to IoT Core to update the smart thermostat's device shadow. It's message will be similar to: `{ "state": { "desired": { "hvacStatus": "COOLING" } } }`. 
 
-Based on the work you performed in the [Data sync](/en/smart-thermostat/data-sync.html) section, new commands are acknowledged, the state on the device is updated to reflect the command, and the LED strips are set to red, blue, or off.
+Based on the work you performed in the [Data sync](/en/smart-thermostat/data-sync.html) lesson, new commands are acknowledged, the state on the device is updated to reflect the command, and the LED strips are set to red, blue, or off.
 
-It is beyond the scope of this section to fully explore how to create detector models in IoT Events. Instead, complete the following steps to create your detector model. For more information about detector models and AWS IoT Events, see [What is AWS IoT Events?](https://docs.aws.amazon.com/iotevents/latest/developerguide/what-is-iotevents.html).
+It is beyond the scope of this lesson to fully explore how to create detector models in IoT Events. Instead, complete the following steps to create your detector model. For more information about detector models and AWS IoT Events, see [What is AWS IoT Events?](https://docs.aws.amazon.com/iotevents/latest/developerguide/what-is-iotevents.html).
 
 1. Create a file on your host machine named **`model.json`**.
 1. Copy and paste **the following code** into the document.
@@ -195,7 +195,7 @@ It is beyond the scope of this section to fully explore how to create detector m
 
 **Congratulations!** You deployed a  detector model to IoT Events. As new messages publish from your smart thermostat, the IoT Core rule you created in the previous chapter forwards them to the IoT Events input resource. IoT Events then pushes copies of the messages from the inputs to detector models that consume them, like this one, so it can evaluate any state changes.
 
-Before you continue with this section, let's pause to review a few key pieces of the detector model. 
+Before you continue with this lesson, let's pause to review a few key pieces of the detector model. 
 * Each state of the model (`HEATING`/`COOLING`/`STANDBY`) is nearly the same. The `STANDBY` state has an additional action that sets the numeric thresholds for the other state (`HEATING` and `COOLING`). Alternately, the detector could have been configured to set the thresholds during a one-time initialization state.
 
 * The configuration for the other states is similar:
@@ -214,7 +214,7 @@ Before you continue with this section, let's pause to review a few key pieces of
 (!$input.thermostat.current.state.reported.roomOccupancy && $input.thermostat.current.state.reported.temperature > $variable.heatingThresholdUnoccupied) || ($input.thermostat.current.state.reported.roomOccupancy && $input.thermostat.current.state.reported.temperature > $variable.heatingThresholdOccupied)
 ```
 ## Validation steps
-Before you complete this section, take a moment to validate that the solution works as intended:
+Before you complete this lesson, take a moment to validate that the solution works as intended:
 
 1. Apply a temperature change to your device that will take it outside the comfort bounds.
 

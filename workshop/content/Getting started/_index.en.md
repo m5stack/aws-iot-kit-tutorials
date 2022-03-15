@@ -5,7 +5,7 @@ weight = 20
 pre = "<b>1. </b>"
 +++
 
-Welcome to the AWS IoT EduKit tutorial series. This series presents smart home solutions that control some of the AWS IoT EduKit's onboard peripherals. To complete these exercises, you need the [M5Stack Core2 ESP32 IoT Development Kit for AWS](https://www.amazon.com/dp/B08VGRZYJR/) reference hardware. Each exercise in the series is designed to be completed in about an hour. 
+Welcome to the {{< awsService type="edukit-long-en" >}} ({{< awsService type="edukit-short-en" >}}) tutorial series. This series presents smart home solutions that control some of the {{< awsService type="edukit-short-en" >}} onboard peripherals. To complete these exercises, you need the [{{< awsService type="edukit-long-en" >}}](https://www.amazon.com/dp/B08VGRZYJR/) device. Each exercise in the series is designed to be completed in about an hour. 
 
 To complete these exercises, you use can use either Espressif's {{< otherService type="rainmaker-long-en" >}} smartphone application (through iOS or Android), or their command line utility. The Getting Started exercise helps you to prepare your environment and install required software. 
 
