@@ -4,10 +4,10 @@ weight = 12
 pre = "<b>b. </b>"
 +++
 
-In this section, you compile and upload your application to the AWS IoT EduKit, provision Wi-Fi through the ESP RainMaker Phone App, register a user to assign the devices to, and control the on-board peripherals as virtual smart home devices over AWS IoT.
+In this lesson, you compile and upload your application to the {{< awsService type="edukit-short-en" >}}, provision Wi-Fi through the ESP RainMaker Phone App, register a user to assign the devices to, and control the on-board peripherals as virtual smart home devices over AWS IoT.
 
 ## Open the project in PlatformIO
-There are several folders at the repository root that you cloned from GitHub during the last section. For this tutorial, use the *Getting-Started* project folder and perform the following operations through PIO. 
+There are several folders at the repository root that you cloned from GitHub during the last lesson. For this tutorial, use the *Getting-Started* project folder and perform the following operations through PIO. 
 
 Complete the following steps to open the project in PIO: 
 1. Open the VS Code application. 
@@ -19,10 +19,10 @@ Complete the following steps to open the project in PIO:
 ## Build and upload the ESP RainMaker Agent firmware
 You are now ready to build (compile) and upload the ESP RainMaker Agent firmware. 
 
-The [GCC compiler](https://gcc.gnu.org/onlinedocs/gcc/) converts the provided human readable code into [object code](https://en.wikipedia.org/wiki/Object_code) as [elf](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format) and binary files (the firmware). These files are then uploaded to the device's on-board flash memory for it to execute through the virtual serial port. The serial port (via UART) allows bi-directional communication; so, the AWS IoT EduKit can collect data and sent it to the host machine. 
+The [GCC compiler](https://gcc.gnu.org/onlinedocs/gcc/) converts the provided human readable code into [object code](https://en.wikipedia.org/wiki/Object_code) as [elf](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format) and binary files (the firmware). These files are then uploaded to the device's on-board flash memory for it to execute through the virtual serial port. The serial port (via UART) allows bi-directional communication; so, the device can collect data and sent it to the host machine. 
 
-Complete the following steps to build and upload the firmware to the AWS IoT EduKit. , and monitor the output from the device through the serial port using PlatformIO:
-1. Connect the AWS IoT EduKit to your host machine.
+Complete the following steps to build and upload the firmware to the {{< awsService type="edukit-short-en" >}} and monitor the output from the device through the serial port using PlatformIO:
+1. Connect the {{< awsService type="edukit-short-en" >}} to your host machine.
 1. Choose the **PlatformIO logo** on the VS Code activity bar to open the Quick Access menu.
 1. Expand **Miscellaneous** and select **New Terminal**.
 1. To start the build process, paste in the command below (this will take several minutes) in the new terminal window that opened in VS Code:
@@ -52,7 +52,7 @@ Once the upload has successfully completed, the device will boot using the firmw
 
 The device will generate security keys and perform an [assisted claim](https://rainmaker.espressif.com/docs/claiming.html#assisted-claiming-esp32). Key generation can take up to a few minutes to complete. When the assisted claiming process, a quick response (QR) code displays on the terminal viewport.
 
-Complete the following steps to add your AWS IoT EduKit to the application:
+Complete the following steps to add your {{< awsService type="edukit-short-en" >}} to the application:
 1. Open the ESP RainMaker Phone application on your smartphone.
 1. Grant the application's requested permissions and choose **Add Device**.
 1. Scan the QR code. 
@@ -76,14 +76,14 @@ Complete the following steps:
 pio run --environment core2foraws --target erase
 ```
 
->  When the command in the  terminal window completes, the AWS IoT EduKit may not automatically restart or appear to be different. Power the device off and then on to confirm that the firmware was flashed.
+>  When the command in the  terminal window completes, the device may not automatically restart or appear to be different. Power the device off and then on to confirm that the firmware was flashed.
 
 {{% notice note %}}
 Erasing the firmware results in a blank device screen and an audible ticking sound. This is expected behavior. The device is continually rebooting itself because it doesn't have an application to run.
 {{% /notice %}}
 
 ## Conclusion
-Congratulations! During this lesson, you built a connected home application through the AWS IoT EduKit program. Not only that, but you also have the tools necessary to create, edit, compile, and flash embedded code on to your device! In the next tutorials, you'll get more hands-on practice and will learn the skills to start building your own end-to-end IoT solutions.
+Congratulations! During this lesson, you built a connected home application through the {{< awsService type="edukit-short-en" >}} program. Not only that, but you also have the tools necessary to create, edit, compile, and flash embedded code on to your device! In the next tutorials, you'll get more hands-on practice and will learn the skills to start building your own end-to-end IoT solutions.
 
 On to [**Cloud Connected Blinky**](/en/blinky-hello-world.html)!
 

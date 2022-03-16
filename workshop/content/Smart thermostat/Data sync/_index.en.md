@@ -4,7 +4,7 @@ weight = 30
 pre = "<b>c. </b>"
 +++
 
-In this section, you publish the sampled ambient noise level and room temperature to AWS IoT Core every ten seconds, and your device's shadow in AWS IoT Core.
+In this lesson, you publish the sampled ambient noise level and room temperature to AWS IoT Core every ten seconds, and your device's shadow in AWS IoT Core.
 
 ## Messaging
 To accomplish these goals, connect your device to your AWS IoT Core endpoint, and exchange messages between the device and the cloud in a model called publish and subscribe (PubSub). AWS IoT Core is heavily based on a protocol called [Message Queueing Telemetry Transport](https://mqtt.org/) (MQTT). From the MQTT.org home page:
@@ -68,7 +68,7 @@ AWS IoT Core then merges the JSON documents so that your device shadow's aggrega
 
 The next time that your device connects to AWS IoT Core, or if it is already connected when the command is published, it receives this aggregate state document. It is up to the device code to act on that new key-value pair `"hvacStatus": "COOLING"`. AWS IoT Core makes it easy to report new values and process desired commands.
 
-Your smart thermostat reports the latest temperature values and noise levels. Your thermostat also receives commands and tracks the state of two more values called "hvacStatus" and "roomOccupancy". These values are determined by the cloud application in the coming sections.
+Your smart thermostat reports the latest temperature values and noise levels. Your thermostat also receives commands and tracks the state of two more values called "hvacStatus" and "roomOccupancy". These values are determined by the cloud application in the coming lessons.
 
 ## Publishing messages to AWS IoT Core
 You use the AWS IoT Device SDK for Embedded C (C-SDK) to communicate between your smart thermostat device and AWS IoT Core. This is a best practice for abstracting away security, network, and data layers so you can focus on the your device and solution's application logic. The C-SDK bundles libraries to connect to AWS IoT Core over the MQTT protocol, interface with the hardware secure element to sign requests, and integrate with higher order features like the device shadow.
@@ -191,7 +191,7 @@ Complete the following steps to validate that your device is configured as inten
   $aws/things/<<CLIENT_ID>>/shadow/update
 ```
 
-8. Before you choose publish, replace the information in the Message payload field with the following. Then, choose Publish. You should see the AWS IoT EduKit's LED bars change from blue to red and off to represent the `COOLING`, `HEATING`, and `STANDBY`states. The following displays a sample shadow message. 
+8. Before you choose publish, replace the information in the Message payload field with the following. Then, choose Publish. You should see the device's LED bars change from blue to red and off to represent the `COOLING`, `HEATING`, and `STANDBY`states. The following displays a sample shadow message. 
 ```
 { "state": { "desired": { "hvacStatus": "HEATING", "roomOccupancy": true } } }
 ```
@@ -200,7 +200,7 @@ Complete the following steps to validate that your device is configured as inten
 
 
 
-Now that you can receive readings from your AWS IoT EduKit and change the HVAC states, continue to [**Data transforms and routing**](/en/smart-thermostat/data-transforms-and-routing.html).
+Now that you can receive readings from your device and change the HVAC states, continue to [**Data transforms and routing**](/en/smart-thermostat/data-transforms-and-routing.html).
 
 ---
 {{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

@@ -5,10 +5,10 @@ pre = "<b>b. </b>"
 +++
 
 ## Introduction
-By the end of this chapter, you will have installed the companion phone applications on your mobile device, cloned the necessary code repository, received certificates for connecting to AWS IoT using Espressif Alexa's AWS account, and flashed the certificates to separate flash partitions on the reference hardware.
+By the end of this chapter, you will have installed the companion phone applications on your mobile device, cloned the necessary code repository, received certificates for connecting to AWS IoT using Espressif Alexa's AWS account, and flashed the certificates to separate flash partitions on the {{< awsService type="edukit-short-en" >}}.
 
 ## Companion mobile applications
-In order to complete the authentication with Alexa, you will use Espressif's companion app to provision the device's Wi-Fi and provision the reference hardware with your Alexa account.
+In order to complete the authentication with Alexa, you will use Espressif's companion app to provision the device's Wi-Fi and provision the device with your Alexa account.
 
 Download the ESP Alexa Phone App:
 [iOS](https://apps.apple.com/in/app/esp-alexa/id1464127534) / [Android](https://play.google.com/store/apps/details?id=com.espressif.provbleavs)
@@ -38,7 +38,7 @@ Next, you must open a new PlatformIO CLI terminal window in VS Code:
 {{< img "pio-new_terminal-smart_thermostat.en.png" "PlatformIO CLI terminal in VS Code" "1 - Open PIO menu, 2 - Open new PIO Terminal, 3 - Verify you're in the 'PlatformIO CLI' terminal session, 4 - Paste the commands into terminal, 5 - If you encounter an error autodetecting the port, open the Platform.ini file and follow instructions to manually add the serial port.">}}
 
 ## Set up AWS IoT certificates 
-You must create the AWS IoT credentials to communicate with AWS IoT core. For this workshop and device, Espressif has provided AWS IoT credentials that can be used on their AWS account with the M5Stack Core2 for AWS IoT EduKit reference hardware. To obtain the credentials for your device to connect to their service, fill out the form [here](https://espressif.github.io/esp-va-sdk/).
+You must create the AWS IoT credentials to communicate with AWS IoT core. For this workshop and device, Espressif has provided AWS IoT credentials that can be used on their AWS account with the {{< awsService type="edukit-short-en" >}}. To obtain the credentials for your device to connect to their service, fill out the form [here](https://espressif.github.io/esp-va-sdk/).
 
 After you receive the e-mail containing the credentials zip file, save the file and unzip the contents. After extraction, you will have a folder called **espcredentials**. With the device plugged in, you can upload these certificates to your device by entering the following commands in your PlatformIO CLI terminal window:
 

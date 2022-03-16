@@ -95,7 +95,7 @@ else if (val.type == SMART_HOME_VAL_TYPE_INTEGER) {
 ```
 
 ## Flash and test updated Alexa firmware
-You have modified the project to include the necessary device attributes and the control logic to blink the onboard green LED at a specified rate. Now it is time to build the firmware, flash it on to the reference hardware, and test the capabilities. With the device plugged in and your [PlatformIO CLI terminal window](../blinky-hello-world/prerequisites.html#open-the-platformio-cli-terminal-window) open and selected, enter this command:
+You have modified the project to include the necessary device attributes and the control logic to blink the onboard green LED at a specified rate. Now it is time to build the firmware, flash it on to the device, and test the capabilities. With the device plugged in and your [PlatformIO CLI terminal window](../blinky-hello-world/prerequisites.html#open-the-platformio-cli-terminal-window) open and selected, enter this command:
 ```bash
 pio run --environment core2foraws --target upload --target monitor 
 ```

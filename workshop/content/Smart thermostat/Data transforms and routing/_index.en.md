@@ -4,7 +4,7 @@ weight = 40
 pre = "<b>d. </b>"
 +++
 
-In this section, you transform raw data received from the AWS IoT EduKit's smart thermostat into actionable intelligence about room occupancy with application logic stored in the cloud. You also synchronize the device shadow with the state of room occupancy. Finally, you set up a resource in AWS IoT Events to receive messages from your device and forward messages published by the device's thermostat to AWS IoT Events for further processing.
+In this lesson, you transform raw data received from the device's smart thermostat into actionable intelligence about room occupancy with application logic stored in the cloud. You also synchronize the device shadow with the state of room occupancy. Finally, you set up a resource in AWS IoT Events to receive messages from your device and forward messages published by the device's thermostat to AWS IoT Events for further processing.
 
 ## Set up the cloud solution
 ### Derive room occupancy from sound
@@ -12,7 +12,7 @@ The first part of your cloud solution is to add the intelligence that determines
 
 Why use sound level and simple threshold banding to classify room occupancy instead of a motion sensor? In this case, a microphone is the sensor that is available for use. When designing IoT solutions, you will not always have the budget for the best possible input data. This approach strikes a balance of frugality and achieving the use case. Admittedly, this will not work for every use case; such as, a team meeting where the participants use sign language, or for team meetings that start with a silent document review.
 
-You will use two concepts of AWS IoT Core to determine room occupancy: *topic rules* and *device shadow*. A *topic rule* lets you define behavior for messages that arrive on topic filter; such as, performing live transformations on the payload and routing payloads to new destinations. The *device shadow* is a semi-structured JSON document that is used to synchronize the reported and desired state of a device. Any modifications made to your thermostat's device shadow will be sent as new payloads to your device. You have already set up your device and tested that it receives these shadow updates in the previous section.
+You will use two concepts of AWS IoT Core to determine room occupancy: *topic rules* and *device shadow*. A *topic rule* lets you define behavior for messages that arrive on topic filter; such as, performing live transformations on the payload and routing payloads to new destinations. The *device shadow* is a semi-structured JSON document that is used to synchronize the reported and desired state of a device. Any modifications made to your thermostat's device shadow will be sent as new payloads to your device. You have already set up your device and tested that it receives these shadow updates in the previous lesson.
 
 You can combine topic rules and device shadows to make updates to the device shadow based on application logic stored in the cloud. This allows you to quickly update the application logic without pushing new code to your device. 
 
@@ -103,16 +103,16 @@ SELECT current.state as current.state, current.version as current.version, times
 4. Replace the contents of the *Rule query statement* field with your updated SQL statement. 
 1. Choose **Add action**.
 1. Select *Send a message to an IoT Events Input* and choose **Configure action** at the bottom of the window. 
-1. Choose **Select** to the right of the *Input name* and select the *thermostatRule* input resource you created in AWS IoT Events. 
+1. Choose **Select** to the right of the *Input name* and select the **thermostat** input resource you created in AWS IoT Events. 
 1. Choose **Create Role** in the *Role (requires IoT Events access)* section. 
-1. When the *Create a new role* window appears, enter **sendToEvents** in the Name field and choose **Create role**.
+1. When the *Create a new role* window appears, enter **EduKit-sendToEvents** in the Name field and choose **Create role**.
 1. Choose **Add action** to finish configuring your action and return to the rule creation form.
 1. Choose **Create Rule** to create this rule in AWS IoT rules engine.
 
 The rule you just created is simpler than the previous one. This rule is configured to receive the full JSON document whenever the smart thermostat device shadow is updated, and then forward it to your new IoT Events Input. The input is configured to parse only a few of the fields from the device shadow document and discard the unneeded ones.
 
 ## Validation
-Before continuing to the next section, validate that your solution is configured as intended:
+Before continuing to the next lesson, validate that your solution is configured as intended:
 
 As your thermostat device detects different noise levels, you should see the device receive an updated status of roomOccupancy from your rule. Try playing music to make noise for ten seconds and then being quiet for ten seconds to see the state change in the serial monitor (`pio run --environment core2foraws --target monitor`).
 
