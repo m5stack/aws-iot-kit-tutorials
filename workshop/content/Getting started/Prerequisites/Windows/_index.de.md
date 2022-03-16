@@ -16,7 +16,7 @@ Um den Code aus dem Remote-Code-Repository auf GitHub herunterzuladen, müssen S
 Der Core2 des AWS IoT EduKit kommuniziert mit dem Host-Computer über die Silicon Labs CP210x USB-zu-UART-Bridge. Der integrierte CP2104 ist eine USB-zu-UART-Bridge zur Erleichterung der Host-Kommunikation mit dem ESP32-D0WD-Mikrocontroller. Der Mikrocontroller kommuniziert bidirektional über [UART0](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/uart.html), was über einen virtuellen Kommunikationsport des Host-Computers vom CP210x übersetzt wird, der über USB-C eingerichtet ist. Um die virtuelle serielle Schnittstelle mounten und über sie kommunizieren zu können, müssen Sie den entsprechenden Treiber herunterladen und installieren.
 
 1) Stellen Sie sicher, dass das Gerät nicht mit dem Hostcomputer verbunden ist.
-2) Laden Sie den macOS Windows Labs CP210x-Treiber [hier](https://www.silabs.com/documents/public/software/CP210x_Universal_Windows_Driver.zip) herunter.
+2) Laden Sie den macOS Windows Labs CP210x-Treiber [hier](https://www.silabs.com/documents/public/software/CP210x_VCP_Windows.zip) herunter.
 3) Extrahieren Sie den Inhalt des Downloads.
    {{% notice note %}}
    Sie müssen den Inhalt des Ordners extrahieren. Der Treiber wird nicht installiert, wenn die ausführbare Datei aus dem Archiv heraus ausführen.

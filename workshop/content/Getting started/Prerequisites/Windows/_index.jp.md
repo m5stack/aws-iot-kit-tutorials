@@ -15,7 +15,7 @@ GitHub のリポジトリからコードをダウンロードするには、広�
 ## Silicon Labs USB to UART bridgeのセットアップ
 AWS IoT EDUKit for Core2 は、Silicon Labsの CP210x USB から UART ブリッジを介してホストマシンと通信します。オンボードCP2104は、ESP32-D0WDマイクロコントローラとのホスト通信を容易にするUSB-to-UARTブリッジです。マイクロコントローラは、[UART](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/uart.html)0を介して双方向に通信します。CP210xは、USB-Cを介して確立されたホストマシン上の仮想通信ポートを介して変換します。仮想シリアルポートとその間の通信のマウントを有効にするには、対応するドライバをダウンロードしてインストールする必要があります。
 1) デバイスがホストマシンに接続されていないことを確認します。
-2) Windows 用のSilicon Labs CP210x driverを[こちら](https://www.silabs.com/documents/public/software/CP210x_Universal_Windows_Driver.zip) ダウンロードします。
+2) Windows 用のSilicon Labs CP210x driverを[こちら](https://www.silabs.com/documents/public/software/CP210x_VCP_Windows.zip) ダウンロードします。
 3) ダウンロードされたzipファイルを展開します。
    {{% notice info %}}
    アーカイブの中身を参照した状態では、インストールを実行できません。必ず展開してから実行してください。
