@@ -22,6 +22,11 @@ The Core2 for AWS IoT EduKit communicates with the host machine through a Silico
 4) Run the **CP210xVCPInstaller_x64.exe** installer.
 5) Restart your host machine now to make sure the driver is applied.
 
+## Python installation
+Python is an interpretted language that is used by the PlatformIO installer that you'll run later. If you don't have Python installed on your host machine, download it from [here](https://www.python.org/downloads/). You'll want to make sure the option to "Add Python to PATH" is checked.
+
+{{< img "python_installer-add_to_path.en.png" "Check Add Python to PATH" >}}
+
 ## Visual Studio Code installation
 Visual Studio Code (VS Code) is an open source integrated development environment (IDE) which allows you to view, edit, and manage code and more. Download the latest [Visual Studio Code](https://code.visualstudio.com/) for your operating system. To troubleshoot issues with Visual Studio Code installation or usage, please refer to [their documentation](https://code.visualstudio.com/docs/setup/setup-overview).
 
