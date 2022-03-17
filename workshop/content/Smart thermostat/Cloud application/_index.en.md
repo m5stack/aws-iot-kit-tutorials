@@ -5,7 +5,9 @@ pre = "<b>e. </b>"
 +++
 
 ## Chapter introduction
-In this lesson, you process telemetry messages from the {{<awsEdukit-short-en>}} in a managed cloud application, determine what state to set the HVAC system (`HEATING`, `COOLING`, or `STANDBY`.), and send a *desired state* message to your device shadow based on the processed inputs. You then sync the desired shadow state to your device to update the device display with the desired HVAC system state.
+
+In this lesson, you process telemetry messages from the {{< awsService type="edukit-short-en" >}} in a managed cloud application, determine what state to set the HVAC system (`HEATING`, `COOLING`, or `STANDBY`.), and send a *desired state* message to your device shadow based on the processed inputs. You then sync the desired shadow state to your device to update the device display with the desired HVAC system state.
+
 
 ## How to build the cloud application
 To accomplish these goals, construct a serverless application that analyzes the inputs from your smart thermostat, and determines the behavior for the corresponding, and fictitious, HVAC system. Use IoT Events to deploy a resource, called a detector model, to process the device shadow messages that are forwarded by your AWS IoT rule. The detector model evaluates if any state changes should occur from heating to cooling to standby, then sends a message back to your smart thermostat with the updated state change, as necessary.
@@ -180,7 +182,7 @@ It is beyond the scope of this lesson to fully explore how to create detector mo
     "evaluationMethod": "BATCH"
 }
 ```
-3. Edit the document to replace **<<CLIENT_ID>>** (**there are three instances**) with **your device's client ID** (the ID displays on the {{<awsEdukit-short-en>}}'s screen).
+3. Edit the document to replace **<<CLIENT_ID>>** (**there are three instances**) with **your device's client ID** (the ID displays on the device's screen).
 1. Log into [AWS](https://aws.amazon.com/), if necessary. 
 1. Navigate to the [AWS IoT Events](https://us-west-2.console.aws.amazon.com/iotevents/home?region=us-west-2#/) console.
 1. Expand the **navigation panel**, if necessary, and choose **Detector models**.
