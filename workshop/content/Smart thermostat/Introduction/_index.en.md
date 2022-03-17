@@ -1,15 +1,15 @@
-+++
+ +++
 title = "Introduction"
 weight = 10
 pre = "<b>a. </b>"
 +++
 
 ## Your task
-In this tutorial, you assume the role of a full-stack developer tasked to automate the thermostat functions of a meeting room to conserve energy. To accomplish this, you use the AWS IoT EduKit reference hardware as the thermostat, or HVAC controller, and deploy an end-to-end solution that is integrated with AWS. 
+In this tutorial, you assume the role of a full-stack developer tasked to automate the thermostat functions of a meeting room to conserve energy. To accomplish this, you use the {{< awsService type="edukit-long-en" >}} device as the thermostat, or HVAC controller, and deploy an end-to-end solution that is integrated with AWS. 
 
 The solution should recognize when employees are present in the room and engage the HVAC to deliver comfortable temperatures.The thermostat should use a narrow range of temperatures when employees occupy the room to maximize their comfort. When the room is not occupied, however, a wider range of temperatures is permitted to save energy. 
 ## Solution overview
-Instead of using cameras to detect when the room is occupied, this solution minimizes cost by using the AWS IoT EduKit's microphone to sample noise in the room. You will capture the ambient noise level from the microphone and the room temperature from the device's sensors. Then publish these values to AWS. 
+Instead of using cameras to detect when the room is occupied, this solution minimizes cost by using the device's microphone to sample noise in the room. You will capture the ambient noise level from the microphone and the room temperature from the device's sensors. Then publish these values to AWS. 
 
 Your AWS serverless solution converts the noise level into a boolean expression (true or false) and uses that to determine whether the room is occupied. The room is considered occupied when the noise level exceeds a predefined threshold.  
 

@@ -4,7 +4,7 @@ weight = 30
 pre = "<b>c. </b>"
 +++
 
-In this section you configure, build, and flash your device's firmware so that your device can communicate with AWS IoT Core. To do this, you need to configure your device with your local Wi-Fi credentials and your [AWS IoT endpoint's](https://docs.aws.amazon.com/iot/latest/developerguide/connect-to-iot.html#iot-device-endpoint-intro) URL. 
+In this lesson you configure, build, and flash your device's firmware so that your device can communicate with AWS IoT Core. To do this, you need to configure your device with your local Wi-Fi credentials and your [AWS IoT endpoint's](https://docs.aws.amazon.com/iot/latest/developerguide/connect-to-iot.html#iot-device-endpoint-intro) URL. 
 
 Establishing a secure MQTT connection is simplified with the [AWS IoT Device SDK for Embedded C](https://github.com/espressif/aws-iot-device-sdk-embedded-C/tree/61f25f34712b1513bf1cb94771620e9b2b001970) and the [Microchip ATECC608 Trust&GO](https://www.microchip.com/wwwproducts/en/ATECC608B-TNGTLS) pre-provisioned, secure hardware certificates. With the secure element, you do not need to retrieve certificates from AWS IoT Core or generate your own to connect. The connectivity libraries in the AWS IoT Device SDK for Embedded C simplify connectivity and access to AWS IoT services and features.
 
@@ -33,7 +33,7 @@ Navigation in the Espressif configuration window may vary based on your computer
 1. Enter **s** to save these settings, press **Enter** to confirm the file location, and press **Enter** again to close the message box.
 1. Enter **q** to quit configuration and return to the PIO terminal window.
 
-{{< img "idf_menuconfig-wifi.en.webp" "Configuring Core2 for AWS IoT EduKit with p.py menuconfig" >}}
+{{< img "idf_menuconfig-wifi.en.webp" "Configuring {{< awsService type="edukit-short-en" >}} with p.py menuconfig" >}}
 
 {{% notice warning %}}
 Be sure your SSID is for a 2.4GHz network. The ESP32-D0WD on the M5Stack Core2 for AWS hardware does not support 5GHz Wi-Fi bands.
@@ -59,7 +59,7 @@ If during upload or while monitoring the serial output you receive an error abou
 {{% /notice %}}
 
 ## Conclusion
-In this section, you successfully compiled the firmware updates, flashed your device, and monitored its serial outputs. Your AWS IoT EduKit then used the AWS IoT Device SDK for Embedded C to authenticate with the [MQTT message broker](https://docs.aws.amazon.com/iot/latest/developerguide/protocols.html) (AWS IoT Core. Your device is ready to receive messages.
+In this lesson, you successfully compiled the firmware updates, flashed your device, and monitored its serial outputs. Your {{< awsService type="edukit-short-en" >}} then used the AWS IoT Device SDK for Embedded C to authenticate with the [MQTT message broker](https://docs.aws.amazon.com/iot/latest/developerguide/protocols.html) (AWS IoT Core. Your device is ready to receive messages.
 
 You are now ready to control the LEDs on the side of your device. Continue to [**Blinking the LEDs**](/en/blinky-hello-world/blinking-the-leds.html).
 

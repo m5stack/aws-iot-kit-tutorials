@@ -4,9 +4,9 @@ weight = 20
 pre = "<b>b. </b>"
 +++
 
-In this section, you power on and start the local smart thermostat application. The application reports collected data to the logs; including, current temperature, ambient noise level, HVAC status (heating, cooling, standby), and room occupation indicator. 
+In this lesson, you power on and start the local smart thermostat application. The application reports collected data to the logs; including, current temperature, ambient noise level, HVAC status (heating, cooling, standby), and room occupation indicator. 
 
-The AWS IoT EduKit reference hardware kit has several sensors that are ready to use. For this tutorial, you collect readings from the temperature sensor and microphone using local application code. The application keeps track of sensor readings and status flags and are used to render a summary to the display.
+The {{< awsService type="edukit-short-en" >}} device has several sensors that are ready to use. For this tutorial, you collect readings from the temperature sensor and microphone using local application code. The application keeps track of sensor readings and status flags and are used to render a summary to the display.
 
 ## How to program the thermostat application
 Your smart thermostat samples the integrated sensors use code that is created and included in the bundled software components. The first step is to capture the values and print them out to the logger before publishing sensor values to AWS IoT Core.
@@ -80,7 +80,7 @@ void app_main()
 ## Compile and upload the Smart Thermostat Firmware
 A sample application has already been prepared for you to build and upload to your device using Visual Studio Code (VS Code) and the PlatformIO (PIO) extension.
 
-Complete the following steps to upload the application to your AWS IoT EduKit:
+Complete the following steps to upload the application to your device:
 1. Open **VS Code**, if necessary.
 1. Expand the **File menu** and select **New Window** in the VS Code to open a new window. This provides a clean file Explorer and working environment.
 1. Select the **PlatformIO logo** in the VS Code activity bar, choose **Open**, and then select **Open Project**.

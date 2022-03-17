@@ -30,7 +30,7 @@ The following steps detail how to create a new IoT Core rule, a new AWS IoT Anal
 
 1. In the [AWS IoT Core console](https://us-west-2.console.aws.amazon.com/iot/home?region=us-west-2#/), choose **Act** then **Rules** then **Create**.
 1. Give your rule a name like *storeInIoTAnalytics* and a description.
-1. Use the following query. Be sure to replace the **<<CLIENT_ID>>** with the client ID/serial number printed on the screen of your Core2 for AWS IoT Edukit reference hardware kit.
+1. Use the following query. Be sure to replace the **<<CLIENT_ID>>** with the client ID/serial number printed on the screen of your device.
 
 ```SQL
 SELECT current.state.reported.sound, current.state.reported.temperature, current.state.reported.hvacStatus, current.state.reported.roomOccupancy, timestamp FROM '$aws/things/<<CLIENT_ID>>/shadow/update/documents'
