@@ -14,7 +14,7 @@ pre = "› "
 ## 安装 Silicon Labs USB to UART Bridge 驱动程序
 Core2 for AWS IoT EduKit 通过一个 Silicon Labs CP210x USB to UART bridge 和主机通讯。板载的 CP2104 是一个 USB-to-UART bridge 用于实现和 ESP32-D0WD 微控制器之间的主机通讯。微控制器通过 [UART](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/uart.html)0（CP210x 在主机上通过 USB-C 创建的一个虚拟端口） 进行双向通讯。为了挂载虚拟串口并通过该串口进行通讯，您需要下载安装相应的驱动程序。
 1) 确保设备没有连接到主机上。
-2) 下载Windows Silicon Labs CP210x 驱动程序 [这里](https://www.silabs.com/documents/public/software/CP210x_Universal_Windows_Driver.zip)。
+2) 下载Windows Silicon Labs CP210x 驱动程序 [这里](https://www.silabs.com/documents/public/software/CP210x_VCP_Windows.zip)。
 3) 解压下载文件。Extract the contents of the download.
    {{% notice info %}}
    您必须解压下载的压缩文件后进行安装，而不要直接从归档文件内执行安装。
