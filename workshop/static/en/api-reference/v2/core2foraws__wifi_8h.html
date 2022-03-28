@@ -114,9 +114,15 @@ Functions</h2></td></tr>
 <tr class="memitem:a2bc1a48b9074dc55e58a7634a10e3741"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core2foraws__wifi_8h.html#a2bc1a48b9074dc55e58a7634a10e3741">core2foraws_wifi_prov_ble_init</a> (void)</td></tr>
 <tr class="memdesc:a2bc1a48b9074dc55e58a7634a10e3741"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts Wi-Fi provisioning using BLE.  <a href="core2foraws__wifi_8h.html#a2bc1a48b9074dc55e58a7634a10e3741">More...</a><br /></td></tr>
 <tr class="separator:a2bc1a48b9074dc55e58a7634a10e3741"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47ca282b9a97268a337299b1ed052159"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core2foraws__wifi_8h.html#a47ca282b9a97268a337299b1ed052159">core2foraws_wifi_deinit</a> (void)</td></tr>
+<tr class="memdesc:a47ca282b9a97268a337299b1ed052159"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deinitializes the Wi-Fi driver. This function will disconnect from the Wi-Fi network and free up resources that were allocated for the Wi-Fi stack.  <a href="core2foraws__wifi_8h.html#a47ca282b9a97268a337299b1ed052159">More...</a><br /></td></tr>
+<tr class="separator:a47ca282b9a97268a337299b1ed052159"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a032697a2e0ec313121f01ad0cd02ef74"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core2foraws__wifi_8h.html#a032697a2e0ec313121f01ad0cd02ef74">core2foraws_wifi_disconnect</a> (void)</td></tr>
-<tr class="memdesc:a032697a2e0ec313121f01ad0cd02ef74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disconnects from Wi-Fi access point. This function will disconnect from the Wi-Fi network and free up resources that was allocated.  <a href="core2foraws__wifi_8h.html#a032697a2e0ec313121f01ad0cd02ef74">More...</a><br /></td></tr>
+<tr class="memdesc:a032697a2e0ec313121f01ad0cd02ef74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disconnect the device from the Wi-Fi AP.  <a href="core2foraws__wifi_8h.html#a032697a2e0ec313121f01ad0cd02ef74">More...</a><br /></td></tr>
 <tr class="separator:a032697a2e0ec313121f01ad0cd02ef74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca93860735ba3eeeb25788316a9142df"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core2foraws__wifi_8h.html#aca93860735ba3eeeb25788316a9142df">core2foraws_wifi_connect</a> (void)</td></tr>
+<tr class="memdesc:aca93860735ba3eeeb25788316a9142df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connect to the configured Wi-Fi AP. This function connects to the Wi-Fi network already configured during the provisioning process. If the device hadn't successfully connected to an access point already, this function will return an error.  <a href="core2foraws__wifi_8h.html#aca93860735ba3eeeb25788316a9142df">More...</a><br /></td></tr>
+<tr class="separator:aca93860735ba3eeeb25788316a9142df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c61a72b48689cfa5dc3060935dc1a71"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core2foraws__wifi_8h.html#a5c61a72b48689cfa5dc3060935dc1a71">core2foraws_wifi_reset</a> (void)</td></tr>
 <tr class="memdesc:a5c61a72b48689cfa5dc3060935dc1a71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset internal Wi-Fi state machine and clear provisioned credentials.  <a href="core2foraws__wifi_8h.html#a5c61a72b48689cfa5dc3060935dc1a71">More...</a><br /></td></tr>
 <tr class="separator:a5c61a72b48689cfa5dc3060935dc1a71"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -281,6 +287,52 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a47ca282b9a97268a337299b1ed052159" name="a47ca282b9a97268a337299b1ed052159"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47ca282b9a97268a337299b1ed052159">&#9670;&nbsp;</a></span>core2foraws_wifi_deinit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t core2foraws_wifi_deinit </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Deinitializes the Wi-Fi driver. This function will disconnect from the Wi-Fi network and free up resources that were allocated for the Wi-Fi stack. </p>
+<p ><b>Example:</b></p>
+<p >Initialize the Core2 for AWS IoT EduKit (including the enabled Wi-Fi), wait 5 seconds, and then disconnect from the Wi-Fi network. </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;esp_log.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;freertos/FreeRTOS.h&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="core2foraws_8h.html">core2foraws.h</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *TAG = <span class="stringliteral">&quot;MAIN_WIFI_DEMO&quot;</span>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> app_main( <span class="keywordtype">void</span> )</div>
+<div class="line">{   </div>
+<div class="line">    <a class="code hl_function" href="core2foraws_8h.html#a8589c127068e67d5474515365b558051">core2foraws_init</a>();</div>
+<div class="line"> </div>
+<div class="line">    vTaskDelay( pdMS_TO_TICKS( 5000 ) );</div>
+<div class="line"> </div>
+<div class="line">    esp_err_t err = <a class="code hl_function" href="core2foraws__wifi_8h.html#a47ca282b9a97268a337299b1ed052159">core2foraws_wifi_deinit</a>();</div>
+<div class="line">    ESP_LOGI( TAG, <span class="stringliteral">&quot;\tWi-Fi reset returned %d&quot;</span>, err );</div>
+<div class="line">}</div>
+<div class="ttc" id="acore2foraws_8h_html"><div class="ttname"><a href="core2foraws_8h.html">core2foraws.h</a></div><div class="ttdoc">Core2 for AWS IoT EduKit general hardware driver APIs.</div></div>
+<div class="ttc" id="acore2foraws_8h_html_a8589c127068e67d5474515365b558051"><div class="ttname"><a href="core2foraws_8h.html#a8589c127068e67d5474515365b558051">core2foraws_init</a></div><div class="ttdeci">esp_err_t core2foraws_init(void)</div><div class="ttdoc">Initializes enabled hardware features.</div></div>
+<div class="ttc" id="acore2foraws__wifi_8h_html_a47ca282b9a97268a337299b1ed052159"><div class="ttname"><a href="core2foraws__wifi_8h.html#a47ca282b9a97268a337299b1ed052159">core2foraws_wifi_deinit</a></div><div class="ttdeci">esp_err_t core2foraws_wifi_deinit(void)</div><div class="ttdoc">Deinitializes the Wi-Fi driver. This function will disconnect from the Wi-Fi network and free up reso...</div></div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd><a href="https://docs.espressif.com/projects/esp-idf/en/release-v4.3/esp32/api-reference/system/esp_err.html#macros">esp_err_t</a>.<ul>
+<li>ESP_OK : Success</li>
+<li>ESP_ERR_WIFI_NOT_INIT : WiFi is not initialized </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
 <a id="a032697a2e0ec313121f01ad0cd02ef74" name="a032697a2e0ec313121f01ad0cd02ef74"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a032697a2e0ec313121f01ad0cd02ef74">&#9670;&nbsp;</a></span>core2foraws_wifi_disconnect()</h2>
 
@@ -297,9 +349,10 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Disconnects from Wi-Fi access point. This function will disconnect from the Wi-Fi network and free up resources that was allocated. </p>
+<p>Disconnect the device from the Wi-Fi AP. </p>
+<p >A return of <code>ESP_OK</code> does not mean that the device is disconnected, it means that the configuration is suitable for a disconnection attempt. Use FreeRTOS event groups and the <a class="el" href="core2foraws__wifi_8h.html#a408ed4183e69703f55e29027706fe4c8">WIFI_DISCONNECTED_BIT</a> to monitor if the device is freed from the Wi-Fi network.</p>
 <p ><b>Example:</b></p>
-<p >Initialize the Core2 for AWS IoT EduKit (including the enabled Wi-Fi), wait 5 seconds, and then disconnect from the Wi-Fi network. </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<p >Initialize the Core2 for AWS IoT EduKit (including the enabled Wi-Fi), which is already provisioned and connected to an available network. Wait 5 seconds and disconnect from the Wi-Fi network. </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;esp_log.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;freertos/FreeRTOS.h&gt;</span></div>
 <div class="line"> </div>
@@ -313,15 +366,69 @@ Variables</h2></td></tr>
 <div class="line"> </div>
 <div class="line">    vTaskDelay( pdMS_TO_TICKS( 5000 ) );</div>
 <div class="line"> </div>
-<div class="line">    esp_err_t err = <a class="code hl_function" href="core2foraws__wifi_8h.html#a5c61a72b48689cfa5dc3060935dc1a71">core2foraws_wifi_reset</a>();</div>
-<div class="line">    ESP_LOGI( TAG, <span class="stringliteral">&quot;\tWi-Fi reset returned %d&quot;</span>, err );</div>
+<div class="line">    esp_err_t err <a class="code hl_function" href="core2foraws__wifi_8h.html#a032697a2e0ec313121f01ad0cd02ef74">core2foraws_wifi_disconnect</a>();</div>
+<div class="line"> </div>
+<div class="line">    ESP_LOGI( TAG, <span class="stringliteral">&quot;\tWi-Fi disconnect returned %d&quot;</span>, err );</div>
 <div class="line">}</div>
-<div class="ttc" id="acore2foraws_8h_html"><div class="ttname"><a href="core2foraws_8h.html">core2foraws.h</a></div><div class="ttdoc">Core2 for AWS IoT EduKit general hardware driver APIs.</div></div>
-<div class="ttc" id="acore2foraws_8h_html_a8589c127068e67d5474515365b558051"><div class="ttname"><a href="core2foraws_8h.html#a8589c127068e67d5474515365b558051">core2foraws_init</a></div><div class="ttdeci">esp_err_t core2foraws_init(void)</div><div class="ttdoc">Initializes enabled hardware features.</div></div>
-<div class="ttc" id="acore2foraws__wifi_8h_html_a5c61a72b48689cfa5dc3060935dc1a71"><div class="ttname"><a href="core2foraws__wifi_8h.html#a5c61a72b48689cfa5dc3060935dc1a71">core2foraws_wifi_reset</a></div><div class="ttdeci">esp_err_t core2foraws_wifi_reset(void)</div><div class="ttdoc">Reset internal Wi-Fi state machine and clear provisioned credentials.</div></div>
+<div class="ttc" id="acore2foraws__wifi_8h_html_a032697a2e0ec313121f01ad0cd02ef74"><div class="ttname"><a href="core2foraws__wifi_8h.html#a032697a2e0ec313121f01ad0cd02ef74">core2foraws_wifi_disconnect</a></div><div class="ttdeci">esp_err_t core2foraws_wifi_disconnect(void)</div><div class="ttdoc">Disconnect the device from the Wi-Fi AP.</div></div>
 </div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd><a href="https://docs.espressif.com/projects/esp-idf/en/release-v4.3/esp32/api-reference/system/esp_err.html#macros">esp_err_t</a>.<ul>
 <li>ESP_OK : Success</li>
-<li>ESP_ERR_WIFI_NOT_INIT : WiFi is not initialized </li>
+<li>ESP_ERR_WIFI_NOT_INIT : WiFi is not initialized</li>
+<li>ESP_ERR_WIFI_NOT_STARTED : WiFi is not started by esp_wifi_start</li>
+<li>ESP_FAIL : other WiFi internal errors </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="aca93860735ba3eeeb25788316a9142df" name="aca93860735ba3eeeb25788316a9142df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca93860735ba3eeeb25788316a9142df">&#9670;&nbsp;</a></span>core2foraws_wifi_connect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t core2foraws_wifi_connect </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Connect to the configured Wi-Fi AP. This function connects to the Wi-Fi network already configured during the provisioning process. If the device hadn't successfully connected to an access point already, this function will return an error. </p>
+<p >A return of <code>ESP_OK</code> does not mean that the device is connected, it means that the configuration is suitable for a connection attempt. Use FreeRTOS event groups and the <a class="el" href="core2foraws__wifi_8h.html#ad552e7688532cbbecd3967538ced06ac">WIFI_CONNECTED_BIT</a> to monitor if the device is connected to the Wi-Fi network.</p>
+<p ><b>Example:</b></p>
+<p >Initialize the Core2 for AWS IoT EduKit (including the enabled Wi-Fi), which is already provisioned to an available network. Wait 5 seconds, disconnect from the Wi-Fi network, then after another 5 seconds, reconnect. </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;esp_log.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;freertos/FreeRTOS.h&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="core2foraws_8h.html">core2foraws.h</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *TAG = <span class="stringliteral">&quot;MAIN_WIFI_DEMO&quot;</span>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> app_main( <span class="keywordtype">void</span> )</div>
+<div class="line">{   </div>
+<div class="line">    <a class="code hl_function" href="core2foraws_8h.html#a8589c127068e67d5474515365b558051">core2foraws_init</a>();</div>
+<div class="line"> </div>
+<div class="line">    vTaskDelay( pdMS_TO_TICKS( 5000 ) );</div>
+<div class="line"> </div>
+<div class="line">    <a class="code hl_function" href="core2foraws__wifi_8h.html#a032697a2e0ec313121f01ad0cd02ef74">core2foraws_wifi_disconnect</a>();</div>
+<div class="line"> </div>
+<div class="line">    vTaskDelay( pdMS_TO_TICKS( 5000 ) );</div>
+<div class="line"> </div>
+<div class="line">    esp_err_t err = <a class="code hl_function" href="core2foraws__wifi_8h.html#aca93860735ba3eeeb25788316a9142df">core2foraws_wifi_connect</a>();</div>
+<div class="line"> </div>
+<div class="line">    ESP_LOGI( TAG, <span class="stringliteral">&quot;\tWi-Fi connect returned %d&quot;</span>, err );</div>
+<div class="line">}</div>
+<div class="ttc" id="acore2foraws__wifi_8h_html_aca93860735ba3eeeb25788316a9142df"><div class="ttname"><a href="core2foraws__wifi_8h.html#aca93860735ba3eeeb25788316a9142df">core2foraws_wifi_connect</a></div><div class="ttdeci">esp_err_t core2foraws_wifi_connect(void)</div><div class="ttdoc">Connect to the configured Wi-Fi AP. This function connects to the Wi-Fi network already configured du...</div></div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd><a href="https://docs.espressif.com/projects/esp-idf/en/release-v4.3/esp32/api-reference/system/esp_err.html#macros">esp_err_t</a>.<ul>
+<li>ESP_OK : Success</li>
+<li>ESP_ERR_WIFI_NOT_INIT : WiFi is not initialized</li>
+<li>ESP_ERR_WIFI_NOT_STARTED : WiFi is not started by esp_wifi_start</li>
+<li>ESP_ERR_WIFI_CONN : WiFi internal error, station or soft-AP control block wrong</li>
+<li>ESP_ERR_WIFI_SSID : SSID of AP which station connects is invalid </li>
 </ul>
 </dd></dl>
 
@@ -363,6 +470,7 @@ Variables</h2></td></tr>
 <div class="line">    esp_err_t err = <a class="code hl_function" href="core2foraws__wifi_8h.html#a5c61a72b48689cfa5dc3060935dc1a71">core2foraws_wifi_reset</a>();</div>
 <div class="line">    ESP_LOGI( TAG, <span class="stringliteral">&quot;\tWi-Fi reset returned %d&quot;</span>, err );</div>
 <div class="line">}</div>
+<div class="ttc" id="acore2foraws__wifi_8h_html_a5c61a72b48689cfa5dc3060935dc1a71"><div class="ttname"><a href="core2foraws__wifi_8h.html#a5c61a72b48689cfa5dc3060935dc1a71">core2foraws_wifi_reset</a></div><div class="ttdeci">esp_err_t core2foraws_wifi_reset(void)</div><div class="ttdoc">Reset internal Wi-Fi state machine and clear provisioned credentials.</div></div>
 </div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd><ul>
 <li><a href="https://docs.espressif.com/projects/esp-idf/en/release-v4.3/esp32/api-reference/system/esp_err.html#macros">esp_err_t</a>.</li>
 <li>ESP_OK : Success</li>

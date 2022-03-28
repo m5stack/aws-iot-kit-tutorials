@@ -126,7 +126,7 @@ The ESP32 is a 3.3v device and requires 3.3v on the UART TX/RX lines. Higher vol
 <div class="line">    <a class="code hl_function" href="core2foraws_8h.html#a8589c127068e67d5474515365b558051">core2foraws_init</a>();</div>
 <div class="line">    esp_err_t err = ESP_FAIL;</div>
 <div class="line">    err = <a class="code hl_function" href="core2foraws__expports_8h.html#ac52e3b43d38555f0ed5e1f315e2ed274">core2foraws_expports_uart_begin</a>( 115200 );</div>
-<div class="line">    <span class="keywordflow">if</span>( err == ESP_OK )</div>
+<div class="line">    <span class="keywordflow">if</span> ( err == ESP_OK )</div>
 <div class="line">    {</div>
 <div class="line">        xTaskCreatePinnedToCore( uart_rx_task, <span class="stringliteral">&quot;uart_rx&quot;</span>, 1024*2, NULL, configMAX_PRIORITIES-2, NULL, 1);</div>
 <div class="line">        xTaskCreatePinnedToCore( uart_tx_task, <span class="stringliteral">&quot;uart_tx&quot;</span>, 1024*2, NULL, configMAX_PRIORITIES-3, NULL, 1);</div>

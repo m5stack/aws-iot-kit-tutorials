@@ -74,8 +74,10 @@ var searchData=
   ['core2foraws_5fsd_5fread_71',['core2foraws_sd_read',['../core2foraws__sd_8h.html#a6def4d4dd9cf2e8bff43748b2221f592',1,'core2foraws_sd.h']]],
   ['core2foraws_5fsd_5funmount_72',['core2foraws_sd_unmount',['../core2foraws__sd_8h.html#aaff3b291da98d385216d004a5525d2e0',1,'core2foraws_sd.h']]],
   ['core2foraws_5fsd_5fwrite_73',['core2foraws_sd_write',['../core2foraws__sd_8h.html#a2c982e6ffede331f83569ebfc1e47d9e',1,'core2foraws_sd.h']]],
-  ['core2foraws_5fwifi_5fdisconnect_74',['core2foraws_wifi_disconnect',['../core2foraws__wifi_8h.html#a032697a2e0ec313121f01ad0cd02ef74',1,'core2foraws_wifi.h']]],
-  ['core2foraws_5fwifi_5fprov_5fble_5finit_75',['core2foraws_wifi_prov_ble_init',['../core2foraws__wifi_8h.html#a2bc1a48b9074dc55e58a7634a10e3741',1,'core2foraws_wifi.h']]],
-  ['core2foraws_5fwifi_5fprov_5fstr_5fget_76',['core2foraws_wifi_prov_str_get',['../core2foraws__wifi_8h.html#a8b51df3af5826ffe5f27d71fe94e9a63',1,'core2foraws_wifi.h']]],
-  ['core2foraws_5fwifi_5freset_77',['core2foraws_wifi_reset',['../core2foraws__wifi_8h.html#a5c61a72b48689cfa5dc3060935dc1a71',1,'core2foraws_wifi.h']]]
+  ['core2foraws_5fwifi_5fconnect_74',['core2foraws_wifi_connect',['../core2foraws__wifi_8h.html#aca93860735ba3eeeb25788316a9142df',1,'core2foraws_wifi.h']]],
+  ['core2foraws_5fwifi_5fdeinit_75',['core2foraws_wifi_deinit',['../core2foraws__wifi_8h.html#a47ca282b9a97268a337299b1ed052159',1,'core2foraws_wifi.h']]],
+  ['core2foraws_5fwifi_5fdisconnect_76',['core2foraws_wifi_disconnect',['../core2foraws__wifi_8h.html#a032697a2e0ec313121f01ad0cd02ef74',1,'core2foraws_wifi.h']]],
+  ['core2foraws_5fwifi_5fprov_5fble_5finit_77',['core2foraws_wifi_prov_ble_init',['../core2foraws__wifi_8h.html#a2bc1a48b9074dc55e58a7634a10e3741',1,'core2foraws_wifi.h']]],
+  ['core2foraws_5fwifi_5fprov_5fstr_5fget_78',['core2foraws_wifi_prov_str_get',['../core2foraws__wifi_8h.html#a8b51df3af5826ffe5f27d71fe94e9a63',1,'core2foraws_wifi.h']]],
+  ['core2foraws_5fwifi_5freset_79',['core2foraws_wifi_reset',['../core2foraws__wifi_8h.html#a5c61a72b48689cfa5dc3060935dc1a71',1,'core2foraws_wifi.h']]]
 ];

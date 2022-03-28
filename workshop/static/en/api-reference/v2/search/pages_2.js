@@ -82,12 +82,13 @@ var searchData=
   ['core2foraws_5fsd_5fread_79',['core2foraws_sd_read',['../core2foraws_sd_read_function.html',1,'sdcard']]],
   ['core2foraws_5fsd_5funmount_80',['core2foraws_sd_unmount',['../core2foraws_sd_unmount_function.html',1,'sdcard']]],
   ['core2foraws_5fsd_5fwrite_81',['core2foraws_sd_write',['../core2foraws_sd_write_function.html',1,'']]],
-  ['core2foraws_5fwifi_5fdisconnect_82',['core2foraws_wifi_disconnect',['../core2foraws_wifi_disconnect_function.html',1,'wifi']]],
-  ['core2foraws_5fwifi_5fprov_5fble_5finit_83',['core2foraws_wifi_prov_ble_init',['../core2foraws_wifi_prov_ble_init_function.html',1,'']]],
-  ['core2foraws_5fwifi_5fprov_5fstr_5fget_84',['core2foraws_wifi_prov_str_get',['../core2foraws_wifi_prov_str_get_function.html',1,'wifi']]],
-  ['core2foraws_5fwifi_5freset_85',['core2foraws_wifi_reset',['../core2foraws_wifi_reset_function.html',1,'wifi']]],
-  ['crypto_86',['CRYPTO',['../crypto.html',1,'']]],
-  ['crypto_5fmax_5fsignature_5fsize_87',['CRYPTO_MAX_SIGNATURE_SIZE',['../core2foraws_crypto_max_signature_size_macro.html',1,'crypto']]],
-  ['crypto_5fpub_5fkey_5fsize_88',['CRYPTO_PUB_KEY_SIZE',['../crypto_pub_key_size_macro.html',1,'crypto']]],
-  ['crypto_5fserial_5fstr_5fsize_89',['CRYPTO_SERIAL_STR_SIZE',['../core2foraws_crypto_strial_str_size_macro.html',1,'crypto']]]
+  ['core2foraws_5fwifi_5fconnect_82',['core2foraws_wifi_connect',['../core2foraws_wifi_connect_function.html',1,'wifi']]],
+  ['core2foraws_5fwifi_5fdisconnect_83',['core2foraws_wifi_disconnect',['../core2foraws_wifi_disconnect_function.html',1,'wifi']]],
+  ['core2foraws_5fwifi_5fprov_5fble_5finit_84',['core2foraws_wifi_prov_ble_init',['../core2foraws_wifi_prov_ble_init_function.html',1,'wifi']]],
+  ['core2foraws_5fwifi_5fprov_5fstr_5fget_85',['core2foraws_wifi_prov_str_get',['../core2foraws_wifi_prov_str_get_function.html',1,'wifi']]],
+  ['core2foraws_5fwifi_5freset_86',['core2foraws_wifi_reset',['../core2foraws_wifi_reset_function.html',1,'wifi']]],
+  ['crypto_87',['CRYPTO',['../crypto.html',1,'']]],
+  ['crypto_5fmax_5fsignature_5fsize_88',['CRYPTO_MAX_SIGNATURE_SIZE',['../core2foraws_crypto_max_signature_size_macro.html',1,'crypto']]],
+  ['crypto_5fpub_5fkey_5fsize_89',['CRYPTO_PUB_KEY_SIZE',['../crypto_pub_key_size_macro.html',1,'crypto']]],
+  ['crypto_5fserial_5fstr_5fsize_90',['CRYPTO_SERIAL_STR_SIZE',['../core2foraws_crypto_strial_str_size_macro.html',1,'crypto']]]
 ];

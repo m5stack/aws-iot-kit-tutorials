@@ -98,7 +98,7 @@ The AXP192 PMU is configured to output 5v on the expansion port's VCC pin. Some 
 <div class="line">    <span class="keyword">const</span> uint8_t write_byte = 0x01;</div>
 <div class="line">    </div>
 <div class="line">    err = <a class="code hl_function" href="core2foraws__expports_8h.html#a37a130625c5303dbc06642fe2b71b25b">core2foraws_expports_i2c_begin</a>();</div>
-<div class="line">    <span class="keywordflow">if</span>( err == ESP_OK )</div>
+<div class="line">    <span class="keywordflow">if</span> ( err == ESP_OK )</div>
 <div class="line">    {</div>
 <div class="line">        <a class="code hl_function" href="core2foraws__expports_8h.html#a7eba726dfabc491e9b04d6a875fd25e9">core2foraws_expports_i2c_write</a>( DEVICE_ADDRESS, register_address, &amp;write_byte, <span class="keyword">sizeof</span>( write_byte ) )</div>
 <div class="line">    }</div>

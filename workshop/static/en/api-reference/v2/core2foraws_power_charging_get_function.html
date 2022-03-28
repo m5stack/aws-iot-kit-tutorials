@@ -74,8 +74,28 @@ $(function() {
 <div class="textblock"><div class="fragment"><div class="line">esp_err_t <a class="code hl_function" href="core2foraws__power_8h.html#ac4326f217c4b6a50166239135893d9df">core2foraws_power_charging_get</a>( <span class="keywordtype">bool</span> *status );</div>
 <div class="ttc" id="acore2foraws__power_8h_html_ac4326f217c4b6a50166239135893d9df"><div class="ttname"><a href="core2foraws__power_8h.html#ac4326f217c4b6a50166239135893d9df">core2foraws_power_charging_get</a></div><div class="ttdeci">esp_err_t core2foraws_power_charging_get(bool *status)</div><div class="ttdoc">Get the current charging status of the built-in battery from the power management unit (PMU).</div></div>
 </div><!-- fragment --><p> Get the current charging status of the built-in battery from the power management unit (PMU).</p>
-<dl class="section note"><dt>Note</dt><dd>A fully charged battery (~4.2v) will not receive further charge.</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
+<dl class="section note"><dt>Note</dt><dd>A fully charged battery (~4.2v) will not receive further charge and this value will return ~0mA. This is not the same as the device being plugged in.</dd></dl>
+<p><b>Example:</b></p>
+<p >Print out to serial output if the device is charging. </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;esp_log.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="core2foraws_8h.html">core2foraws.h</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *TAG = <span class="stringliteral">&quot;MAIN_POWER_DEMO&quot;</span>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> app_main( <span class="keywordtype">void</span> )</div>
+<div class="line">{</div>
+<div class="line">    <a class="code hl_function" href="core2foraws_8h.html#a8589c127068e67d5474515365b558051">core2foraws_init</a>();</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordtype">bool</span> charge_status;</div>
+<div class="line">    <a class="code hl_function" href="core2foraws__power_8h.html#ac4326f217c4b6a50166239135893d9df">core2foraws_power_charging_get</a>( &amp;charge_status );</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordflow">if</span> ( charge_status )</div>
+<div class="line">    {</div>
+<div class="line">        ESP_LOGI( TAG, <span class="stringliteral">&quot;Battery is being charged&quot;</span> );</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+<div class="ttc" id="acore2foraws_8h_html"><div class="ttname"><a href="core2foraws_8h.html">core2foraws.h</a></div><div class="ttdoc">Core2 for AWS IoT EduKit general hardware driver APIs.</div></div>
+<div class="ttc" id="acore2foraws_8h_html_a8589c127068e67d5474515365b558051"><div class="ttname"><a href="core2foraws_8h.html#a8589c127068e67d5474515365b558051">core2foraws_init</a></div><div class="ttdeci">esp_err_t core2foraws_init(void)</div><div class="ttdoc">Initializes enabled hardware features.</div></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">status</td><td>Pointer to the boolean value of the charging status. 1 (true) if it is currently charging, 0 (false) if it is not charging or fully charged. </td></tr>
   </table>

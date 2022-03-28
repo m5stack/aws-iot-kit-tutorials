@@ -100,11 +100,11 @@ $(function() {
 <div class="line">    <a class="code hl_function" href="core2foraws__rtc_8h.html#a6d2e19f044f103c0dea154b7006d8af6">core2foraws_rtc_time_get</a>( &amp;datetime );</div>
 <div class="line">    </div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordflow">if</span>( datetime.tm_min == 59 )</div>
+<div class="line">    <span class="keywordflow">if</span> ( datetime.tm_min == 59 )</div>
 <div class="line">    {</div>
 <div class="line">        alarm_time.tm_hour = datetime.tm_hour + 1;</div>
 <div class="line">        alarm_time.tm_min = 0;</div>
-<div class="line">        <span class="keywordflow">if</span>( alarm_time.tm_hour == 25 )</div>
+<div class="line">        <span class="keywordflow">if</span> ( alarm_time.tm_hour == 25 )</div>
 <div class="line">            alarm_time.tm_hour = 0;</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">else</span></div>
@@ -121,7 +121,7 @@ $(function() {
 <div class="line">    alarm_time = { 0 };</div>
 <div class="line"> </div>
 <div class="line">    err = <a class="code hl_function" href="core2foraws__rtc_8h.html#aada23c856688aa092f2df003f2ea3448">core2foraws_rtc_alarm_get</a>( &amp;alarm_time );</div>
-<div class="line">    <span class="keywordflow">if</span>( err == ESP_OK )</div>
+<div class="line">    <span class="keywordflow">if</span> ( err == ESP_OK )</div>
 <div class="line">           ESP_LOGI( TAG, <span class="stringliteral">&quot;\tAlarm set for hour %d, minute %d, on the %d day of week, %d day of month\n&quot;</span>, </div>
 <div class="line">            alarm_time.tm_hour, alarm_time.tm_min, alarm_time.tm_wday, alarm_time.tm_mday );</div>
 <div class="line">}</div>
