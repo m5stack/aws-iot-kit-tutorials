@@ -1,3 +1,4 @@
+<!-- HTML header for doxygen 1.9.3-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -9,6 +10,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8V9B1GPE56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8V9B1GPE56');
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -98,7 +107,7 @@ Macros</h2></td></tr>
 <tr class="memitem:af6edcffe5291063c7c60c5074ecffb9e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core2foraws__power_8h.html#af6edcffe5291063c7c60c5074ecffb9e">POWER_RAIL_DISPLAY_BACKLIGHT</a>&#160;&#160;&#160;<a class="el" href="core2foraws__power_8h.html#a73c39de4f420a491a24f9b39649a2455a4abf74e9cfc284eed73236a348666607">POWER_RAIL_DCDC3</a></td></tr>
 <tr class="memdesc:af6edcffe5291063c7c60c5074ecffb9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The power rail supplying power to the display backlight.  <a href="core2foraws__power_8h.html#af6edcffe5291063c7c60c5074ecffb9e">More...</a><br /></td></tr>
 <tr class="separator:af6edcffe5291063c7c60c5074ecffb9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e194c61179676ceee56342f827efd9b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core2foraws__power_8h.html#a2e194c61179676ceee56342f827efd9b">DISPLAY_BACKLIGHT_START</a>&#160;&#160;&#160;80U</td></tr>
+<tr class="memitem:a2e194c61179676ceee56342f827efd9b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core2foraws__power_8h.html#a2e194c61179676ceee56342f827efd9b">DISPLAY_BACKLIGHT_START</a>&#160;&#160;&#160;90U</td></tr>
 <tr class="memdesc:a2e194c61179676ceee56342f827efd9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The starting percentage for the display backlight brightness.  <a href="core2foraws__power_8h.html#a2e194c61179676ceee56342f827efd9b">More...</a><br /></td></tr>
 <tr class="separator:a2e194c61179676ceee56342f827efd9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a690589debdb3cbc13b2ab7d54e7994b4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core2foraws__power_8h.html#a690589debdb3cbc13b2ab7d54e7994b4">DISPLAY_BACKLIGHT_MAX_VOLTS</a>&#160;&#160;&#160;3300U</td></tr>
@@ -256,7 +265,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DISPLAY_BACKLIGHT_START&#160;&#160;&#160;80U</td>
+          <td class="memname">#define DISPLAY_BACKLIGHT_START&#160;&#160;&#160;90U</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -599,8 +608,27 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get the current charging status of the built-in battery from the power management unit (PMU). </p>
-<dl class="section note"><dt>Note</dt><dd>A fully charged battery (~4.2v) will not receive further charge.</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
+<dl class="section note"><dt>Note</dt><dd>A fully charged battery (~4.2v) will not receive further charge and this value will return ~0mA. This is not the same as the device being plugged in.</dd></dl>
+<p><b>Example:</b></p>
+<p >Print out to serial output if the device is charging. </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;esp_log.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="core2foraws_8h.html">core2foraws.h</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *TAG = <span class="stringliteral">&quot;MAIN_POWER_DEMO&quot;</span>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> app_main( <span class="keywordtype">void</span> )</div>
+<div class="line">{</div>
+<div class="line">    <a class="code hl_function" href="core2foraws_8h.html#a8589c127068e67d5474515365b558051">core2foraws_init</a>();</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordtype">bool</span> charge_status;</div>
+<div class="line">    <a class="code hl_function" href="core2foraws__power_8h.html#ac4326f217c4b6a50166239135893d9df">core2foraws_power_charging_get</a>( &amp;charge_status );</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordflow">if</span> ( charge_status )</div>
+<div class="line">    {</div>
+<div class="line">        ESP_LOGI( TAG, <span class="stringliteral">&quot;Battery is being charged&quot;</span> );</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+<div class="ttc" id="acore2foraws__power_8h_html_ac4326f217c4b6a50166239135893d9df"><div class="ttname"><a href="core2foraws__power_8h.html#ac4326f217c4b6a50166239135893d9df">core2foraws_power_charging_get</a></div><div class="ttdeci">esp_err_t core2foraws_power_charging_get(bool *status)</div><div class="ttdoc">Get the current charging status of the built-in battery from the power management unit (PMU).</div></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">status</td><td>Pointer to the boolean value of the charging status. 1 (true) if it is currently charging, 0 (false) if it is not charging or fully charged. </td></tr>
   </table>

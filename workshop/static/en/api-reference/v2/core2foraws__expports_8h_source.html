@@ -1,3 +1,4 @@
+<!-- HTML header for doxygen 1.9.3-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -9,6 +10,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8V9B1GPE56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8V9B1GPE56');
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -154,58 +163,58 @@ $(function() {
 <div class="line"><a id="l00206" name="l00206"></a><span class="lineno"><a class="line" href="core2foraws__expports_8h.html#a2ff29b8accafd1c26fc47af4645a15de">  206</a></span>esp_err_t <a class="code hl_function" href="core2foraws__expports_8h.html#a2ff29b8accafd1c26fc47af4645a15de">core2foraws_expports_digital_read</a>( gpio_num_t pin, <span class="keywordtype">bool</span> *level );</div>
 <div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span><span class="comment">/* @[declare_core2foraws_expport_digital_read] */</span></div>
 <div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> </div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span><span class="comment">/* @[declare_core2foraws_expport_digital_write] */</span></div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno"><a class="line" href="core2foraws__expports_8h.html#a2cc0279f60f33499e3dc32c748faa607">  269</a></span>esp_err_t <a class="code hl_function" href="core2foraws__expports_8h.html#a2cc0279f60f33499e3dc32c748faa607">core2foraws_expports_digital_write</a>( gpio_num_t pin, <span class="keyword">const</span> <span class="keywordtype">bool</span> level );</div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span><span class="comment">/* @[declare_core2foraws_expport_digital_write] */</span></div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span> </div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span><span class="comment">/* @[declare_core2foraws_expport_pin_reset] */</span></div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno"><a class="line" href="core2foraws__expports_8h.html#a54ab7b5c4ff54b17a2f4e48207a2b1b5">  307</a></span>esp_err_t <a class="code hl_function" href="core2foraws__expports_8h.html#a54ab7b5c4ff54b17a2f4e48207a2b1b5">core2foraws_expports_pin_reset</a>( gpio_num_t pin );</div>
-<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span><span class="comment">/* @[declare_core2foraws_expport_pin_reset] */</span></div>
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span> </div>
-<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span><span class="comment">/* @[declare_core2foraws_expport_i2c_begin] */</span></div>
-<div class="line"><a id="l00384" name="l00384"></a><span class="lineno"><a class="line" href="core2foraws__expports_8h.html#a37a130625c5303dbc06642fe2b71b25b">  384</a></span>esp_err_t <a class="code hl_function" href="core2foraws__expports_8h.html#a37a130625c5303dbc06642fe2b71b25b">core2foraws_expports_i2c_begin</a>( <span class="keywordtype">void</span> );</div>
-<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span><span class="comment">/* @[declare_core2foraws_expport_i2c_begin] */</span></div>
-<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span> </div>
-<div class="line"><a id="l00467" name="l00467"></a><span class="lineno">  467</span><span class="comment">/* @[declare_core2foraws_expport_i2c_read] */</span></div>
-<div class="line"><a id="l00468" name="l00468"></a><span class="lineno"><a class="line" href="core2foraws__expports_8h.html#a536178ddbe400acf90a2fa04ba5776a9">  468</a></span>esp_err_t <a class="code hl_function" href="core2foraws__expports_8h.html#a536178ddbe400acf90a2fa04ba5776a9">core2foraws_expports_i2c_read</a>( uint16_t device_address, uint32_t register_address, uint8_t *data, uint16_t length );</div>
-<div class="line"><a id="l00469" name="l00469"></a><span class="lineno">  469</span><span class="comment">/* @[declare_core2foraws_expport_i2c_read] */</span></div>
-<div class="line"><a id="l00470" name="l00470"></a><span class="lineno">  470</span> </div>
-<div class="line"><a id="l00527" name="l00527"></a><span class="lineno">  527</span><span class="comment">/* @[declare_core2foraws_expport_i2c_write] */</span></div>
-<div class="line"><a id="l00528" name="l00528"></a><span class="lineno"><a class="line" href="core2foraws__expports_8h.html#a7eba726dfabc491e9b04d6a875fd25e9">  528</a></span>esp_err_t <a class="code hl_function" href="core2foraws__expports_8h.html#a7eba726dfabc491e9b04d6a875fd25e9">core2foraws_expports_i2c_write</a>( uint16_t device_address, uint32_t register_address, <span class="keyword">const</span> uint8_t *data, uint16_t length );</div>
-<div class="line"><a id="l00529" name="l00529"></a><span class="lineno">  529</span><span class="comment">/* @[declare_core2foraws_expport_i2c_write] */</span></div>
-<div class="line"><a id="l00530" name="l00530"></a><span class="lineno">  530</span> </div>
-<div class="line"><a id="l00605" name="l00605"></a><span class="lineno">  605</span><span class="comment">/* @[declare_core2foraws_expport_i2c_close] */</span></div>
-<div class="line"><a id="l00606" name="l00606"></a><span class="lineno"><a class="line" href="core2foraws__expports_8h.html#aa68a8ce01427dba8f8dd5b05195918d9">  606</a></span>esp_err_t <a class="code hl_function" href="core2foraws__expports_8h.html#aa68a8ce01427dba8f8dd5b05195918d9">core2foraws_expports_i2c_close</a>( <span class="keywordtype">void</span> );</div>
-<div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span><span class="comment">/* @[declare_core2foraws_expport_i2c_close] */</span></div>
-<div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span> </div>
-<div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span><span class="comment">/* @[declare_core2foraws_expport_adc_read] */</span></div>
-<div class="line"><a id="l00660" name="l00660"></a><span class="lineno"><a class="line" href="core2foraws__expports_8h.html#a87364304a59960286d3e7e67d4f278e2">  660</a></span>esp_err_t <a class="code hl_function" href="core2foraws__expports_8h.html#a87364304a59960286d3e7e67d4f278e2">core2foraws_expports_adc_read</a>( <span class="keywordtype">int</span> *raw_adc_value );</div>
-<div class="line"><a id="l00661" name="l00661"></a><span class="lineno">  661</span><span class="comment">/* @[declare_core2foraws_expport_adc_read] */</span></div>
-<div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span> </div>
-<div class="line"><a id="l00716" name="l00716"></a><span class="lineno">  716</span><span class="comment">/* @[declare_core2foraws_expport_adc_mv_read] */</span></div>
-<div class="line"><a id="l00717" name="l00717"></a><span class="lineno"><a class="line" href="core2foraws__expports_8h.html#a0737d474fec3f03f5a8c46139d287cfd">  717</a></span>esp_err_t <a class="code hl_function" href="core2foraws__expports_8h.html#a0737d474fec3f03f5a8c46139d287cfd">core2foraws_expports_adc_mv_read</a>( uint32_t *adc_mvolts );</div>
-<div class="line"><a id="l00718" name="l00718"></a><span class="lineno">  718</span><span class="comment">/* @[declare_core2foraws_expport_adc_mv_read] */</span></div>
-<div class="line"><a id="l00719" name="l00719"></a><span class="lineno">  719</span> </div>
-<div class="line"><a id="l00749" name="l00749"></a><span class="lineno">  749</span><span class="comment">/* @[declare_core2foraws_expport_adc_mv_write] */</span></div>
-<div class="line"><a id="l00750" name="l00750"></a><span class="lineno"><a class="line" href="core2foraws__expports_8h.html#a0bc8b93b6c00ad4491a7b4f7ad910e59">  750</a></span>esp_err_t <a class="code hl_function" href="core2foraws__expports_8h.html#a0bc8b93b6c00ad4491a7b4f7ad910e59">core2foraws_expports_dac_mv_write</a>( <span class="keyword">const</span> uint16_t dac_mvolts );</div>
-<div class="line"><a id="l00751" name="l00751"></a><span class="lineno">  751</span><span class="comment">/* @[declare_core2foraws_expport_adc_mv_write] */</span></div>
-<div class="line"><a id="l00752" name="l00752"></a><span class="lineno">  752</span> </div>
-<div class="line"><a id="l00848" name="l00848"></a><span class="lineno">  848</span><span class="comment">/* @[declare_core2foraws_expport_uart_begin] */</span></div>
-<div class="line"><a id="l00849" name="l00849"></a><span class="lineno"><a class="line" href="core2foraws__expports_8h.html#ac52e3b43d38555f0ed5e1f315e2ed274">  849</a></span>esp_err_t <a class="code hl_function" href="core2foraws__expports_8h.html#ac52e3b43d38555f0ed5e1f315e2ed274">core2foraws_expports_uart_begin</a>( uint32_t baud );</div>
-<div class="line"><a id="l00850" name="l00850"></a><span class="lineno">  850</span><span class="comment">/* @[declare_core2foraws_expport_uart_begin] */</span></div>
-<div class="line"><a id="l00851" name="l00851"></a><span class="lineno">  851</span> </div>
-<div class="line"><a id="l00949" name="l00949"></a><span class="lineno">  949</span><span class="comment">/* @[declare_core2foraws_expport_uart_write] */</span></div>
-<div class="line"><a id="l00950" name="l00950"></a><span class="lineno"><a class="line" href="core2foraws__expports_8h.html#adb85176507045a1bdd8e23925b0fc5ba">  950</a></span>esp_err_t <a class="code hl_function" href="core2foraws__expports_8h.html#adb85176507045a1bdd8e23925b0fc5ba">core2foraws_expports_uart_write</a>( <span class="keyword">const</span> <span class="keywordtype">char</span> *message, <span class="keywordtype">size_t</span> length, <span class="keywordtype">size_t</span> *was_written_length );</div>
-<div class="line"><a id="l00951" name="l00951"></a><span class="lineno">  951</span><span class="comment">/* @[declare_core2foraws_expport_uart_write] */</span></div>
-<div class="line"><a id="l00952" name="l00952"></a><span class="lineno">  952</span> </div>
-<div class="line"><a id="l01048" name="l01048"></a><span class="lineno"> 1048</span><span class="comment">/* @[declare_core2foraws_expport_uart_read] */</span></div>
-<div class="line"><a id="l01049" name="l01049"></a><span class="lineno"><a class="line" href="core2foraws__expports_8h.html#a7c96905f03597b16aa851d5a4ba05bec"> 1049</a></span>esp_err_t <a class="code hl_function" href="core2foraws__expports_8h.html#a7c96905f03597b16aa851d5a4ba05bec">core2foraws_expports_uart_read</a>( uint8_t *message_buffer, <span class="keywordtype">size_t</span> *was_read_length );</div>
-<div class="line"><a id="l01050" name="l01050"></a><span class="lineno"> 1050</span><span class="comment">/* @[declare_core2foraws_expport_uart_read] */</span></div>
-<div class="line"><a id="l01051" name="l01051"></a><span class="lineno"> 1051</span> </div>
-<div class="line"><a id="l01052" name="l01052"></a><span class="lineno"> 1052</span><span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a id="l01053" name="l01053"></a><span class="lineno"> 1053</span>}</div>
-<div class="line"><a id="l01054" name="l01054"></a><span class="lineno"> 1054</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span><span class="comment">/* @[declare_core2foraws_expport_digital_write] */</span></div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno"><a class="line" href="core2foraws__expports_8h.html#a2cc0279f60f33499e3dc32c748faa607">  270</a></span>esp_err_t <a class="code hl_function" href="core2foraws__expports_8h.html#a2cc0279f60f33499e3dc32c748faa607">core2foraws_expports_digital_write</a>( gpio_num_t pin, <span class="keyword">const</span> <span class="keywordtype">bool</span> level );</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span><span class="comment">/* @[declare_core2foraws_expport_digital_write] */</span></div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span> </div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span><span class="comment">/* @[declare_core2foraws_expport_pin_reset] */</span></div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno"><a class="line" href="core2foraws__expports_8h.html#a54ab7b5c4ff54b17a2f4e48207a2b1b5">  308</a></span>esp_err_t <a class="code hl_function" href="core2foraws__expports_8h.html#a54ab7b5c4ff54b17a2f4e48207a2b1b5">core2foraws_expports_pin_reset</a>( gpio_num_t pin );</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span><span class="comment">/* @[declare_core2foraws_expport_pin_reset] */</span></div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span> </div>
+<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span><span class="comment">/* @[declare_core2foraws_expport_i2c_begin] */</span></div>
+<div class="line"><a id="l00385" name="l00385"></a><span class="lineno"><a class="line" href="core2foraws__expports_8h.html#a37a130625c5303dbc06642fe2b71b25b">  385</a></span>esp_err_t <a class="code hl_function" href="core2foraws__expports_8h.html#a37a130625c5303dbc06642fe2b71b25b">core2foraws_expports_i2c_begin</a>( <span class="keywordtype">void</span> );</div>
+<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span><span class="comment">/* @[declare_core2foraws_expport_i2c_begin] */</span></div>
+<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span> </div>
+<div class="line"><a id="l00468" name="l00468"></a><span class="lineno">  468</span><span class="comment">/* @[declare_core2foraws_expport_i2c_read] */</span></div>
+<div class="line"><a id="l00469" name="l00469"></a><span class="lineno"><a class="line" href="core2foraws__expports_8h.html#a536178ddbe400acf90a2fa04ba5776a9">  469</a></span>esp_err_t <a class="code hl_function" href="core2foraws__expports_8h.html#a536178ddbe400acf90a2fa04ba5776a9">core2foraws_expports_i2c_read</a>( uint16_t device_address, uint32_t register_address, uint8_t *data, uint16_t length );</div>
+<div class="line"><a id="l00470" name="l00470"></a><span class="lineno">  470</span><span class="comment">/* @[declare_core2foraws_expport_i2c_read] */</span></div>
+<div class="line"><a id="l00471" name="l00471"></a><span class="lineno">  471</span> </div>
+<div class="line"><a id="l00528" name="l00528"></a><span class="lineno">  528</span><span class="comment">/* @[declare_core2foraws_expport_i2c_write] */</span></div>
+<div class="line"><a id="l00529" name="l00529"></a><span class="lineno"><a class="line" href="core2foraws__expports_8h.html#a7eba726dfabc491e9b04d6a875fd25e9">  529</a></span>esp_err_t <a class="code hl_function" href="core2foraws__expports_8h.html#a7eba726dfabc491e9b04d6a875fd25e9">core2foraws_expports_i2c_write</a>( uint16_t device_address, uint32_t register_address, <span class="keyword">const</span> uint8_t *data, uint16_t length );</div>
+<div class="line"><a id="l00530" name="l00530"></a><span class="lineno">  530</span><span class="comment">/* @[declare_core2foraws_expport_i2c_write] */</span></div>
+<div class="line"><a id="l00531" name="l00531"></a><span class="lineno">  531</span> </div>
+<div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span><span class="comment">/* @[declare_core2foraws_expport_i2c_close] */</span></div>
+<div class="line"><a id="l00607" name="l00607"></a><span class="lineno"><a class="line" href="core2foraws__expports_8h.html#aa68a8ce01427dba8f8dd5b05195918d9">  607</a></span>esp_err_t <a class="code hl_function" href="core2foraws__expports_8h.html#aa68a8ce01427dba8f8dd5b05195918d9">core2foraws_expports_i2c_close</a>( <span class="keywordtype">void</span> );</div>
+<div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span><span class="comment">/* @[declare_core2foraws_expport_i2c_close] */</span></div>
+<div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span> </div>
+<div class="line"><a id="l00660" name="l00660"></a><span class="lineno">  660</span><span class="comment">/* @[declare_core2foraws_expport_adc_read] */</span></div>
+<div class="line"><a id="l00661" name="l00661"></a><span class="lineno"><a class="line" href="core2foraws__expports_8h.html#a87364304a59960286d3e7e67d4f278e2">  661</a></span>esp_err_t <a class="code hl_function" href="core2foraws__expports_8h.html#a87364304a59960286d3e7e67d4f278e2">core2foraws_expports_adc_read</a>( <span class="keywordtype">int</span> *raw_adc_value );</div>
+<div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span><span class="comment">/* @[declare_core2foraws_expport_adc_read] */</span></div>
+<div class="line"><a id="l00663" name="l00663"></a><span class="lineno">  663</span> </div>
+<div class="line"><a id="l00717" name="l00717"></a><span class="lineno">  717</span><span class="comment">/* @[declare_core2foraws_expport_adc_mv_read] */</span></div>
+<div class="line"><a id="l00718" name="l00718"></a><span class="lineno"><a class="line" href="core2foraws__expports_8h.html#a0737d474fec3f03f5a8c46139d287cfd">  718</a></span>esp_err_t <a class="code hl_function" href="core2foraws__expports_8h.html#a0737d474fec3f03f5a8c46139d287cfd">core2foraws_expports_adc_mv_read</a>( uint32_t *adc_mvolts );</div>
+<div class="line"><a id="l00719" name="l00719"></a><span class="lineno">  719</span><span class="comment">/* @[declare_core2foraws_expport_adc_mv_read] */</span></div>
+<div class="line"><a id="l00720" name="l00720"></a><span class="lineno">  720</span> </div>
+<div class="line"><a id="l00750" name="l00750"></a><span class="lineno">  750</span><span class="comment">/* @[declare_core2foraws_expport_adc_mv_write] */</span></div>
+<div class="line"><a id="l00751" name="l00751"></a><span class="lineno"><a class="line" href="core2foraws__expports_8h.html#a0bc8b93b6c00ad4491a7b4f7ad910e59">  751</a></span>esp_err_t <a class="code hl_function" href="core2foraws__expports_8h.html#a0bc8b93b6c00ad4491a7b4f7ad910e59">core2foraws_expports_dac_mv_write</a>( <span class="keyword">const</span> uint16_t dac_mvolts );</div>
+<div class="line"><a id="l00752" name="l00752"></a><span class="lineno">  752</span><span class="comment">/* @[declare_core2foraws_expport_adc_mv_write] */</span></div>
+<div class="line"><a id="l00753" name="l00753"></a><span class="lineno">  753</span> </div>
+<div class="line"><a id="l00849" name="l00849"></a><span class="lineno">  849</span><span class="comment">/* @[declare_core2foraws_expport_uart_begin] */</span></div>
+<div class="line"><a id="l00850" name="l00850"></a><span class="lineno"><a class="line" href="core2foraws__expports_8h.html#ac52e3b43d38555f0ed5e1f315e2ed274">  850</a></span>esp_err_t <a class="code hl_function" href="core2foraws__expports_8h.html#ac52e3b43d38555f0ed5e1f315e2ed274">core2foraws_expports_uart_begin</a>( uint32_t baud );</div>
+<div class="line"><a id="l00851" name="l00851"></a><span class="lineno">  851</span><span class="comment">/* @[declare_core2foraws_expport_uart_begin] */</span></div>
+<div class="line"><a id="l00852" name="l00852"></a><span class="lineno">  852</span> </div>
+<div class="line"><a id="l00950" name="l00950"></a><span class="lineno">  950</span><span class="comment">/* @[declare_core2foraws_expport_uart_write] */</span></div>
+<div class="line"><a id="l00951" name="l00951"></a><span class="lineno"><a class="line" href="core2foraws__expports_8h.html#adb85176507045a1bdd8e23925b0fc5ba">  951</a></span>esp_err_t <a class="code hl_function" href="core2foraws__expports_8h.html#adb85176507045a1bdd8e23925b0fc5ba">core2foraws_expports_uart_write</a>( <span class="keyword">const</span> <span class="keywordtype">char</span> *message, <span class="keywordtype">size_t</span> length, <span class="keywordtype">size_t</span> *was_written_length );</div>
+<div class="line"><a id="l00952" name="l00952"></a><span class="lineno">  952</span><span class="comment">/* @[declare_core2foraws_expport_uart_write] */</span></div>
+<div class="line"><a id="l00953" name="l00953"></a><span class="lineno">  953</span> </div>
+<div class="line"><a id="l01049" name="l01049"></a><span class="lineno"> 1049</span><span class="comment">/* @[declare_core2foraws_expport_uart_read] */</span></div>
+<div class="line"><a id="l01050" name="l01050"></a><span class="lineno"><a class="line" href="core2foraws__expports_8h.html#a7c96905f03597b16aa851d5a4ba05bec"> 1050</a></span>esp_err_t <a class="code hl_function" href="core2foraws__expports_8h.html#a7c96905f03597b16aa851d5a4ba05bec">core2foraws_expports_uart_read</a>( uint8_t *message_buffer, <span class="keywordtype">size_t</span> *was_read_length );</div>
+<div class="line"><a id="l01051" name="l01051"></a><span class="lineno"> 1051</span><span class="comment">/* @[declare_core2foraws_expport_uart_read] */</span></div>
+<div class="line"><a id="l01052" name="l01052"></a><span class="lineno"> 1052</span> </div>
+<div class="line"><a id="l01053" name="l01053"></a><span class="lineno"> 1053</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l01054" name="l01054"></a><span class="lineno"> 1054</span>}</div>
 <div class="line"><a id="l01055" name="l01055"></a><span class="lineno"> 1055</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01056" name="l01056"></a><span class="lineno"> 1056</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="acore2foraws__expports_8h_html_a0737d474fec3f03f5a8c46139d287cfd"><div class="ttname"><a href="core2foraws__expports_8h.html#a0737d474fec3f03f5a8c46139d287cfd">core2foraws_expports_adc_mv_read</a></div><div class="ttdeci">esp_err_t core2foraws_expports_adc_mv_read(uint32_t *adc_mvolts)</div><div class="ttdoc">Read the calibrated ADC voltage from PORT_B_ADC_PIN (GPIO 36).</div></div>
 <div class="ttc" id="acore2foraws__expports_8h_html_a0bc8b93b6c00ad4491a7b4f7ad910e59"><div class="ttname"><a href="core2foraws__expports_8h.html#a0bc8b93b6c00ad4491a7b4f7ad910e59">core2foraws_expports_dac_mv_write</a></div><div class="ttdeci">esp_err_t core2foraws_expports_dac_mv_write(const uint16_t dac_mvolts)</div><div class="ttdoc">Outputs the specified voltage (millivolts) to the DAC on PORT_B_DAC_PIN (GPIO 26).</div></div>
 <div class="ttc" id="acore2foraws__expports_8h_html_a2cc0279f60f33499e3dc32c748faa607"><div class="ttname"><a href="core2foraws__expports_8h.html#a2cc0279f60f33499e3dc32c748faa607">core2foraws_expports_digital_write</a></div><div class="ttdeci">esp_err_t core2foraws_expports_digital_write(gpio_num_t pin, const bool level)</div><div class="ttdoc">Writes the value to a specified digital pin — either 1 (high) or 0 (low).</div></div>

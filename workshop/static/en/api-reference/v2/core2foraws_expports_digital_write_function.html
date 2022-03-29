@@ -1,3 +1,4 @@
+<!-- HTML header for doxygen 1.9.3-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -9,6 +10,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8V9B1GPE56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8V9B1GPE56');
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -86,14 +95,15 @@ The AXP192 PMU is configured to output 5v on the expansion port's VCC pin. Some 
 <div class="line"> </div>
 <div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *TAG = <span class="stringliteral">&quot;MAIN_DIGITAL_WRITE_DEMO&quot;</span>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> pin_write_task(){</div>
+<div class="line"><span class="keywordtype">void</span> pin_write_task()</div>
+<div class="line">{</div>
 <div class="line">    <span class="keywordtype">bool</span> output = 0;</div>
 <div class="line">    <span class="keywordflow">for</span>( ;; )</div>
 <div class="line">    {</div>
 <div class="line">        esp_err_t err = ESP_FAIL;</div>
 <div class="line">        </div>
 <div class="line">        err = <a class="code hl_function" href="core2foraws__expports_8h.html#a2cc0279f60f33499e3dc32c748faa607">core2foraws_expports_digital_write</a>( GPIO_NUM_26, output );</div>
-<div class="line">        <span class="keywordflow">if</span>( err == ESP_OK )</div>
+<div class="line">        <span class="keywordflow">if</span> ( err == ESP_OK )</div>
 <div class="line">            ESP_LOGI( TAG, <span class="stringliteral">&quot;\tOutput on GPIO %d: %s&quot;</span>, GPIO_NUM_26, output ? <span class="stringliteral">&quot;HIGH&quot;</span> : <span class="stringliteral">&quot;LOW&quot;</span> );</div>
 <div class="line"> </div>
 <div class="line">        output = !output;</div>
