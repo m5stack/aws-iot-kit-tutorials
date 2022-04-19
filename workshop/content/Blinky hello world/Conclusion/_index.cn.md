@@ -6,7 +6,7 @@ pre = "<b>e. </b>"
 
 希望您喜欢构建连接到云的 Blinky 项目的过程。您已经使用 PlatformIO 配置、构建、烧录和监控了 Core2 for AWS IoT EduKit 的固件。现在，您的设备已经在您的 AWS 账户中注册为 AWS IoT 事物，使用永远不会离开设备的嵌入式设备证书和私有密钥来实现安全的云连接。您连接到了 AWS IoT Core，通过 MQTT 从设备发送了消息，并从 AWS IoT 控制台的 MQTT 客户端接收了 MQTT 消息，并可以从 MQTT 客户端切换设备上的指示灯。
 
-虽然 AWS IoT EduKit 项目不教授 C 语言，也不要求对 C 语言的了解，但它对嵌入式开发至关重要。来自底层代码的控制和灵活性允许您从硬件中获得最大的潜力。如果你不熟悉 C 编程，但想学习或者你希望深入我们提供的应用程序代码，Jens Gustedt 在 Creative Commons license 下提供了 [Modern C](https://modernc.gforge.inria.fr/)，它可以免费 [下载](https://modernc.gforge.inria.fr/download.html)。
+虽然 AWS IoT EduKit 项目不教授 C 语言，也不要求对 C 语言的了解，但它对嵌入式开发至关重要。来自底层代码的控制和灵活性允许您从硬件中获得最大的潜力。如果你不熟悉 C 编程，但想学习或者你希望深入我们提供的应用程序代码，Jens Gustedt 在 Creative Commons license 下提供了 [Modern C](https://gustedt.gitlabpages.inria.fr/modern-c/)，它可以免费 [下载](https://gustedt.gitlabpages.inria.fr/modern-c/#orge4fc44a)。
 
 ## 设备上发生了什么
 ## FreeRTOS 内核
