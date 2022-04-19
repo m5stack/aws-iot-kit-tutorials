@@ -25,13 +25,9 @@ Im Hintergrund werden von PIO Abhängigkeiten für die Geräteplattform installi
 
 {{< img "pio-new_terminal-gs.en.png" "PlatformIO CLI terminal in VS Code" "1 - Menü öffnen, 2 - Neues PIO Terminal öffnen, 3 - Sicherstellen, dass wir eine 'PlatformIO CLI' Terminal Sitzung haben, 4 - Kommando ins Terminal Fenster kopieren, 5 - Bei Problemen, öffnen Sie die Platform.ini Datei und befolgen Sie die Anweisungen zum manuellen Hinzufügen des seriellen Ports.">}}
 
-1) Jetzt ist es an der Zeit, die kompilierte Firmware über USB auf das angeschlossene Gerät hochzuladen, indem Sie den folgenden Befehl ausführen:
-    ```bash
-    pio run --environment core2foraws --target upload
-    ```
-2) Überwachen Sie abschließend die serielle Ausgabe des Geräts auf Ihrem Host-Computer:
+Jetzt ist es an der Zeit, die kompilierte Firmware über USB auf das angeschlossene Gerät hochzuladen. Nutzen Sie die folgende Anweisung die Nachrichten, die über den seriellen Ausgang an den Host-Rechner gesendeten wurden, zu überwachen.
    ```bash
-   pio run --environment core2foraws --target monitor
+   pio run --environment core2foraws --target upload --target monitor
    ```
 {{% notice info %}}
 Wenn Sie während des Uploads oder der Überwachung der seriellen Ausgabe eine Fehlermeldung über falsche Ports oder Timeouts erhalten, öffnen Sie die Platformio.ini Datei und befolgen Sie die Anweisungen in dieser Datei, um den Upload-Port manuell festzulegen.

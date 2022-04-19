@@ -19,11 +19,7 @@ cloneしたプロジェクトやダウンロードして抽出したプロジェ
     ```bash
     pio run --environment core2foraws
     ```
-4) ビルドが成功したら、同じターミナル上から以下のコマンドを実行して、USBで接続されたデバイスに以下のコマンドで転送します。
-    ```bash
-    pio run --environment core2foraws --target upload
-    ```
-5) 最後に、同じターミナルで以下のコマンドでシリアルの出力を監視します。
+4) USB経由で接続した機器にコンパイルしたファームウェアをアップロードし、シリアル接続するコマンドを実行して出力されるメッセージを監視します。
     ```bash
     pio run --environment core2foraws --target monitor
     ```

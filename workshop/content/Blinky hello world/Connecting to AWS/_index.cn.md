@@ -29,13 +29,9 @@ pio run --environment core2foraws --target menuconfig
     ```bash
     pio run --environment core2foraws
     ```
-2) 在构建成功之后，使用如下命令，通过 USB 将编译后的固件上传到连接设备上：
+2) 成功完成构建后，就可以开始通过 USB 接口将编译完成的固件上传到连接到设备中，同时执行命令来监视通过串口输出到主机上的信息:
     ```bash
-    pio run --environment core2foraws --target upload
-    ```
-3) 最后，使用如下命令，在您的主机上查看设备的串行输出：
-    ```bash
-    pio run --environment core2foraws --target monitor
+    pio run --environment core2foraws --target upload --target monitor
     ```
 {{% notice info %}}
 如果在上传或监控串行输出过程中收到关于不正确端口或超时的错误，请打开 platformio.ini 文件，并按照该文件中的说明手动设置上传端口。
