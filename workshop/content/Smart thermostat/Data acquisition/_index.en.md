@@ -4,18 +4,14 @@ weight = 20
 pre = "<b>b. </b>"
 +++
 
-## Chapter introduction
-By the end of this chapter, your device will do the following:
+In this lesson, you power on and start the local smart thermostat application. The application reports collected data to the logs; including, current temperature, ambient noise level, HVAC status (heating, cooling, standby), and room occupation indicator. 
 
-* Power on and start the local smart thermostat application.
-* Report to the logs the current temperature sensed, ambient noise level measured, an HVAC status of heating/cooling/standby, and an indicator of room occupation.
-
-The Core2 for AWS IoT EduKit reference hardware kit has several sensors ready to use. For this solution, you will take readings from the temperature sensor and microphone using local application code. The application will keep track of sensor readings and status flags that are used to render a summary to the display.
+The {{< awsService type="edukit-short-en" >}} device has several sensors that are ready to use. For this tutorial, you collect readings from the temperature sensor and microphone using local application code. The application keeps track of sensor readings and status flags and are used to render a summary to the display.
 
 ## How to program the thermostat application
-Your smart thermostat will sample the integrated sensors using code already created and included in the bundled software components. In this first step, you will simply capture the values and print them out to the logger before we move on to publishing sensor values up to AWS IoT Core.
+Your smart thermostat samples the integrated sensors use code that is created and included in the bundled software components. The first step is to capture the values and print them out to the logger before publishing sensor values to AWS IoT Core.
 
-Reading from the temperature sensor of the included MPU6886 module is easy. Here's a code snippet:
+The following sample code illustrates capturing data from the temperature sensor module (MPU6886):
 
 ```c
 // include libraries for interfacing with the kit's modules
@@ -38,14 +34,16 @@ void app_main()
   MPU6886_GetTempData(&temperature);
 
   // convert the reading to Fahrenheit and apply a calibration offset of -50
-  temperature = (temperature * 1.8)  + 32 - 50;
+  temperature = (temperature * 1.8) + 32 - 50;
 
   // write the value to the ESP32 logger
   ESP_LOGI("thermostat", "measured temperature is: %f", temperature);
 }
 ```
 
-If you were to build, flash, and monitor your device logs with this code, the device would take one reading from the temperature sensor, write it to the logger, and stop. To continuously sample every second without blocking other processes, you would create a separate **[FreeRTOS task](https://docs.espressif.com/projects/esp-idf/en/v4.2/esp32/api-reference/system/freertos.html#_CPPv423xTaskCreatePinnedToCore14TaskFunction_tPCKcK8uint32_tPCv11UBaseType_tPC12TaskHandle_tK10BaseType_t)** and pin it to an MCU core, like so:
+If you use this code to build, flash, and monitor your device, the device would take one reading from the temperature sensor, write it to the logger, and stop. To continuously sample every second without blocking other processes, you would create a separate [FreeRTOS task](https://docs.espressif.com/projects/esp-idf/en/v4.2/esp32/api-reference/system/freertos.html#_CPPv423xTaskCreatePinnedToCore14TaskFunction_tPCKcK8uint32_tPCv11UBaseType_tPC12TaskHandle_tK10BaseType_t) and pin it to an MCU core. 
+
+The following sample code illustrates *continuously* collecting temperature readings every 1,000 milliseconds (1 second):
 
 ```c
 #include "freertos/FreeRTOS.h"
@@ -61,7 +59,7 @@ void temperature_task(void *arg) {
   // loop forever!
   for (;;) {
     MPU6886_GetTempData(&temperature);
-    temperature = (temperature * 1.8)  + 32 - 50;
+    temperature = (temperature * 1.8) + 32 - 50;
     ESP_LOGI("thermostat", "measured temperature is: %f", temperature);
 
     // sleep for 1000ms before continuing the loop
@@ -79,54 +77,52 @@ void app_main()
 }
 ```
 
-## Compiling and Uploading the Smart Thermostat Firmware
-A sample application has already been prepared for you to build and upload to your device using Visual Studio Code and the PlatformIO extension. If you have any other project already open in VS Code, first open a new window (File → New Window) to have a clean file Explorer and working environment.
+## Compile and upload the Smart Thermostat Firmware
+A sample application has already been prepared for you to build and upload to your device using Visual Studio Code (VS Code) and the PlatformIO (PIO) extension.
 
-For this tutorial, you will use the Smart-Thermostat project. In your new VS Code window: 
-1. Click the **PlatformIO logo** in the VS Code activity bar (left most menu).
-2. Select **Open** from the left PlatformIO menu.
-3. Click **Open Project**.
-4. Navigate to the `Core2-for-AWS-IoT-EduKit/Smart-Thermostat` folder, and click **open**.
-{{< img "pio-home.en.png" "PlatformIO home screen" "1 - Open PIO menu, 2 - Open PIO home, 3 - Open the project folder" >}}
+Complete the following steps to upload the application to your device:
+1. Open **VS Code**, if necessary.
+1. Expand the **File menu** and select **New Window** in the VS Code to open a new window. This provides a clean file Explorer and working environment.
+1. Select the **PlatformIO logo** in the VS Code activity bar, choose **Open**, and then select **Open Project**.
+1. Navigate to the `Core2-for-AWS-IoT-EduKit/Smart-Thermostat` folder and choose **Open Smart-Thermostat**.
+{{< img "pio-home.en.png" "PlatformIO home screen" "1 - Open the PIO menu, 2 - Open the PIO home, 3 - Open the project folder" >}}
+1. Select the **PlatformIO logo** in the VS Code activity bar, expand **Miscellaneous**, and then choose **New Terminal**.
 
-Next, you'll need to open a new PlatformIO CLI terminal window in VS Code:
-1) Click the **PlatformIO logo** on the VS Code activity bar (left most menu).
-2) From the **Quick Access** menu, under **Miscellaneous**, select **New Terminal**.
+Next, you will utilize local Wi-Fi and AWS endpoint configuration that you established during the [CloudConnected Blinky](en/blinky-hello-world.html) tutorial. 
 
-{{< img "pio-new_terminal-smart_thermostat.en.png" "PlatformIO CLI terminal in VS Code" "1 - Open PIO menu, 2 - Open new PIO Terminal, 3 - Verify you're in the 'PlatformIO CLI' terminal session, 4 - Paste the commands into terminal, 5 - If you encounter an error autodetecting the port, open the Platform.ini file and follow instructions to manually add the serial port.">}}
+   {{% notice note %}}
+   If you did not complete the [CloudConnected Blinky](en/blinky-hello-world.html) tutorial or you prefer to set your Wi-Fi credentials and AWS endpoint manually. Follow the [Configure the ESP32 firmware](/en/blinky-hello-world/connecting-to-aws.html/#configure-the-esp32-firmware) steps from the **Blinky Hello World** tutorial.
+   {{% /notice %}}
 
+Complete the following steps to compile copy the configuration from the Blinky project, compile the device firmware, and upload it to your device. (**Expand and complete the directions that correspond to your host machine's operating system**): 
 
- To copy the configuration from the Blinky project, compile the device firmware, and upload it to your device, then follow the steps for your host machine's OS to complete this chapter:
-
-{{%expand "Ubuntu or macOS" %}}
-1. Copy your `sdkconfig` file from the **Blinky-Hello-World** demo to simplify setting your Wi-Fi and AWS endpoint:
+{{%expand "macOS and Ubuntu" %}}
+1. Issue the following command to copy the `sdkconfig` file from the **Blinky-Hello-World** demo to use the Wi-Fi and AWS endpoint settings that you used in the Blinky tutorial:
    ```bash
    cp ../Blinky-Hello-World/sdkconfig .
    ```
-   {{% notice note %}}
-   Optionally, you can manually set your Wi-Fi credentials and AWS endpoint for your firmware by following the **[Configuring the ESP32 Firmware](/en/blinky-hello-world/connecting-to-aws.html#configuring-the-esp32-firmware)** step from the **Blinky Hello World** example.
-   {{% /notice %}}
-2. Use the command below to compile and upload the firmware, and monitor the serial output of your device. It will take some time to build and flash the app, but after that's done you should see the stream of device logs in your terminal. You can close the monitor session with the **Ctrl** + **C** keystroke combination:
+2. Issue the following command to compile and upload the firmware, and monitor the serial output from your device. It will take some time to build and flash the app, but after that's complete you should see the stream of device logs in your terminal:
    ```bash
    pio run --environment core2foraws --target upload --target monitor 
    ```
+1. When you're finished, close the monitor session by issuing the **Ctrl+C** keyboard command.
 {{% /expand%}}
+
+
 {{%expand "Windows" %}}
-1. Copy your `sdkconfig` file from the **Blinky-Hello-World** demo to simplify setting your Wi-Fi and AWS endpoint:
+1. Issue the following command to copy the `sdkconfig` file from the **Blinky-Hello-World** demo to use the Wi-Fi and AWS endpoint settings that you used in the Blinky tutorial:
    ```bash
    copy ..\Blinky-Hello-World\sdkconfig .
    ```
-   {{% notice note %}}
-   Optionally, you can manually set your Wi-Fi credentials and AWS endpoint for your firmware by following the **[Configuring the ESP32 Firmware](/en/blinky-hello-world/connecting-to-aws.html#configuring-the-esp32-firmware)** steps from the **Blinky Hello World** example.
-   {{% /notice %}}
-2. Use the command below to compile and upload the firmware, and monitor the serial output of your device. It will take some time to build and flash the app, but after that's done you should see the stream of device logs in your terminal. You can close the monitor session with the **Ctrl** + **C** keystroke combination:
+2. Issue the following command to compile and upload the firmware, and monitor the serial output from your device. It will take some time to build and flash the app, but after that's complete you should see the stream of device logs in your terminal:
    ```bash
    pio run --environment core2foraws --target upload --target monitor 
    ```
+1. When you're finished, close the monitor session by issuing the **Ctrl+C** keyboard command.
 {{% /expand%}}
 
 ## Validation
-Before you move on to the next chapter, you can validate that your device is configured as intended by viewing the serial output in the terminal window which should look like the following: 
+Validate that your device is configured as intended by reviewing the serial output in the terminal window. Your output should look similar to the following: 
 
 ```
 I (16128) MAIN: On Device: roomOccupancy false
@@ -135,7 +131,7 @@ I (16137) MAIN: On Device: temperature 64.057533
 I (16143) MAIN: On Device: sound 8
 ```
 
-If these are working as expected, let's move on to [**Data sync**](/en/smart-thermostat/data-sync.html).
+Now that the serial output is configured, continue to [**Data sync**](/en/smart-thermostat/data-sync.html).
 
 ---
 {{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

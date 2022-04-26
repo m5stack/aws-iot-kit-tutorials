@@ -13,7 +13,7 @@ Alexa Voice Service (AVS) Integration is a new feature of AWS IoT Core that enab
 [Learn more >>](https://docs.aws.amazon.com/iot/latest/developerguide/avs-integration-aws-iot.html)
 
 ## Let's go!
-All content in this tutorial assumes you presently have the [M5Stack Core2 ESP32 IoT Development Kit for AWS](https://www.amazon.com/dp/B08VGRZYJR/) in your possession, a compatible iOS or Android smart phone to use the Amazon Alexa app and ESP Alexa Phone Application, and are comfortable with basic technical concepts and tools—such as the command prompt/terminal. Purchase a reference hardware kit from one of the [global distribution options](https://aws.amazon.com/iot/edukit/#Get_started_with_AWS_IoT_EduKit) if you don't have one already.
+All content in this tutorial assumes you presently have the [M5Stack Core2 ESP32 IoT Development Kit for AWS](https://www.amazon.com/dp/B08VGRZYJR/) in your possession, a compatible iOS or Android smart phone to use the Amazon Alexa app and ESP Alexa Phone Application, and are comfortable with basic technical concepts and tools—such as the command prompt/terminal. Purchase a {{< awsService type="edukit-short-en" >}} device from one of the [global distribution options](https://aws.amazon.com/iot/edukit/#Get_started_with_AWS_IoT_EduKit) if you don't have one already.
 
 If you're ready, let's begin by [**Flashing Espressif Certificates**](/en/intro-to-alexa-for-iot/flashing-espressif-certificates.html).
 

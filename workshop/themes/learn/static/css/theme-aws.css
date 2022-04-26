@@ -1,11 +1,11 @@
 
 :root{
 
-    --MAIN-TEXT-color:#232F3E; /* Color of text by default */
+    --MAIN-TEXT-color:#000000; /* i thought it was - 161E2D. but not sure. updated to match aws documentation was set to #232F3E -- Color of text by default */
     --MAIN-TITLES-TEXT-color: #161E2D; /* Color of titles h2-h3-h4-h5 */
-    --MAIN-LINK-color:#95b0ff; /* Color of links */
+    --MAIN-LINK-color:#0073BB; /* updated to match aws documentation. was set to #95b0ff -- Color of links */
     --MAIN-LINK-HOVER-color:#527FFF; /* Color of hovered links */
-    --MAIN-ANCHOR-color: #95b0ff; /* color of anchors on titles */
+    --MAIN-ANCHOR-color: #0073BB; /* updated to match aws documentation. was set to #95b0ff -- color of anchors on titles */
 
     --MENU-HEADER-BG-color:#161E2D; /* Background color of menu header */
     --MENU-HEADER-BORDER-color:#161E2D; /*Color of menu header border */
@@ -99,7 +99,7 @@ a:hover {
 }
 
 #sidebar #footer h3.github-title {
-  font-size: 14px;
+  font-size: 14;
   margin: 10px 0px 5px;
   padding: 0px;
   text-transform: uppercase;
@@ -170,7 +170,7 @@ a:hover {
 }
 
 #sidebar #shortcuts h3 {
-    font-family: "Amazon Eber", "Novacento Sans Wide", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+    font-family: "Amazon Ember", "Novacento Sans Wide", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
     color: white !important;
     margin-top:1rem;
     padding-left: 1rem;
@@ -188,7 +188,7 @@ div.notices p:first-child:before {
     position: absolute;
     top: 2px;
     color: #fff;
-    font-family: 'Font Awesome\ 5 Free';
+    font-family: 'Font Awesome\ 5 Free'; /* was 'Font Awesome\ 5 Free' */;
     content: #F06A;
     font-weight: 900; /* Fix version 5.0.9 */
     left: 10px;
@@ -235,9 +235,9 @@ div.notices.info p {
     font-size: 14px !important;
     font-weight: normal !important;
     line-height: 1.42857143 !important;
-    text-align: center !important;
+    text-align: left !important; /* updated to match aws documentation. was set to center */
     white-space: nowrap !important;
-    vertical-align: middle !important;
+    vertical-align: middle !important; 
     -ms-touch-action: manipulation !important;
         touch-action: manipulation !important;
     cursor: pointer !important;
@@ -273,8 +273,8 @@ div.notices.info p {
   .btn-default:focus,
   .btn-default:active {
     color: #fff !important;
-    background-color: #95b0ff !important;
-    border-color: #95b0ff !important;
+    background-color: #0073BB !important; /* updated to match aws documentation. was set to #95b0ff */
+    border-color: #0073BB !important; /* updated to match aws documentation. was set to #95b0ff */
   }
   .btn-default:active {
     background-image: none !important;

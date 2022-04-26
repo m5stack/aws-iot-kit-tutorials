@@ -4,11 +4,11 @@ weight = 40
 pre = "<b>d. </b>"
 +++
 
-## Chapter introduction
+## Introduction
 By the end of this chapter, your serverless application should do the following:
 * Consume a machine learning model that translates new thermostat messages into inferences of roomOccupancy.
 
-## How to set up the serverless infrastructure
+## Set up the serverless infrastructure
 The following steps will walk you through creation of a serverless function in AWS Lambda. The function defines a small bit of code that expects device shadow messages from IoT Core, transforms the message into the format used with your ML endpoint, then invokes your ML endpoint to return the classification of *roomOccupancy* and the confidence score of the inference.
 
 1. From the AWS Lambda console, choose **Create function**.
@@ -129,7 +129,7 @@ SELECT cast(get(get(aws_lambda("arn:aws:lambda:REGION:ACCOUNT_ID:function:FUNCTI
 
 At this point, your IoT workflow is now consuming your trained machine learning model from its deployed endpoint to classify messages published by your smart thermostat as new *roomOccupancy* values! 
 
-## Validation steps
+## Validation
 Before moving on to the next chapter, you can validate that your serverless application is configured as intended:
 
 1. Use the AWS IoT Core Test client to subscribe to the topic `$aws/things/<<CLIENT_ID>>/shadow/update` (replacing your <<CLIENT_ID>>) and you should see two kinds of messages here. The first is the payload published by your smart thermostat with the `state.reported` path. The other is the payload now being published by your thermostat rule with the `state.desired.roomOccupancy` value determined by your ML model.
