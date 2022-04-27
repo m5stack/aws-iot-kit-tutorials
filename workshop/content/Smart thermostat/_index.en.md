@@ -13,7 +13,7 @@ This tutorial requires that you have:
 - A user in your AWS account that is assigned to you and has administrator access.
 - Completed the [Cloud Connected Blinky](/en/blinky-hello-world.html) tutorial.
 - Confirmed which serial port the device uses.
-- Are comfortable with basic technical concepts and tools; such as, the command prompt or terminal window.
+- Familiarity with basic technical concepts and tools, such as the command prompt or terminal window.
 
 ### Learning Objectives
 
