@@ -66,7 +66,7 @@ url = "/getting-started/prerequisites.html"
 weight = 0
 
 [[Languages.en.menu.shortcuts]]
-name = "<i class='fab fa-github'></i> Code Repository (<i class='fas fa-sync-alt fa-xs'></i> March 22, 2022)"
+name = "<i class='fab fa-github'></i> Code Repository (<i class='fas fa-sync-alt fa-xs'></i> April 18, 2022)"
 url = "https://github.com/m5stack/Core2-for-AWS-IoT-EduKit"
 weight = 1
 
@@ -91,7 +91,7 @@ url = "/getting-started/prerequisites.html"
 weight = 0
 
 [[Languages.de.menu.shortcuts]]
-name = "<i class='fab fa-github'></i> Code Repository (<i class='fas fa-sync-alt fa-xs'></i> March 22, 2022)"
+name = "<i class='fab fa-github'></i> Code Repository (<i class='fas fa-sync-alt fa-xs'></i> April 18, 2022)"
 url = "https://github.com/m5stack/Core2-for-AWS-IoT-EduKit"
 weight = 1
 
@@ -122,7 +122,7 @@ weight = 4
     weight = -110
 
 [[menu.shortcuts]]
-name = "<i class='fab fa-github'></i> Code Repository (<i class='fas fa-sync-alt fa-xs'></i> March 22, 2022)"
+name = "<i class='fab fa-github'></i> Code Repository (<i class='fas fa-sync-alt fa-xs'></i> April 18, 2022)"
 url = "https://github.com/m5stack/Core2-for-AWS-IoT-EduKit"
 weight = 1
 
