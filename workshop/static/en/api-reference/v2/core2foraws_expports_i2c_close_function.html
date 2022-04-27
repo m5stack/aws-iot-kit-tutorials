@@ -1,3 +1,4 @@
+<!-- HTML header for doxygen 1.9.3-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -9,6 +10,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8V9B1GPE56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8V9B1GPE56');
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -96,14 +105,14 @@ $(function() {
 <div class="line">    </div>
 <div class="line">    err = <a class="code hl_function" href="core2foraws__expports_8h.html#a37a130625c5303dbc06642fe2b71b25b">core2foraws_expports_i2c_begin</a>();</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordflow">if</span>( err == ESP_OK)</div>
+<div class="line">    <span class="keywordflow">if</span> ( err == ESP_OK)</div>
 <div class="line">    {</div>
 <div class="line">        uint8_t heart_rate = 255;</div>
 <div class="line"> </div>
 <div class="line">        <span class="keywordflow">for</span>( ;; )</div>
 <div class="line">        {</div>
 <div class="line">            err = <a class="code hl_function" href="core2foraws__expports_8h.html#a536178ddbe400acf90a2fa04ba5776a9">core2foraws_expports_i2c_read</a>( DEVICE_ADDRESS, I2C_NO_REG, &amp;heart_rate, 1 );</div>
-<div class="line">            <span class="keywordflow">if</span>( !err )</div>
+<div class="line">            <span class="keywordflow">if</span> ( !err )</div>
 <div class="line">            {</div>
 <div class="line">                ESP_LOGI(TAG, <span class="stringliteral">&quot;Heart Rate — %ubpm&quot;</span>, heart_rate);    </div>
 <div class="line">            }</div>

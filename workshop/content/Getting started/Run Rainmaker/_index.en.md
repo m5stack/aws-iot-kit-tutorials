@@ -36,14 +36,10 @@ PIO dependencies are installed in the background for the device platform. If tho
 
 {{< img "pio-new_terminal-gs.en.png" "PlatformIO CLI terminal in VS Code" "1 - Open PIO menu, 2 - Open new PIO Terminal, 3 - Verify you're in the PlatformIO CLI terminal session, 4 - Paste the command into terminal, 5 - If you encounter an error autodetecting the port, open the Platform.ini file and follow instructions to manually add the serial port.">}}
 
-4. Issue the following command to upload the compiled firmware to the connected device through USB:
+1. Issue the following command to upload the compiled firmware to the connected device through USB, and monitor the messages sent over the serial output to the host machine:
     ```bash
-    pio run --environment core2foraws --target upload
+    pio run --environment core2foraws --target upload --target monitor
     ```
-1. Issue the following command to monitor the serial output from the device on your host machine:
-   ```bash
-   pio run --environment core2foraws --target monitor
-   ```
 {{% notice info %}}
 If you receive an error that the serial port timed out or there is an incorrect port number, open the `platformio.ini` file, and follow its instructions to manually set the upload port.
 {{% /notice %}}

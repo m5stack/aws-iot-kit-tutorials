@@ -31,11 +31,7 @@ SSID が 2.4GHz ネットワーク用であることを確認してください�
     ```bash
     pio run --environment core2foraws
     ```
-2) ビルドが成功したら、USBで接続されたデバイスに以下のコマンドで転送します。
-    ```bash
-    pio run --environment core2foraws --target upload
-    ```
-3) 最後に、以下のコマンドでシリアルの出力を監視します:
+2) ビルドが成功したら、 USB経由で接続した機器にコンパイルしたファームウェアをアップロードし、シリアル接続するコマンドを実行して出力されるメッセージを監視します。
     ```bash
     pio run --environment core2foraws --target monitor
     ```

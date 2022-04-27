@@ -1,3 +1,4 @@
+<!-- HTML header for doxygen 1.9.3-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -9,6 +10,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8V9B1GPE56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8V9B1GPE56');
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -71,7 +80,7 @@ $(function() {
 <p >This Core2 for AWS IoT EduKit API Reference provides a set of definitions for the various drivers that are included as part of the M5Stack Core2 for AWS IoT EduKit board support package (BSP). A board support package is the software layer that contains hardware drivers and other routines you can use when writing your applications to access the on-board hardware features. The BSP relies on and sits on top of Espressif's IoT Developer Framework (ESP-IDF) version 4.3, which is based on a modified version of FreeRTOS and executes from the ESP32-D0WD micro-controller unit (MCU) to all attached peripherals. It provides a layer of abstraction from the ESP-IDF and all other drivers that are used in the BSP. The usage of the BSP requires knowledge of C programming and real-time operating systems.</p>
 <p >The BSP should be placed in the project's <b>/components</b> folder (e.g. MyProjectFolder/components/Core2-for-AWS-IoT-EduKit) . You can find the preferred location in the available projects in the <a href="https://github.com/aws-iot-edukit">AWS IoT EduKit</a> GitHub account. To create your own empty project do the following:</p><ol type="1">
 <li>Generate a new repository from the <a href="https://github.com/aws-iot-edukit/Project_Template-Core2_for_AWS">Project Template repo</a> by clicking the <b>Use this template</b> button and following the <a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template">GitHub instructions</a>.</li>
-<li>Using Visual Studio Code and the PlatformIO terminal window, clone your new repository and recursively clone the git submodules to where you'll be doing the development (e.g. local machine) using the command below and replacing the <b>YOUR_REPOSITORY_URL</b> and brackets with the git URL <a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository">copied from GitHub</a> : <div class="fragment"><div class="line">git clone &lt;&lt;YOUR REPOSITORY URL&gt;&gt; --recurse-submodules</div>
+<li>Using Visual Studio Code and the PlatformIO terminal window, clone your new repository and recursively clone the git submodules to where you'll be doing the development (e.g. local machine) using the command below and replacing the <b>YOUR_REPOSITORY_URL</b> and brackets with the git URL <a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository">copied from GitHub</a>: <div class="fragment"><div class="line">git clone &lt;&lt;YOUR REPOSITORY URL&gt;&gt; --recurse-submodules</div>
 </div><!-- fragment --></li>
 <li>Open the <b>main/main.c</b> file and start writing your application.</li>
 </ol>
@@ -118,7 +127,7 @@ Driver APIs</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><a href="https://github.com/espressif/esp-aws-iot">ESP-AWS-IoT</a>   </td><td class="markdownTableBodyNone">AWS IoT Device SDK for Embedded C ported for ESP32. Provides client connectivity and AWS IoT Device Shadow service capability.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a href="https://github.com/espressif/esp-cryptoauthlib">ESP-CRYPTOAUTHLIB</a>   </td><td class="markdownTableBodyNone">ATECC608 HAL ported for ESP32. Provides libraries to interface with the secure element. Depends on CryptoAuthLib.    </td></tr>
+<td class="markdownTableBodyNone"><a href="https://github.com/espressif/esp-cryptoauthlib">ESP-CRYPTOAUTHLIB</a>   </td><td class="markdownTableBodyNone">ATECC608 HAL ported for ESP32. Provides libraries to interface with the secure element. Depends on <a href="https://github.com/MicrochipTech/cryptoauthlib">CryptoAuthLib</a>.    </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><a href="https://github.com/MicrochipTech/cryptoauthlib">CryptoAuthLib</a>   </td><td class="markdownTableBodyNone">Microchip CryptoAuthentication Library. Provides libraries to interface with the secure element.    </td></tr>
 <tr class="markdownTableRowOdd">
