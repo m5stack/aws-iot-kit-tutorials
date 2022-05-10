@@ -96,7 +96,7 @@ $(function() {
 <div class="line">{   </div>
 <div class="line">    <a class="code hl_function" href="core2foraws_8h.html#a8589c127068e67d5474515365b558051">core2foraws_init</a>();</div>
 <div class="line"> </div>
-<div class="line">    xSemaphoreTake( <a class="code hl_variable" href="core2foraws__display_8h.html#afac4c8f3cf1bcb40daa59c07af2b563d">core2foraws_display_semaphore</a>, portMAX_DELAY )</div>
+<div class="line">    xSemaphoreTake( <a class="code hl_variable" href="core2foraws__common_8h.html#aedf39c68825017851b1900d77c67a002">core2foraws_common_spi_semaphore</a>, portMAX_DELAY )</div>
 <div class="line">    </div>
 <div class="line">    lv_coord_t qr_square_px = 200;</div>
 <div class="line">    lv_color_t amazon_squid_ink = lv_color_hex( 0x232F3E );</div>
@@ -106,7 +106,7 @@ $(function() {
 <div class="line">    <span class="keywordflow">if</span> ( <a class="code hl_function" href="core2foraws__wifi_8h.html#a8b51df3af5826ffe5f27d71fe94e9a63">core2foraws_wifi_prov_str_get</a>( wifi_provisioning_str ) == ESP_OK )</div>
 <div class="line">        lv_qrcode_update( display_wifi_qr, wifi_provisioning_str, strlen( wifi_provisioning_str ) );</div>
 <div class="line">    </div>
-<div class="line">    xSemaphoreGive( <a class="code hl_variable" href="core2foraws__display_8h.html#afac4c8f3cf1bcb40daa59c07af2b563d">core2foraws_display_semaphore</a> );</div>
+<div class="line">    xSemaphoreGive( <a class="code hl_variable" href="core2foraws__common_8h.html#aedf39c68825017851b1900d77c67a002">core2foraws_common_spi_semaphore</a> );</div>
 <div class="line"> </div>
 <div class="line">    xEventGroupWaitBits(</div>
 <div class="line">        <a class="code hl_variable" href="core2foraws__wifi_8h.html#a20c6ba80259caf6916ca631b853d82af">wifi_event_group</a>,   <span class="comment">// The event group being tested.</span></div>
@@ -115,14 +115,14 @@ $(function() {
 <div class="line">        pdTRUE,             <span class="comment">// Don&#39;t wait for all bits (there&#39;s only one anyway).</span></div>
 <div class="line">        portMAX_DELAY );    <span class="comment">// Wait indefinitely.</span></div>
 <div class="line"> </div>
-<div class="line">   xSemaphoreTake( <a class="code hl_variable" href="core2foraws__display_8h.html#afac4c8f3cf1bcb40daa59c07af2b563d">core2foraws_display_semaphore</a>, portMAX_DELAY );</div>
+<div class="line">   xSemaphoreTake( <a class="code hl_variable" href="core2foraws__common_8h.html#aedf39c68825017851b1900d77c67a002">core2foraws_common_spi_semaphore</a>, portMAX_DELAY );</div>
 <div class="line">    lv_obj_del( display_wifi_qr );</div>
-<div class="line">   xSemaphoreGive( <a class="code hl_variable" href="core2foraws__display_8h.html#afac4c8f3cf1bcb40daa59c07af2b563d">core2foraws_display_semaphore</a> );</div>
+<div class="line">   xSemaphoreGive( <a class="code hl_variable" href="core2foraws__common_8h.html#aedf39c68825017851b1900d77c67a002">core2foraws_common_spi_semaphore</a> );</div>
 <div class="line">    </div>
 <div class="line">}</div>
 <div class="ttc" id="acore2foraws_8h_html"><div class="ttname"><a href="core2foraws_8h.html">core2foraws.h</a></div><div class="ttdoc">Core2 for AWS IoT EduKit general hardware driver APIs.</div></div>
 <div class="ttc" id="acore2foraws_8h_html_a8589c127068e67d5474515365b558051"><div class="ttname"><a href="core2foraws_8h.html#a8589c127068e67d5474515365b558051">core2foraws_init</a></div><div class="ttdeci">esp_err_t core2foraws_init(void)</div><div class="ttdoc">Initializes enabled hardware features.</div></div>
-<div class="ttc" id="acore2foraws__display_8h_html_afac4c8f3cf1bcb40daa59c07af2b563d"><div class="ttname"><a href="core2foraws__display_8h.html#afac4c8f3cf1bcb40daa59c07af2b563d">core2foraws_display_semaphore</a></div><div class="ttdeci">SemaphoreHandle_t core2foraws_display_semaphore</div><div class="ttdoc">FreeRTOS semaphore to be used when performing any operation on the display.</div></div>
+<div class="ttc" id="acore2foraws__common_8h_html_aedf39c68825017851b1900d77c67a002"><div class="ttname"><a href="core2foraws__common_8h.html#aedf39c68825017851b1900d77c67a002">core2foraws_common_spi_semaphore</a></div><div class="ttdeci">SemaphoreHandle_t core2foraws_common_spi_semaphore</div><div class="ttdoc">FreeRTOS semaphore to be used when performing any operation on the display or SD card reader.</div></div>
 <div class="ttc" id="acore2foraws__wifi_8h_html_a20c6ba80259caf6916ca631b853d82af"><div class="ttname"><a href="core2foraws__wifi_8h.html#a20c6ba80259caf6916ca631b853d82af">wifi_event_group</a></div><div class="ttdeci">EventGroupHandle_t wifi_event_group</div><div class="ttdoc">The FreeRTOS event group bit for Wi-Fi event states.</div><div class="ttdef"><b>Definition:</b> core2foraws_wifi.h:117</div></div>
 <div class="ttc" id="acore2foraws__wifi_8h_html_ac2e6b9b72992086d169d4f7356d8b7fe"><div class="ttname"><a href="core2foraws__wifi_8h.html#ac2e6b9b72992086d169d4f7356d8b7fe">WIFI_PROV_STR_LEN</a></div><div class="ttdeci">#define WIFI_PROV_STR_LEN</div><div class="ttdoc">The maximum length allowed for the Wi-Fi SSID.</div><div class="ttdef"><b>Definition:</b> core2foraws_wifi.h:82</div></div>
 <div class="ttc" id="acore2foraws__wifi_8h_html_ad552e7688532cbbecd3967538ced06ac"><div class="ttname"><a href="core2foraws__wifi_8h.html#ad552e7688532cbbecd3967538ced06ac">WIFI_CONNECTED_BIT</a></div><div class="ttdeci">#define WIFI_CONNECTED_BIT</div><div class="ttdoc">The FreeRTOS event group bit for the device being in a Wi-Fi connected state.</div><div class="ttdef"><b>Definition:</b> core2foraws_wifi.h:55</div></div>
