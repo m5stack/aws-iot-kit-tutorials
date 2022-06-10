@@ -6,15 +6,15 @@ pre = "<b>f. </b>"
 
 We hope that you enjoyed connecting your {{< awsService type="edukit-short-en" >}} to AWS, and deploying a simple application that detected room occupancy and controlled a fictitious HVAC system. 
 
-If you would like additional ideas for experimentation, think of ways to enhance the customer experience; for example, how could you update the solution so that the HVAC setting stay engaged for a minimum time instead of turning off 10 seconds when no ambient noise is detected? How can you achieve this without pushing new code to your  device? *(You can do it!)*
+If you would like additional ideas for experimentation, think of ways to enhance the customer experience. For example, how could you update the solution so that the HVAC settings stay engaged for a minimum of time, instead of turning off after 10 seconds when no ambient noise is detected? How could you achieve this without pushing new code to your device? *(You can do it!)*
 
 
 ## Clean up
-In this solution you created the following resources in AWS:
+In this solution, you created the following resources in AWS:
 
 * AWS IoT rule
-* IAM roles.
-* IoT Events input and detector model.
+* IAM roles
+* IoT Events input and detector model
 
 None of these resources incur ongoing metered charges just by existing. You only incur charges when the resources are used to process new messages from your device. If you proceed with the next hands-on tutorial [**Smart Spaces**](/en/smart-spaces.html), do not remove any of the resources from this tutorial. If you will take a break between tutorials, simply turn off your device (hold the power button for six seconds) to prevent it from continuing to publish messages to AWS.
 
@@ -33,7 +33,7 @@ pio run --environment core2foraws --target erase
 
 
 
-Please consider continuing on your journey with your {{< awsService type="edukit-short-en" >}}. On to  [**Smart Spaces**](/en/smart-spaces.html)!
+Please consider continuing on your journey with your {{< awsService type="edukit-short-en" >}}. On to [**Smart Spaces**](/en/smart-spaces.html)!
 
 ---
 {{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

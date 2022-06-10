@@ -4,7 +4,7 @@ weight = 30
 pre = "<b>c. </b>"
 +++
 
-In this lesson, you publish the sampled ambient noise level and room temperature to AWS IoT Core every ten seconds, and your device's shadow in AWS IoT Core.
+In this lesson, you learn how to publish the sampled ambient noise level and room temperature to AWS IoT Core every ten seconds, and connect with your device's shadow in AWS IoT Core.
 
 ## Messaging
 To accomplish these goals, connect your device to your AWS IoT Core endpoint, and exchange messages between the device and the cloud in a model called publish and subscribe (PubSub). AWS IoT Core is heavily based on a protocol called [Message Queueing Telemetry Transport](https://mqtt.org/) (MQTT). From the MQTT.org home page:
@@ -13,7 +13,7 @@ To accomplish these goals, connect your device to your AWS IoT Core endpoint, an
 
 The messages exchanged between your device and the cloud can include text, numbers, binary, or [JSON](https://www.json.org/json-en.html). JSON is a best practice for exchanging messages between decoupled systems and a recommended pattern for exploring AWS IoT services.
 
-Given permissions, messages publish to a topic and other clients on AWS IoT Core can subscribe and receive copies of published messages. Topics can look like the following examples:
+Given permissions, messages publish to a topic, and other clients on AWS IoT Core can subscribe and receive copies of published messages. Topics can look like the following examples:
 
 * `this is a topic`
 * `domain/stuff/thing/whatever`
@@ -23,7 +23,7 @@ Given permissions, messages publish to a topic and other clients on AWS IoT Core
 
 The MQTT protocol defines topic partitions as separated by the forward slash '/' character. This is a foundational concept in designing topic architecture for an IoT solution. This module will help you implement topics to follow best practices. For more information, see [Designing MQTT Topics for AWS IoT Core](https://docs.aws.amazon.com/whitepapers/latest/designing-mqtt-topics-aws-iot-core/designing-mqtt-topics-aws-iot-core.html).
 
-In your smart thermostat solution, you use a feature of AWS IoT Core called device shadows. Simply put, a device shadow is a JSON document used to store and retrieve current state information for a device. You can store key-value pairs in a JSON document, publish the document on a special topic, and AWS IoT Core stores the document in the cloud. It's a useful way to keep the latest device state changes in the cloud so that other systems can receive updates in real time. It's also useful for other systems to send desired commands back to your device because AWS IoT Core keeps your device in sync with any new desired commands stored in the device shadow. 
+In your smart thermostat solution, you use a feature of AWS IoT Core called device shadows. A device shadow is a JSON document used to store and retrieve current state information for a device. You can store key-value pairs in a JSON document, publish the document on a special topic, and AWS IoT Core stores the document in the cloud. It's a useful way to keep the latest device state changes in the cloud, so that other systems can receive updates in real time. It's also useful for other systems to send desired commands back to your device, because AWS IoT Core keeps your device in sync with any new desired commands stored in the device shadow. 
 
 For example, the smart thermostat needs to report the latest room temperature and ambient noise level to power our solution. The message your device publishes looks like the following:
 
@@ -38,7 +38,7 @@ For example, the smart thermostat needs to report the latest room temperature an
 }
 ```
 
-When AWS IoT Core receives a message, it stores the key-value pairs until a new published message overrides them; for example, when sending a command back to your smart thermostat, another system could publish the following message to your device shadow:
+When AWS IoT Core receives a message, it stores the key-value pairs until a new published message overrides them. For example, when sending a command back to your smart thermostat, another system could publish the following message to your device shadow:
 
 ```JSON
 {
@@ -50,7 +50,7 @@ When AWS IoT Core receives a message, it stores the key-value pairs until a new 
 }
 ```
 
-AWS IoT Core then merges the JSON documents so that your device shadow's aggregated state appears as follows:
+AWS IoT Core then merges the JSON documents, so that your device shadow's aggregated state appears as follows:
 
 ```JSON
 {
@@ -71,11 +71,11 @@ The next time that your device connects to AWS IoT Core, or if it is already con
 Your smart thermostat reports the latest temperature values and noise levels. Your thermostat also receives commands and tracks the state of two more values called "hvacStatus" and "roomOccupancy". These values are determined by the cloud application in the coming lessons.
 
 ## Publishing messages to AWS IoT Core
-You use the AWS IoT Device SDK for Embedded C (C-SDK) to communicate between your smart thermostat device and AWS IoT Core. This is a best practice for abstracting away security, network, and data layers so you can focus on the your device and solution's application logic. The C-SDK bundles libraries to connect to AWS IoT Core over the MQTT protocol, interface with the hardware secure element to sign requests, and integrate with higher order features like the device shadow.
+You use the AWS IoT Device SDK for Embedded C (C-SDK) to communicate between your smart thermostat device and AWS IoT Core. This is a best practice for abstracting away security, network, and data layers, so that you can focus on your device and solution's application logic. The C-SDK bundles libraries to connect to AWS IoT Core over the MQTT protocol, interfaces with the hardware secure element to sign requests, and integrates with higher order features like the device shadow.
 
 Let's look at a few critical lines of code and analyze what they do.
 
-The following code defines a new variable called `temperatureHandler` of type `jsonStruct_t`. We use this variable as a tool to pack individual key-value pairs and make them available to use with the device shadow. This variable also indicates the callback function to use (if any) if a new "desired" message arrive for the indicated `pKey`. 
+The following code defines a new variable called `temperatureHandler` of type `jsonStruct_t`. We use this variable as a tool to pack individual key-value pairs and make them available to use with the device shadow. This variable also indicates the callback function to use (if any) if a new "desired" message arrives for the indicated `pKey`. 
 ```C
 jsonStruct_t temperatureHandler;
 temperatureHandler.cb = NULL;
@@ -88,20 +88,20 @@ This example defines a new device shadow key (`temperature`), sets an initial `p
 
 
 
-The following example registers the delta behavior with the AWS IoT Device SDK. It passes the reference to the initialized SDK client and the `jsonStruct_t`value. The `jsonStruct_t` value represents the client's key-value pair that we want to report changes. The example also registers the `roomOccupancyActuator`. This is processed when the client receives a new value for `state.desired.roomOccupancy`.
+The following example registers the delta behavior with the AWS IoT Device SDK. It passes the reference to the initialized SDK client and the `jsonStruct_t` value. The `jsonStruct_t` value represents the client's key-value pair that we want to report changes. The example also registers the `roomOccupancyActuator`. This is processed when the client receives a new value for `state.desired.roomOccupancy`.
 ```C
 rc = aws_iot_shadow_register_delta(&iotCoreClient, &roomOccupancyActuator);
 ```
 
 
-The following example demonstrates to read from the MPU6886 thermostat component to get the local reading. Notice that the temperature is converted to Fahrenheit and contains a hardcoded calibration offset. You can modify this expression to work in Centigrade or a different offset if the default value (50) doesn't produce values in the range that you expect.
+The following example demonstrates how to read from the MPU6886 thermostat component to get the local reading. Notice that the temperature is converted to Fahrenheit and contains a hardcoded calibration offset. You can modify this expression to work in Centigrade or a different offset if the default value (50) doesn't produce values in the range that you expect.
 ```C
 MPU6886_GetTempData(&temperature);
 temperature = (temperature * 1.8) + 32 - 50;
 ```
 
 
-The following is an example of code that packs the values, that we want to publish to the cloud, into the shadow document for the AWS IoT shadow service. You can add or remove key-value pairs for `state.reported` here by modifying this variadic function. If you use this example, remember to update the third parameter to match the number of key-value pairs in the list!
+The following is an example of code that packs the values that we want to publish to the cloud into the shadow document for the AWS IoT shadow service. You can add or remove key-value pairs for `state.reported` here by modifying this variadic function. If you use this example, remember to update the third parameter to match the number of key-value pairs in the list!
 ```C
 rc = aws_iot_shadow_add_reported(JsonDocumentBuffer,
   sizeOfJsonDocumentBuffer, 4, &temperatureHandler,
@@ -109,7 +109,7 @@ rc = aws_iot_shadow_add_reported(JsonDocumentBuffer,
 ```
 
 
-The following code publishes the marshalled shadow document as a payload over the network to IoT Core on the topic `$aws/things/<<CLIENT_ID>>/shadow/update`. `<<CLIENT_ID>>` resolves to the client ID (serial number) of your Core2 for AWS device as displayed on your device screen and in the serial monitor output.
+The following code publishes the marshalled shadow document as a payload over the network to IoT Core on the topic `$aws/things/<<CLIENT_ID>>/shadow/update`. `<<CLIENT_ID>>` resolves to the client ID (serial number) of your Core2 for AWS device, as displayed on your device screen and in the serial monitor output.
 ```C
 rc = aws_iot_shadow_update(&iotCoreClient, 
   CLIENT_ID, JsonDocumentBuffer,
@@ -118,7 +118,7 @@ rc = aws_iot_shadow_update(&iotCoreClient,
 
 
 
-The following code demonstrates a`while` loop `xTask` that will effectively run forever unless the network connection is dropped. After publishing the latest message to the device shadow service and responding to any delta callbacks from received messages, the task "sleeps" for the indicated amount of time before it continues to the next cycle of the loop. You can modify the `vTaskDelay()` expression to publish more or less frequently. You may find it helpful to use a faster interval like 1000ms (one second) while testing and reduce it to ten, thirty, or sixty seconds for a real deployment.
+The following code demonstrates a `while` loop `xTask` that will effectively run forever unless the network connection is dropped. After publishing the latest message to the device shadow service and responding to any delta callbacks from received messages, the task "sleeps" for the indicated amount of time before it continues to the next cycle of the loop. You can modify the `vTaskDelay()` expression to publish more or less frequently. You may find it helpful to use a faster interval like 1000ms (one second) while testing and reduce it to ten, thirty, or sixty seconds for a real deployment.
 ```C
 while(NETWORK_ATTEMPTING_RECONNECT == rc || NETWORK_RECONNECTED == rc || SUCCESS == rc) {
 ...
@@ -128,7 +128,7 @@ while(NETWORK_ATTEMPTING_RECONNECT == rc || NETWORK_RECONNECTED == rc || SUCCESS
 
 
 
-The following code represents a callback function for the `hvacStatus` actuator. This is the code that issues when the device receives a new message includes the `state.desired.hvacStatus` key-value pair. Note, you don't have to do anything to accept the desired state change. It is applied automatically to the local `hvacStatusActuator` and its `pData` element.
+The following code represents a callback function for the `hvacStatus` actuator. This is the code that issues when the device receives a new message that includes the `state.desired.hvacStatus` key-value pair. You don't have to do anything to accept the desired state change. It is applied automatically to the local `hvacStatusActuator` and its `pData` element.
 
 The `IOTUNUSED()` function suppresses compiler warnings for unused parameters. 
 
@@ -164,10 +164,10 @@ void hvac_Callback(const char *pJsonString, uint32_t JsonStringDataLen, jsonStru
 ## Monitor the device serial output
 Complete the following steps to start the serial monitor and monitor your device's output.
 1. Open **VS Code**, if necessary.
-1. Expand the **File menu** and select **New Window** in the VS Code to open a new window. This provides a clean file Explorer and working environment.
-1. Select the **PlatformIO logo** in the VS Code activity bar, choose **Open**, and then select **Open Project**.
+1. Expand the **File menu** and choose **New Window** in the VS Code to open a new window. This provides a clean file Explorer and working environment.
+1. Select the **PlatformIO logo** in the VS Code activity bar, choose **Open**, and then choose **Open Project**.
 1. Navigate to the `Core2-for-AWS-IoT-EduKit/Smart-Thermostat` folder and choose **open**.
-1. From the **Quick Access** menu, under **Miscellaneous**, select **New Terminal**.
+1. From the **Quick Access** menu, under **Miscellaneous**, choose **New Terminal**.
 1. Issue the following command into the PIO terminal window:
 ```bash
 pio run --environment core2foraws --target monitor
@@ -178,20 +178,20 @@ Complete the following steps to validate that your device is configured as inten
 
 1. Log into your AWS account.
 1. Navigate to the **[AWS IoT console](https://us-west-2.console.aws.amazon.com/iot/home?region=us-west-2#/)**
-1. Select **Test** in the navigation pane to open the client view.
+1. Choose **Test** in the navigation pane to open the client view.
 1. Confirm that the *Subscribe to a topic* tab is active in the MQTT test client window.
-1. Replace *`<<CLIENT_ID>>`* in the following topic with your device ID, enter it into the **Topic filter** field, and choose **Subscribe**. It may take a couple minutes for new messages to arrive. When they do, you should see new messages arriving periodically (as defined by **vTaskDelay()**).
+1. Replace *`<<CLIENT_ID>>`* in the following topic with your device ID, enter it into the **Topic filter** field, and choose **Subscribe**. It may take a couple of minutes for new messages to arrive. Then you should see new messages arriving periodically (as defined by **vTaskDelay()**).
 ```bash
   $aws/things/<<CLIENT_ID>>/shadow/update/accepted
 ```
 
 6. After you see messages arriving in the client view, choose the **Publish to a topic** tab. 
-1. Replace *`<<CLIENT_ID>>`* in the following topic with your device ID, enter it into the **Topic name** field, and choose **Publish**. It may take a couple minutes for new messages to arrive. When they do, you should see new messages arriving periodically (as defined by **vTaskDelay()**).
+1. Replace *`<<CLIENT_ID>>`* in the following topic with your device ID, enter it into the **Topic name** field, and choose **Publish**. It may take a couple of minutes for new messages to arrive. Then you should see new messages arriving periodically (as defined by **vTaskDelay()**).
 ```bash
   $aws/things/<<CLIENT_ID>>/shadow/update
 ```
 
-8. Before you choose publish, replace the information in the Message payload field with the following. Then, choose Publish. You should see the device's LED bars change from blue to red and off to represent the `COOLING`, `HEATING`, and `STANDBY`states. The following displays a sample shadow message. 
+8. Replace the information in the Message payload field with the following. Then, choose Publish. You should see the device's LED bars change from blue to red and off to represent the `COOLING`, `HEATING`, and `STANDBY`states. The following displays a sample shadow message. 
 ```
 { "state": { "desired": { "hvacStatus": "HEATING", "roomOccupancy": true } } }
 ```
