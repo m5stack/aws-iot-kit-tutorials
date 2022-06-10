@@ -78,7 +78,7 @@ $(function() {
 <div class="contents">
 <div class="textblock"><p >The display screen is driven by an ILI9342C controller over the SPI bus. The Core2 for AWS IoT EduKit BSP uses the <a href="http://lvgl.io/">LVGL library</a> to interact with the ILI9342C display controller via the <a href="https://github.com/lvgl/lvgl_esp32_drivers">LVGL ESP32 Driver</a>. For the documentation and API reference of the LVGL library used in this BSP, visit <a href="https://docs.lvgl.io/7.11/index.html">https://docs.lvgl.io/7.11/index.html</a>.</p>
 <p ><a class="anchor" id="display_lib"></a></p>
-<p >Before using the LVGL APIs to write to the screen, initialize the display with <a class="el" href="core2foraws_display_init_function.html">core2foraws_display_init</a> or the <a class="el" href="core2foraws_8h.html#a8589c127068e67d5474515365b558051">core2foraws_init</a> wrapper function first. When performing any operations to the screen after initialization, the <a class="el" href="core2foraws__display_8h.html#afac4c8f3cf1bcb40daa59c07af2b563d">core2foraws_display_semaphore</a> FreeRTOS <a href="https://www.freertos.org/a00122.html">semaphore</a> must be taken before calling the LVGL APIs, and released after in order to prevent a race condition when writing to the screen.</p>
+<p >Before using the LVGL APIs to write to the screen, initialize the display with <a class="el" href="core2foraws_display_init_function.html">core2foraws_display_init</a> or the <a class="el" href="core2foraws_8h.html#a8589c127068e67d5474515365b558051">core2foraws_init</a> wrapper function first. When performing any operations to the screen after initialization, the <a class="el" href="core2foraws__common_8h.html#aedf39c68825017851b1900d77c67a002">core2foraws_common_spi_semaphore</a> FreeRTOS <a href="https://www.freertos.org/a00122.html">semaphore</a> must be taken before calling the LVGL APIs, and released after in order to prevent a race condition when writing to the screen.</p>
 <p ><a href="./block_diagram-ili9342c.png"><img src="./block_diagram-ili9342c.png" alt="Circuit Block Diagram for ILI9342C Display Controller" class="center" class="inline"/></a></p>
 <p >To enable the BSP hardware features, open the KConfig menu using the command <code>pio run --environment core2foraws --target menuconfig</code> from within the root of the project directory in your <a href="/en/blinky-hello-world/prerequisites.html#open-the-platformio-cli-terminal-window">PlatformIO terminal window</a> and go to the menu <code>Component Config --&gt; Core2 for AWS hardware features</code> to set the features you want to enable.</p>
 <h1><a class="anchor" id="display_example"></a>
@@ -94,22 +94,20 @@ Example</h1>
 <div class="line">{</div>
 <div class="line">    <a class="code hl_function" href="core2foraws_8h.html#a8589c127068e67d5474515365b558051">core2foraws_init</a>();</div>
 <div class="line"> </div>
-<div class="line">    xSemaphoreTake( <a class="code hl_variable" href="core2foraws__display_8h.html#afac4c8f3cf1bcb40daa59c07af2b563d">core2foraws_display_semaphore</a>, portMAX_DELAY );</div>
+<div class="line">    xSemaphoreTake( <a class="code hl_variable" href="core2foraws__common_8h.html#aedf39c68825017851b1900d77c67a002">core2foraws_common_spi_semaphore</a>, portMAX_DELAY );</div>
 <div class="line"> </div>
 <div class="line">    lv_obj_t *hello_label = lv_label_create( lv_scr_act(), NULL );</div>
 <div class="line">    lv_label_set_text( hello_label, <span class="stringliteral">&quot;Hello World&quot;</span> );</div>
 <div class="line">    lv_obj_align( hello_label, NULL, LV_ALIGN_CENTER, 0, 0 );</div>
 <div class="line">    </div>
-<div class="line">    xSemaphoreGive( <a class="code hl_variable" href="core2foraws__display_8h.html#afac4c8f3cf1bcb40daa59c07af2b563d">core2foraws_display_semaphore</a> );</div>
+<div class="line">    xSemaphoreGive( <a class="code hl_variable" href="core2foraws__common_8h.html#aedf39c68825017851b1900d77c67a002">core2foraws_common_spi_semaphore</a> );</div>
 <div class="line">}</div>
 <div class="ttc" id="acore2foraws_8h_html"><div class="ttname"><a href="core2foraws_8h.html">core2foraws.h</a></div><div class="ttdoc">Core2 for AWS IoT EduKit general hardware driver APIs.</div></div>
 <div class="ttc" id="acore2foraws_8h_html_a8589c127068e67d5474515365b558051"><div class="ttname"><a href="core2foraws_8h.html#a8589c127068e67d5474515365b558051">core2foraws_init</a></div><div class="ttdeci">esp_err_t core2foraws_init(void)</div><div class="ttdoc">Initializes enabled hardware features.</div></div>
-<div class="ttc" id="acore2foraws__display_8h_html_afac4c8f3cf1bcb40daa59c07af2b563d"><div class="ttname"><a href="core2foraws__display_8h.html#afac4c8f3cf1bcb40daa59c07af2b563d">core2foraws_display_semaphore</a></div><div class="ttdeci">SemaphoreHandle_t core2foraws_display_semaphore</div><div class="ttdoc">FreeRTOS semaphore to be used when performing any operation on the display.</div></div>
+<div class="ttc" id="acore2foraws__common_8h_html_aedf39c68825017851b1900d77c67a002"><div class="ttname"><a href="core2foraws__common_8h.html#aedf39c68825017851b1900d77c67a002">core2foraws_common_spi_semaphore</a></div><div class="ttdeci">SemaphoreHandle_t core2foraws_common_spi_semaphore</div><div class="ttdoc">FreeRTOS semaphore to be used when performing any operation on the display or SD card reader.</div></div>
 </div><!-- fragment --><h1><a class="anchor" id="display_variables"></a>
 Variables</h1>
 <ul>
-<li><a class="el" href="core2foraws_display_semaphore_variable.html">core2foraws_display_semaphore</a> <br  />
-</li>
 <li><a class="el" href="core2foraws_display_task_handle_variable.html">core2foraws_display_task_handle</a> <br  />
 </li>
 <li><a class="el" href="core2foraws_display_ptr_variable.html">core2foraws_display_ptr</a> <br  />

@@ -96,23 +96,23 @@ World!", and align the label to the center of the screen. After 1 second, rotate
 <div class="line">{</div>
 <div class="line">    <a class="code hl_function" href="core2foraws_8h.html#a8589c127068e67d5474515365b558051">core2foraws_init</a>();</div>
 <div class="line"> </div>
-<div class="line">    xSemaphoreTake( <a class="code hl_variable" href="core2foraws__display_8h.html#afac4c8f3cf1bcb40daa59c07af2b563d">core2foraws_display_semaphore</a>, portMAX_DELAY );</div>
+<div class="line">    xSemaphoreTake( <a class="code hl_variable" href="core2foraws__common_8h.html#aedf39c68825017851b1900d77c67a002">core2foraws_common_spi_semaphore</a>, portMAX_DELAY );</div>
 <div class="line"> </div>
 <div class="line">    lv_obj_t * hello_label = lv_label_create( NULL, NULL );</div>
 <div class="line">    lv_label_set_text_static( hello_label, <span class="stringliteral">&quot;Hello World!&quot;</span> );</div>
 <div class="line">    lv_obj_align( hello_label, NULL, LV_ALIGN_CENTER, 0, 0 );</div>
 <div class="line"> </div>
-<div class="line">    xSemaphoreGive( <a class="code hl_variable" href="core2foraws__display_8h.html#afac4c8f3cf1bcb40daa59c07af2b563d">core2foraws_display_semaphore</a> );</div>
+<div class="line">    xSemaphoreGive( <a class="code hl_variable" href="core2foraws__common_8h.html#aedf39c68825017851b1900d77c67a002">core2foraws_common_spi_semaphore</a> );</div>
 <div class="line"> </div>
 <div class="line">    vTaskDelay( pdMS_TO_TICKS( 1000 ) );</div>
 <div class="line"> </div>
-<div class="line">    xSemaphoreTake( <a class="code hl_variable" href="core2foraws__display_8h.html#afac4c8f3cf1bcb40daa59c07af2b563d">core2foraws_display_semaphore</a>, portMAX_DELAY );</div>
+<div class="line">    xSemaphoreTake( <a class="code hl_variable" href="core2foraws__common_8h.html#aedf39c68825017851b1900d77c67a002">core2foraws_common_spi_semaphore</a>, portMAX_DELAY );</div>
 <div class="line">    lv_disp_set_rotation( <a class="code hl_variable" href="core2foraws__display_8h.html#a69e392d34d5f10318f4e553518079f29">core2foraws_display_ptr</a>, LV_DISP_ROT_180 );</div>
-<div class="line">    xSemaphoreGive( <a class="code hl_variable" href="core2foraws__display_8h.html#afac4c8f3cf1bcb40daa59c07af2b563d">core2foraws_display_semaphore</a> );</div>
+<div class="line">    xSemaphoreGive( <a class="code hl_variable" href="core2foraws__common_8h.html#aedf39c68825017851b1900d77c67a002">core2foraws_common_spi_semaphore</a> );</div>
 <div class="line">}</div>
 <div class="ttc" id="acore2foraws_8h_html"><div class="ttname"><a href="core2foraws_8h.html">core2foraws.h</a></div><div class="ttdoc">Core2 for AWS IoT EduKit general hardware driver APIs.</div></div>
 <div class="ttc" id="acore2foraws_8h_html_a8589c127068e67d5474515365b558051"><div class="ttname"><a href="core2foraws_8h.html#a8589c127068e67d5474515365b558051">core2foraws_init</a></div><div class="ttdeci">esp_err_t core2foraws_init(void)</div><div class="ttdoc">Initializes enabled hardware features.</div></div>
-<div class="ttc" id="acore2foraws__display_8h_html_afac4c8f3cf1bcb40daa59c07af2b563d"><div class="ttname"><a href="core2foraws__display_8h.html#afac4c8f3cf1bcb40daa59c07af2b563d">core2foraws_display_semaphore</a></div><div class="ttdeci">SemaphoreHandle_t core2foraws_display_semaphore</div><div class="ttdoc">FreeRTOS semaphore to be used when performing any operation on the display.</div></div>
+<div class="ttc" id="acore2foraws__common_8h_html_aedf39c68825017851b1900d77c67a002"><div class="ttname"><a href="core2foraws__common_8h.html#aedf39c68825017851b1900d77c67a002">core2foraws_common_spi_semaphore</a></div><div class="ttdeci">SemaphoreHandle_t core2foraws_common_spi_semaphore</div><div class="ttdoc">FreeRTOS semaphore to be used when performing any operation on the display or SD card reader.</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->

@@ -25,13 +25,9 @@ PIO 会为设备平台安装一些必要的依赖项。如果这些操作不完�
 
 {{< img "pio-new_terminal-gs.en.png" "PlatformIO CLI terminal in VS Code" "1 - 打开 PIO 菜单，2 - 打开新的 PIO 终端，3 - 核实您正在使用 `PlatformIO CLI` 终端会话，4 - 将命令复制到终端中，5 - 如果在自动检测端口时遇到错误，请打开 Platform.ini 文件并按照说明手动添加串口。">}}
 
-1) 现在是通过运行下面的命令将编译好的固件通过 USB 上传到连接的设备的时候了：
-    ```bash
-    pio run --environment core2foraws --target upload
-    ```
-2) 最后，在您的主机上通过串口输出监控设备。
+现在，可以开始通过 USB 接口将编译完成的固件上传到连接到设备中，同时执行命令来监视通过串口输出到主机上的信息
    ```bash
-   pio run --environment core2foraws --target monitor
+   pio run --environment core2foraws --target upload --target monitor
    ```
 {{% notice info %}}
 如果在上传或监控串行输出过程中收到关于错误端口或超时的错误，请打开 `platformio.ini` 文件，并按照该文件中的说明手动设置上传端口。

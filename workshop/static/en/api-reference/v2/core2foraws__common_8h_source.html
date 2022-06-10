@@ -127,14 +127,19 @@ $(function() {
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="core2foraws__common_8h.html#a961b7124f1c2a142a1304cf5b3589c9e">   59</a></span><span class="preprocessor">#define COMMON_I2S_INTERNAL I2S_NUM_0</span></div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment">/* @[declare_core2foraws_common_i2s_internal] */</span></div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="comment">/* @[declare_core2foraws_common_error] */</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="core2foraws__common_8h.html#af6bf602dbaf540f3b786e4258d424ea6">   72</a></span>esp_err_t <a class="code hl_function" href="core2foraws__common_8h.html#af6bf602dbaf540f3b786e4258d424ea6">core2foraws_common_error</a>( int8_t error_code );</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="comment">/* @[declare_core2foraws_common_error] */</span></div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>}</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="comment">/* @[declare_core2foraws_common_spi_semaphore] */</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="keyword">extern</span> SemaphoreHandle_t <a class="code hl_variable" href="core2foraws__common_8h.html#aedf39c68825017851b1900d77c67a002">core2foraws_common_spi_semaphore</a>;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="comment">/* @[declare_core2foraws_common_spi_semaphore] */</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="comment">/* @[declare_core2foraws_common_error] */</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="core2foraws__common_8h.html#af6bf602dbaf540f3b786e4258d424ea6">  111</a></span>esp_err_t <a class="code hl_function" href="core2foraws__common_8h.html#af6bf602dbaf540f3b786e4258d424ea6">core2foraws_common_error</a>( int8_t error_code );</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="comment">/* @[declare_core2foraws_common_error] */</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>}</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="acore2foraws__common_8h_html_aedf39c68825017851b1900d77c67a002"><div class="ttname"><a href="core2foraws__common_8h.html#aedf39c68825017851b1900d77c67a002">core2foraws_common_spi_semaphore</a></div><div class="ttdeci">SemaphoreHandle_t core2foraws_common_spi_semaphore</div><div class="ttdoc">FreeRTOS semaphore to be used when performing any operation on the display or SD card reader.</div></div>
 <div class="ttc" id="acore2foraws__common_8h_html_af6bf602dbaf540f3b786e4258d424ea6"><div class="ttname"><a href="core2foraws__common_8h.html#af6bf602dbaf540f3b786e4258d424ea6">core2foraws_common_error</a></div><div class="ttdeci">esp_err_t core2foraws_common_error(int8_t error_code)</div><div class="ttdoc">Function used to standardize error returns.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

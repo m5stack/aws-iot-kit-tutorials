@@ -29,13 +29,9 @@ Sie können jetzt die Blinky Hello World Firmware erstellen (kompilieren) und ho
     ```bash
     pio run --environment core2foraws
     ```
-2) Wenn der Build erfolgreich ist, ist es an der Zeit, die kompilierte Firmware über USB auf das angeschlossene Gerät hochzuladen, indem Sie den folgenden Befehl ausführen:
+2) Nachdem das Bauen erfolgreich abgeschlossen ist, wird nun die kompilierte Firmware über USB auf das angeschlossene Gerät hochgeladen. Nutzen Sie die folgende Anweisung die Nachrichten, die über den seriellen Ausgang an den Host-Rechner gesendeten wurden, zu überwachen:
     ```bash
-    pio run --environment core2foraws --target upload
-    ```
-3) Überwachen Sie abschließend die serielle Ausgabe des Geräts auf Ihrem Host-Computer über:
-    ```bash
-    pio run --environment core2foraws --target monitor
+    pio run --environment core2foraws --target upload --target monitor
     ```
 {{% notice warning %}}
 Wenn Sie während des Uploads oder bei der Überwachung der seriellen Ausgabe eine Fehlermeldung über einen falschen Port oder Timeout erhalten, öffnen Sie die Platformio.ini-Datei und befolgen Sie die dortigen Anweisungen, um den Upload-Port manuell einzustellen.

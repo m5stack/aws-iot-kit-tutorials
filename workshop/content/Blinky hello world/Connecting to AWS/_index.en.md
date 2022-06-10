@@ -46,7 +46,7 @@ You are now ready to build (compile) and upload the Blinky Hello World firmware.
     ```bash
     pio run --environment core2foraws
     ```
-2) With the build successful, it's time to upload the compiled firmware to the connected device over USB and monitor the messages sent over serial output to the host machine by running the command:
+2. When the build completes, issue the following command to upload the compiled firmware to the connected device through USB and monitor the messages sent over serial output to the host machine:
     ```bash
     pio run --environment core2foraws --target upload --target monitor
     ```
