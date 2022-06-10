@@ -6,7 +6,7 @@ pre = "<b>e. </b>"
 
 We hope that you enjoyed building your cloud connected blinky project. 
 
-Through this tutorial, you configured, built, flashed, and monitored your firmware using PlatformIO, Your device is registered as an AWS IoT thing in your AWS account and utilizes secure cloud connectivity using on-board secure hardware. Finally, you connected to AWS IoT Core, sent messages from the device over MQTT, and received an MQTT message from the AWS IoT console's MQTT client to toggle the device's lights on and off.
+While the AWS IoT EduKit program does not teach C or require it, it is critical for embedded development. The control and flexibility from the lower level code allows you to gain the maximum potential from your hardware. If you are not familiar with C programming but curious to learn or if you are a bit rusty and want dive into the application code we provide in this program, Jens Gustedt provides [Modern C](https://gustedt.gitlabpages.inria.fr/modern-c/) under the Creative Commons license and it is free to [download](https://gustedt.gitlabpages.inria.fr/modern-c/#orge4fc44a). 
 
 While the {{< awsService type="edukit-short-en" >}} program does not teach C programming, or require it as a prerequisite, it is critical to understand for embedded development. The control and flexibility provided through low-level code allows you to gain maximum potential from your hardware. If want dive into the application code we provide in this program and are curious to learn more about C programming., [Modern C](https://gustedt.gitlabpages.inria.fr/modern-c/) under the Creative Commons license and it is free to [download](https://gustedt.gitlabpages.inria.fr/modern-c/#orge4fc44a). 
 
