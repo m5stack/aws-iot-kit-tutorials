@@ -1,0 +1,10 @@
+version: 2.0
+# default language of the content separated as languageCode-countryCode
+defaultLocaleCode: en-US
+# a list of all of the supported locale codes, fully qualified with languageCode-countryCode
+localeCodes:
+  - en-US
+  - de-DE
+  - zh-CN
+  - ja-JP
+
