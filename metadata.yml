@@ -1,9 +1,9 @@
 #name - DNS-friendly name for the workshop. This will be used when generating the hosting URL (ie. https://my-first-workshop.workshops.aws/)
-name: edukit
+name: kit
 #title - The title of your workshop
-title: AWS IoT EduKit 
+title: AWS IoT Kit 
 #description - A short description that will be displayed in search results
-description: AWS IoT EduKit is a prescriptive learning program for developers. With AWS IoT EduKit, students working on their first IoT project, professionals who want to learn more about IoT, and engineers who want to develop new IoT skills can use a reference hardware kit and self-service tutorials for a hands-on introduction to building IoT applications.
+description: AWS IoT Kit is a prescriptive learning program for developers. With AWS IoT Kit, students working on their first IoT project, professionals who want to learn more about IoT, and engineers who want to develop new IoT skills can use a reference hardware kit and self-service tutorials for a hands-on introduction to building IoT applications.
 #categories - Refer to official AWS categories covered by the workshop content here
 categories: 
   - IoT

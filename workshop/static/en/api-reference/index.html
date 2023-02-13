@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Core2 for AWS IoT EduKit BSP: Overview</title>
+<title>Core2 for AWS IoT Kit BSP: Overview</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="AWS_logo_RGB.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Core2 for AWS IoT EduKit BSP<span id="projectnumber">&#160;1.5.1</span>
+   <div id="projectname">Core2 for AWS IoT Kit BSP<span id="projectnumber">&#160;1.5.1</span>
    </div>
   </td>
  </tr>
@@ -67,18 +67,18 @@ $(function() {
   <div class="headertitle"><div class="title">Overview </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p >Core2 for AWS IoT EduKit API Reference<a class="anchor" id="overview"></a></p>
-<p >This Core2 for AWS IoT EduKit API Reference provides a set of definitions for the various drivers that are included as part of the M5Stack Core2 for AWS IoT EduKit board support package (BSP). A board support package is the software layer that contains hardware drivers and other routines you can use when writing your applications to access the on-board hardware features. The BSP relies on and sits on top of Espressif's IoT Developer Framework (ESP-IDF) version 4.2, and executes from the ESP32-D0WD micro-controller unit (MCU) to all attached peripherals. The ESP-IDF v4.2 uses a customized version of FreeRTOS and usage of the BSP requires knowledge of C programming and real-time operating systems.</p>
-<p >The BSP is located in each of the AWS IoT EduKit program's provided project's <a href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/tree/master/Blinky-Hello-World/components/core2forAWS">components/core2forAWS</a> directory. Do the following steps to create an empty project:</p><ol type="1">
-<li>Copy the Core2 for AWS IoT EduKit <a href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/tree/master/Blinky-Hello-World/components/core2forAWS">BSP</a> into your project's <em>components</em> directory.</li>
-<li>Copy the Core2 for AWS port of the <a href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/tree/master/Blinky-Hello-World/components/esp-cryptoauthlib">esp-cryptoauthlib</a> into your project's <em>components</em> directory.</li>
-<li>Copy <a href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/blob/master/Blinky-Hello-World/sdkconfig.defaults">sdkconfig.defaults</a>, <a href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/blob/master/Blinky-Hello-World/partitions_16MB.csv">partitions_16MB.csv</a>, <a href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/blob/master/Blinky-Hello-World/CMakeLists.txt">CMakeLists.txt</a>, and <a href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/blob/master/Blinky-Hello-World/platformio.ini">platformio.ini</a> files to the <em>root of your project</em>. You can customize the platformio.ini file and CMakeLists.txt to suite your needs.</li>
+<div class="textblock"><p >Core2 for AWS IoT Kit API Reference<a class="anchor" id="overview"></a></p>
+<p >This Core2 for AWS IoT Kit API Reference provides a set of definitions for the various drivers that are included as part of the M5Stack Core2 for AWS IoT Kit board support package (BSP). A board support package is the software layer that contains hardware drivers and other routines you can use when writing your applications to access the on-board hardware features. The BSP relies on and sits on top of Espressif's IoT Developer Framework (ESP-IDF) version 4.2, and executes from the ESP32-D0WD micro-controller unit (MCU) to all attached peripherals. The ESP-IDF v4.2 uses a customized version of FreeRTOS and usage of the BSP requires knowledge of C programming and real-time operating systems.</p>
+<p >The BSP is located in each of the AWS IoT Kit program's provided project's <a href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/tree/master/Blinky-Hello-World/components/core2forAWS">components/core2forAWS</a> directory. Do the following steps to create an empty project:</p><ol type="1">
+<li>Copy the Core2 for AWS IoT Kit <a href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/tree/master/Blinky-Hello-World/components/core2forAWS">BSP</a> into your project's <em>components</em> directory.</li>
+<li>Copy the Core2 for AWS port of the <a href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/tree/master/Blinky-Hello-World/components/esp-cryptoauthlib">esp-cryptoauthlib</a> into your project's <em>components</em> directory.</li>
+<li>Copy <a href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/blob/master/Blinky-Hello-World/sdkconfig.defaults">sdkconfig.defaults</a>, <a href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/blob/master/Blinky-Hello-World/partitions_16MB.csv">partitions_16MB.csv</a>, <a href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/blob/master/Blinky-Hello-World/CMakeLists.txt">CMakeLists.txt</a>, and <a href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/blob/master/Blinky-Hello-World/platformio.ini">platformio.ini</a> files to the <em>root of your project</em>. You can customize the platformio.ini file and CMakeLists.txt to suite your needs.</li>
 <li>Create a <code>main.c</code> file in a new <em>main</em> folder that at the has the following code: <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="core2for_a_w_s_8h.html">core2forAWS.h</a>&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> app_main(<span class="keywordtype">void</span>){</div>
 <div class="line"> </div>
 <div class="line">}</div>
-<div class="ttc" id="acore2for_a_w_s_8h_html"><div class="ttname"><a href="core2for_a_w_s_8h.html">core2forAWS.h</a></div><div class="ttdoc">Functions to initialize and access Core2 for AWS IoT EduKit hardware features.</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html"><div class="ttname"><a href="core2for_a_w_s_8h.html">core2forAWS.h</a></div><div class="ttdoc">Functions to initialize and access Core2 for AWS IoT Kit hardware features.</div></div>
 </div><!-- fragment --></li>
 </ol>
 <p >For more information on setting up your PlatformIO configuration file and additonal configuration options, view their <a href="https://docs.platformio.org/en/latest/projectconf/index.html">official docs</a>. For information on the ESP-IDF v4.2 and APIs available, see Espressif's <a href="https://docs.espressif.com/projects/esp-idf/en/release-v4.2/esp32/index.html">official documentation</a>.</p>

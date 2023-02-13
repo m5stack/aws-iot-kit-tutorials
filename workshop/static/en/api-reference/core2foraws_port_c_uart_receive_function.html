@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Core2 for AWS IoT EduKit BSP: Core2ForAWS_Port_C_UART_Receive</title>
+<title>Core2 for AWS IoT Kit BSP: Core2ForAWS_Port_C_UART_Receive</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="AWS_logo_RGB.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Core2 for AWS IoT EduKit BSP<span id="projectnumber">&#160;1.5.1</span>
+   <div id="projectname">Core2 for AWS IoT Kit BSP<span id="projectnumber">&#160;1.5.1</span>
    </div>
   </td>
  </tr>
@@ -75,9 +75,9 @@ $(function() {
 <div class="ttc" id="acore2for_a_w_s_8c_html_a8b09041a7dedd7ae8cb776382478d191"><div class="ttname"><a href="core2for_a_w_s_8c.html#a8b09041a7dedd7ae8cb776382478d191">Core2ForAWS_Port_C_UART_Receive</a></div><div class="ttdeci">int Core2ForAWS_Port_C_UART_Receive(uint8_t *message_buffer)</div><div class="ttdoc">Reads messages in the UART2 receiver ring buffer.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:572</div></div>
 </div><!-- fragment --><p> Reads messages in the UART2 receiver ring buffer.</p>
 <p >This is a helper function to simplify development with UART. This function is used to read messages stored in the receiver hardware FIFO buffer, which was configured to a maximum of UART_RX_BUF_SIZE.</p>
-<p >This convenience methods provided in this BSP aims to simplify development at the expense of compatibility and performance. The usage of this function requires regular polling for any new messages. For some applications, it might offer significant performance benefits to set up an interrupt for handling and processing new data. For more information about UART communications on the Core2 for AWS IoT EduKit using the ESP32 and how to create your own configuration, visit Espressif's official <a href="https://docs.espressif.com/projects/esp-idf/en/release-v4.2/esp32/api-reference/peripherals/uart.html">documentation</a>.</p>
+<p >This convenience methods provided in this BSP aims to simplify development at the expense of compatibility and performance. The usage of this function requires regular polling for any new messages. For some applications, it might offer significant performance benefits to set up an interrupt for handling and processing new data. For more information about UART communications on the Core2 for AWS IoT Kit using the ESP32 and how to create your own configuration, visit Espressif's official <a href="https://docs.espressif.com/projects/esp-idf/en/release-v4.2/esp32/api-reference/peripherals/uart.html">documentation</a>.</p>
 <p >The example below sets the PORT_C_UART_TX_PIN (GPIO 14) pin mode to UART transmit, which will also set PORT_C_UART_RX_PIN (GPIO 13) to UART receiver, and sets the UART baud rate to 115200. It then starts two FreeRTOS tasks — one that transmits "Hello from AWS IoT
-EduKit" every two seconds and the other receives the message. The receiver task outputs the number of bytes read from the buffer, the number of bytes that remains unread in the ring buffer, and the message.</p>
+Kit" every two seconds and the other receives the message. The receiver task outputs the number of bytes read from the buffer, the number of bytes that remains unread in the ring buffer, and the message.</p>
 <p >To receive the messages transmitted on the same device, run a female-female jumper wire from Port C's TX pin to PORT C's RX pin.</p>
 <p ><b>Example:</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;freertos/FreeRTOS.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;freertos/task.h&quot;</span></div>
@@ -91,7 +91,7 @@ EduKit" every two seconds and the other receives the message. The receiver task 
 <div class="line"> </div>
 <div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> uart_tx_task(<span class="keywordtype">void</span> *arg){</div>
 <div class="line">    <span class="keywordflow">while</span> (1) {</div>
-<div class="line">        <span class="keyword">const</span> <span class="keywordtype">char</span> *message = <span class="stringliteral">&quot;Hello from AWS IoT EduKit&quot;</span>;</div>
+<div class="line">        <span class="keyword">const</span> <span class="keywordtype">char</span> *message = <span class="stringliteral">&quot;Hello from AWS IoT Kit&quot;</span>;</div>
 <div class="line">        <span class="keywordtype">size_t</span> message_len = strlen(message) + 1;</div>
 <div class="line">        <a class="code hl_function" href="core2for_a_w_s_8c.html#aa205e433ced4fdae489d8165883c2f76">Core2ForAWS_Port_C_UART_Send</a>(message, message_len);</div>
 <div class="line">        vTaskDelay(pdMS_TO_TICKS(2000));</div>
@@ -124,7 +124,7 @@ EduKit" every two seconds and the other receives the message. The receiver task 
 <div class="ttc" id="acore2for_a_w_s_8c_html_a3d850a3f56bbe0685b60726d8b53bece"><div class="ttname"><a href="core2for_a_w_s_8c.html#a3d850a3f56bbe0685b60726d8b53bece">Core2ForAWS_Init</a></div><div class="ttdeci">void Core2ForAWS_Init(void)</div><div class="ttdoc">Initializes the power chip with default values, enables battery charging, and initializes all enabled...</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:32</div></div>
 <div class="ttc" id="acore2for_a_w_s_8c_html_a41a0d4cfbf16f792180d7ca55e664095"><div class="ttname"><a href="core2for_a_w_s_8c.html#a41a0d4cfbf16f792180d7ca55e664095">Core2ForAWS_Port_C_UART_Begin</a></div><div class="ttdeci">esp_err_t Core2ForAWS_Port_C_UART_Begin(uint32_t baud)</div><div class="ttdoc">Configures the UART interface at the specified baud rate.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:549</div></div>
 <div class="ttc" id="acore2for_a_w_s_8c_html_aa205e433ced4fdae489d8165883c2f76"><div class="ttname"><a href="core2for_a_w_s_8c.html#aa205e433ced4fdae489d8165883c2f76">Core2ForAWS_Port_C_UART_Send</a></div><div class="ttdeci">int Core2ForAWS_Port_C_UART_Send(const char *message, size_t len)</div><div class="ttdoc">Sends a specified length of a user defined message over UART2.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:568</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html"><div class="ttname"><a href="core2for_a_w_s_8h.html">core2forAWS.h</a></div><div class="ttdoc">Functions to initialize and access Core2 for AWS IoT EduKit hardware features.</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html"><div class="ttname"><a href="core2for_a_w_s_8h.html">core2forAWS.h</a></div><div class="ttdoc">Functions to initialize and access Core2 for AWS IoT Kit hardware features.</div></div>
 <div class="ttc" id="acore2for_a_w_s_8h_html_a1f25fe45d891de244a8135ae02fc9265"><div class="ttname"><a href="core2for_a_w_s_8h.html#a1f25fe45d891de244a8135ae02fc9265">UART_RX_BUF_SIZE</a></div><div class="ttdeci">#define UART_RX_BUF_SIZE</div><div class="ttdoc">The default UART RX ring buffer size.</div><div class="ttdef"><b>Definition:</b> core2forAWS.h:202</div></div>
 <div class="ttc" id="acore2for_a_w_s_8h_html_a77fecc1883f27c095012fbe56345c4dbab81270ba54ae4586a18415e5a579633d"><div class="ttname"><a href="core2for_a_w_s_8h.html#a77fecc1883f27c095012fbe56345c4dbab81270ba54ae4586a18415e5a579633d">UART</a></div><div class="ttdeci">@ UART</div><div class="ttdoc">Enable UART RX/TX mode. UART TX only available on Port C—GPIO 14 and UART RX is only available on Por...</div><div class="ttdef"><b>Definition:</b> core2forAWS.h:220</div></div>
 <div class="ttc" id="acore2for_a_w_s_8h_html_a8764a8d2c486f2d66f86d995653cc833"><div class="ttname"><a href="core2for_a_w_s_8h.html#a8764a8d2c486f2d66f86d995653cc833">PORT_C_UART_TX_PIN</a></div><div class="ttdeci">#define PORT_C_UART_TX_PIN</div><div class="ttdoc">The UART transmission pin on expansion port C.</div><div class="ttdef"><b>Definition:</b> core2forAWS.h:159</div></div>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Core2 for AWS IoT EduKit BSP: SK6812</title>
+<title>Core2 for AWS IoT Kit BSP: SK6812</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="AWS_logo_RGB.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Core2 for AWS IoT EduKit BSP<span id="projectnumber">&#160;1.5.1</span>
+   <div id="projectname">Core2 for AWS IoT Kit BSP<span id="projectnumber">&#160;1.5.1</span>
    </div>
   </td>
  </tr>
@@ -67,7 +67,7 @@ $(function() {
   <div class="headertitle"><div class="title">SK6812 </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p >The SK6812 library is used to drive the LED bars with the ESP32 over I2C and comes from the open source <a href="https://github.com/loboris/MicroPython_ESP32_psRAM_LoBo/blob/master/MicroPython_BUILD/components/micropython/esp32/libs/neopixel.h">loboris/MicroPython_ESP32_psRAM_LoBo</a> project. The <code><a class="el" href="core2for_a_w_s_8h.html" title="Functions to initialize and access Core2 for AWS IoT EduKit hardware features.">core2foraws/core2foraws.h</a></code> file in AWS IoT EduKit board support package (BSP) provides convenience wrapper functions to this library with preset parameters.</p>
+<div class="textblock"><p >The SK6812 library is used to drive the LED bars with the ESP32 over I2C and comes from the open source <a href="https://github.com/loboris/MicroPython_ESP32_psRAM_LoBo/blob/master/MicroPython_BUILD/components/micropython/esp32/libs/neopixel.h">loboris/MicroPython_ESP32_psRAM_LoBo</a> project. The <code><a class="el" href="core2for_a_w_s_8h.html" title="Functions to initialize and access Core2 for AWS IoT Kit hardware features.">core2foraws/core2foraws.h</a></code> file in AWS IoT Kit board support package (BSP) provides convenience wrapper functions to this library with preset parameters.</p>
 <p ><a class="anchor" id="led"></a></p>
 <p ><a href="./block_diagram-sk6812.png"><img src="./block_diagram-sk6812.png" alt="Circuit Block Diagram for the SK6812 RGB LED bars" class="center" class="inline"/></a></p>
 <p >To enable this feature using KConfig, use the command <code>pio run --environment core2foraws --target menuconfig</code> from within the root of the project directory in your <a href="/en/blinky-hello-world/prerequisites.html#open-the-platformio-cli-terminal-window">PlatformIO terminal window</a> and go to the menu <code>Component Config --&gt; Core2 for AWS features</code> to set the features you want to enable.</p>
@@ -87,7 +87,7 @@ Example</h1>
 <div class="ttc" id="acore2for_a_w_s_8c_html_a3d850a3f56bbe0685b60726d8b53bece"><div class="ttname"><a href="core2for_a_w_s_8c.html#a3d850a3f56bbe0685b60726d8b53bece">Core2ForAWS_Init</a></div><div class="ttdeci">void Core2ForAWS_Init(void)</div><div class="ttdoc">Initializes the power chip with default values, enables battery charging, and initializes all enabled...</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:32</div></div>
 <div class="ttc" id="acore2for_a_w_s_8c_html_a54bd0bce86a0ed5ea5ba2ca0c7e9ef32"><div class="ttname"><a href="core2for_a_w_s_8c.html#a54bd0bce86a0ed5ea5ba2ca0c7e9ef32">Core2ForAWS_Sk6812_Show</a></div><div class="ttdeci">void Core2ForAWS_Sk6812_Show(void)</div><div class="ttdoc">Updates the LEDs in the LED bars with any new values set using Core2ForAWS_Sk6812_SetColor,...</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:252</div></div>
 <div class="ttc" id="acore2for_a_w_s_8c_html_a5dde1ef368e54c5c39db6257b0a83e13"><div class="ttname"><a href="core2for_a_w_s_8c.html#a5dde1ef368e54c5c39db6257b0a83e13">Core2ForAWS_Sk6812_SetSideColor</a></div><div class="ttdeci">void Core2ForAWS_Sk6812_SetSideColor(uint8_t side, uint32_t color)</div><div class="ttdoc">Sets the color of all the LEDs on one side of the LED bars.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:236</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html"><div class="ttname"><a href="core2for_a_w_s_8h.html">core2forAWS.h</a></div><div class="ttdoc">Functions to initialize and access Core2 for AWS IoT EduKit hardware features.</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html"><div class="ttname"><a href="core2for_a_w_s_8h.html">core2forAWS.h</a></div><div class="ttdoc">Functions to initialize and access Core2 for AWS IoT Kit hardware features.</div></div>
 <div class="ttc" id="acore2for_a_w_s_8h_html_ab984a626760459f01581809754a67756"><div class="ttname"><a href="core2for_a_w_s_8h.html#ab984a626760459f01581809754a67756">SK6812_SIDE_RIGHT</a></div><div class="ttdeci">#define SK6812_SIDE_RIGHT</div><div class="ttdoc">LEDs on right side of the LED bar. For use with Core2ForAWS_Sk6812_SetSideColor().</div><div class="ttdef"><b>Definition:</b> core2forAWS.h:64</div></div>
 <div class="ttc" id="acore2for_a_w_s_8h_html_ad401f71468100c2d5d8b882577cf7884"><div class="ttname"><a href="core2for_a_w_s_8h.html#ad401f71468100c2d5d8b882577cf7884">SK6812_SIDE_LEFT</a></div><div class="ttdeci">#define SK6812_SIDE_LEFT</div><div class="ttdoc">LEDs on left side of the LED bar. For use with Core2ForAWS_Sk6812_SetSideColor().</div><div class="ttdef"><b>Definition:</b> core2forAWS.h:57</div></div>
 </div><!-- fragment --><h1><a class="anchor" id="sk6812_preprocessor_macros"></a>
