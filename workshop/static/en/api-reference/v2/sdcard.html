@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Core2 for AWS IoT EduKit BSP: SD-Card</title>
+<title>Core2 for AWS IoT Kit BSP: SD-Card</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="AWS_logo_RGB.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Core2 for AWS IoT EduKit BSP<span id="projectnumber">&#160;2.0.0</span>
+   <div id="projectname">Core2 for AWS IoT Kit BSP<span id="projectnumber">&#160;2.0.0</span>
    </div>
   </td>
  </tr>
@@ -84,7 +84,7 @@ $(function() {
 <h1><a class="anchor" id="sdcard_example"></a>
 Example</h1>
 <p >The example code below, mounts the SD card, writes a file named <code>edukit.txt</code> with the contents "Hello from AWS IoT 
-EduKit!", reads back the file and outputs the contents using the ESP logger, and then unmounts the card for safe removal:</p>
+Kit!", reads back the file and outputs the contents using the ESP logger, and then unmounts the card for safe removal:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;esp_log.h&gt;</span></div>
@@ -101,7 +101,7 @@ EduKit!", reads back the file and outputs the contents using the ESP logger, and
 <div class="line">    ESP_LOGI( TAG, <span class="stringliteral">&quot;\tMounted SD %s&quot;</span>, err == ESP_OK ? <span class="stringliteral">&quot;success&quot;</span> : <span class="stringliteral">&quot;fail&quot;</span> );</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">size_t</span> length = 0;</div>
-<div class="line">    err = <a class="code hl_function" href="core2foraws__sd_8h.html#a2c982e6ffede331f83569ebfc1e47d9e">core2foraws_sd_write</a>( file_path, <span class="stringliteral">&quot;Hello from AWS IoT EduKit!&quot;</span>, &amp;length );</div>
+<div class="line">    err = <a class="code hl_function" href="core2foraws__sd_8h.html#a2c982e6ffede331f83569ebfc1e47d9e">core2foraws_sd_write</a>( file_path, <span class="stringliteral">&quot;Hello from AWS IoT Kit!&quot;</span>, &amp;length );</div>
 <div class="line">    ESP_LOGI( TAG, <span class="stringliteral">&quot;\tSD write %s, wrote %d bytes&quot;</span>, err == ESP_OK ? <span class="stringliteral">&quot;success&quot;</span> : <span class="stringliteral">&quot;fail&quot;</span>, length );</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">char</span> str[64];</div>
@@ -111,7 +111,7 @@ EduKit!", reads back the file and outputs the contents using the ESP logger, and
 <div class="line">    err = <a class="code hl_function" href="core2foraws__sd_8h.html#aaff3b291da98d385216d004a5525d2e0">core2foraws_sd_unmount</a>();</div>
 <div class="line">    ESP_LOGI( TAG, <span class="stringliteral">&quot;\tSD unmount %s&quot;</span>, err == ESP_OK ? <span class="stringliteral">&quot;success&quot;</span> : <span class="stringliteral">&quot;fail&quot;</span> );</div>
 <div class="line">}</div>
-<div class="ttc" id="acore2foraws__sd_8h_html"><div class="ttname"><a href="core2foraws__sd_8h.html">core2foraws_sd.h</a></div><div class="ttdoc">Core2 for AWS IoT EduKit SD card hardware driver APIs.</div></div>
+<div class="ttc" id="acore2foraws__sd_8h_html"><div class="ttname"><a href="core2foraws__sd_8h.html">core2foraws_sd.h</a></div><div class="ttdoc">Core2 for AWS IoT Kit SD card hardware driver APIs.</div></div>
 <div class="ttc" id="acore2foraws__sd_8h_html_a2c982e6ffede331f83569ebfc1e47d9e"><div class="ttname"><a href="core2foraws__sd_8h.html#a2c982e6ffede331f83569ebfc1e47d9e">core2foraws_sd_write</a></div><div class="ttdeci">esp_err_t core2foraws_sd_write(const char *file_name, const char *message, size_t *wrote_length)</div><div class="ttdoc">Writes a specified string to the specificied file on the SD card.</div></div>
 <div class="ttc" id="acore2foraws__sd_8h_html_a6def4d4dd9cf2e8bff43748b2221f592"><div class="ttname"><a href="core2foraws__sd_8h.html#a6def4d4dd9cf2e8bff43748b2221f592">core2foraws_sd_read</a></div><div class="ttdeci">esp_err_t core2foraws_sd_read(const char *file_name, char *message, size_t to_read_length)</div><div class="ttdoc">Reads a specified length of characters from the specificied file on the FAT file system SD card.</div></div>
 <div class="ttc" id="acore2foraws__sd_8h_html_aaff3b291da98d385216d004a5525d2e0"><div class="ttname"><a href="core2foraws__sd_8h.html#aaff3b291da98d385216d004a5525d2e0">core2foraws_sd_unmount</a></div><div class="ttdeci">esp_err_t core2foraws_sd_unmount(void)</div><div class="ttdoc">Removes the FAT partition and unmounts the SD-Card. Unmount before removing SD card from the device.</div></div>

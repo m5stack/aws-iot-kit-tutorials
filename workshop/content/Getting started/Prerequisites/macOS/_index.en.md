@@ -32,7 +32,7 @@ You must restart VS Code after PlatformIO extension installation finishes.
 All of the projects and files exist in a [GitHub repository](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/about-repositories), where you can also view the revision history of each file in the repository (repo). To clone the code you'll need for the tutorials, you'll be using the PIO interface:
 1) Click the PlatformIO logo on the VS Code activity bar (left most menu).
 2) From PlatformIO's **Quick Access** menu, under **Miscellaneous**, select **Clone Git Project**.
-3) Paste `https://github.com/m5stack/Core2-for-AWS-IoT-EduKit.git` into the text field and then select the location you want to save the project in.
+3) Paste `https://github.com/m5stack/Core2-for-AWS-IoT-Kit.git` into the text field and then select the location you want to save the project in.
 {{< img "pio-clone_git_project.en.png" "PlatformIO Clone Git Project" "1 - Open PIO menu, 2 - Clone git project, 3 - Paste repository URL" >}}
 
 ## Downloading and installing the phone apps
@@ -58,4 +58,4 @@ If your Core2 for {{< awsService type="edukit-short-en" >}} does not show up in 
 With everything set up and your host machine ready and able to communicate with the {{< awsService type="edukit-short-en" >}}, let's continue to the next chapter — [**Running the ESP RainMaker Agent**](/en/getting-started/run-rainmaker.html).
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

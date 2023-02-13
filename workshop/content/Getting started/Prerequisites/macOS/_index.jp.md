@@ -7,7 +7,7 @@ title = "MacOS 10.14+ のセットアップ"
 以下に、macOS 環境でセットアップして GitHub リポジトリからコードをダウンロードし、コードを表示および編集し、ハードウェアで使用できるようにコードをコンパイルし、ハードウェアのフラッシュメモリにコードをアップロードする手順を示します。これらのインストール手順は、RainMaker プラットフォーム用の Espressif の AWS アカウントとサービスを使用する **開始方法** チュートリアルで必要となります。
 
 ## Silicon Labs USB to UART bridgeのセットアップ
-AWS IoT EDUKit for Core2 は、Silicon Labsの CP210x USB から UART ブリッジを介してホストマシンと通信します。オンボードCP2104は、ESP32-D0WDマイクロコントローラとのホスト通信を容易にするUSB-to-UARTブリッジです。マイクロコントローラは、[UART](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/uart.html)0を介して双方向に通信します。CP210xは、USB-Cを介して確立されたホストマシン上の仮想通信ポートを介して変換します。仮想シリアルポートとその間の通信のマウントを有効にするには、対応するドライバをダウンロードしてインストールする必要があります。
+AWS IoT Kit for Core2 は、Silicon Labsの CP210x USB から UART ブリッジを介してホストマシンと通信します。オンボードCP2104は、ESP32-D0WDマイクロコントローラとのホスト通信を容易にするUSB-to-UARTブリッジです。マイクロコントローラは、[UART](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/uart.html)0を介して双方向に通信します。CP210xは、USB-Cを介して確立されたホストマシン上の仮想通信ポートを介して変換します。仮想シリアルポートとその間の通信のマウントを有効にするには、対応するドライバをダウンロードしてインストールする必要があります。
 
 1) デバイスがホストマシンに接続されていないことを確認します。
 2) macOS 用のSilicon Labs CP210x driverを[こちら](https://www.silabs.com/documents/public/software/Mac_OSX_VCP_Driver.zip) ダウンロードします。
@@ -33,7 +33,7 @@ PlatformIOの拡張機能をインストールしたら、VS Codeを再起動す
 
 1. VS Codeアクティビティバー（左端のメニュー）でPlatformIOのロゴをクリックする。
 2. PlatformIO の **Quick Access**メニューから、**Miscellaneous** で、**Clone Git Project**を選択します。
-3. テキストフィールドに `https://github.com/m5stack/Core2-for-AWS-IoT-EduKit.git` を貼り付けて、プロジェクトを保存する場所を選択します。
+3. テキストフィールドに `https://github.com/m5stack/Core2-for-AWS-IoT-Kit.git` を貼り付けて、プロジェクトを保存する場所を選択します。
 {{< img "pio-clone_git_project.en.png" "PlatformIO Clone Git Project" "1 - PIOメニューを開く。 2 - Clone Git Projectを選択, 3 - リポジトリURLを貼り付け" >}}
 
 ## スマートフォン向けアプリのダウンロードとインストール
@@ -45,7 +45,7 @@ ESP RainMaker Phone Apps は、iOS および Androidで Wi-Fi ネットワーク
 互換性のある Android または iOS デバイスを所有していない場合は、[RainMaker CLI](https://rainmaker.espressif.com/docs/cli-setup.html) を使用することもできます。使い方についてはサイトの[CLI Usage](https://rainmaker.espressif.com/docs/cli-usage.html)を参照してください。
 
 ## USBポートの確認
-Core2 for AWS IoT EduKitリファレンスハードウェアは同梱のUSB-C - USB-Aケーブルを利用して接続しますが、Mac側にUSB-Aポートが無い場合は、変換アダプターなどを別途用意したうえで利用してください。接続できたら電源を入れます。ホストマシンに接続すると、デバイスの電源が自動的にオンになりますが、電源を入れる必要がある場合は、電源ボタンを押します。
+Core2 for AWS IoT Kitリファレンスハードウェアは同梱のUSB-C - USB-Aケーブルを利用して接続しますが、Mac側にUSB-Aポートが無い場合は、変換アダプターなどを別途用意したうえで利用してください。接続できたら電源を入れます。ホストマシンに接続すると、デバイスの電源が自動的にオンになりますが、電源を入れる必要がある場合は、電源ボタンを押します。
 {{< img "core2foraws_power_on_off.jpg" "AWS の M5Stack Core2 をオンまたはオフにする方法" "AWS の M5Stack Core2 をオンまたはオフにする方法" >}}
 
 デバイスの準備ができて、このチュートリアルに必要なソフトウェアをインストールしたら、デバイスが仮想的にマウントされているポートを特定して、そのポートに対する読み取りおよび書き込み操作を実行できるようにします。
@@ -58,7 +58,7 @@ Core2 for AWS IoT EduKitリファレンスハードウェアは同梱のUSB-C - 
 {{% /notice %}}
 
 ## 次の手順
-すべてのセットアップとホストマシンの準備ができて、Core2 for AWS IoT EduKitリファレンスハードウェアと通信できる状態になったら、次の章 [**ESP RainMaker エージェントの実行**](/jp/getting-started/run-rainmaker.html) に進みます。
+すべてのセットアップとホストマシンの準備ができて、Core2 for AWS IoT Kitリファレンスハードウェアと通信できる状態になったら、次の章 [**ESP RainMaker エージェントの実行**](/jp/getting-started/run-rainmaker.html) に進みます。
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

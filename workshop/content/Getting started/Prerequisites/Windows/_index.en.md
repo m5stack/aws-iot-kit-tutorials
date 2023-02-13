@@ -68,7 +68,7 @@ Complete the following steps to clone the code for the tutorials:
 1. Expand **Miscellaneous** and choose **Clone Git Project**.
 1. Copy the following URL and paste it into the target field at the top of the page.
    ```
-   bash https://github.com/m5stack/Core2-for-AWS-IoT-EduKit.git
+   bash https://github.com/m5stack/Core2-for-AWS-IoT-Kit.git
    ```
 1. Select the location where you want to save the project.
 {{< img "pio-clone_git_project.en.png" "PlatformIO Clone Git Project" "1 - Open PIO menu, 2 - Choose Clone Git Project, and 3 - Paste the repository URL" >}}
@@ -101,4 +101,4 @@ If your {{< awsService type="edukit-short-en" >}} does not appear in the device 
 Now that your host machine can communicate with the {{< awsService type="edukit-short-en" >}}, continue to the next chapter — [**Run the ESP RainMaker Agent**](/en/getting-started/run-rainmaker.html).
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

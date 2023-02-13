@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Core2 for AWS IoT EduKit BSP: core2foraws_wifi_reset</title>
+<title>Core2 for AWS IoT Kit BSP: core2foraws_wifi_reset</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="AWS_logo_RGB.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Core2 for AWS IoT EduKit BSP<span id="projectnumber">&#160;2.0.0</span>
+   <div id="projectname">Core2 for AWS IoT Kit BSP<span id="projectnumber">&#160;2.0.0</span>
    </div>
   </td>
  </tr>
@@ -85,7 +85,7 @@ $(function() {
 </div><!-- fragment --><p> Reset internal Wi-Fi state machine and clear provisioned credentials.</p>
 <p >This function erases the stored credentials and restarts the Wi-Fi provisioning process.</p>
 <p ><b>Example:</b></p>
-<p >Initialize the Core2 for AWS IoT EduKit (including the enabled Wi-Fi), wait 5 seconds, and then reset the Wi-Fi to enter new credentials using the mobile app. </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<p >Initialize the Core2 for AWS IoT Kit (including the enabled Wi-Fi), wait 5 seconds, and then reset the Wi-Fi to enter new credentials using the mobile app. </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;esp_log.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;freertos/FreeRTOS.h&gt;</span></div>
 <div class="line"> </div>
@@ -102,7 +102,7 @@ $(function() {
 <div class="line">    esp_err_t err = <a class="code hl_function" href="core2foraws__wifi_8h.html#a5c61a72b48689cfa5dc3060935dc1a71">core2foraws_wifi_reset</a>();</div>
 <div class="line">    ESP_LOGI( TAG, <span class="stringliteral">&quot;\tWi-Fi reset returned %d&quot;</span>, err );</div>
 <div class="line">}</div>
-<div class="ttc" id="acore2foraws_8h_html"><div class="ttname"><a href="core2foraws_8h.html">core2foraws.h</a></div><div class="ttdoc">Core2 for AWS IoT EduKit general hardware driver APIs.</div></div>
+<div class="ttc" id="acore2foraws_8h_html"><div class="ttname"><a href="core2foraws_8h.html">core2foraws.h</a></div><div class="ttdoc">Core2 for AWS IoT Kit general hardware driver APIs.</div></div>
 <div class="ttc" id="acore2foraws_8h_html_a8589c127068e67d5474515365b558051"><div class="ttname"><a href="core2foraws_8h.html#a8589c127068e67d5474515365b558051">core2foraws_init</a></div><div class="ttdeci">esp_err_t core2foraws_init(void)</div><div class="ttdoc">Initializes enabled hardware features.</div></div>
 </div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd><ul>
 <li><a href="https://docs.espressif.com/projects/esp-idf/en/release-v4.3/esp32/api-reference/system/esp_err.html#macros">esp_err_t</a>.</li>

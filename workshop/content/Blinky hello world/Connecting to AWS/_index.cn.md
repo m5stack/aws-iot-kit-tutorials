@@ -14,9 +14,9 @@ pre = "<b>c. </b>"
 pio run --environment core2foraws --target menuconfig
 ```
 
-{{< img "idf_menuconfig-wifi.en.webp" "Configuring Core2 for AWS IoT EduKit with p.py menuconfig" >}}
+{{< img "idf_menuconfig-wifi.en.webp" "Configuring Core2 for AWS IoT Kit with p.py menuconfig" >}}
 
-下面，您将设定配置。使用键盘上的方向键转到  然后，从菜单中选择 **AWS IoT EduKit Configuration（AWS IoT EduKit 配置）**。使用 Wi-Fi 凭证设置 **Wi-Fi SSID** 和 **Wi-Fi Password**。完成后，按键盘上的 *S* 键进行保存，按 *enter* 键确认文件的位置，然后按 *q* 键退出。
+下面，您将设定配置。使用键盘上的方向键转到  然后，从菜单中选择 **AWS IoT Kit Configuration（AWS IoT Kit 配置）**。使用 Wi-Fi 凭证设置 **Wi-Fi SSID** 和 **Wi-Fi Password**。完成后，按键盘上的 *S* 键进行保存，按 *enter* 键确认文件的位置，然后按 *q* 键退出。
 
 {{% notice warning %}}
 确保您的 SSID 用于 2.4GHz 网络。M5Stack Core2 for AWS 硬件上的 ESP32-D0WD 不支持 5GHz Wi-Fi 频段。
@@ -43,4 +43,4 @@ pio run --environment core2foraws --target menuconfig
 现在，您可以继续学习本教程的下一章，[**闪烁 LED**](/cn/blinky-hello-world/blinking-the-leds.html)。
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

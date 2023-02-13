@@ -166,7 +166,7 @@ Complete the following steps to start the serial monitor and monitor your device
 1. Open **VS Code**, if necessary.
 1. Expand the **File menu** and choose **New Window** in the VS Code to open a new window. This provides a clean file Explorer and working environment.
 1. Select the **PlatformIO logo** in the VS Code activity bar, choose **Open**, and then choose **Open Project**.
-1. Navigate to the `Core2-for-AWS-IoT-EduKit/Smart-Thermostat` folder and choose **open**.
+1. Navigate to the `Core2-for-AWS-IoT-Kit/Smart-Thermostat` folder and choose **open**.
 1. From the **Quick Access** menu, under **Miscellaneous**, choose **New Terminal**.
 1. Issue the following command into the PIO terminal window:
 ```bash
@@ -203,4 +203,4 @@ Complete the following steps to validate that your device is configured as inten
 Now that you can receive readings from your device and change the HVAC states, continue to [**Data transforms and routing**](/en/smart-thermostat/data-transforms-and-routing.html).
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

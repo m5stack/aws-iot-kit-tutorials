@@ -14,9 +14,9 @@ Jetzt gehen Sie in das KConfig-Menü, um die erforderlichen [Symbole](https://ww
 pio run —environment core2foraws —target menuconfig
 ```
 
-{{< img "idf_menuconfig-wifi.en.webp" "Configuring Core2 for AWS IoT EduKit with p.py menuconfig" >}}
+{{< img "idf_menuconfig-wifi.en.webp" "Configuring Core2 for AWS IoT Kit with p.py menuconfig" >}}
 
-Verwenden Sie die Richtungstasten (oder *K* und *J* oder *-* und *+*) auf Ihrer Tastatur, um im Menü zu **AWS IoT EduKit Configuration** zu gehen. Geben Sie Ihre **WiFi-SSID** und Ihr **WiFi-Passwort** mit Ihren Wi-Fi-Anmeldeinformationen ein. Wenn Sie fertig sind, drücken Sie zum Speichern die Taste *s* auf Ihrer Tastatur. Bestätigen Sie den Speicherort der Datei, indem Sie *Enter* drücken, gefolgt von *q* zum Beenden.
+Verwenden Sie die Richtungstasten (oder *K* und *J* oder *-* und *+*) auf Ihrer Tastatur, um im Menü zu **AWS IoT Kit Configuration** zu gehen. Geben Sie Ihre **WiFi-SSID** und Ihr **WiFi-Passwort** mit Ihren Wi-Fi-Anmeldeinformationen ein. Wenn Sie fertig sind, drücken Sie zum Speichern die Taste *s* auf Ihrer Tastatur. Bestätigen Sie den Speicherort der Datei, indem Sie *Enter* drücken, gefolgt von *q* zum Beenden.
 
 {{% notice warning %}}
 Stellen Sie sicher, dass Ihre SSID für ein 2,4-GHz-Netzwerk bestimmt ist. Der ESP32-D0WD auf der M5Stack Core2 für AWS-Hardware unterstützt keine 5-GHz-Wi-Fi-Bänder.
@@ -43,4 +43,4 @@ In diesem Kapitel haben Sie Ihr Gerät erfolgreich kompiliert und geflasht und �
 Sie können jetzt zum letzten Kapitel in diesem Tutorial gehen, [**Blinken der LEDs**](/de/blinky-hello-world/blinking-the-leds.html).
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

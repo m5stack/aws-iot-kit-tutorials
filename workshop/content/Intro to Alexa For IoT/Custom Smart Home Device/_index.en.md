@@ -8,7 +8,7 @@ pre = "<b>d. </b>"
 Now that we have an understanding of the Smart Home control capabilities included with the kit, you will modify those capabilities to control attributes of the device itself rather than simply printing to the serial monitor. For this workshop, you will create a simple implementation that turns on the side green LED light via the **PowerController** and you will set the device to blink at a set rate using the Range Controller.
 
 ## Customize smart home device attributes
-Using your IDE, open the cloned **Core2-for-AWS-IoT-EduKit** folder and open the `Alexa_for_IoT-Intro/components/app_smart_home/app_smart_home.c` to take a look at where the Smart Home device attributes are defined. Scrolling down to line 109 **app_smart_home_init()** function and you will see the following code blocks:
+Using your IDE, open the cloned **Core2-for-AWS-IoT-Kit** folder and open the `Alexa_for_IoT-Intro/components/app_smart_home/app_smart_home.c` to take a look at where the Smart Home device attributes are defined. Scrolling down to line 109 **app_smart_home_init()** function and you will see the following code blocks:
 ```c
 /* Add device */
 smart_home_device_t *device = smart_home_device_create("Light", alexa_smart_home_get_device_type_str(LIGHT), NULL);
@@ -122,4 +122,4 @@ You can also test the Blink functionality:
 Congratulations, you've completed this tutorial! On to the [**Conclusion**](/en/intro-to-alexa-for-iot/conclusion.html).
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

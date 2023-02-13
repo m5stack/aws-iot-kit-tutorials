@@ -7,7 +7,7 @@ pre = "<b>e. </b>"
 ## 章节简介
 学完本章节后，您的解决方案将能够：
 
-* 在托管的云应用程序中处理来自 Core2 for AWS IoT EduKit 设备的遥测数据。
+* 在托管的云应用程序中处理来自 Core2 for AWS IoT Kit 设备的遥测数据。
 * 确定 HVAC 系统应设置为何种状态：制热、制冷或待机。
 * 根据处理的输入数据向设备影子发送期望的状态消息。
 * 将期望的影子状态同步到设备。
@@ -221,4 +221,4 @@ pre = "<b>e. </b>"
 如果解决方案符合预期，就可以进入 [**总结**](/cn/smart-thermostat/conclusion.html) 部分。
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

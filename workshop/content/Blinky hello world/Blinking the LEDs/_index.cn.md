@@ -14,7 +14,7 @@ pre = "<b>d. </b>"
 在 Subscription topic（订阅主题）区域中，输入 `＃` 订阅所有 MQTT 主题名称。**＃** 是多级通配符 [主题筛选条件](https://docs.aws.amazon.com/iot/latest/developerguide/topics.html#topicfilters)，并且只能作为主题筛选条件的最后一个字符使用一次。按 **Subscribe to topic（订阅主题）** 按钮后，您将看到设备发送到云端的消息。设备只能将消息发布到以 `<<CLIENT_ID>>/` 开头的主题。这让其他订阅者（例如，云应用程序）能够针对特定客户端设备筛选主题，并且还可以将范围缩小到更具体的主题（例如，特定设备的温度读数）。
 
 ## 闪烁 LED
-要让 M5Stack Core2 for AWS IoT EduKit 参考硬件侧面的 LED 灯条开始/停止闪烁，我们将从控制台上的 AWS IoT MQTT 客户端发布消息到 Core2 for AWS IoT EduKit 订阅的主题。设备订阅的主题会是 `<<CLIENT_ID>>/#` 这样的类型。在设备成功的订阅到该主题之后，你可以在设备上查看到该主题。此外，在主机的串口输出中也可以观察到 client Id。
+要让 M5Stack Core2 for AWS IoT Kit 参考硬件侧面的 LED 灯条开始/停止闪烁，我们将从控制台上的 AWS IoT MQTT 客户端发布消息到 Core2 for AWS IoT Kit 订阅的主题。设备订阅的主题会是 `<<CLIENT_ID>>/#` 这样的类型。在设备成功的订阅到该主题之后，你可以在设备上查看到该主题。此外，在主机的串口输出中也可以观察到 client Id。
 
 在 publish（发布）框中，输入下面的内容，其中的 **<<CLIENT_ID>>** 使用您实际的 client Id替换，然后，点击 **Publish**：
 ```
@@ -38,4 +38,4 @@ pio run --environment core2foraws --target erase
 进入最后一个章节，[**总结**](conclusion.html)。
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

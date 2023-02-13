@@ -9,11 +9,11 @@ pre = "<b>b. </b>"
 ## 打开 Blink Hello World 项目
 如果你有任何其他项目已经在 VS Code 中打开，首先打开一个新窗口 (**File** → **new window**) 使用一个干净的文件浏览器和工作环境。
 
-对于本教程，您将使用 Blinky-Hello-World 项目。在你的新 VS Code 窗口中，VS Code 活动栏(最左边的菜单)内，点击 **PlatformIO 徽标**，从左边的 PlatformIO 菜单选择 **Open**，然后点击 **Open Project**，导航到 `Core2-for-AWS-IoT-EduKit/Blinky-Hello-World` 文件夹，并点击 **Open**。
+对于本教程，您将使用 Blinky-Hello-World 项目。在你的新 VS Code 窗口中，VS Code 活动栏(最左边的菜单)内，点击 **PlatformIO 徽标**，从左边的 PlatformIO 菜单选择 **Open**，然后点击 **Open Project**，导航到 `Core2-for-AWS-IoT-Kit/Blinky-Hello-World` 文件夹，并点击 **Open**。
 {{< img "pio-home.en.png" "PlatformIO home screen" "1 - 打开 PIO 菜单，2 - 打开 PIO home，3 - 打开项目文件夹" >}}
 
 ## 检索设备证书并注册 AWS IoT 事物 (thing)
-现在创建一个基于 [MQTT](https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html) 的安全的 TLS 连接以连接到 AWS IoT Core，您需要注册一个事物 (thing)，在事物上 [附加设备证书](https://docs.aws.amazon.com/iot/latest/developerguide/register-device-cert.html)（公钥），然后在证书上附加一个 [安全策略](https://docs.aws.amazon.com/iot/latest/developerguide/iot-policies.html) 以确保非法设备或非法操作不会在您的AWS帐户内执行。通过在 Core2 for AWS IoT EduKit 参考硬件包含的安全元件，我们可以无需暴露或处理敏感的私钥自动完成整个设备注册。项目中包含一个脚本，该脚本可以实现流程自动化；它从参考硬件的安全元件中检索预先准备的设备证书，通过使用 [X.509 证书](https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-client-cert-basics) 对设备证书签名来生成设备清单，执行 Microchip(安全元件制造商) CA 的[just-in-time registration（即时注册）](https://aws.amazon.com/blogs/iot/just-in-time-registration-of-device-certificates-on-aws-iot/)，在 AWS IoT 中使用设备证书注册事物，并将安全策略附加到 AWS IoT 事物上。
+现在创建一个基于 [MQTT](https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html) 的安全的 TLS 连接以连接到 AWS IoT Core，您需要注册一个事物 (thing)，在事物上 [附加设备证书](https://docs.aws.amazon.com/iot/latest/developerguide/register-device-cert.html)（公钥），然后在证书上附加一个 [安全策略](https://docs.aws.amazon.com/iot/latest/developerguide/iot-policies.html) 以确保非法设备或非法操作不会在您的AWS帐户内执行。通过在 Core2 for AWS IoT Kit 参考硬件包含的安全元件，我们可以无需暴露或处理敏感的私钥自动完成整个设备注册。项目中包含一个脚本，该脚本可以实现流程自动化；它从参考硬件的安全元件中检索预先准备的设备证书，通过使用 [X.509 证书](https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-client-cert-basics) 对设备证书签名来生成设备清单，执行 Microchip(安全元件制造商) CA 的[just-in-time registration（即时注册）](https://aws.amazon.com/blogs/iot/just-in-time-registration-of-device-certificates-on-aws-iot/)，在 AWS IoT 中使用设备证书注册事物，并将安全策略附加到 AWS IoT 事物上。
 
 要运行注册脚本用 [PlatformIO CLI 终端窗口](prerequisites.html#open-the-platformio-cli-terminal-window) 运行脚本：
 
@@ -28,4 +28,4 @@ pio run -e core2foraws-device_reg -t register_thing
 进入到 [**连接到 AWS IoT Core**](connecting-to-aws.html)。
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

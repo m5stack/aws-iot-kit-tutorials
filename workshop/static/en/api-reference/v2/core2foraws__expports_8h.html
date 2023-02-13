@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Core2 for AWS IoT EduKit BSP: core2foraws_expports.h File Reference</title>
+<title>Core2 for AWS IoT Kit BSP: core2foraws_expports.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="AWS_logo_RGB.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Core2 for AWS IoT EduKit BSP<span id="projectnumber">&#160;2.0.0</span>
+   <div id="projectname">Core2 for AWS IoT Kit BSP<span id="projectnumber">&#160;2.0.0</span>
    </div>
   </td>
  </tr>
@@ -73,7 +73,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_b4313104a230dd94f699539f8e438d9b.html">Core2-for-AWS-IoT-EduKit</a></li><li class="navelem"><a class="el" href="dir_75a483a8633115123af46fb2bb05dd34.html">lib</a></li><li class="navelem"><a class="el" href="dir_ca4c642c45f339f8d20114adf29f8f2c.html">expports</a></li><li class="navelem"><a class="el" href="dir_f601a7231f3fa42e3ec1e1a042fa4c3a.html">include</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_b4313104a230dd94f699539f8e438d9b.html">Core2-for-AWS-IoT-Kit</a></li><li class="navelem"><a class="el" href="dir_75a483a8633115123af46fb2bb05dd34.html">lib</a></li><li class="navelem"><a class="el" href="dir_ca4c642c45f339f8d20114adf29f8f2c.html">expports</a></li><li class="navelem"><a class="el" href="dir_f601a7231f3fa42e3ec1e1a042fa4c3a.html">include</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -84,7 +84,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Core2 for AWS IoT EduKit expansion ports hardware driver APIs.  
+<p>Core2 for AWS IoT Kit expansion ports hardware driver APIs.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;stddef.h&gt;</code><br />
@@ -169,7 +169,7 @@ Functions</h2></td></tr>
 <tr class="separator:a7c96905f03597b16aa851d5a4ba05bec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Core2 for AWS IoT EduKit expansion ports hardware driver APIs. </p>
+<div class="textblock"><p >Core2 for AWS IoT Kit expansion ports hardware driver APIs. </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ae784eb494430f328a674932e03ee1b26" name="ae784eb494430f328a674932e03ee1b26"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae784eb494430f328a674932e03ee1b26">&#9670;&nbsp;</a></span>PORT_A_SDA_PIN</h2>
@@ -386,7 +386,7 @@ The AXP192 PMU is configured to output 5v on the expansion port's VCC pin. Some 
 <div class="line">        xTaskCreatePinnedToCore( pin_read_task, <span class="stringliteral">&quot;read_pin&quot;</span>, 1024*3, NULL, 1, NULL, 1 );</div>
 <div class="line">    }</div>
 <div class="line">}</div>
-<div class="ttc" id="acore2foraws_8h_html"><div class="ttname"><a href="core2foraws_8h.html">core2foraws.h</a></div><div class="ttdoc">Core2 for AWS IoT EduKit general hardware driver APIs.</div></div>
+<div class="ttc" id="acore2foraws_8h_html"><div class="ttname"><a href="core2foraws_8h.html">core2foraws.h</a></div><div class="ttdoc">Core2 for AWS IoT Kit general hardware driver APIs.</div></div>
 <div class="ttc" id="acore2foraws_8h_html_a8589c127068e67d5474515365b558051"><div class="ttname"><a href="core2foraws_8h.html#a8589c127068e67d5474515365b558051">core2foraws_init</a></div><div class="ttdeci">esp_err_t core2foraws_init(void)</div><div class="ttdoc">Initializes enabled hardware features.</div></div>
 <div class="ttc" id="acore2foraws__expports_8h_html_a2ff29b8accafd1c26fc47af4645a15de"><div class="ttname"><a href="core2foraws__expports_8h.html#a2ff29b8accafd1c26fc47af4645a15de">core2foraws_expports_digital_read</a></div><div class="ttdeci">esp_err_t core2foraws_expports_digital_read(gpio_num_t pin, bool *level)</div><div class="ttdoc">Reads the value from a specified digital pin — either 1 (high) or 0 (low).</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
@@ -1056,11 +1056,11 @@ The AXP192 PMU is configured to output 5v on the expansion port's VCC pin. Some 
 
 <p>Configures the UART interface on for <a class="el" href="core2foraws__expports_8h.html#a1d7f3c77703d9c2c8654700f05f04f81">PORT_C_UART_RX_PIN</a> (GPIO 13) and <a class="el" href="core2foraws__expports_8h.html#a8764a8d2c486f2d66f86d995653cc833">PORT_C_UART_TX_PIN</a> (GPIO 14) at the specified baud rate. </p>
 <p >This is a helper function to simplify building applications with UART. It preconfigures the UART communications with 8 bit word length, no parity bit, 1 bit for the number of stop bits, and hardware flow control disabled. It sets the baud rate to the user defined value and starts reading from the UART channel 2 and storing data into the ring buffer of length <a class="el" href="core2foraws__expports_8h.html#a1f25fe45d891de244a8135ae02fc9265">UART_RX_BUF_SIZE</a>.</p>
-<dl class="section note"><dt>Note</dt><dd>Usage of the UART convenience methods provided in this BSP aims to simplify development at the expense of compatibility and performance. The configuration above may not be suitable for your application or attached peripheral. For more information about UART communications on the Core2 for AWS IoT EduKit using the ESP32 and how to create your own configuration, visit Espressif's official <a href="https://docs.espressif.com/projects/esp-idf/en/release-v4.2/esp32/api-reference/peripherals/uart.html">documentation</a>.</dd>
+<dl class="section note"><dt>Note</dt><dd>Usage of the UART convenience methods provided in this BSP aims to simplify development at the expense of compatibility and performance. The configuration above may not be suitable for your application or attached peripheral. For more information about UART communications on the Core2 for AWS IoT Kit using the ESP32 and how to create your own configuration, visit Espressif's official <a href="https://docs.espressif.com/projects/esp-idf/en/release-v4.2/esp32/api-reference/peripherals/uart.html">documentation</a>.</dd>
 <dd>
 The ESP32 is a 3.3v device and requires 3.3v on the UART TX/RX lines. Higher voltages requires the use of a level shifter.</dd></dl>
 <p><b>Example:</b></p>
-<p >The example below sets <a class="el" href="core2foraws__expports_8h.html#a8764a8d2c486f2d66f86d995653cc833">PORT_C_UART_TX_PIN</a> (GPIO 14 to transmit) and PORT_C_UART_RX_PIN (GPIO 13 to receive), and sets the UART baud rate to 115200. It then starts two FreeRTOS tasks — one that transmits "Hello from AWS IoT EduKit" every two seconds and the other receives the message. The receiver task outputs the number of bytes read from the buffer, the number of bytes that remains unread in the ring buffer, and the message.</p>
+<p >The example below sets <a class="el" href="core2foraws__expports_8h.html#a8764a8d2c486f2d66f86d995653cc833">PORT_C_UART_TX_PIN</a> (GPIO 14 to transmit) and PORT_C_UART_RX_PIN (GPIO 13 to receive), and sets the UART baud rate to 115200. It then starts two FreeRTOS tasks — one that transmits "Hello from AWS IoT Kit" every two seconds and the other receives the message. The receiver task outputs the number of bytes read from the buffer, the number of bytes that remains unread in the ring buffer, and the message.</p>
 <dl class="section note"><dt>Note</dt><dd>To receive the messages transmitted on the same device, run a female-female jumper wire from Port C's TX pin to PORT C's RX pin. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;freertos/FreeRTOS.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;freertos/task.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;driver/uart.h&quot;</span></div>
@@ -1075,7 +1075,7 @@ The ESP32 is a 3.3v device and requires 3.3v on the UART TX/RX lines. Higher vol
 <div class="line">{</div>
 <div class="line">    <span class="keywordflow">while</span> ( 1 )</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keyword">const</span> <span class="keywordtype">char</span> *message = <span class="stringliteral">&quot;Hello from AWS IoT EduKit&quot;</span>;</div>
+<div class="line">        <span class="keyword">const</span> <span class="keywordtype">char</span> *message = <span class="stringliteral">&quot;Hello from AWS IoT Kit&quot;</span>;</div>
 <div class="line">        <span class="keywordtype">size_t</span> message_len = strlen( message ) + 1;</div>
 <div class="line">        <span class="keywordtype">size_t</span> written_len = 0;</div>
 <div class="line"> </div>
@@ -1166,11 +1166,11 @@ The ESP32 is a 3.3v device and requires 3.3v on the UART TX/RX lines. Higher vol
 
 <p>Writes message to the UART2 interface through <a class="el" href="core2foraws__expports_8h.html#a8764a8d2c486f2d66f86d995653cc833">PORT_C_UART_TX_PIN</a> (GPIO 14). </p>
 <p >This is a helper function to simplify building applications with UART using 8 bit word length, no parity bit, 1 bit for the stop bit, and hardware flow control disabled. It sets the baud rate to the user defined value and starts reading from the UART channel 2 and storing data into the ring buffer of length <a class="el" href="core2foraws__expports_8h.html#a1f25fe45d891de244a8135ae02fc9265">UART_RX_BUF_SIZE</a>.</p>
-<dl class="section note"><dt>Note</dt><dd>Usage of the UART convenience methods provided in this BSP aims to simplify development at the expense of compatibility and performance. The configuration above may not be suitable for your application or attached peripheral. For more information about UART communications on the Core2 for AWS IoT EduKit using the ESP32 and how to create your own configuration, visit Espressif's official <a href="https://docs.espressif.com/projects/esp-idf/en/release-v4.2/esp32/api-reference/peripherals/uart.html">documentation</a>.</dd>
+<dl class="section note"><dt>Note</dt><dd>Usage of the UART convenience methods provided in this BSP aims to simplify development at the expense of compatibility and performance. The configuration above may not be suitable for your application or attached peripheral. For more information about UART communications on the Core2 for AWS IoT Kit using the ESP32 and how to create your own configuration, visit Espressif's official <a href="https://docs.espressif.com/projects/esp-idf/en/release-v4.2/esp32/api-reference/peripherals/uart.html">documentation</a>.</dd>
 <dd>
 The ESP32 is a 3.3v device and requires 3.3v on the UART TX/RX lines. Higher voltages requires the use of a level shifter.</dd></dl>
 <p><b>Example:</b></p>
-<p >The example below sets <a class="el" href="core2foraws__expports_8h.html#a8764a8d2c486f2d66f86d995653cc833">PORT_C_UART_TX_PIN</a> (GPIO 14 to transmit) and PORT_C_UART_RX_PIN (GPIO 13 to receive), and sets the UART baud rate to 115200. It then starts two FreeRTOS tasks — one that transmits "Hello from AWS IoT EduKit" every two seconds and the other receives the message. The receiver task outputs the number of bytes read from the buffer, the number of bytes that remains unread in the ring buffer, and the message.</p>
+<p >The example below sets <a class="el" href="core2foraws__expports_8h.html#a8764a8d2c486f2d66f86d995653cc833">PORT_C_UART_TX_PIN</a> (GPIO 14 to transmit) and PORT_C_UART_RX_PIN (GPIO 13 to receive), and sets the UART baud rate to 115200. It then starts two FreeRTOS tasks — one that transmits "Hello from AWS IoT Kit" every two seconds and the other receives the message. The receiver task outputs the number of bytes read from the buffer, the number of bytes that remains unread in the ring buffer, and the message.</p>
 <dl class="section note"><dt>Note</dt><dd>To receive the messages transmitted on the same device, run a female-female jumper wire from Port C's TX pin to PORT C's RX pin. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;freertos/FreeRTOS.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;freertos/task.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;esp_log.h&gt;</span></div>
@@ -1183,7 +1183,7 @@ The ESP32 is a 3.3v device and requires 3.3v on the UART TX/RX lines. Higher vol
 <div class="line">{</div>
 <div class="line">    <span class="keywordflow">while</span> ( 1 )</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keyword">const</span> <span class="keywordtype">char</span> *message = <span class="stringliteral">&quot;Hello from AWS IoT EduKit&quot;</span>;</div>
+<div class="line">        <span class="keyword">const</span> <span class="keywordtype">char</span> *message = <span class="stringliteral">&quot;Hello from AWS IoT Kit&quot;</span>;</div>
 <div class="line">        <span class="keywordtype">size_t</span> message_len = strlen( message ) + 1;</div>
 <div class="line">        <span class="keywordtype">size_t</span> written_len = 0;</div>
 <div class="line"> </div>
@@ -1266,11 +1266,11 @@ The ESP32 is a 3.3v device and requires 3.3v on the UART TX/RX lines. Higher vol
 
 <p>Read bytes from the UART2 interface through <a class="el" href="core2foraws__expports_8h.html#a1d7f3c77703d9c2c8654700f05f04f81">PORT_C_UART_RX_PIN</a> (GPIO 13). </p>
 <p >This is a helper function to simplify building applications with UART using 8 bit word length, no parity bit, 1 bit for the stop bit, and hardware flow control disabled. It sets the baud rate to the user defined value and starts reading from the UART channel 2 and storing data into the ring buffer of length <a class="el" href="core2foraws__expports_8h.html#a1f25fe45d891de244a8135ae02fc9265">UART_RX_BUF_SIZE</a>.</p>
-<dl class="section note"><dt>Note</dt><dd>Usage of the UART convenience methods provided in this BSP aims to simplify development at the expense of compatibility and performance. The configuration above may not be suitable for your application or attached peripheral. For more information about UART communications on the Core2 for AWS IoT EduKit using the ESP32 and how to create your own configuration, visit Espressif's official <a href="https://docs.espressif.com/projects/esp-idf/en/release-v4.2/esp32/api-reference/peripherals/uart.html">documentation</a>.</dd>
+<dl class="section note"><dt>Note</dt><dd>Usage of the UART convenience methods provided in this BSP aims to simplify development at the expense of compatibility and performance. The configuration above may not be suitable for your application or attached peripheral. For more information about UART communications on the Core2 for AWS IoT Kit using the ESP32 and how to create your own configuration, visit Espressif's official <a href="https://docs.espressif.com/projects/esp-idf/en/release-v4.2/esp32/api-reference/peripherals/uart.html">documentation</a>.</dd>
 <dd>
 The ESP32 is a 3.3v device and requires 3.3v on the UART TX/RX lines. Higher voltages requires the use of a level shifter.</dd></dl>
 <p><b>Example:</b></p>
-<p >The example below sets <a class="el" href="core2foraws__expports_8h.html#a8764a8d2c486f2d66f86d995653cc833">PORT_C_UART_TX_PIN</a> (GPIO 14 to transmit) and PORT_C_UART_RX_PIN (GPIO 13 to receive), and sets the UART baud rate to 115200. It then starts two FreeRTOS tasks — one that transmits "Hello from AWS IoT EduKit" every two seconds and the other receives the message. The receiver task outputs the number of bytes read from the buffer, the number of bytes that remains unread in the ring buffer, and the message.</p>
+<p >The example below sets <a class="el" href="core2foraws__expports_8h.html#a8764a8d2c486f2d66f86d995653cc833">PORT_C_UART_TX_PIN</a> (GPIO 14 to transmit) and PORT_C_UART_RX_PIN (GPIO 13 to receive), and sets the UART baud rate to 115200. It then starts two FreeRTOS tasks — one that transmits "Hello from AWS IoT Kit" every two seconds and the other receives the message. The receiver task outputs the number of bytes read from the buffer, the number of bytes that remains unread in the ring buffer, and the message.</p>
 <dl class="section note"><dt>Note</dt><dd>To receive the messages transmitted on the same device, run a female-female jumper wire from Port C's TX pin to PORT C's RX pin. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;freertos/FreeRTOS.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;freertos/task.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;esp_log.h&gt;</span></div>
@@ -1283,7 +1283,7 @@ The ESP32 is a 3.3v device and requires 3.3v on the UART TX/RX lines. Higher vol
 <div class="line">{</div>
 <div class="line">    <span class="keywordflow">while</span> ( 1 )</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keyword">const</span> <span class="keywordtype">char</span> *message = <span class="stringliteral">&quot;Hello from AWS IoT EduKit&quot;</span>;</div>
+<div class="line">        <span class="keyword">const</span> <span class="keywordtype">char</span> *message = <span class="stringliteral">&quot;Hello from AWS IoT Kit&quot;</span>;</div>
 <div class="line">        <span class="keywordtype">size_t</span> message_len = strlen( message ) + 1;</div>
 <div class="line">        <span class="keywordtype">size_t</span> written_len = 0;</div>
 <div class="line"> </div>

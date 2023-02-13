@@ -12,8 +12,8 @@ pre = "<b>e. </b>"
 * IoT Analytics のデータセットの作成スケジュールを設定し、最新のコンテンツファイルを 1 日 1 回作成する
 * 簡易なウェブ UI を構築するか、Amazon QuickSight をプロビジョニングして、IoT Analytics で作成されたデータセットを可視化する
 * 新しいパイプラインアクティビティを IoT Analytics に追加して、Lambda 関数経由で局地天気を取得し、サーモスタットデータに追加する
-* Core2 for AWS IoT EduKit リファレンスハードウェアのライブラリを使って、*hvacStatus* が変化した場合は常に音を発するようにする
-* Core2 for AWS IoT EduKit リファレンスハードウェアのライブラリを使って、*roomOccupancy* が変化した場合は常に LED を点滅するようにする
+* Core2 for AWS IoT Kit リファレンスハードウェアのライブラリを使って、*hvacStatus* が変化した場合は常に音を発するようにする
+* Core2 for AWS IoT Kit リファレンスハードウェアのライブラリを使って、*roomOccupancy* が変化した場合は常に LED を点滅するようにする
 
 ## クリーンアップ
 このソリューションと以前のソリューション 「スマートサーモスタット」 を通じて、以下のリソースを AWS に作成しました。
@@ -52,4 +52,4 @@ IoT Core ルール、Lambda 関数、IoT Events 入力および検知、IoT Anal
 次のチュートリアルである [Alexa for IoT 入門](/jp/intro-to-alexa-for-iot.html)に移動します。
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

@@ -6,7 +6,7 @@ weight = 30
 pre = "<b>2. </b>"
 +++
 
-AWS IoT EduKit 用 M5Stack Core2 リファレンスハードウェアを使用して、「Lチカ」 (マイクロコントローラーの Hello World ) アプリケーションを作成する方法を学びます。ユーザー自身の AWS アカウントを使って、AWS IoT Core に接続し、メッセージを送受信し、デバイスと AWS クラウドの両方でメッセージを表示する方法を学びます。ここで使用されているすべての手順とスキルは、この後に続くチュートリアルで成功するための基礎となります。具体的には、以下を行います。
+AWS IoT Kit 用 M5Stack Core2 リファレンスハードウェアを使用して、「Lチカ」 (マイクロコントローラーの Hello World ) アプリケーションを作成する方法を学びます。ユーザー自身の AWS アカウントを使って、AWS IoT Core に接続し、メッセージを送受信し、デバイスと AWS クラウドの両方でメッセージを表示する方法を学びます。ここで使用されているすべての手順とスキルは、この後に続くチュートリアルで成功するための基礎となります。具体的には、以下を行います。
 
 - 追加の必要なソフトウェアのインストールし、設定します
 - オンボードのセキュアエレメントに、事前に用意されているセキュリティ証明書を使用して、AWS IoT Core に「モノ」を登録します。
@@ -18,4 +18,4 @@ AWS IoT EduKit 用 M5Stack Core2 リファレンスハードウェアを使用�
 このチュートリアルを開始するには、最初の章[前提条件](/jp/blinky-hello-world/prerequisites.html)に進んでください。
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

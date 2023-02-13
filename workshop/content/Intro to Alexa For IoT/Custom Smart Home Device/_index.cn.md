@@ -8,7 +8,7 @@ pre = "<b>d. </b>"
 现在我们了解了该套件包含哪些智能家居控制功能，接下来您可以修改这些功能来控制设备本身的属性，而不是只输出到串行监控器。在此研讨会中，您将通过 **PowerController** 创建一个能打开绿色 LED 侧灯的简单实现，然后使用范围控制器将设备设置为以固定速率闪烁。
 
 ## 自定义智能家居设备属性
-使用您的 IDE 打开克隆的 **Core2-for-AWS-IoT-EduKit** 文件夹，然后打开 `Alexa_for_IoT-Intro/esp-va-sdk-core2foraws/examples/additional_components/app_smart_home/app_smart_home.c`，以查看智能家居设备属性是在哪里定义的。向下滚动到第 109 行的 **app_smart_home_init()** 函数，您会发现以下代码块：
+使用您的 IDE 打开克隆的 **Core2-for-AWS-IoT-Kit** 文件夹，然后打开 `Alexa_for_IoT-Intro/esp-va-sdk-core2foraws/examples/additional_components/app_smart_home/app_smart_home.c`，以查看智能家居设备属性是在哪里定义的。向下滚动到第 109 行的 **app_smart_home_init()** 函数，您会发现以下代码块：
 ```c
 /* Add device */
 smart_home_device_t *device = smart_home_device_create("Light", alexa_smart_home_get_device_type_str(LIGHT), NULL);
@@ -124,4 +124,4 @@ pio run --environment core2foraws --target upload --target monitor
 恭喜，您已学完此教程！进入 [**总结**](/cn/intro-to-alexa-for-iot/conclusion.html) 部分。
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

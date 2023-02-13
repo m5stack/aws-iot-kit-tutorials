@@ -5,7 +5,7 @@ pre = "<b>c. </b>"
 +++
 
 ## Einführung in das Kapitel
-Am Ende dieses Kapitels sollte Ihr Core2 des AWS IoT EduKit-Referenzhardware-Kit Folgendes tun:
+Am Ende dieses Kapitels sollte Ihr Core2 des AWS IoT Kit-Referenzhardware-Kit Folgendes tun:
 
 * Veröffentlichung des abgetasteten Geräuschpegels und der Raumtemperatur alle 10 Sekunden zu AWS IoT Core
 * Abonnieren Sie den Schatten Ihres Geräts in AWS IoT Core, um neue Befehle zu erhalten
@@ -175,7 +175,7 @@ pio run --environment core2foraws --target monitor
 Bevor Sie mit dem nächsten Kapitel fortfahren, können Sie überprüfen, ob Ihr Gerät wie beabsichtigt konfiguriert ist:
 
 1. Öffnen Sie die Testseite der AWS IoT Core-Konsole, abonnieren Sie das Thema `$aws/things/<<CLIENT_ID>>/shadow/update/accepted`. Sie sollten neue Nachrichten sehen, die rechtzeitig mit Ihrem **vTaskDelay()** eintreffen. (Ersetzen Sie <<CLIENT_ID>> durch die auf dem Bildschirm aufgedruckte Client-ID/Seriennummer Ihres Geräts.)
-2. Öffnen Sie die Testseite der AWS IoT Core-Konsole und veröffentlichen Sie eine neue Shadow-Nachricht zum Thema `$aws/things/<<CLIENT_ID>>/shadow/update`. Sie sollten sehen, dass die LED-Leisten des Core for AWS IoT EduKit von blau über rot zu aus wechseln, um die Werte **COOLING**, **HEATING** und **STANDBY** darzustellen. Unten finden Sie ein Beispiel für eine Shadow-Nachricht. Testen Sie die Auswirkungen, indem Sie bei jeder Veröffentlichung der Nachricht die Werte **hvacStatus** (auf **HEATING** oder **COOLING** eingestellt) und/oder **roomOccupied** (auf **true** oder **false** eingestellt) umschalten.
+2. Öffnen Sie die Testseite der AWS IoT Core-Konsole und veröffentlichen Sie eine neue Shadow-Nachricht zum Thema `$aws/things/<<CLIENT_ID>>/shadow/update`. Sie sollten sehen, dass die LED-Leisten des Core for AWS IoT Kit von blau über rot zu aus wechseln, um die Werte **COOLING**, **HEATING** und **STANDBY** darzustellen. Unten finden Sie ein Beispiel für eine Shadow-Nachricht. Testen Sie die Auswirkungen, indem Sie bei jeder Veröffentlichung der Nachricht die Werte **hvacStatus** (auf **HEATING** oder **COOLING** eingestellt) und/oder **roomOccupied** (auf **true** oder **false** eingestellt) umschalten.
 ```
 { "state": { "desired": { "hvacStatus": "HEATING", "roomOccupancy": true } } }
 ```
@@ -183,4 +183,4 @@ Bevor Sie mit dem nächsten Kapitel fortfahren, können Sie überprüfen, ob Ihr
 Wenn diese Dinge wie erwartet funktionieren, fahren wir mit [**Datentransformationen und Routing**](/de/smart-thermostat/data-transforms-and-routing.html) fort.
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

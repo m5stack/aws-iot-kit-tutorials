@@ -5,7 +5,7 @@ pre = "<b>f. </b>"
 +++
 
 ## まとめ
-スマートサーモスタットとしてデバイスを AWS に接続し、簡単なアプリケーションをデプロイして、部屋の在室状況を検知し、HVAC の状態を制御する、AWS IoT EduKit の実践的チュートリアルが完了しました。
+スマートサーモスタットとしてデバイスを AWS に接続し、簡単なアプリケーションをデプロイして、部屋の在室状況を検知し、HVAC の状態を制御する、AWS IoT Kit の実践的チュートリアルが完了しました。
 
 次のステップとしては、このシリーズの次の実践的チュートリアル、 「スマートスペース」の受講を検討してください。
 
@@ -34,4 +34,4 @@ pio run --environment core2foraws --target erase
 次のチュートリアルは、[スマートスペース](/jp/smart-spaces.html)です
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

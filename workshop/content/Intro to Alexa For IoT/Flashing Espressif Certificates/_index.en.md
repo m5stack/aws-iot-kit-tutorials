@@ -20,7 +20,7 @@ All the code for this tutorial is located in the `Alexa_for_IoT-Intro` folder fr
 
 To clone the repo again from the [PlatformIO CLI terminal window](../blinky-hello-world/prerequisites.html#open-the-platformio-cli-terminal-window):
 ```
-git clone https://github.com/m5stack/Core2-for-AWS-IoT-EduKit.git
+git clone https://github.com/m5stack/Core2-for-AWS-IoT-Kit.git
 ```
 
 ## Open the project environment
@@ -28,7 +28,7 @@ For this tutorial, you will use the Alexa_For_IoT-Intro project. In your new VS 
 1. Click the **PlatformIO logo** in the VS Code activity bar (left most menu)
 1. Select **Open** from the left PlatformIO menu
 1. Click **Open Project**
-1. Navigate to the `Core2-for-AWS-IoT-EduKit/Alexa_For_IoT-Intro` folder, and click **open**.
+1. Navigate to the `Core2-for-AWS-IoT-Kit/Alexa_For_IoT-Intro` folder, and click **open**.
 {{< img "pio-home.en.png" "PlatformIO home screen" "1 - Open PIO menu, 2 - Open PIO home, 3 - Open the project folder" >}}
 
 Next, you must open a new PlatformIO CLI terminal window in VS Code:
@@ -43,7 +43,7 @@ You must create the AWS IoT credentials to communicate with AWS IoT core. For th
 After you receive the e-mail containing the credentials zip file, save the file and unzip the contents. After extraction, you will have a folder called **espcredentials**. With the device plugged in, you can upload these certificates to your device by entering the following commands in your PlatformIO CLI terminal window:
 
 {{%expand "Ubuntu or macOS" %}}
-1. Copy the contents of espcredentials to the `Core2-for-AWS-IoT-EduKit/Alexa_for_IoT-Intro/esp_alexa_credentials` folder *except* the **mfg_config.csv** file. Replace **<<PATH_TO>>** with the location of the **espcredentials** folder. The trailing **/** of the source tells [rsync](https://download.samba.org/pub/rsync/rsync.1) to copy the contents to the `./esp_alexa_credentials/` destination. Excluding it will copy the folder and cause file not found errors in the next step:
+1. Copy the contents of espcredentials to the `Core2-for-AWS-IoT-Kit/Alexa_for_IoT-Intro/esp_alexa_credentials` folder *except* the **mfg_config.csv** file. Replace **<<PATH_TO>>** with the location of the **espcredentials** folder. The trailing **/** of the source tells [rsync](https://download.samba.org/pub/rsync/rsync.1) to copy the contents to the `./esp_alexa_credentials/` destination. Excluding it will copy the folder and cause file not found errors in the next step:
    ```bash
    rsync -avr --exclude='mfg_config.csv' <<PATH_TO>>/espcredentials/ ./esp_alexa_credentials/
    ```
@@ -54,7 +54,7 @@ After you receive the e-mail containing the credentials zip file, save the file 
    ```
 {{% /expand%}}
 {{%expand "Windows" %}}
-1. Copy the contents of espcredentials to the `Core2-for-AWS-IoT-EduKit/Alexa_for_IoT-Intro/esp_alexa_credentials` folder *except* the **mfg_config.csv** file. Replace **<<PATH_TO>>** with the location of the **espcredentials** folder. The trailing **/** of the source tells [rsync](https://download.samba.org/pub/rsync/rsync.1) to copy the contents to the `./esp_alexa_credentials/` destination. Excluding it will copy the folder and cause file not found errors in the next step:
+1. Copy the contents of espcredentials to the `Core2-for-AWS-IoT-Kit/Alexa_for_IoT-Intro/esp_alexa_credentials` folder *except* the **mfg_config.csv** file. Replace **<<PATH_TO>>** with the location of the **espcredentials** folder. The trailing **/** of the source tells [rsync](https://download.samba.org/pub/rsync/rsync.1) to copy the contents to the `./esp_alexa_credentials/` destination. Excluding it will copy the folder and cause file not found errors in the next step:
    ```PowerShell
    robocopy "<<PATH_TO>>\espcredentials\" ".\esp_alexa_credentials\" /xf mfg_config.csv
    ```
@@ -68,4 +68,4 @@ After you receive the e-mail containing the credentials zip file, save the file 
 With everthing set up and ready, let's move on to [**Building and Testing AFI**](/en/intro-to-alexa-for-iot/building-and-testing-afi.html).
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

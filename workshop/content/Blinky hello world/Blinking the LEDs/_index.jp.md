@@ -14,7 +14,7 @@ pre = "<b>d. </b>"
 **Subscription topic (トピックのサブスクリプション)** フィールドに`#`を入力して、**Subscribe to topic(トピックへのサブスクライブ)** のボタンを選択すると、すべての MQTT トピック名にサブスクライブします。マルチレベルのワイルドカード[トピックフィルター](https://docs.aws.amazon.com/iot/latest/developerguide/topics.html#topicfilters)は「#」で、トピックフィルターの最後の文字として 1 度のみ使用できます。**Subscribe to topic (トピックにサブスクライブ)** ボタンを押すと、デバイスから送信されるメッセージが表示されます。デバイスは `<<CLIENT_ID>>/` から始まるトピックにメッセージをパブリッシュすることのみ許可されています。これにより、他のサブスクライバー (クラウドアプリケーションなど) が特定のクライアントデバイスのトピックをフィルターできるようになり、範囲をより限定的なトピックに狭めることもできるようになります (特定デバイスでの温度読み上げなど)。
 
 ## LEDの点滅
-M5Stack Core2 for AWS IoT EduKit リファレンスハードウェアの側面にある LED バーの点滅を開始または停止するため、コンソールの AWS IoT MQTT クライアントから、Core2 for AWS IoT EduKit がサブスクライブしているトピックをパブリッシュします。このサブスクライブしているトピックは `<<CLIENT_ID>>/#` となります。デバイス側でサブスクライブが正しくされると、シリアルモニターにそのメッセージが出力されます。また、クライアントID(CLIENT_ID)も出力されます。
+M5Stack Core2 for AWS IoT Kit リファレンスハードウェアの側面にある LED バーの点滅を開始または停止するため、コンソールの AWS IoT MQTT クライアントから、Core2 for AWS IoT Kit がサブスクライブしているトピックをパブリッシュします。このサブスクライブしているトピックは `<<CLIENT_ID>>/#` となります。デバイス側でサブスクライブが正しくされると、シリアルモニターにそのメッセージが出力されます。また、クライアントID(CLIENT_ID)も出力されます。
 
 **Publish (発行)** ボックスで以下のコマンドを入力します。ただし、**<<CLIENT_ID>>** テキストは、先ほどコピーした実際のクライアント ID に置き換えます。それから **Publish to topic (トピックに公開する)** ボタンを押します。
 ```
@@ -37,4 +37,4 @@ pio run --environment core2foraws --target erase
 以上でこの章の手順は終了です。最後にこの章の[まとめ](conclusion.html)にに進みます。
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

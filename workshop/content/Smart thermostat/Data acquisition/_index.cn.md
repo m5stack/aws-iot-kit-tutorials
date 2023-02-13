@@ -10,7 +10,7 @@ pre = "<b>b. </b>"
 * 开机并启动本地智能恒温器应用程序。
 * 将检测到的当前温度、环境声音强度、HVAC 系统状态（制热/制冷/待机）和空间占用指标报告到日志中。
 
-Core2 for AWS IoT EduKit 参考硬件套件自带几个可以随时使用的传感器。针对这一解决方案，您需要使用本地应用程序代码从温度传感器和麦克风读取数据。应用程序将跟踪传感器读数和状态标志，以便在显示器中提供汇总数据。
+Core2 for AWS IoT Kit 参考硬件套件自带几个可以随时使用的传感器。针对这一解决方案，您需要使用本地应用程序代码从温度传感器和麦克风读取数据。应用程序将跟踪传感器读数和状态标志，以便在显示器中提供汇总数据。
 
 ## 如何对恒温器应用程序进行编程
 您的智能恒温器将使用已经创建并且包含在捆绑软件组件中的代码来对集成传感器进行采样。在第一步中，您只需要获取相关值并将其打印到日志记录中，后续我们会将传感器值发布到 AWS IoT Core。
@@ -86,7 +86,7 @@ void app_main()
 1. 在 VS Code 活动栏（最左侧菜单），点击 **PlatformIO 徽标**。
 2. 从左侧的 **PlatformIO 菜单**中，选择 **Open**。
 3. 点击 **Open Project**。
-4. 浏览到 `Core2-for-AWS-IoT-EduKit/Smart-Thermostat` 文件夹，然后点击 **open**。
+4. 浏览到 `Core2-for-AWS-IoT-Kit/Smart-Thermostat` 文件夹，然后点击 **open**。
 {{< img "pio-home.en.png" "PlatformIO home screen" "1 - 打开 PIO 菜单，2 - 打开 PIO home，3 - 打开项目文件夹" >}}
 
 接下来，您需要在 VS Code 中打开一个新的 PlatformIO CLI 终端窗口：
@@ -138,4 +138,4 @@ I (16143) MAIN: On Device: sound 8
 如果符合预期，我们就进入到 [**数据同步**](/cn/smart-thermostat/data-sync.html) 部分。
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

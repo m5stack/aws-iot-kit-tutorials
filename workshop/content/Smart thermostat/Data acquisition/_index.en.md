@@ -84,7 +84,7 @@ Complete the following steps to upload the application to your device:
 1. Open **VS Code**, if necessary.
 1. Expand the **File menu** and choose **New Window** in the VS Code to open a new window. This provides a clean file Explorer and working environment.
 1. Select the **PlatformIO logo** in the VS Code activity bar, choose **Open**, and then choose **Open Project**.
-1. Navigate to the `Core2-for-AWS-IoT-EduKit/Smart-Thermostat` folder and choose **Open Smart-Thermostat**.
+1. Navigate to the `Core2-for-AWS-IoT-Kit/Smart-Thermostat` folder and choose **Open Smart-Thermostat**.
 {{< img "pio-home.en.png" "PlatformIO home screen" "1 - Open the PIO menu, 2 - Open the PIO home, 3 - Open the project folder" >}}
 1. Select the **PlatformIO logo** in the VS Code activity bar, expand **Miscellaneous**, and then choose **New Terminal**.
 
@@ -134,4 +134,4 @@ I (16143) MAIN: On Device: sound 8
 Now that the serial output is configured, continue to [**Data sync**](/en/smart-thermostat/data-sync.html).
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

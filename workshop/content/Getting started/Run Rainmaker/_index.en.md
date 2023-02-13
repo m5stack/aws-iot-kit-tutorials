@@ -13,7 +13,7 @@ Complete the following steps to open the project in PIO:
 1. Open the VS Code application. 
 1. Choose the **PlatformIO logo** in the VS Code activity bar.
 1. Choose **Open** from the PIO Home menu. 
-1. Choose **Open Project**, navigate to the `Core2-for-AWS-IoT-EduKit/Getting-Started` folder and choose **Open Getting-Started**.
+1. Choose **Open Project**, navigate to the `Core2-for-AWS-IoT-Kit/Getting-Started` folder and choose **Open Getting-Started**.
 {{< img "pio-home.en.png" "PlatformIO home screen" "1 - Expand the PIO menu, 2 - Select Open, 3 - Choose the Getting-Started project folder" >}}
 
 ## Build and upload the ESP RainMaker Agent firmware
@@ -84,4 +84,4 @@ Congratulations! During this lesson, you built a connected home application thro
 On to [**Cloud Connected Blinky**](/en/blinky-hello-world.html)!
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

@@ -5,7 +5,7 @@ pre = "<b>c. </b>"
 +++
 
 ## 章节简介
-学完本章节后，您便可以使用您的 Core2 for AWS IoT EduKit 参考硬件工具包执行以下操作：
+学完本章节后，您便可以使用您的 Core2 for AWS IoT Kit 参考硬件工具包执行以下操作：
 
 * 每隔 10 秒将采样的环境声音强度和室温发布到 AWS IoT Core
 * 在 AWS IoT Core 订阅您设备的影子以接收新命令
@@ -176,7 +176,7 @@ pio run --environment core2foraws --target monitor
 在进入下一章节之前，您可以验证您的设备是否已按预期配置完毕，方法是：
 
 1. 使用 AWS IoT Core 控制台测试页面订阅主题 `$aws/things/<<CLIENT_ID>>/shadow/update/accepted`，您应该会看到新消息以您设置的 `vTaskDelay()` 及时到达。（使用已在屏幕上输出的您设备的客户端 Id/序列号来替换 <<CLIENT_ID>>。）
-2. 使用 AWS IoT Core 控制台测试页面在主题 `$aws/things/<<CLIENT_ID>>/shadow/update` 上发布一条新影子消息。您应该会看到 Core for AWS IoT EduKit 的 LED 灯条从蓝色、红色、关闭（分别表示 **COOLING**、**HEATING** 和 **STANDBY** 发布值）改变。参见下面的示例影子消息。通过在每次发布消息时切换 **hvacStatus**（设置为 **HEATING** 或 **COOLING**）和/或 **roomOccupied** 值（设置为 **true** 或 **false**）来测试效果。
+2. 使用 AWS IoT Core 控制台测试页面在主题 `$aws/things/<<CLIENT_ID>>/shadow/update` 上发布一条新影子消息。您应该会看到 Core for AWS IoT Kit 的 LED 灯条从蓝色、红色、关闭（分别表示 **COOLING**、**HEATING** 和 **STANDBY** 发布值）改变。参见下面的示例影子消息。通过在每次发布消息时切换 **hvacStatus**（设置为 **HEATING** 或 **COOLING**）和/或 **roomOccupied** 值（设置为 **true** 或 **false**）来测试效果。
 
 ```
 { "state": { "desired": { "hvacStatus": "HEATING", "roomOccupancy": true } } }
@@ -185,4 +185,4 @@ pio run --environment core2foraws --target monitor
 如果没有问题，我们就进入 [**数据转换和路由**](/cn/smart-thermostat/data-transforms-and-routing.html) 部分。
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

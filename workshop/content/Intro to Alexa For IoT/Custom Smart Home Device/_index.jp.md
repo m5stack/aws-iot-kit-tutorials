@@ -8,7 +8,7 @@ pre = "<b>d. </b>"
 キットにどのようなスマートホームの制御機能が含まれているかを理解したところで、次は、それらの機能を修正して、単にシリアルモニターに印刷するというよりもむしろ、デバイス自体の属性を制御します。このワークショップでは、**PowerController** を介して側面の緑色の LED ライトを点灯させる簡単な実装を作成し、Range Controller を使って設定速度でデバイスが点滅するように設定します。
 
 ## スマートホームデバイスの属性のカスタマイズ
-IDE を使用して、cloneを作成した **Core2-for-AWS-IoT-EduKit** フォルダを開き、`Alexa_for_IoT-Intro/components/app_smart_home/app_smart_home.c` を開いて、スマートホームデバイスの属性が定義されていることを確認します。109 行の **app_smart_home_init()** 関数までスクロールダウンすると、以下のコードブロックが表示されます:
+IDE を使用して、cloneを作成した **Core2-for-AWS-IoT-Kit** フォルダを開き、`Alexa_for_IoT-Intro/components/app_smart_home/app_smart_home.c` を開いて、スマートホームデバイスの属性が定義されていることを確認します。109 行の **app_smart_home_init()** 関数までスクロールダウンすると、以下のコードブロックが表示されます:
 ```c
 /* Add device */
 smart_home_device_t *device = smart_home_device_create("Light", alexa_smart_home_get_device_type_str(LIGHT), NULL);
@@ -127,4 +127,4 @@ Alexa アプリ経由 - Alexa アプリの **Green Light** デバイス (ESP Ale
 おめでとうございます。このチュートリアルが完了しました。 [まとめ](/jp/intro-to-alexa-for-iot/conclusion.html)をご覧ください。
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

@@ -7,7 +7,7 @@ pre = "<b>e. </b>"
 ## 本章の概要
 この章の終わりには、ソリューションで次のようなことができるようになります。
 
-* マネージドクラウドアプリケーションの Core2 for AWS IoT EduKit デバイスからのテレメトリメッセージを処理する。
+* マネージドクラウドアプリケーションの Core2 for AWS IoT Kit デバイスからのテレメトリメッセージを処理する。
 * HVAC システムの状態 (HEATING、COOLING、または STANDBY) を特定する。
 * 処理された入力に基づき、Device Shadow に希望する状態のメッセージを送信する。
 * シャドウ状態をデバイスと同期する。
@@ -222,4 +222,4 @@ IoT Events での探知器モデル作成方法の詳細は、このワークシ
 ソリューションが予測どおりに動作している場合、[まとめ](/jp/smart-thermostat/conclusion.html)に移動します。
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

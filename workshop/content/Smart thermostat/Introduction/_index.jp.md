@@ -5,7 +5,7 @@ pre = "<b>a. </b>"
 +++
 
 ## タスク
-このシナリオでは、エネルギー削減のため会議室のサーモスタット機能を自動化しようとしている、フルスタックデベロッパーの役割を担います。サーモスタットハードウェアに Core2 for AWS IoT EduKit のリファレンスハードウェアを使用し、HVAC コントローラーとしてのリファレンスハードウェアキットと AWS クラウドの能力を組み合わせて、エンドツーエンドのソリューションをデプロイします。架空の HVAC システムが存在すると仮定し、Core2 for AWS IoT EduKit をサーモスタットとして使用して、エッジのソリューションを終了します。
+このシナリオでは、エネルギー削減のため会議室のサーモスタット機能を自動化しようとしている、フルスタックデベロッパーの役割を担います。サーモスタットハードウェアに Core2 for AWS IoT Kit のリファレンスハードウェアを使用し、HVAC コントローラーとしてのリファレンスハードウェアキットと AWS クラウドの能力を組み合わせて、エンドツーエンドのソリューションをデプロイします。架空の HVAC システムが存在すると仮定し、Core2 for AWS IoT Kit をサーモスタットとして使用して、エッジのソリューションを終了します。
 
 サーモスタットには、従業員が部屋にいる場合、できる限りの快適性を実現するため、より幅の狭い範囲の温度を使用する必要があります。部屋に人がいないときには、幅広い温度が許容され、エネルギーを削減できます。ソリューションは、従業員が部屋に存在することを認識し、HVAC とエンゲージして快適な温度を実現します。
 
@@ -24,11 +24,11 @@ AWS のサーバーレスソリューションは、雑音レベルをbooleanに
 構築の準備はできていますか? 次の前提条件を満たしているか確認しましょう。
 
 1. **Lチカ** チュートリアルを完了しましたか?
-2. Core2 for AWS IoT EduKit はすでに AWS IoT Core でプロビジョニングされていますか? つまり、登録された AWS IoT のモノが存在しており、パブリッシュとサブスクライブの操作を可能にする証明書とポリシーがモノにアタッチされていますか? これらのステップは **Lチカ** チュートリアルでも説明されます
+2. Core2 for AWS IoT Kit はすでに AWS IoT Core でプロビジョニングされていますか? つまり、登録された AWS IoT のモノが存在しており、パブリッシュとサブスクライブの操作を可能にする証明書とポリシーがモノにアタッチされていますか? これらのステップは **Lチカ** チュートリアルでも説明されます
 3. デバイスから届くメッセージを、AWS IoT Core コンソールにあるようなテスト MQTT クライアントを使って確認できることを確かめましたか? デバイスがパブリッシュしているトピックにサブスクライブし、テストクライアントでこれらのメッセージの受信を表示できるようになっているはずです
 4. デバイスが接続されているポートは確認できていますか？ 確認方法については、**Lチカ** チュートリアルで説明されます
 
 前提条件を満たしている場合、次の章「[データ取得](/jp/smart-thermostat/data-acquisition.html)」に移動しましょう。
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

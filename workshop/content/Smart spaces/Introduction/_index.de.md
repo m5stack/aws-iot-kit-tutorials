@@ -35,4 +35,4 @@ Sind Sie bereit? Lassen Sie uns überprüfen, ob Sie die folgenden Voraussetzung
 Wenn ja, fahren wir mit dem nächsten Kapitel fort, [**Datenweiterleitung und -speicherung**](/de/smart-spaces/data-routing-and-storage.html).
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

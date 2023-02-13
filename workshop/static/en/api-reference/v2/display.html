@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Core2 for AWS IoT EduKit BSP: Display</title>
+<title>Core2 for AWS IoT Kit BSP: Display</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="AWS_logo_RGB.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Core2 for AWS IoT EduKit BSP<span id="projectnumber">&#160;2.0.0</span>
+   <div id="projectname">Core2 for AWS IoT Kit BSP<span id="projectnumber">&#160;2.0.0</span>
    </div>
   </td>
  </tr>
@@ -76,7 +76,7 @@ $(function() {
   <div class="headertitle"><div class="title">Display </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p >The display screen is driven by an ILI9342C controller over the SPI bus. The Core2 for AWS IoT EduKit BSP uses the <a href="http://lvgl.io/">LVGL library</a> to interact with the ILI9342C display controller via the <a href="https://github.com/lvgl/lvgl_esp32_drivers">LVGL ESP32 Driver</a>. For the documentation and API reference of the LVGL library used in this BSP, visit <a href="https://docs.lvgl.io/7.11/index.html">https://docs.lvgl.io/7.11/index.html</a>.</p>
+<div class="textblock"><p >The display screen is driven by an ILI9342C controller over the SPI bus. The Core2 for AWS IoT Kit BSP uses the <a href="http://lvgl.io/">LVGL library</a> to interact with the ILI9342C display controller via the <a href="https://github.com/lvgl/lvgl_esp32_drivers">LVGL ESP32 Driver</a>. For the documentation and API reference of the LVGL library used in this BSP, visit <a href="https://docs.lvgl.io/7.11/index.html">https://docs.lvgl.io/7.11/index.html</a>.</p>
 <p ><a class="anchor" id="display_lib"></a></p>
 <p >Before using the LVGL APIs to write to the screen, initialize the display with <a class="el" href="core2foraws_display_init_function.html">core2foraws_display_init</a> or the <a class="el" href="core2foraws_8h.html#a8589c127068e67d5474515365b558051">core2foraws_init</a> wrapper function first. When performing any operations to the screen after initialization, the <a class="el" href="core2foraws__common_8h.html#aedf39c68825017851b1900d77c67a002">core2foraws_common_spi_semaphore</a> FreeRTOS <a href="https://www.freertos.org/a00122.html">semaphore</a> must be taken before calling the LVGL APIs, and released after in order to prevent a race condition when writing to the screen.</p>
 <p ><a href="./block_diagram-ili9342c.png"><img src="./block_diagram-ili9342c.png" alt="Circuit Block Diagram for ILI9342C Display Controller" class="center" class="inline"/></a></p>
@@ -102,7 +102,7 @@ Example</h1>
 <div class="line">    </div>
 <div class="line">    xSemaphoreGive( <a class="code hl_variable" href="core2foraws__common_8h.html#aedf39c68825017851b1900d77c67a002">core2foraws_common_spi_semaphore</a> );</div>
 <div class="line">}</div>
-<div class="ttc" id="acore2foraws_8h_html"><div class="ttname"><a href="core2foraws_8h.html">core2foraws.h</a></div><div class="ttdoc">Core2 for AWS IoT EduKit general hardware driver APIs.</div></div>
+<div class="ttc" id="acore2foraws_8h_html"><div class="ttname"><a href="core2foraws_8h.html">core2foraws.h</a></div><div class="ttdoc">Core2 for AWS IoT Kit general hardware driver APIs.</div></div>
 <div class="ttc" id="acore2foraws_8h_html_a8589c127068e67d5474515365b558051"><div class="ttname"><a href="core2foraws_8h.html#a8589c127068e67d5474515365b558051">core2foraws_init</a></div><div class="ttdeci">esp_err_t core2foraws_init(void)</div><div class="ttdoc">Initializes enabled hardware features.</div></div>
 <div class="ttc" id="acore2foraws__common_8h_html_aedf39c68825017851b1900d77c67a002"><div class="ttname"><a href="core2foraws__common_8h.html#aedf39c68825017851b1900d77c67a002">core2foraws_common_spi_semaphore</a></div><div class="ttdeci">SemaphoreHandle_t core2foraws_common_spi_semaphore</div><div class="ttdoc">FreeRTOS semaphore to be used when performing any operation on the display or SD card reader.</div></div>
 </div><!-- fragment --><h1><a class="anchor" id="display_variables"></a>
