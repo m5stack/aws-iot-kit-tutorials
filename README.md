@@ -1,7 +1,5 @@
-> <b>Effective March 6, 2023, AWS will end support for AWS IoT EduKit, a program that guided builders on how to develop simple IoT applications with AWS Partner reference hardware and tutorials. AWS IoT EduKit’s reference hardware kit is made and sold by our manufacturing partner, M5Stack Technology Co., Ltd. (https://m5stack.com/), who will continue to offer and support the kit and related software for interested customers.</b>
-
-# AWS IoT EduKit Tutorials
-This repository contains the tutorial content for the [AWS IoT EduKit](https://aws.amazon.com/iot/edukit) program. To view the AWS IoT EduKit content live, visit [https://edukit.workshop.aws](https://edukit.workshop.aws). The tutorials contained in this repository are MIT licensed and free to be modified as needed. To contribute to the code or community, read our [contribution guidelines](https://github.com/aws-samples/aws-iot-edukit-tutorials/blob/main/CONTRIBUTING.md). For support or to connect and have open discourse with the community, view our [GitHub discussions](https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions).
+# AWS IoT Kit Tutorials
+This repository contains the tutorial content for the [AWS IoT Kit](https://aws.amazon.com/iot/edukit) program. To view the AWS IoT Kit content live, visit [https://edukit.workshop.aws](https://edukit.workshop.aws). The tutorials contained in this repository are MIT licensed and free to be modified as needed. To contribute to the code or community, read our [contribution guidelines](https://github.com/aws-samples/aws-iot-edukit-tutorials/blob/main/CONTRIBUTING.md). For support or to connect and have open discourse with the community, view our [GitHub discussions](https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions).
 
 ## Repo structure
 ```bash
@@ -38,7 +36,7 @@ This project the following folders:
 All command line directions in this documentation assume you are in the `workshop` directory. Navigate there now, if you aren't there already.
 
 ```bash
-cd aws-iot-edukit-tutorials/workshop
+cd aws-iot-kit-tutorials/workshop
 ```
 
 ## Launching the website locally
