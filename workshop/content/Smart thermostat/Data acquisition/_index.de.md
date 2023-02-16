@@ -9,7 +9,7 @@ Am Ende dieses Kapitels führt Ihr Gerät Folgendes aus:
 * Schalten Sie die lokale Smart-Thermostat-Anwendung ein und starten Sie sie.
 * Melden Sie den Protokollen die aktuelle gemessene Temperatur, den gemessenen Umgebungsgeräuschpegel, den HLK-Status für Heizung/Kühlung/Standby und eine Anzeige der Raumbelegung.
 
-Das Core2 für AWS IoT EduKit-Referenz-Hardwarekit verfügt über mehrere einsatzbereite Sensoren. Bei dieser Lösung nehmen Sie Messwerte vom Temperatursensor und dem Mikrofon mithilfe des lokalen Anwendungscodes ab. Die Anwendung verfolgt Sensorwerte und Statusmarkierungen, die zum Rendern einer Zusammenfassung auf dem Display verwendet werden.
+Das Core2 für AWS IoT Kit-Referenz-Hardwarekit verfügt über mehrere einsatzbereite Sensoren. Bei dieser Lösung nehmen Sie Messwerte vom Temperatursensor und dem Mikrofon mithilfe des lokalen Anwendungscodes ab. Die Anwendung verfolgt Sensorwerte und Statusmarkierungen, die zum Rendern einer Zusammenfassung auf dem Display verwendet werden.
 
 ## Wie programmiere ich die Thermostatanwendung
 Ihr intelligenter Thermostat tastet die integrierten Sensoren mit Code ab, der bereits erstellt und in den mitgelieferten Softwarekomponenten enthalten ist. In diesem ersten Schritt erfassen Sie einfach die Werte und drucken sie in den Logger aus, bevor wir Sensorwerte bis zu AWS IoT Core veröffentlichen.
@@ -136,4 +136,4 @@ I (16143) MAIN: On Device: sound 8
 Wenn diese wie erwartet funktionieren, fahren wir mit [**Datensynchronisierung**](/de/smart-thermostat/data-sync.html) fort.
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

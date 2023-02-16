@@ -73,4 +73,4 @@ Erasing the firmware results in a blank device screen and an audible ticking sou
 Congratulations! You successfully communicated to your {{< awsService type="edukit-short-en" >}} and blinked its LEDs.  Now you are ready to complete the final lesson of this tutorial, [**Conclusion**](conclusion.html).
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

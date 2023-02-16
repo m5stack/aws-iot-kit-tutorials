@@ -13,10 +13,10 @@ Die Integration von Alexa Voice Service (AVS) ist eine neue Funktion von AWS IoT
 [Erfahren Sie mehr >>] (https://docs.aws.amazon.com/iot/latest/developerguide/avs-integration-aws-iot.html)
 
 ## Lassen Sie uns starten!
-Alle Inhalte in diesem Tutorial gehen davon aus, dass Sie derzeit das [M5Stack Core2 ESP32 IoT Development Kit für AWS](https://www.amazon.com/dp/B08VGRZYJR/) in Ihrem Besitz haben, ein kompatibles iOS- oder Android-Smartphone zur Verwendung der Amazon Alexa App und der ESP Alexa Applikation. Zudem sind sie mit grundlegenden technischen Konzepte und Tools — wie die Eingabeaufforderung/das Terminal, vertraut. Erwerben Sie ein Referenz-Hardwarekit von einer der [globalen Vertriebsoptionen](https://aws.amazon.com/iot/edukit/#Get_started_with_AWS_IoT_EduKit), falls Sie noch keines haben.
+Alle Inhalte in diesem Tutorial gehen davon aus, dass Sie derzeit das [M5Stack Core2 ESP32 IoT Development Kit für AWS](https://www.amazon.com/dp/B08VGRZYJR/) in Ihrem Besitz haben, ein kompatibles iOS- oder Android-Smartphone zur Verwendung der Amazon Alexa App und der ESP Alexa Applikation. Zudem sind sie mit grundlegenden technischen Konzepte und Tools — wie die Eingabeaufforderung/das Terminal, vertraut. Erwerben Sie ein Referenz-Hardwarekit von einer der [globalen Vertriebsoptionen](https://aws.amazon.com/iot/edukit/#Get_started_with_AWS_IoT_Kit), falls Sie noch keines haben.
 
 Wenn Sie bereit sind, beginnen wir mit [**Flashen der Espressif Zertificate**](/de/intro-to-alexa-for-iot/flashing-espressif-certificates.html).
 
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

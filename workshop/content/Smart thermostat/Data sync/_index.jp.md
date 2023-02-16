@@ -5,7 +5,7 @@ pre = "<b>c. </b>"
 +++
 
 ## 本章の概要
-この章の終わりには、Core2 for AWS IoT EduKit リファレンスハードウェアキットで、次のことができるようになります
+この章の終わりには、Core2 for AWS IoT Kit リファレンスハードウェアキットで、次のことができるようになります
 
 * サンプリングされた環境雑音レベルと部屋の温度を 10 秒ごとに AWS IoT Core にパブリッシュ
 * AWS IoT Core の Device Shadow にサブスクライブし、新しいコマンドを取得する
@@ -176,7 +176,7 @@ pio run --environment core2foraws --target monitor
 次の章に進む前に、デバイスが想定どおりに設定されているかを検証できます
 
 1. AWS IoT Core コンソールのテストページを使用して、トピック `$aws/things/<<CLIENT_ID>>/shadow/update/accepted` にサブスクライブすると、すぐに **vTaskDelay()** を使用した新しいメッセージが表示されます(<<CLIENT_ID>> をデバイスのクライアント ID または画面にプリントされたシリアル番号に置き換えてください)。
-2. AWS IoT Core コンソールのテストページを使用し、`$aws/things/<<CLIENT_ID>>/shadow/update` のトピックに新しいシャドウメッセージをパブリッシュします。Core for AWS IoT EduKit の LED バーが青 (COOLING) 、赤 (HEATING)、オフ (STANDBY) のパブリッシュされた値に変わります。以下はサンプルシャドウメッセージです。**hvacStatus** の値を **HEATING** または **COOLING** に設定したり、 **roomOccupied** 値を (**true** または **false** ) に切り替え、結果がどうなるかをテストします。
+2. AWS IoT Core コンソールのテストページを使用し、`$aws/things/<<CLIENT_ID>>/shadow/update` のトピックに新しいシャドウメッセージをパブリッシュします。Core for AWS IoT Kit の LED バーが青 (COOLING) 、赤 (HEATING)、オフ (STANDBY) のパブリッシュされた値に変わります。以下はサンプルシャドウメッセージです。**hvacStatus** の値を **HEATING** または **COOLING** に設定したり、 **roomOccupied** 値を (**true** または **false** ) に切り替え、結果がどうなるかをテストします。
 
 ```
 { "state": { "desired": { "hvacStatus": "HEATING", "roomOccupancy": true } } }
@@ -185,4 +185,4 @@ pio run --environment core2foraws --target monitor
 想定どおりに機能している場合は、「[データの変換とルーティング](/jp/smart-thermostat/data-transforms-and-routing.html)」に進みましょう。
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

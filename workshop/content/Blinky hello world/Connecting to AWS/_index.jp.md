@@ -14,9 +14,9 @@ pre = "<b>c. </b>"
 pio run --environment core2foraws --target menuconfig
 ```
 
-{{< img "idf_menuconfig-wifi.en.webp" "Configuring Core2 for AWS IoT EduKit with p.py menuconfig" >}}
+{{< img "idf_menuconfig-wifi.en.webp" "Configuring Core2 for AWS IoT Kit with p.py menuconfig" >}}
 
-ここでは設定を行います。キーボードの方向キーを使って、その後、メニューから [AWS IoT EduKit Configuration] を選択します。自分の Wi-Fi 認証情報で、[WiFi SSID] と [WiFi Password] を設定します。終了したら、キーボードの **s** ボタンを押して保存し、**enter** を押してファイルの場所を確認して、**enter** を押して **q** を押して終了します。
+ここでは設定を行います。キーボードの方向キーを使って、その後、メニューから [AWS IoT Kit Configuration] を選択します。自分の Wi-Fi 認証情報で、[WiFi SSID] と [WiFi Password] を設定します。終了したら、キーボードの **s** ボタンを押して保存し、**enter** を押してファイルの場所を確認して、**enter** を押して **q** を押して終了します。
 
 
 {{% notice warning %}}
@@ -40,7 +40,7 @@ SSID が 2.4GHz ネットワーク用であることを確認してください�
 シリアル出力のアップロードまたは監視中に、誤ったポートまたはタイムアウトに関するエラーが表示された場合は、`platformio.ini` ファイルを開き、そのファイルの指示に従ってアップロードポートを手動で設定してください。
 {{% /notice %}}
 
-シリアルの出力を見ていると以下のようなログが見つかります。(出力されない場合は、Core2 for AWS IoT EduKitを再起動してください)
+シリアルの出力を見ていると以下のようなログが見つかります。(出力されない場合は、Core2 for AWS IoT Kitを再起動してください)
 ここに表示されているClient Idは、後で**<<CLIENT_ID>>**として利用するので、コピーしておいてください。
 
 ```
@@ -56,4 +56,4 @@ SSID が 2.4GHz ネットワーク用であることを確認してください�
 これで、このチュートリアルの最終章である [**Lチカ**](/jp/blinky-hello-world/blinking-the-leds.html)に進む準備が整いました。
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

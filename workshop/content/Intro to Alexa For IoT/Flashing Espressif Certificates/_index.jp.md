@@ -17,7 +17,7 @@ ESP Alexa Phone Appをダウンロードする: [iOS](https://apps.apple.com/in/
 ## コードへのアクセス
 このチュートリアルのすべてのコードは、[Lチカ](/jp/blinky-hello-world.html) チュートリアルでcloneを作成したリポジトリの `Alexa_for_IoT-Intro` フォルダにあります。再度Cloneする場合は、[PlatformIO CLI ターミナルウィンドゥ](/jp/blinky-hello-world/prerequisites.html#platformio)で以下のコマンドを実行します。
 ```
-git clone https://github.com/m5stack/Core2-for-AWS-IoT-EduKit.git
+git clone https://github.com/m5stack/Core2-for-AWS-IoT-Kit.git
 ```
 
 ## プロジェクトを開く
@@ -35,14 +35,14 @@ git clone https://github.com/m5stack/Core2-for-AWS-IoT-EduKit.git
 {{< img "pio-new_terminal-smart_thermostat.en.png" "PlatformIO CLI端末をVS Codeで表示" "1 - PIOメニューを開く。2 - 新しい PIO ターミナルを開く。3 - 'PlatformIO CLI'ターミナルセッションにいることを確認する。">}}
 
 ## AWS IoT 証明書を設定する
-AWS IoT コアと通信するために、AWS IoT 証明書を作成する必要があります。Espressif は、このワークショップとデバイスのために 、AWS IoT EduKit リファレンスハードウェア用のM5Stack Core2 で使用できる AWS IoT 証明書を提供しています。
+AWS IoT コアと通信するために、AWS IoT 証明書を作成する必要があります。Espressif は、このワークショップとデバイスのために 、AWS IoT Kit リファレンスハードウェア用のM5Stack Core2 で使用できる AWS IoT 証明書を提供しています。
 
 [こちら](https://espressif.github.io/esp-va-sdk/) の手順に従って、証明書を取得します。
 
 証明書のzip ファイルを含む電子メールを受信したら、ファイルを保存し、内容を解凍する必要があります。解凍すると、 **espcredentials** というフォルダが作成されます。デバイスを接続したら、PlatformIO CLI ターミナルウィンドウで次のコマンドを入力して、これらの証明書をデバイスにアップロードできます。
 
 {{%expand "Ubuntu または macOS" %}}
-1. espcredentialsの内容を `Core2-for-AWS-IoT-EduKit/Alexa_for_IoT-Intro/esp_alexa_credentials` にコピーします(ただし、**mfg_config.csv** を除く)。  [rsync](https://download.samba.org/pub/rsync/rsync.1)のコマンドを利用してコピーをしますが、 **<<PATH_TO>>** を **espcredentials** フォルダのパスに修正して実行してください。
+1. espcredentialsの内容を `Core2-for-AWS-IoT-Kit/Alexa_for_IoT-Intro/esp_alexa_credentials` にコピーします(ただし、**mfg_config.csv** を除く)。  [rsync](https://download.samba.org/pub/rsync/rsync.1)のコマンドを利用してコピーをしますが、 **<<PATH_TO>>** を **espcredentials** フォルダのパスに修正して実行してください。
    ```bash
    rsync -avr --exclude='mfg_config.csv' <<PATH_TO>>/espcredentials/ ./esp_alexa_credentials/
    ```
@@ -53,7 +53,7 @@ AWS IoT コアと通信するために、AWS IoT 証明書を作成する必要�
    ```
 {{% /expand%}}
 {{%expand "Windows" %}}
-1. espcredentialsの内容を `Core2-for-AWS-IoT-EduKit/Alexa_for_IoT-Intro/esp_alexa_credentials` にコピーします(ただし、**mfg_config.csv** を除く)。  [rsync](https://download.samba.org/pub/rsync/rsync.1)のコマンドを利用してコピーをしますが、 **<<PATH_TO>>** を **espcredentials** フォルダのパスに修正して実行してください。
+1. espcredentialsの内容を `Core2-for-AWS-IoT-Kit/Alexa_for_IoT-Intro/esp_alexa_credentials` にコピーします(ただし、**mfg_config.csv** を除く)。  [rsync](https://download.samba.org/pub/rsync/rsync.1)のコマンドを利用してコピーをしますが、 **<<PATH_TO>>** を **espcredentials** フォルダのパスに修正して実行してください。
    ```PowerShell
    robocopy "<<PATH_TO>>\espcredentials\" ".\esp_alexa_credentials\" /xf mfg_config.csv
    ```
@@ -67,4 +67,4 @@ AWS IoT コアと通信するために、AWS IoT 証明書を作成する必要�
 設定がすべて完了し準備が整ったら、[AFI のビルドとテスト](/jp/intro-to-alexa-for-iot/building-and-testing-afi.html)に進みましょう。
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

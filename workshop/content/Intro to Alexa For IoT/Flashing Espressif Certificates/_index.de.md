@@ -20,7 +20,7 @@ Der gesamte Code für dieses Tutorial befindet sich im Ordner `Alexa_for_IoT-Int
 
 Um das Repo erneut aus dem [PlatformIO CLI Terminal-Fenster](../blinky-hello-world/prerequisites.html#Öffnen-Sie-das-PlatformIO-CLI-Terminal-Fenster) zu klonen 
 ```
-git clone https://github.com/m5stack/Core2-for-AWS-IoT-EduKit.git
+git clone https://github.com/m5stack/Core2-for-AWS-IoT-Kit.git
 ```
 
 ## Öffnen der Projektumgebung
@@ -39,7 +39,7 @@ Als Nächstes müssen Sie ein neues PlatformIO CLI-Terminalfenster in VS-Code ö
 {{< img "pio-new_terminal-smart_thermostat.en.png" "PlatformIO CLI terminal in VS Code" "1 - PIO Menü öffnen, 2 - Neues PIO Terminal öffnen, 3 - Stellen Sie sicher, dass es eine 'PlatformIO CLI' terminal session ist, 4 - Kopieren Sie die Kommandos in das Terminal, 5 - Wenn Sie Probleme haben, automatisch den Port zu identifizieren, öffnen Sie die Platform.ini Datei und befolgen Sie die Anweisungen un den seriellen Port manuell hinzuzufügen.">}}
 
 ## Richten Sie AWS IoT-Zertifikate ein
-Sie müssen die AWS IoT-Anmeldeinformationen erstellen, um mit AWS IoT-Core zu kommunizieren. Für diesen Workshop und dieses Gerät hat Espressif AWS IoT-Anmeldeinformationen bereitgestellt, die in ihrem AWS-Konto mit der M5Stack Core2 des AWS IoT EduKit verwendet werden können. Um die Anmeldeinformationen für Ihr Gerät zu erhalten, um eine Verbindung zu seinem Dienst herzustellen, füllen Sie das Formular [hier](https://espressif.github.io/esp-va-sdk/) aus.
+Sie müssen die AWS IoT-Anmeldeinformationen erstellen, um mit AWS IoT-Core zu kommunizieren. Für diesen Workshop und dieses Gerät hat Espressif AWS IoT-Anmeldeinformationen bereitgestellt, die in ihrem AWS-Konto mit der M5Stack Core2 des AWS IoT Kit verwendet werden können. Um die Anmeldeinformationen für Ihr Gerät zu erhalten, um eine Verbindung zu seinem Dienst herzustellen, füllen Sie das Formular [hier](https://espressif.github.io/esp-va-sdk/) aus.
 
 Nachdem Sie die E-Mail mit der ZIP-Datei für Anmeldeinformationen erhalten haben, speichern Sie die Datei und entpacken Sie den Inhalt. Nach dem Extrahieren haben Sie einen Ordner mit dem Namen **espcredentials**. Wenn das Gerät angeschlossen ist, können Sie diese Zertifikate auf Ihr Gerät hochladen, indem Sie die folgenden Befehle in Ihrem PlatformIO CLI-Terminalfenster eingeben:
 
@@ -68,4 +68,4 @@ Nachdem Sie die E-Mail mit der ZIP-Datei für Anmeldeinformationen erhalten habe
 Wenn alles eingerichtet und fertig ist, gehen wir zu [**Erstellen und Testen des AFI**](/de/intro-to-alexa-for-iot/building-and-testing-afi.html) über.
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Core2 for AWS IoT EduKit BSP: Button (virtual)</title>
+<title>Core2 for AWS IoT Kit BSP: Button (virtual)</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="AWS_logo_RGB.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Core2 for AWS IoT EduKit BSP<span id="projectnumber">&#160;2.0.0</span>
+   <div id="projectname">Core2 for AWS IoT Kit BSP<span id="projectnumber">&#160;2.0.0</span>
    </div>
   </td>
  </tr>
@@ -76,7 +76,7 @@ $(function() {
   <div class="headertitle"><div class="title">Button (virtual) </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p >The button library provides convenience functions to interact with the virtual buttons defined by specified areas on the front of the device. There are three virtual buttons aligned to the circles etched on the front of the M5Stack Core2 for AWS IoT EduKit reference hardware.</p>
+<div class="textblock"><p >The button library provides convenience functions to interact with the virtual buttons defined by specified areas on the front of the device. There are three virtual buttons aligned to the circles etched on the front of the M5Stack Core2 for AWS IoT Kit reference hardware.</p>
 <p ><a class="anchor" id="button_lib"></a></p>
 <p >This library uses the FreeRTOS queue <code>ft6x36_touch_queue_handle</code> that is available in the <a href="https://github.com/lvgl/lvgl_esp32_drivers/blob/master/lvgl_touch/ft6x36.h#L160">lvgl_esp32_drivers</a> . and thus requires that the display be enabled and initialized in order to work. The library receives touch coordinates from the touch driver to provide user polled functions that provides the state of a button. The library needs to be initialized with <a class="el" href="core2foraws__button_8h.html#afaab009664ab27dd0d69ccac31804049">core2foraws_button_init</a> or the <a class="el" href="core2foraws_8h.html#a8589c127068e67d5474515365b558051">core2foraws_init</a> wrapper function.</p>
 <p >To enable the BSP hardware features, open the KConfig menu using the command <code>pio run --environment core2foraws --target menuconfig</code> from within the root of the project directory in your <a href="/en/blinky-hello-world/prerequisites.html#open-the-platformio-cli-terminal-window">PlatformIO terminal window</a> and go to the menu <code>Component Config --&gt; Core2 for AWS hardware features</code> to set the features you want to enable.</p>

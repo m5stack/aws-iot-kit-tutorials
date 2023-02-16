@@ -105,7 +105,7 @@ SELECT current.state as current.state, current.version as current.version, times
 1. Select *Send a message to an IoT Events Input* and choose **Configure action** at the bottom of the window. 
 1. Choose **Select** to the right of the *Input name* and select the **thermostat** input resource you created in AWS IoT Events. 
 1. Choose **Create Role** in the *Role (requires IoT Events access)* section. 
-1. When the *Create a new role* window appears, enter **EduKit-sendToEvents** in the Name field and choose **Create role**.
+1. When the *Create a new role* window appears, enter **Kit-sendToEvents** in the Name field and choose **Create role**.
 1. Choose **Add action** to finish configuring your action and return to the rule creation form.
 1. Choose **Create Rule** to create this rule in AWS IoT rules engine.
 
@@ -119,4 +119,4 @@ As your thermostat device detects different noise levels, you should see the dev
 Now that you receive the updated occupancy status, continue to [**Cloud application**](/en/smart-thermostat/cloud-application.html).
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

@@ -11,7 +11,7 @@ Complete the following steps to open the Blinky Hello World project:
 1. Open **VS Code**, if necessary.
 1. Expand the **File menu** and select **New Window** in the VS Code to open a new window. This provides a clean file Explorer and working environment.
 1. Choose the **PlatformIO logo** in the VS Code activity bar, choose **Open**, and then choose **Open Project**.
-1. Navigate to the `Core2-for-AWS-IoT-EduKit/Blinky-Hello-World` folder and choose **Open "Blinky-Hello-World**.
+1. Navigate to the `Core2-for-AWS-IoT-Kit/Blinky-Hello-World` folder and choose **Open "Blinky-Hello-World**.
 {{< img "pio-home.en.png" "PlatformIO home screen" "1 - Open the PIO menu, 2 - Open the PIO home, 3 - Open the project folder" >}}
 
 ## Retrieve the device certificate and register your AWS IoT thing
@@ -37,4 +37,4 @@ In this lesson, you used the secure element and registration script to create an
 Now that your device has been provisioned in AWS IoT Core, continue to [**Connecting to AWS IoT Core**](connecting-to-aws.html).
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

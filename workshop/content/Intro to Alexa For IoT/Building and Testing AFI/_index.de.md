@@ -93,4 +93,4 @@ Dies ist nicht nur nützlich, weil wir mit Alexa einen Sprachassistenten auf uns
 Weiter zum Erstellen eines [**Benutzerdefiniertes Smart Home-Gerät**](/de/intro-to-alexa-for-iot/custom-smart-home-device.html).
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

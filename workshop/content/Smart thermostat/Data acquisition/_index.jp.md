@@ -10,7 +10,7 @@ pre = "<b>b. </b>"
 * 電源をオンにしてローカルのスマートサーモスタットアプリケーションを起動する
 * 検出された現在の温度、測定された雑音レベル、HVAC の状態 (heating、cooling、standby)、在室状況のインジケーターを使用してログにパブリッシュする
 
-Core for AWS IoT EduKit リファレンスハードウェアキットには、すぐに使用できるセンサーが複数付属しています。このソリューション用に、ローカルのアプリケーションコードを使用した温度センサーとマイクから読み込みを実行します。アプリケーションはセンサーの読み込みと、ディスプレイに概要を表示するため使用される状態のフラグを追跡し続けます。
+Core for AWS IoT Kit リファレンスハードウェアキットには、すぐに使用できるセンサーが複数付属しています。このソリューション用に、ローカルのアプリケーションコードを使用した温度センサーとマイクから読み込みを実行します。アプリケーションはセンサーの読み込みと、ディスプレイに概要を表示するため使用される状態のフラグを追跡し続けます。
 
 ## サーモスタットアプリケーションのプログラミング方法
 スマートサーモスタットは統合されたセンサーをサンプリングします。これには、すでに作成され、バンドル化されたソフトウェアコンポーネントに含まれている実装が使用されます。最初のステップでは、AWS IoT Core までのセンサー値のパブリッシュに移る前に、値をキャプチャしてロガーにプリントアウトするだけです。
@@ -86,7 +86,7 @@ VS Codeと PlatformIO 拡張機能を使用してデバイスにビルドおよ�
 1. VS Codeアクティビティバー(左側のメニュー)の **PlatformIOロゴ** をクリック
 2. 左の PlatformIO メニューから **Open** を選択
 3. **Open Project** をクリック
-4. `Core2-for-AWS-IoT-EduKit/Smart-Thermostat` フォルダに移動し、**open**をクリックします。
+4. `Core2-for-AWS-IoT-Kit/Smart-Thermostat` フォルダに移動し、**open**をクリックします。
 {{< img "pio-home.en.png" "PlatformIO home screen" "1 - PIOメニューを開く。 2 - PIO Homeを開く。 3 - プロジェクトフォルダを開く" >}}
 
 次に、新しくPlatformIO CLIターミナルウィンドゥを開きます。
@@ -127,7 +127,7 @@ VS Codeと PlatformIO 拡張機能を使用してデバイスにビルドおよ�
 ## 検証ステップ
 次の章に進む前に、デバイスが想定どおりに設定されているかを検証できます。
 
-1. Core2 for AWS IoT EduKit の電源がオンになっていてアプリケーションが実行されている場合、ターミナルウィンドウのログに次のような表示が確認できます
+1. Core2 for AWS IoT Kit の電源がオンになっていてアプリケーションが実行されている場合、ターミナルウィンドウのログに次のような表示が確認できます
 
 ```
 I (16128) MAIN: On Device: roomOccupancy false
@@ -139,4 +139,4 @@ I (16143) MAIN: On Device: sound 8
 想定どおりに機能している場合は、「[データ同期](/jp/smart-thermostat/data-sync.html)」に進みましょう
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

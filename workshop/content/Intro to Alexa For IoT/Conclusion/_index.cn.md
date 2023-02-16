@@ -6,7 +6,7 @@ pre = "<b>e. </b>"
 +++
 
 ## 总结
-您已经学完了有关运行 Alexa for AWS IoT (AFI) 的 AWS IoT EduKit 动手实践教程，了解了如何使用自定义移植的 Espressif Voice Assistant SDK 和 Alexa，通过 Alexa Smart Home 命令控制板载外围设备。有关适用于 AVS 的智能家居的更多信息，请参阅 [相关文档](https://developer.amazon.com/en-US/docs/alexa/alexa-voice-service/smart-home-for-avs.html) 或 [博客文章](https://developer.amazon.com/en-US/blogs/alexa/device-makers/2020/04/create-a-sample-alexa-built-in-disco-ball-with-smart-home-for-av)。
+您已经学完了有关运行 Alexa for AWS IoT (AFI) 的 AWS IoT Kit 动手实践教程，了解了如何使用自定义移植的 Espressif Voice Assistant SDK 和 Alexa，通过 Alexa Smart Home 命令控制板载外围设备。有关适用于 AVS 的智能家居的更多信息，请参阅 [相关文档](https://developer.amazon.com/en-US/docs/alexa/alexa-voice-service/smart-home-for-avs.html) 或 [博客文章](https://developer.amazon.com/en-US/blogs/alexa/device-makers/2020/04/create-a-sample-alexa-built-in-disco-ball-with-smart-home-for-av)。
 
 如果您想进一步了解其他可用接口，或者想要自行利用 M5Stack Core2 for AWS IoT 参考硬件的其他功能来实现一些用途，请查看 [ModeController](https://developer.amazon.com/en-US/docs/alexa/alexa-voice-service/alexa-modecontroller.html) 和 [ToggleController](https://developer.amazon.com/en-US/docs/alexa/alexa-voice-service/alexa-togglecontroller.html)。运用您的创造力和在本教程其他章节中学到的知识来探索语音的新功能！
 
@@ -19,4 +19,4 @@ pio run --environment core2foraws --target erase
 ```
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

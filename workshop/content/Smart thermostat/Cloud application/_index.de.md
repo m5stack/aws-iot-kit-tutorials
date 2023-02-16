@@ -7,7 +7,7 @@ pre = "<b>e. </b>"
 ## Einführung in das Kapitel
 Am Ende dieses Kapitels kann Ihre Lösung Folgendes:
 
-* Telemetrie-Nachrichten vom Core2 des AWS IoT EduKit-Gerät in einer Cloud-Anwendung verarbeiten.
+* Telemetrie-Nachrichten vom Core2 des AWS IoT Kit-Gerät in einer Cloud-Anwendung verarbeiten.
 * Sie bestimmen, in welchem Zustand sich das HLK-System befinden soll: HEATING, COOLING oder STANDBY.
 * Senden Sie eine gewünschte Statusmeldung basierend auf verarbeiteten Eingaben an Ihren Geräteschatten (Shadow).
 * Synchronisieren Sie den gewünschten Shadow-Status mit Ihrem Gerät.
@@ -220,4 +220,4 @@ Hinweis: Der Temperatursensor befindet sich im Gehäuse des Kits und der Code en
 Wenn die Lösung wie erwartet funktioniert, können Sie mit der [**Zusammenfassung**](/de/smart-thermostat/conclusion.html) fortfahren.
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

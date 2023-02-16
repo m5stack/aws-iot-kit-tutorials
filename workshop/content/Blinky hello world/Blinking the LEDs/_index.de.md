@@ -13,7 +13,7 @@ Mit dem AWS IoT-MQTT-Client in der AWS IoT Core-Konsole können Sie MQTT-Nachric
 Geben Sie im Feld **Themenfilter** `#` ein, um alle MQTT-Topics zu abonnieren. Der mehrstufige [Themenfilter Platzhalter](https://docs.aws.amazon.com/iot/latest/developerguide/topics.html#topicfilters) ist **#** und kann nur einmal als letztes Zeichen eines Themenfilters verwendet werden. Sobald Sie die Schaltfläche **Abonnieren** drücken, werden Nachrichten von Ihrem Gerät empfangen. Das Gerät darf nur Nachrichten zum Topic veröffentlichen, die mit `<<CLIENT_ID>>/` beginnen. Dies gibt einem anderen Abonnenten (z. B. Cloud-Anwendung) die Möglichkeit, Themen für bestimmte Clientgeräte zu filtern, und kann auch auf spezifischere Themen eingegrenzt werden (z. B. die Temperatur-Nachrichten eines spezifischen Geräts).
 
 ## Blinken der LED
-Um das Blinken der LED-Leisten an den Seiten des M5Stack Core2 für AWS IoT EduKit zu starten/zu stoppen, werden wir vom AWS IoT MQTT-Client der Konsole eine Nachricht an ein Topic senden, das der Core2 abonniert hat. Das Topic für das Gerät hat das Muster `<<CLIENT_ID>>/#`. Sie können das Topic auf dem Gerät anzeigen, nachdem es das Topic erfolgreich abonniert hat. Darüber hinaus können Sie die Client-ID anzeigen, die auf dem seriellen Monitor des Host-Rechners ausgegeben wurde.
+Um das Blinken der LED-Leisten an den Seiten des M5Stack Core2 für AWS IoT Kit zu starten/zu stoppen, werden wir vom AWS IoT MQTT-Client der Konsole eine Nachricht an ein Topic senden, das der Core2 abonniert hat. Das Topic für das Gerät hat das Muster `<<CLIENT_ID>>/#`. Sie können das Topic auf dem Gerät anzeigen, nachdem es das Topic erfolgreich abonniert hat. Darüber hinaus können Sie die Client-ID anzeigen, die auf dem seriellen Monitor des Host-Rechners ausgegeben wurde.
 
 Geben Sie im Feld Veröffentlichen den folgenden Befehl ein, nachdem Sie den **<<CLIENT_ID>>** Text durch Ihre tatsächliche Client-ID ersetzt haben, die Sie gerade kopiert haben. Dann drücken Sie die Taste **Veröffentlichen**:
 ```
@@ -37,4 +37,4 @@ pio run --environment core2foraws --target erase
 Weiter zum letzten Kapitel, dem [**Abschluss**](conclusion.html).
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

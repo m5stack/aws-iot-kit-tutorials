@@ -3,7 +3,7 @@ CanonifyURLs=true
 languageCode = "en-US"
 defaultContentLanguage = "en"
 
-title = "AWS IoT EduKit"
+title = "AWS IoT Kit"
 theme = "learn"
 metaDataFormat = "yaml"
 defaultContentLanguageInSubdir= true
@@ -14,7 +14,7 @@ pygmentsCodeFences = true
 pygmentsStyle = "monokai"
 
 [params]
-  description = "AWS IoT EduKit"
+  description = "AWS IoT Kit"
   author = "Rashed Talukder, Ryan Burke, Z Sun, Eric Fahsl"
   disableBreadcrumb = false
   disableNextPrev = false
@@ -44,19 +44,19 @@ home = [ "HTML", "RSS", "JSON"]
 
 [Languages]
 [Languages.en]
-title = "AWS IoT EduKit"
+title = "AWS IoT Kit"
 weight = 1
 languageName = "English"
 [Languages.de]
-title = "AWS IoT EduKit"
+title = "AWS IoT Kit"
 weigth = 4
 languageName = "Deutsch"
 [Languages.jp]
-title = "AWS IoT EduKit"
+title = "AWS IoT Kit"
 weight = 3
 languageName = "日本語"
 [Languages.cn]
-title = "AWS IoT EduKit"
+title = "AWS IoT Kit"
 weight = 2
 languageName = "简体中文"
 
@@ -67,7 +67,7 @@ weight = 0
 
 [[Languages.en.menu.shortcuts]]
 name = "<i class='fab fa-github'></i> Code Repository (<i class='fas fa-sync-alt fa-xs'></i> April 18, 2022)"
-url = "https://github.com/m5stack/Core2-for-AWS-IoT-EduKit"
+url = "https://github.com/m5stack/Core2-for-AWS-IoT-Kit"
 weight = 1
 
 [[Languages.en.menu.shortcuts]]
@@ -82,7 +82,7 @@ weight = 3
 
 [[Languages.en.menu.shortcuts]]
 name = "<i class='fas fa-bug'></i> Report Bugs"
-url = "https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues"
+url = "https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues"
 weight = 4
 
 [[Languages.de.menu.shortcuts]]
@@ -92,7 +92,7 @@ weight = 0
 
 [[Languages.de.menu.shortcuts]]
 name = "<i class='fab fa-github'></i> Code Repository (<i class='fas fa-sync-alt fa-xs'></i> April 18, 2022)"
-url = "https://github.com/m5stack/Core2-for-AWS-IoT-EduKit"
+url = "https://github.com/m5stack/Core2-for-AWS-IoT-Kit"
 weight = 1
 
 [[Languages.de.menu.shortcuts]]
@@ -107,7 +107,7 @@ weight = 3
 
 [[Languages.de.menu.shortcuts]]
 name = "<i class='fas fa-bug'></i> Fehler melden"
-url = "https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues"
+url = "https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues"
 weight = 4
 
 [blackfriday]
@@ -123,7 +123,7 @@ weight = 4
 
 [[menu.shortcuts]]
 name = "<i class='fab fa-github'></i> Code Repository (<i class='fas fa-sync-alt fa-xs'></i> April 18, 2022)"
-url = "https://github.com/m5stack/Core2-for-AWS-IoT-EduKit"
+url = "https://github.com/m5stack/Core2-for-AWS-IoT-Kit"
 weight = 1
 
 [[menu.shortcuts]]
@@ -139,5 +139,5 @@ weight = 3
 
 [[menu.shortcuts]]
 name = "<i class='fas fa-bug'></i> Report Bugs"
-url = "https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues"
+url = "https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues"
 weight = 4

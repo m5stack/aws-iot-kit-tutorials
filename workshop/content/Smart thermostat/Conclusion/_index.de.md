@@ -4,7 +4,7 @@ weight = 60
 pre = "<b>f. </b>"
 +++
 ## Fazit
-Sie haben dieses praktische AWS IoT EduKit Tutorial abgeschlossen, das Ihr Gerät als intelligenter Thermostat mit AWS verbindet und eine einfache Anwendung bereitstellt, um Raumbelegungen zu erkennen und Änderungen des HLK-Zustands voranzutreiben.
+Sie haben dieses praktische AWS IoT Kit Tutorial abgeschlossen, das Ihr Gerät als intelligenter Thermostat mit AWS verbindet und eine einfache Anwendung bereitstellt, um Raumbelegungen zu erkennen und Änderungen des HLK-Zustands voranzutreiben.
 
 Als nächsten Schritt sollten Sie zusammen mit dem nächsten praktischen Tutorial in dieser Serie, **Intelligenter Raum**, folgen:
 
@@ -32,4 +32,4 @@ pio run --environment core2foraws --target erase
 Das nächste Tutorial, das abgeschlossen werden muss, ist [**Intelligenter Raum**](/de/smart-spaces.html).
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

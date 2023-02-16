@@ -13,7 +13,7 @@ Um den Code aus dem Remote-Code-Repository auf GitHub herunterzuladen, müssen S
 
 
 ## Silicon Labs USB-zu-UART-Bridge-Treiberinstallation
-Der Core2 des AWS IoT EduKit kommuniziert mit dem Host-Computer über die Silicon Labs CP210x USB-zu-UART-Bridge. Der integrierte CP2104 ist eine USB-zu-UART-Bridge zur Erleichterung der Host-Kommunikation mit dem ESP32-D0WD-Mikrocontroller. Der Mikrocontroller kommuniziert bidirektional über [UART0](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/uart.html), was über einen virtuellen Kommunikationsport des Host-Computers vom CP210x übersetzt wird, der über USB-C eingerichtet ist. Um die virtuelle serielle Schnittstelle mounten und über sie kommunizieren zu können, müssen Sie den entsprechenden Treiber herunterladen und installieren.
+Der Core2 des AWS IoT Kit kommuniziert mit dem Host-Computer über die Silicon Labs CP210x USB-zu-UART-Bridge. Der integrierte CP2104 ist eine USB-zu-UART-Bridge zur Erleichterung der Host-Kommunikation mit dem ESP32-D0WD-Mikrocontroller. Der Mikrocontroller kommuniziert bidirektional über [UART0](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/uart.html), was über einen virtuellen Kommunikationsport des Host-Computers vom CP210x übersetzt wird, der über USB-C eingerichtet ist. Um die virtuelle serielle Schnittstelle mounten und über sie kommunizieren zu können, müssen Sie den entsprechenden Treiber herunterladen und installieren.
 
 1) Stellen Sie sicher, dass das Gerät nicht mit dem Hostcomputer verbunden ist.
 2) Laden Sie den macOS Windows Labs CP210x-Treiber [hier](https://www.silabs.com/documents/public/software/CP210x_VCP_Windows.zip) herunter.
@@ -36,7 +36,7 @@ Sie müssen VS Code neu starten, nachdem die Installation der PlatformIO-Erweite
 Alle Projekte und Dateien befinden sich in einem [GitHub-Repository](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/about-repositories), wo Sie auch den Revisionsverlauf jeder Datei im Repository (repo) anzeigen können. Um den Code zu klonen, den Sie für die Tutorials benötigen, verwenden Sie die PIO-Schnittstelle:
 1) Klicken Sie in der VS-Code-Aktivitätsleiste (Menü ganz links) auf das PlatformIO-Logo.
 2) Wählen Sie im Menü **Schnellzugriff** von PlatformIO unter **Miscellaneous** die Option **Clone Git Project** aus.
-3) Fügen Sie `https://github.com/m5stack/Core2-for-AWS-IoT-EduKit.git` in das Textfeld ein und wählen Sie dann den Speicherort aus, an dem Sie das Projekt speichern möchten.
+3) Fügen Sie `https://github.com/m5stack/Core2-for-AWS-IoT-Kit.git` in das Textfeld ein und wählen Sie dann den Speicherort aus, an dem Sie das Projekt speichern möchten.
    {{< img "pio-clone_git_project.en.png" "PlatformIO Clone Git Project" "1 - Menü öffnen, 2 - Git Projekt klonen, 3 - Repository URL einfügen" >}}
 
 ## Apps herunterladen und installieren
@@ -47,7 +47,7 @@ Die ESP RainMaker Phone Apps sind für iOS- und Android-Telefone verfügbar und 
 Wenn Sie kein kompatibles Android- oder iOS-Gerät besitzen, können Sie die [RainMaker CLI](https://rainmaker.espressif.com/docs/cli-setup.html) verwenden und die bereitgestellten Anweisungen ersetzen.
 
 ## Identifizieren des Kommunikationsanschlusses des Geräts
-Wenn Sie dies noch nicht getan haben, ist es an der Zeit, den Core2 für das AWS IoT EduKit auszupacken und mithilfe des mitgelieferten USB-A-auf-USB-C-Kabels an den USB 2.0-Anschluss Ihres Host-Computers anzuschließen. Zusätzlich ist im Paket ein Inbusschlüssel enthalten, mit dem Sie zusätzliche Module (separat erhältlich) installieren können. Das Gerät sollte sich nach dem Anschließen automatisch einschalten. Wenn dies nicht der Fall ist, drücken Sie den Netzschalter.
+Wenn Sie dies noch nicht getan haben, ist es an der Zeit, den Core2 für das AWS IoT Kit auszupacken und mithilfe des mitgelieferten USB-A-auf-USB-C-Kabels an den USB 2.0-Anschluss Ihres Host-Computers anzuschließen. Zusätzlich ist im Paket ein Inbusschlüssel enthalten, mit dem Sie zusätzliche Module (separat erhältlich) installieren können. Das Gerät sollte sich nach dem Anschließen automatisch einschalten. Wenn dies nicht der Fall ist, drücken Sie den Netzschalter.
 ![Wie kann M5Stack Core2 für AWS ein- oder ausgeschaltet werden](macos/core2foraws_power_on_off.jpg? width=500px&classes=shadow)
 
 Wenn das Gerät bereit ist und die Software, die Sie für dieses Tutorial benötigen, installiert ist, identifizieren wir den Port, an dem Ihr Gerät virtuell gemountet ist. So können Sie zukünftig Lese- und Schreibvorgänge für diesen bestimmten Port ausführen.
@@ -55,11 +55,11 @@ Wenn das Gerät bereit ist und die Software, die Sie für dieses Tutorial benöt
 2) Klicken Sie auf das Symbol neben dem Anschluss mit der Beschreibung „CP2104 USB to UART Bridge Controller“ (normalerweise `/dev/ttyUSB0`), um den Geräteanschluss zu kopieren.
 
 {{% notice note %}}
-Wenn Ihr Core2 für AWS IoT EduKit nicht in der Geräteliste angezeigt wird, überprüfen Sie, ob er eingeschaltet ist und Sie das mitgelieferte USB-A-auf-USB-C-Kabel verwenden. Bei einigen USB-C-Hubs treten Kompatibilitätsprobleme beim Aufbau einer seriellen Schnittstelle auf.
+Wenn Ihr Core2 für AWS IoT Kit nicht in der Geräteliste angezeigt wird, überprüfen Sie, ob er eingeschaltet ist und Sie das mitgelieferte USB-A-auf-USB-C-Kabel verwenden. Bei einigen USB-C-Hubs treten Kompatibilitätsprobleme beim Aufbau einer seriellen Schnittstelle auf.
 {{% /notice %}}
 
 ## Weiter
-Wenn alles eingerichtet ist und Ihr Host-Computer bereit und in der Lage ist, mit der Core2 für AWS IoT EduKit zu kommunizieren, fahren wir mit dem nächsten Kapitel fort — [**Ausführen des ESP RainMaker Agent**](/de/getting-started/run-rainmaker.html).
+Wenn alles eingerichtet ist und Ihr Host-Computer bereit und in der Lage ist, mit der Core2 für AWS IoT Kit zu kommunizieren, fahren wir mit dem nächsten Kapitel fort — [**Ausführen des ESP RainMaker Agent**](/de/getting-started/run-rainmaker.html).
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

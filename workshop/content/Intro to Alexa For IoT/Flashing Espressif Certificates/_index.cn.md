@@ -20,7 +20,7 @@ pre = "<b>b. </b>"
 
 如果需要从 [PlatformIO CLI 终端窗口](../blinky-hello-world/prerequisites.html#open-the-platformio-cli-terminal-window) 再次克隆该存储库，请运行以下命令：
 ```
-git clone https://github.com/m5stack/Core2-for-AWS-IoT-EduKit.git
+git clone https://github.com/m5stack/Core2-for-AWS-IoT-Kit.git
 ```
 
 ## 打开项目环境
@@ -28,7 +28,7 @@ git clone https://github.com/m5stack/Core2-for-AWS-IoT-EduKit.git
 1. 在 VS Code 活动栏（最左侧菜单）中，点击 **PlatformIO 徽标**。
 2. 从左边的 PlatformIO 菜单中，选择 **Open**。
 3. 点击 **Open Project**。
-4. 导航到 `Core2-for-AWS-IoT-EduKit/Alexa_For_IoT-Intro` 文件夹，点击 **open**。
+4. 导航到 `Core2-for-AWS-IoT-Kit/Alexa_For_IoT-Intro` 文件夹，点击 **open**。
 {{< img "pio-home.en.png" "PlatformIO home screen" "1 - 打开 PIO 菜单，2 - 打开 PIO home，3 - 打开项目文件夹" >}}
 
 接下来，您必须要在 VS Code 中打开一个新的 PlatformIO CLI 终端窗口：
@@ -38,12 +38,12 @@ git clone https://github.com/m5stack/Core2-for-AWS-IoT-EduKit.git
 {{< img "pio-new_terminal-smart_thermostat.en.png" "PlatformIO CLI terminal in VS Code" "1 - 打开 PIO 菜单，2 - 打开新的 PIO 终端，3 - 验证您正处于 'PlatformIO CLI' 终端会话中，4 - 将命令复制到终端内，5 - 如果在自动探测端口时遇到错误，打开 Platform.ini 文件并参考操作步骤手工添加端口。">}}
 
 ## 设置 AWS IoT 证书 
-您需要创建 AWS IoT 证书，以便与 AWS IoT Core 进行通信。对于此研讨会和设备，Espressif 提供了可与 M5Stack Core2 for AWS IoT EduKit 参考硬件一起使用的 AWS IoT 证书。按照此处的步骤操作，获取您的证书以连接他们的服务。填写表格 [这里](https://espressif.github.io/esp-va-sdk/)。
+您需要创建 AWS IoT 证书，以便与 AWS IoT Core 进行通信。对于此研讨会和设备，Espressif 提供了可与 M5Stack Core2 for AWS IoT Kit 参考硬件一起使用的 AWS IoT 证书。按照此处的步骤操作，获取您的证书以连接他们的服务。填写表格 [这里](https://espressif.github.io/esp-va-sdk/)。
 
 您稍后会收到一封电子邮件，该邮件包含一个凭证压缩文件，保存该文件并解压。您将获得一个名为 **espcredentials** 的文件夹。插入设备，把这些证书上传到设备中，命令如下，您需要您的 PlatformIO CLI 终端窗口中进行操作。
 
 {{%expand "Ubuntu or macOS" %}}
-1. *除了* **mfg_config.csv** 文件以外，把 espcredentials 的内容复制到 `Core2-for-AWS-IoT-EduKit/Alexa_for_IoT-Intro/esp_alexa_credentials` 文件夹下。使用 **espcredentials** 文件夹的路径替换 **<<PATH_TO>>**。源代码的末尾 **/** 告诉 [rsync](https://download.samba.org/pub/rsync/rsync.1) 将内容复制到目标 `./esp_alexa_credentials/` 目录下，如果没有结尾的 **/** ，该操作将复制文件夹而非文件，并在下一步中导致文件未发现的错误：
+1. *除了* **mfg_config.csv** 文件以外，把 espcredentials 的内容复制到 `Core2-for-AWS-IoT-Kit/Alexa_for_IoT-Intro/esp_alexa_credentials` 文件夹下。使用 **espcredentials** 文件夹的路径替换 **<<PATH_TO>>**。源代码的末尾 **/** 告诉 [rsync](https://download.samba.org/pub/rsync/rsync.1) 将内容复制到目标 `./esp_alexa_credentials/` 目录下，如果没有结尾的 **/** ，该操作将复制文件夹而非文件，并在下一步中导致文件未发现的错误：
    ```bash
    rsync -avr --exclude='mfg_config.csv' <<PATH_TO>>/espcredentials/ ./esp_alexa_credentials/
    ```
@@ -54,7 +54,7 @@ git clone https://github.com/m5stack/Core2-for-AWS-IoT-EduKit.git
    ```
 {{% /expand%}}
 {{%expand "Windows" %}}
-1. *除了* **mfg_config.csv** 文件以外，把 espcredentials 的内容复制到 `Core2-for-AWS-IoT-EduKit/Alexa_for_IoT-Intro/esp_alexa_credentials` 文件夹下。使用 **espcredentials** 文件夹的路径替换 **<<PATH_TO>>**。源代码的末尾 **/** 告诉 [rsync](https://download.samba.org/pub/rsync/rsync.1) 将内容复制到目标 `./esp_alexa_credentials/` 目录下，如果没有结尾的 **/** ，该操作将复制文件夹而非文件，并在下一步中导致文件未发现的错误：
+1. *除了* **mfg_config.csv** 文件以外，把 espcredentials 的内容复制到 `Core2-for-AWS-IoT-Kit/Alexa_for_IoT-Intro/esp_alexa_credentials` 文件夹下。使用 **espcredentials** 文件夹的路径替换 **<<PATH_TO>>**。源代码的末尾 **/** 告诉 [rsync](https://download.samba.org/pub/rsync/rsync.1) 将内容复制到目标 `./esp_alexa_credentials/` 目录下，如果没有结尾的 **/** ，该操作将复制文件夹而非文件，并在下一步中导致文件未发现的错误：
    ```PowerShell
    robocopy "<<PATH_TO>>\espcredentials\" ".\esp_alexa_credentials\" /xf mfg_config.csv
    ```
@@ -68,4 +68,4 @@ git clone https://github.com/m5stack/Core2-for-AWS-IoT-EduKit.git
 一切准备就绪后，我们来继续学习 [**构建和测试 AFI**](/cn/intro-to-alexa-for-iot/building-and-testing-afi.html)。
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

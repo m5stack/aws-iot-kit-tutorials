@@ -23,5 +23,5 @@
  @licend  The above is the entire license notice for the JavaScript code in this file
 */
 var menudata={children:[
-{text:"AWS IoT EduKit",url:"/en/"},
+{text:"AWS IoT Kit",url:"/en/"},
 {text:"API Reference Home",url:"index.html"}]}

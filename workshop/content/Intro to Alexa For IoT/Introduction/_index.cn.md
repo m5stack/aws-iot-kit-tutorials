@@ -13,9 +13,9 @@ Alexa Voice Service (AVS) 集成是 AWS IoT Core 的一项新功能，可让设�
 [了解更多 >>](https://docs.aws.amazon.com/iot/latest/developerguide/avs-integration-aws-iot.html)
 
 ## 让我们继续！
-本教程的所有内容假定了您目前已有 [M5Stack Core2 ESP32 IoT Development Kit for AWS](https://www.amazon.com/dp/B08VGRZYJR/) 以及可兼容 Amazon Alexa app 和 ESP Alexa 手机应用程序的 iOS 或 Android 智能手机，并且了解基本的技术概念和工具（例如命令提示符/终端）。要先购买您自己的套件，请访问 [全球分销选项](https://aws.amazon.com/iot/edukit/#Get_started_with_AWS_IoT_EduKit)。
+本教程的所有内容假定了您目前已有 [M5Stack Core2 ESP32 IoT Development Kit for AWS](https://www.amazon.com/dp/B08VGRZYJR/) 以及可兼容 Amazon Alexa app 和 ESP Alexa 手机应用程序的 iOS 或 Android 智能手机，并且了解基本的技术概念和工具（例如命令提示符/终端）。要先购买您自己的套件，请访问 [全球分销选项](https://aws.amazon.com/iot/edukit/#Get_started_with_AWS_IoT_Kit)。
 
 如果您符合上述条件，就可以继续学习 [**烧录 Espressif 证书**](/cn/intro-to-alexa-for-iot/flashing-espressif-certificates.html)。
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Core2 for AWS IoT EduKit BSP: Display</title>
+<title>Core2 for AWS IoT Kit BSP: Display</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="AWS_logo_RGB.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Core2 for AWS IoT EduKit BSP<span id="projectnumber">&#160;1.5.1</span>
+   <div id="projectname">Core2 for AWS IoT Kit BSP<span id="projectnumber">&#160;1.5.1</span>
    </div>
   </td>
  </tr>
@@ -67,7 +67,7 @@ $(function() {
   <div class="headertitle"><div class="title">Display </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p >The display screen is driven by the ILI9342C over SPI bus. The driver for ILI9342C display controller is the same as the ILI9341. The Core2 for AWS IoT EduKit BSP uses the <a href="http://lvgl.io/">LVGL library</a> to interact with the ILI9342C display driver. For the documentation and API reference of the LVGL library used in the Core2 for AWS IoT EduKit BSP, visit <a href="https://docs.lvgl.io/7.11/index.html">https://docs.lvgl.io/7.11/index.html</a>.</p>
+<div class="textblock"><p >The display screen is driven by the ILI9342C over SPI bus. The driver for ILI9342C display controller is the same as the ILI9341. The Core2 for AWS IoT Kit BSP uses the <a href="http://lvgl.io/">LVGL library</a> to interact with the ILI9342C display driver. For the documentation and API reference of the LVGL library used in the Core2 for AWS IoT Kit BSP, visit <a href="https://docs.lvgl.io/7.11/index.html">https://docs.lvgl.io/7.11/index.html</a>.</p>
 <p ><a class="anchor" id="screen"></a></p>
 <p >Before using the LVGL APIs to write to the screen, initialize the display with <a class="el" href="core2foraws_display_init_function.html">Core2ForAWS_Display_Init</a> first. When performing any operations to the screen after initialization, the <a class="el" href="xguisemaphore_variable.html">xGuiSemaphore</a> FreeRTOS <a href="https://www.freertos.org/a00122.html">semaphore</a> must be taken before calling the LVGL APIs, and released after.</p>
 <p ><a href="./block_diagram-ili9342c.png"><img src="./block_diagram-ili9342c.png" alt="Circuit Block Diagram for ILI9342C Display Controller" class="center" class="inline"/></a></p>
@@ -95,7 +95,7 @@ Example</h1>
 <div class="ttc" id="acore2for_a_w_s_8c_html_a2a1ad60c25ec8207f8d723197855a1a1"><div class="ttname"><a href="core2for_a_w_s_8c.html#a2a1ad60c25ec8207f8d723197855a1a1">xGuiSemaphore</a></div><div class="ttdeci">SemaphoreHandle_t xGuiSemaphore</div><div class="ttdoc">FreeRTOS semaphore to be used when performing any operation on the display.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:271</div></div>
 <div class="ttc" id="acore2for_a_w_s_8c_html_a3d850a3f56bbe0685b60726d8b53bece"><div class="ttname"><a href="core2for_a_w_s_8c.html#a3d850a3f56bbe0685b60726d8b53bece">Core2ForAWS_Init</a></div><div class="ttdeci">void Core2ForAWS_Init(void)</div><div class="ttdoc">Initializes the power chip with default values, enables battery charging, and initializes all enabled...</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:32</div></div>
 <div class="ttc" id="acore2for_a_w_s_8c_html_a67a760b89e44e6bd0c96f90cc6aca47d"><div class="ttname"><a href="core2for_a_w_s_8c.html#a67a760b89e44e6bd0c96f90cc6aca47d">Core2ForAWS_Display_SetBrightness</a></div><div class="ttdeci">void Core2ForAWS_Display_SetBrightness(uint8_t brightness)</div><div class="ttdoc">Sets the brightness of the display.</div><div class="ttdef"><b>Definition:</b> core2forAWS.c:333</div></div>
-<div class="ttc" id="acore2for_a_w_s_8h_html"><div class="ttname"><a href="core2for_a_w_s_8h.html">core2forAWS.h</a></div><div class="ttdoc">Functions to initialize and access Core2 for AWS IoT EduKit hardware features.</div></div>
+<div class="ttc" id="acore2for_a_w_s_8h_html"><div class="ttname"><a href="core2for_a_w_s_8h.html">core2forAWS.h</a></div><div class="ttdoc">Functions to initialize and access Core2 for AWS IoT Kit hardware features.</div></div>
 </div><!-- fragment --><h1><a class="anchor" id="ili9342c_variables"></a>
 Variables</h1>
 <ul>

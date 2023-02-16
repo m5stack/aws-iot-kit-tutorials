@@ -5,7 +5,7 @@ pre = "<b>f. </b>"
 +++
 
 ## 总结
-您已经完成了此 AWS IoT EduKit 动手实践教程，将设备作为智能恒温器连接到 AWS，并且部署了简单的应用程序来检测空间占用情况来更新 HVAC 状态变化。
+您已经完成了此 AWS IoT Kit 动手实践教程，将设备作为智能恒温器连接到 AWS，并且部署了简单的应用程序来检测空间占用情况来更新 HVAC 状态变化。
 
 接下来要学习下一个动手实践教程 **智慧空间**：
 
@@ -33,4 +33,4 @@ pio run --environment core2foraws --target erase
 下一个要学习的教程是 [**智慧空间**](/cn/smart-spaces.html)。
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

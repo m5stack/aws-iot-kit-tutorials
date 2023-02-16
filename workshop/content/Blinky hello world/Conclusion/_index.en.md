@@ -44,14 +44,14 @@ The following outlines the scheduling process in an Super Loop example in the ab
 To learn more about RTOS and FreeRTOS, see the [Introduction to RTOS](https://www.youtube.com/watch?v=F321087yYy4) video series and visit [FreeRTOS.org](https://www.freertos.org/RTOS.html).
 
 ### AWS IoT Device SDK for Embedded C
-The [AWS IoT Device SDK for Embedded C](https://github.com/espressif/aws-iot-device-sdk-embedded-C/tree/61f25f34712b1513bf1cb94771620e9b2b001970) used in this tutorial provided simplified connectivity and messaging to and from AWS IoT. It also worked with the included secure element library to make device authentication easy. To review and learn more, the Device SDK for Embedded C is located in the `Core2-for-AWS-IoT-EduKit/Blink-Hello-World/components/esp-aws-iot/` folder; see [AWS IoT Device SDK for Embedded C](https://docs.aws.amazon.com/freertos/latest/userguide/c-sdk.html).
+The [AWS IoT Device SDK for Embedded C](https://github.com/espressif/aws-iot-device-sdk-embedded-C/tree/61f25f34712b1513bf1cb94771620e9b2b001970) used in this tutorial provided simplified connectivity and messaging to and from AWS IoT. It also worked with the included secure element library to make device authentication easy. To review and learn more, the Device SDK for Embedded C is located in the `Core2-for-AWS-IoT-Kit/Blink-Hello-World/components/esp-aws-iot/` folder; see [AWS IoT Device SDK for Embedded C](https://docs.aws.amazon.com/freertos/latest/userguide/c-sdk.html).
 
 ### The board support package - device drivers
 The device's hardware features are bundled as a board support package (BSP). The BSP are drivers with APIs that provide a simplified way to access the hardware features. Feature examples include the screen, power management chip, secure element, speaker, microphone, 6-axis [inertial measurement unit](https://en.wikipedia.org/wiki/Inertial_measurement_unit) (IMU), touch driver, and LED bar. 
 
-You used the BSP APIs when you controlled the side LED bars using the SK6812 driver. You also used the [LVGL library](https://docs.lvgl.io/v7/en/html/) to show the elements on the device's display. To review and learn more, the BSP is located in the `Core2-for-AWS-IoT-EduKit/Blink-Hello-World/components/core2foraws/` folder; see [Core2 for AWS IoT EduKit BSP](http://localhost:1313/en/api-reference/). 
+You used the BSP APIs when you controlled the side LED bars using the SK6812 driver. You also used the [LVGL library](https://docs.lvgl.io/v7/en/html/) to show the elements on the device's display. To review and learn more, the BSP is located in the `Core2-for-AWS-IoT-Kit/Blink-Hello-World/components/core2foraws/` folder; see [Core2 for AWS IoT Kit BSP](http://localhost:1313/en/api-reference/). 
 
 On to [**Smart Thermostat**](/en/smart-thermostat.html).
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

@@ -25,7 +25,7 @@ Navigation in the Espressif configuration window may vary based on your computer
 {{% /notice %}}
 
 
-1. Navigate to **AWS IoT EduKit Configuration** and press **Enter** on your keyboard. 
+1. Navigate to **AWS IoT Kit Configuration** and press **Enter** on your keyboard. 
 1. Choose **WiFi SSID**. 
 1. Remove the **default SSID** (AWSWorkshop) and enter the **service set identifier (SSID) for your local Wi-Fi network** and press **Enter**.
 1. Navigate to and choose **WiFi Password**.
@@ -61,4 +61,4 @@ In this lesson, you successfully compiled the firmware updates, flashed your dev
 You are now ready to control the LEDs on the side of your device. Continue to [**Blinking the LEDs**](/en/blinky-hello-world/blinking-the-leds.html).
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

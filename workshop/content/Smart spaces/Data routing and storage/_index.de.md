@@ -53,4 +53,4 @@ Bevor Sie mit dem nächsten Kapitel fortfahren, können Sie überprüfen, ob Ihr
 Wenn diese wie erwartet funktionieren, gehen wir zu [**Machinelles Lernen**](/de/smart-spaces/machine-learning.html) über.
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

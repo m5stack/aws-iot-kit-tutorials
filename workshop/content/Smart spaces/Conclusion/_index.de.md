@@ -11,8 +11,8 @@ Wenn Sie nach Ideen suchen, wie Sie die Lösung erweitern können, finden Sie hi
 * Fügen Sie dem IoT Analytics-Datensatz einen Timer hinzu, sodass er einmal täglich eine aktualisierte Inhaltsdatei erstellt.
 * Erstellen Sie eine einfache Webbenutzeroberfläche oder stellen Sie Amazon QuickSight bereit, um den in IoT Analytics erstellten Datensatz zu visualisieren.
 * Fügen Sie in IoT Analytics eine neue Pipeline-Aktivität hinzu, um das lokale Wetter über eine Lambda-Funktion abzurufen und es zu Ihren Thermostat-Daten hinzuzufügen.
-* Verwenden Sie die Bibliotheken der Core2 des AWS IoT EduKit, um bei jeder Änderung des HVAC-Status einen Sound zu erzeugen.
-* Verwenden Sie die Bibliotheken der Core2 des AWS IoT EduKit, um die LED-Streifen zu blinken, wenn sich die Raumbelegung ändert.
+* Verwenden Sie die Bibliotheken der Core2 des AWS IoT Kit, um bei jeder Änderung des HVAC-Status einen Sound zu erzeugen.
+* Verwenden Sie die Bibliotheken der Core2 des AWS IoT Kit, um die LED-Streifen zu blinken, wenn sich die Raumbelegung ändert.
 
 ## Bereinigen
 Zwischen dieser und der vorherigen Lösung (**Intelligentes Thermostat**) haben Sie die folgenden Ressourcen in AWS erstellt:
@@ -51,4 +51,4 @@ Für die IoT-Core-Regel, die Lambda-Funktion, die Eingabe und das Detektor-Model
 Gehen Sie zum nächsten Tutorial, [**Einführung in Alexa für IoT**](/de/intro-to-alexa-for-iot.html).
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

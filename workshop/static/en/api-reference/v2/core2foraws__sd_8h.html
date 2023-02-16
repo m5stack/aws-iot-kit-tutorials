@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Core2 for AWS IoT EduKit BSP: core2foraws_sd.h File Reference</title>
+<title>Core2 for AWS IoT Kit BSP: core2foraws_sd.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="AWS_logo_RGB.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Core2 for AWS IoT EduKit BSP<span id="projectnumber">&#160;2.0.0</span>
+   <div id="projectname">Core2 for AWS IoT Kit BSP<span id="projectnumber">&#160;2.0.0</span>
    </div>
   </td>
  </tr>
@@ -73,7 +73,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_b4313104a230dd94f699539f8e438d9b.html">Core2-for-AWS-IoT-EduKit</a></li><li class="navelem"><a class="el" href="dir_75a483a8633115123af46fb2bb05dd34.html">lib</a></li><li class="navelem"><a class="el" href="dir_eb8c6296007a3a57ce0ca65a48185c68.html">sd</a></li><li class="navelem"><a class="el" href="dir_fe230bc5f4c115ed1b9a01869b6f09d0.html">include</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_b4313104a230dd94f699539f8e438d9b.html">Core2-for-AWS-IoT-Kit</a></li><li class="navelem"><a class="el" href="dir_75a483a8633115123af46fb2bb05dd34.html">lib</a></li><li class="navelem"><a class="el" href="dir_eb8c6296007a3a57ce0ca65a48185c68.html">sd</a></li><li class="navelem"><a class="el" href="dir_fe230bc5f4c115ed1b9a01869b6f09d0.html">include</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -84,7 +84,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Core2 for AWS IoT EduKit SD card hardware driver APIs.  
+<p>Core2 for AWS IoT Kit SD card hardware driver APIs.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
@@ -119,7 +119,7 @@ Functions</h2></td></tr>
 <tr class="separator:aaff3b291da98d385216d004a5525d2e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Core2 for AWS IoT EduKit SD card hardware driver APIs. </p>
+<div class="textblock"><p >Core2 for AWS IoT Kit SD card hardware driver APIs. </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a4538aabf263e963be1be8e1b0e2a2a11" name="a4538aabf263e963be1be8e1b0e2a2a11"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4538aabf263e963be1be8e1b0e2a2a11">&#9670;&nbsp;</a></span>SD_ACCESS_DELAY_MS</h2>
@@ -156,7 +156,7 @@ Functions</h2></td></tr>
 
 <p>Initializes and mounts the SD card. </p>
 <dl class="section note"><dt>Note</dt><dd>The SD card must be mounted before use. The SD card and the screen share the same SPI bus, with each device having it's own CS line. Frequent writes to the SD card can cause slow down of the screen writes. In order to protect access to the device, a mutex has been placed for each of SD card APIs to make it thread-safe in the event there are multiple tasks attempting to access the device at once.</dd></dl>
-<p>The example code below mounts the SD card on the mount point <code>/sdcard</code> and then writes a file named <code>edukit.txt</code> with the contents "Hello from AWS IoT EduKit!":</p>
+<p>The example code below mounts the SD card on the mount point <code>/sdcard</code> and then writes a file named <code>edukit.txt</code> with the contents "Hello from AWS IoT Kit!":</p>
 <p ><b>Example:</b> </p><div class="fragment"><div class="line"><span class="keywordtype">char</span> *mount_point = <span class="stringliteral">&quot;/sdcard&quot;</span>;</div>
 <div class="line"><span class="keywordtype">char</span> *file_path = <span class="stringliteral">&quot;/edukit.txt&quot;</span>;</div>
 <div class="line"> </div>
@@ -164,7 +164,7 @@ Functions</h2></td></tr>
 <div class="line">ESP_LOGI( TAG, <span class="stringliteral">&quot;\tMounted SD %s&quot;</span>, err == ESP_OK ? <span class="stringliteral">&quot;success&quot;</span> : <span class="stringliteral">&quot;fail&quot;</span> );</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">size_t</span> written_length = 0;</div>
-<div class="line">err = <a class="code hl_function" href="core2foraws__sd_8h.html#a2c982e6ffede331f83569ebfc1e47d9e">core2foraws_sd_write</a>( mount_point, file_path, <span class="stringliteral">&quot;Hello from AWS IoT EduKit!&quot;</span>, &amp;length );</div>
+<div class="line">err = <a class="code hl_function" href="core2foraws__sd_8h.html#a2c982e6ffede331f83569ebfc1e47d9e">core2foraws_sd_write</a>( mount_point, file_path, <span class="stringliteral">&quot;Hello from AWS IoT Kit!&quot;</span>, &amp;length );</div>
 <div class="line">ESP_LOGI( TAG, <span class="stringliteral">&quot;\tSD write %s, wrote %d bytes&quot;</span>, err == ESP_OK ? <span class="stringliteral">&quot;success&quot;</span> : <span class="stringliteral">&quot;fail&quot;</span>, written_length );</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">char</span> str[64];</div>
@@ -219,7 +219,7 @@ Functions</h2></td></tr>
 
 <p>Reads a specified length of characters from the specificied file on the FAT file system SD card. </p>
 <dl class="section note"><dt>Note</dt><dd>The SD card must be mounted before use and formatted with a FAT/FAT32 file system. The <code>to_read_length</code> can be higher than the total number of characters in the file. The function will return once the EOF character is read.</dd></dl>
-<p>The example code below mounts the SD card on the mount point <code>/sdcard</code> and then writes a file named <code>edukit.txt</code> with the contents "Hello from AWS IoT EduKit!":</p>
+<p>The example code below mounts the SD card on the mount point <code>/sdcard</code> and then writes a file named <code>edukit.txt</code> with the contents "Hello from AWS IoT Kit!":</p>
 <p ><b>Example:</b> </p><div class="fragment"><div class="line"><span class="keywordtype">char</span> *mount_point = <span class="stringliteral">&quot;/sdcard&quot;</span>;</div>
 <div class="line"><span class="keywordtype">char</span> *file_path = <span class="stringliteral">&quot;/edukit.txt&quot;</span>;</div>
 <div class="line"> </div>
@@ -227,7 +227,7 @@ Functions</h2></td></tr>
 <div class="line">ESP_LOGI( TAG, <span class="stringliteral">&quot;\tMounted SD %s&quot;</span>, err == ESP_OK ? <span class="stringliteral">&quot;success&quot;</span> : <span class="stringliteral">&quot;fail&quot;</span> );</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">size_t</span> written_length = 0;</div>
-<div class="line">err = <a class="code hl_function" href="core2foraws__sd_8h.html#a2c982e6ffede331f83569ebfc1e47d9e">core2foraws_sd_write</a>( mount_point, file_path, <span class="stringliteral">&quot;Hello from AWS IoT EduKit!&quot;</span>, &amp;length );</div>
+<div class="line">err = <a class="code hl_function" href="core2foraws__sd_8h.html#a2c982e6ffede331f83569ebfc1e47d9e">core2foraws_sd_write</a>( mount_point, file_path, <span class="stringliteral">&quot;Hello from AWS IoT Kit!&quot;</span>, &amp;length );</div>
 <div class="line">ESP_LOGI( TAG, <span class="stringliteral">&quot;\tSD write %s, wrote %d bytes&quot;</span>, err == ESP_OK ? <span class="stringliteral">&quot;success&quot;</span> : <span class="stringliteral">&quot;fail&quot;</span>, written_length );</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">char</span> str[64];</div>
@@ -286,7 +286,7 @@ Functions</h2></td></tr>
 
 <p>Writes a specified string to the specificied file on the SD card. </p>
 <dl class="section note"><dt>Note</dt><dd>The SD card must be mounted before use and formatted with a FAT/FAT32 file system.</dd></dl>
-<p>The example code below mounts the SD card on the mount point <code>/sdcard</code> and then writes a file named <code>edukit.txt</code> with the contents "Hello from AWS IoT EduKit!":</p>
+<p>The example code below mounts the SD card on the mount point <code>/sdcard</code> and then writes a file named <code>edukit.txt</code> with the contents "Hello from AWS IoT Kit!":</p>
 <p ><b>Example:</b> </p><div class="fragment"><div class="line"><span class="keywordtype">char</span> *mount_point = <span class="stringliteral">&quot;/sdcard&quot;</span>;</div>
 <div class="line"><span class="keywordtype">char</span> *file_path = <span class="stringliteral">&quot;/edukit.txt&quot;</span>;</div>
 <div class="line"> </div>
@@ -294,7 +294,7 @@ Functions</h2></td></tr>
 <div class="line">ESP_LOGI( TAG, <span class="stringliteral">&quot;\tMounted SD %s&quot;</span>, err == ESP_OK ? <span class="stringliteral">&quot;success&quot;</span> : <span class="stringliteral">&quot;fail&quot;</span> );</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">size_t</span> written_length = 0;</div>
-<div class="line">err = <a class="code hl_function" href="core2foraws__sd_8h.html#a2c982e6ffede331f83569ebfc1e47d9e">core2foraws_sd_write</a>( mount_point, file_path, <span class="stringliteral">&quot;Hello from AWS IoT EduKit!&quot;</span>, &amp;length );</div>
+<div class="line">err = <a class="code hl_function" href="core2foraws__sd_8h.html#a2c982e6ffede331f83569ebfc1e47d9e">core2foraws_sd_write</a>( mount_point, file_path, <span class="stringliteral">&quot;Hello from AWS IoT Kit!&quot;</span>, &amp;length );</div>
 <div class="line">ESP_LOGI( TAG, <span class="stringliteral">&quot;\tSD write %s, wrote %d bytes&quot;</span>, err == ESP_OK ? <span class="stringliteral">&quot;success&quot;</span> : <span class="stringliteral">&quot;fail&quot;</span>, written_length );</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">char</span> str[64];</div>

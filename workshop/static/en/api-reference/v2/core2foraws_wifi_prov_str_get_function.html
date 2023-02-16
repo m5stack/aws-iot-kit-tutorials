@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Core2 for AWS IoT EduKit BSP: core2foraws_wifi_prov_str_get</title>
+<title>Core2 for AWS IoT Kit BSP: core2foraws_wifi_prov_str_get</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="AWS_logo_RGB.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Core2 for AWS IoT EduKit BSP<span id="projectnumber">&#160;2.0.0</span>
+   <div id="projectname">Core2 for AWS IoT Kit BSP<span id="projectnumber">&#160;2.0.0</span>
    </div>
   </td>
  </tr>
@@ -85,7 +85,7 @@ $(function() {
 </div><!-- fragment --><p> Gets the stringified JSON used by the companion mobile provisioning app for setting up Wi-Fi.</p>
 <dl class="section note"><dt>Note</dt><dd>This function can be used with the included LVGL QR Code library to generate QR codes that can be displayed on the screen.</dd></dl>
 <p><b>Example:</b></p>
-<p >Initialize the Core2 for AWS IoT EduKit (including the enabled Wi-Fi), display the provisioning payload as a QR code on the screen to scan with companion mobile app. Removes the QR code once the device connects to Wi-Fi. </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<p >Initialize the Core2 for AWS IoT Kit (including the enabled Wi-Fi), display the provisioning payload as a QR code on the screen to scan with companion mobile app. Removes the QR code once the device connects to Wi-Fi. </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;esp_log.h&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="core2foraws_8h.html">core2foraws.h</a>&quot;</span></div>
@@ -120,7 +120,7 @@ $(function() {
 <div class="line">   xSemaphoreGive( <a class="code hl_variable" href="core2foraws__common_8h.html#aedf39c68825017851b1900d77c67a002">core2foraws_common_spi_semaphore</a> );</div>
 <div class="line">    </div>
 <div class="line">}</div>
-<div class="ttc" id="acore2foraws_8h_html"><div class="ttname"><a href="core2foraws_8h.html">core2foraws.h</a></div><div class="ttdoc">Core2 for AWS IoT EduKit general hardware driver APIs.</div></div>
+<div class="ttc" id="acore2foraws_8h_html"><div class="ttname"><a href="core2foraws_8h.html">core2foraws.h</a></div><div class="ttdoc">Core2 for AWS IoT Kit general hardware driver APIs.</div></div>
 <div class="ttc" id="acore2foraws_8h_html_a8589c127068e67d5474515365b558051"><div class="ttname"><a href="core2foraws_8h.html#a8589c127068e67d5474515365b558051">core2foraws_init</a></div><div class="ttdeci">esp_err_t core2foraws_init(void)</div><div class="ttdoc">Initializes enabled hardware features.</div></div>
 <div class="ttc" id="acore2foraws__common_8h_html_aedf39c68825017851b1900d77c67a002"><div class="ttname"><a href="core2foraws__common_8h.html#aedf39c68825017851b1900d77c67a002">core2foraws_common_spi_semaphore</a></div><div class="ttdeci">SemaphoreHandle_t core2foraws_common_spi_semaphore</div><div class="ttdoc">FreeRTOS semaphore to be used when performing any operation on the display or SD card reader.</div></div>
 <div class="ttc" id="acore2foraws__wifi_8h_html_a20c6ba80259caf6916ca631b853d82af"><div class="ttname"><a href="core2foraws__wifi_8h.html#a20c6ba80259caf6916ca631b853d82af">wifi_event_group</a></div><div class="ttdeci">EventGroupHandle_t wifi_event_group</div><div class="ttdoc">The FreeRTOS event group bit for Wi-Fi event states.</div><div class="ttdef"><b>Definition:</b> core2foraws_wifi.h:117</div></div>

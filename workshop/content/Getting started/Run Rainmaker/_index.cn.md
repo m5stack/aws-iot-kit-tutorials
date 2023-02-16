@@ -7,7 +7,7 @@ pre = "<b>b. </b>"
 我们已经准备好了编译应用程序并将其烧录到设备，通过 ESP Rainmaker 手机应用程序预配置 Wi-Fi，注册用户以将设备分配给该用户，以及开始控制板载外围设备将其作为基于 AWS IoT 的虚拟智能家居设备。
 
 ## 在 PlatformIO 中打开项目
-在您之前从 GitHub 克隆的项目的根目录下有几个文件夹。在本教程中，您将使用入门项目并进行 PlatformIO 中所需的操作。首先打开 Visual Studio Code，等待几秒钟加载 PlatformIO extension，单击 VS Code 活动栏（左侧菜单）中的 **PlatformIO 图标**，从 PlatformIO 菜单中选择 **Open（打开）**，点击 **Open Project（打开项目）** 导航到 `Core2-for-AWS-IoT-EduKit/Getting-Started` 文件夹，最后点击 **Open（打开）**。
+在您之前从 GitHub 克隆的项目的根目录下有几个文件夹。在本教程中，您将使用入门项目并进行 PlatformIO 中所需的操作。首先打开 Visual Studio Code，等待几秒钟加载 PlatformIO extension，单击 VS Code 活动栏（左侧菜单）中的 **PlatformIO 图标**，从 PlatformIO 菜单中选择 **Open（打开）**，点击 **Open Project（打开项目）** 导航到 `Core2-for-AWS-IoT-Kit/Getting-Started` 文件夹，最后点击 **Open（打开）**。
 {{< img "pio-home.en.png" "PlatformIO home screen" "1 - 打开 PIO 菜单，2 - 打开 PIO Home，3 - 打开 Getting Started 项目" >}}
 
 ## 编译和上传 RainMaker 代理固件
@@ -55,9 +55,9 @@ pio run --environment core2foraws --target erase
 {{% /notice %}}
 
 ## 总结
-您刚刚通过 AWS IoT EduKit 构建了一个互联家居应用程序！不仅如此，您还拥有必要的工具来创建、编辑和编译嵌入式代码并将其烧录到设备上。 在后续教程中，您将获得更多动手实践机会并学习相关技能，来构建自己的端到端 IoT 解决方案。
+您刚刚通过 AWS IoT Kit 构建了一个互联家居应用程序！不仅如此，您还拥有必要的工具来创建、编辑和编译嵌入式代码并将其烧录到设备上。 在后续教程中，您将获得更多动手实践机会并学习相关技能，来构建自己的端到端 IoT 解决方案。
 
 进入到 [**Blinky Hello World（连接到云的 Blinky）**](/cn/blinky-hello-world.html)。
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

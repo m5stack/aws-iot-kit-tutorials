@@ -56,9 +56,9 @@ Wenn Sie das Gerät mit einem leeren Flash-Speicher einschalten, ist der Bildsch
 {{% /notice %}}
 
 ## Fazit
-Sie haben gerade eine Connected-Home-Anwendung mit dem AWS IoT EduKit-Programm erstellt! Darüber hinaus verfügen Sie über die Tools, die zum Erstellen, Bearbeiten, Kompilieren und Flashen von eingebettetem Code auf Ihrem Gerät erforderlich sind! In den nächsten Tutorials werden Sie mehr praktische Erfahrungen sammeln und lernen die Fähigkeiten, um Ihre eigenen End-to-End-IoT-Lösungen zu entwickeln.
+Sie haben gerade eine Connected-Home-Anwendung mit dem AWS IoT Kit-Programm erstellt! Darüber hinaus verfügen Sie über die Tools, die zum Erstellen, Bearbeiten, Kompilieren und Flashen von eingebettetem Code auf Ihrem Gerät erforderlich sind! In den nächsten Tutorials werden Sie mehr praktische Erfahrungen sammeln und lernen die Fähigkeiten, um Ihre eigenen End-to-End-IoT-Lösungen zu entwickeln.
 
 Weiter zu [**Blinky Hello World**](/de/blinky-hello-world.html).
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

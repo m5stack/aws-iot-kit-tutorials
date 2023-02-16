@@ -12,8 +12,8 @@ pre = "<b>e. </b>"
 * 向 IoT Analytics 数据集添加一个计时器，让它每天构建一次更新的内容文件。
 * 构建一个简单的 Web UI 或预置 Amazon QuickSight，实现 IoT Analytics 中创建的数据集可视化。
 * 在 IoT Analytics 中添加一个新的管道活动，通过 Lambda 函数获取当地天气情况，并将其添加到您的恒温器数据中。
-* 使用 Core2 for AWS IoT EduKit 参考硬件库在 hvacStatus 发生更改时发出声音。
-* 使用 Core2 for AWS IoT EduKit 参考硬件库在 roomOccupancy 发生更改时闪烁 LED 灯条。
+* 使用 Core2 for AWS IoT Kit 参考硬件库在 hvacStatus 发生更改时发出声音。
+* 使用 Core2 for AWS IoT Kit 参考硬件库在 roomOccupancy 发生更改时闪烁 LED 灯条。
 
 ## 清理
 在此解决方案和上一个解决方案（**智能恒温器**）中，您成功在 AWS 中创建了以下资源：
@@ -52,4 +52,4 @@ IoT Core 规则、Lambda 函数、IoT Events 输入和检测器，以及 IoT Ana
 进入下一个教程： [**Alexa for IoT 简介**](/cn/intro-to-alexa-for-iot.html)。
 
 ---
-{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}
+{{% button href="https://github.com/aws-samples/aws-iot-edukit-tutorials/discussions" icon="far fa-question-circle" %}}Community support{{% /button %}} {{% button href="https://github.com/m5stack/Core2-for-AWS-IoT-Kit/issues" icon="fas fa-bug" %}}Report bugs{{% /button %}}

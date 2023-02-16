@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Core2 for AWS IoT EduKit BSP: core2foraws_sd_mount</title>
+<title>Core2 for AWS IoT Kit BSP: core2foraws_sd_mount</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="AWS_logo_RGB.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Core2 for AWS IoT EduKit BSP<span id="projectnumber">&#160;2.0.0</span>
+   <div id="projectname">Core2 for AWS IoT Kit BSP<span id="projectnumber">&#160;2.0.0</span>
    </div>
   </td>
  </tr>
@@ -84,7 +84,7 @@ $(function() {
 <div class="ttc" id="acore2foraws__sd_8h_html_acb7ac539ff13520aba1c3b84025aae76"><div class="ttname"><a href="core2foraws__sd_8h.html#acb7ac539ff13520aba1c3b84025aae76">core2foraws_sd_mount</a></div><div class="ttdeci">esp_err_t core2foraws_sd_mount(void)</div><div class="ttdoc">Initializes and mounts the SD card.</div></div>
 </div><!-- fragment --><p> Initializes and mounts the SD card.</p>
 <dl class="section note"><dt>Note</dt><dd>The SD card must be mounted before use. The SD card and the screen share the same SPI bus, with each device having it's own CS line. Frequent writes to the SD card can cause slow down of the screen writes. In order to protect access to the device, a mutex has been placed for each of SD card APIs to make it thread-safe in the event there are multiple tasks attempting to access the device at once.</dd></dl>
-<p>The example code below mounts the SD card on the mount point <code>/sdcard</code> and then writes a file named <code>edukit.txt</code> with the contents "Hello from AWS IoT EduKit!":</p>
+<p>The example code below mounts the SD card on the mount point <code>/sdcard</code> and then writes a file named <code>edukit.txt</code> with the contents "Hello from AWS IoT Kit!":</p>
 <p ><b>Example:</b> </p><div class="fragment"><div class="line"><span class="keywordtype">char</span> *mount_point = <span class="stringliteral">&quot;/sdcard&quot;</span>;</div>
 <div class="line"><span class="keywordtype">char</span> *file_path = <span class="stringliteral">&quot;/edukit.txt&quot;</span>;</div>
 <div class="line"> </div>
@@ -92,7 +92,7 @@ $(function() {
 <div class="line">ESP_LOGI( TAG, <span class="stringliteral">&quot;\tMounted SD %s&quot;</span>, err == ESP_OK ? <span class="stringliteral">&quot;success&quot;</span> : <span class="stringliteral">&quot;fail&quot;</span> );</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">size_t</span> written_length = 0;</div>
-<div class="line">err = <a class="code hl_function" href="core2foraws__sd_8h.html#a2c982e6ffede331f83569ebfc1e47d9e">core2foraws_sd_write</a>( mount_point, file_path, <span class="stringliteral">&quot;Hello from AWS IoT EduKit!&quot;</span>, &amp;length );</div>
+<div class="line">err = <a class="code hl_function" href="core2foraws__sd_8h.html#a2c982e6ffede331f83569ebfc1e47d9e">core2foraws_sd_write</a>( mount_point, file_path, <span class="stringliteral">&quot;Hello from AWS IoT Kit!&quot;</span>, &amp;length );</div>
 <div class="line">ESP_LOGI( TAG, <span class="stringliteral">&quot;\tSD write %s, wrote %d bytes&quot;</span>, err == ESP_OK ? <span class="stringliteral">&quot;success&quot;</span> : <span class="stringliteral">&quot;fail&quot;</span>, written_length );</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">char</span> str[64];</div>
